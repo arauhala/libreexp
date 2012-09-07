@@ -1,0 +1,590 @@
+predicted: good(r)
+state 0: !accountUnder200DM(r)
+state 1: accountUnder200DM(r)
+state 2: 
+depStateV(0)=log2((139.00+0.50)/(303.00+1.00))=-1.12
+depStateNotV(0)=log2((135.00+0.50)/(240.00+1.00))=-0.83
+depStateV(1)=log2((164.00+0.50)/(303.00+1.00))=-0.89
+depStateNotV(1)=log2((105.00+0.50)/(240.00+1.00))=-1.19
+depStateV(2)=log2((303.00+1.00)/(303.00+1.00))=0.00
+depStateNotV(2)=log2((240.00+1.00)/(240.00+1.00))=0.00
+predicted: good(r)
+state 0: !accountOver200DM(r)
+state 1: accountOver200DM(r)
+state 2: 
+depStateV(0)=log2((303.00+0.67)/(352.00+1.00))=-0.22
+depStateNotV(0)=log2((240.00+0.67)/(254.00+1.00))=-0.08
+depStateV(1)=log2((49.00+0.33)/(352.00+1.00))=-2.84
+depStateNotV(1)=log2((14.00+0.33)/(254.00+1.00))=-4.15
+depStateV(2)=log2((352.00+1.00)/(352.00+1.00))=0.00
+depStateNotV(2)=log2((254.00+1.00)/(254.00+1.00))=0.00
+predicted: good(r)
+state 0: !noAccount(r)
+state 1: noAccount(r)
+state 2: 
+depStateV(0)=log2((352.00+0.75)/(700.00+1.00))=-0.99
+depStateNotV(0)=log2((254.00+0.75)/(300.00+1.00))=-0.24
+depStateV(1)=log2((348.00+0.25)/(700.00+1.00))=-1.01
+depStateNotV(1)=log2((46.00+0.25)/(300.00+1.00))=-2.70
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !creditForThisBankPaidDuly(r)
+state 1: creditForThisBankPaidDuly(r)
+state 2: 
+depStateV(0)=log2((15.00+0.50)/(36.00+1.00))=-1.26
+depStateNotV(0)=log2((25.00+0.50)/(53.00+1.00))=-1.08
+depStateV(1)=log2((21.00+0.50)/(36.00+1.00))=-0.78
+depStateNotV(1)=log2((28.00+0.50)/(53.00+1.00))=-0.92
+depStateV(2)=log2((36.00+1.00)/(36.00+1.00))=0.00
+depStateNotV(2)=log2((53.00+1.00)/(53.00+1.00))=0.00
+predicted: good(r)
+state 0: !creditForThisBankPaidDulyTillNow(r)
+state 1: creditForThisBankPaidDulyTillNow(r)
+state 2: 
+depStateV(0)=log2((36.00+0.67)/(397.00+1.00))=-3.44
+depStateNotV(0)=log2((53.00+0.67)/(222.00+1.00))=-2.05
+depStateV(1)=log2((361.00+0.33)/(397.00+1.00))=-0.14
+depStateNotV(1)=log2((169.00+0.33)/(222.00+1.00))=-0.40
+depStateV(2)=log2((397.00+1.00)/(397.00+1.00))=0.00
+depStateNotV(2)=log2((222.00+1.00)/(222.00+1.00))=0.00
+predicted: good(r)
+state 0: !creditDelays(r)
+state 1: creditDelays(r)
+state 2: 
+depStateV(0)=log2((397.00+0.75)/(457.00+1.00))=-0.20
+depStateNotV(0)=log2((222.00+0.75)/(250.00+1.00))=-0.17
+depStateV(1)=log2((60.00+0.25)/(457.00+1.00))=-2.93
+depStateNotV(1)=log2((28.00+0.25)/(250.00+1.00))=-3.15
+depStateV(2)=log2((457.00+1.00)/(457.00+1.00))=0.00
+depStateNotV(2)=log2((250.00+1.00)/(250.00+1.00))=0.00
+predicted: good(r)
+state 0: !criticalAccount(r)
+state 1: criticalAccount(r)
+state 2: 
+depStateV(0)=log2((457.00+0.80)/(700.00+1.00))=-0.61
+depStateNotV(0)=log2((250.00+0.80)/(300.00+1.00))=-0.26
+depStateV(1)=log2((243.00+0.20)/(700.00+1.00))=-1.53
+depStateNotV(1)=log2((50.00+0.20)/(300.00+1.00))=-2.58
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !forUsedCar(r)
+state 1: forUsedCar(r)
+state 2: 
+depStateV(0)=log2((145.00+0.50)/(231.00+1.00))=-0.67
+depStateNotV(0)=log2((89.00+0.50)/(106.00+1.00))=-0.26
+depStateV(1)=log2((86.00+0.50)/(231.00+1.00))=-1.42
+depStateNotV(1)=log2((17.00+0.50)/(106.00+1.00))=-2.61
+depStateV(2)=log2((231.00+1.00)/(231.00+1.00))=0.00
+depStateNotV(2)=log2((106.00+1.00)/(106.00+1.00))=-0.00
+predicted: good(r)
+state 0: !forFurnitudeOrEquipment(r)
+state 1: forFurnitudeOrEquipment(r)
+state 2: 
+depStateV(0)=log2((231.00+0.67)/(354.00+1.00))=-0.62
+depStateNotV(0)=log2((106.00+0.67)/(164.00+1.00))=-0.63
+depStateV(1)=log2((123.00+0.33)/(354.00+1.00))=-1.53
+depStateNotV(1)=log2((58.00+0.33)/(164.00+1.00))=-1.50
+depStateV(2)=log2((354.00+1.00)/(354.00+1.00))=0.00
+depStateNotV(2)=log2((164.00+1.00)/(164.00+1.00))=0.00
+predicted: good(r)
+state 0: !forRadioTelevision(r)
+state 1: forRadioTelevision(r)
+state 2: 
+depStateV(0)=log2((354.00+0.75)/(572.00+1.00))=-0.69
+depStateNotV(0)=log2((164.00+0.75)/(226.00+1.00))=-0.46
+depStateV(1)=log2((218.00+0.25)/(572.00+1.00))=-1.39
+depStateNotV(1)=log2((62.00+0.25)/(226.00+1.00))=-1.87
+depStateV(2)=log2((572.00+1.00)/(572.00+1.00))=0.00
+depStateNotV(2)=log2((226.00+1.00)/(226.00+1.00))=0.00
+predicted: good(r)
+state 0: !forDomesticAppliance(r)
+state 1: forDomesticAppliance(r)
+state 2: 
+depStateV(0)=log2((572.00+0.80)/(580.00+1.00))=-0.02
+depStateNotV(0)=log2((226.00+0.80)/(230.00+1.00))=-0.03
+depStateV(1)=log2((8.00+0.20)/(580.00+1.00))=-6.15
+depStateNotV(1)=log2((4.00+0.20)/(230.00+1.00))=-5.78
+depStateV(2)=log2((580.00+1.00)/(580.00+1.00))=0.00
+depStateNotV(2)=log2((230.00+1.00)/(230.00+1.00))=0.00
+predicted: good(r)
+state 0: !forRepairs(r)
+state 1: forRepairs(r)
+state 2: 
+depStateV(0)=log2((580.00+0.83)/(594.00+1.00))=-0.03
+depStateNotV(0)=log2((230.00+0.83)/(238.00+1.00))=-0.05
+depStateV(1)=log2((14.00+0.17)/(594.00+1.00))=-5.39
+depStateNotV(1)=log2((8.00+0.17)/(238.00+1.00))=-4.87
+depStateV(2)=log2((594.00+1.00)/(594.00+1.00))=0.00
+depStateNotV(2)=log2((238.00+1.00)/(238.00+1.00))=-0.00
+predicted: good(r)
+state 0: !forEducation(r)
+state 1: forEducation(r)
+state 2: 
+depStateV(0)=log2((594.00+0.86)/(622.00+1.00))=-0.07
+depStateNotV(0)=log2((238.00+0.86)/(260.00+1.00))=-0.13
+depStateV(1)=log2((28.00+0.14)/(622.00+1.00))=-4.47
+depStateNotV(1)=log2((22.00+0.14)/(260.00+1.00))=-3.56
+depStateV(2)=log2((622.00+1.00)/(622.00+1.00))=0.00
+depStateNotV(2)=log2((260.00+1.00)/(260.00+1.00))=0.00
+predicted: good(r)
+state 0: !forVacation(r)
+state 1: forVacation(r)
+state 2: 
+depStateV(0)=log2((622.00+0.88)/(622.00+1.00))=-0.00
+depStateNotV(0)=log2((260.00+0.88)/(260.00+1.00))=-0.00
+depStateV(1)=log2((0.00+0.12)/(622.00+1.00))=-12.28
+depStateNotV(1)=log2((0.00+0.12)/(260.00+1.00))=-11.03
+depStateV(2)=log2((622.00+1.00)/(622.00+1.00))=0.00
+depStateNotV(2)=log2((260.00+1.00)/(260.00+1.00))=0.00
+predicted: good(r)
+state 0: !forRetraining(r)
+state 1: forRetraining(r)
+state 2: 
+depStateV(0)=log2((622.00+0.89)/(630.00+1.00))=-0.02
+depStateNotV(0)=log2((260.00+0.89)/(261.00+1.00))=-0.01
+depStateV(1)=log2((8.00+0.11)/(630.00+1.00))=-6.28
+depStateNotV(1)=log2((1.00+0.11)/(261.00+1.00))=-7.88
+depStateV(2)=log2((630.00+1.00)/(630.00+1.00))=0.00
+depStateNotV(2)=log2((261.00+1.00)/(261.00+1.00))=0.00
+predicted: good(r)
+state 0: !forBusiness(r)
+state 1: forBusiness(r)
+state 2: 
+depStateV(0)=log2((630.00+0.90)/(693.00+1.00))=-0.14
+depStateNotV(0)=log2((261.00+0.90)/(295.00+1.00))=-0.18
+depStateV(1)=log2((63.00+0.10)/(693.00+1.00))=-3.46
+depStateNotV(1)=log2((34.00+0.10)/(295.00+1.00))=-3.12
+depStateV(2)=log2((693.00+1.00)/(693.00+1.00))=-0.00
+depStateNotV(2)=log2((295.00+1.00)/(295.00+1.00))=0.00
+predicted: good(r)
+state 0: !forOthers(r)
+state 1: forOthers(r)
+state 2: 
+depStateV(0)=log2((693.00+0.91)/(700.00+1.00))=-0.01
+depStateNotV(0)=log2((295.00+0.91)/(300.00+1.00))=-0.02
+depStateV(1)=log2((7.00+0.09)/(700.00+1.00))=-6.63
+depStateNotV(1)=log2((5.00+0.09)/(300.00+1.00))=-5.89
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !savings(100-500)(r)
+state 1: savings(100-500)(r)
+state 2: 
+depStateV(0)=log2((386.00+0.50)/(455.00+1.00))=-0.24
+depStateNotV(0)=log2((217.00+0.50)/(251.00+1.00))=-0.21
+depStateV(1)=log2((69.00+0.50)/(455.00+1.00))=-2.71
+depStateNotV(1)=log2((34.00+0.50)/(251.00+1.00))=-2.87
+depStateV(2)=log2((455.00+1.00)/(455.00+1.00))=0.00
+depStateNotV(2)=log2((251.00+1.00)/(251.00+1.00))=0.00
+predicted: good(r)
+state 0: !savings(500-1k)(r)
+state 1: savings(500-1k)(r)
+state 2: 
+depStateV(0)=log2((455.00+0.67)/(507.00+1.00))=-0.16
+depStateNotV(0)=log2((251.00+0.67)/(262.00+1.00))=-0.06
+depStateV(1)=log2((52.00+0.33)/(507.00+1.00))=-3.28
+depStateNotV(1)=log2((11.00+0.33)/(262.00+1.00))=-4.54
+depStateV(2)=log2((507.00+1.00)/(507.00+1.00))=0.00
+depStateNotV(2)=log2((262.00+1.00)/(262.00+1.00))=0.00
+predicted: good(r)
+state 0: !savings(>1k)(r)
+state 1: savings(>1k)(r)
+state 2: 
+depStateV(0)=log2((507.00+0.75)/(549.00+1.00))=-0.12
+depStateNotV(0)=log2((262.00+0.75)/(268.00+1.00))=-0.03
+depStateV(1)=log2((42.00+0.25)/(549.00+1.00))=-3.70
+depStateNotV(1)=log2((6.00+0.25)/(268.00+1.00))=-5.43
+depStateV(2)=log2((549.00+1.00)/(549.00+1.00))=0.00
+depStateNotV(2)=log2((268.00+1.00)/(268.00+1.00))=0.00
+predicted: good(r)
+state 0: !savingsUnknown(r)
+state 1: savingsUnknown(r)
+state 2: 
+depStateV(0)=log2((549.00+0.80)/(700.00+1.00))=-0.35
+depStateNotV(0)=log2((268.00+0.80)/(300.00+1.00))=-0.16
+depStateV(1)=log2((151.00+0.20)/(700.00+1.00))=-2.21
+depStateNotV(1)=log2((32.00+0.20)/(300.00+1.00))=-3.22
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !employed(<1y)(r)
+state 1: employed(<1y)(r)
+state 2: 
+depStateV(0)=log2((39.00+0.50)/(141.00+1.00))=-1.85
+depStateNotV(0)=log2((23.00+0.50)/(93.00+1.00))=-2.00
+depStateV(1)=log2((102.00+0.50)/(141.00+1.00))=-0.47
+depStateNotV(1)=log2((70.00+0.50)/(93.00+1.00))=-0.42
+depStateV(2)=log2((141.00+1.00)/(141.00+1.00))=0.00
+depStateNotV(2)=log2((93.00+1.00)/(93.00+1.00))=0.00
+predicted: good(r)
+state 0: !employed(1y-4y)(r)
+state 1: employed(1y-4y)(r)
+state 2: 
+depStateV(0)=log2((141.00+0.67)/(376.00+1.00))=-1.41
+depStateNotV(0)=log2((93.00+0.67)/(197.00+1.00))=-1.08
+depStateV(1)=log2((235.00+0.33)/(376.00+1.00))=-0.68
+depStateNotV(1)=log2((104.00+0.33)/(197.00+1.00))=-0.92
+depStateV(2)=log2((376.00+1.00)/(376.00+1.00))=0.00
+depStateNotV(2)=log2((197.00+1.00)/(197.00+1.00))=0.00
+predicted: good(r)
+state 0: !employed(4y-7y)(r)
+state 1: employed(4y-7y)(r)
+state 2: 
+depStateV(0)=log2((376.00+0.75)/(511.00+1.00))=-0.44
+depStateNotV(0)=log2((197.00+0.75)/(236.00+1.00))=-0.26
+depStateV(1)=log2((135.00+0.25)/(511.00+1.00))=-1.92
+depStateNotV(1)=log2((39.00+0.25)/(236.00+1.00))=-2.59
+depStateV(2)=log2((511.00+1.00)/(511.00+1.00))=0.00
+depStateNotV(2)=log2((236.00+1.00)/(236.00+1.00))=-0.00
+predicted: good(r)
+state 0: !employed(>7y)(r)
+state 1: employed(>7y)(r)
+state 2: 
+depStateV(0)=log2((511.00+0.80)/(700.00+1.00))=-0.45
+depStateNotV(0)=log2((236.00+0.80)/(300.00+1.00))=-0.35
+depStateV(1)=log2((189.00+0.20)/(700.00+1.00))=-1.89
+depStateNotV(1)=log2((64.00+0.20)/(300.00+1.00))=-2.23
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !femaled&divorced/separated/married(r)
+state 1: femaled&divorced/separated/married(r)
+state 2: 
+depStateV(0)=log2((30.00+0.50)/(231.00+1.00))=-2.93
+depStateNotV(0)=log2((20.00+0.50)/(129.00+1.00))=-2.66
+depStateV(1)=log2((201.00+0.50)/(231.00+1.00))=-0.20
+depStateNotV(1)=log2((109.00+0.50)/(129.00+1.00))=-0.25
+depStateV(2)=log2((231.00+1.00)/(231.00+1.00))=0.00
+depStateNotV(2)=log2((129.00+1.00)/(129.00+1.00))=0.00
+predicted: good(r)
+state 0: !male&single(r)
+state 1: male&single(r)
+state 2: 
+depStateV(0)=log2((231.00+0.67)/(633.00+1.00))=-1.45
+depStateNotV(0)=log2((129.00+0.67)/(275.00+1.00))=-1.09
+depStateV(1)=log2((402.00+0.33)/(633.00+1.00))=-0.66
+depStateNotV(1)=log2((146.00+0.33)/(275.00+1.00))=-0.92
+depStateV(2)=log2((633.00+1.00)/(633.00+1.00))=0.00
+depStateNotV(2)=log2((275.00+1.00)/(275.00+1.00))=0.00
+predicted: good(r)
+state 0: !male&married/widowed(r)
+state 1: male&married/widowed(r)
+state 2: 
+depStateV(0)=log2((633.00+0.75)/(700.00+1.00))=-0.15
+depStateNotV(0)=log2((275.00+0.75)/(300.00+1.00))=-0.13
+depStateV(1)=log2((67.00+0.25)/(700.00+1.00))=-3.38
+depStateNotV(1)=log2((25.00+0.25)/(300.00+1.00))=-3.58
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !female&single(r)
+state 1: female&single(r)
+state 2: 
+depStateV(0)=log2((700.00+0.80)/(700.00+1.00))=-0.00
+depStateNotV(0)=log2((300.00+0.80)/(300.00+1.00))=-0.00
+depStateV(1)=log2((0.00+0.20)/(700.00+1.00))=-11.78
+depStateNotV(1)=log2((0.00+0.20)/(300.00+1.00))=-10.56
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !coapplicant(r)
+state 1: coapplicant(r)
+state 2: 
+depStateV(0)=log2((635.00+0.50)/(658.00+1.00))=-0.05
+depStateNotV(0)=log2((272.00+0.50)/(290.00+1.00))=-0.09
+depStateV(1)=log2((23.00+0.50)/(658.00+1.00))=-4.81
+depStateNotV(1)=log2((18.00+0.50)/(290.00+1.00))=-3.98
+depStateV(2)=log2((658.00+1.00)/(658.00+1.00))=0.00
+depStateNotV(2)=log2((290.00+1.00)/(290.00+1.00))=0.00
+predicted: good(r)
+state 0: !guarantor(r)
+state 1: guarantor(r)
+state 2: 
+depStateV(0)=log2((658.00+0.67)/(700.00+1.00))=-0.09
+depStateNotV(0)=log2((290.00+0.67)/(300.00+1.00))=-0.05
+depStateV(1)=log2((42.00+0.33)/(700.00+1.00))=-4.05
+depStateNotV(1)=log2((10.00+0.33)/(300.00+1.00))=-4.86
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !hasLifeInsurance(r)
+state 1: hasLifeInsurance(r)
+state 2: 
+depStateV(0)=log2((222.00+0.50)/(383.00+1.00))=-0.79
+depStateNotV(0)=log2((60.00+0.50)/(131.00+1.00))=-1.13
+depStateV(1)=log2((161.00+0.50)/(383.00+1.00))=-1.25
+depStateNotV(1)=log2((71.00+0.50)/(131.00+1.00))=-0.88
+depStateV(2)=log2((383.00+1.00)/(383.00+1.00))=0.00
+depStateNotV(2)=log2((131.00+1.00)/(131.00+1.00))=0.00
+predicted: good(r)
+state 0: !hasCarOrOther(r)
+state 1: hasCarOrOther(r)
+state 2: 
+depStateV(0)=log2((383.00+0.67)/(613.00+1.00))=-0.68
+depStateNotV(0)=log2((131.00+0.67)/(233.00+1.00))=-0.83
+depStateV(1)=log2((230.00+0.33)/(613.00+1.00))=-1.41
+depStateNotV(1)=log2((102.00+0.33)/(233.00+1.00))=-1.19
+depStateV(2)=log2((613.00+1.00)/(613.00+1.00))=0.00
+depStateNotV(2)=log2((233.00+1.00)/(233.00+1.00))=0.00
+predicted: good(r)
+state 0: !unknownOrNoProperty(r)
+state 1: unknownOrNoProperty(r)
+state 2: 
+depStateV(0)=log2((613.00+0.75)/(700.00+1.00))=-0.19
+depStateNotV(0)=log2((233.00+0.75)/(300.00+1.00))=-0.36
+depStateV(1)=log2((87.00+0.25)/(700.00+1.00))=-3.01
+depStateNotV(1)=log2((67.00+0.25)/(300.00+1.00))=-2.16
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !hasStorePlans(r)
+state 1: hasStorePlans(r)
+state 2: 
+depStateV(0)=log2((82.00+0.50)/(110.00+1.00))=-0.43
+depStateNotV(0)=log2((57.00+0.50)/(76.00+1.00))=-0.42
+depStateV(1)=log2((28.00+0.50)/(110.00+1.00))=-1.96
+depStateNotV(1)=log2((19.00+0.50)/(76.00+1.00))=-1.98
+depStateV(2)=log2((110.00+1.00)/(110.00+1.00))=0.00
+depStateNotV(2)=log2((76.00+1.00)/(76.00+1.00))=0.00
+predicted: good(r)
+state 0: !hasNoPlan(r)
+state 1: hasNoPlan(r)
+state 2: 
+depStateV(0)=log2((110.00+0.67)/(700.00+1.00))=-2.66
+depStateNotV(0)=log2((76.00+0.67)/(300.00+1.00))=-1.97
+depStateV(1)=log2((590.00+0.33)/(700.00+1.00))=-0.25
+depStateNotV(1)=log2((224.00+0.33)/(300.00+1.00))=-0.42
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !home(own)(r)
+state 1: home(own)(r)
+state 2: 
+depStateV(0)=log2((109.00+0.50)/(636.00+1.00))=-2.54
+depStateNotV(0)=log2((70.00+0.50)/(256.00+1.00))=-1.87
+depStateV(1)=log2((527.00+0.50)/(636.00+1.00))=-0.27
+depStateNotV(1)=log2((186.00+0.50)/(256.00+1.00))=-0.46
+depStateV(2)=log2((636.00+1.00)/(636.00+1.00))=0.00
+depStateNotV(2)=log2((256.00+1.00)/(256.00+1.00))=0.00
+predicted: good(r)
+state 0: !home(free)(r)
+state 1: home(free)(r)
+state 2: 
+depStateV(0)=log2((636.00+0.67)/(700.00+1.00))=-0.14
+depStateNotV(0)=log2((256.00+0.67)/(300.00+1.00))=-0.23
+depStateV(1)=log2((64.00+0.33)/(700.00+1.00))=-3.45
+depStateNotV(1)=log2((44.00+0.33)/(300.00+1.00))=-2.76
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !unskilled(r)
+state 1: unskilled(r)
+state 2: 
+depStateV(0)=log2((112.00+0.50)/(256.00+1.00))=-1.19
+depStateNotV(0)=log2((58.00+0.50)/(114.00+1.00))=-0.98
+depStateV(1)=log2((144.00+0.50)/(256.00+1.00))=-0.83
+depStateNotV(1)=log2((56.00+0.50)/(114.00+1.00))=-1.03
+depStateV(2)=log2((256.00+1.00)/(256.00+1.00))=0.00
+depStateNotV(2)=log2((114.00+1.00)/(114.00+1.00))=0.00
+predicted: good(r)
+state 0: !skilled(r)
+state 1: skilled(r)
+state 2: 
+depStateV(0)=log2((256.00+0.67)/(700.00+1.00))=-1.45
+depStateNotV(0)=log2((114.00+0.67)/(300.00+1.00))=-1.39
+depStateV(1)=log2((444.00+0.33)/(700.00+1.00))=-0.66
+depStateNotV(1)=log2((186.00+0.33)/(300.00+1.00))=-0.69
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !managementOrHighSkillOrSelfEmployed(r)
+state 1: managementOrHighSkillOrSelfEmployed(r)
+state 2: 
+depStateV(0)=log2((700.00+0.75)/(700.00+1.00))=-0.00
+depStateNotV(0)=log2((300.00+0.75)/(300.00+1.00))=-0.00
+depStateV(1)=log2((0.00+0.25)/(700.00+1.00))=-11.45
+depStateNotV(1)=log2((0.00+0.25)/(300.00+1.00))=-10.23
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !hasTelephone(r)
+state 1: hasTelephone(r)
+state 2: 
+depStateV(0)=log2((409.00+0.50)/(700.00+1.00))=-0.78
+depStateNotV(0)=log2((187.00+0.50)/(300.00+1.00))=-0.68
+depStateV(1)=log2((291.00+0.50)/(700.00+1.00))=-1.27
+depStateNotV(1)=log2((113.00+0.50)/(300.00+1.00))=-1.41
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !notForeignWorker(r)
+state 1: notForeignWorker(r)
+state 2: 
+depStateV(0)=log2((667.00+0.50)/(700.00+1.00))=-0.07
+depStateNotV(0)=log2((296.00+0.50)/(300.00+1.00))=-0.02
+depStateV(1)=log2((33.00+0.50)/(700.00+1.00))=-4.39
+depStateNotV(1)=log2((4.00+0.50)/(300.00+1.00))=-6.06
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !duration1(r)
+state 1: duration1(r)
+state 2: 
+depStateV(0)=log2((127.00+0.50)/(410.00+1.00))=-1.69
+depStateNotV(0)=log2((102.00+0.50)/(223.00+1.00))=-1.13
+depStateV(1)=log2((283.00+0.50)/(410.00+1.00))=-0.54
+depStateNotV(1)=log2((121.00+0.50)/(223.00+1.00))=-0.88
+depStateV(2)=log2((410.00+1.00)/(410.00+1.00))=0.00
+depStateNotV(2)=log2((223.00+1.00)/(223.00+1.00))=0.00
+predicted: good(r)
+state 0: !duration2(r)
+state 1: duration2(r)
+state 2: 
+depStateV(0)=log2((410.00+0.67)/(616.00+1.00))=-0.59
+depStateNotV(0)=log2((223.00+0.67)/(290.00+1.00))=-0.38
+depStateV(1)=log2((206.00+0.33)/(616.00+1.00))=-1.58
+depStateNotV(1)=log2((67.00+0.33)/(290.00+1.00))=-2.11
+depStateV(2)=log2((616.00+1.00)/(616.00+1.00))=0.00
+depStateNotV(2)=log2((290.00+1.00)/(290.00+1.00))=0.00
+predicted: good(r)
+state 0: !duration3(r)
+state 1: duration3(r)
+state 2: 
+depStateV(0)=log2((616.00+0.75)/(700.00+1.00))=-0.18
+depStateNotV(0)=log2((290.00+0.75)/(300.00+1.00))=-0.05
+depStateV(1)=log2((84.00+0.25)/(700.00+1.00))=-3.06
+depStateNotV(1)=log2((10.00+0.25)/(300.00+1.00))=-4.88
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !credits1(r)
+state 1: credits1(r)
+state 2: 
+depStateV(0)=log2((141.00+0.50)/(389.00+1.00))=-1.46
+depStateNotV(0)=log2((105.00+0.50)/(179.00+1.00))=-0.77
+depStateV(1)=log2((248.00+0.50)/(389.00+1.00))=-0.65
+depStateNotV(1)=log2((74.00+0.50)/(179.00+1.00))=-1.27
+depStateV(2)=log2((389.00+1.00)/(389.00+1.00))=0.00
+depStateNotV(2)=log2((179.00+1.00)/(179.00+1.00))=0.00
+predicted: good(r)
+state 0: !credits2(r)
+state 1: credits2(r)
+state 2: 
+depStateV(0)=log2((389.00+0.67)/(621.00+1.00))=-0.67
+depStateNotV(0)=log2((179.00+0.67)/(263.00+1.00))=-0.56
+depStateV(1)=log2((232.00+0.33)/(621.00+1.00))=-1.42
+depStateNotV(1)=log2((84.00+0.33)/(263.00+1.00))=-1.65
+depStateV(2)=log2((621.00+1.00)/(621.00+1.00))=0.00
+depStateNotV(2)=log2((263.00+1.00)/(263.00+1.00))=0.00
+predicted: good(r)
+state 0: !credits3(r)
+state 1: credits3(r)
+state 2: 
+depStateV(0)=log2((621.00+0.75)/(700.00+1.00))=-0.17
+depStateNotV(0)=log2((263.00+0.75)/(300.00+1.00))=-0.19
+depStateV(1)=log2((79.00+0.25)/(700.00+1.00))=-3.14
+depStateNotV(1)=log2((37.00+0.25)/(300.00+1.00))=-3.01
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !installmentRate1(r)
+state 1: installmentRate1(r)
+state 2: 
+depStateV(0)=log2((429.00+0.50)/(598.00+1.00))=-0.48
+depStateNotV(0)=log2((204.00+0.50)/(266.00+1.00))=-0.38
+depStateV(1)=log2((169.00+0.50)/(598.00+1.00))=-1.82
+depStateNotV(1)=log2((62.00+0.50)/(266.00+1.00))=-2.09
+depStateV(2)=log2((598.00+1.00)/(598.00+1.00))=0.00
+depStateNotV(2)=log2((266.00+1.00)/(266.00+1.00))=0.00
+predicted: good(r)
+state 0: !installmentRate2(r)
+state 1: installmentRate2(r)
+state 2: 
+depStateV(0)=log2((598.00+0.67)/(700.00+1.00))=-0.23
+depStateNotV(0)=log2((266.00+0.67)/(300.00+1.00))=-0.17
+depStateV(1)=log2((102.00+0.33)/(700.00+1.00))=-2.78
+depStateNotV(1)=log2((34.00+0.33)/(300.00+1.00))=-3.13
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !presentResidence1(r)
+state 1: presentResidence1(r)
+state 2: 
+depStateV(0)=log2((395.00+0.50)/(606.00+1.00))=-0.62
+depStateNotV(0)=log2((167.00+0.50)/(264.00+1.00))=-0.66
+depStateV(1)=log2((211.00+0.50)/(606.00+1.00))=-1.52
+depStateNotV(1)=log2((97.00+0.50)/(264.00+1.00))=-1.44
+depStateV(2)=log2((606.00+1.00)/(606.00+1.00))=0.00
+depStateNotV(2)=log2((264.00+1.00)/(264.00+1.00))=0.00
+predicted: good(r)
+state 0: !presentResidence2(r)
+state 1: presentResidence2(r)
+state 2: 
+depStateV(0)=log2((606.00+0.67)/(700.00+1.00))=-0.21
+depStateNotV(0)=log2((264.00+0.67)/(300.00+1.00))=-0.19
+depStateV(1)=log2((94.00+0.33)/(700.00+1.00))=-2.89
+depStateNotV(1)=log2((36.00+0.33)/(300.00+1.00))=-3.05
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !age1(r)
+state 1: age1(r)
+state 2: 
+depStateV(0)=log2((38.00+0.50)/(91.00+1.00))=-1.26
+depStateNotV(0)=log2((13.00+0.50)/(34.00+1.00))=-1.37
+depStateV(1)=log2((53.00+0.50)/(91.00+1.00))=-0.78
+depStateNotV(1)=log2((21.00+0.50)/(34.00+1.00))=-0.70
+depStateV(2)=log2((91.00+1.00)/(91.00+1.00))=0.00
+depStateNotV(2)=log2((34.00+1.00)/(34.00+1.00))=0.00
+predicted: good(r)
+state 0: !age2(r)
+state 1: age2(r)
+state 2: 
+depStateV(0)=log2((91.00+0.67)/(221.00+1.00))=-1.28
+depStateNotV(0)=log2((34.00+0.67)/(78.00+1.00))=-1.19
+depStateV(1)=log2((130.00+0.33)/(221.00+1.00))=-0.77
+depStateNotV(1)=log2((44.00+0.33)/(78.00+1.00))=-0.83
+depStateV(2)=log2((221.00+1.00)/(221.00+1.00))=0.00
+depStateNotV(2)=log2((78.00+1.00)/(78.00+1.00))=0.00
+predicted: good(r)
+state 0: !age3(r)
+state 1: age3(r)
+state 2: 
+depStateV(0)=log2((221.00+0.75)/(466.00+1.00))=-1.07
+depStateNotV(0)=log2((78.00+0.75)/(163.00+1.00))=-1.06
+depStateV(1)=log2((245.00+0.25)/(466.00+1.00))=-0.93
+depStateNotV(1)=log2((85.00+0.25)/(163.00+1.00))=-0.94
+depStateV(2)=log2((466.00+1.00)/(466.00+1.00))=0.00
+depStateNotV(2)=log2((163.00+1.00)/(163.00+1.00))=0.00
+predicted: good(r)
+state 0: !age4(r)
+state 1: age4(r)
+state 2: 
+depStateV(0)=log2((466.00+0.80)/(700.00+1.00))=-0.59
+depStateNotV(0)=log2((163.00+0.80)/(300.00+1.00))=-0.88
+depStateV(1)=log2((234.00+0.20)/(700.00+1.00))=-1.58
+depStateNotV(1)=log2((137.00+0.20)/(300.00+1.00))=-1.13
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !creditsInBank1(r)
+state 1: creditsInBank1(r)
+state 2: 
+depStateV(0)=log2((267.00+0.50)/(700.00+1.00))=-1.39
+depStateNotV(0)=log2((100.00+0.50)/(300.00+1.00))=-1.58
+depStateV(1)=log2((433.00+0.50)/(700.00+1.00))=-0.69
+depStateNotV(1)=log2((200.00+0.50)/(300.00+1.00))=-0.59
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00
+predicted: good(r)
+state 0: !maintainsPeople0(r)
+state 1: maintainsPeople0(r)
+state 2: 
+depStateV(0)=log2((109.00+0.50)/(700.00+1.00))=-2.68
+depStateNotV(0)=log2((46.00+0.50)/(300.00+1.00))=-2.69
+depStateV(1)=log2((591.00+0.50)/(700.00+1.00))=-0.25
+depStateNotV(1)=log2((254.00+0.50)/(300.00+1.00))=-0.24
+depStateV(2)=log2((700.00+1.00)/(700.00+1.00))=0.00
+depStateNotV(2)=log2((300.00+1.00)/(300.00+1.00))=0.00

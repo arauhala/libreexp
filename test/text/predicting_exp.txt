@@ -1,0 +1,56 @@
+p(pirate|[0, 0]) = 1.00% [true]
+p(pirate|[0, 1]) = 0.00% [false]
+p(pirate|[0, 2]) = 1.00% [true]
+p(pirate|[0, 3]) = 0.00% [false]
+p(pirate|[0, 4]) = 1.00% [true]
+p(pirate|[0, 5]) = 1.00% [true]
+p(pirate|[0, 6]) = 1.00% [true]
+p(pirate|[0, 7]) = 0.00% [false]
+p(pirate|[0, 8]) = 0.00% [false]
+p(pirate|[0, 9]) = 1.00% [true]
+p(bear|[0, 0]) = 0.00% [false]
+p(bear|[0, 1]) = 1.00% [true]
+p(bear|[0, 2]) = 0.00% [false]
+p(bear|[0, 3]) = 1.00% [true]
+p(bear|[0, 4]) = 0.00% [false]
+p(bear|[0, 5]) = 0.00% [false]
+p(bear|[0, 6]) = 0.00% [false]
+p(bear|[0, 7]) = 1.00% [true]
+p(bear|[0, 8]) = 1.00% [true]
+p(bear|[0, 9]) = 0.00% [false]
+
+total info: 0.01
+entry info: 0.00
+
+total info: 0.01
+entry info: 0.00
+
+9 exps added
+
+p(pirate|[0, 0]) = 0.58% [true]
+p(pirate|[0, 1]) = 0.58% [false]
+p(pirate|[0, 2]) = 0.58% [true]
+p(pirate|[0, 3]) = 0.58% [false]
+p(pirate|[0, 4]) = 0.58% [true]
+p(pirate|[0, 5]) = 0.58% [true]
+p(pirate|[0, 6]) = 0.58% [true]
+p(pirate|[0, 7]) = 0.58% [false]
+p(pirate|[0, 8]) = 0.58% [false]
+p(pirate|[0, 9]) = 0.58% [true]
+p(bear|[0, 0]) = 0.42% [false]
+p(bear|[0, 1]) = 0.42% [true]
+p(bear|[0, 2]) = 0.42% [false]
+p(bear|[0, 3]) = 0.42% [true]
+p(bear|[0, 4]) = 0.42% [false]
+p(bear|[0, 5]) = 0.42% [false]
+p(bear|[0, 6]) = 0.42% [false]
+p(bear|[0, 7]) = 0.42% [true]
+p(bear|[0, 8]) = 0.42% [true]
+p(bear|[0, 9]) = 0.42% [false]
+
+total info: 9.72
+entry info: 0.97
+
+total info: 9.72
+entry info: 0.97
+

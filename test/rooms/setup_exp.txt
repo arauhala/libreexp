@@ -1,0 +1,556 @@
+vars:
+iswall(r)
+isdark(r)
+isbright(r)
+isexit(r)
+victory(r)
+escape(r)
+goleft(r)
+goright(r)
+goup (r)
+godown(r)
+idle(r)
+underplayer(r)
+nearplayer(r)
+rels:
+iswall(r), victory(r)
+isdark(r), victory(r)
+isbright(r), victory(r)
+isexit(r), victory(r)
+escape(r), victory(r)
+iswall(r), iswall(r + x)
+iswall(r), iswall(r + y)
+iswall(r), iswall(r + turn)
+iswall(r + x), iswall(r + turn)
+iswall(r), iswall(r + x + turn)
+iswall(r + y), iswall(r + turn)
+iswall(r), iswall(r + y + turn)
+iswall(r), escape(r)
+iswall(r), goleft(r)
+iswall(r), goright(r)
+iswall(r), goup (r)
+iswall(r), godown(r)
+iswall(r), idle(r)
+iswall(r), underplayer(r)
+iswall(r), nearplayer(r)
+isdark(r), iswall(r + x)
+isdark(r), iswall(r + y)
+isdark(r), iswall(r + turn)
+isdark(r + x), iswall(r + turn)
+isdark(r), iswall(r + x + turn)
+isdark(r + y), iswall(r + turn)
+isdark(r), iswall(r + y + turn)
+isdark(r), isdark(r + x)
+isdark(r), isdark(r + y)
+isdark(r), isdark(r + turn)
+isdark(r + x), isdark(r + turn)
+isdark(r), isdark(r + x + turn)
+isdark(r + y), isdark(r + turn)
+isdark(r), isdark(r + y + turn)
+isdark(r), escape(r)
+isdark(r), goleft(r)
+isdark(r), goright(r)
+isdark(r), goup (r)
+isdark(r), godown(r)
+isdark(r), idle(r)
+isdark(r), underplayer(r)
+isdark(r), nearplayer(r)
+isbright(r), iswall(r + x)
+isbright(r), iswall(r + y)
+isbright(r), iswall(r + turn)
+isbright(r + x), iswall(r + turn)
+isbright(r), iswall(r + x + turn)
+isbright(r + y), iswall(r + turn)
+isbright(r), iswall(r + y + turn)
+isbright(r), isdark(r + x)
+isbright(r), isdark(r + y)
+isbright(r), isdark(r + turn)
+isbright(r + x), isdark(r + turn)
+isbright(r), isdark(r + x + turn)
+isbright(r + y), isdark(r + turn)
+isbright(r), isdark(r + y + turn)
+isbright(r), isbright(r + x)
+isbright(r), isbright(r + y)
+isbright(r), isbright(r + turn)
+isbright(r + x), isbright(r + turn)
+isbright(r), isbright(r + x + turn)
+isbright(r + y), isbright(r + turn)
+isbright(r), isbright(r + y + turn)
+isbright(r), escape(r)
+isbright(r), goleft(r)
+isbright(r), goright(r)
+isbright(r), goup (r)
+isbright(r), godown(r)
+isbright(r), idle(r)
+isbright(r), underplayer(r)
+isbright(r), nearplayer(r)
+isexit(r), iswall(r + x)
+isexit(r), iswall(r + y)
+isexit(r), iswall(r + turn)
+isexit(r + x), iswall(r + turn)
+isexit(r), iswall(r + x + turn)
+isexit(r + y), iswall(r + turn)
+isexit(r), iswall(r + y + turn)
+isexit(r), isdark(r + x)
+isexit(r), isdark(r + y)
+isexit(r), isdark(r + turn)
+isexit(r + x), isdark(r + turn)
+isexit(r), isdark(r + x + turn)
+isexit(r + y), isdark(r + turn)
+isexit(r), isdark(r + y + turn)
+isexit(r), isbright(r + x)
+isexit(r), isbright(r + y)
+isexit(r), isbright(r + turn)
+isexit(r + x), isbright(r + turn)
+isexit(r), isbright(r + x + turn)
+isexit(r + y), isbright(r + turn)
+isexit(r), isbright(r + y + turn)
+isexit(r), isexit(r + x)
+isexit(r), isexit(r + y)
+isexit(r), isexit(r + turn)
+isexit(r + x), isexit(r + turn)
+isexit(r), isexit(r + x + turn)
+isexit(r + y), isexit(r + turn)
+isexit(r), isexit(r + y + turn)
+isexit(r), escape(r)
+isexit(r), goleft(r)
+isexit(r), goright(r)
+isexit(r), goup (r)
+isexit(r), godown(r)
+isexit(r), idle(r)
+isexit(r), underplayer(r)
+isexit(r), nearplayer(r)
+game 0. victory.
+
+##..#
+##..#
+##..#
+### #
+###  
+
+#..##
+#..##
+#..##
+## ##
+##   
+
+#..##
+#..##
+## ##
+##   
+##   
+
+#..##
+## ##
+##   
+##   
+##   
+
+## ##
+##   
+##   
+##   
+##<  
+
+##   
+##   
+##   
+##<  
+#####
+
+##   
+##   
+##<  
+#####
+#####
+
+game 1. victory.
+
+#####
+#####
+  .##
+   ##
+  <##
+
+#####
+  .##
+   ##
+  <##
+#####
+
+  .##
+   ##
+  <##
+#####
+#####
+
+game 2. victory.
+
+##   
+##  <
+##.  
+#####
+#####
+
+#####
+##   
+##  <
+##.  
+#####
+
+#####
+#   #
+#  <#
+#.  #
+#####
+
+#####
+   ##
+  <##
+.  ##
+#####
+
+game 3. victory.
+
+#####
+#####
+##...
+##...
+##...
+
+#####
+##...
+##...
+##...
+#####
+
+##...
+##...
+##...
+#####
+#####
+
+#...#
+#...#
+#... 
+#####
+#####
+
+...##
+...##
+... <
+#### 
+#### 
+
+..###
+..###
+.. < 
+###  
+###  
+
+.####
+.####
+. <  
+##   
+##   
+
+game 4. defeat.
+
+#####
+#####
+  .##
+<  ##
+   ##
+
+#####
+  .##
+<  ##
+   ##
+   ##
+
+#####
+#  .#
+#<  #
+#   #
+#   #
+
+#####
+#  .#
+#<  #
+#   #
+#   #
+
+#####
+#  .#
+#<  #
+#   #
+#   #
+
+#####
+#  .#
+#<  #
+#   #
+#   #
+
+#####
+#  .#
+#<  #
+#   #
+#   #
+
+#####
+  .##
+<  ##
+   ##
+   ##
+
+#####
+  .##
+<  ##
+   ##
+   ##
+
+  .##
+<  ##
+   ##
+   ##
+#####
+
+#####
+  .##
+<  ##
+   ##
+   ##
+
+game 5. victory.
+
+#####
+#####
+##.  
+##   
+##  <
+
+#####
+#####
+#.  #
+#   #
+#  <#
+
+#####
+#.  #
+#   #
+#  <#
+#   #
+
+#####
+.  ##
+   ##
+  <##
+   ##
+
+.  ##
+   ##
+  <##
+   ##
+#####
+
+game 6. victory.
+
+#####
+#####
+  .##
+ < ##
+#####
+
+#####
+  .##
+ < ##
+#####
+#####
+
+#####
+#  .#
+# < #
+#####
+#####
+
+game 7. victory.
+
+#####
+#####
+#..##
+#..  
+#..# 
+
+#####
+#..##
+#..  
+#..# 
+####<
+
+#####
+..###
+..   
+..#  
+###< 
+
+#####
+.####
+.   #
+.#  #
+##< #
+
+.####
+.   #
+.#  #
+##< #
+#####
+
+.   #
+.#  #
+##< #
+#####
+#####
+
+game 8. defeat.
+
+## ##
+...##
+...##
+#####
+#####
+
+## ##
+...##
+...##
+#####
+#####
+
+## < 
+## ##
+...##
+...##
+#####
+
+## ##
+...##
+...##
+#####
+#####
+
+## ##
+...##
+...##
+#####
+#####
+
+## ##
+...##
+...##
+#####
+#####
+
+## ##
+...##
+...##
+#####
+#####
+
+## ##
+...##
+...##
+#####
+#####
+
+## ##
+...##
+...##
+#####
+#####
+
+## ##
+...##
+...##
+#####
+#####
+
+## ##
+...##
+...##
+#####
+#####
+
+## ##
+...##
+...##
+#####
+#####
+
+### #
+#...#
+#...#
+#####
+#####
+
+#### 
+##...
+##...
+#####
+#####
+
+#### 
+#### 
+##...
+##...
+#####
+
+#### 
+#### 
+##...
+##...
+#####
+
+#### 
+#### 
+##...
+##...
+#####
+
+### <
+### #
+#...#
+#...#
+#####
+
+## < 
+## ##
+...##
+...##
+#####
+
+##   
+## < 
+## ##
+...##
+...##
+
+game 9. victory.
+
+##  #
+## <#
+## ##
+#####
+#####
+
+#####
+##  #
+## <#
+##. #
+#####
+
+#####
+#  ##
+# <##
+#. ##
+#####
+

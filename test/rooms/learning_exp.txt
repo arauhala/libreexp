@@ -1,0 +1,379 @@
+20 exps added
+
+iswall(r)  14473/15737 [6346.84]
+
+isdark(r)  1240/8176 [5019.96]
+
+isbright(r)  7107/7107 [0]
+
+isexit(r)  295/27223 [2349.03]
+
+victory(r)  165/199 [131.271]
+
+escape(r)  165/1357 [724.528]
+
+goleft(r)  5250/29375 [19895]
+
+goright(r)  7275/29375 [23721.7]
+
+goup (r)  6500/29375 [22398.2]
+
+godown(r)  7300/29375 [23761.7]
+
+idle(r)  3050/29375 [14129.9]
+
+underplayer(r)  1357/100000 [10362.5]
+
+nearplayer(r)  6179/93966 [32877.7]
+
+<!iswall(r), !iswall(r + turn)>  671/79150 [5581.84]
+
+<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>  305/71883 [2842.7]
+
+<isdark(r), isdark(r + turn)>  76/87893 [882.938]
+
+<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>  28/79090 [361.376]
+
+<<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>  199/74089 [1986.24]
+
+<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>  309/82997 [2938.38]
+
+<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>  0/82419 [0]
+
+<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>  442/86849 [4003.34]
+
+<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>  0/74822 [0]
+
+<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>  0/74234 [0]
+
+<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>  196/57059 [1886.63]
+
+<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>  0/73910 [0]
+
+<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>  391/78695 [3555]
+
+<!iswall(r), nearplayer(r)>  848/97262 [7019.79]
+
+<<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>  292/86909 [2820.04]
+
+<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>  0/86751 [0]
+
+<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>  184/92574 [1916.55]
+
+<<isdark(r), isdark(r + turn)>, <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>>  137/83003 [1463.76]
+
+<<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>  141/88669 [1514.08]
+
+<isexit(r), nearplayer(r)>  523/100000 [4716.36]
+
+iswall(r)
+
+0
+
+
+isdark(r)
+
+1
+
+
+isbright(r)
+
+2
+
+
+isexit(r)
+
+3
+
+
+victory(r)
+
+4
+
+
+escape(r)
+
+5
+
+
+goleft(r)
+
+6
+
+
+goright(r)
+
+7
+
+
+goup (r)
+
+8
+
+
+godown(r)
+
+9
+
+
+idle(r)
+
+a
+
+
+underplayer(r)
+
+b
+
+
+nearplayer(r)
+
+c
+
+
+<!iswall(r), !iswall(r + turn)>
+
+-
+
+
+<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>
+
+-
+
+
+<isdark(r), isdark(r + turn)>
+
+f
+
+
+<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>
+
+g
+
+
+<<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>
+
+-
+
+
+<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>
+
+-
+
+
+<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>
+
+j
+
+
+<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>
+
+k
+
+
+<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>
+
+l
+
+
+<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>
+
+m
+
+
+<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>
+
+--
+
+
+<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>
+
+o
+
+
+<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>
+
+p
+
+
+<!iswall(r), nearplayer(r)>
+
+q
+
+
+<<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>
+
+r
+
+
+<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>
+
+s
+
+
+<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>
+
+t
+
+
+<<isdark(r), isdark(r + turn)>, <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>>
+
+u
+
+
+<<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>
+
+v
+
+
+<isexit(r), nearplayer(r)>
+
+w
+
+
+scans:
+748.78   <isexit(r), nearplayer(r)>, underplayer(r)            [f(s)=165, f(<isexit(r), nearplayer(r)>)=523, f(underplayer(r))=1357]
+727.61   <<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>, nearplayer(r + x + 3turn)    [f(s)=148, f(<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=196, f(nearplayer(r))=1419]
+722.63   <!iswall(r), !iswall(r + turn)>, !iswall(r + 2turn)    [f(s)=229, f(<!iswall(r), !iswall(r + turn)>)=413, f(!iswall(r))=632]
+695.87   <<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>, nearplayer(r + x + 2turn)    [f(s)=148, f(<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=196, f(nearplayer(r))=1644]
+651.42   <<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>, nearplayer(r + x + turn)    [f(s)=148, f(<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=196, f(nearplayer(r))=2018]
+636.12   !iswall(r), !iswall(r + x)                            [f(s)=198, f(!iswall(r))=392, f(!iswall(r))=381]
+623.95   <<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>, <<<<isdark(r + x + 4turn), isdark(r + x + 5turn)>, <isdark(r + x + 6turn), isdark(r + x + 7turn)>>, <<!iswall(r + x + 4turn), !iswall(r + x + 5turn)>, <!iswall(r + x + 6turn), !iswall(r + x + 7turn)>>>, <<<isdark(r + 4turn), isdark(r + 5turn)>, <isdark(r + 6turn), isdark(r + 7turn)>>, <<!iswall(r + 4turn), !iswall(r + 5turn)>, <!iswall(r + 6turn), !iswall(r + 7turn)>>>>    [f(s)=77, f(<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=111, f(<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=102]
+598.72   <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>, <<<<<<!iswall(r + 4turn), !iswall(r + 5turn)>, <!iswall(r + 6turn), !iswall(r + 7turn)>>, nearplayer(r + 7turn)>, nearplayer(r + 6turn)>, nearplayer(r + 5turn)>, nearplayer(r + 4turn)>    [f(s)=81, f(<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>)=211, f(<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>)=132]
+598.14   <<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>, nearplayer(r + x)    [f(s)=148, f(<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=196, f(nearplayer(r))=2579]
+586.78   isdark(r), isdark(r + x)                              [f(s)=256, f(isdark(r))=447, f(isdark(r))=479]
+586.07   !iswall(r), !iswall(r + y)                            [f(s)=187, f(!iswall(r))=380, f(!iswall(r))=379]
+562.14   <!iswall(r), !iswall(r + turn)>, <!iswall(r + x), !iswall(r + x + turn)>    [f(s)=88, f(<!iswall(r), !iswall(r + turn)>)=238, f(<!iswall(r), !iswall(r + turn)>)=254]
+562.14   <!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r), !iswall(r + turn)>    [f(s)=88, f(<!iswall(r), !iswall(r + turn)>)=254, f(<!iswall(r), !iswall(r + turn)>)=238]
+553.97   isdark(r), isdark(r + y)                              [f(s)=243, f(isdark(r))=461, f(isdark(r))=444]
+524.44   <isexit(r), nearplayer(r)>, <!iswall(r + turn), nearplayer(r + turn)>    [f(s)=103, f(<isexit(r), nearplayer(r)>)=447, f(<!iswall(r), nearplayer(r)>)=625]
+479.31   <!iswall(r), nearplayer(r)>, <!iswall(r + x), nearplayer(r + x)>    [f(s)=113, f(<!iswall(r), nearplayer(r)>)=675, f(<!iswall(r), nearplayer(r)>)=665]
+469.01   <isexit(r), nearplayer(r)>, <!iswall(r + y), nearplayer(r + y)>    [f(s)=106, f(<isexit(r), nearplayer(r)>)=449, f(<!iswall(r), nearplayer(r)>)=848]
+463.55   <<isdark(r + x), isdark(r + x + turn)>, <!iswall(r + x), !iswall(r + x + turn)>>, <<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>    [f(s)=61, f(<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>)=136, f(<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>)=138]
+463.55   <<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, <<isdark(r + x), isdark(r + x + turn)>, <!iswall(r + x), !iswall(r + x + turn)>>    [f(s)=61, f(<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>)=138, f(<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>)=136]
+463.09   <!iswall(r), nearplayer(r)>, <!iswall(r + y), nearplayer(r + y)>    [f(s)=110, f(<!iswall(r), nearplayer(r)>)=682, f(<!iswall(r), nearplayer(r)>)=655]
+461.88   <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 4turn), nearplayer(r + 4turn)>    [f(s)=72, f(<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>)=300, f(<!iswall(r), nearplayer(r)>)=206]
+461.25   <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>, nearplayer(r + 3turn)    [f(s)=97, f(<<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>)=199, f(nearplayer(r))=1333]
+458.13   <<<<<<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>, nearplayer(r + x + 3turn)>, nearplayer(r + x + 2turn)>, nearplayer(r + x + turn)>, nearplayer(r + x)>, <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>    [f(s)=73, f(<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>)=235, f(<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>)=233]
+458.13   <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>, <<<<<<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>, nearplayer(r + x + 3turn)>, nearplayer(r + x + 2turn)>, nearplayer(r + x + turn)>, nearplayer(r + x)>    [f(s)=73, f(<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>)=233, f(<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>)=235]
+445.56   <!iswall(r), nearplayer(r)>, escape(r)                [f(s)=295, f(<!iswall(r), nearplayer(r)>)=848, f(escape(r))=3806]
+437.19   <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>, nearplayer(r + 2turn)    [f(s)=97, f(<<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>)=199, f(nearplayer(r))=1583]
+414.02   <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>, underplayer(r + 2turn)    [f(s)=75, f(<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>)=391, f(underplayer(r))=328]
+414.02   <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>, underplayer(r + 3turn)    [f(s)=75, f(<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>)=391, f(underplayer(r))=328]
+414.02   <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>, underplayer(r + turn)    [f(s)=75, f(<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>)=391, f(underplayer(r))=328]
+414.02   <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>, underplayer(r)    [f(s)=75, f(<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>)=391, f(underplayer(r))=328]
+403.04   <<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, escape(r + turn)    [f(s)=227, f(<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>)=442, f(escape(r))=3233]
+401.88   <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, <!iswall(r + 4turn), !iswall(r + 5turn)>    [f(s)=65, f(<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>)=231, f(<!iswall(r), !iswall(r + turn)>)=238]
+400.19   <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>, nearplayer(r + turn)    [f(s)=97, f(<<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>)=199, f(nearplayer(r))=2062]
+396.13   <<isdark(r), isdark(r + turn)>, <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>>, underplayer(r + 3turn)    [f(s)=67, f(<<isdark(r), isdark(r + turn)>, <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>>)=137, f(underplayer(r))=671]
+393.72   <<isdark(r), isdark(r + turn)>, <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>>, underplayer(r + 2turn)    [f(s)=67, f(<<isdark(r), isdark(r + turn)>, <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>>)=137, f(underplayer(r))=688]
+391.36   <<isdark(r), isdark(r + turn)>, <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>>, underplayer(r + turn)    [f(s)=67, f(<<isdark(r), isdark(r + turn)>, <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>>)=137, f(underplayer(r))=705]
+389.06   <<isdark(r), isdark(r + turn)>, <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>>, underplayer(r)    [f(s)=67, f(<<isdark(r), isdark(r + turn)>, <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>>)=137, f(underplayer(r))=722]
+388.98   <<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, isdark(r + 2turn)    [f(s)=130, f(<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>)=137, f(isdark(r))=322]
+384.51   <<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, !iswall(r + 2turn)    [f(s)=137, f(<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>)=242, f(!iswall(r))=879]
+375.73   <<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>, !victory(r)    [f(s)=149, f(<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=196, f(!victory(r))=7489]
+368.30   <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>, nearplayer(r)    [f(s)=97, f(<<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>)=199, f(nearplayer(r))=2580]
+361.54   <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>, !victory(r)    [f(s)=209, f(<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>)=391, f(!victory(r))=12597]
+356.03   <isexit(r + x), nearplayer(r + x)>, <isexit(r + turn), nearplayer(r + turn)>    [f(s)=77, f(<isexit(r), nearplayer(r)>)=522, f(<isexit(r), nearplayer(r)>)=454]
+343.09   <<<!iswall(r + x), !iswall(r + x + turn)>, nearplayer(r + x + turn)>, nearplayer(r + x)>, <<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>    [f(s)=56, f(<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>)=233, f(<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>)=220]
+343.09   <<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, <<<!iswall(r + x), !iswall(r + x + turn)>, nearplayer(r + x + turn)>, nearplayer(r + x)>    [f(s)=56, f(<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>)=220, f(<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>)=233]
+335.85   <isexit(r + turn), nearplayer(r + turn)>, <<<!iswall(r + y), !iswall(r + y + turn)>, nearplayer(r + y + turn)>, nearplayer(r + y)>    [f(s)=60, f(<isexit(r), nearplayer(r)>)=190, f(<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>)=442]
+333.28   isdark(r), <!iswall(r), nearplayer(r)>                [f(s)=277, f(isdark(r))=990, f(<!iswall(r), nearplayer(r)>)=841]
+328.82   <isexit(r), nearplayer(r)>, <!iswall(r + x), nearplayer(r + x)>    [f(s)=82, f(<isexit(r), nearplayer(r)>)=463, f(<!iswall(r), nearplayer(r)>)=848]
+326.69   isdark(r + 2turn), <<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>    [f(s)=119, f(isdark(r))=736, f(<<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>)=141]
+326.69   <<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>, isdark(r + 2turn)    [f(s)=119, f(<<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>)=141, f(isdark(r))=736]
+
+goright deps:
+67.50 !iswall(r), goright(r)                                [f(s)=270, n=13112, f(!iswall(r))=936, f(goright(r))=3179]
+62.75 iswall(r), !goright(r)                                [f(s)=9267, n=13112, f(iswall(r))=12176, f(!goright(r))=9933]
+28.77 <!iswall(r), nearplayer(r)>, goright(r)               [f(s)=148, n=27010, f(<!iswall(r), nearplayer(r)>)=528, f(goright(r))=6611]
+27.59 !<!iswall(r), nearplayer(r)>, !goright(r)             [f(s)=20019, n=27010, f(!<!iswall(r), nearplayer(r)>)=26482, f(!goright(r))=20399]
+27.49 <<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>, !goright(r + x)    [f(s)=166, n=12552, f(<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=196, f(!goright(r))=9454]
+26.77 !<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>, goright(r + x)    [f(s)=3068, n=12552, f(!<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=12356, f(goright(r))=3098]
+26.25 <<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>, goright(r + 2turn)    [f(s)=42, n=18117, f(<<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>)=108, f(goright(r))=4547]
+25.54 <!iswall(r), !iswall(r + turn)>, goright(r)           [f(s)=181, n=14023, f(<!iswall(r), !iswall(r + turn)>)=671, f(goright(r))=3428]
+24.98 !<!iswall(r), !iswall(r + turn)>, !goright(r)         [f(s)=10105, n=14023, f(!<!iswall(r), !iswall(r + turn)>)=13352, f(!goright(r))=10595]
+22.04 !<<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>, !goright(r + 2turn)    [f(s)=13504, n=18117, f(!<<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>)=18009, f(!goright(r))=13570]
+9.86 !isdark(r), !goright(r)                               [f(s)=4155, n=6779, f(!isdark(r))=5655, f(!goright(r))=4973]
+9.38 isdark(r), goright(r)                                 [f(s)=306, n=6779, f(isdark(r))=1124, f(goright(r))=1806]
+0.17 isbright(r), !goright(r)                              [f(s)=4281, n=5826, f(isbright(r))=5826, f(!goright(r))=4281]
+
+goleft deps:
+0.23 isbright(r), !goleft(r)                               [f(s)=4751, n=5826, f(isbright(r))=5826, f(!goleft(r))=4751]
+
+goup deps:
+75.70 isdark(r), goup (r)                                   [f(s)=288, n=6779, f(isdark(r))=1124, f(goup (r))=1447]
+70.15 !isdark(r), !goup (r)                                 [f(s)=4496, n=6779, f(!isdark(r))=5655, f(!goup (r))=5332]
+38.19 <<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>, goup (r + turn)    [f(s)=60, n=22537, f(<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>)=183, f(goup (r))=4740]
+31.62 !<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>, !goup (r + turn)    [f(s)=17674, n=22537, f(!<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>)=22354, f(!goup (r))=17797]
+0.21 isbright(r), !goup (r)                                [f(s)=4617, n=5826, f(isbright(r))=5826, f(!goup (r))=4617]
+
+godown deps:
+60.10 !iswall(r), godown(r)                                 [f(s)=263, n=13112, f(!iswall(r))=936, f(godown(r))=3143]
+56.33 iswall(r), !godown(r)                                 [f(s)=9296, n=13112, f(iswall(r))=12176, f(!godown(r))=9969]
+30.69 !isdark(r), godown(r)                                 [f(s)=1465, n=6779, f(!isdark(r))=5655, f(godown(r))=1731]
+30.28 isdark(r), !godown(r)                                 [f(s)=858, n=6779, f(isdark(r))=1124, f(!godown(r))=5048]
+0.17 isbright(r), !godown(r)                               [f(s)=4326, n=5826, f(isbright(r))=5826, f(!godown(r))=4326]
+
+idle deps:
+145.72 !iswall(r), !idle(r)                                  [f(s)=926, n=13112, f(!iswall(r))=936, f(!idle(r))=11626]
+143.36 iswall(r), idle(r)                                    [f(s)=1476, n=13112, f(iswall(r))=12176, f(idle(r))=1486]
+114.27 !isdark(r), idle(r)                                   [f(s)=497, n=6779, f(!isdark(r))=5655, f(idle(r))=508]
+108.76 isdark(r), !idle(r)                                   [f(s)=1113, n=6779, f(isdark(r))=1124, f(!idle(r))=6271]
+82.73 <!iswall(r), nearplayer(r)>, !idle(r)                 [f(s)=526, n=27010, f(<!iswall(r), nearplayer(r)>)=528, f(!idle(r))=24107]
+79.78 !<!iswall(r), nearplayer(r)>, idle(r)                 [f(s)=2901, n=27010, f(!<!iswall(r), nearplayer(r)>)=26482, f(idle(r))=2903]
+38.80 <<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, !idle(r)    [f(s)=422, n=21577, f(<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>)=442, f(!idle(r))=19308]
+38.49 !<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, idle(r)    [f(s)=2249, n=21577, f(!<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>)=21135, f(idle(r))=2269]
+30.20 <<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>, !idle(r + turn)    [f(s)=182, n=22537, f(<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>)=183, f(!idle(r))=19925]
+29.35 !<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>, idle(r + turn)    [f(s)=2611, n=22537, f(!<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>)=22354, f(idle(r))=2612]
+28.03 <<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>, idle(r + x)    [f(s)=36, n=12552, f(<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=196, f(idle(r))=1340]
+26.90 <<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, !idle(r + turn)    [f(s)=276, n=14901, f(<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>)=290, f(!idle(r))=13233]
+26.86 !<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, idle(r + turn)    [f(s)=1654, n=14901, f(!<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>)=14611, f(idle(r))=1668]
+25.81 <<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>, idle(r + x + 3turn)    [f(s)=41, n=7236, f(<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=191, f(idle(r))=1001]
+22.40 !<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>, !idle(r + x)    [f(s)=11052, n=12552, f(!<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=12356, f(!idle(r))=11212]
+21.66 !<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>, !idle(r + x + 3turn)    [f(s)=6085, n=7236, f(!<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=7045, f(!idle(r))=6235]
+0.30 isbright(r), !idle(r)                                 [f(s)=5329, n=5826, f(isbright(r))=5826, f(!idle(r))=5329]
+
+escape deps:
+445.56 <!iswall(r), nearplayer(r)>, escape(r)                [f(s)=295, n=31187, f(<!iswall(r), nearplayer(r)>)=848, f(escape(r))=3806]
+403.04 <<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, escape(r + turn)    [f(s)=227, n=21577, f(<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>)=442, f(escape(r))=3233]
+277.87 !<!iswall(r), nearplayer(r)>, !escape(r)              [f(s)=26828, n=31187, f(!<!iswall(r), nearplayer(r)>)=30339, f(!escape(r))=27381]
+250.17 <<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>, escape(r + 2turn)    [f(s)=139, n=21455, f(<<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>)=292, f(escape(r))=2928]
+233.56 !<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, !escape(r + turn)    [f(s)=18129, n=21577, f(!<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>)=21135, f(!escape(r))=18344]
+226.85 <isexit(r), nearplayer(r)>, escape(r)                 [f(s)=165, n=33925, f(<isexit(r), nearplayer(r)>)=523, f(escape(r))=4125]
+199.65 <!iswall(r), !iswall(r + turn)>, !escape(r)           [f(s)=671, n=17650, f(<!iswall(r), !iswall(r + turn)>)=671, f(!escape(r))=14351]
+189.15 !iswall(r), escape(r)                                 [f(s)=297, n=15737, f(!iswall(r))=1264, f(escape(r))=2377]
+184.55 !<!iswall(r), !iswall(r + turn)>, escape(r)           [f(s)=3299, n=17650, f(!<!iswall(r), !iswall(r + turn)>)=16979, f(escape(r))=3299]
+154.22 iswall(r), !escape(r)                                 [f(s)=12393, n=15737, f(iswall(r))=14473, f(!escape(r))=13360]
+147.04 !<isexit(r), nearplayer(r)>, !escape(r)               [f(s)=29442, n=33925, f(!<isexit(r), nearplayer(r)>)=33402, f(!escape(r))=29800]
+144.05 !<<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>, !escape(r + 2turn)    [f(s)=18374, n=21455, f(!<<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>)=21163, f(!escape(r))=18527]
+137.16 !isdark(r), escape(r)                                 [f(s)=1161, n=8176, f(!isdark(r))=6936, f(escape(r))=1261]
+136.71 isdark(r), !escape(r)                                 [f(s)=1140, n=8176, f(isdark(r))=1240, f(!escape(r))=6915]
+116.70 escape(r), victory(r)                                 [f(s)=165, n=1357, f(escape(r))=165, f(victory(r))=830]
+109.64 <!iswall(r), !iswall(r + turn)>, escape(r + turn)     [f(s)=181, n=14023, f(<!iswall(r), !iswall(r + turn)>)=671, f(escape(r))=2484]
+98.45 !escape(r), !victory(r)                               [f(s)=527, n=1357, f(!escape(r))=1192, f(!victory(r))=527]
+92.11 <<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>, !escape(r)    [f(s)=442, n=25349, f(<<<!iswall(r), !iswall(r + turn)>, nearplayer(r + turn)>, nearplayer(r)>)=442, f(!escape(r))=21916]
+91.45 <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, !escape(r + turn)    [f(s)=305, n=15858, f(<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>)=305, f(!escape(r))=12862]
+90.42 !<!iswall(r), !iswall(r + turn)>, !escape(r + turn)    [f(s)=11049, n=14023, f(!<!iswall(r), !iswall(r + turn)>)=13352, f(!escape(r))=11539]
+
+victory deps:
+375.73 <<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>, !victory(r)    [f(s)=149, n=56719, f(<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=196, f(!victory(r))=7489]
+361.54 <<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>, !victory(r)    [f(s)=209, n=78270, f(<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>)=391, f(!victory(r))=12597]
+296.40 <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, !victory(r)    [f(s)=150, n=71458, f(<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>)=305, f(!victory(r))=8919]
+234.06 !iswall(r), victory(r)                                [f(s)=920, n=15737, f(!iswall(r))=1264, f(victory(r))=9599]
+218.02 iswall(r), !victory(r)                                [f(s)=5794, n=15737, f(iswall(r))=14473, f(!victory(r))=6138]
+211.57 !<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>, victory(r)    [f(s)=65491, n=78270, f(!<<<<<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, nearplayer(r + 3turn)>, nearplayer(r + 2turn)>, nearplayer(r + turn)>, nearplayer(r)>)=77879, f(victory(r))=65673]
+178.47 !<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>, victory(r)    [f(s)=49183, n=56719, f(!<<<<isdark(r + x), isdark(r + x + turn)>, <isdark(r + x + 2turn), isdark(r + x + 3turn)>>, <<!iswall(r + x), !iswall(r + x + turn)>, <!iswall(r + x + 2turn), !iswall(r + x + 3turn)>>>, <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>>)=56523, f(victory(r))=49230]
+172.28 <<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, !victory(r)    [f(s)=117, n=82522, f(<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>)=309, f(!victory(r))=11242]
+162.23 !<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>, victory(r)    [f(s)=62384, n=71458, f(!<<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>)=71153, f(victory(r))=62539]
+147.00 <<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>, !victory(r)    [f(s)=88, n=73664, f(<<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>)=199, f(!victory(r))=10208]
+124.65 <!iswall(r), !iswall(r + turn)>, !victory(r)          [f(s)=148, n=78675, f(<!iswall(r), !iswall(r + turn)>)=671, f(!victory(r))=9674]
+116.70 escape(r), victory(r)                                 [f(s)=165, n=1357, f(escape(r))=165, f(victory(r))=830]
+108.73 !<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, victory(r)    [f(s)=71088, n=82522, f(!<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>)=82213, f(victory(r))=71280]
+98.45 !escape(r), !victory(r)                               [f(s)=527, n=1357, f(!escape(r))=1192, f(!victory(r))=527]
+95.11 !<!iswall(r), !iswall(r + turn)>, victory(r)          [f(s)=68478, n=78675, f(!<!iswall(r), !iswall(r + turn)>)=78004, f(victory(r))=69001]
+87.83 !<<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>, victory(r)    [f(s)=63345, n=73664, f(!<<<isdark(r), isdark(r + turn)>, <isdark(r + 2turn), isdark(r + 3turn)>>, <<!iswall(r), !iswall(r + turn)>, <!iswall(r + 2turn), !iswall(r + 3turn)>>>)=73465, f(victory(r))=63456]
+52.09 <<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>, !victory(r)    [f(s)=58, n=92099, f(<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>)=184, f(!victory(r))=15535]
+48.39 <isdark(r), isdark(r + turn)>, !victory(r)            [f(s)=32, n=87418, f(<isdark(r), isdark(r + turn)>)=76, f(!victory(r))=12846]
+48.22 <!iswall(r), nearplayer(r)>, !victory(r)              [f(s)=174, n=96762, f(<!iswall(r), nearplayer(r)>)=848, f(!victory(r))=16377]
+47.62 <<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>, !victory(r)    [f(s)=48, n=88219, f(<<<<<isdark(r), isdark(r + turn)>, <!iswall(r), !iswall(r + turn)>>, nearplayer(r + turn)>, nearplayer(r)>, <!iswall(r + 2turn), nearplayer(r + 2turn)>>)=141, f(!victory(r))=15044]

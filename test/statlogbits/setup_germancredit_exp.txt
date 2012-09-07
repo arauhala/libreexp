@@ -1,0 +1,180 @@
+account[no](r)  394/1000 [967.332]
+
+account[0<X<200DM](r)  269/1000 [840.026]
+
+account[empty](r)  274/1000 [847.146]
+
+account[X>200DM](r)  63/1000 [339.24]
+
+duration[X�5.03](r)  7/1000 [60.1724]
+
+duration[X�7.10](r)  87/1000 [426.376]
+
+duration[X�11.31](r)  180/1000 [680.077]
+
+duration[X�19.82](r)  546/1000 [993.886]
+
+duration[X�37.07](r)  913/1000 [426.376]
+
+creditHistory[goodForThisBank](r)  49/1000 [282.134]
+
+creditHistory[vip](r)  293/1000 [872.565]
+
+creditHistory[noLoansOrGood](r)  40/1000 [242.292]
+
+creditHistory[delays](r)  88/1000 [429.759]
+
+creditHistory[goodTillNowForThisBank](r)  530/1000 [997.402]
+
+purpose[forDomesticAppliance](r)  12/1000 [93.7779]
+
+purpose[forUsedCar](r)  103/1000 [478.434]
+
+purpose[forRadioTelevision](r)  280/1000 [855.451]
+
+purpose[forOthers](r)  12/1000 [93.7779]
+
+purpose[forFurnitudeOrEquipment](r)  181/1000 [682.26]
+
+purpose[forNewCar](r)  234/1000 [784.919]
+
+purpose[forBusiness](r)  97/1000 [459.413]
+
+purpose[forRetraining](r)  9/1000 [74.0884]
+
+purpose[forRepairs](r)  22/1000 [152.527]
+
+purpose[forEducation](r)  50/1000 [286.397]
+
+creditAmount[X�254.13](r)  1/1000 [11.4078]
+
+creditAmount[X�275.29](r)  1/1000 [11.4078]
+
+creditAmount[X�383.81](r)  7/1000 [60.1724]
+
+creditAmount[X�940.27](r)  104/1000 [481.549]
+
+creditAmount[X�3793.56](r)  726/1000 [847.146]
+
+savings[0-100](r)  603/1000 [969.169]
+
+savings[500-1k](r)  63/1000 [339.24]
+
+savings[100-500](r)  103/1000 [478.434]
+
+savings[unknown](r)  183/1000 [686.596]
+
+savings[over1k](r)  48/1000 [277.84]
+
+employement[unemployed](r)  62/1000 [335.334]
+
+employement[0y-1y](r)  172/1000 [662.26]
+
+employement[4y-7y](r)  174/1000 [666.774]
+
+employement[1y-4y](r)  339/1000 [923.859]
+
+employement[over7y](r)  253/1000 [815.998]
+
+installmentRate[X�1.75](r)  136/1000 [573.667]
+
+installmentRate[X�2.50](r)  367/1000 [948.341]
+
+installmentRate[X�3.25](r)  524/1000 [998.337]
+
+relationship[male&divorced/separated](r)  50/1000 [286.397]
+
+relationship[femaled&divorced/separated/married](r)  310/1000 [893.173]
+
+relationship[male&married/widowed](r)  92/1000 [443.111]
+
+relationship[male&single](r)  548/1000 [993.342]
+
+guarantor[yes](r)  52/1000 [294.833]
+
+guarantor[coapplicant](r)  41/1000 [246.859]
+
+guarantor[no](r)  907/1000 [446.405]
+
+residence[1](r)  130/1000 [557.438]
+
+residence[2](r)  308/1000 [890.851]
+
+residence[3](r)  149/1000 [607.332]
+
+residence[4](r)  413/1000 [978.049]
+
+property[realEstate](r)  282/1000 [858.162]
+
+property[unknownOrNo](r)  154/1000 [619.76]
+
+property[lifeInsurance](r)  232/1000 [781.481]
+
+property[carOrOther](r)  332/1000 [916.957]
+
+age[X�26.00](r)  190/1000 [701.471]
+
+age[X�33.00](r)  483/1000 [999.166]
+
+age[X�40.00](r)  701/1000 [880.065]
+
+age[X�47.00](r)  832/1000 [653.109]
+
+age[X�54.00](r)  911/1000 [433.123]
+
+age[X�61.00](r)  955/1000 [264.765]
+
+age[X�68.00](r)  990/1000 [80.7931]
+
+bankPlans[yes](r)  139/1000 [581.614]
+
+bankPlans[no](r)  814/1000 [693.028]
+
+bankPlans[storePlans](r)  47/1000 [273.514]
+
+home[free](r)  108/1000 [493.854]
+
+home[rent](r)  179/1000 [677.885]
+
+home[own](r)  713/1000 [864.814]
+
+creditInBank[X�1.75](r)  633/1000 [948.341]
+
+creditInBank[X�2.50](r)  966/1000 [214.071]
+
+creditInBank[X�3.25](r)  994/1000 [52.9151]
+
+skill[skilled](r)  630/1000 [950.672]
+
+skill[unskilled](r)  200/1000 [721.928]
+
+skill[A174](r)  148/1000 [604.813]
+
+skill[unemployedOrUnskilled](r)  22/1000 [152.527]
+
+maintainsPeople[X�1.25](r)  845/1000 [622.213]
+
+maintainsPeople[X�1.50](r)  845/1000 [622.213]
+
+maintainsPeople[X�1.75](r)  845/1000 [622.213]
+
+telephone[yes](r)  404/1000 [973.242]
+
+telephone[no](r)  596/1000 [973.242]
+
+foreignWorker[yes](r)  963/1000 [228.364]
+
+foreignWorker[no](r)  37/1000 [228.364]
+
+good[1](r)  700/1000 [881.291]
+
+122.36 !good[1](r), !account[no](r)                          [f(s)=254, n=1000, f(!good[1](r))=300, f(!account[no](r))=606]
+116.61 good[1](r), account[no](r)                            [f(s)=348, n=1000, f(good[1](r))=700, f(account[no](r))=394]
+96.50 !good[1](r), account[empty](r)                        [f(s)=135, n=1000, f(!good[1](r))=300, f(account[empty](r))=274]
+80.04 good[1](r), !account[empty](r)                        [f(s)=561, n=1000, f(good[1](r))=700, f(!account[empty](r))=726]
+59.31 good[1](r), creditHistory[vip](r)                     [f(s)=243, n=1000, f(good[1](r))=700, f(creditHistory[vip](r))=293]
+59.16 !good[1](r), !creditHistory[vip](r)                   [f(s)=250, n=1000, f(!good[1](r))=300, f(!creditHistory[vip](r))=707]
+56.86 !good[1](r), savings[0-100](r)                        [f(s)=217, n=1000, f(!good[1](r))=300, f(savings[0-100](r))=603]
+55.25 good[1](r), !savings[0-100](r)                        [f(s)=314, n=1000, f(good[1](r))=700, f(!savings[0-100](r))=397]
+51.83 !good[1](r), !creditAmount[X�3793.56](r)            [f(s)=113, n=1000, f(!good[1](r))=300, f(!creditAmount[X�3793.56](r))=274]
+50.79 !good[1](r), !duration[X�19.82](r)                  [f(s)=168, n=1000, f(!good[1](r))=300, f(!duration[X�19.82](r))=454]

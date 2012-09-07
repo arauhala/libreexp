@@ -1,0 +1,9 @@
+expression & relations:
+predfilter: reexp us    apply us    exps        naive info  act rels    all rels    
+0           102153427.0001464994.000 608.000     595647.874  5014.000    20978.000   
+
+properties:
+data:       entropy     naive e     err         naive err   cost        naiveCost   
+test        0.0034      0.3511      0.0011      0.2084      0.0000      0.0000      
+train       0.0033      0.3511      0.0009      0.2159      0.0000      0.0000      
+

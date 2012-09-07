@@ -1,0 +1,360 @@
+2 exp:0 property:data ms 0
+2 exp:0 property:gen rels ms 10
+2 exp:0 property:rels added 9
+2 exp:0 property:post gen rels 11
+2 exp:0 property:filter ms 0
+2 exp:0 property:filtered rels 9
+2 exp:0 property:rexp ms 10
+2 exp:0 property:influence 2
+2 exp:0 property:update ms 0
+2 exp:1 property:data ms 0
+2 exp:1 property:gen rels ms 0
+2 exp:1 property:rels added 24
+2 exp:1 property:post gen rels 33
+2 exp:1 property:filter ms 0
+2 exp:1 property:filtered rels 31
+2 exp:1 property:rexp ms 0
+2 exp:1 property:influence 2
+2 exp:1 property:update ms 10
+2 exp:2 property:data ms 10
+2 exp:2 property:gen rels ms 10
+2 exp:2 property:rels added 61
+2 exp:2 property:post gen rels 92
+2 exp:2 property:filter ms 0
+2 exp:2 property:filtered rels 56
+2 exp:2 property:rexp ms 20
+2 exp:2 property:influence 2
+2 exp:2 property:update ms 10
+2 exp:3 property:data ms 10
+2 exp:3 property:gen rels ms 10
+2 exp:3 property:rels added 29
+2 exp:3 property:post gen rels 85
+2 exp:3 property:filter ms 0
+2 exp:3 property:filtered rels 65
+2 exp:3 property:rexp ms 20
+2 exp:3 property:influence 5
+2 exp:3 property:update ms 10
+2 exp:4 property:data ms 20
+2 exp:4 property:gen rels ms 10
+2 exp:4 property:rels added 42
+2 exp:4 property:post gen rels 107
+2 exp:4 property:filter ms 0
+2 exp:4 property:filtered rels 69
+2 exp:4 property:rexp ms 30
+2 exp:4 property:influence 6
+2 exp:4 property:update ms 10
+2 exp:5 property:data ms 10
+2 exp:5 property:gen rels ms 20
+2 exp:5 property:rels added 62
+2 exp:5 property:post gen rels 131
+2 exp:5 property:filter ms 0
+2 exp:5 property:filtered rels 78
+2 exp:5 property:rexp ms 30
+2 exp:5 property:influence 5
+2 exp:5 property:update ms 10
+2 exp:6 property:data ms 20
+2 exp:6 property:gen rels ms 10
+2 exp:6 property:rels added 49
+2 exp:6 property:post gen rels 127
+2 exp:6 property:filter ms 0
+2 exp:6 property:filtered rels 85
+2 exp:6 property:rexp ms 30
+2 exp:6 property:influence 7
+2 exp:6 property:update ms 20
+2 exp:7 property:data ms 20
+2 exp:7 property:gen rels ms 0
+2 exp:7 property:rels added 21
+2 exp:7 property:post gen rels 106
+2 exp:7 property:filter ms 0
+2 exp:7 property:filtered rels 88
+2 exp:7 property:rexp ms 20
+2 exp:7 property:influence 9
+2 exp:7 property:update ms 20
+2 exp:8 property:data ms 20
+2 exp:8 property:gen rels ms 10
+2 exp:8 property:rels added 62
+2 exp:8 property:post gen rels 150
+2 exp:8 property:filter ms 0
+2 exp:8 property:filtered rels 90
+2 exp:8 property:rexp ms 30
+2 exp:8 property:influence 9
+2 exp:8 property:update ms 20
+2 exp:9 property:data ms 20
+2 exp:9 property:gen rels ms 10
+2 exp:9 property:rels added 28
+2 exp:9 property:post gen rels 118
+2 exp:9 property:filter ms 0
+2 exp:9 property:filtered rels 91
+2 exp:9 property:rexp ms 30
+2 exp:9 property:influence 10
+2 exp:9 property:update ms 20
+2 exp:10 property:data ms 0
+2 exp:10 property:gen rels ms 0
+2 exp:10 property:rels added 18
+2 exp:10 property:post gen rels 109
+2 exp:10 property:filter ms 0
+2 exp:10 property:filtered rels 89
+2 exp:10 property:rexp ms 0
+2 exp:10 property:influence 3
+2 exp:10 property:update ms 10
+2 exp:11 property:data ms 10
+2 exp:11 property:gen rels ms 0
+2 exp:11 property:rels added 17
+2 exp:11 property:post gen rels 106
+2 exp:11 property:filter ms 0
+2 exp:11 property:filtered rels 89
+2 exp:11 property:rexp ms 10
+2 exp:11 property:influence 7
+2 exp:11 property:update ms 20
+2 exp:12 property:data ms 20
+2 exp:12 property:gen rels ms 0
+2 exp:12 property:rels added 25
+2 exp:12 property:post gen rels 114
+2 exp:12 property:filter ms 0
+2 exp:12 property:filtered rels 88
+2 exp:12 property:rexp ms 20
+2 exp:12 property:influence 12
+2 exp:12 property:update ms 20
+2 exp:13 property:data ms 10
+2 exp:13 property:gen rels ms 10
+2 exp:13 property:rels added 19
+2 exp:13 property:post gen rels 107
+2 exp:13 property:filter ms 0
+2 exp:13 property:filtered rels 88
+2 exp:13 property:rexp ms 20
+2 exp:13 property:influence 10
+2 exp:13 property:update ms 10
+2 exp:14 property:data ms 10
+2 exp:14 property:gen rels ms 0
+2 exp:14 property:rels added 6
+2 exp:14 property:post gen rels 94
+2 exp:14 property:filter ms 0
+2 exp:14 property:filtered rels 87
+2 exp:14 property:rexp ms 10
+2 exp:14 property:influence 6
+2 exp:14 property:update ms 0
+2 exp:15 property:data ms 10
+2 exp:15 property:gen rels ms 0
+2 exp:15 property:rels added 10
+2 exp:15 property:post gen rels 97
+2 exp:15 property:filter ms 0
+2 exp:15 property:filtered rels 86
+2 exp:15 property:rexp ms 10
+2 exp:15 property:influence 5
+2 exp:15 property:update ms 10
+2 exp:16 property:data ms 10
+2 exp:16 property:gen rels ms 10
+2 exp:16 property:rels added 13
+2 exp:16 property:post gen rels 99
+2 exp:16 property:filter ms 0
+2 exp:16 property:filtered rels 84
+2 exp:16 property:rexp ms 20
+2 exp:16 property:influence 13
+2 exp:16 property:update ms 10
+2 exp:17 property:data ms 10
+2 exp:17 property:gen rels ms 10
+2 exp:17 property:rels added 47
+2 exp:17 property:post gen rels 131
+2 exp:17 property:filter ms 0
+2 exp:17 property:filtered rels 84
+2 exp:17 property:rexp ms 20
+2 exp:17 property:influence 16
+2 exp:17 property:update ms 20
+2 exp:18 property:data ms 10
+2 exp:18 property:gen rels ms 0
+2 exp:18 property:rels added 7
+2 exp:18 property:post gen rels 91
+2 exp:18 property:filter ms 0
+2 exp:18 property:filtered rels 83
+2 exp:18 property:rexp ms 10
+2 exp:18 property:influence 15
+2 exp:18 property:update ms 20
+2 exp:19 property:data ms 10
+2 exp:19 property:gen rels ms 0
+2 exp:19 property:rels added 4
+2 exp:19 property:post gen rels 87
+2 exp:19 property:filter ms 0
+2 exp:19 property:filtered rels 81
+2 exp:19 property:rexp ms 10
+2 exp:19 property:influence 16
+2 exp:19 property:update ms 10
+2 exp:20 property:data ms 20
+2 exp:20 property:gen rels ms 0
+2 exp:20 property:rels added 22
+2 exp:20 property:post gen rels 103
+2 exp:20 property:filter ms 0
+2 exp:20 property:filtered rels 80
+2 exp:20 property:rexp ms 20
+2 exp:20 property:influence 22
+2 exp:20 property:update ms 20
+2 exp:21 property:data ms 20
+2 exp:21 property:gen rels ms 10
+2 exp:21 property:rels added 21
+2 exp:21 property:post gen rels 101
+2 exp:21 property:filter ms 0
+2 exp:21 property:filtered rels 79
+2 exp:21 property:rexp ms 30
+2 exp:21 property:influence 23
+2 exp:21 property:update ms 10
+2 exp:22 property:data ms 10
+2 exp:22 property:gen rels ms 10
+2 exp:22 property:rels added 12
+2 exp:22 property:post gen rels 91
+2 exp:22 property:filter ms 0
+2 exp:22 property:filtered rels 78
+2 exp:22 property:rexp ms 20
+2 exp:22 property:influence 16
+2 exp:22 property:update ms 0
+2 exp:23 property:data ms 10
+2 exp:23 property:gen rels ms 10
+2 exp:23 property:rels added 11
+2 exp:23 property:post gen rels 89
+2 exp:23 property:filter ms 0
+2 exp:23 property:filtered rels 77
+2 exp:23 property:rexp ms 20
+2 exp:23 property:influence 18
+2 exp:23 property:update ms 0
+2 exp:24 property:data ms 10
+2 exp:24 property:gen rels ms 10
+2 exp:24 property:rels added 12
+2 exp:24 property:post gen rels 89
+2 exp:24 property:filter ms 0
+2 exp:24 property:filtered rels 76
+2 exp:24 property:rexp ms 30
+2 exp:24 property:influence 24
+2 exp:24 property:update ms 10
+2 exp:25 property:data ms 20
+2 exp:25 property:gen rels ms 0
+2 exp:25 property:rels added 9
+2 exp:25 property:post gen rels 85
+2 exp:25 property:filter ms 0
+2 exp:25 property:filtered rels 75
+2 exp:25 property:rexp ms 20
+2 exp:25 property:influence 23
+2 exp:25 property:update ms 10
+2 exp:26 property:data ms 20
+2 exp:26 property:gen rels ms 0
+2 exp:26 property:rels added 14
+2 exp:26 property:post gen rels 89
+2 exp:26 property:filter ms 0
+2 exp:26 property:filtered rels 74
+2 exp:26 property:rexp ms 20
+2 exp:26 property:influence 24
+2 exp:26 property:update ms 10
+2 exp:27 property:data ms 20
+2 exp:27 property:gen rels ms 0
+2 exp:27 property:rels added 13
+2 exp:27 property:post gen rels 87
+2 exp:27 property:filter ms 0
+2 exp:27 property:filtered rels 80
+2 exp:27 property:rexp ms 20
+2 exp:27 property:influence 23
+2 exp:27 property:update ms 10
+2 exp:28 property:data ms 20
+2 exp:28 property:gen rels ms 0
+2 exp:28 property:rels added 19
+2 exp:28 property:post gen rels 99
+2 exp:28 property:filter ms 0
+2 exp:28 property:filtered rels 80
+2 exp:28 property:rexp ms 20
+2 exp:28 property:influence 28
+2 exp:28 property:update ms 20
+2 exp:29 property:data ms 20
+2 exp:29 property:gen rels ms 0
+2 exp:29 property:rels added 0
+2 exp:29 property:post gen rels 80
+2 exp:29 property:filter ms 0
+2 exp:29 property:filtered rels 78
+2 exp:29 property:rexp ms 20
+2 exp:29 property:influence 30
+2 exp:29 property:update ms 20
+2 exp:30 property:data ms 10
+2 exp:30 property:gen rels ms 10
+2 exp:30 property:rels added 29
+2 exp:30 property:post gen rels 107
+2 exp:30 property:filter ms 0
+2 exp:30 property:filtered rels 80
+2 exp:30 property:rexp ms 20
+2 exp:30 property:influence 29
+2 exp:30 property:update ms 20
+2 exp:31 property:data ms 20
+2 exp:31 property:gen rels ms 0
+2 exp:31 property:rels added 7
+2 exp:31 property:post gen rels 87
+2 exp:31 property:filter ms 0
+2 exp:31 property:filtered rels 79
+2 exp:31 property:rexp ms 20
+2 exp:31 property:influence 32
+2 exp:31 property:update ms 20
+2 exp:32 property:data ms 10
+2 exp:32 property:gen rels ms 10
+2 exp:32 property:rels added 15
+2 exp:32 property:post gen rels 94
+2 exp:32 property:filter ms 0
+2 exp:32 property:filtered rels 78
+2 exp:32 property:rexp ms 20
+2 exp:32 property:influence 30
+2 exp:32 property:update ms 10
+2 exp:33 property:data ms 20
+2 exp:33 property:gen rels ms 0
+2 exp:33 property:rels added 2
+2 exp:33 property:post gen rels 80
+2 exp:33 property:filter ms 0
+2 exp:33 property:filtered rels 77
+2 exp:33 property:rexp ms 20
+2 exp:33 property:influence 35
+2 exp:33 property:update ms 20
+2 exp:34 property:data ms 20
+2 exp:34 property:gen rels ms 0
+2 exp:34 property:rels added 28
+2 exp:34 property:post gen rels 105
+2 exp:34 property:filter ms 0
+2 exp:34 property:filtered rels 76
+2 exp:34 property:rexp ms 20
+2 exp:34 property:influence 35
+2 exp:34 property:update ms 20
+2 exp:35 property:data ms 20
+2 exp:35 property:gen rels ms 0
+2 exp:35 property:rels added 20
+2 exp:35 property:post gen rels 96
+2 exp:35 property:filter ms 0
+2 exp:35 property:filtered rels 77
+2 exp:35 property:rexp ms 20
+2 exp:35 property:influence 37
+2 exp:35 property:update ms 20
+2 exp:36 property:data ms 20
+2 exp:36 property:gen rels ms 10
+2 exp:36 property:rels added 24
+2 exp:36 property:post gen rels 101
+2 exp:36 property:filter ms 0
+2 exp:36 property:filtered rels 77
+2 exp:36 property:rexp ms 30
+2 exp:36 property:influence 37
+2 exp:36 property:update ms 10
+2 exp:37 property:data ms 0
+2 exp:37 property:gen rels ms 0
+2 exp:37 property:rels added 7
+2 exp:37 property:post gen rels 84
+2 exp:37 property:filter ms 0
+2 exp:37 property:filtered rels 76
+2 exp:37 property:rexp ms 10
+2 exp:37 property:influence 10
+2 exp:37 property:update ms 10
+2 exp:38 property:data ms 20
+2 exp:38 property:gen rels ms 0
+2 exp:38 property:rels added 28
+2 exp:38 property:post gen rels 104
+2 exp:38 property:filter ms 0
+2 exp:38 property:filtered rels 74
+2 exp:38 property:rexp ms 20
+2 exp:38 property:influence 36
+2 exp:38 property:update ms 20
+2 exp:39 property:data ms 20
+2 exp:39 property:gen rels ms 0
+2 exp:39 property:rels added 5
+2 exp:39 property:post gen rels 79
+2 exp:39 property:filter ms 0
+2 exp:39 property:filtered rels 72
+2 exp:39 property:rexp ms 20
+2 exp:39 property:influence 40
+2 exp:39 property:update ms 20

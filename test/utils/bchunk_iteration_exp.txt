@@ -1,0 +1,3 @@
+iteration:  us          true        
+bcistream   384.000     36094.000   
+bcvector    342.000     36094.000   

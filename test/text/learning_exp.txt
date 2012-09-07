@@ -1,0 +1,52 @@
+9 exps added
+
+0 0:  ya|a|r ya|r|
+1 1:  m|r|r mr|r |
+2 0:  ya|r|r ya|a|r|r m|ate|
+3 1:  m|r|r mr|r|
+4 0:  ya|aa|r|
+5 0:  ya|r ya|aa|a|r|r |
+6 0:  aa|r m|ate|
+7 1:  m|rr|rr|r|
+8 1:  m|r mr|r mr|
+9 0:  m|ate|
+
+vars:
+ 
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+pirate
+bear
+r 
+r m
+ya
+te
+r ya
+r mr
+aa
+ate
+rr

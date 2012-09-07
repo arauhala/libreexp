@@ -1,0 +1,20 @@
+6 data:test predfilter:0 prioriw:2 prop:entropy relfilter:1000 threshold:1000 0.753824
+6 data:test predfilter:0 prioriw:2 prop:naive e relfilter:1000 threshold:1000 0.883034
+6 data:test predfilter:0 prioriw:2 prop:err relfilter:1000 threshold:1000 0.247
+6 data:test predfilter:0 prioriw:2 prop:naive err relfilter:1000 threshold:1000 0.3
+6 data:test predfilter:0 prioriw:2 prop:cost relfilter:1000 threshold:1000 0.522
+6 data:test predfilter:0 prioriw:2 prop:naiveCost relfilter:1000 threshold:1000 0.7
+6 data:test perf:ns predfilter:0 prioriw:2 relfilter:1000 threshold:1000 5085
+6 data:train predfilter:0 prioriw:2 prop:entropy relfilter:1000 threshold:1000 0.680273
+6 data:train predfilter:0 prioriw:2 prop:naive e relfilter:1000 threshold:1000 0.8812
+6 data:train predfilter:0 prioriw:2 prop:err relfilter:1000 threshold:1000 0.218889
+6 data:train predfilter:0 prioriw:2 prop:naive err relfilter:1000 threshold:1000 0.3
+6 data:train predfilter:0 prioriw:2 prop:cost relfilter:1000 threshold:1000 0.473111
+6 data:train predfilter:0 prioriw:2 prop:naiveCost relfilter:1000 threshold:1000 0.7
+6 data:train perf:ns predfilter:0 prioriw:2 relfilter:1000 threshold:1000 6556.22
+5 exp:reexp us predfilter:0 prioriw:2 relfilter:1000 threshold:1000 6905
+5 exp:apply us predfilter:0 prioriw:2 relfilter:1000 threshold:1000 1.2
+5 exp:exps predfilter:0 prioriw:2 relfilter:1000 threshold:1000 0
+5 exp:naive info predfilter:0 prioriw:2 relfilter:1000 threshold:1000 27880.7
+5 exp:act rels predfilter:0 prioriw:2 relfilter:1000 threshold:1000 59
+5 exp:all rels predfilter:0 prioriw:2 relfilter:1000 threshold:1000 1770

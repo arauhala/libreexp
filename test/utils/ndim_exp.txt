@@ -1,0 +1,12 @@
+applying [1, 1] at [0, 0]
+shift: [0, 0]  ndim: [1, 1]  vol:1
+
+applying [1, 1] at [-1, -1]
+shift: [-1, -1]  ndim: [2, 2]  vol:4
+
+applying [3, 1] at [-1, -1]
+shift: [-1, -1]  ndim: [3, 2]  vol:6
+
+applying [1, 3] at [-1, -1]
+shift: [-1, -1]  ndim: [3, 3]  vol:9
+

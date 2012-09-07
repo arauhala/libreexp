@@ -1,0 +1,242 @@
+age[X<33.80](r)  1/1 [0]
+priori:        0.5	 aver:          1
+prioriInfo:      1	 averInfo:      0
+age[33.80<=X<38.60](r)  8/9 [4.52933]
+priori:        0.5	 aver:      0.889
+prioriInfo:      1	 averInfo:  0.503
+age[38.60<=X<43.40](r)  30/39 [30.3946]
+priori:        0.5	 aver:      0.769
+prioriInfo:      1	 averInfo:  0.779
+age[43.40<=X<48.20](r)  35/74 [73.844]
+priori:        0.5	 aver:      0.473
+prioriInfo:      1	 averInfo:  0.998
+age[48.20<=X<53.00](r)  35/109 [98.7076]
+priori:        0.5	 aver:      0.321
+prioriInfo:      1	 averInfo:  0.906
+age[53.00<=X<57.80](r)  50/159 [142.823]
+priori:        0.5	 aver:      0.314
+prioriInfo:      1	 averInfo:  0.898
+age[57.80<=X<62.60](r)  57/216 [179.833]
+priori:        0.5	 aver:      0.264
+prioriInfo:      1	 averInfo:  0.833
+age[62.60<=X<67.40](r)  38/254 [154.649]
+priori:        0.5	 aver:       0.15
+prioriInfo:      1	 averInfo:  0.609
+age[67.40<=X<72.20](r)  13/267 [74.9742]
+priori:        0.5	 aver:     0.0487
+prioriInfo:      1	 averInfo:  0.281
+age[72.20<=X](r)  3/270 [23.7795]
+priori:        0.5	 aver:     0.0111
+prioriInfo:      1	 averInfo: 0.0881
+sex[0.0](r)  87/87 [0]
+priori:        0.5	 aver:          1
+prioriInfo:      1	 averInfo:      0
+sex[1.0](r)  183/270 [244.831]
+priori:        0.5	 aver:      0.678
+prioriInfo:      1	 averInfo:  0.907
+chestPain[3.0](r)  79/79 [0]
+priori:        0.5	 aver:          1
+prioriInfo:      1	 averInfo:      0
+chestPain[2.0](r)  42/121 [112.706]
+priori:        0.5	 aver:      0.347
+prioriInfo:      1	 averInfo:  0.931
+chestPain[1.0](r)  20/141 [83.0557]
+priori:        0.5	 aver:      0.142
+prioriInfo:      1	 averInfo:  0.589
+chestPain[4.0](r)  59/200 [175.019]
+priori:      0.333	 aver:      0.295
+prioriInfo:   0.88	 averInfo:  0.875
+restingBloodPressure[X<104.60](r)  10/10 [0]
+priori:        0.5	 aver:          1
+prioriInfo:      1	 averInfo:      0
+restingBloodPressure[104.60<=X<115.20](r)  39/49 [35.7708]
+priori:        0.5	 aver:      0.796
+prioriInfo:      1	 averInfo:   0.73
+restingBloodPressure[115.20<=X<125.80](r)  61/110 [109.054]
+priori:        0.5	 aver:      0.555
+prioriInfo:      1	 averInfo:  0.991
+restingBloodPressure[125.80<=X<136.40](r)  63/173 [163.672]
+priori:        0.5	 aver:      0.364
+prioriInfo:      1	 averInfo:  0.946
+restingBloodPressure[136.40<=X<147.00](r)  49/222 [169.049]
+priori:        0.5	 aver:      0.221
+prioriInfo:      1	 averInfo:  0.761
+restingBloodPressure[147.00<=X<157.60](r)  24/246 [113.459]
+priori:        0.5	 aver:     0.0976
+prioriInfo:      1	 averInfo:  0.461
+restingBloodPressure[157.60<=X<168.20](r)  13/259 [74.3891]
+priori:        0.5	 aver:     0.0502
+prioriInfo:      1	 averInfo:  0.287
+restingBloodPressure[168.20<=X<178.80](r)  6/265 [41.3467]
+priori:        0.5	 aver:     0.0226
+prioriInfo:      1	 averInfo:  0.156
+restingBloodPressure[178.80<=X<189.40](r)  3/268 [23.7471]
+priori:        0.5	 aver:     0.0112
+prioriInfo:      1	 averInfo: 0.0886
+restingBloodPressure[189.40<=X](r)  2/270 [17.0283]
+priori:        0.5	 aver:     0.00741
+prioriInfo:      1	 averInfo: 0.0631
+serumCholestoral[X<-1.34](r)  18/18 [0]
+priori:        0.5	 aver:          1
+prioriInfo:      1	 averInfo:      0
+serumCholestoral[-1.34<=X<-0.91](r)  27/45 [43.6928]
+priori:        0.5	 aver:        0.6
+prioriInfo:      1	 averInfo:  0.971
+serumCholestoral[-0.91<=X<-0.60](r)  31/76 [74.129]
+priori:        0.5	 aver:      0.408
+prioriInfo:      1	 averInfo:  0.975
+serumCholestoral[-0.60<=X<-0.35](r)  27/103 [85.4851]
+priori:        0.5	 aver:      0.262
+prioriInfo:      1	 averInfo:   0.83
+serumCholestoral[-0.35<=X<-0.11](r)  28/131 [98.0629]
+priori:        0.5	 aver:      0.214
+prioriInfo:      1	 averInfo:  0.749
+serumCholestoral[-0.11<=X<0.11](r)  27/158 [104.237]
+priori:        0.5	 aver:      0.171
+prioriInfo:      1	 averInfo:   0.66
+serumCholestoral[0.11<=X<0.35](r)  23/181 [99.4328]
+priori:        0.5	 aver:      0.127
+prioriInfo:      1	 averInfo:  0.549
+serumCholestoral[0.35<=X<0.60](r)  21/202 [97.2479]
+priori:        0.5	 aver:      0.104
+prioriInfo:      1	 averInfo:  0.481
+serumCholestoral[0.60<=X<0.91](r)  22/224 [103.781]
+priori:        0.5	 aver:     0.0982
+prioriInfo:      1	 averInfo:  0.463
+serumCholestoral[0.91<=X](r)  46/270 [177.809]
+priori:        0.5	 aver:       0.17
+prioriInfo:      1	 averInfo:  0.659
+fastingBloodSugar[0.0](r)  230/230 [0]
+priori:        0.5	 aver:          1
+prioriInfo:      1	 averInfo:      0
+fastingBloodSugar[1.0](r)  40/270 [163.4]
+priori:        0.5	 aver:      0.148
+prioriInfo:      1	 averInfo:  0.605
+restingElectrocardioGraphic[0.0](r)  131/131 [0]
+priori:        0.5	 aver:          1
+prioriInfo:      1	 averInfo:      0
+restingElectrocardioGraphic[2.0](r)  137/268 [267.903]
+priori:        0.5	 aver:      0.511
+prioriInfo:      1	 averInfo:      1
+restingElectrocardioGraphic[1.0](r)  2/270 [17.0283]
+priori:        0.5	 aver:     0.00741
+prioriInfo:      1	 averInfo: 0.0631
+maximumHeartRate[X<84.10](r)  1/1 [0]
+priori:        0.5	 aver:          1
+prioriInfo:      1	 averInfo:      0
+maximumHeartRate[84.10<=X<97.20](r)  5/6 [3.90013]
+priori:        0.5	 aver:      0.833
+prioriInfo:      1	 averInfo:   0.65
+maximumHeartRate[97.20<=X<110.30](r)  11/17 [15.9233]
+priori:        0.5	 aver:      0.647
+prioriInfo:      1	 averInfo:  0.937
+maximumHeartRate[110.30<=X<123.40](r)  23/40 [39.3483]
+priori:        0.5	 aver:      0.575
+prioriInfo:      1	 averInfo:  0.984
+maximumHeartRate[123.40<=X<136.50](r)  31/71 [70.1748]
+priori:        0.5	 aver:      0.437
+prioriInfo:      1	 averInfo:  0.988
+maximumHeartRate[136.50<=X<149.60](r)  45/116 [111.76]
+priori:        0.5	 aver:      0.388
+prioriInfo:      1	 averInfo:  0.963
+maximumHeartRate[149.60<=X<162.70](r)  28/144 [102.337]
+priori:      0.333	 aver:      0.194
+prioriInfo:  0.779	 averInfo:  0.711
+maximumHeartRate[162.70<=X<175.80](r)  16/203 [80.7939]
+priori:        0.4	 aver:     0.0788
+prioriInfo:  0.783	 averInfo:  0.398
+maximumHeartRate[175.80<=X<188.90](r)  24/265 [116.164]
+priori:        0.5	 aver:     0.0906
+prioriInfo:      1	 averInfo:  0.438
+maximumHeartRate[188.90<=X](r)  5/270 [35.9207]
+priori:        0.5	 aver:     0.0185
+prioriInfo:      1	 averInfo:  0.133
+exerciseInducedAngina[0.0](r)  181/181 [0]
+priori:        0.5	 aver:          1
+prioriInfo:      1	 averInfo:      0
+exerciseInducedAngina[1.0](r)  19/141 [80.4162]
+priori:      0.333	 aver:      0.135
+prioriInfo:   0.72	 averInfo:   0.57
+oldpeak[X<0.62](r)  130/130 [0]
+priori:        0.5	 aver:          1
+prioriInfo:      1	 averInfo:      0
+oldpeak[0.62<=X<1.24](r)  43/173 [139.953]
+priori:        0.5	 aver:      0.249
+prioriInfo:      1	 averInfo:  0.809
+oldpeak[1.24<=X<1.86](r)  40/213 [148.425]
+priori:        0.5	 aver:      0.188
+prioriInfo:      1	 averInfo:  0.697
+oldpeak[1.86<=X<2.48](r)  23/236 [108.769]
+priori:        0.5	 aver:     0.0975
+prioriInfo:      1	 averInfo:  0.461
+oldpeak[2.48<=X<3.10](r)  17/253 [89.9067]
+priori:        0.5	 aver:     0.0672
+prioriInfo:      1	 averInfo:  0.355
+oldpeak[3.10<=X<3.72](r)  10/263 [61.319]
+priori:        0.5	 aver:      0.038
+prioriInfo:      1	 averInfo:  0.233
+oldpeak[3.72<=X<4.34](r)  5/268 [35.8666]
+priori:        0.5	 aver:     0.0187
+prioriInfo:      1	 averInfo:  0.134
+oldpeak[4.34<=X<4.96](r)  0/268 [0]
+priori:        0.5	 aver:          0
+prioriInfo:      1	 averInfo:      0
+oldpeak[4.96<=X<5.58](r)  0/268 [0]
+priori:        0.5	 aver:          0
+prioriInfo:      1	 averInfo:      0
+oldpeak[5.58<=X](r)  2/270 [17.0283]
+priori:        0.5	 aver:     0.00741
+prioriInfo:      1	 averInfo: 0.0631
+slopeOfPeakExercise[3.0](r)  18/18 [0]
+priori:        0.5	 aver:          1
+prioriInfo:      1	 averInfo:      0
+slopeOfPeakExercise[2.0](r)  122/140 [77.491]
+priori:        0.5	 aver:      0.871
+prioriInfo:      1	 averInfo:  0.554
+slopeOfPeakExercise[1.0](r)  49/145 [133.81]
+priori:        0.2	 aver:      0.338
+prioriInfo:  0.998	 averInfo:  0.923
+numberOfMajorVessels[0.0](r)  160/160 [0]
+priori:        0.5	 aver:          1
+prioriInfo:      1	 averInfo:      0
+numberOfMajorVessels[3.0](r)  19/179 [87.3839]
+priori:        0.5	 aver:      0.106
+prioriInfo:      1	 averInfo:  0.488
+numberOfMajorVessels[2.0](r)  33/212 [132.251]
+priori:        0.5	 aver:      0.156
+prioriInfo:      1	 averInfo:  0.624
+numberOfMajorVessels[1.0](r)  58/270 [202.658]
+priori:        0.5	 aver:      0.215
+prioriInfo:      1	 averInfo:  0.751
+thal[3.0](r)  152/152 [0]
+priori:        0.5	 aver:          1
+prioriInfo:      1	 averInfo:      0
+thal[6.0](r)  14/166 [69.2686]
+priori:        0.5	 aver:     0.0843
+prioriInfo:      1	 averInfo:  0.417
+thal[7.0](r)  25/191 [106.936]
+priori:      0.333	 aver:      0.131
+prioriInfo:  0.716	 averInfo:   0.56
+class[1](r)  118/142 [93.0731]
+priori:      0.714	 aver:      0.831
+prioriInfo:  0.709	 averInfo:  0.655
+<!class[1](r), thal[7.0](r)>  36/200 [136.015]
+priori:        0.2	 aver:       0.18
+prioriInfo:  0.682	 averInfo:   0.68
+<exerciseInducedAngina[1.0](r), chestPain[4.0](r)>  10/210 [58.001]
+priori:      0.143	 aver:     0.0476
+prioriInfo:  0.345	 averInfo:  0.276
+<<!class[1](r), thal[7.0](r)>, <exerciseInducedAngina[1.0](r), chestPain[4.0](r)>>  43/253 [166.376]
+priori:     0.0625	 aver:       0.17
+prioriInfo:  0.757	 averInfo:  0.658
+<slopeOfPeakExercise[1.0](r), maximumHeartRate[149.60<=X<162.70](r)>  43/232 [160.458]
+priori:       0.25	 aver:      0.185
+prioriInfo:  0.709	 averInfo:  0.692
+<slopeOfPeakExercise[1.0](r), maximumHeartRate[162.70<=X<175.80](r)>  38/270 [158.267]
+priori:      0.167	 aver:      0.141
+prioriInfo:   0.59	 averInfo:  0.586
+<!class[1](r), <exerciseInducedAngina[1.0](r), chestPain[4.0](r)>>  17/270 [91.556]
+priori:     0.0667	 aver:      0.063
+prioriInfo:  0.339	 averInfo:  0.339
+
+info: 39.4/76

@@ -1,0 +1,164 @@
+vars:
+
+px(r)
+
+0
+
+
+<px(r), px(r + y)>
+
+1
+1
+
+
+<px(r), px(r + x)>
+
+22
+
+
+<<px(r), px(r + y)>, <px(r + x), px(r + 2x)>>
+
+333
+3..
+
+
+<<<px(r), px(r + y)>, <px(r + x), px(r + 2x)>>, px(r + 3x)>
+
+4444
+4...
+
+
+<<<px(r), px(r + y)>, <px(r + x), px(r + 2x)>>, <px(r + 3x), px(r + 4x)>>
+
+55555
+5....
+
+
+masks:
+
+0
+->
+
+rootmasks:
+px(r):
+X    [0, 0]
+
+exclmasks:
+
+
+1
+1
+->
+
+rootmasks:
+px(r):
+X    [0, 0]
+X    [0, 1]
+
+exclmasks:
+px(r):
+X    [0, 0]
+X    [0, 1]
+<px(r), px(r + y)>:
+X    [0, -1]
+X    [0, 0]
+X    [0, 1]
+
+
+22
+->
+
+rootmasks:
+px(r):
+XX    [0, 0]
+
+exclmasks:
+px(r):
+XX    [0, 0]
+<px(r), px(r + y)>:
+XX    [0, -1]
+XX    [0, 0]
+<px(r), px(r + x)>:
+XXX    [-1, 0]
+
+
+333
+3..
+->
+
+rootmasks:
+px(r):
+XXX    [0, 0]
+X..    [0, 1]
+
+exclmasks:
+<px(r), px(r + y)>:
+...    [0, -1]
+X..    [0, 0]
+X..    [0, 1]
+<px(r), px(r + x)>:
+X.XX    [-1, 0]
+XX..    [-1, 1]
+<<px(r), px(r + y)>, <px(r + x), px(r + 2x)>>:
+..XXX    [-2, -1]
+XXXXX    [-2, 0]
+XXX..    [-2, 1]
+
+
+4444
+4...
+->
+
+rootmasks:
+px(r):
+XXXX    [0, 0]
+X...    [0, 1]
+
+exclmasks:
+px(r):
+XXXX    [0, 0]
+X...    [0, 1]
+<px(r), px(r + y)>:
+XXXX    [0, -1]
+.XXX    [0, 0]
+....    [0, 1]
+<px(r), px(r + x)>:
+.X..X    [-1, 0]
+.....    [-1, 1]
+<<px(r), px(r + y)>, <px(r + x), px(r + 2x)>>:
+.....X    [-2, -1]
+..XXXX    [-2, 0]
+XXX...    [-2, 1]
+<<<px(r), px(r + y)>, <px(r + x), px(r + 2x)>>, px(r + 3x)>:
+...XXXX    [-3, -1]
+XXXXXXX    [-3, 0]
+XXXX...    [-3, 1]
+
+
+55555
+5....
+->
+
+rootmasks:
+px(r):
+XXXXX    [0, 0]
+X....    [0, 1]
+
+exclmasks:
+<px(r), px(r + x)>:
+.X..XX    [-1, 0]
+......    [-1, 1]
+<<px(r), px(r + y)>, <px(r + x), px(r + 2x)>>:
+.....XX    [-2, -1]
+..XXXXX    [-2, 0]
+XXX....    [-2, 1]
+<<<px(r), px(r + y)>, <px(r + x), px(r + 2x)>>, px(r + 3x)>:
+...XXXXX    [-3, -1]
+XXXXXXXX    [-3, 0]
+XXXX....    [-3, 1]
+<<<px(r), px(r + y)>, <px(r + x), px(r + 2x)>>, <px(r + 3x), px(r + 4x)>>:
+....XXXXX    [-4, -1]
+XXXXXXXXX    [-4, 0]
+XXXXX....    [-4, 1]
+
+

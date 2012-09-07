@@ -1,0 +1,1360 @@
+3 mode:naive n:1 prop:stats ms 0
+3 mode:naive n:1 prop:exps 0
+5 mode:naive n:1 prop:info sample:train x 0.289507
+5 mode:naive n:1 prop:entryinfo sample:train x 0.289507
+5 mode:naive n:1 prop:idealinfo sample:train x 0.415037
+5 mode:naive n:1 prop:info sample:test x 29.5457
+5 mode:naive n:1 prop:entryinfo sample:test x 0.923302
+5 mode:naive n:1 prop:idealinfo sample:test x 0.910338
+3 mode:naive n:2 prop:stats ms 0
+3 mode:naive n:2 prop:exps 0
+5 mode:naive n:2 prop:info sample:train x 0.326997
+5 mode:naive n:2 prop:entryinfo sample:train x 0.163499
+5 mode:naive n:2 prop:idealinfo sample:train x 0.415037
+5 mode:naive n:2 prop:info sample:test x 33.1952
+5 mode:naive n:2 prop:entryinfo sample:test x 1.03735
+5 mode:naive n:2 prop:idealinfo sample:test x 0.910338
+3 mode:naive n:4 prop:stats ms 0
+3 mode:naive n:4 prop:exps 0
+5 mode:naive n:4 prop:info sample:train x 2.95675
+5 mode:naive n:4 prop:entryinfo sample:train x 0.739189
+5 mode:naive n:4 prop:idealinfo sample:train x 1.60376
+5 mode:naive n:4 prop:info sample:test x 63.0598
+5 mode:naive n:4 prop:entryinfo sample:test x 1.97062
+5 mode:naive n:4 prop:idealinfo sample:test x 0.959868
+3 mode:naive n:8 prop:stats ms 0
+3 mode:naive n:8 prop:exps 0
+5 mode:naive n:8 prop:info sample:train x 6.20951
+5 mode:naive n:8 prop:entryinfo sample:train x 0.776189
+5 mode:naive n:8 prop:idealinfo sample:train x 0.811278
+5 mode:naive n:8 prop:info sample:test x 34.3844
+5 mode:naive n:8 prop:entryinfo sample:test x 1.07451
+5 mode:naive n:8 prop:idealinfo sample:test x 0.959868
+3 mode:naive n:16 prop:stats ms 0
+3 mode:naive n:16 prop:exps 0
+5 mode:naive n:16 prop:info sample:train x 14.1233
+5 mode:naive n:16 prop:entryinfo sample:train x 0.882708
+5 mode:naive n:16 prop:idealinfo sample:train x 0.811278
+5 mode:naive n:16 prop:info sample:test x 31.5441
+5 mode:naive n:16 prop:entryinfo sample:test x 0.985752
+5 mode:naive n:16 prop:idealinfo sample:test x 0.860808
+3 mode:naive n:32 prop:stats ms 0
+3 mode:naive n:32 prop:exps 0
+5 mode:naive n:32 prop:info sample:train x 27.2711
+5 mode:naive n:32 prop:entryinfo sample:train x 0.852222
+5 mode:naive n:32 prop:idealinfo sample:train x 0.860808
+5 mode:naive n:32 prop:info sample:test x 34.5031
+5 mode:naive n:32 prop:entryinfo sample:test x 1.07822
+5 mode:naive n:32 prop:idealinfo sample:test x 0.860808
+3 mode:naive n:64 prop:stats ms 0
+3 mode:naive n:64 prop:exps 0
+5 mode:naive n:64 prop:info sample:train x 61.4026
+5 mode:naive n:64 prop:entryinfo sample:train x 0.959416
+5 mode:naive n:64 prop:idealinfo sample:train x 0.885573
+5 mode:naive n:64 prop:info sample:test x 23.3285
+5 mode:naive n:64 prop:entryinfo sample:test x 0.729016
+5 mode:naive n:64 prop:idealinfo sample:test x 0.712218
+3 mode:naive n:128 prop:stats ms 0
+3 mode:naive n:128 prop:exps 0
+5 mode:naive n:128 prop:info sample:train x 119.56
+5 mode:naive n:128 prop:entryinfo sample:train x 0.934064
+5 mode:naive n:128 prop:idealinfo sample:train x 0.811278
+5 mode:naive n:128 prop:info sample:test x 23.687
+5 mode:naive n:128 prop:entryinfo sample:test x 0.740219
+5 mode:naive n:128 prop:idealinfo sample:test x 0.712218
+3 mode:naive n:256 prop:stats ms 0
+3 mode:naive n:256 prop:exps 0
+5 mode:naive n:256 prop:info sample:train x 242.458
+5 mode:naive n:256 prop:entryinfo sample:train x 0.947103
+5 mode:naive n:256 prop:idealinfo sample:train x 0.829852
+5 mode:naive n:256 prop:info sample:test x 25.7642
+5 mode:naive n:256 prop:entryinfo sample:test x 0.805133
+5 mode:naive n:256 prop:idealinfo sample:test x 0.761748
+3 mode:naive n:512 prop:stats ms 0
+3 mode:naive n:512 prop:exps 0
+5 mode:naive n:512 prop:info sample:train x 492.446
+5 mode:naive n:512 prop:entryinfo sample:train x 0.961809
+5 mode:naive n:512 prop:idealinfo sample:train x 0.854617
+5 mode:naive n:512 prop:info sample:test x 27.8185
+5 mode:naive n:512 prop:entryinfo sample:test x 0.869327
+5 mode:naive n:512 prop:idealinfo sample:test x 0.811278
+3 mode:naive n:1 prop:stats ms 0
+3 mode:naive n:1 prop:exps 0
+5 mode:naive n:1 prop:info sample:train x 0.289507
+5 mode:naive n:1 prop:entryinfo sample:train x 0.289507
+5 mode:naive n:1 prop:idealinfo sample:train x 0.415037
+5 mode:naive n:1 prop:info sample:test x 31.2946
+5 mode:naive n:1 prop:entryinfo sample:test x 0.977957
+5 mode:naive n:1 prop:idealinfo sample:test x 0.910338
+3 mode:naive n:2 prop:stats ms 0
+3 mode:naive n:2 prop:exps 0
+5 mode:naive n:2 prop:info sample:train x 2
+5 mode:naive n:2 prop:entryinfo sample:train x 1
+5 mode:naive n:2 prop:idealinfo sample:train x 1.20752
+5 mode:naive n:2 prop:info sample:test x 32
+5 mode:naive n:2 prop:entryinfo sample:test x 1
+5 mode:naive n:2 prop:idealinfo sample:test x 0.613158
+3 mode:naive n:4 prop:stats ms 0
+3 mode:naive n:4 prop:exps 0
+5 mode:naive n:4 prop:info sample:train x 0.226334
+5 mode:naive n:4 prop:entryinfo sample:train x 0.0565835
+5 mode:naive n:4 prop:idealinfo sample:train x 0.415037
+5 mode:naive n:4 prop:info sample:test x 25.03
+5 mode:naive n:4 prop:entryinfo sample:test x 0.782186
+5 mode:naive n:4 prop:idealinfo sample:test x 0.662688
+3 mode:naive n:8 prop:stats ms 0
+3 mode:naive n:8 prop:exps 0
+5 mode:naive n:8 prop:info sample:train x 4.43173
+5 mode:naive n:8 prop:entryinfo sample:train x 0.553967
+5 mode:naive n:8 prop:idealinfo sample:train x 1.0094
+5 mode:naive n:8 prop:info sample:test x 50.0707
+5 mode:naive n:8 prop:entryinfo sample:test x 1.56471
+5 mode:naive n:8 prop:idealinfo sample:test x 0.811278
+3 mode:naive n:16 prop:stats ms 0
+3 mode:naive n:16 prop:exps 0
+5 mode:naive n:16 prop:info sample:train x 14.1233
+5 mode:naive n:16 prop:entryinfo sample:train x 0.882708
+5 mode:naive n:16 prop:idealinfo sample:train x 0.811278
+5 mode:naive n:16 prop:info sample:test x 28.5308
+5 mode:naive n:16 prop:entryinfo sample:test x 0.891587
+5 mode:naive n:16 prop:idealinfo sample:test x 0.811278
+3 mode:naive n:32 prop:stats ms 0
+3 mode:naive n:32 prop:exps 0
+5 mode:naive n:32 prop:info sample:train x 11.5346
+5 mode:naive n:32 prop:entryinfo sample:train x 0.360458
+5 mode:naive n:32 prop:idealinfo sample:train x 0.514098
+5 mode:naive n:32 prop:info sample:test x 47.1974
+5 mode:naive n:32 prop:entryinfo sample:test x 1.47492
+5 mode:naive n:32 prop:idealinfo sample:test x 0.761748
+3 mode:naive n:64 prop:stats ms 0
+3 mode:naive n:64 prop:exps 0
+5 mode:naive n:64 prop:info sample:train x 60.2043
+5 mode:naive n:64 prop:entryinfo sample:train x 0.940692
+5 mode:naive n:64 prop:idealinfo sample:train x 0.836043
+5 mode:naive n:64 prop:info sample:test x 20.0841
+5 mode:naive n:64 prop:entryinfo sample:test x 0.627629
+5 mode:naive n:64 prop:idealinfo sample:test x 0.662688
+3 mode:naive n:128 prop:stats ms 0
+3 mode:naive n:128 prop:exps 0
+5 mode:naive n:128 prop:info sample:train x 121.832
+5 mode:naive n:128 prop:entryinfo sample:train x 0.951812
+5 mode:naive n:128 prop:idealinfo sample:train x 0.848426
+5 mode:naive n:128 prop:info sample:test x 36.6335
+5 mode:naive n:128 prop:entryinfo sample:test x 1.1448
+5 mode:naive n:128 prop:idealinfo sample:test x 0.959868
+3 mode:naive n:256 prop:stats ms 0
+3 mode:naive n:256 prop:exps 0
+5 mode:naive n:256 prop:info sample:train x 244.717
+5 mode:naive n:256 prop:entryinfo sample:train x 0.955927
+5 mode:naive n:256 prop:idealinfo sample:train x 0.848426
+5 mode:naive n:256 prop:info sample:test x 42.6113
+5 mode:naive n:256 prop:entryinfo sample:test x 1.3316
+5 mode:naive n:256 prop:idealinfo sample:test x 1.05893
+3 mode:naive n:512 prop:stats ms 0
+3 mode:naive n:512 prop:exps 0
+5 mode:naive n:512 prop:info sample:train x 480.96
+5 mode:naive n:512 prop:entryinfo sample:train x 0.939376
+5 mode:naive n:512 prop:idealinfo sample:train x 0.808182
+5 mode:naive n:512 prop:info sample:test x 43.4587
+5 mode:naive n:512 prop:entryinfo sample:test x 1.35809
+5 mode:naive n:512 prop:idealinfo sample:test x 1.0094
+3 mode:naive n:1 prop:stats ms 0
+3 mode:naive n:1 prop:exps 0
+5 mode:naive n:1 prop:info sample:train x 0.289507
+5 mode:naive n:1 prop:entryinfo sample:train x 0.289507
+5 mode:naive n:1 prop:idealinfo sample:train x 0.415037
+5 mode:naive n:1 prop:info sample:test x 23.603
+5 mode:naive n:1 prop:entryinfo sample:test x 0.737594
+5 mode:naive n:1 prop:idealinfo sample:test x 0.761748
+3 mode:naive n:2 prop:stats ms 0
+3 mode:naive n:2 prop:exps 0
+5 mode:naive n:2 prop:info sample:train x 2
+5 mode:naive n:2 prop:entryinfo sample:train x 1
+5 mode:naive n:2 prop:idealinfo sample:train x 1.20752
+5 mode:naive n:2 prop:info sample:test x 32
+5 mode:naive n:2 prop:entryinfo sample:test x 1
+5 mode:naive n:2 prop:idealinfo sample:test x 0.811278
+3 mode:naive n:4 prop:stats ms 0
+3 mode:naive n:4 prop:exps 0
+5 mode:naive n:4 prop:info sample:train x 3.11066
+5 mode:naive n:4 prop:entryinfo sample:train x 0.777666
+5 mode:naive n:4 prop:idealinfo sample:train x 1.20752
+5 mode:naive n:4 prop:info sample:test x 35.1268
+5 mode:naive n:4 prop:entryinfo sample:test x 1.09771
+5 mode:naive n:4 prop:idealinfo sample:test x 0.959868
+3 mode:naive n:8 prop:stats ms 0
+3 mode:naive n:8 prop:exps 0
+5 mode:naive n:8 prop:info sample:train x 6.50107
+5 mode:naive n:8 prop:entryinfo sample:train x 0.812633
+5 mode:naive n:8 prop:idealinfo sample:train x 1.0094
+5 mode:naive n:8 prop:info sample:test x 33.2574
+5 mode:naive n:8 prop:entryinfo sample:test x 1.03929
+5 mode:naive n:8 prop:idealinfo sample:test x 0.761748
+3 mode:naive n:16 prop:stats ms 0
+3 mode:naive n:16 prop:exps 0
+5 mode:naive n:16 prop:info sample:train x 5.37914
+5 mode:naive n:16 prop:entryinfo sample:train x 0.336196
+5 mode:naive n:16 prop:idealinfo sample:train x 0.514098
+5 mode:naive n:16 prop:info sample:test x 42.0526
+5 mode:naive n:16 prop:entryinfo sample:test x 1.31414
+5 mode:naive n:16 prop:idealinfo sample:test x 0.712218
+3 mode:naive n:32 prop:stats ms 0
+3 mode:naive n:32 prop:exps 0
+5 mode:naive n:32 prop:info sample:train x 28.0611
+5 mode:naive n:32 prop:entryinfo sample:train x 0.87691
+5 mode:naive n:32 prop:idealinfo sample:train x 0.860808
+5 mode:naive n:32 prop:info sample:test x 30.1023
+5 mode:naive n:32 prop:entryinfo sample:test x 0.940697
+5 mode:naive n:32 prop:idealinfo sample:test x 0.860808
+3 mode:naive n:64 prop:stats ms 0
+3 mode:naive n:64 prop:exps 0
+5 mode:naive n:64 prop:info sample:train x 58.9933
+5 mode:naive n:64 prop:entryinfo sample:train x 0.92177
+5 mode:naive n:64 prop:idealinfo sample:train x 0.885573
+5 mode:naive n:64 prop:info sample:test x 24.5469
+5 mode:naive n:64 prop:entryinfo sample:test x 0.76709
+5 mode:naive n:64 prop:idealinfo sample:test x 0.761748
+3 mode:naive n:128 prop:stats ms 0
+3 mode:naive n:128 prop:exps 0
+5 mode:naive n:128 prop:info sample:train x 122.838
+5 mode:naive n:128 prop:entryinfo sample:train x 0.959669
+5 mode:naive n:128 prop:idealinfo sample:train x 0.873191
+5 mode:naive n:128 prop:info sample:test x 34.292
+5 mode:naive n:128 prop:entryinfo sample:test x 1.07162
+5 mode:naive n:128 prop:idealinfo sample:test x 0.910338
+3 mode:naive n:256 prop:stats ms 0
+3 mode:naive n:256 prop:exps 0
+5 mode:naive n:256 prop:info sample:train x 236.528
+5 mode:naive n:256 prop:entryinfo sample:train x 0.923936
+5 mode:naive n:256 prop:idealinfo sample:train x 0.786513
+5 mode:naive n:256 prop:info sample:test x 40.5602
+5 mode:naive n:256 prop:entryinfo sample:test x 1.26751
+5 mode:naive n:256 prop:idealinfo sample:test x 0.959868
+3 mode:naive n:512 prop:stats ms 0
+3 mode:naive n:512 prop:exps 0
+5 mode:naive n:512 prop:info sample:train x 487.418
+5 mode:naive n:512 prop:entryinfo sample:train x 0.951989
+5 mode:naive n:512 prop:idealinfo sample:train x 0.832948
+5 mode:naive n:512 prop:info sample:test x 40.4976
+5 mode:naive n:512 prop:entryinfo sample:test x 1.26555
+5 mode:naive n:512 prop:idealinfo sample:test x 1.0094
+3 mode:naive n:1 prop:stats ms 0
+3 mode:naive n:1 prop:exps 0
+5 mode:naive n:1 prop:info sample:train x 0.289507
+5 mode:naive n:1 prop:entryinfo sample:train x 0.289507
+5 mode:naive n:1 prop:idealinfo sample:train x 2
+5 mode:naive n:1 prop:info sample:test x 48.5771
+5 mode:naive n:1 prop:entryinfo sample:test x 1.51804
+5 mode:naive n:1 prop:idealinfo sample:test x 0.910338
+3 mode:naive n:2 prop:stats ms 0
+3 mode:naive n:2 prop:exps 0
+5 mode:naive n:2 prop:info sample:train x 0.304006
+5 mode:naive n:2 prop:entryinfo sample:train x 0.152003
+5 mode:naive n:2 prop:idealinfo sample:train x 2
+5 mode:naive n:2 prop:info sample:test x 68.2626
+5 mode:naive n:2 prop:entryinfo sample:test x 2.13321
+5 mode:naive n:2 prop:idealinfo sample:test x 1.0094
+3 mode:naive n:4 prop:stats ms 0
+3 mode:naive n:4 prop:exps 0
+5 mode:naive n:4 prop:info sample:train x 3.11066
+5 mode:naive n:4 prop:entryinfo sample:train x 0.777666
+5 mode:naive n:4 prop:idealinfo sample:train x 1.20752
+5 mode:naive n:4 prop:info sample:test x 30.7884
+5 mode:naive n:4 prop:entryinfo sample:test x 0.962136
+5 mode:naive n:4 prop:idealinfo sample:test x 0.712218
+3 mode:naive n:8 prop:stats ms 0
+3 mode:naive n:8 prop:exps 0
+5 mode:naive n:8 prop:info sample:train x 3.4551
+5 mode:naive n:8 prop:entryinfo sample:train x 0.431888
+5 mode:naive n:8 prop:idealinfo sample:train x 0.613158
+5 mode:naive n:8 prop:info sample:test x 37.1446
+5 mode:naive n:8 prop:entryinfo sample:test x 1.16077
+5 mode:naive n:8 prop:idealinfo sample:test x 0.811278
+3 mode:naive n:16 prop:stats ms 0
+3 mode:naive n:16 prop:exps 0
+5 mode:naive n:16 prop:info sample:train x 7.91913
+5 mode:naive n:16 prop:entryinfo sample:train x 0.494946
+5 mode:naive n:16 prop:idealinfo sample:train x 0.613158
+5 mode:naive n:16 prop:info sample:test x 27.3529
+5 mode:naive n:16 prop:entryinfo sample:test x 0.854778
+5 mode:naive n:16 prop:idealinfo sample:test x 0.662688
+3 mode:naive n:32 prop:stats ms 0
+3 mode:naive n:32 prop:exps 0
+5 mode:naive n:32 prop:info sample:train x 29.0342
+5 mode:naive n:32 prop:entryinfo sample:train x 0.907319
+5 mode:naive n:32 prop:idealinfo sample:train x 0.811278
+5 mode:naive n:32 prop:info sample:test x 34.8401
+5 mode:naive n:32 prop:entryinfo sample:test x 1.08875
+5 mode:naive n:32 prop:idealinfo sample:test x 0.910338
+3 mode:naive n:64 prop:stats ms 0
+3 mode:naive n:64 prop:exps 0
+5 mode:naive n:64 prop:info sample:train x 51.0699
+5 mode:naive n:64 prop:entryinfo sample:train x 0.797966
+5 mode:naive n:64 prop:idealinfo sample:train x 0.736983
+5 mode:naive n:64 prop:info sample:test x 29.0408
+5 mode:naive n:64 prop:entryinfo sample:test x 0.907524
+5 mode:naive n:64 prop:idealinfo sample:test x 0.712218
+3 mode:naive n:128 prop:stats ms 0
+3 mode:naive n:128 prop:exps 0
+5 mode:naive n:128 prop:info sample:train x 122.768
+5 mode:naive n:128 prop:entryinfo sample:train x 0.959125
+5 mode:naive n:128 prop:idealinfo sample:train x 0.860808
+5 mode:naive n:128 prop:info sample:test x 33.855
+5 mode:naive n:128 prop:entryinfo sample:test x 1.05797
+5 mode:naive n:128 prop:idealinfo sample:test x 0.910338
+3 mode:naive n:256 prop:stats ms 0
+3 mode:naive n:256 prop:exps 0
+5 mode:naive n:256 prop:info sample:train x 238.676
+5 mode:naive n:256 prop:entryinfo sample:train x 0.93233
+5 mode:naive n:256 prop:idealinfo sample:train x 0.798896
+5 mode:naive n:256 prop:info sample:test x 40.9444
+5 mode:naive n:256 prop:entryinfo sample:test x 1.27951
+5 mode:naive n:256 prop:idealinfo sample:test x 0.959868
+3 mode:naive n:512 prop:stats ms 0
+3 mode:naive n:512 prop:exps 0
+5 mode:naive n:512 prop:info sample:train x 480.586
+5 mode:naive n:512 prop:entryinfo sample:train x 0.938644
+5 mode:naive n:512 prop:idealinfo sample:train x 0.805087
+5 mode:naive n:512 prop:info sample:test x 14.3553
+5 mode:naive n:512 prop:entryinfo sample:test x 0.448602
+5 mode:naive n:512 prop:idealinfo sample:test x 0.563628
+3 mode:naive n:1 prop:stats ms 0
+3 mode:naive n:1 prop:exps 0
+5 mode:naive n:1 prop:info sample:train x 0.289507
+5 mode:naive n:1 prop:entryinfo sample:train x 0.289507
+5 mode:naive n:1 prop:idealinfo sample:train x 0.415037
+5 mode:naive n:1 prop:info sample:test x 25.6712
+5 mode:naive n:1 prop:entryinfo sample:test x 0.802225
+5 mode:naive n:1 prop:idealinfo sample:test x 0.761748
+3 mode:naive n:2 prop:stats ms 0
+3 mode:naive n:2 prop:exps 0
+5 mode:naive n:2 prop:info sample:train x 0.304006
+5 mode:naive n:2 prop:entryinfo sample:train x 0.152003
+5 mode:naive n:2 prop:idealinfo sample:train x 0.415037
+5 mode:naive n:2 prop:info sample:test x 27.0536
+5 mode:naive n:2 prop:entryinfo sample:test x 0.845424
+5 mode:naive n:2 prop:idealinfo sample:test x 0.761748
+3 mode:naive n:4 prop:stats ms 0
+3 mode:naive n:4 prop:exps 0
+5 mode:naive n:4 prop:info sample:train x 0.251149
+5 mode:naive n:4 prop:entryinfo sample:train x 0.0627873
+5 mode:naive n:4 prop:idealinfo sample:train x 0.415037
+5 mode:naive n:4 prop:info sample:test x 36.4813
+5 mode:naive n:4 prop:entryinfo sample:test x 1.14004
+5 mode:naive n:4 prop:idealinfo sample:test x 0.811278
+3 mode:naive n:8 prop:stats ms 0
+3 mode:naive n:8 prop:exps 0
+5 mode:naive n:8 prop:info sample:train x 6.68684
+5 mode:naive n:8 prop:entryinfo sample:train x 0.835855
+5 mode:naive n:8 prop:idealinfo sample:train x 0.811278
+5 mode:naive n:8 prop:info sample:test x 19.1684
+5 mode:naive n:8 prop:entryinfo sample:test x 0.599011
+5 mode:naive n:8 prop:idealinfo sample:test x 0.662688
+3 mode:naive n:16 prop:stats ms 0
+3 mode:naive n:16 prop:exps 0
+5 mode:naive n:16 prop:info sample:train x 12.0749
+5 mode:naive n:16 prop:entryinfo sample:train x 0.754683
+5 mode:naive n:16 prop:idealinfo sample:train x 0.712218
+5 mode:naive n:16 prop:info sample:test x 37.0993
+5 mode:naive n:16 prop:entryinfo sample:test x 1.15935
+5 mode:naive n:16 prop:idealinfo sample:test x 0.860808
+3 mode:naive n:32 prop:stats ms 0
+3 mode:naive n:32 prop:exps 0
+5 mode:naive n:32 prop:info sample:train x 25.1734
+5 mode:naive n:32 prop:entryinfo sample:train x 0.78667
+5 mode:naive n:32 prop:idealinfo sample:train x 0.712218
+5 mode:naive n:32 prop:info sample:test x 47.6308
+5 mode:naive n:32 prop:entryinfo sample:test x 1.48846
+5 mode:naive n:32 prop:idealinfo sample:test x 0.959868
+3 mode:naive n:64 prop:stats ms 0
+3 mode:naive n:64 prop:exps 0
+5 mode:naive n:64 prop:info sample:train x 61.0158
+5 mode:naive n:64 prop:entryinfo sample:train x 0.953372
+5 mode:naive n:64 prop:idealinfo sample:train x 0.860808
+5 mode:naive n:64 prop:info sample:test x 27.8946
+5 mode:naive n:64 prop:entryinfo sample:test x 0.871706
+5 mode:naive n:64 prop:idealinfo sample:test x 0.811278
+3 mode:naive n:128 prop:stats ms 0
+3 mode:naive n:128 prop:exps 0
+5 mode:naive n:128 prop:info sample:train x 115.016
+5 mode:naive n:128 prop:entryinfo sample:train x 0.898565
+5 mode:naive n:128 prop:idealinfo sample:train x 0.761748
+5 mode:naive n:128 prop:info sample:test x 36.1998
+5 mode:naive n:128 prop:entryinfo sample:test x 1.13124
+5 mode:naive n:128 prop:idealinfo sample:test x 0.860808
+3 mode:naive n:256 prop:stats ms 0
+3 mode:naive n:256 prop:exps 0
+5 mode:naive n:256 prop:info sample:train x 233.307
+5 mode:naive n:256 prop:entryinfo sample:train x 0.911354
+5 mode:naive n:256 prop:idealinfo sample:train x 0.767939
+5 mode:naive n:256 prop:info sample:test x 25.6041
+5 mode:naive n:256 prop:entryinfo sample:test x 0.800127
+5 mode:naive n:256 prop:idealinfo sample:test x 0.712218
+3 mode:naive n:512 prop:stats ms 0
+3 mode:naive n:512 prop:exps 0
+5 mode:naive n:512 prop:info sample:train x 494.104
+5 mode:naive n:512 prop:entryinfo sample:train x 0.965046
+5 mode:naive n:512 prop:idealinfo sample:train x 0.873191
+5 mode:naive n:512 prop:info sample:test x 21.2571
+5 mode:naive n:512 prop:entryinfo sample:test x 0.664285
+5 mode:naive n:512 prop:idealinfo sample:test x 0.662688
+3 mode:naive n:1 prop:stats ms 0
+3 mode:naive n:1 prop:exps 0
+5 mode:naive n:1 prop:info sample:train x 0.289507
+5 mode:naive n:1 prop:entryinfo sample:train x 0.289507
+5 mode:naive n:1 prop:idealinfo sample:train x 2
+5 mode:naive n:1 prop:info sample:test x 52.2817
+5 mode:naive n:1 prop:entryinfo sample:test x 1.6338
+5 mode:naive n:1 prop:idealinfo sample:test x 0.712218
+3 mode:naive n:2 prop:stats ms 0
+3 mode:naive n:2 prop:exps 0
+5 mode:naive n:2 prop:info sample:train x 2
+5 mode:naive n:2 prop:entryinfo sample:train x 1
+5 mode:naive n:2 prop:idealinfo sample:train x 1.20752
+5 mode:naive n:2 prop:info sample:test x 32
+5 mode:naive n:2 prop:entryinfo sample:test x 1
+5 mode:naive n:2 prop:idealinfo sample:test x 0.860808
+3 mode:naive n:4 prop:stats ms 0
+3 mode:naive n:4 prop:exps 0
+5 mode:naive n:4 prop:info sample:train x 3.2503
+5 mode:naive n:4 prop:entryinfo sample:train x 0.812576
+5 mode:naive n:4 prop:idealinfo sample:train x 0.811278
+5 mode:naive n:4 prop:info sample:test x 26.6069
+5 mode:naive n:4 prop:entryinfo sample:test x 0.831465
+5 mode:naive n:4 prop:idealinfo sample:test x 0.761748
+3 mode:naive n:8 prop:stats ms 0
+3 mode:naive n:8 prop:exps 0
+5 mode:naive n:8 prop:info sample:train x 4.01738
+5 mode:naive n:8 prop:entryinfo sample:train x 0.502172
+5 mode:naive n:8 prop:idealinfo sample:train x 0.613158
+5 mode:naive n:8 prop:info sample:test x 33.0365
+5 mode:naive n:8 prop:entryinfo sample:test x 1.03239
+5 mode:naive n:8 prop:idealinfo sample:test x 0.761748
+3 mode:naive n:16 prop:stats ms 0
+3 mode:naive n:16 prop:exps 0
+5 mode:naive n:16 prop:info sample:train x 12.5398
+5 mode:naive n:16 prop:entryinfo sample:train x 0.783738
+5 mode:naive n:16 prop:idealinfo sample:train x 0.811278
+5 mode:naive n:16 prop:info sample:test x 22.2716
+5 mode:naive n:16 prop:entryinfo sample:test x 0.695987
+5 mode:naive n:16 prop:idealinfo sample:test x 0.662688
+3 mode:naive n:32 prop:stats ms 0
+3 mode:naive n:32 prop:exps 0
+5 mode:naive n:32 prop:info sample:train x 31.3073
+5 mode:naive n:32 prop:entryinfo sample:train x 0.978352
+5 mode:naive n:32 prop:idealinfo sample:train x 1.0094
+5 mode:naive n:32 prop:info sample:test x 24.7822
+5 mode:naive n:32 prop:entryinfo sample:test x 0.774442
+5 mode:naive n:32 prop:idealinfo sample:test x 0.761748
+3 mode:naive n:64 prop:stats ms 0
+3 mode:naive n:64 prop:exps 0
+5 mode:naive n:64 prop:info sample:train x 51.8034
+5 mode:naive n:64 prop:entryinfo sample:train x 0.809428
+5 mode:naive n:64 prop:idealinfo sample:train x 0.687453
+5 mode:naive n:64 prop:info sample:test x 35.8996
+5 mode:naive n:64 prop:entryinfo sample:test x 1.12186
+5 mode:naive n:64 prop:idealinfo sample:test x 0.811278
+3 mode:naive n:128 prop:stats ms 0
+3 mode:naive n:128 prop:exps 0
+5 mode:naive n:128 prop:info sample:train x 121.337
+5 mode:naive n:128 prop:entryinfo sample:train x 0.947944
+5 mode:naive n:128 prop:idealinfo sample:train x 0.848426
+5 mode:naive n:128 prop:info sample:test x 37.1176
+5 mode:naive n:128 prop:entryinfo sample:test x 1.15993
+5 mode:naive n:128 prop:idealinfo sample:test x 0.959868
+3 mode:naive n:256 prop:stats ms 0
+3 mode:naive n:256 prop:exps 0
+5 mode:naive n:256 prop:info sample:train x 232.454
+5 mode:naive n:256 prop:entryinfo sample:train x 0.908023
+5 mode:naive n:256 prop:idealinfo sample:train x 0.774131
+5 mode:naive n:256 prop:info sample:test x 35.0328
+5 mode:naive n:256 prop:entryinfo sample:test x 1.09478
+5 mode:naive n:256 prop:idealinfo sample:test x 0.811278
+3 mode:naive n:512 prop:stats ms 0
+3 mode:naive n:512 prop:exps 0
+5 mode:naive n:512 prop:info sample:train x 482.25
+5 mode:naive n:512 prop:entryinfo sample:train x 0.941894
+5 mode:naive n:512 prop:idealinfo sample:train x 0.817469
+5 mode:naive n:512 prop:info sample:test x 32.8257
+5 mode:naive n:512 prop:entryinfo sample:test x 1.0258
+5 mode:naive n:512 prop:idealinfo sample:test x 0.860808
+3 mode:naive n:1 prop:stats ms 0
+3 mode:naive n:1 prop:exps 0
+5 mode:naive n:1 prop:info sample:train x 0.289507
+5 mode:naive n:1 prop:entryinfo sample:train x 0.289507
+5 mode:naive n:1 prop:idealinfo sample:train x 2
+5 mode:naive n:1 prop:info sample:test x 40.918
+5 mode:naive n:1 prop:entryinfo sample:test x 1.27869
+5 mode:naive n:1 prop:idealinfo sample:test x 1.15799
+3 mode:naive n:2 prop:stats ms 0
+3 mode:naive n:2 prop:exps 0
+5 mode:naive n:2 prop:info sample:train x 0.326997
+5 mode:naive n:2 prop:entryinfo sample:train x 0.163499
+5 mode:naive n:2 prop:idealinfo sample:train x 0.415037
+5 mode:naive n:2 prop:info sample:test x 28.0541
+5 mode:naive n:2 prop:entryinfo sample:test x 0.87669
+5 mode:naive n:2 prop:idealinfo sample:test x 0.910338
+3 mode:naive n:4 prop:stats ms 0
+3 mode:naive n:4 prop:exps 0
+5 mode:naive n:4 prop:info sample:train x 3.2503
+5 mode:naive n:4 prop:entryinfo sample:train x 0.812576
+5 mode:naive n:4 prop:idealinfo sample:train x 0.811278
+5 mode:naive n:4 prop:info sample:test x 29.8494
+5 mode:naive n:4 prop:entryinfo sample:test x 0.932795
+5 mode:naive n:4 prop:idealinfo sample:test x 0.959868
+3 mode:naive n:8 prop:stats ms 0
+3 mode:naive n:8 prop:exps 0
+5 mode:naive n:8 prop:info sample:train x 7.57432
+5 mode:naive n:8 prop:entryinfo sample:train x 0.946789
+5 mode:naive n:8 prop:idealinfo sample:train x 1.0094
+5 mode:naive n:8 prop:info sample:test x 29.6768
+5 mode:naive n:8 prop:entryinfo sample:test x 0.927401
+5 mode:naive n:8 prop:idealinfo sample:test x 0.959868
+3 mode:naive n:16 prop:stats ms 0
+3 mode:naive n:16 prop:exps 0
+5 mode:naive n:16 prop:info sample:train x 15.3426
+5 mode:naive n:16 prop:entryinfo sample:train x 0.958914
+5 mode:naive n:16 prop:idealinfo sample:train x 1.0094
+5 mode:naive n:16 prop:info sample:test x 26.39
+5 mode:naive n:16 prop:entryinfo sample:test x 0.824687
+5 mode:naive n:16 prop:idealinfo sample:test x 0.811278
+3 mode:naive n:32 prop:stats ms 0
+3 mode:naive n:32 prop:exps 0
+5 mode:naive n:32 prop:info sample:train x 24.1542
+5 mode:naive n:32 prop:entryinfo sample:train x 0.754818
+5 mode:naive n:32 prop:idealinfo sample:train x 0.662688
+5 mode:naive n:32 prop:info sample:test x 41.3569
+5 mode:naive n:32 prop:entryinfo sample:test x 1.2924
+5 mode:naive n:32 prop:idealinfo sample:test x 0.860808
+3 mode:naive n:64 prop:stats ms 0
+3 mode:naive n:64 prop:exps 0
+5 mode:naive n:64 prop:info sample:train x 60.3582
+5 mode:naive n:64 prop:entryinfo sample:train x 0.943097
+5 mode:naive n:64 prop:idealinfo sample:train x 0.910338
+5 mode:naive n:64 prop:info sample:test x 16.977
+5 mode:naive n:64 prop:entryinfo sample:test x 0.53053
+5 mode:naive n:64 prop:idealinfo sample:test x 0.563628
+3 mode:naive n:128 prop:stats ms 0
+3 mode:naive n:128 prop:exps 0
+5 mode:naive n:128 prop:info sample:train x 114.75
+5 mode:naive n:128 prop:entryinfo sample:train x 0.896482
+5 mode:naive n:128 prop:idealinfo sample:train x 0.761748
+5 mode:naive n:128 prop:info sample:test x 42.5473
+5 mode:naive n:128 prop:entryinfo sample:test x 1.3296
+5 mode:naive n:128 prop:idealinfo sample:test x 0.959868
+3 mode:naive n:256 prop:stats ms 0
+3 mode:naive n:256 prop:exps 0
+5 mode:naive n:256 prop:info sample:train x 238.536
+5 mode:naive n:256 prop:entryinfo sample:train x 0.931782
+5 mode:naive n:256 prop:idealinfo sample:train x 0.798896
+5 mode:naive n:256 prop:info sample:test x 24.1077
+5 mode:naive n:256 prop:entryinfo sample:test x 0.753364
+5 mode:naive n:256 prop:idealinfo sample:test x 0.712218
+3 mode:naive n:512 prop:stats ms 0
+3 mode:naive n:512 prop:exps 0
+5 mode:naive n:512 prop:info sample:train x 482.344
+5 mode:naive n:512 prop:entryinfo sample:train x 0.942077
+5 mode:naive n:512 prop:idealinfo sample:train x 0.811278
+5 mode:naive n:512 prop:info sample:test x 27.1394
+5 mode:naive n:512 prop:entryinfo sample:test x 0.848106
+5 mode:naive n:512 prop:idealinfo sample:test x 0.761748
+3 mode:naive n:1 prop:stats ms 0
+3 mode:naive n:1 prop:exps 0
+5 mode:naive n:1 prop:info sample:train x 0.289507
+5 mode:naive n:1 prop:entryinfo sample:train x 0.289507
+5 mode:naive n:1 prop:idealinfo sample:train x 0.415037
+5 mode:naive n:1 prop:info sample:test x 27.4082
+5 mode:naive n:1 prop:entryinfo sample:test x 0.856508
+5 mode:naive n:1 prop:idealinfo sample:test x 0.761748
+3 mode:naive n:2 prop:stats ms 0
+3 mode:naive n:2 prop:exps 0
+5 mode:naive n:2 prop:info sample:train x 0.830075
+5 mode:naive n:2 prop:entryinfo sample:train x 0.415037
+5 mode:naive n:2 prop:idealinfo sample:train x 1.20752
+5 mode:naive n:2 prop:info sample:test x 35.4707
+5 mode:naive n:2 prop:entryinfo sample:test x 1.10846
+5 mode:naive n:2 prop:idealinfo sample:test x 0.811278
+3 mode:naive n:4 prop:stats ms 0
+3 mode:naive n:4 prop:exps 0
+5 mode:naive n:4 prop:info sample:train x 3.11066
+5 mode:naive n:4 prop:entryinfo sample:train x 0.777666
+5 mode:naive n:4 prop:idealinfo sample:train x 1.20752
+5 mode:naive n:4 prop:info sample:test x 45.3421
+5 mode:naive n:4 prop:entryinfo sample:test x 1.41694
+5 mode:naive n:4 prop:idealinfo sample:test x 0.811278
+3 mode:naive n:8 prop:stats ms 0
+3 mode:naive n:8 prop:exps 0
+5 mode:naive n:8 prop:info sample:train x 5.35449
+5 mode:naive n:8 prop:entryinfo sample:train x 0.669311
+5 mode:naive n:8 prop:idealinfo sample:train x 1.0094
+5 mode:naive n:8 prop:info sample:test x 22.4243
+5 mode:naive n:8 prop:entryinfo sample:test x 0.70076
+5 mode:naive n:8 prop:idealinfo sample:test x 0.712218
+3 mode:naive n:16 prop:stats ms 0
+3 mode:naive n:16 prop:exps 0
+5 mode:naive n:16 prop:info sample:train x 5.44797
+5 mode:naive n:16 prop:entryinfo sample:train x 0.340498
+5 mode:naive n:16 prop:idealinfo sample:train x 0.514098
+5 mode:naive n:16 prop:info sample:test x 52.0475
+5 mode:naive n:16 prop:entryinfo sample:test x 1.62649
+5 mode:naive n:16 prop:idealinfo sample:test x 0.811278
+3 mode:naive n:32 prop:stats ms 0
+3 mode:naive n:32 prop:exps 0
+5 mode:naive n:32 prop:info sample:train x 13.7844
+5 mode:naive n:32 prop:entryinfo sample:train x 0.430763
+5 mode:naive n:32 prop:idealinfo sample:train x 0.613158
+5 mode:naive n:32 prop:info sample:test x 71.1762
+5 mode:naive n:32 prop:entryinfo sample:test x 2.22426
+5 mode:naive n:32 prop:idealinfo sample:test x 0.959868
+3 mode:naive n:64 prop:stats ms 0
+3 mode:naive n:64 prop:exps 0
+5 mode:naive n:64 prop:info sample:train x 58.308
+5 mode:naive n:64 prop:entryinfo sample:train x 0.911062
+5 mode:naive n:64 prop:idealinfo sample:train x 0.836043
+5 mode:naive n:64 prop:info sample:test x 41.7398
+5 mode:naive n:64 prop:entryinfo sample:test x 1.30437
+5 mode:naive n:64 prop:idealinfo sample:test x 1.0094
+3 mode:naive n:128 prop:stats ms 0
+3 mode:naive n:128 prop:exps 0
+5 mode:naive n:128 prop:info sample:train x 125.666
+5 mode:naive n:128 prop:entryinfo sample:train x 0.981767
+5 mode:naive n:128 prop:idealinfo sample:train x 0.935103
+5 mode:naive n:128 prop:info sample:test x 15.9881
+5 mode:naive n:128 prop:entryinfo sample:test x 0.499629
+5 mode:naive n:128 prop:idealinfo sample:test x 0.563628
+3 mode:naive n:256 prop:stats ms 0
+3 mode:naive n:256 prop:exps 0
+5 mode:naive n:256 prop:info sample:train x 233.307
+5 mode:naive n:256 prop:entryinfo sample:train x 0.911354
+5 mode:naive n:256 prop:idealinfo sample:train x 0.767939
+5 mode:naive n:256 prop:info sample:test x 32.7552
+5 mode:naive n:256 prop:entryinfo sample:test x 1.0236
+5 mode:naive n:256 prop:idealinfo sample:test x 0.811278
+3 mode:naive n:512 prop:stats ms 0
+3 mode:naive n:512 prop:exps 0
+5 mode:naive n:512 prop:info sample:train x 484.919
+5 mode:naive n:512 prop:entryinfo sample:train x 0.947107
+5 mode:naive n:512 prop:idealinfo sample:train x 0.820565
+5 mode:naive n:512 prop:info sample:test x 45.0604
+5 mode:naive n:512 prop:entryinfo sample:test x 1.40814
+5 mode:naive n:512 prop:idealinfo sample:test x 1.05893
+3 mode:reexp n:1 prop:stats ms 0
+3 mode:reexp n:1 prop:reexp ms 0
+3 mode:reexp n:1 prop:exps 0
+5 mode:reexp n:1 prop:info sample:train x 0.289507
+5 mode:reexp n:1 prop:entryinfo sample:train x 0.289507
+5 mode:reexp n:1 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:1 prop:info sample:test x 30.2946
+5 mode:reexp n:1 prop:entryinfo sample:test x 0.946707
+5 mode:reexp n:1 prop:idealinfo sample:test x 0.860808
+3 mode:reexp n:2 prop:stats ms 0
+3 mode:reexp n:2 prop:reexp ms 0
+3 mode:reexp n:2 prop:exps 0
+5 mode:reexp n:2 prop:info sample:train x 2
+5 mode:reexp n:2 prop:entryinfo sample:train x 1
+5 mode:reexp n:2 prop:idealinfo sample:train x 1.20752
+5 mode:reexp n:2 prop:info sample:test x 32
+5 mode:reexp n:2 prop:entryinfo sample:test x 1
+5 mode:reexp n:2 prop:idealinfo sample:test x 0.712218
+3 mode:reexp n:4 prop:stats ms 0
+3 mode:reexp n:4 prop:reexp ms 0
+3 mode:reexp n:4 prop:exps 0
+5 mode:reexp n:4 prop:info sample:train x 0.251149
+5 mode:reexp n:4 prop:entryinfo sample:train x 0.0627873
+5 mode:reexp n:4 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:4 prop:info sample:test x 29.3744
+5 mode:reexp n:4 prop:entryinfo sample:test x 0.91795
+5 mode:reexp n:4 prop:idealinfo sample:test x 0.712218
+3 mode:reexp n:8 prop:stats ms 0
+3 mode:reexp n:8 prop:reexp ms 0
+3 mode:reexp n:8 prop:exps 0
+5 mode:reexp n:8 prop:info sample:train x 4.66696
+5 mode:reexp n:8 prop:entryinfo sample:train x 0.583371
+5 mode:reexp n:8 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:8 prop:info sample:test x 24.4573
+5 mode:reexp n:8 prop:entryinfo sample:test x 0.764292
+5 mode:reexp n:8 prop:idealinfo sample:test x 0.811278
+3 mode:reexp n:16 prop:stats ms 0
+3 mode:reexp n:16 prop:reexp ms 0
+3 mode:reexp n:16 prop:exps 1
+5 mode:reexp n:16 prop:info sample:train x 8.60824
+5 mode:reexp n:16 prop:entryinfo sample:train x 0.538015
+5 mode:reexp n:16 prop:idealinfo sample:train x 0.712218
+5 mode:reexp n:16 prop:info sample:test x 44.3059
+5 mode:reexp n:16 prop:entryinfo sample:test x 1.38456
+5 mode:reexp n:16 prop:idealinfo sample:test x 0.959868
+3 mode:reexp n:32 prop:stats ms 0
+3 mode:reexp n:32 prop:reexp ms 0
+3 mode:reexp n:32 prop:exps 1
+5 mode:reexp n:32 prop:info sample:train x 18.8388
+5 mode:reexp n:32 prop:entryinfo sample:train x 0.588713
+5 mode:reexp n:32 prop:idealinfo sample:train x 0.662688
+5 mode:reexp n:32 prop:info sample:test x 30.2373
+5 mode:reexp n:32 prop:entryinfo sample:test x 0.944916
+5 mode:reexp n:32 prop:idealinfo sample:test x 0.860808
+3 mode:reexp n:64 prop:stats ms 0
+3 mode:reexp n:64 prop:reexp ms 0
+3 mode:reexp n:64 prop:exps 1
+5 mode:reexp n:64 prop:info sample:train x 60.9756
+5 mode:reexp n:64 prop:entryinfo sample:train x 0.952743
+5 mode:reexp n:64 prop:idealinfo sample:train x 1.0094
+5 mode:reexp n:64 prop:info sample:test x 23.1824
+5 mode:reexp n:64 prop:entryinfo sample:test x 0.724449
+5 mode:reexp n:64 prop:idealinfo sample:test x 0.563628
+3 mode:reexp n:128 prop:stats ms 0
+3 mode:reexp n:128 prop:reexp ms 0
+3 mode:reexp n:128 prop:exps 1
+5 mode:reexp n:128 prop:info sample:train x 95.8393
+5 mode:reexp n:128 prop:entryinfo sample:train x 0.748744
+5 mode:reexp n:128 prop:idealinfo sample:train x 0.774131
+5 mode:reexp n:128 prop:info sample:test x 24.4497
+5 mode:reexp n:128 prop:entryinfo sample:test x 0.764053
+5 mode:reexp n:128 prop:idealinfo sample:test x 0.712218
+3 mode:reexp n:256 prop:stats ms 0
+3 mode:reexp n:256 prop:reexp ms 0
+3 mode:reexp n:256 prop:exps 1
+5 mode:reexp n:256 prop:info sample:train x 205.987
+5 mode:reexp n:256 prop:entryinfo sample:train x 0.804636
+5 mode:reexp n:256 prop:idealinfo sample:train x 0.805087
+5 mode:reexp n:256 prop:info sample:test x 27.5524
+5 mode:reexp n:256 prop:entryinfo sample:test x 0.861012
+5 mode:reexp n:256 prop:idealinfo sample:test x 0.860808
+3 mode:reexp n:512 prop:stats ms 0
+3 mode:reexp n:512 prop:reexp ms 0
+3 mode:reexp n:512 prop:exps 1
+5 mode:reexp n:512 prop:info sample:train x 413.598
+5 mode:reexp n:512 prop:entryinfo sample:train x 0.807809
+5 mode:reexp n:512 prop:idealinfo sample:train x 0.808182
+5 mode:reexp n:512 prop:info sample:test x 27.7556
+5 mode:reexp n:512 prop:entryinfo sample:test x 0.867361
+5 mode:reexp n:512 prop:idealinfo sample:test x 0.860808
+3 mode:reexp n:1 prop:stats ms 0
+3 mode:reexp n:1 prop:reexp ms 0
+3 mode:reexp n:1 prop:exps 0
+5 mode:reexp n:1 prop:info sample:train x 0.289507
+5 mode:reexp n:1 prop:entryinfo sample:train x 0.289507
+5 mode:reexp n:1 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:1 prop:info sample:test x 29.7156
+5 mode:reexp n:1 prop:entryinfo sample:test x 0.928613
+5 mode:reexp n:1 prop:idealinfo sample:test x 0.860808
+3 mode:reexp n:2 prop:stats ms 0
+3 mode:reexp n:2 prop:reexp ms 0
+3 mode:reexp n:2 prop:exps 0
+5 mode:reexp n:2 prop:info sample:train x 0.326997
+5 mode:reexp n:2 prop:entryinfo sample:train x 0.163499
+5 mode:reexp n:2 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:2 prop:info sample:test x 35.5701
+5 mode:reexp n:2 prop:entryinfo sample:test x 1.11156
+5 mode:reexp n:2 prop:idealinfo sample:test x 0.959868
+3 mode:reexp n:4 prop:stats ms 0
+3 mode:reexp n:4 prop:reexp ms 0
+3 mode:reexp n:4 prop:exps 0
+5 mode:reexp n:4 prop:info sample:train x 2.39199
+5 mode:reexp n:4 prop:entryinfo sample:train x 0.597997
+5 mode:reexp n:4 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:4 prop:info sample:test x 29.4893
+5 mode:reexp n:4 prop:entryinfo sample:test x 0.921539
+5 mode:reexp n:4 prop:idealinfo sample:test x 0.860808
+3 mode:reexp n:8 prop:stats ms 0
+3 mode:reexp n:8 prop:reexp ms 0
+3 mode:reexp n:8 prop:exps 0
+5 mode:reexp n:8 prop:info sample:train x 1.24734
+5 mode:reexp n:8 prop:entryinfo sample:train x 0.155917
+5 mode:reexp n:8 prop:idealinfo sample:train x 1.0094
+5 mode:reexp n:8 prop:info sample:test x 51.5575
+5 mode:reexp n:8 prop:entryinfo sample:test x 1.61117
+5 mode:reexp n:8 prop:idealinfo sample:test x 0.662688
+3 mode:reexp n:16 prop:stats ms 0
+3 mode:reexp n:16 prop:reexp ms 0
+3 mode:reexp n:16 prop:exps 1
+5 mode:reexp n:16 prop:info sample:train x 11.4484
+5 mode:reexp n:16 prop:entryinfo sample:train x 0.715523
+5 mode:reexp n:16 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:16 prop:info sample:test x 24.0877
+5 mode:reexp n:16 prop:entryinfo sample:test x 0.752742
+5 mode:reexp n:16 prop:idealinfo sample:test x 0.662688
+3 mode:reexp n:32 prop:stats ms 0
+3 mode:reexp n:32 prop:reexp ms 0
+3 mode:reexp n:32 prop:exps 1
+5 mode:reexp n:32 prop:info sample:train x 25.4372
+5 mode:reexp n:32 prop:entryinfo sample:train x 0.794914
+5 mode:reexp n:32 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:32 prop:info sample:test x 23.5318
+5 mode:reexp n:32 prop:entryinfo sample:test x 0.73537
+5 mode:reexp n:32 prop:idealinfo sample:test x 0.761748
+3 mode:reexp n:64 prop:stats ms 0
+3 mode:reexp n:64 prop:reexp ms 0
+3 mode:reexp n:64 prop:exps 1
+5 mode:reexp n:64 prop:info sample:train x 42.0525
+5 mode:reexp n:64 prop:entryinfo sample:train x 0.65707
+5 mode:reexp n:64 prop:idealinfo sample:train x 0.687453
+5 mode:reexp n:64 prop:info sample:test x 34.0661
+5 mode:reexp n:64 prop:entryinfo sample:test x 1.06457
+5 mode:reexp n:64 prop:idealinfo sample:test x 0.959868
+3 mode:reexp n:128 prop:stats ms 0
+3 mode:reexp n:128 prop:reexp ms 0
+3 mode:reexp n:128 prop:exps 1
+5 mode:reexp n:128 prop:info sample:train x 106.794
+5 mode:reexp n:128 prop:entryinfo sample:train x 0.834327
+5 mode:reexp n:128 prop:idealinfo sample:train x 0.836043
+5 mode:reexp n:128 prop:info sample:test x 31.6275
+5 mode:reexp n:128 prop:entryinfo sample:test x 0.988359
+5 mode:reexp n:128 prop:idealinfo sample:test x 1.0094
+3 mode:reexp n:256 prop:stats ms 0
+3 mode:reexp n:256 prop:reexp ms 0
+3 mode:reexp n:256 prop:exps 1
+5 mode:reexp n:256 prop:info sample:train x 205.616
+5 mode:reexp n:256 prop:entryinfo sample:train x 0.803189
+5 mode:reexp n:256 prop:idealinfo sample:train x 0.805087
+5 mode:reexp n:256 prop:info sample:test x 20.8953
+5 mode:reexp n:256 prop:entryinfo sample:test x 0.652979
+5 mode:reexp n:256 prop:idealinfo sample:test x 0.662688
+3 mode:reexp n:512 prop:stats ms 0
+3 mode:reexp n:512 prop:reexp ms 0
+3 mode:reexp n:512 prop:exps 1
+5 mode:reexp n:512 prop:info sample:train x 431.916
+5 mode:reexp n:512 prop:entryinfo sample:train x 0.843586
+5 mode:reexp n:512 prop:idealinfo sample:train x 0.84533
+5 mode:reexp n:512 prop:info sample:test x 24.587
+5 mode:reexp n:512 prop:entryinfo sample:test x 0.768343
+5 mode:reexp n:512 prop:idealinfo sample:test x 0.761748
+3 mode:reexp n:1 prop:stats ms 0
+3 mode:reexp n:1 prop:reexp ms 0
+3 mode:reexp n:1 prop:exps 0
+5 mode:reexp n:1 prop:info sample:train x 0.289507
+5 mode:reexp n:1 prop:entryinfo sample:train x 0.289507
+5 mode:reexp n:1 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:1 prop:info sample:test x 22.1939
+5 mode:reexp n:1 prop:entryinfo sample:test x 0.69356
+5 mode:reexp n:1 prop:idealinfo sample:test x 0.662688
+3 mode:reexp n:2 prop:stats ms 0
+3 mode:reexp n:2 prop:reexp ms 0
+3 mode:reexp n:2 prop:exps 0
+5 mode:reexp n:2 prop:info sample:train x 0.830075
+5 mode:reexp n:2 prop:entryinfo sample:train x 0.415037
+5 mode:reexp n:2 prop:idealinfo sample:train x 1.20752
+5 mode:reexp n:2 prop:info sample:test x 27.5459
+5 mode:reexp n:2 prop:entryinfo sample:test x 0.860808
+5 mode:reexp n:2 prop:idealinfo sample:test x 0.761748
+3 mode:reexp n:4 prop:stats ms 0
+3 mode:reexp n:4 prop:reexp ms 0
+3 mode:reexp n:4 prop:exps 0
+5 mode:reexp n:4 prop:info sample:train x 2.95675
+5 mode:reexp n:4 prop:entryinfo sample:train x 0.739189
+5 mode:reexp n:4 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:4 prop:info sample:test x 36.9622
+5 mode:reexp n:4 prop:entryinfo sample:test x 1.15507
+5 mode:reexp n:4 prop:idealinfo sample:test x 0.910338
+3 mode:reexp n:8 prop:stats ms 0
+3 mode:reexp n:8 prop:reexp ms 0
+3 mode:reexp n:8 prop:exps 0
+5 mode:reexp n:8 prop:info sample:train x 3.4551
+5 mode:reexp n:8 prop:entryinfo sample:train x 0.431888
+5 mode:reexp n:8 prop:idealinfo sample:train x 0.613158
+5 mode:reexp n:8 prop:info sample:test x 31.807
+5 mode:reexp n:8 prop:entryinfo sample:test x 0.99397
+5 mode:reexp n:8 prop:idealinfo sample:test x 0.761748
+3 mode:reexp n:16 prop:stats ms 0
+3 mode:reexp n:16 prop:reexp ms 0
+3 mode:reexp n:16 prop:exps 1
+5 mode:reexp n:16 prop:info sample:train x 14.3127
+5 mode:reexp n:16 prop:entryinfo sample:train x 0.894542
+5 mode:reexp n:16 prop:idealinfo sample:train x 0.910338
+5 mode:reexp n:16 prop:info sample:test x 22.4427
+5 mode:reexp n:16 prop:entryinfo sample:test x 0.701334
+5 mode:reexp n:16 prop:idealinfo sample:test x 0.613158
+3 mode:reexp n:32 prop:stats ms 0
+3 mode:reexp n:32 prop:reexp ms 0
+3 mode:reexp n:32 prop:exps 1
+5 mode:reexp n:32 prop:info sample:train x 28.7936
+5 mode:reexp n:32 prop:entryinfo sample:train x 0.899801
+5 mode:reexp n:32 prop:idealinfo sample:train x 0.959868
+5 mode:reexp n:32 prop:info sample:test x 23.7268
+5 mode:reexp n:32 prop:entryinfo sample:test x 0.741461
+5 mode:reexp n:32 prop:idealinfo sample:test x 0.712218
+3 mode:reexp n:64 prop:stats ms 0
+3 mode:reexp n:64 prop:reexp ms 0
+3 mode:reexp n:64 prop:exps 1
+5 mode:reexp n:64 prop:info sample:train x 57.7525
+5 mode:reexp n:64 prop:entryinfo sample:train x 0.902382
+5 mode:reexp n:64 prop:idealinfo sample:train x 0.935103
+5 mode:reexp n:64 prop:info sample:test x 23.9771
+5 mode:reexp n:64 prop:entryinfo sample:test x 0.749284
+5 mode:reexp n:64 prop:idealinfo sample:test x 0.662688
+3 mode:reexp n:128 prop:stats ms 0
+3 mode:reexp n:128 prop:reexp ms 0
+3 mode:reexp n:128 prop:exps 1
+5 mode:reexp n:128 prop:info sample:train x 93.6187
+5 mode:reexp n:128 prop:entryinfo sample:train x 0.731396
+5 mode:reexp n:128 prop:idealinfo sample:train x 0.749366
+5 mode:reexp n:128 prop:info sample:test x 27.4683
+5 mode:reexp n:128 prop:entryinfo sample:test x 0.858385
+5 mode:reexp n:128 prop:idealinfo sample:test x 0.811278
+3 mode:reexp n:256 prop:stats ms 0
+3 mode:reexp n:256 prop:reexp ms 0
+3 mode:reexp n:256 prop:exps 1
+5 mode:reexp n:256 prop:info sample:train x 202.346
+5 mode:reexp n:256 prop:entryinfo sample:train x 0.790414
+5 mode:reexp n:256 prop:idealinfo sample:train x 0.792704
+5 mode:reexp n:256 prop:info sample:test x 19.2878
+5 mode:reexp n:256 prop:entryinfo sample:test x 0.602742
+5 mode:reexp n:256 prop:idealinfo sample:test x 0.613158
+3 mode:reexp n:512 prop:stats ms 0
+3 mode:reexp n:512 prop:reexp ms 0
+3 mode:reexp n:512 prop:exps 1
+5 mode:reexp n:512 prop:info sample:train x 415.307
+5 mode:reexp n:512 prop:entryinfo sample:train x 0.811146
+5 mode:reexp n:512 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:512 prop:info sample:test x 30.9133
+5 mode:reexp n:512 prop:entryinfo sample:test x 0.96604
+5 mode:reexp n:512 prop:idealinfo sample:test x 0.959868
+3 mode:reexp n:1 prop:stats ms 0
+3 mode:reexp n:1 prop:reexp ms 0
+3 mode:reexp n:1 prop:exps 0
+5 mode:reexp n:1 prop:info sample:train x 0.289507
+5 mode:reexp n:1 prop:entryinfo sample:train x 0.289507
+5 mode:reexp n:1 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:1 prop:info sample:test x 27.5132
+5 mode:reexp n:1 prop:entryinfo sample:test x 0.859787
+5 mode:reexp n:1 prop:idealinfo sample:test x 0.910338
+3 mode:reexp n:2 prop:stats ms 0
+3 mode:reexp n:2 prop:reexp ms 0
+3 mode:reexp n:2 prop:exps 0
+5 mode:reexp n:2 prop:info sample:train x 0.304006
+5 mode:reexp n:2 prop:entryinfo sample:train x 0.152003
+5 mode:reexp n:2 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:2 prop:info sample:test x 39.7333
+5 mode:reexp n:2 prop:entryinfo sample:test x 1.24166
+5 mode:reexp n:2 prop:idealinfo sample:test x 0.959868
+3 mode:reexp n:4 prop:stats ms 0
+3 mode:reexp n:4 prop:reexp ms 0
+3 mode:reexp n:4 prop:exps 0
+5 mode:reexp n:4 prop:info sample:train x 2.39199
+5 mode:reexp n:4 prop:entryinfo sample:train x 0.597997
+5 mode:reexp n:4 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:4 prop:info sample:test x 27.2895
+5 mode:reexp n:4 prop:entryinfo sample:test x 0.852798
+5 mode:reexp n:4 prop:idealinfo sample:test x 0.761748
+3 mode:reexp n:8 prop:stats ms 0
+3 mode:reexp n:8 prop:reexp ms 0
+3 mode:reexp n:8 prop:exps 0
+5 mode:reexp n:8 prop:info sample:train x 8
+5 mode:reexp n:8 prop:entryinfo sample:train x 1
+5 mode:reexp n:8 prop:idealinfo sample:train x 1.20752
+5 mode:reexp n:8 prop:info sample:test x 32
+5 mode:reexp n:8 prop:entryinfo sample:test x 1
+5 mode:reexp n:8 prop:idealinfo sample:test x 0.662688
+3 mode:reexp n:16 prop:stats ms 0
+3 mode:reexp n:16 prop:reexp ms 0
+3 mode:reexp n:16 prop:exps 1
+5 mode:reexp n:16 prop:info sample:train x 8.71447
+5 mode:reexp n:16 prop:entryinfo sample:train x 0.544654
+5 mode:reexp n:16 prop:idealinfo sample:train x 0.613158
+5 mode:reexp n:16 prop:info sample:test x 32.8587
+5 mode:reexp n:16 prop:entryinfo sample:test x 1.02684
+5 mode:reexp n:16 prop:idealinfo sample:test x 0.910338
+3 mode:reexp n:32 prop:stats ms 0
+3 mode:reexp n:32 prop:reexp ms 0
+3 mode:reexp n:32 prop:exps 1
+5 mode:reexp n:32 prop:info sample:train x 28.3085
+5 mode:reexp n:32 prop:entryinfo sample:train x 0.884641
+5 mode:reexp n:32 prop:idealinfo sample:train x 0.910338
+5 mode:reexp n:32 prop:info sample:test x 26.6514
+5 mode:reexp n:32 prop:entryinfo sample:test x 0.832856
+5 mode:reexp n:32 prop:idealinfo sample:test x 0.761748
+3 mode:reexp n:64 prop:stats ms 0
+3 mode:reexp n:64 prop:reexp ms 0
+3 mode:reexp n:64 prop:exps 1
+5 mode:reexp n:64 prop:info sample:train x 50.6694
+5 mode:reexp n:64 prop:entryinfo sample:train x 0.791709
+5 mode:reexp n:64 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:64 prop:info sample:test x 20.4859
+5 mode:reexp n:64 prop:entryinfo sample:test x 0.640185
+5 mode:reexp n:64 prop:idealinfo sample:test x 0.613158
+3 mode:reexp n:128 prop:stats ms 0
+3 mode:reexp n:128 prop:reexp ms 0
+3 mode:reexp n:128 prop:exps 1
+5 mode:reexp n:128 prop:info sample:train x 94.9151
+5 mode:reexp n:128 prop:entryinfo sample:train x 0.741524
+5 mode:reexp n:128 prop:idealinfo sample:train x 0.749366
+5 mode:reexp n:128 prop:info sample:test x 26.2792
+5 mode:reexp n:128 prop:entryinfo sample:test x 0.821226
+5 mode:reexp n:128 prop:idealinfo sample:test x 0.811278
+3 mode:reexp n:256 prop:stats ms 0
+3 mode:reexp n:256 prop:reexp ms 0
+3 mode:reexp n:256 prop:exps 1
+5 mode:reexp n:256 prop:info sample:train x 207.502
+5 mode:reexp n:256 prop:entryinfo sample:train x 0.810556
+5 mode:reexp n:256 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:256 prop:info sample:test x 27.006
+5 mode:reexp n:256 prop:entryinfo sample:test x 0.843939
+5 mode:reexp n:256 prop:idealinfo sample:test x 0.860808
+3 mode:reexp n:512 prop:stats ms 0
+3 mode:reexp n:512 prop:reexp ms 0
+3 mode:reexp n:512 prop:exps 1
+5 mode:reexp n:512 prop:info sample:train x 425.503
+5 mode:reexp n:512 prop:entryinfo sample:train x 0.83106
+5 mode:reexp n:512 prop:idealinfo sample:train x 0.832948
+5 mode:reexp n:512 prop:info sample:test x 23.2446
+5 mode:reexp n:512 prop:entryinfo sample:test x 0.726394
+5 mode:reexp n:512 prop:idealinfo sample:test x 0.712218
+3 mode:reexp n:1 prop:stats ms 0
+3 mode:reexp n:1 prop:reexp ms 0
+3 mode:reexp n:1 prop:exps 0
+5 mode:reexp n:1 prop:info sample:train x 0.289507
+5 mode:reexp n:1 prop:entryinfo sample:train x 0.289507
+5 mode:reexp n:1 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:1 prop:info sample:test x 27.9548
+5 mode:reexp n:1 prop:entryinfo sample:test x 0.873586
+5 mode:reexp n:1 prop:idealinfo sample:test x 0.860808
+3 mode:reexp n:2 prop:stats ms 0
+3 mode:reexp n:2 prop:reexp ms 0
+3 mode:reexp n:2 prop:exps 0
+5 mode:reexp n:2 prop:info sample:train x 0.326997
+5 mode:reexp n:2 prop:entryinfo sample:train x 0.163499
+5 mode:reexp n:2 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:2 prop:info sample:test x 31.5345
+5 mode:reexp n:2 prop:entryinfo sample:test x 0.985453
+5 mode:reexp n:2 prop:idealinfo sample:test x 0.811278
+3 mode:reexp n:4 prop:stats ms 0
+3 mode:reexp n:4 prop:reexp ms 0
+3 mode:reexp n:4 prop:exps 0
+5 mode:reexp n:4 prop:info sample:train x 2.95675
+5 mode:reexp n:4 prop:entryinfo sample:train x 0.739189
+5 mode:reexp n:4 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:4 prop:info sample:test x 25.826
+5 mode:reexp n:4 prop:entryinfo sample:test x 0.807062
+5 mode:reexp n:4 prop:idealinfo sample:test x 0.811278
+3 mode:reexp n:8 prop:stats ms 0
+3 mode:reexp n:8 prop:reexp ms 0
+3 mode:reexp n:8 prop:exps 0
+5 mode:reexp n:8 prop:info sample:train x 7.62913
+5 mode:reexp n:8 prop:entryinfo sample:train x 0.953642
+5 mode:reexp n:8 prop:idealinfo sample:train x 1.20752
+5 mode:reexp n:8 prop:info sample:test x 34.4047
+5 mode:reexp n:8 prop:entryinfo sample:test x 1.07515
+5 mode:reexp n:8 prop:idealinfo sample:test x 0.811278
+3 mode:reexp n:16 prop:stats ms 0
+3 mode:reexp n:16 prop:reexp ms 0
+3 mode:reexp n:16 prop:exps 1
+5 mode:reexp n:16 prop:info sample:train x 0.808932
+5 mode:reexp n:16 prop:entryinfo sample:train x 0.0505582
+5 mode:reexp n:16 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:16 prop:info sample:test x 44.8271
+5 mode:reexp n:16 prop:entryinfo sample:test x 1.40085
+5 mode:reexp n:16 prop:idealinfo sample:test x 0.860808
+3 mode:reexp n:32 prop:stats ms 0
+3 mode:reexp n:32 prop:reexp ms 0
+3 mode:reexp n:32 prop:exps 1
+5 mode:reexp n:32 prop:info sample:train x 24.8687
+5 mode:reexp n:32 prop:entryinfo sample:train x 0.777148
+5 mode:reexp n:32 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:32 prop:info sample:test x 29.889
+5 mode:reexp n:32 prop:entryinfo sample:test x 0.934033
+5 mode:reexp n:32 prop:idealinfo sample:test x 0.959868
+3 mode:reexp n:64 prop:stats ms 0
+3 mode:reexp n:64 prop:reexp ms 0
+3 mode:reexp n:64 prop:exps 1
+5 mode:reexp n:64 prop:info sample:train x 37.4558
+5 mode:reexp n:64 prop:entryinfo sample:train x 0.585247
+5 mode:reexp n:64 prop:idealinfo sample:train x 0.637923
+5 mode:reexp n:64 prop:info sample:test x 15.0312
+5 mode:reexp n:64 prop:entryinfo sample:test x 0.469726
+5 mode:reexp n:64 prop:idealinfo sample:test x 0.563628
+3 mode:reexp n:128 prop:stats ms 0
+3 mode:reexp n:128 prop:reexp ms 0
+3 mode:reexp n:128 prop:exps 1
+5 mode:reexp n:128 prop:info sample:train x 102.223
+5 mode:reexp n:128 prop:entryinfo sample:train x 0.798619
+5 mode:reexp n:128 prop:idealinfo sample:train x 0.798896
+5 mode:reexp n:128 prop:info sample:test x 25.952
+5 mode:reexp n:128 prop:entryinfo sample:test x 0.811
+5 mode:reexp n:128 prop:idealinfo sample:test x 0.811278
+3 mode:reexp n:256 prop:stats ms 0
+3 mode:reexp n:256 prop:reexp ms 0
+3 mode:reexp n:256 prop:exps 1
+5 mode:reexp n:256 prop:info sample:train x 195.669
+5 mode:reexp n:256 prop:entryinfo sample:train x 0.764331
+5 mode:reexp n:256 prop:idealinfo sample:train x 0.767939
+5 mode:reexp n:256 prop:info sample:test x 18.7759
+5 mode:reexp n:256 prop:entryinfo sample:test x 0.586747
+5 mode:reexp n:256 prop:idealinfo sample:test x 0.613158
+3 mode:reexp n:512 prop:stats ms 0
+3 mode:reexp n:512 prop:reexp ms 0
+3 mode:reexp n:512 prop:exps 1
+5 mode:reexp n:512 prop:info sample:train x 404.507
+5 mode:reexp n:512 prop:entryinfo sample:train x 0.790054
+5 mode:reexp n:512 prop:idealinfo sample:train x 0.792704
+5 mode:reexp n:512 prop:info sample:test x 24.9219
+5 mode:reexp n:512 prop:entryinfo sample:test x 0.778809
+5 mode:reexp n:512 prop:idealinfo sample:test x 0.811278
+3 mode:reexp n:1 prop:stats ms 0
+3 mode:reexp n:1 prop:reexp ms 0
+3 mode:reexp n:1 prop:exps 0
+5 mode:reexp n:1 prop:info sample:train x 0.289507
+5 mode:reexp n:1 prop:entryinfo sample:train x 0.289507
+5 mode:reexp n:1 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:1 prop:info sample:test x 23.1041
+5 mode:reexp n:1 prop:entryinfo sample:test x 0.722003
+5 mode:reexp n:1 prop:idealinfo sample:test x 0.662688
+3 mode:reexp n:2 prop:stats ms 0
+3 mode:reexp n:2 prop:reexp ms 0
+3 mode:reexp n:2 prop:exps 0
+5 mode:reexp n:2 prop:info sample:train x 0.326997
+5 mode:reexp n:2 prop:entryinfo sample:train x 0.163499
+5 mode:reexp n:2 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:2 prop:info sample:test x 18.1875
+5 mode:reexp n:2 prop:entryinfo sample:test x 0.568361
+5 mode:reexp n:2 prop:idealinfo sample:test x 0.662688
+3 mode:reexp n:4 prop:stats ms 0
+3 mode:reexp n:4 prop:reexp ms 0
+3 mode:reexp n:4 prop:exps 0
+5 mode:reexp n:4 prop:info sample:train x 2.39199
+5 mode:reexp n:4 prop:entryinfo sample:train x 0.597997
+5 mode:reexp n:4 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:4 prop:info sample:test x 31.9632
+5 mode:reexp n:4 prop:entryinfo sample:test x 0.99885
+5 mode:reexp n:4 prop:idealinfo sample:test x 0.959868
+3 mode:reexp n:8 prop:stats ms 0
+3 mode:reexp n:8 prop:reexp ms 0
+3 mode:reexp n:8 prop:exps 0
+5 mode:reexp n:8 prop:info sample:train x 7.38191
+5 mode:reexp n:8 prop:entryinfo sample:train x 0.922738
+5 mode:reexp n:8 prop:idealinfo sample:train x 1.0094
+5 mode:reexp n:8 prop:info sample:test x 24.3571
+5 mode:reexp n:8 prop:entryinfo sample:test x 0.761159
+5 mode:reexp n:8 prop:idealinfo sample:test x 0.712218
+3 mode:reexp n:16 prop:stats ms 0
+3 mode:reexp n:16 prop:reexp ms 0
+3 mode:reexp n:16 prop:exps 1
+5 mode:reexp n:16 prop:info sample:train x 13.7376
+5 mode:reexp n:16 prop:entryinfo sample:train x 0.858597
+5 mode:reexp n:16 prop:idealinfo sample:train x 0.910338
+5 mode:reexp n:16 prop:info sample:test x 26.1026
+5 mode:reexp n:16 prop:entryinfo sample:test x 0.815705
+5 mode:reexp n:16 prop:idealinfo sample:test x 0.761748
+3 mode:reexp n:32 prop:stats ms 0
+3 mode:reexp n:32 prop:reexp ms 0
+3 mode:reexp n:32 prop:exps 1
+5 mode:reexp n:32 prop:info sample:train x 24.4559
+5 mode:reexp n:32 prop:entryinfo sample:train x 0.764248
+5 mode:reexp n:32 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:32 prop:info sample:test x 31.5153
+5 mode:reexp n:32 prop:entryinfo sample:test x 0.984853
+5 mode:reexp n:32 prop:idealinfo sample:test x 0.959868
+3 mode:reexp n:64 prop:stats ms 0
+3 mode:reexp n:64 prop:reexp ms 0
+3 mode:reexp n:64 prop:exps 1
+5 mode:reexp n:64 prop:info sample:train x 51.7877
+5 mode:reexp n:64 prop:entryinfo sample:train x 0.809183
+5 mode:reexp n:64 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:64 prop:info sample:test x 24.2906
+5 mode:reexp n:64 prop:entryinfo sample:test x 0.75908
+5 mode:reexp n:64 prop:idealinfo sample:test x 0.761748
+3 mode:reexp n:128 prop:stats ms 0
+3 mode:reexp n:128 prop:reexp ms 0
+3 mode:reexp n:128 prop:exps 1
+5 mode:reexp n:128 prop:info sample:train x 110.842
+5 mode:reexp n:128 prop:entryinfo sample:train x 0.865957
+5 mode:reexp n:128 prop:idealinfo sample:train x 0.873191
+5 mode:reexp n:128 prop:info sample:test x 24.7345
+5 mode:reexp n:128 prop:entryinfo sample:test x 0.772954
+5 mode:reexp n:128 prop:idealinfo sample:test x 0.761748
+3 mode:reexp n:256 prop:stats ms 0
+3 mode:reexp n:256 prop:reexp ms 0
+3 mode:reexp n:256 prop:exps 1
+5 mode:reexp n:256 prop:info sample:train x 212.394
+5 mode:reexp n:256 prop:entryinfo sample:train x 0.829665
+5 mode:reexp n:256 prop:idealinfo sample:train x 0.842234
+5 mode:reexp n:256 prop:info sample:test x 28.5949
+5 mode:reexp n:256 prop:entryinfo sample:test x 0.89359
+5 mode:reexp n:256 prop:idealinfo sample:test x 0.860808
+3 mode:reexp n:512 prop:stats ms 0
+3 mode:reexp n:512 prop:reexp ms 0
+3 mode:reexp n:512 prop:exps 1
+5 mode:reexp n:512 prop:info sample:train x 403.832
+5 mode:reexp n:512 prop:entryinfo sample:train x 0.788734
+5 mode:reexp n:512 prop:idealinfo sample:train x 0.789609
+5 mode:reexp n:512 prop:info sample:test x 24.0896
+5 mode:reexp n:512 prop:entryinfo sample:test x 0.752799
+5 mode:reexp n:512 prop:idealinfo sample:test x 0.761748
+3 mode:reexp n:1 prop:stats ms 0
+3 mode:reexp n:1 prop:reexp ms 0
+3 mode:reexp n:1 prop:exps 0
+5 mode:reexp n:1 prop:info sample:train x 0.289507
+5 mode:reexp n:1 prop:entryinfo sample:train x 0.289507
+5 mode:reexp n:1 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:1 prop:info sample:test x 27.5457
+5 mode:reexp n:1 prop:entryinfo sample:test x 0.860802
+5 mode:reexp n:1 prop:idealinfo sample:test x 0.811278
+3 mode:reexp n:2 prop:stats ms 0
+3 mode:reexp n:2 prop:reexp ms 0
+3 mode:reexp n:2 prop:exps 0
+5 mode:reexp n:2 prop:info sample:train x 2
+5 mode:reexp n:2 prop:entryinfo sample:train x 1
+5 mode:reexp n:2 prop:idealinfo sample:train x 1.20752
+5 mode:reexp n:2 prop:info sample:test x 32
+5 mode:reexp n:2 prop:entryinfo sample:test x 1
+5 mode:reexp n:2 prop:idealinfo sample:test x 0.712218
+3 mode:reexp n:4 prop:stats ms 0
+3 mode:reexp n:4 prop:reexp ms 0
+3 mode:reexp n:4 prop:exps 0
+5 mode:reexp n:4 prop:info sample:train x 0.251149
+5 mode:reexp n:4 prop:entryinfo sample:train x 0.0627873
+5 mode:reexp n:4 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:4 prop:info sample:test x 46.438
+5 mode:reexp n:4 prop:entryinfo sample:test x 1.45119
+5 mode:reexp n:4 prop:idealinfo sample:test x 0.910338
+3 mode:reexp n:8 prop:stats ms 0
+3 mode:reexp n:8 prop:reexp ms 0
+3 mode:reexp n:8 prop:exps 0
+5 mode:reexp n:8 prop:info sample:train x 6.50107
+5 mode:reexp n:8 prop:entryinfo sample:train x 0.812633
+5 mode:reexp n:8 prop:idealinfo sample:train x 1.0094
+5 mode:reexp n:8 prop:info sample:test x 35.6975
+5 mode:reexp n:8 prop:entryinfo sample:test x 1.11555
+5 mode:reexp n:8 prop:idealinfo sample:test x 0.910338
+3 mode:reexp n:16 prop:stats ms 0
+3 mode:reexp n:16 prop:reexp ms 0
+3 mode:reexp n:16 prop:exps 1
+5 mode:reexp n:16 prop:info sample:train x 4.83658
+5 mode:reexp n:16 prop:entryinfo sample:train x 0.302286
+5 mode:reexp n:16 prop:idealinfo sample:train x 0.514098
+5 mode:reexp n:16 prop:info sample:test x 27.7043
+5 mode:reexp n:16 prop:entryinfo sample:test x 0.86576
+5 mode:reexp n:16 prop:idealinfo sample:test x 0.761748
+3 mode:reexp n:32 prop:stats ms 0
+3 mode:reexp n:32 prop:reexp ms 0
+3 mode:reexp n:32 prop:exps 1
+5 mode:reexp n:32 prop:info sample:train x 25.8441
+5 mode:reexp n:32 prop:entryinfo sample:train x 0.807629
+5 mode:reexp n:32 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:32 prop:info sample:test x 22.2648
+5 mode:reexp n:32 prop:entryinfo sample:test x 0.695776
+5 mode:reexp n:32 prop:idealinfo sample:test x 0.712218
+3 mode:reexp n:64 prop:stats ms 0
+3 mode:reexp n:64 prop:reexp ms 0
+3 mode:reexp n:64 prop:exps 1
+5 mode:reexp n:64 prop:info sample:train x 57.327
+5 mode:reexp n:64 prop:entryinfo sample:train x 0.895734
+5 mode:reexp n:64 prop:idealinfo sample:train x 0.910338
+5 mode:reexp n:64 prop:info sample:test x 30.649
+5 mode:reexp n:64 prop:entryinfo sample:test x 0.957783
+5 mode:reexp n:64 prop:idealinfo sample:test x 1.0094
+3 mode:reexp n:128 prop:stats ms 0
+3 mode:reexp n:128 prop:reexp ms 0
+3 mode:reexp n:128 prop:exps 1
+5 mode:reexp n:128 prop:info sample:train x 105.393
+5 mode:reexp n:128 prop:entryinfo sample:train x 0.823382
+5 mode:reexp n:128 prop:idealinfo sample:train x 0.823661
+5 mode:reexp n:128 prop:info sample:test x 25.9597
+5 mode:reexp n:128 prop:entryinfo sample:test x 0.81124
+5 mode:reexp n:128 prop:idealinfo sample:test x 0.811278
+3 mode:reexp n:256 prop:stats ms 0
+3 mode:reexp n:256 prop:reexp ms 0
+3 mode:reexp n:256 prop:exps 1
+5 mode:reexp n:256 prop:info sample:train x 205.911
+5 mode:reexp n:256 prop:entryinfo sample:train x 0.804339
+5 mode:reexp n:256 prop:idealinfo sample:train x 0.805087
+5 mode:reexp n:256 prop:info sample:test x 22.4606
+5 mode:reexp n:256 prop:entryinfo sample:test x 0.701892
+5 mode:reexp n:256 prop:idealinfo sample:test x 0.712218
+3 mode:reexp n:512 prop:stats ms 0
+3 mode:reexp n:512 prop:reexp ms 0
+3 mode:reexp n:512 prop:exps 1
+5 mode:reexp n:512 prop:info sample:train x 415.345
+5 mode:reexp n:512 prop:entryinfo sample:train x 0.81122
+5 mode:reexp n:512 prop:idealinfo sample:train x 0.811278
+5 mode:reexp n:512 prop:info sample:test x 33.8224
+5 mode:reexp n:512 prop:entryinfo sample:test x 1.05695
+5 mode:reexp n:512 prop:idealinfo sample:test x 1.05893
+3 mode:reexp n:1 prop:stats ms 0
+3 mode:reexp n:1 prop:reexp ms 0
+3 mode:reexp n:1 prop:exps 0
+5 mode:reexp n:1 prop:info sample:train x 0.289507
+5 mode:reexp n:1 prop:entryinfo sample:train x 0.289507
+5 mode:reexp n:1 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:1 prop:info sample:test x 27.2383
+5 mode:reexp n:1 prop:entryinfo sample:test x 0.851198
+5 mode:reexp n:1 prop:idealinfo sample:test x 0.811278
+3 mode:reexp n:2 prop:stats ms 0
+3 mode:reexp n:2 prop:reexp ms 0
+3 mode:reexp n:2 prop:exps 0
+5 mode:reexp n:2 prop:info sample:train x 0.326997
+5 mode:reexp n:2 prop:entryinfo sample:train x 0.163499
+5 mode:reexp n:2 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:2 prop:info sample:test x 26.8258
+5 mode:reexp n:2 prop:entryinfo sample:test x 0.838308
+5 mode:reexp n:2 prop:idealinfo sample:test x 0.811278
+3 mode:reexp n:4 prop:stats ms 0
+3 mode:reexp n:4 prop:reexp ms 0
+3 mode:reexp n:4 prop:exps 0
+5 mode:reexp n:4 prop:info sample:train x 0.226334
+5 mode:reexp n:4 prop:entryinfo sample:train x 0.0565835
+5 mode:reexp n:4 prop:idealinfo sample:train x 0.415037
+5 mode:reexp n:4 prop:info sample:test x 43.6054
+5 mode:reexp n:4 prop:entryinfo sample:test x 1.36267
+5 mode:reexp n:4 prop:idealinfo sample:test x 0.860808
+3 mode:reexp n:8 prop:stats ms 0
+3 mode:reexp n:8 prop:reexp ms 0
+3 mode:reexp n:8 prop:exps 0
+5 mode:reexp n:8 prop:info sample:train x 4.15551
+5 mode:reexp n:8 prop:entryinfo sample:train x 0.519438
+5 mode:reexp n:8 prop:idealinfo sample:train x 0.613158
+5 mode:reexp n:8 prop:info sample:test x 39.3257
+5 mode:reexp n:8 prop:entryinfo sample:test x 1.22893
+5 mode:reexp n:8 prop:idealinfo sample:test x 0.860808
+3 mode:reexp n:16 prop:stats ms 0
+3 mode:reexp n:16 prop:reexp ms 0
+3 mode:reexp n:16 prop:exps 1
+5 mode:reexp n:16 prop:info sample:train x 8.48324
+5 mode:reexp n:16 prop:entryinfo sample:train x 0.530203
+5 mode:reexp n:16 prop:idealinfo sample:train x 0.613158
+5 mode:reexp n:16 prop:info sample:test x 27.6508
+5 mode:reexp n:16 prop:entryinfo sample:test x 0.864089
+5 mode:reexp n:16 prop:idealinfo sample:test x 0.811278
+3 mode:reexp n:32 prop:stats ms 0
+3 mode:reexp n:32 prop:reexp ms 0
+3 mode:reexp n:32 prop:exps 1
+5 mode:reexp n:32 prop:info sample:train x 29.5924
+5 mode:reexp n:32 prop:entryinfo sample:train x 0.924762
+5 mode:reexp n:32 prop:idealinfo sample:train x 0.959868
+5 mode:reexp n:32 prop:info sample:test x 26.8532
+5 mode:reexp n:32 prop:entryinfo sample:test x 0.839162
+5 mode:reexp n:32 prop:idealinfo sample:test x 0.761748
+3 mode:reexp n:64 prop:stats ms 0
+3 mode:reexp n:64 prop:reexp ms 0
+3 mode:reexp n:64 prop:exps 1
+5 mode:reexp n:64 prop:info sample:train x 50.1426
+5 mode:reexp n:64 prop:entryinfo sample:train x 0.783479
+5 mode:reexp n:64 prop:idealinfo sample:train x 0.786513
+5 mode:reexp n:64 prop:info sample:test x 19.9654
+5 mode:reexp n:64 prop:entryinfo sample:test x 0.62392
+5 mode:reexp n:64 prop:idealinfo sample:test x 0.613158
+3 mode:reexp n:128 prop:stats ms 0
+3 mode:reexp n:128 prop:reexp ms 0
+3 mode:reexp n:128 prop:exps 1
+5 mode:reexp n:128 prop:info sample:train x 107.809
+5 mode:reexp n:128 prop:entryinfo sample:train x 0.842257
+5 mode:reexp n:128 prop:idealinfo sample:train x 0.860808
+5 mode:reexp n:128 prop:info sample:test x 29.2613
+5 mode:reexp n:128 prop:entryinfo sample:test x 0.914415
+5 mode:reexp n:128 prop:idealinfo sample:test x 0.910338
+3 mode:reexp n:256 prop:stats ms 0
+3 mode:reexp n:256 prop:reexp ms 0
+3 mode:reexp n:256 prop:exps 1
+5 mode:reexp n:256 prop:info sample:train x 212.521
+5 mode:reexp n:256 prop:entryinfo sample:train x 0.830162
+5 mode:reexp n:256 prop:idealinfo sample:train x 0.836043
+5 mode:reexp n:256 prop:info sample:test x 22.6607
+5 mode:reexp n:256 prop:entryinfo sample:test x 0.708146
+5 mode:reexp n:256 prop:idealinfo sample:test x 0.712218
+3 mode:reexp n:512 prop:stats ms 0
+3 mode:reexp n:512 prop:reexp ms 0
+3 mode:reexp n:512 prop:exps 1
+5 mode:reexp n:512 prop:info sample:train x 406.439
+5 mode:reexp n:512 prop:entryinfo sample:train x 0.793826
+5 mode:reexp n:512 prop:idealinfo sample:train x 0.798896
+5 mode:reexp n:512 prop:info sample:test x 25.4396
+5 mode:reexp n:512 prop:entryinfo sample:test x 0.794989
+5 mode:reexp n:512 prop:idealinfo sample:test x 0.761748

@@ -1,0 +1,40 @@
+3 n:262144 p:0.1 prop:setup ms 3577
+3 n:262144 p:0.1 prop:stats ms 4690
+3 n:262144 p:0.1 prop:reexp ms 512
+3 n:262144 p:0.1 prop:exps 1
+3 n:262144 p:0.1 prop:populate ms 3550
+3 n:262144 p:0.1 prop:apply ms 25
+3 n:262144 p:0.1 prop:active rels 5354
+3 n:262144 p:0.1 prop:rels 5354
+3 n:262144 p:0.01 prop:setup ms 3562
+3 n:262144 p:0.01 prop:stats ms 4660
+3 n:262144 p:0.01 prop:reexp ms 522
+3 n:262144 p:0.01 prop:exps 1
+3 n:262144 p:0.01 prop:populate ms 3518
+3 n:262144 p:0.01 prop:apply ms 25
+3 n:262144 p:0.01 prop:active rels 5354
+3 n:262144 p:0.01 prop:rels 5354
+3 n:262144 p:0.001 prop:setup ms 3523
+3 n:262144 p:0.001 prop:stats ms 4621
+3 n:262144 p:0.001 prop:reexp ms 521
+3 n:262144 p:0.001 prop:exps 1
+3 n:262144 p:0.001 prop:populate ms 3522
+3 n:262144 p:0.001 prop:apply ms 25
+3 n:262144 p:0.001 prop:active rels 5354
+3 n:262144 p:0.001 prop:rels 5354
+3 n:262144 p:0.0001 prop:setup ms 3503
+3 n:262144 p:0.0001 prop:stats ms 4610
+3 n:262144 p:0.0001 prop:reexp ms 517
+3 n:262144 p:0.0001 prop:exps 1
+3 n:262144 p:0.0001 prop:populate ms 3647
+3 n:262144 p:0.0001 prop:apply ms 25
+3 n:262144 p:0.0001 prop:active rels 5354
+3 n:262144 p:0.0001 prop:rels 5354
+3 n:262144 p:0.00001 prop:setup ms 3481
+3 n:262144 p:0.00001 prop:stats ms 4602
+3 n:262144 p:0.00001 prop:reexp ms 519
+3 n:262144 p:0.00001 prop:exps 1
+3 n:262144 p:0.00001 prop:populate ms 3537
+3 n:262144 p:0.00001 prop:apply ms 25
+3 n:262144 p:0.00001 prop:active rels 5354
+3 n:262144 p:0.00001 prop:rels 5354

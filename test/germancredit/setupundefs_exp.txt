@@ -1,0 +1,202 @@
+accountEmpty(r)  274/274 [0]
+
+accountUnder200DM(r)  269/543 [542.967]
+
+accountOver200DM(r)  63/606 [291.744]
+
+noAccount(r)  394/1000 [967.332]
+
+noCreditTakenOrPaidDuly(r)  40/40 [0]
+
+creditForThisBankPaidDuly(r)  49/89 [88.3424]
+
+creditForThisBankPaidDulyTillNow(r)  530/619 [367.719]
+
+creditDelays(r)  88/707 [383.246]
+
+criticalAccount(r)  293/1000 [872.565]
+
+forNewCar(r)  234/234 [0]
+
+forUsedCar(r)  103/337 [299.281]
+
+forFurnitudeOrEquipment(r)  181/518 [483.579]
+
+forRadioTelevision(r)  280/798 [746.01]
+
+forDomesticAppliance(r)  12/810 [90.1053]
+
+forRepairs(r)  22/832 [146.618]
+
+forEducation(r)  50/882 [277.089]
+
+forVacation(r)  0/882 [0]
+
+forRetraining(r)  9/891 [72.5827]
+
+forBusiness(r)  97/988 [457.635]
+
+forOthers(r)  12/1000 [93.7779]
+
+savings(<100)(r)  603/603 [0]
+
+savings(100-500)(r)  103/706 [423.222]
+
+savings(500-1k)(r)  63/769 [314.463]
+
+savings(>1k)(r)  48/817 [263.457]
+
+savingsUnknown(r)  183/1000 [686.596]
+
+unemployed(r)  62/62 [0]
+
+employed(<1y)(r)  172/234 [195.188]
+
+employed(1y-4y)(r)  339/573 [559.042]
+
+employed(4y-7y)(r)  174/747 [584.966]
+
+employed(>7y)(r)  253/1000 [815.998]
+
+male&divorced/separated(r)  50/50 [0]
+
+femaled&divorced/separated/married(r)  310/360 [209.276]
+
+male&single(r)  548/908 [879.717]
+
+male&married/widowed(r)  92/1000 [443.111]
+
+female&single(r)  0/1000 [0]
+
+singleApplicantNoGuarantor(r)  907/907 [0]
+
+coapplicant(r)  41/948 [243.631]
+
+guarantor(r)  52/1000 [294.833]
+
+hasRealEstate(r)  282/282 [0]
+
+hasLifeInsurance(r)  232/514 [510.486]
+
+hasCarOrOther(r)  332/846 [817.535]
+
+unknownOrNoProperty(r)  154/1000 [619.76]
+
+hasBankPlans(r)  139/139 [0]
+
+hasStorePlans(r)  47/186 [151.685]
+
+hasNoPlan(r)  814/1000 [693.028]
+
+home(rent)(r)  179/179 [0]
+
+home(own)(r)  713/892 [645.158]
+
+home(free)(r)  108/1000 [493.854]
+
+unemployedOrUnskilled(r)  22/170 [94.4899]
+
+unskilled(r)  200/370 [368.243]
+
+skilled(r)  630/1000 [950.672]
+
+managementOrHighSkillOrSelfEmployed(r)  0/1000 [0]
+
+noTelephone(r)  596/596 [0]
+
+hasTelephone(r)  404/1000 [973.242]
+
+foreignWorker(r)  963/963 [0]
+
+notForeignWorker(r)  37/1000 [228.364]
+
+good(r)  700/1000 [881.291]
+
+duration0(r)  213/229 [83.6845]
+
+duration1(r)  404/633 [597.642]
+
+duration2(r)  273/906 [799.911]
+
+duration3(r)  94/1000 [449.682]
+
+credits0(r)  176/246 [211.949]
+
+credits1(r)  322/568 [560.643]
+
+credits2(r)  316/884 [831.455]
+
+credits3(r)  116/1000 [517.753]
+
+installmentRate0(r)  157/633 [511.548]
+
+installmentRate1(r)  231/864 [723.732]
+
+installmentRate2(r)  136/1000 [573.667]
+
+presentResidence0(r)  149/562 [468.922]
+
+presentResidence1(r)  308/870 [815.72]
+
+presentResidence2(r)  130/1000 [557.438]
+
+age0(r)  44/51 [29.4272]
+
+age1(r)  74/125 [121.93]
+
+age2(r)  174/299 [293.181]
+
+age3(r)  330/629 [627.897]
+
+age4(r)  371/1000 [951.437]
+
+creditsInBank0(r)  333/367 [163.4]
+
+creditsInBank1(r)  633/1000 [948.341]
+
+maintainsPeople0(r)  845/1000 [622.213]
+
+
+top scan:
+274.12   home(free)(r), unknownOrNoProperty(r)                 [f(s)=104, f(home(free)(r))=108, f(unknownOrNoProperty(r))=154]
+234.14   !creditsInBank1(r), criticalAccount(r)                [f(s)=223, f(!creditsInBank1(r))=367, f(criticalAccount(r))=293]
+186.61   creditsInBank1(r), !criticalAccount(r)                [f(s)=563, f(creditsInBank1(r))=633, f(!criticalAccount(r))=707]
+133.61   !home(free)(r), !unknownOrNoProperty(r)               [f(s)=842, f(!home(free)(r))=892, f(!unknownOrNoProperty(r))=846]
+122.54   !good(r), !noAccount(r)                               [f(s)=254, f(!good(r))=300, f(!noAccount(r))=606]
+116.43   good(r), noAccount(r)                                 [f(s)=348, f(good(r))=700, f(noAccount(r))=394]
+114.02   !age4(r), employed(>7y)(r)                            [f(s)=226, f(!age4(r))=629, f(employed(>7y)(r))=253]
+108.75   hasTelephone(r), !unskilled(r)                        [f(s)=133, f(hasTelephone(r))=164, f(!unskilled(r))=170]
+106.99   age4(r), !employed(>7y)(r)                            [f(s)=344, f(age4(r))=371, f(!employed(>7y)(r))=747]
+101.54   !hasTelephone(r), unskilled(r)                        [f(s)=169, f(!hasTelephone(r))=206, f(unskilled(r))=200]
+98.39   credits2(r), duration2(r)                             [f(s)=123, f(credits2(r))=275, f(duration2(r))=211]
+94.68   !creditsInBank1(r), creditDelays(r)                   [f(s)=57, f(!creditsInBank1(r))=144, f(creditDelays(r))=88]
+94.63   age4(r), !male&single(r)                              [f(s)=180, f(age4(r))=315, f(!male&single(r))=360]
+85.33   !age4(r), male&single(r)                              [f(s)=413, f(!age4(r))=593, f(male&single(r))=548]
+83.20   credits2(r), duration1(r)                             [f(s)=143, f(credits2(r))=152, f(duration1(r))=384]
+80.72   credits3(r), duration2(r)                             [f(s)=62, f(credits3(r))=83, f(duration2(r))=273]
+80.72   !credits2(r), !duration2(r)                           [f(s)=460, f(!credits2(r))=548, f(!duration2(r))=612]
+77.44   !credits2(r), !duration1(r)                           [f(s)=219, f(!credits2(r))=460, f(!duration1(r))=228]
+75.61   !maintainsPeople0(r), male&single(r)                  [f(s)=136, f(!maintainsPeople0(r))=153, f(male&single(r))=548]
+74.04   age4(r), !hasTelephone(r)                             [f(s)=268, f(age4(r))=371, f(!hasTelephone(r))=596]
+
+top good deps:
+122.54 !good(r), !noAccount(r)                               [f(s)=254, n=1000, f(!good(r))=300, f(!noAccount(r))=606]
+116.43 good(r), noAccount(r)                                 [f(s)=348, n=1000, f(good(r))=700, f(noAccount(r))=394]
+59.38 !good(r), !criticalAccount(r)                         [f(s)=250, n=1000, f(!good(r))=300, f(!criticalAccount(r))=707]
+59.09 good(r), criticalAccount(r)                           [f(s)=243, n=1000, f(good(r))=700, f(criticalAccount(r))=293]
+45.85 !credits1(r), !good(r)                                [f(s)=105, n=568, f(!credits1(r))=246, f(!good(r))=179]
+41.99 credits1(r), good(r)                                  [f(s)=248, n=568, f(credits1(r))=322, f(good(r))=389]
+40.81 age4(r), !good(r)                                     [f(s)=137, n=1000, f(age4(r))=371, f(!good(r))=300]
+38.78 !good(r), !creditForThisBankPaidDulyTillNow(r)        [f(s)=53, n=619, f(!good(r))=222, f(!creditForThisBankPaidDulyTillNow(r))=89]
+38.37 !age4(r), good(r)                                     [f(s)=466, n=1000, f(!age4(r))=629, f(good(r))=700]
+35.73 !good(r), unknownOrNoProperty(r)                      [f(s)=67, n=1000, f(!good(r))=300, f(unknownOrNoProperty(r))=154]
+35.44 good(r), savingsUnknown(r)                            [f(s)=151, n=1000, f(good(r))=700, f(savingsUnknown(r))=183]
+34.62 !good(r), !savingsUnknown(r)                          [f(s)=268, n=1000, f(!good(r))=300, f(!savingsUnknown(r))=817]
+34.46 !duration1(r), !good(r)                               [f(s)=102, n=633, f(!duration1(r))=229, f(!good(r))=223]
+33.99 !good(r), !hasNoPlan(r)                               [f(s)=76, n=1000, f(!good(r))=300, f(!hasNoPlan(r))=186]
+31.99 duration1(r), good(r)                                 [f(s)=283, n=633, f(duration1(r))=404, f(good(r))=410]
+31.39 !good(r), !male&single(r)                             [f(s)=129, n=908, f(!good(r))=275, f(!male&single(r))=360]
+31.27 good(r), creditForThisBankPaidDulyTillNow(r)          [f(s)=361, n=619, f(good(r))=397, f(creditForThisBankPaidDulyTillNow(r))=530]
+31.24 !good(r), !home(own)(r)                               [f(s)=70, n=892, f(!good(r))=256, f(!home(own)(r))=179]
+30.87 !duration2(r), !good(r)                               [f(s)=223, n=906, f(!duration2(r))=633, f(!good(r))=290]
+30.80 good(r), !unknownOrNoProperty(r)                      [f(s)=613, n=1000, f(good(r))=700, f(!unknownOrNoProperty(r))=846]

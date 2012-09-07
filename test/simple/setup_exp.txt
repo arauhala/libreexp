@@ -1,0 +1,18 @@
+vars:
+
+px(r)
+
+
+rels:
+
+px(r), px(r + x)
+px(r), px(r + y)
+
+
+pixels:
+
+XX...
+.XX..
+.....
+..XX.
+...XX

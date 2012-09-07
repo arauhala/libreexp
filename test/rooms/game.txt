@@ -1,0 +1,9674 @@
+reset
+running.
+##..#
+##..#
+##>.#
+### #
+###  
+go right.
+running.
+#..##
+#..##
+#>.##
+## ##
+##   
+go down.
+running.
+#..##
+#>.##
+## ##
+##   
+##   
+go down.
+running.
+#>.##
+## ##
+##   
+##   
+##   
+go down.
+running.
+## ##
+##   
+##   
+##   
+##<  
+go down.
+running.
+##   
+##   
+##   
+##<  
+#####
+go down.
+escaped.
+##   
+##   
+##<  
+#####
+#####
+reset
+running.
+#####
+#####
+  >##
+   ##
+  <##
+go down.
+running.
+#####
+  >##
+   ##
+  <##
+#####
+go down.
+escaped.
+  >##
+   ##
+  <##
+#####
+#####
+reset
+running.
+##   
+##  <
+##>  
+#####
+#####
+go up.
+running.
+#####
+##   
+##  <
+##>  
+#####
+go right.
+running.
+#####
+#   #
+#  <#
+#>  #
+#####
+go right.
+escaped.
+#####
+   ##
+  <##
+>  ##
+#####
+reset
+running.
+#####
+#####
+##>..
+##...
+##...
+go down.
+running.
+#####
+##>..
+##...
+##...
+#####
+go down.
+running.
+##>..
+##...
+##...
+#####
+#####
+go right.
+running.
+#>..#
+#...#
+#... 
+#####
+#####
+go right.
+running.
+>..##
+...##
+... <
+#### 
+#### 
+go right.
+running.
+..###
+..###
+.. < 
+###  
+###  
+go right.
+escaped.
+.####
+.####
+. <  
+##   
+##   
+reset
+running.
+#####
+#####
+  >##
+<  ##
+   ##
+go down.
+running.
+#####
+  >##
+<  ##
+   ##
+   ##
+go left.
+running.
+#####
+#  >#
+#<  #
+#   #
+#   #
+idle.
+running.
+#####
+#  >#
+#<  #
+#   #
+#   #
+idle.
+running.
+#####
+#  >#
+#<  #
+#   #
+#   #
+idle.
+running.
+#####
+#  >#
+#<  #
+#   #
+#   #
+idle.
+running.
+#####
+#  >#
+#<  #
+#   #
+#   #
+go right.
+running.
+#####
+  >##
+<  ##
+   ##
+   ##
+go right.
+running.
+#####
+  >##
+<  ##
+   ##
+   ##
+go down.
+running.
+  >##
+<  ##
+   ##
+   ##
+#####
+go up.
+time out.
+#####
+  >##
+<  ##
+   ##
+   ##
+reset
+running.
+#####
+#####
+##>  
+##   
+##  <
+go right.
+running.
+#####
+#####
+#>  #
+#   #
+#  <#
+go down.
+running.
+#####
+#>  #
+#   #
+#  <#
+#   #
+go right.
+running.
+#####
+>  ##
+   ##
+  <##
+   ##
+go down.
+escaped.
+>  ##
+   ##
+  <##
+   ##
+#####
+reset
+running.
+#####
+#####
+  >##
+ < ##
+#####
+go down.
+running.
+#####
+  >##
+ < ##
+#####
+#####
+go left.
+escaped.
+#####
+#  >#
+# < #
+#####
+#####
+reset
+running.
+#####
+#####
+#.>##
+#..  
+#..# 
+go down.
+running.
+#####
+#.>##
+#..  
+#..# 
+####<
+go right.
+running.
+#####
+.>###
+..   
+..#  
+###< 
+go right.
+running.
+#####
+>####
+.   #
+.#  #
+##< #
+go down.
+running.
+>####
+.   #
+.#  #
+##< #
+#####
+go down.
+escaped.
+.   #
+.#  #
+##< #
+#####
+#####
+reset
+running.
+## ##
+...##
+..>##
+#####
+#####
+idle.
+running.
+## ##
+...##
+..>##
+#####
+#####
+go up.
+running.
+## < 
+## ##
+...##
+..>##
+#####
+go down.
+running.
+## ##
+...##
+..>##
+#####
+#####
+go right.
+running.
+## ##
+...##
+..>##
+#####
+#####
+idle.
+running.
+## ##
+...##
+..>##
+#####
+#####
+go down.
+running.
+## ##
+...##
+..>##
+#####
+#####
+go down.
+running.
+## ##
+...##
+..>##
+#####
+#####
+go down.
+running.
+## ##
+...##
+..>##
+#####
+#####
+go right.
+running.
+## ##
+...##
+..>##
+#####
+#####
+idle.
+running.
+## ##
+...##
+..>##
+#####
+#####
+go down.
+running.
+## ##
+...##
+..>##
+#####
+#####
+go left.
+running.
+### #
+#...#
+#..>#
+#####
+#####
+go left.
+running.
+#### 
+##...
+##..>
+#####
+#####
+go up.
+running.
+#### 
+#### 
+##...
+##..>
+#####
+idle.
+running.
+#### 
+#### 
+##...
+##..>
+#####
+go left.
+running.
+#### 
+#### 
+##...
+##..>
+#####
+go right.
+running.
+### <
+### #
+#...#
+#..>#
+#####
+go right.
+running.
+## < 
+## ##
+...##
+..>##
+#####
+go up.
+running.
+##   
+## < 
+## ##
+...##
+..>##
+idle.
+time out.
+##   
+## < 
+## ##
+...##
+..>##
+reset
+running.
+##  #
+## <#
+##> #
+#####
+#####
+go up.
+running.
+#####
+##  #
+## <#
+##> #
+#####
+go right.
+escaped.
+#####
+#  ##
+# <##
+#> ##
+#####
+reset
+running.
+# < #
+#   #
+# > #
+#####
+#####
+go up.
+running.
+#####
+# < #
+#   #
+# > #
+#####
+go up.
+escaped.
+#####
+#####
+# < #
+#   #
+# > #
+reset
+running.
+#####
+#####
+##> #
+## <#
+##  #
+go right.
+running.
+#####
+#####
+#> ##
+# <##
+#  ##
+go down.
+escaped.
+#####
+#> ##
+# <##
+#  ##
+#####
+reset
+running.
+#####
+##<  
+##>  
+##   
+#####
+go right.
+running.
+#####
+#<  #
+#>  #
+#   #
+#####
+go right.
+running.
+#####
+<  ##
+>  ##
+   ##
+#####
+idle.
+running.
+#####
+<  ##
+>  ##
+   ##
+#####
+go up.
+running.
+#####
+#####
+<  ##
+>  ##
+   ##
+idle.
+running.
+#####
+#####
+<  ##
+>  ##
+   ##
+go right.
+running.
+#####
+#####
+<  ##
+>  ##
+   ##
+go up.
+running.
+#####
+#####
+<  ##
+>  ##
+   ##
+go right.
+running.
+#####
+#####
+<  ##
+>  ##
+   ##
+go right.
+running.
+#####
+#####
+<  ##
+>  ##
+   ##
+go up.
+time out.
+#####
+#####
+<  ##
+>  ##
+   ##
+reset
+running.
+#####
+#< ##
+# >##
+#  ##
+#####
+go up.
+running.
+#####
+#####
+#< ##
+# >##
+#  ##
+go left.
+escaped.
+#####
+#####
+##< #
+## >#
+##  #
+reset
+running.
+#<  #
+#   #
+# > #
+#   #
+#####
+go left.
+running.
+##<  
+##   
+## > 
+##   
+#####
+go up.
+running.
+#####
+##<  
+##   
+## > 
+##   
+go up.
+escaped.
+#####
+#####
+##<  
+##   
+## > 
+reset
+running.
+#####
+##...
+##>..
+##...
+#####
+go right.
+running.
+#####
+#...#
+#>..#
+#... 
+#####
+go down.
+running.
+#...#
+#>..#
+#... 
+#####
+#####
+go right.
+running.
+...##
+>..##
+...  
+#### 
+#### 
+go right.
+running.
+..###
+..###
+..   
+###  
+###  
+go right.
+running.
+.####
+.####
+.    
+##   
+##   
+go right.
+running.
+#####
+#####
+    <
+#    
+#    
+go right.
+running.
+#####
+#####
+   <#
+    #
+    #
+go right.
+escaped.
+#####
+#####
+  <##
+   ##
+   ##
+reset
+running.
+#####
+#####
+..>##
+...##
+...  
+go down.
+running.
+#####
+..>##
+...##
+...  
+#### 
+go left.
+running.
+#####
+...>#
+....#
+.... 
+#####
+go up.
+running.
+#####
+#####
+...>#
+....#
+.... 
+idle.
+running.
+#####
+#####
+...>#
+....#
+.... 
+go up.
+running.
+#####
+#####
+...>#
+....#
+.... 
+go right.
+running.
+#####
+#####
+..>##
+...##
+...  
+go right.
+running.
+#####
+#####
+..>##
+...##
+...  
+go up.
+running.
+#####
+#####
+..>##
+...##
+...  
+go down.
+running.
+#####
+..>##
+...##
+...  
+#### 
+go up.
+running.
+#####
+#####
+..>##
+...##
+...  
+idle.
+running.
+#####
+#####
+..>##
+...##
+...  
+go right.
+running.
+#####
+#####
+..>##
+...##
+...  
+go down.
+running.
+#####
+..>##
+...##
+...  
+#### 
+go left.
+running.
+#####
+...>#
+....#
+.... 
+#####
+go down.
+running.
+...>#
+....#
+.... 
+#####
+#####
+go right.
+running.
+..>##
+...##
+...  
+#### 
+#### 
+idle.
+running.
+..>##
+...##
+...  
+#### 
+#### 
+go right.
+running.
+.>###
+..###
+..   
+###  
+###  
+go down.
+running.
+.>###
+..###
+..   
+###  
+###  
+go up.
+time out.
+.>###
+..###
+..   
+###  
+###  
+reset
+running.
+#####
+#####
+..>##
+...##
+...##
+go down.
+running.
+#####
+..>##
+...##
+...##
+## ##
+go down.
+running.
+..>##
+...##
+...##
+## ##
+##   
+go down.
+running.
+...##
+...##
+## ##
+##   
+## < 
+go down.
+running.
+...##
+## ##
+##   
+## < 
+##   
+go right.
+running.
+..###
+# ###
+#   #
+# < #
+#   #
+go down.
+escaped.
+# ###
+#   #
+# < #
+#   #
+#####
+reset
+running.
+##...
+##...
+##>..
+#####
+#####
+go up.
+running.
+#####
+##...
+##...
+##>..
+#####
+go right.
+running.
+#####
+#...#
+#... 
+#>..#
+#####
+go right.
+running.
+#####
+...##
+...  
+>..# 
+#### 
+go right.
+running.
+#####
+..###
+..   
+..#  
+### <
+go right.
+running.
+#####
+.####
+.    
+.#   
+## < 
+go right.
+running.
+#####
+#####
+    #
+#   #
+# < #
+go down.
+running.
+#####
+    #
+#   #
+# < #
+#####
+go down.
+escaped.
+    #
+#   #
+# < #
+#####
+#####
+reset
+running.
+#####
+#...#
+#.>.#
+#... 
+#####
+go down.
+running.
+#...#
+#.>.#
+#... 
+#####
+#####
+go right.
+running.
+...##
+.>.##
+...  
+#### 
+#### 
+go right.
+running.
+..###
+>.###
+..   
+###  
+###  
+go right.
+running.
+.####
+.####
+.    
+##   
+##   
+go down.
+running.
+.####
+.    
+##   
+##   
+#####
+go right.
+running.
+#####
+     
+#   <
+#    
+#####
+go right.
+running.
+#####
+    #
+   <#
+    #
+#####
+go right.
+escaped.
+#####
+   ##
+  <##
+   ##
+#####
+reset
+running.
+##  <
+##   
+##>  
+#####
+#####
+go up.
+running.
+#####
+##  <
+##   
+##>  
+#####
+go right.
+running.
+#####
+#  <#
+#   #
+#>  #
+#####
+go right.
+running.
+#####
+  <##
+   ##
+>  ##
+#####
+go right.
+running.
+#####
+  <##
+   ##
+>  ##
+#####
+idle.
+running.
+#####
+  <##
+   ##
+>  ##
+#####
+idle.
+running.
+#####
+  <##
+   ##
+>  ##
+#####
+go down.
+running.
+  <##
+   ##
+>  ##
+#####
+#####
+go up.
+running.
+#####
+  <##
+   ##
+>  ##
+#####
+go up.
+escaped.
+#####
+#####
+  <##
+   ##
+>  ##
+reset
+running.
+#####
+  ...
+ #>..
+ #...
+ ####
+go up.
+running.
+#####
+#####
+  ...
+ #>..
+ #...
+go left.
+running.
+#####
+#####
+   ..
+< #>.
+  #..
+go left.
+running.
+#####
+#####
+    .
+ < #>
+   #.
+go down.
+running.
+#####
+    .
+ < #>
+   #.
+   ##
+go left.
+escaped.
+#####
+     
+  < #
+    #
+    #
+reset
+running.
+###  
+### #
+##>..
+##...
+##...
+go right.
+running.
+##  #
+## ##
+#>..#
+#...#
+#...#
+go up.
+running.
+##< #
+##  #
+## ##
+#>..#
+#...#
+go up.
+running.
+##  #
+##< #
+##  #
+## ##
+#>..#
+go up.
+escaped.
+#####
+##  #
+##< #
+##  #
+## ##
+reset
+running.
+#####
+##  #
+##><#
+#####
+#####
+go right.
+escaped.
+#####
+#  ##
+#><##
+#####
+#####
+reset
+running.
+#####
+#    
+# >  
+#   <
+#####
+go up.
+running.
+#####
+#####
+#    
+# >  
+#   <
+go down.
+running.
+#####
+#    
+# >  
+#   <
+#####
+go left.
+running.
+#####
+##   
+## > 
+##   
+#####
+go down.
+running.
+##   
+## > 
+##   
+#####
+#####
+go right.
+running.
+#    
+# >  
+#   <
+#####
+#####
+go right.
+running.
+    #
+ >  #
+   <#
+#####
+#####
+go right.
+escaped.
+   ##
+>  ##
+  <##
+#####
+#####
+reset
+running.
+#####
+#####
+##><#
+##  #
+##  #
+go right.
+escaped.
+#####
+#####
+#><##
+#  ##
+#  ##
+reset
+running.
+#####
+  <##
+  >##
+   ##
+   ##
+go up.
+escaped.
+#####
+#####
+  <##
+  >##
+   ##
+reset
+running.
+#####
+#####
+##>..
+  ...
+ #...
+go down.
+running.
+#####
+##>..
+  ...
+ #...
+ ####
+go left.
+running.
+#####
+###>.
+   ..
+  #..
+  ###
+go left.
+running.
+#####
+####>
+    .
+<  #.
+   ##
+go down.
+running.
+####>
+    .
+<  #.
+   ##
+#####
+go left.
+running.
+#####
+#    
+#<  #
+#   #
+#####
+go left.
+escaped.
+#####
+##   
+##<  
+##   
+#####
+reset
+running.
+#####
+#####
+##> <
+##   
+#####
+go right.
+running.
+#####
+#####
+#> < 
+#    
+#####
+go up.
+running.
+#####
+#####
+#> < 
+#    
+#####
+idle.
+running.
+#####
+#####
+#> < 
+#    
+#####
+go left.
+running.
+#####
+#####
+##> <
+##   
+#####
+go right.
+running.
+#####
+#####
+#> < 
+#    
+#####
+go up.
+running.
+#####
+#####
+#> < 
+#    
+#####
+go left.
+running.
+#####
+#####
+##> <
+##   
+#####
+go right.
+running.
+#####
+#####
+#> < 
+#    
+#####
+go down.
+running.
+#####
+#> < 
+#    
+#####
+#####
+go up.
+time out.
+#####
+#####
+#> < 
+#    
+#####
+reset
+running.
+##..#
+##..#
+##>.#
+##..#
+### #
+go right.
+running.
+#..##
+#..##
+#>.##
+#..##
+## ##
+go down.
+running.
+#..##
+#>.##
+#..##
+## ##
+##   
+go down.
+running.
+#>.##
+#..##
+## ##
+##   
+## < 
+go down.
+running.
+#..##
+## ##
+##   
+## < 
+##   
+go down.
+running.
+## ##
+##   
+## < 
+##   
+#####
+go right.
+escaped.
+# ###
+#   #
+# < #
+#   #
+#####
+reset
+running.
+#####
+# < #
+# > #
+#   #
+#####
+go up.
+escaped.
+#####
+#####
+# < #
+# > #
+#   #
+reset
+running.
+#####
+...##
+..>  
+#### 
+#### 
+go right.
+running.
+#####
+..###
+.>  <
+###  
+###  
+go right.
+running.
+#####
+.####
+>  < 
+##   
+##   
+go right.
+escaped.
+#####
+#####
+  < #
+#   #
+#   #
+reset
+running.
+##..#
+  ..#
+ #>.#
+ ####
+#####
+go left.
+running.
+##..#
+  ..#
+ #>.#
+ ####
+#####
+go left.
+running.
+##..#
+  ..#
+ #>.#
+ ####
+#####
+go left.
+running.
+##..#
+  ..#
+ #>.#
+ ####
+#####
+go down.
+running.
+##..#
+  ..#
+ #>.#
+ ####
+#####
+go right.
+running.
+#..##
+ ..##
+#>.##
+#####
+#####
+go down.
+running.
+#..##
+ ..##
+#>.##
+#####
+#####
+go down.
+running.
+#..##
+ ..##
+#>.##
+#####
+#####
+idle.
+running.
+#..##
+ ..##
+#>.##
+#####
+#####
+go down.
+running.
+#..##
+ ..##
+#>.##
+#####
+#####
+go up.
+running.
+#..##
+#..##
+ ..##
+#>.##
+#####
+go right.
+running.
+#..##
+#..##
+ ..##
+#>.##
+#####
+idle.
+running.
+#..##
+#..##
+ ..##
+#>.##
+#####
+go up.
+running.
+#####
+#..##
+#..##
+ ..##
+#>.##
+go up.
+running.
+#####
+#####
+#..##
+#..##
+ ..##
+go right.
+running.
+#####
+#####
+#..##
+#..##
+ ..##
+go down.
+running.
+#####
+#..##
+#..##
+ ..##
+#>.##
+idle.
+running.
+#####
+#..##
+#..##
+ ..##
+#>.##
+go right.
+running.
+#####
+#..##
+#..##
+ ..##
+#>.##
+go up.
+running.
+#####
+#####
+#..##
+#..##
+ ..##
+go up.
+time out.
+#####
+#####
+#..##
+#..##
+ ..##
+reset
+running.
+#####
+#..##
+#.>##
+# ###
+#<   
+go left.
+running.
+#####
+##..#
+##.>#
+## ##
+##<  
+go down.
+running.
+##..#
+##.>#
+## ##
+##<  
+##   
+go down.
+escaped.
+##.>#
+## ##
+##<  
+##   
+##   
+reset
+running.
+#####
+#####
+# > #
+#  <#
+#   #
+go right.
+running.
+#####
+#####
+ > ##
+  <##
+   ##
+go down.
+escaped.
+#####
+ > ##
+  <##
+   ##
+#####
+reset
+running.
+# ###
+...##
+..>##
+...##
+...##
+go left.
+running.
+## ##
+#...#
+#..>#
+#...#
+#...#
+go up.
+running.
+##  #
+## ##
+#...#
+#..>#
+#...#
+go up.
+running.
+##  #
+##  #
+## ##
+#...#
+#..>#
+go up.
+running.
+## <#
+##  #
+##  #
+## ##
+#...#
+go right.
+running.
+# <##
+#  ##
+#  ##
+# ###
+...##
+go up.
+running.
+#  ##
+# <##
+#  ##
+#  ##
+# ###
+go up.
+escaped.
+#####
+#  ##
+# <##
+#  ##
+#  ##
+reset
+running.
+#####
+    #
+  > #
+    #
+   <#
+go down.
+running.
+    #
+  > #
+    #
+   <#
+#####
+go up.
+running.
+#####
+    #
+  > #
+    #
+   <#
+go left.
+running.
+#####
+#    
+#  > 
+#    
+#   <
+go left.
+running.
+#####
+##   
+##  >
+##   
+##   
+idle.
+running.
+#####
+##   
+##  >
+##   
+##   
+go down.
+running.
+##   
+##  >
+##   
+##   
+#####
+go left.
+running.
+##   
+##  >
+##   
+##   
+#####
+go up.
+running.
+#####
+##   
+##  >
+##   
+##   
+go down.
+running.
+##   
+##  >
+##   
+##   
+#####
+go down.
+time out.
+##  >
+##   
+##   
+#####
+#####
+reset
+running.
+#####
+##...
+##>..
+  ...
+ ####
+go down.
+running.
+##...
+##>..
+  ...
+ ####
+ ####
+go left.
+running.
+###..
+###>.
+<  ..
+  ###
+  ###
+go left.
+running.
+####.
+####>
+#<  .
+#  ##
+#  ##
+go left.
+escaped.
+#####
+#####
+##<  
+##  #
+##  #
+reset
+running.
+#  ##
+#  ##
+# >##
+#####
+#####
+go up.
+running.
+# <##
+#  ##
+#  ##
+# >##
+#####
+go up.
+running.
+#####
+# <##
+#  ##
+#  ##
+# >##
+go up.
+escaped.
+#####
+#####
+# <##
+#  ##
+#  ##
+reset
+running.
+   ##
+   ##
+ <>##
+#####
+#####
+go left.
+escaped.
+    #
+    #
+  <>#
+#####
+#####
+reset
+running.
+   ##
+   ##
+< >##
+   ##
+#####
+idle.
+running.
+   ##
+   ##
+< >##
+   ##
+#####
+go left.
+running.
+#   #
+#   #
+#< >#
+#   #
+#####
+idle.
+running.
+#   #
+#   #
+#< >#
+#   #
+#####
+go up.
+running.
+#####
+#   #
+#   #
+#< >#
+#   #
+go left.
+running.
+#####
+##   
+##   
+##< >
+##   
+idle.
+running.
+#####
+##   
+##   
+##< >
+##   
+go up.
+running.
+#####
+#####
+##   
+##   
+##< >
+go right.
+running.
+#####
+#####
+#   #
+#   #
+#< >#
+idle.
+running.
+#####
+#####
+#   #
+#   #
+#< >#
+go right.
+time out.
+#####
+#####
+   ##
+   ##
+< >##
+reset
+running.
+#####
+#...#
+#.>.#
+ ...#
+#####
+go down.
+running.
+#...#
+#.>.#
+ ...#
+#####
+#####
+go left.
+running.
+##...
+##.>.
+  ...
+ ####
+ ####
+go left.
+running.
+###..
+###.>
+<  ..
+  ###
+  ###
+go left.
+running.
+####.
+####.
+#<  .
+#  ##
+#  ##
+go left.
+escaped.
+#####
+#####
+##<  
+##  #
+##  #
+reset
+running.
+##  #
+## <#
+##> #
+#####
+#####
+go up.
+running.
+##  #
+##  #
+## <#
+##> #
+#####
+go right.
+escaped.
+#  ##
+#  ##
+# <##
+#> ##
+#####
+reset
+running.
+#####
+#####
+..>##
+...  
+####<
+go down.
+running.
+#####
+..>##
+...  
+####<
+#### 
+go right.
+running.
+#####
+.>###
+..   
+###< 
+###  
+go right.
+running.
+#####
+>####
+.   #
+##< #
+##  #
+go down.
+escaped.
+>####
+.   #
+##< #
+##  #
+#####
+reset
+running.
+#####
+#####
+  >##
+   ##
+   ##
+idle.
+running.
+#####
+#####
+  >##
+   ##
+   ##
+idle.
+running.
+#####
+#####
+  >##
+   ##
+   ##
+go down.
+running.
+#####
+  >##
+   ##
+   ##
+#####
+go right.
+running.
+#####
+  >##
+   ##
+   ##
+#####
+idle.
+running.
+#####
+  >##
+   ##
+   ##
+#####
+go left.
+running.
+#####
+<  >#
+    #
+    #
+#####
+go left.
+running.
+#####
+#<  >
+#    
+#    
+#####
+go down.
+running.
+#<  >
+#    
+#    
+#####
+#####
+go down.
+running.
+#<  >
+#    
+#    
+#####
+#####
+idle.
+time out.
+#<  >
+#    
+#    
+#####
+#####
+reset
+running.
+#####
+#####
+#.>.#
+ ...#
+#...#
+go left.
+running.
+#####
+#####
+##.>.
+  ...
+ #...
+go down.
+running.
+#####
+##.>.
+  ...
+ #...
+ ####
+go left.
+running.
+#####
+###.>
+   ..
+< #..
+  ###
+go left.
+running.
+#####
+####.
+    .
+ < #.
+   ##
+go left.
+running.
+#####
+#####
+#    
+# < #
+#   #
+go down.
+escaped.
+#####
+#    
+# < #
+#   #
+#####
+reset
+running.
+#####
+   ##
+ <>##
+#####
+#####
+go left.
+escaped.
+#####
+#   #
+# <>#
+#####
+#####
+reset
+running.
+#####
+#####
+  >.#
+ #..#
+ #..#
+go left.
+running.
+#####
+#####
+<  >.
+  #..
+  #..
+go left.
+running.
+#####
+#####
+ <  >
+   #.
+   #.
+go left.
+escaped.
+#####
+#####
+# <  
+#   #
+#   #
+reset
+running.
+#####
+#####
+# >  
+#   <
+#####
+go down.
+running.
+#####
+# >  
+#   <
+#####
+#####
+go left.
+running.
+#####
+## > 
+##   
+#####
+#####
+go left.
+running.
+#####
+## > 
+##   
+#####
+#####
+go right.
+running.
+#####
+# >  
+#   <
+#####
+#####
+go left.
+running.
+#####
+## > 
+##   
+#####
+#####
+go left.
+running.
+#####
+## > 
+##   
+#####
+#####
+go up.
+running.
+#####
+#####
+## > 
+##   
+#####
+go left.
+running.
+#####
+#####
+## > 
+##   
+#####
+idle.
+running.
+#####
+#####
+## > 
+##   
+#####
+go right.
+time out.
+#####
+#####
+# >  
+#   <
+#####
+reset
+running.
+#  ##
+#  ##
+# >##
+#####
+#####
+go up.
+running.
+# <##
+#  ##
+#  ##
+# >##
+#####
+go up.
+running.
+#####
+# <##
+#  ##
+#  ##
+# >##
+go up.
+escaped.
+#####
+#####
+# <##
+#  ##
+#  ##
+reset
+running.
+#####
+##..#
+##>.#
+##..#
+## ##
+go down.
+running.
+##..#
+##>.#
+##..#
+## ##
+##  #
+go down.
+running.
+##>.#
+##..#
+## ##
+##  #
+## <#
+go down.
+running.
+##..#
+## ##
+##  #
+## <#
+##  #
+go right.
+running.
+#..##
+# ###
+#  ##
+# <##
+#  ##
+go down.
+escaped.
+# ###
+#  ##
+# <##
+#  ##
+#####
+reset
+running.
+#####
+   ##
+  >##
+ < ##
+#####
+go down.
+running.
+   ##
+  >##
+ < ##
+#####
+#####
+go left.
+escaped.
+#   #
+#  >#
+# < #
+#####
+#####
+reset
+running.
+#####
+   ##
+  >##
+ < ##
+#####
+go up.
+running.
+#####
+#####
+   ##
+  >##
+ < ##
+go up.
+running.
+#####
+#####
+   ##
+  >##
+ < ##
+idle.
+running.
+#####
+#####
+   ##
+  >##
+ < ##
+idle.
+running.
+#####
+#####
+   ##
+  >##
+ < ##
+go down.
+running.
+#####
+   ##
+  >##
+ < ##
+#####
+idle.
+running.
+#####
+   ##
+  >##
+ < ##
+#####
+idle.
+running.
+#####
+   ##
+  >##
+ < ##
+#####
+go right.
+running.
+#####
+   ##
+  >##
+ < ##
+#####
+go right.
+running.
+#####
+   ##
+  >##
+ < ##
+#####
+go left.
+time out.
+#####
+    #
+   >#
+  < #
+#####
+reset
+running.
+    #
+ ####
+..>##
+...##
+...##
+go left.
+running.
+#    
+# ###
+#..>#
+#...#
+#...#
+go left.
+running.
+##   
+## ##
+##..>
+##...
+##...
+go up.
+running.
+##   
+##   
+## ##
+##..>
+##...
+go up.
+running.
+##   
+##   
+##   
+## ##
+##..>
+go up.
+running.
+##   
+##   
+##   
+##   
+## ##
+go right.
+running.
+#    
+#   <
+#    
+#    
+# ###
+go up.
+running.
+#####
+#    
+#   <
+#    
+#    
+go right.
+running.
+#####
+    #
+   <#
+    #
+    #
+go right.
+escaped.
+#####
+   ##
+  <##
+   ##
+   ##
+reset
+running.
+#..##
+#.. <
+#.># 
+#####
+#####
+go up.
+running.
+#####
+#..##
+#.. <
+#.># 
+#####
+go right.
+running.
+#####
+..###
+.. < 
+.>#  
+#####
+go right.
+escaped.
+#####
+.####
+. <  
+>#   
+#####
+reset
+running.
+#####
+#####
+##>..
+##...
+##...
+go right.
+running.
+#### 
+#### 
+#>...
+#....
+#....
+go right.
+running.
+###  
+### #
+>...#
+....#
+....#
+go right.
+running.
+##   
+## ##
+...##
+...##
+...##
+go up.
+running.
+##   
+##   
+## ##
+...##
+...##
+go up.
+running.
+##  <
+##   
+##   
+## ##
+...##
+go right.
+running.
+#  <#
+#   #
+#   #
+# ###
+..###
+go right.
+running.
+  <##
+   ##
+   ##
+ ####
+.####
+go up.
+running.
+#####
+  <##
+   ##
+   ##
+ ####
+go up.
+escaped.
+#####
+#####
+  <##
+   ##
+   ##
+reset
+running.
+#####
+   ##
+ <>##
+   ##
+#####
+go down.
+running.
+   ##
+ <>##
+   ##
+#####
+#####
+go down.
+running.
+   ##
+ <>##
+   ##
+#####
+#####
+idle.
+running.
+   ##
+ <>##
+   ##
+#####
+#####
+go left.
+running.
+#   #
+# <>#
+#   #
+#####
+#####
+go down.
+running.
+#   #
+# <>#
+#   #
+#####
+#####
+go up.
+escaped.
+#####
+#   #
+# <>#
+#   #
+#####
+reset
+running.
+#####
+#####
+##>. 
+##..#
+#####
+go right.
+running.
+#####
+#####
+#>.  
+#..# 
+#### 
+go right.
+running.
+#####
+#####
+>.   
+..#  
+###  
+go right.
+running.
+#####
+#####
+.    
+.#   
+##  <
+go down.
+running.
+#####
+.    
+.#   
+##  <
+#####
+go right.
+running.
+#####
+    #
+#   #
+#  <#
+#####
+go right.
+running.
+#####
+   ##
+   ##
+  <##
+#####
+go down.
+escaped.
+   ##
+   ##
+  <##
+#####
+#####
+reset
+running.
+....#
+.... 
+..>.#
+#####
+#####
+go up.
+running.
+#####
+....#
+.... 
+..>.#
+#####
+go right.
+running.
+#####
+...##
+...  
+.>.# 
+#####
+go right.
+running.
+#####
+..###
+..   
+>.#  
+#####
+go right.
+running.
+#####
+.####
+.   <
+.#   
+#####
+go right.
+running.
+#####
+#####
+   <#
+#   #
+#####
+go right.
+escaped.
+#####
+#####
+  <##
+   ##
+#####
+reset
+running.
+#####
+#####
+##>  
+##<  
+##   
+go down.
+escaped.
+#####
+##>  
+##<  
+##   
+#####
+reset
+running.
+#####
+  ...
+ #>..
+ ####
+ ####
+go right.
+running.
+#####
+ ...#
+#>..#
+#####
+#####
+go down.
+running.
+#####
+ ...#
+#>..#
+#####
+#####
+idle.
+running.
+#####
+ ...#
+#>..#
+#####
+#####
+idle.
+running.
+#####
+ ...#
+#>..#
+#####
+#####
+go left.
+running.
+#####
+  ...
+ #>..
+ ####
+ ####
+go up.
+running.
+#####
+#####
+  ...
+ #>..
+ ####
+go up.
+running.
+#####
+#####
+  ...
+ #>..
+ ####
+go left.
+running.
+#####
+#####
+   ..
+  #>.
+  ###
+go left.
+running.
+#####
+#####
+    .
+   #>
+<  ##
+go down.
+running.
+#####
+    .
+   #>
+<  ##
+   ##
+go up.
+running.
+#####
+#####
+    .
+   #>
+<  ##
+go left.
+running.
+#####
+#####
+#    
+#   #
+#<  #
+go right.
+running.
+#####
+#####
+    .
+   #>
+<  ##
+idle.
+running.
+#####
+#####
+    .
+   #>
+<  ##
+go right.
+running.
+#####
+#####
+   ..
+  #>.
+  ###
+go right.
+running.
+#####
+#####
+  ...
+ #>..
+ ####
+go left.
+running.
+#####
+#####
+   ..
+  #>.
+  ###
+go right.
+running.
+#####
+#####
+  ...
+ #>..
+ ####
+go up.
+running.
+#####
+#####
+  ...
+ #>..
+ ####
+go right.
+time out.
+#####
+#####
+ ...#
+#>..#
+#####
+reset
+running.
+#####
+#  <#
+# > #
+#####
+#####
+go up.
+running.
+#####
+#####
+#  <#
+# > #
+#####
+go right.
+escaped.
+#####
+#####
+  <##
+ > ##
+#####
+reset
+running.
+   ##
+  <##
+  >##
+   ##
+#####
+go up.
+escaped.
+#####
+   ##
+  <##
+  >##
+   ##
+reset
+running.
+#...#
+#...#
+#.>.#
+#...#
+### #
+go down.
+running.
+#...#
+#.>.#
+#...#
+### #
+###< 
+go right.
+running.
+...##
+.>.##
+...##
+## ##
+##<  
+go down.
+running.
+.>.##
+...##
+## ##
+##<  
+##   
+go down.
+escaped.
+...##
+## ##
+##<  
+##   
+#####
+reset
+running.
+#   #
+#  <#
+# > #
+#   #
+#####
+go right.
+running.
+   ##
+  <##
+ > ##
+   ##
+#####
+go right.
+running.
+   ##
+  <##
+ > ##
+   ##
+#####
+idle.
+running.
+   ##
+  <##
+ > ##
+   ##
+#####
+go left.
+running.
+#   #
+#  <#
+# > #
+#   #
+#####
+go left.
+running.
+##   
+##  <
+## > 
+##   
+#####
+go down.
+running.
+##  <
+## > 
+##   
+#####
+#####
+go down.
+running.
+##  <
+## > 
+##   
+#####
+#####
+go up.
+running.
+##   
+##  <
+## > 
+##   
+#####
+go right.
+running.
+#   #
+#  <#
+# > #
+#   #
+#####
+go left.
+time out.
+##   
+##  <
+## > 
+##   
+#####
+reset
+running.
+#####
+#<   
+# >  
+#####
+#####
+go left.
+running.
+#####
+##<  
+## > 
+#####
+#####
+go up.
+escaped.
+#####
+#####
+##<  
+## > 
+#####
+reset
+running.
+#####
+#####
+  >##
+  <##
+#####
+go down.
+escaped.
+#####
+  >##
+  <##
+#####
+#####
+reset
+running.
+#####
+#####
+  >##
+<  ##
+   ##
+go left.
+running.
+#####
+#####
+#  >#
+#<  #
+#   #
+go left.
+running.
+#####
+#####
+##  >
+##<  
+##   
+go down.
+escaped.
+#####
+##  >
+##<  
+##   
+#####
+reset
+running.
+#####
+#  ##
+# >##
+#< ##
+#####
+go down.
+running.
+#  ##
+# >##
+#< ##
+#####
+#####
+idle.
+running.
+#  ##
+# >##
+#< ##
+#####
+#####
+go down.
+running.
+#  ##
+# >##
+#< ##
+#####
+#####
+go right.
+running.
+#  ##
+# >##
+#< ##
+#####
+#####
+go down.
+running.
+#  ##
+# >##
+#< ##
+#####
+#####
+idle.
+running.
+#  ##
+# >##
+#< ##
+#####
+#####
+idle.
+running.
+#  ##
+# >##
+#< ##
+#####
+#####
+go up.
+running.
+#####
+#  ##
+# >##
+#< ##
+#####
+go up.
+running.
+#####
+#####
+#  ##
+# >##
+#< ##
+go down.
+time out.
+#####
+#  ##
+# >##
+#< ##
+#####
+reset
+running.
+#####
+   <#
+  > #
+#####
+#####
+go up.
+running.
+#####
+#####
+   <#
+  > #
+#####
+go right.
+escaped.
+#####
+#####
+  <##
+ > ##
+#####
+reset
+running.
+#####
+#  <#
+# > #
+#####
+#####
+go up.
+running.
+#####
+#####
+#  <#
+# > #
+#####
+go right.
+escaped.
+#####
+#####
+  <##
+ > ##
+#####
+reset
+running.
+#####
+....#
+..>.#
+....#
+ ####
+go left.
+running.
+#####
+#....
+#..>.
+#....
+# ###
+go down.
+running.
+#....
+#..>.
+#....
+# ###
+# < #
+go left.
+running.
+##...
+##..>
+##...
+## ##
+## < 
+go down.
+running.
+##..>
+##...
+## ##
+## < 
+##   
+go down.
+running.
+##...
+## ##
+## < 
+##   
+##   
+go right.
+escaped.
+#....
+# ###
+# < #
+#   #
+#   #
+reset
+running.
+#####
+#####
+#.> <
+#..# 
+#..# 
+go up.
+running.
+#####
+#####
+#.> <
+#..# 
+#..# 
+go right.
+running.
+#####
+#####
+.> < 
+..#  
+..#  
+idle.
+running.
+#####
+#####
+.> < 
+..#  
+..#  
+idle.
+running.
+#####
+#####
+.> < 
+..#  
+..#  
+go right.
+escaped.
+#####
+#####
+> <  
+.#   
+.#   
+reset
+running.
+#####
+#####
+##> <
+##   
+#####
+go right.
+running.
+#####
+#####
+#> <#
+#   #
+#####
+go right.
+escaped.
+#####
+#####
+> <##
+   ##
+#####
+reset
+running.
+##..#
+##..#
+##>.#
+## ##
+##   
+go down.
+running.
+##..#
+##>.#
+## ##
+##   
+## < 
+go down.
+running.
+##>.#
+## ##
+##   
+## < 
+##   
+go down.
+running.
+## ##
+##   
+## < 
+##   
+#####
+go right.
+escaped.
+# ###
+#   #
+# < #
+#   #
+#####
+reset
+running.
+#####
+    #
+ <> #
+#####
+#####
+go left.
+escaped.
+#####
+#    
+# <> 
+#####
+#####
+reset
+running.
+#####
+#####
+# >##
+# <##
+#  ##
+idle.
+running.
+#####
+#####
+# >##
+# <##
+#  ##
+go up.
+running.
+#####
+#####
+# >##
+# <##
+#  ##
+go down.
+escaped.
+#####
+# >##
+# <##
+#  ##
+#####
+reset
+running.
+#####
+   ##
+< >##
+   ##
+   ##
+go left.
+running.
+#####
+#   #
+#< >#
+#   #
+#   #
+go left.
+escaped.
+#####
+##   
+##< >
+##   
+##   
+reset
+running.
+##..#
+##..#
+##>.#
+##..#
+#####
+go right.
+running.
+#..##
+#..##
+#>.##
+#..##
+#####
+go up.
+running.
+## ##
+#..##
+#..##
+#>.##
+#..##
+go up.
+running.
+##   
+## ##
+#..##
+#..##
+#>.##
+go up.
+running.
+## < 
+##   
+## ##
+#..##
+#..##
+go up.
+running.
+##   
+## < 
+##   
+## ##
+#..##
+go up.
+running.
+#####
+##   
+## < 
+##   
+## ##
+go right.
+escaped.
+#####
+#   #
+# < #
+#   #
+# ###
+reset
+running.
+##   
+## ##
+##>..
+##...
+##...
+go up.
+running.
+##   
+##   
+## ##
+##>..
+##...
+go up.
+running.
+##  <
+##   
+##   
+## ##
+##>..
+go up.
+running.
+##   
+##  <
+##   
+##   
+## ##
+go right.
+running.
+#    
+#  < 
+#    
+#    
+# ###
+go right.
+running.
+    #
+  < #
+    #
+    #
+ ####
+go up.
+escaped.
+#####
+    #
+  < #
+    #
+    #
+reset
+running.
+#####
+#####
+# ><#
+#   #
+#####
+go up.
+running.
+#####
+#####
+# ><#
+#   #
+#####
+go down.
+running.
+#####
+# ><#
+#   #
+#####
+#####
+go right.
+running.
+#####
+ ><##
+   ##
+#####
+#####
+go left.
+running.
+#####
+# ><#
+#   #
+#####
+#####
+go right.
+running.
+#####
+ ><##
+   ##
+#####
+#####
+go left.
+running.
+#####
+# ><#
+#   #
+#####
+#####
+go right.
+running.
+#####
+ ><##
+   ##
+#####
+#####
+go right.
+running.
+#####
+ ><##
+   ##
+#####
+#####
+go down.
+running.
+#####
+ ><##
+   ##
+#####
+#####
+go down.
+time out.
+#####
+ ><##
+   ##
+#####
+#####
+reset
+running.
+...##
+...##
+..>##
+#####
+#####
+go up.
+running.
+#####
+...##
+...##
+..>##
+#####
+go up.
+running.
+#####
+#####
+...##
+...##
+..>##
+go left.
+running.
+#####
+#####
+ ...#
+#...#
+#..>#
+go left.
+running.
+#####
+#####
+  ...
+ #...
+ #..>
+go left.
+running.
+#####
+#####
+   ..
+  #..
+  #..
+go left.
+running.
+#####
+#####
+    .
+   #.
+<  #.
+go down.
+running.
+#####
+    .
+   #.
+<  #.
+#####
+go down.
+running.
+    .
+   #.
+<  #.
+#####
+#####
+go left.
+running.
+#    
+#   #
+#<  #
+#####
+#####
+go left.
+escaped.
+##   
+##   
+##<  
+#####
+#####
+reset
+running.
+#####
+#####
+  >##
+ < ##
+   ##
+go left.
+running.
+#####
+#####
+#  >#
+# < #
+#   #
+go down.
+escaped.
+#####
+#  >#
+# < #
+#   #
+#####
+reset
+running.
+###  
+### #
+##>..
+##...
+##...
+go right.
+running.
+##   
+## ##
+#>..#
+#...#
+#...#
+go up.
+running.
+## < 
+##   
+## ##
+#>..#
+#...#
+go up.
+running.
+#####
+## < 
+##   
+## ##
+#>..#
+go right.
+running.
+#####
+# < #
+#   #
+# ###
+>..##
+go up.
+escaped.
+#####
+#####
+# < #
+#   #
+# ###
+reset
+running.
+...##
+...  
+..># 
+#### 
+#### 
+go left.
+running.
+....#
+.... 
+...>#
+#####
+#####
+go up.
+running.
+#####
+....#
+.... 
+...>#
+#####
+go down.
+running.
+....#
+.... 
+...>#
+#####
+#####
+go right.
+running.
+...##
+...  
+..># 
+#### 
+#### 
+go up.
+running.
+#####
+...##
+...  
+..># 
+#### 
+go right.
+running.
+#####
+..###
+..   
+.>#  
+###  
+go down.
+running.
+#####
+..###
+..   
+.>#  
+###  
+go down.
+running.
+#####
+..###
+..   
+.>#  
+###  
+go right.
+running.
+#####
+.####
+.    
+>#   
+##   
+go right.
+running.
+#####
+#####
+    #
+#   #
+#   #
+idle.
+running.
+#####
+#####
+    #
+#   #
+#   #
+go down.
+running.
+#####
+    #
+#   #
+#   #
+#  <#
+go left.
+running.
+.####
+.    
+>#   
+##   
+##  <
+go down.
+running.
+.    
+>#   
+##   
+##  <
+#####
+go down.
+running.
+>#   
+##   
+##  <
+#####
+#####
+go right.
+running.
+#   #
+#   #
+#  <#
+#####
+#####
+idle.
+running.
+#   #
+#   #
+#  <#
+#####
+#####
+go down.
+running.
+#   #
+#   #
+#  <#
+#####
+#####
+go left.
+running.
+>#   
+##   
+##  <
+#####
+#####
+go down.
+time out.
+>#   
+##   
+##  <
+#####
+#####
+reset
+running.
+##...
+##...
+  >..
+ ####
+ ####
+go left.
+running.
+###..
+###..
+   >.
+  ###
+  ###
+go left.
+running.
+####.
+####.
+#   >
+#  ##
+#  ##
+go down.
+running.
+####.
+#   >
+#  ##
+#  ##
+#< ##
+go left.
+running.
+#####
+##   
+##  #
+##  #
+##< #
+go down.
+running.
+##   
+##  #
+##  #
+##< #
+#####
+go down.
+escaped.
+##  #
+##  #
+##< #
+#####
+#####
+reset
+running.
+#####
+##...
+##>..
+##...
+#### 
+go right.
+running.
+#####
+#....
+#>...
+#....
+### #
+go right.
+running.
+#####
+....#
+>...#
+....#
+## ##
+go down.
+running.
+....#
+>...#
+....#
+## ##
+## < 
+go down.
+running.
+>...#
+....#
+## ##
+## < 
+##   
+go down.
+running.
+....#
+## ##
+## < 
+##   
+#####
+go right.
+escaped.
+...##
+# ###
+# < #
+#   #
+#####
+reset
+running.
+##...
+##...
+  >..
+ ####
+ ####
+go left.
+running.
+###..
+###..
+   >.
+  ###
+  ###
+go left.
+running.
+####.
+####.
+<   >
+   ##
+   ##
+go left.
+running.
+#####
+#####
+ <   
+    #
+    #
+go left.
+escaped.
+#####
+#####
+# <  
+#    
+#    
+reset
+running.
+#####
+#####
+##> #
+##  #
+##< #
+go up.
+running.
+#####
+#####
+##> #
+##  #
+##< #
+go right.
+running.
+#####
+#####
+#> ##
+#  ##
+#< ##
+idle.
+running.
+#####
+#####
+#> ##
+#  ##
+#< ##
+go down.
+running.
+#####
+#> ##
+#  ##
+#< ##
+#####
+go up.
+running.
+#####
+#####
+#> ##
+#  ##
+#< ##
+idle.
+running.
+#####
+#####
+#> ##
+#  ##
+#< ##
+idle.
+running.
+#####
+#####
+#> ##
+#  ##
+#< ##
+idle.
+running.
+#####
+#####
+#> ##
+#  ##
+#< ##
+go up.
+running.
+#####
+#####
+#> ##
+#  ##
+#< ##
+go left.
+time out.
+#####
+#####
+##> #
+##  #
+##< #
+reset
+running.
+#####
+ ..##
+#.>##
+#..##
+#####
+go left.
+running.
+#####
+  ..#
+ #.>#
+##..#
+#####
+go up.
+running.
+#####
+#####
+  ..#
+ #.>#
+##..#
+go left.
+running.
+#####
+#####
+   ..
+< #.>
+###..
+go left.
+running.
+#####
+#####
+#   .
+#< #.
+####.
+go down.
+running.
+#####
+#   .
+#< #.
+####.
+#####
+go left.
+escaped.
+#####
+##   
+##< #
+#####
+#####
+reset
+running.
+#####
+#...#
+#.>.#
+#...#
+## ##
+go down.
+running.
+#...#
+#.>.#
+#...#
+## ##
+##   
+go down.
+running.
+#.>.#
+#...#
+## ##
+##   
+## < 
+go down.
+running.
+#...#
+## ##
+##   
+## < 
+##   
+go right.
+running.
+...##
+# ###
+#   #
+# < #
+#   #
+go down.
+escaped.
+# ###
+#   #
+# < #
+#   #
+#   #
+reset
+running.
+#####
+##   
+##>  
+##<  
+#####
+go down.
+escaped.
+##   
+##>  
+##<  
+#####
+#####
+reset
+running.
+#####
+##...
+##>..
+##...
+##...
+go down.
+running.
+##...
+##>..
+##...
+##...
+#####
+go right.
+running.
+#....
+#>...
+#....
+#....
+#####
+idle.
+running.
+#....
+#>...
+#....
+#....
+#####
+go up.
+running.
+#####
+#....
+#>...
+#....
+#....
+go down.
+running.
+#....
+#>...
+#....
+#....
+#####
+go down.
+running.
+#>...
+#....
+#....
+#####
+#####
+go right.
+running.
+>...#
+....#
+....#
+#####
+#####
+go left.
+running.
+#>...
+#....
+#....
+#####
+#####
+go up.
+running.
+#....
+#>...
+#....
+#....
+#####
+go up.
+running.
+#####
+#....
+#>...
+#....
+#....
+go right.
+running.
+#####
+.... 
+>...#
+....#
+....#
+go left.
+running.
+#####
+#....
+#>...
+#....
+#....
+go up.
+running.
+#####
+#####
+#....
+#>...
+#....
+go right.
+running.
+#####
+#####
+.... 
+>...#
+....#
+go up.
+running.
+#####
+#####
+.... 
+>...#
+....#
+go right.
+running.
+#####
+#####
+...  
+...# 
+...#<
+go right.
+running.
+#####
+#####
+..   
+..#  
+..#< 
+go left.
+running.
+#####
+#####
+...  
+...# 
+...#<
+go up.
+running.
+#####
+#####
+...  
+...# 
+...#<
+go up.
+time out.
+#####
+#####
+...  
+...# 
+...#<
+reset
+running.
+#####
+#####
+##>  
+## < 
+##   
+go right.
+running.
+#####
+#####
+#>  #
+# < #
+#   #
+go down.
+escaped.
+#####
+#>  #
+# < #
+#   #
+#####
+reset
+running.
+#### 
+#### 
+##>..
+##...
+##...
+go right.
+running.
+### <
+### #
+#>..#
+#...#
+#...#
+go right.
+running.
+## <#
+## ##
+>..##
+...##
+...##
+go up.
+running.
+##  #
+## <#
+## ##
+>..##
+...##
+go up.
+running.
+#####
+##  #
+## <#
+## ##
+>..##
+go right.
+escaped.
+#####
+#  ##
+# <##
+# ###
+..###
+reset
+running.
+#####
+#####
+# ><#
+#   #
+#   #
+go right.
+escaped.
+#####
+#####
+ ><##
+   ##
+   ##
+reset
+running.
+#####
+#####
+  >##
+  <##
+   ##
+go left.
+running.
+#####
+#####
+#  >#
+#  <#
+#   #
+go up.
+running.
+#####
+#####
+#  >#
+#  <#
+#   #
+go up.
+running.
+#####
+#####
+#  >#
+#  <#
+#   #
+go down.
+running.
+#####
+#  >#
+#  <#
+#   #
+#   #
+go left.
+running.
+#####
+##  >
+##  <
+##   
+##   
+go right.
+running.
+#####
+#  >#
+#  <#
+#   #
+#   #
+go left.
+running.
+#####
+##  >
+##  <
+##   
+##   
+go left.
+running.
+#####
+##  >
+##  <
+##   
+##   
+go down.
+running.
+##  >
+##  <
+##   
+##   
+#####
+go right.
+time out.
+#  >#
+#  <#
+#   #
+#   #
+#####
+reset
+running.
+#####
+#####
+# >##
+# <##
+#####
+go down.
+escaped.
+#####
+# >##
+# <##
+#####
+#####
+reset
+running.
+#...#
+#...#
+ .>.#
+#####
+#####
+go left.
+running.
+##...
+##...
+  .>.
+<####
+ ####
+go left.
+running.
+###..
+###..
+   .>
+ <###
+  ###
+go left.
+running.
+####.
+####.
+    .
+  <##
+   ##
+go down.
+escaped.
+####.
+    .
+  <##
+   ##
+#####
+reset
+running.
+#####
+#####
+ <>##
+   ##
+#####
+go left.
+escaped.
+#####
+#####
+# <>#
+#   #
+#####
+reset
+running.
+#####
+#####
+  >##
+  <##
+#####
+go up.
+running.
+#####
+#####
+  >##
+  <##
+#####
+go up.
+running.
+#####
+#####
+  >##
+  <##
+#####
+go right.
+running.
+#####
+#####
+  >##
+  <##
+#####
+go down.
+escaped.
+#####
+  >##
+  <##
+#####
+#####
+reset
+running.
+#####
+##< #
+##> #
+##  #
+#####
+go up.
+escaped.
+#####
+#####
+##< #
+##> #
+##  #
+reset
+running.
+##  #
+##  #
+##><#
+#####
+#####
+go right.
+escaped.
+#  ##
+#  ##
+#><##
+#####
+#####
+reset
+running.
+#####
+#< ##
+# >##
+#####
+#####
+go left.
+running.
+#####
+##< #
+## >#
+#####
+#####
+go up.
+escaped.
+#####
+#####
+##< #
+## >#
+#####
+reset
+running.
+#####
+#  ##
+# >##
+#< ##
+#####
+go up.
+running.
+#####
+#####
+#  ##
+# >##
+#< ##
+go right.
+running.
+#####
+#####
+#  ##
+# >##
+#< ##
+go right.
+running.
+#####
+#####
+#  ##
+# >##
+#< ##
+go left.
+running.
+#####
+#####
+##  #
+## >#
+##< #
+go up.
+running.
+#####
+#####
+##  #
+## >#
+##< #
+go left.
+running.
+#####
+#####
+##  #
+## >#
+##< #
+go left.
+running.
+#####
+#####
+##  #
+## >#
+##< #
+go down.
+running.
+#####
+##  #
+## >#
+##< #
+#####
+idle.
+running.
+#####
+##  #
+## >#
+##< #
+#####
+go left.
+time out.
+#####
+##  #
+## >#
+##< #
+#####
+reset
+running.
+## < 
+##   
+##>  
+##   
+#####
+go right.
+running.
+# <  
+#    
+#>   
+#    
+#####
+go up.
+running.
+#####
+# <  
+#    
+#>   
+#    
+go up.
+escaped.
+#####
+#####
+# <  
+#    
+#>   
+reset
+running.
+#####
+    #
+ <> #
+    #
+#####
+go left.
+escaped.
+#####
+#    
+# <> 
+#    
+#####
+reset
+running.
+#####
+#####
+#.>. 
+#...#
+#####
+go right.
+running.
+#####
+#####
+.>.  
+...# 
+#### 
+go right.
+running.
+#####
+#####
+>.  <
+..#  
+###  
+go right.
+running.
+#####
+#####
+.  < 
+.#   
+##   
+go right.
+escaped.
+#####
+#####
+  <  
+#    
+#    
+reset
+running.
+##  #
+##< #
+##> #
+#####
+#####
+go down.
+running.
+##  #
+##< #
+##> #
+#####
+#####
+go right.
+running.
+#  ##
+#< ##
+#> ##
+#####
+#####
+go left.
+running.
+##  #
+##< #
+##> #
+#####
+#####
+go left.
+running.
+##  #
+##< #
+##> #
+#####
+#####
+go up.
+escaped.
+#####
+##  #
+##< #
+##> #
+#####
+reset
+running.
+#####
+#####
+#.>##
+#..##
+#..  
+go down.
+running.
+#####
+#.>##
+#..##
+#..  
+#### 
+go down.
+running.
+#.>##
+#..##
+#..  
+#### 
+#### 
+go right.
+running.
+.>###
+..###
+..   
+###  
+###  
+go right.
+running.
+>####
+.####
+.   <
+##   
+##   
+go right.
+running.
+#####
+#####
+   <#
+#   #
+#   #
+go right.
+escaped.
+#####
+#####
+  <##
+   ##
+   ##
+reset
+running.
+#####
+#####
+  > #
+    #
+ <  #
+go down.
+running.
+#####
+  > #
+    #
+ <  #
+#####
+go down.
+running.
+  > #
+    #
+ <  #
+#####
+#####
+go left.
+escaped.
+#  > 
+#    
+# <  
+#####
+#####
+reset
+running.
+#####
+#####
+##>.#
+##.. 
+#####
+go down.
+running.
+#####
+##>.#
+##.. 
+#####
+#####
+go right.
+running.
+#####
+#>.##
+#..  
+#### 
+####<
+go right.
+running.
+#####
+>.###
+..   
+###  
+###< 
+go right.
+running.
+#####
+.####
+.    
+##   
+##<  
+go down.
+running.
+.####
+.    
+##   
+##<  
+##   
+go down.
+escaped.
+.    
+##   
+##<  
+##   
+#####
+reset
+running.
+#####
+##...
+##>..
+##...
+##...
+idle.
+running.
+#####
+##...
+##>..
+##...
+##...
+go down.
+running.
+##...
+##>..
+##...
+##...
+#### 
+go right.
+running.
+#....
+#>...
+#....
+#....
+### #
+go up.
+running.
+#####
+#....
+#>...
+#....
+#....
+go left.
+running.
+#####
+##...
+##>..
+##...
+##...
+go up.
+running.
+#####
+#####
+##...
+##>..
+##...
+go up.
+running.
+#####
+#####
+##...
+##>..
+##...
+go up.
+running.
+#####
+#####
+##...
+##>..
+##...
+go left.
+running.
+#####
+#####
+##...
+##>..
+##...
+go up.
+running.
+#####
+#####
+##...
+##>..
+##...
+go right.
+running.
+#####
+#####
+#....
+#>...
+#....
+go down.
+running.
+#####
+#....
+#>...
+#....
+#....
+go down.
+running.
+#....
+#>...
+#....
+#....
+### #
+idle.
+running.
+#....
+#>...
+#....
+#....
+### #
+go down.
+running.
+#>...
+#....
+#....
+### #
+###  
+go left.
+running.
+##>..
+##...
+##...
+#### 
+#### 
+idle.
+running.
+##>..
+##...
+##...
+#### 
+#### 
+go down.
+running.
+##>..
+##...
+##...
+#### 
+#### 
+go right.
+running.
+#>...
+#....
+#....
+### #
+###  
+go left.
+time out.
+##>..
+##...
+##...
+#### 
+#### 
+reset
+running.
+#####
+#   #
+#<> #
+#   #
+#####
+go left.
+escaped.
+#####
+##   
+##<> 
+##   
+#####
+reset
+running.
+#####
+##..#
+  >.#
+ ####
+ ####
+go left.
+running.
+#####
+###..
+   >.
+  ###
+  ###
+go left.
+running.
+#####
+####.
+    >
+   ##
+   ##
+go left.
+running.
+#####
+#####
+<    
+    #
+    #
+go left.
+running.
+#####
+#####
+#<   
+#    
+#    
+go left.
+escaped.
+#####
+#####
+##<  
+##   
+##   
+reset
+running.
+#####
+   ##
+ <>##
+#####
+#####
+go left.
+escaped.
+#####
+#   #
+# <>#
+#####
+#####
+reset
+running.
+#####
+##..#
+  >.#
+ ####
+ ####
+idle.
+running.
+#####
+##..#
+  >.#
+ ####
+ ####
+go down.
+running.
+#####
+##..#
+  >.#
+ ####
+ ####
+go left.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+go down.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+go down.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+go down.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+go left.
+running.
+#####
+####.
+    >
+ < ##
+   ##
+go right.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+go down.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+go right.
+running.
+#####
+##..#
+  >.#
+ ####
+ ####
+go left.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+go up.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+idle.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+go up.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+idle.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+go up.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+go up.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+go down.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+go up.
+running.
+#####
+###..
+   >.
+< ###
+  ###
+go left.
+time out.
+#####
+####.
+    >
+ < ##
+   ##
+reset
+running.
+## < 
+## ##
+..>##
+...##
+...##
+go up.
+running.
+##   
+## < 
+## ##
+..>##
+...##
+go up.
+running.
+##   
+##   
+## < 
+## ##
+..>##
+go right.
+escaped.
+#    
+#    
+# <  
+# ###
+.>###
+reset
+running.
+#####
+##   
+##>  
+## < 
+#####
+go right.
+running.
+#####
+#   #
+#>  #
+# < #
+#####
+go down.
+escaped.
+#   #
+#>  #
+# < #
+#####
+#####
+reset
+running.
+    #
+   <#
+  > #
+#####
+#####
+go right.
+running.
+   ##
+  <##
+ > ##
+#####
+#####
+go up.
+escaped.
+#####
+   ##
+  <##
+ > ##
+#####
+reset
+running.
+#####
+## <#
+##> #
+#####
+#####
+go down.
+running.
+#####
+## <#
+##> #
+#####
+#####
+go down.
+running.
+#####
+## <#
+##> #
+#####
+#####
+go right.
+running.
+#####
+# <##
+#> ##
+#####
+#####
+idle.
+running.
+#####
+# <##
+#> ##
+#####
+#####
+go up.
+escaped.
+#####
+#####
+# <##
+#> ##
+#####
+reset
+running.
+##..#
+##.. 
+##>.#
+#####
+#####
+go up.
+running.
+#####
+##..#
+##.. 
+##>.#
+#####
+go right.
+running.
+#####
+#..##
+#..  
+#>.# 
+#### 
+go right.
+running.
+#####
+..###
+..   
+>.#  
+###  
+go right.
+running.
+#####
+.####
+.   <
+.#   
+##   
+go right.
+running.
+#####
+#####
+   < 
+#    
+#    
+go right.
+escaped.
+#####
+#####
+  < #
+    #
+    #
+reset
+running.
+#####
+#####
+##><#
+##  #
+##  #
+go right.
+escaped.
+#####
+#####
+#><##
+#  ##
+#  ##
+reset
+running.
+## ##
+#..##
+#.>##
+#####
+#####
+go up.
+running.
+##  <
+## ##
+#..##
+#.>##
+#####
+go up.
+running.
+##   
+##  <
+## ##
+#..##
+#.>##
+go up.
+running.
+#####
+##   
+##  <
+## ##
+#..##
+go right.
+running.
+#####
+#   #
+#  <#
+# ###
+..###
+go right.
+escaped.
+#####
+   ##
+  <##
+ ####
+.####
+reset
+running.
+#### 
+##...
+##>..
+#####
+#####
+go down.
+running.
+#### 
+##...
+##>..
+#####
+#####
+go left.
+running.
+#### 
+##...
+##>..
+#####
+#####
+go down.
+running.
+#### 
+##...
+##>..
+#####
+#####
+go left.
+running.
+#### 
+##...
+##>..
+#####
+#####
+go up.
+running.
+#### 
+#### 
+##...
+##>..
+#####
+idle.
+running.
+#### 
+#### 
+##...
+##>..
+#####
+go up.
+running.
+#### 
+#### 
+##...
+##>..
+#####
+idle.
+running.
+#### 
+#### 
+##...
+##>..
+#####
+idle.
+running.
+#### 
+#### 
+##...
+##>..
+#####
+go right.
+running.
+###  
+### #
+#...#
+#>..#
+#####
+go up.
+running.
+###  
+### #
+#...#
+#>..#
+#####
+go left.
+running.
+#### 
+#### 
+##...
+##>..
+#####
+go up.
+running.
+#### 
+#### 
+##...
+##>..
+#####
+go down.
+running.
+#### 
+##...
+##>..
+#####
+#####
+idle.
+running.
+#### 
+##...
+##>..
+#####
+#####
+go up.
+running.
+#### 
+#### 
+##...
+##>..
+#####
+go up.
+running.
+#### 
+#### 
+##...
+##>..
+#####
+go down.
+running.
+#### 
+##...
+##>..
+#####
+#####
+go up.
+running.
+#### 
+#### 
+##...
+##>..
+#####
+go right.
+time out.
+###  
+### #
+#...#
+#>..#
+#####
+reset
+running.
+#####
+#...#
+#.>.#
+#...#
+# ###
+go left.
+running.
+#####
+##...
+##.>.
+##...
+## ##
+go down.
+running.
+##...
+##.>.
+##...
+## ##
+## < 
+go down.
+running.
+##.>.
+##...
+## ##
+## < 
+##   
+go down.
+running.
+##...
+## ##
+## < 
+##   
+##   
+go right.
+escaped.
+#...#
+# ###
+# < #
+#   #
+#   #
+reset
+running.
+#####
+#####
+##><#
+##  #
+##  #
+go right.
+escaped.
+#####
+#####
+#><##
+#  ##
+#  ##
+reset
+running.
+#####
+##..#
+##>.#
+##..#
+### #
+go right.
+running.
+#####
+#..##
+#>.##
+#..##
+## ##
+go down.
+running.
+#..##
+#>.##
+#..##
+## ##
+##  #
+go down.
+running.
+#>.##
+#..##
+## ##
+##  #
+##  #
+go down.
+running.
+#..##
+## ##
+##  #
+##  #
+##  #
+go right.
+running.
+..###
+# ###
+#  ##
+#  ##
+#  ##
+go down.
+running.
+# ###
+#  ##
+#  ##
+#  ##
+# <##
+go down.
+running.
+#  ##
+#  ##
+#  ##
+# <##
+#####
+go down.
+escaped.
+#  ##
+#  ##
+# <##
+#####
+#####
+reset
+running.
+#####
+#####
+##>< 
+##   
+#####
+go left.
+running.
+#####
+#####
+##>< 
+##   
+#####
+go down.
+running.
+#####
+##>< 
+##   
+#####
+#####
+go up.
+running.
+#####
+#####
+##>< 
+##   
+#####
+idle.
+running.
+#####
+#####
+##>< 
+##   
+#####
+go down.
+running.
+#####
+##>< 
+##   
+#####
+#####
+idle.
+running.
+#####
+##>< 
+##   
+#####
+#####
+go left.
+running.
+#####
+##>< 
+##   
+#####
+#####
+idle.
+running.
+#####
+##>< 
+##   
+#####
+#####
+idle.
+running.
+#####
+##>< 
+##   
+#####
+#####
+go right.
+time out.
+#####
+#><  
+#    
+#####
+#####
+reset
+running.
+#...#
+#...#
+#.>.#
+### #
+###  
+go right.
+running.
+...##
+...##
+.>.##
+## ##
+##   
+go down.
+running.
+...##
+.>.##
+## ##
+##   
+##   
+go down.
+running.
+.>.##
+## ##
+##   
+##   
+##   
+go right.
+running.
+>.###
+# ###
+#   #
+#   #
+#   #
+go down.
+running.
+# ###
+#   #
+#   #
+#   #
+# < #
+go down.
+running.
+#   #
+#   #
+#   #
+# < #
+#####
+go down.
+escaped.
+#   #
+#   #
+# < #
+#####
+#####
+reset
+running.
+#####
+#####
+#<>##
+#  ##
+#####
+go left.
+escaped.
+#####
+#####
+##<>#
+##  #
+#####
+reset
+running.
+##..#
+##..#
+##>.#
+#####
+#####
+go up.
+running.
+### #
+##..#
+##..#
+##>.#
+#####
+go right.
+running.
+## ##
+#..##
+#..##
+#>.##
+#####
+go up.
+running.
+##   
+## ##
+#..##
+#..##
+#>.##
+go up.
+running.
+##<  
+##   
+## ##
+#..##
+#..##
+go up.
+running.
+##   
+##<  
+##   
+## ##
+#..##
+go up.
+escaped.
+#####
+##   
+##<  
+##   
+## ##
+reset
+running.
+#####
+##.. 
+##>.#
+#####
+#####
+idle.
+running.
+#####
+##.. 
+##>.#
+#####
+#####
+go down.
+running.
+#####
+##.. 
+##>.#
+#####
+#####
+go right.
+running.
+#####
+#..  
+#>.# 
+#### 
+#####
+go left.
+running.
+#####
+##.. 
+##>.#
+#####
+#####
+go down.
+running.
+#####
+##.. 
+##>.#
+#####
+#####
+idle.
+running.
+#####
+##.. 
+##>.#
+#####
+#####
+go down.
+running.
+#####
+##.. 
+##>.#
+#####
+#####
+idle.
+running.
+#####
+##.. 
+##>.#
+#####
+#####
+go left.
+running.
+#####
+##.. 
+##>.#
+#####
+#####
+idle.
+running.
+#####
+##.. 
+##>.#
+#####
+#####
+go left.
+running.
+#####
+##.. 
+##>.#
+#####
+#####
+go down.
+running.
+#####
+##.. 
+##>.#
+#####
+#####
+go right.
+running.
+#####
+#..  
+#>.# 
+#### 
+#####
+go up.
+running.
+#####
+#####
+#..  
+#>.# 
+#### 
+go right.
+running.
+#####
+#####
+..   
+>.#  
+###  
+go down.
+running.
+#####
+#####
+..   
+>.#  
+###  
+go left.
+running.
+#####
+#####
+#..  
+#>.# 
+#### 
+idle.
+running.
+#####
+#####
+#..  
+#>.# 
+#### 
+go up.
+running.
+#####
+#####
+#..  
+#>.# 
+#### 
+go up.
+time out.
+#####
+#####
+#..  
+#>.# 
+#### 
+reset
+running.
+#   #
+# ###
+..>##
+...##
+...##
+go left.
+running.
+##   
+## ##
+#..>#
+#...#
+#...#
+go up.
+running.
+##<  
+##   
+## ##
+#..>#
+#...#
+go up.
+running.
+##   
+##<  
+##   
+## ##
+#..>#
+go up.
+escaped.
+#####
+##   
+##<  
+##   
+## ##
+reset
+running.
+#####
+##   
+##>  
+##  <
+##   
+go right.
+running.
+#####
+#   #
+#>  #
+#  <#
+#   #
+go right.
+running.
+#####
+   ##
+>  ##
+  <##
+   ##
+go down.
+escaped.
+   ##
+>  ##
+  <##
+   ##
+#####
+reset
+running.
+#####
+#####
+#.>.#
+#...#
+#... 
+go right.
+running.
+#####
+#####
+.>.##
+...##
+...  
+go down.
+running.
+#####
+.>.##
+...##
+...  
+...#<
+go down.
+running.
+.>.##
+...##
+...  
+...#<
+#### 
+go right.
+running.
+>.###
+..###
+..   
+..#< 
+###  
+go right.
+running.
+.####
+.####
+.    
+.#<  
+##   
+go down.
+escaped.
+.####
+.    
+.#<  
+##   
+#####
+reset
+running.
+   ##
+ < ##
+  >##
+#####
+#####
+idle.
+running.
+   ##
+ < ##
+  >##
+#####
+#####
+go left.
+running.
+#   #
+# < #
+#  >#
+#####
+#####
+idle.
+running.
+#   #
+# < #
+#  >#
+#####
+#####
+go up.
+escaped.
+#####
+#   #
+# < #
+#  >#
+#####
+reset
+running.
+#... 
+#...#
+#.>.#
+#...#
+#####
+go up.
+running.
+#####
+#... 
+#...#
+#.>.#
+#...#
+go up.
+running.
+#####
+#####
+#... 
+#...#
+#.>.#
+go right.
+running.
+#####
+#####
+...  
+...# 
+.>.##
+go right.
+running.
+#####
+#####
+..   
+..#  
+>.###
+go right.
+running.
+#####
+#####
+.    
+.#   
+.####
+go down.
+running.
+#####
+.    
+.#   
+.####
+.####
+go right.
+running.
+#####
+     
+#   <
+#####
+#####
+go right.
+running.
+#####
+    #
+   <#
+#####
+#####
+go right.
+escaped.
+#####
+   ##
+  <##
+#####
+#####
+reset
+running.
+   ##
+   ##
+< >##
+   ##
+#####
+go left.
+running.
+#   #
+#   #
+#< >#
+#   #
+#####
+go left.
+escaped.
+##   
+##   
+##< >
+##   
+#####
+reset
+running.
+#####
+....#
+..>.#
+#####
+#####
+go left.
+running.
+#####
+ ....
+#..>.
+#####
+#####
+go left.
+running.
+#####
+  ...
+ #..>
+<####
+#####
+go up.
+running.
+#####
+#####
+  ...
+ #..>
+<####
+go left.
+running.
+#####
+#####
+   ..
+  #..
+ <###
+go left.
+running.
+#####
+#####
+    .
+   #.
+  <##
+go down.
+running.
+#####
+    .
+   #.
+  <##
+#####
+go down.
+escaped.
+    .
+   #.
+  <##
+#####
+#####
+reset
+running.
+#####
+#####
+#.>##
+#..##
+# ###
+go left.
+running.
+#####
+#####
+##.>#
+##..#
+## ##
+go down.
+running.
+#####
+##.>#
+##..#
+## ##
+##< #
+go down.
+running.
+##.>#
+##..#
+## ##
+##< #
+##  #
+go down.
+escaped.
+##..#
+## ##
+##< #
+##  #
+##  #
+reset
+running.
+#####
+#    
+# > <
+#    
+#####
+go right.
+running.
+#####
+    #
+ > <#
+    #
+#####
+go right.
+escaped.
+#####
+   ##
+> <##
+   ##
+#####
+reset
+running.
+#  ##
+# <##
+# >##
+#####
+#####
+go up.
+escaped.
+#####
+#  ##
+# <##
+# >##
+#####
+reset
+running.
+#   #
+# ###
+..>##
+...##
+...##
+go left.
+running.
+##   
+## ##
+#..>#
+#...#
+#...#
+go up.
+running.
+##   
+##   
+## ##
+#..>#
+#...#
+go up.
+running.
+##   
+##   
+##   
+## ##
+#..>#
+go down.
+running.
+##   
+##   
+## ##
+#..>#
+#...#
+go up.
+running.
+##   
+##   
+##   
+## ##
+#..>#
+go right.
+running.
+#   #
+#   #
+#   #
+# ###
+..>##
+go right.
+running.
+   ##
+   ##
+   ##
+ ####
+.>###
+go up.
+running.
+  <##
+   ##
+   ##
+   ##
+ ####
+go up.
+running.
+#####
+  <##
+   ##
+   ##
+   ##
+go up.
+escaped.
+#####
+#####
+  <##
+   ##
+   ##
+reset
+running.
+#####
+#####
+#.>.#
+#...#
+ ...#
+idle.
+running.
+#####
+#####
+#.>.#
+#...#
+ ...#
+idle.
+running.
+#####
+#####
+#.>.#
+#...#
+ ...#
+go left.
+running.
+#####
+#####
+##.>.
+##...
+  ...
+idle.
+running.
+#####
+#####
+##.>.
+##...
+  ...
+go down.
+running.
+#####
+##.>.
+##...
+  ...
+ #...
+go left.
+running.
+#####
+##.>.
+##...
+  ...
+ #...
+go right.
+running.
+#####
+#.>.#
+#...#
+ ...#
+#...#
+go down.
+running.
+#.>.#
+#...#
+ ...#
+#...#
+#####
+go up.
+running.
+#####
+#.>.#
+#...#
+ ...#
+#...#
+idle.
+running.
+#####
+#.>.#
+#...#
+ ...#
+#...#
+idle.
+running.
+#####
+#.>.#
+#...#
+ ...#
+#...#
+idle.
+running.
+#####
+#.>.#
+#...#
+ ...#
+#...#
+go down.
+running.
+#.>.#
+#...#
+ ...#
+#...#
+#####
+idle.
+running.
+#.>.#
+#...#
+ ...#
+#...#
+#####
+go down.
+running.
+#...#
+ ...#
+#...#
+#####
+#####
+go down.
+running.
+#...#
+ ...#
+#...#
+#####
+#####
+idle.
+running.
+#...#
+ ...#
+#...#
+#####
+#####
+go up.
+running.
+#.>.#
+#...#
+ ...#
+#...#
+#####
+go down.
+running.
+#...#
+ ...#
+#...#
+#####
+#####
+go right.
+time out.
+...##
+...##
+...##
+#####
+#####
+reset
+running.
+#####
+#####
+##>< 
+##   
+#####
+go right.
+escaped.
+#####
+#####
+#>< #
+#   #
+#####
+reset
+running.
+#....
+#....
+#.>..
+#####
+#####
+go right.
+running.
+....#
+....#
+.>.. 
+#####
+#####
+go right.
+running.
+...##
+...##
+>..  
+#### 
+#### 
+go right.
+running.
+..###
+..###
+..   
+###  
+###  
+go right.
+running.
+.####
+.####
+.    
+##   
+##  <
+go down.
+running.
+.####
+.    
+##   
+##  <
+#####
+go right.
+running.
+#####
+    #
+#   #
+#  <#
+#####
+go down.
+running.
+    #
+#   #
+#  <#
+#####
+#####
+go right.
+escaped.
+   ##
+   ##
+  <##
+#####
+#####
+reset
+running.
+#####
+#####
+##>. 
+##..#
+##..#
+go right.
+running.
+#####
+#####
+#>.  
+#..# 
+#..# 
+go right.
+running.
+#####
+#####
+>.   
+..#  
+..#  
+go right.
+running.
+#####
+#####
+.   #
+.#  #
+.#  #
+go down.
+running.
+#####
+.   #
+.#  #
+.#  #
+##< #
+go down.
+running.
+.   #
+.#  #
+.#  #
+##< #
+#####
+go down.
+escaped.
+.#  #
+.#  #
+##< #
+#####
+#####
+reset
+running.
+#####
+#####
+..>##
+...##
+...##
+go up.
+running.
+#####
+#####
+..>##
+...##
+...##
+go right.
+running.
+#####
+#####
+..>##
+...##
+...##
+go right.
+running.
+#####
+#####
+..>##
+...##
+...##
+go up.
+running.
+#####
+#####
+..>##
+...##
+...##
+go left.
+running.
+#####
+#####
+#..>#
+#...#
+#...#
+idle.
+running.
+#####
+#####
+#..>#
+#...#
+#...#
+go right.
+running.
+#####
+#####
+..>##
+...##
+...##
+go down.
+running.
+#####
+..>##
+...##
+...##
+## ##
+idle.
+running.
+#####
+..>##
+...##
+...##
+## ##
+go down.
+running.
+..>##
+...##
+...##
+## ##
+##<  
+go right.
+running.
+..>##
+...##
+...##
+## ##
+##<  
+go down.
+running.
+...##
+...##
+## ##
+##<  
+##   
+go down.
+escaped.
+...##
+## ##
+##<  
+##   
+##   
+reset
+running.
+#####
+<  ##
+  >##
+#####
+#####
+go up.
+running.
+#####
+#####
+<  ##
+  >##
+#####
+go left.
+running.
+#####
+#####
+ <  #
+   >#
+#####
+go left.
+escaped.
+#####
+#####
+# <  
+#   >
+#####
+reset
+running.
+##...
+##...
+##>..
+#####
+#####
+go right.
+running.
+#...#
+#...#
+#>..#
+#####
+#####
+go right.
+running.
+...##
+...##
+>..##
+#####
+#####
+go up.
+running.
+...##
+...##
+...##
+>..##
+#####
+go up.
+running.
+## ##
+...##
+...##
+...##
+>..##
+go up.
+running.
+##   
+## ##
+...##
+...##
+...##
+go up.
+running.
+##<  
+##   
+## ##
+...##
+...##
+go up.
+running.
+##   
+##<  
+##   
+## ##
+...##
+go up.
+escaped.
+##   
+##   
+##<  
+##   
+## ##
+reset
+running.
+#####
+#####
+##>..
+##...
+##...
+go down.
+running.
+#####
+##>..
+##...
+##...
+##...
+go down.
+running.
+##>..
+##...
+##...
+##...
+## ##
+go down.
+running.
+##...
+##...
+##...
+## ##
+##   
+go down.
+running.
+##...
+##...
+## ##
+##   
+##  <
+go down.
+running.
+##...
+## ##
+##   
+##  <
+#####
+go right.
+running.
+#...#
+# ###
+#    
+#  < 
+#####
+go down.
+running.
+# ###
+#    
+#  < 
+#####
+#####
+go right.
+escaped.
+ ####
+    #
+  < #
+#####
+#####
+reset
+running.
+#####
+#####
+#<>##
+#  ##
+#####
+idle.
+running.
+#####
+#####
+#<>##
+#  ##
+#####
+go up.
+running.
+#####
+#####
+#<>##
+#  ##
+#####
+go left.
+escaped.
+#####
+#####
+##<>#
+##  #
+#####
+reset
+running.
+   ##
+   ##
+  >##
+  <##
+#####
+go down.
+escaped.
+   ##
+  >##
+  <##
+#####
+#####
+reset
+running.
+#####
+## < 
+##>  
+#####
+#####
+go right.
+running.
+#####
+# < #
+#>  #
+#####
+#####
+go up.
+escaped.
+#####
+#####
+# < #
+#>  #
+#####
+reset
+running.
+   ##
+   ##
+  >##
+#####
+#####
+go up.
+running.
+ < ##
+   ##
+   ##
+  >##
+#####
+go left.
+running.
+# < #
+#   #
+#   #
+#  >#
+#####
+go up.
+running.
+#####
+# < #
+#   #
+#   #
+#  >#
+go up.
+escaped.
+#####
+#####
+# < #
+#   #
+#   #
+reset
+running.
+#####
+#####
+  >..
+ #...
+<#...
+go up.
+running.
+#####
+#####
+  >..
+ #...
+<#...
+go down.
+running.
+#####
+  >..
+ #...
+<#...
+#####
+idle.
+running.
+#####
+  >..
+ #...
+<#...
+#####
+go left.
+running.
+#####
+  >..
+ #...
+<#...
+#####
+go left.
+running.
+#####
+  >..
+ #...
+<#...
+#####
+go right.
+running.
+#####
+ >..#
+#...#
+#...#
+#####
+idle.
+running.
+#####
+ >..#
+#...#
+#...#
+#####
+idle.
+running.
+#####
+ >..#
+#...#
+#...#
+#####
+go up.
+running.
+#####
+#####
+ >..#
+#...#
+#...#
+go left.
+running.
+#####
+#####
+  >..
+ #...
+<#...
+go up.
+running.
+#####
+#####
+  >..
+ #...
+<#...
+go down.
+running.
+#####
+  >..
+ #...
+<#...
+#####
+go left.
+running.
+#####
+  >..
+ #...
+<#...
+#####
+go up.
+running.
+#####
+#####
+  >..
+ #...
+<#...
+go up.
+running.
+#####
+#####
+  >..
+ #...
+<#...
+go down.
+running.
+#####
+  >..
+ #...
+<#...
+#####
+idle.
+running.
+#####
+  >..
+ #...
+<#...
+#####
+go right.
+running.
+#####
+ >..#
+#...#
+#...#
+#####
+go up.
+running.
+#####
+#####
+ >..#
+#...#
+#...#
+go up.
+time out.
+#####
+#####
+ >..#
+#...#
+#...#
+reset
+running.
+   ##
+ < ##
+  >##
+#####
+#####
+go up.
+running.
+#####
+   ##
+ < ##
+  >##
+#####
+go left.
+escaped.
+#####
+    #
+  < #
+   >#
+#####
+reset
+running.
+#####
+# <##
+# >##
+#  ##
+#####
+go up.
+escaped.
+#####
+#####
+# <##
+# >##
+#  ##
+reset
+running.
+   ##
+  <##
+  >##
+#####
+#####
+go up.
+escaped.
+#####
+   ##
+  <##
+  >##
+#####
+reset
+running.
+#####
+# <##
+# >##
+#####
+#####
+go left.
+running.
+#####
+## <#
+## >#
+#####
+#####
+go left.
+running.
+#####
+## <#
+## >#
+#####
+#####
+go right.
+running.
+#####
+# <##
+# >##
+#####
+#####
+go up.
+escaped.
+#####
+#####
+# <##
+# >##
+#####
+reset
+running.
+#####
+## < 
+##>  
+##   
+#####
+go up.
+running.
+#####
+#####
+## < 
+##>  
+##   
+go right.
+escaped.
+#####
+#####
+# < #
+#>  #
+#   #
+reset
+running.
+#####
+   ##
+  >##
+  <##
+#####
+go down.
+escaped.
+   ##
+  >##
+  <##
+#####
+#####
+reset
+running.
+#####
+#####
+#.>##
+#..##
+# ###
+go down.
+running.
+#####
+#.>##
+#..##
+# ###
+#   #
+go left.
+running.
+#####
+##.>#
+##..#
+## ##
+##   
+go down.
+running.
+##.>#
+##..#
+## ##
+##   
+## < 
+go down.
+running.
+##..#
+## ##
+##   
+## < 
+#####
+go right.
+running.
+#..##
+# ###
+#   #
+# < #
+#####
+go down.
+escaped.
+# ###
+#   #
+# < #
+#####
+#####
+reset
+running.
+#####
+#####
+#.>..
+ ....
+#....
+go down.
+running.
+#####
+#.>..
+ ....
+#....
+#####
+go left.
+running.
+#####
+##.>.
+  ...
+ #...
+ ####
+idle.
+running.
+#####
+##.>.
+  ...
+ #...
+ ####
+go left.
+running.
+#####
+###.>
+   ..
+  #..
+  ###
+go up.
+running.
+#####
+###.>
+   ..
+  #..
+  ###
+go up.
+running.
+#####
+###.>
+   ..
+  #..
+  ###
+go down.
+running.
+#####
+###.>
+   ..
+  #..
+  ###
+idle.
+running.
+#####
+###.>
+   ..
+  #..
+  ###
+go up.
+running.
+#####
+###.>
+   ..
+  #..
+  ###
+go left.
+running.
+#####
+####.
+    .
+   #.
+<  ##
+go left.
+running.
+#####
+#####
+#    
+#   #
+#<  #
+idle.
+running.
+#####
+#####
+#    
+#   #
+#<  #
+go down.
+running.
+#####
+#    
+#   #
+#<  #
+#   #
+idle.
+running.
+#####
+#    
+#   #
+#<  #
+#   #
+go down.
+running.
+#    
+#   #
+#<  #
+#   #
+#####
+go up.
+running.
+#####
+#    
+#   #
+#<  #
+#   #
+go up.
+running.
+#####
+#####
+#    
+#   #
+#<  #
+go right.
+running.
+#####
+####.
+    .
+   #.
+<  ##
+idle.
+running.
+#####
+####.
+    .
+   #.
+<  ##
+go left.
+time out.
+#####
+#####
+#    
+#   #
+#<  #
+reset
+running.
+#####
+#....
+#.>..
+#....
+## ##
+go down.
+running.
+#....
+#.>..
+#....
+## ##
+##   
+go down.
+running.
+#.>..
+#....
+## ##
+##   
+##   
+go down.
+running.
+#....
+## ##
+##   
+##   
+## < 
+go right.
+running.
+....#
+# ###
+#   #
+#   #
+# < #
+go down.
+running.
+# ###
+#   #
+#   #
+# < #
+#   #
+go down.
+escaped.
+#   #
+#   #
+# < #
+#   #
+#####
+reset
+running.
+#####
+#... 
+#.>.#
+#####
+#####
+go up.
+running.
+#####
+#####
+#... 
+#.>.#
+#####
+go right.
+running.
+#####
+#####
+... <
+.>.# 
+#### 
+go right.
+running.
+#####
+#####
+.. < 
+>.#  
+###  
+go right.
+escaped.
+#####
+#####
+. < #
+.#  #
+##  #
+reset
+running.
+#####
+# <##
+# >##
+#  ##
+#####
+go up.
+escaped.
+#####
+#####
+# <##
+# >##
+#  ##
+reset
+running.
+  <##
+   ##
+  >##
+#####
+#####
+idle.
+running.
+  <##
+   ##
+  >##
+#####
+#####
+go left.
+running.
+#  <#
+#   #
+#  >#
+#####
+#####
+go up.
+running.
+#####
+#  <#
+#   #
+#  >#
+#####
+idle.
+running.
+#####
+#  <#
+#   #
+#  >#
+#####
+go down.
+running.
+#  <#
+#   #
+#  >#
+#####
+#####
+go left.
+running.
+##  <
+##   
+##  >
+#####
+#####
+go left.
+running.
+##  <
+##   
+##  >
+#####
+#####
+go up.
+running.
+#####
+##  <
+##   
+##  >
+#####
+go right.
+running.
+#####
+#  <#
+#   #
+#  >#
+#####
+go up.
+time out.
+#####
+#####
+#  <#
+#   #
+#  >#
+reset
+running.
+#####
+#####
+..>##
+...##
+...  
+go down.
+running.
+#####
+..>##
+...##
+...  
+#### 
+go down.
+running.
+..>##
+...##
+...  
+#### 
+#####
+go right.
+running.
+.>###
+..###
+..   
+###  
+#####
+go right.
+running.
+>####
+.####
+.    
+##   
+#####
+go right.
+running.
+#####
+#####
+     
+#   <
+#####
+go right.
+running.
+#####
+#####
+    #
+   <#
+#####
+go right.
+running.
+#####
+#####
+   ##
+  <##
+#####
+go down.
+escaped.
+#####
+   ##
+  <##
+#####
+#####
+reset
+running.
+#####
+   ##
+< >##
+   ##
+   ##
+go left.
+running.
+#####
+#   #
+#< >#
+#   #
+#   #
+go left.
+escaped.
+#####
+##   
+##< >
+##   
+##   
+reset
+running.
+#####
+##...
+##>..
+  ...
+ ####
+go down.
+running.
+##...
+##>..
+  ...
+ ####
+ ####
+go left.
+running.
+###..
+###>.
+<  ..
+  ###
+  ###
+go left.
+running.
+####.
+####>
+ <  .
+   ##
+   ##
+go left.
+escaped.
+#####
+#####
+  <  
+    #
+    #
+reset
+running.
+   ##
+   ##
+ <>##
+   ##
+#####
+go down.
+running.
+   ##
+ <>##
+   ##
+#####
+#####
+idle.
+running.
+   ##
+ <>##
+   ##
+#####
+#####
+go up.
+running.
+   ##
+   ##
+ <>##
+   ##
+#####
+go up.
+running.
+#####
+   ##
+   ##
+ <>##
+   ##
+idle.
+running.
+#####
+   ##
+   ##
+ <>##
+   ##
+go down.
+running.
+   ##
+   ##
+ <>##
+   ##
+#####
+go left.
+escaped.
+    #
+    #
+  <>#
+    #
+#####
+reset
+running.
+#####
+#####
+  >##
+  <##
+#####
+go down.
+escaped.
+#####
+  >##
+  <##
+#####
+#####
+reset
+running.
+#####
+##...
+##>..
+## ##
+##   
+go down.
+running.
+##...
+##>..
+## ##
+##   
+##   
+go down.
+running.
+##>..
+## ##
+##   
+##   
+##   
+go up.
+running.
+##...
+##>..
+## ##
+##   
+##   
+go down.
+running.
+##>..
+## ##
+##   
+##   
+##   
+go right.
+running.
+#>..#
+# ###
+#    
+#    
+#   <
+go down.
+running.
+# ###
+#    
+#    
+#   <
+#####
+go right.
+running.
+ ####
+    #
+    #
+   <#
+#####
+go down.
+running.
+    #
+    #
+   <#
+#####
+#####
+go right.
+escaped.
+   ##
+   ##
+  <##
+#####
+#####
+reset
+running.
+# ###
+...##
+..>##
+#####
+#####
+go left.
+running.
+## ##
+#...#
+#..>#
+#####
+#####
+go up.
+running.
+##< #
+## ##
+#...#
+#..>#
+#####
+go up.
+running.
+##  #
+##< #
+## ##
+#...#
+#..>#
+go up.
+escaped.
+##  #
+##  #
+##< #
+## ##
+#...#
+reset
+running.
+#####
+#...#
+#.>.#
+ ...#
+#...#
+go up.
+running.
+#####
+#####
+#...#
+#.>.#
+ ...#
+go left.
+running.
+#####
+#####
+##...
+##.>.
+  ...
+idle.
+running.
+#####
+#####
+##...
+##.>.
+  ...
+idle.
+running.
+#####
+#####
+##...
+##.>.
+  ...
+go right.
+running.
+#####
+#####
+#...#
+#.>.#
+ ...#
+idle.
+running.
+#####
+#####
+#...#
+#.>.#
+ ...#
+go left.
+running.
+#####
+#####
+##...
+##.>.
+  ...
+idle.
+running.
+#####
+#####
+##...
+##.>.
+  ...
+go right.
+running.
+#####
+#####
+#...#
+#.>.#
+ ...#
+go left.
+running.
+#####
+#####
+##...
+##.>.
+  ...
+go left.
+running.
+#####
+#####
+##...
+##.>.
+  ...
+go down.
+running.
+#####
+##...
+##.>.
+  ...
+ #...
+go right.
+running.
+#####
+#...#
+#.>.#
+ ...#
+#...#
+go up.
+running.
+#####
+#####
+#...#
+#.>.#
+ ...#
+idle.
+running.
+#####
+#####
+#...#
+#.>.#
+ ...#
+idle.
+running.
+#####
+#####
+#...#
+#.>.#
+ ...#
+go down.
+running.
+#####
+#...#
+#.>.#
+ ...#
+#...#
+go right.
+running.
+#####
+...##
+.>.##
+...##
+...##
+go left.
+running.
+#####
+#...#
+#.>.#
+ ...#
+#...#
+go right.
+time out.
+#####
+...##
+.>.##
+...##
+...##
+reset
+running.
+#####
+#####
+#.>##
+#..##
+# ###
+go left.
+running.
+#####
+#####
+##.>#
+##..#
+## ##
+go down.
+running.
+#####
+##.>#
+##..#
+## ##
+##   
+go down.
+running.
+##.>#
+##..#
+## ##
+##   
+##<  
+go down.
+running.
+##..#
+## ##
+##   
+##<  
+##   
+go down.
+escaped.
+## ##
+##   
+##<  
+##   
+#####
+reset
+running.
+#####
+#####
+##>..
+##...
+##...
+go right.
+running.
+#####
+#####
+#>.. 
+#...#
+#...#
+go right.
+running.
+#####
+#####
+>.. <
+...# 
+...# 
+go right.
+running.
+#####
+#####
+.. < 
+..#  
+..#  
+go right.
+escaped.
+#####
+#####
+. <  
+.#   
+.#   
+reset
+running.
+### #
+#...#
+#.>.#
+#####
+#####
+go up.
+running.
+###< 
+### #
+#...#
+#.>.#
+#####
+go right.
+running.
+##< #
+## ##
+...##
+.>.##
+#####
+go up.
+running.
+##  #
+##< #
+## ##
+...##
+.>.##
+go up.
+escaped.
+##  #
+##  #
+##< #
+## ##
+...##
+reset
+running.
+#####
+#< ##
+# >##
+#####
+#####
+go left.
+running.
+#####
+##< #
+## >#
+#####
+#####
+go down.
+running.
+#####
+##< #
+## >#
+#####
+#####
+go up.
+escaped.
+#####
+#####
+##< #
+## >#
+#####
+reset
+running.
+###< 
+### #
+##>.#
+##..#
+##..#
+go right.
+running.
+##< #
+## ##
+#>.##
+#..##
+#..##
+go up.
+running.
+##  #
+##< #
+## ##
+#>.##
+#..##
+go up.
+escaped.
+##  #
+##  #
+##< #
+## ##
+#>.##
+reset
+running.
+#####
+#####
+# >##
+# <##
+#  ##
+go down.
+escaped.
+#####
+# >##
+# <##
+#  ##
+#####
+reset
+running.
+#####
+#####
+#.>##
+#..  
+#### 
+go down.
+running.
+#####
+#.>##
+#..  
+#### 
+#### 
+go right.
+running.
+#####
+.>###
+..   
+###  
+###  
+go right.
+running.
+#####
+>####
+.    
+##   
+##   
+go right.
+running.
+#####
+#####
+     
+#   <
+#    
+go down.
+running.
+#####
+     
+#   <
+#    
+#####
+go right.
+running.
+#####
+    #
+   <#
+    #
+#####
+go right.
+escaped.
+#####
+   ##
+  <##
+   ##
+#####
+reset
+running.
+#####
+#####
+#.>..
+#....
+#####
+go up.
+running.
+#####
+#####
+#.>..
+#....
+#####
+idle.
+running.
+#####
+#####
+#.>..
+#....
+#####
+go down.
+running.
+#####
+#.>..
+#....
+#####
+#####
+go left.
+running.
+#####
+##.>.
+##...
+#####
+#####
+go up.
+running.
+#####
+#####
+##.>.
+##...
+#####
+idle.
+running.
+#####
+#####
+##.>.
+##...
+#####
+go left.
+running.
+#####
+#####
+##.>.
+##...
+#####
+go up.
+running.
+#####
+#####
+##.>.
+##...
+#####
+go down.
+running.
+#####
+##.>.
+##...
+#####
+#####
+go up.
+running.
+#####
+#####
+##.>.
+##...
+#####
+go left.
+running.
+#####
+#####
+##.>.
+##...
+#####
+go down.
+running.
+#####
+##.>.
+##...
+#####
+#####
+go up.
+running.
+#####
+#####
+##.>.
+##...
+#####
+go right.
+running.
+#####
+#####
+#.>..
+#....
+#####
+go up.
+running.
+#####
+#####
+#.>..
+#....
+#####
+idle.
+running.
+#####
+#####
+#.>..
+#....
+#####
+go up.
+running.
+#####
+#####
+#.>..
+#....
+#####
+go left.
+running.
+#####
+#####
+##.>.
+##...
+#####
+go left.
+running.
+#####
+#####
+##.>.
+##...
+#####
+idle.
+time out.
+#####
+#####
+##.>.
+##...
+#####
+reset
+running.
+## ##
+...##
+..>##
+...##
+...##
+go up.
+running.
+##   
+## ##
+...##
+..>##
+...##
+go up.
+running.
+##   
+##   
+## ##
+...##
+..>##
+go up.
+running.
+##  <
+##   
+##   
+## ##
+...##
+go right.
+running.
+#  <#
+#   #
+#   #
+# ###
+..###
+go right.
+running.
+  <##
+   ##
+   ##
+ ####
+.####
+go up.
+running.
+#####
+  <##
+   ##
+   ##
+ ####
+go up.
+escaped.
+#####
+#####
+  <##
+   ##
+   ##
+reset
+running.
+## ##
+#...#
+#.>.#
+#...#
+#####
+go up.
+running.
+## < 
+## ##
+#...#
+#.>.#
+#...#
+go up.
+running.
+##   
+## < 
+## ##
+#...#
+#.>.#
+go up.
+running.
+##   
+##   
+## < 
+## ##
+#...#
+go right.
+escaped.
+#   #
+#   #
+# < #
+# ###
+...##
+reset
+running.
+##< #
+##  #
+##> #
+##  #
+#####
+go up.
+running.
+#####
+##< #
+##  #
+##> #
+##  #
+go up.
+escaped.
+#####
+#####
+##< #
+##  #
+##> #
+reset
+running.
+#####
+#####
+< >##
+   ##
+   ##
+go left.
+running.
+#####
+#####
+#< >#
+#   #
+#   #
+idle.
+running.
+#####
+#####
+#< >#
+#   #
+#   #
+go down.
+running.
+#####
+#< >#
+#   #
+#   #
+#####
+idle.
+running.
+#####
+#< >#
+#   #
+#   #
+#####
+go left.
+running.
+#####
+##< >
+##   
+##   
+#####
+go right.
+running.
+#####
+#< >#
+#   #
+#   #
+#####
+idle.
+running.
+#####
+#< >#
+#   #
+#   #
+#####
+go left.
+running.
+#####
+##< >
+##   
+##   
+#####
+go down.
+running.
+##< >
+##   
+##   
+#####
+#####
+go right.
+time out.
+#< >#
+#   #
+#   #
+#####
+#####
+reset
+running.
+#####
+#####
+..>##
+...  
+...# 
+go down.
+running.
+#####
+..>##
+...  
+...# 
+#### 
+go right.
+running.
+#####
+.>###
+..   
+..#  
+###  
+go right.
+running.
+#####
+>####
+.    
+.#   
+##  <
+go right.
+running.
+#####
+#####
+    #
+#   #
+#  <#
+go down.
+running.
+#####
+    #
+#   #
+#  <#
+#   #
+go right.
+running.
+#####
+   ##
+   ##
+  <##
+   ##
+go down.
+escaped.
+   ##
+   ##
+  <##
+   ##
+#####
+reset
+running.
+#####
+#..##
+#.>##
+#..##
+# ###
+go down.
+running.
+#..##
+#.>##
+#..##
+# ###
+#   #
+go left.
+running.
+##..#
+##.>#
+##..#
+## ##
+##   
+go down.
+running.
+##.>#
+##..#
+## ##
+##   
+##   
+go down.
+running.
+##..#
+## ##
+##   
+##   
+##  <
+go down.
+running.
+## ##
+##   
+##   
+##  <
+#####
+go down.
+running.
+##   
+##   
+##  <
+#####
+#####
+go right.
+running.
+#   #
+#   #
+#  <#
+#####
+#####
+go right.
+escaped.
+   ##
+   ##
+  <##
+#####
+#####
+reset
+running.
+#  ##
+# <##
+# >##
+#####
+#####
+go up.
+escaped.
+#####
+#  ##
+# <##
+# >##
+#####
+reset
+running.
+##...
+##...
+##>..
+#####
+#####
+go up.
+running.
+##...
+##...
+##...
+##>..
+#####
+go up.
+running.
+#####
+##...
+##...
+##...
+##>..
+idle.
+running.
+#####
+##...
+##...
+##...
+##>..
+go up.
+running.
+#####
+#####
+##...
+##...
+##...
+go right.
+running.
+#####
+#####
+#....
+#....
+#....
+idle.
+running.
+#####
+#####
+#....
+#....
+#....
+go up.
+running.
+#####
+#####
+#....
+#....
+#....
+go left.
+running.
+#####
+#####
+##...
+##...
+##...
+go up.
+running.
+#####
+#####
+##...
+##...
+##...
+go down.
+running.
+#####
+##...
+##...
+##...
+##>..
+go up.
+running.
+#####
+#####
+##...
+##...
+##...
+go down.
+running.
+#####
+##...
+##...
+##...
+##>..
+go left.
+running.
+#####
+##...
+##...
+##...
+##>..
+go left.
+running.
+#####
+##...
+##...
+##...
+##>..
+go right.
+running.
+#####
+#....
+#....
+#....
+#>...
+go down.
+running.
+#....
+#....
+#....
+#>...
+#### 
+idle.
+running.
+#....
+#....
+#....
+#>...
+#### 
+go down.
+running.
+#....
+#....
+#>...
+#### 
+####<
+go left.
+running.
+##...
+##...
+##>..
+#####
+#####
+idle.
+time out.
+##...
+##...
+##>..
+#####
+#####
+reset
+running.
+#  ##
+#  ##
+# >##
+#####
+#####
+go up.
+running.
+#< ##
+#  ##
+#  ##
+# >##
+#####
+go up.
+running.
+#####
+#< ##
+#  ##
+#  ##
+# >##
+go up.
+running.
+#####
+#####
+#< ##
+#  ##
+#  ##
+go left.
+escaped.
+#####
+#####
+##< #
+##  #
+##  #
+reset
+running.
+#    
+#    
+# >  
+#####
+#####
+go up.
+running.
+# <  
+#    
+#    
+# >  
+#####
+go up.
+running.
+#####
+# <  
+#    
+#    
+# >  
+go up.
+escaped.
+#####
+#####
+# <  
+#    
+#    
+reset
+running.
+#####
+#####
+##>  
+##   
+##   
+go down.
+running.
+#####
+##>  
+##   
+##   
+##  <
+go down.
+running.
+##>  
+##   
+##   
+##  <
+#####
+go right.
+running.
+#>  #
+#   #
+#   #
+#  <#
+#####
+go right.
+running.
+>  ##
+   ##
+   ##
+  <##
+#####
+go down.
+escaped.
+   ##
+   ##
+  <##
+#####
+#####
+reset
+running.
+##...
+##...
+##>..
+#####
+#####
+idle.
+running.
+##...
+##...
+##>..
+#####
+#####
+go down.
+running.
+##...
+##...
+##>..
+#####
+#####
+idle.
+running.
+##...
+##...
+##>..
+#####
+#####
+go up.
+running.
+## ##
+##...
+##...
+##>..
+#####
+go down.
+running.
+##...
+##...
+##>..
+#####
+#####
+go down.
+running.
+##...
+##...
+##>..
+#####
+#####
+go down.
+running.
+##...
+##...
+##>..
+#####
+#####
+go right.
+running.
+#...#
+#...#
+#>..#
+#####
+#####
+go down.
+running.
+#...#
+#...#
+#>..#
+#####
+#####
+go right.
+running.
+...##
+...##
+>..##
+#####
+#####
+go left.
+running.
+#...#
+#...#
+#>..#
+#####
+#####
+idle.
+running.
+#...#
+#...#
+#>..#
+#####
+#####
+go down.
+running.
+#...#
+#...#
+#>..#
+#####
+#####
+idle.
+running.
+#...#
+#...#
+#>..#
+#####
+#####
+go down.
+running.
+#...#
+#...#
+#>..#
+#####
+#####
+go up.
+running.
+# ###
+#...#
+#...#
+#>..#
+#####
+idle.
+running.
+# ###
+#...#
+#...#
+#>..#
+#####
+go up.
+running.
+# <  
+# ###
+#...#
+#...#
+#>..#
+go left.
+running.
+## < 
+## ##
+##...
+##...
+##>..
+idle.
+time out.
+## < 
+## ##
+##...
+##...
+##>..
+reset
+running.
+# ###
+#..##
+#.>##
+#####
+#####
+go up.
+running.
+#   #
+# ###
+#..##
+#.>##
+#####
+go left.
+running.
+##   
+## ##
+##..#
+##.>#
+#####
+go up.
+running.
+##<  
+##   
+## ##
+##..#
+##.>#
+go up.
+running.
+##   
+##<  
+##   
+## ##
+##..#
+go up.
+escaped.
+#####
+##   
+##<  
+##   
+## ##
+reset
+running.
+#####
+#####
+..>##
+...##
+#####
+go down.
+running.
+#####
+..>##
+...##
+#####
+  ###
+go left.
+running.
+#####
+...>#
+....#
+ ####
+   ##
+go left.
+running.
+#####
+#...>
+#....
+# ###
+#   #
+go left.
+running.
+#####
+##...
+##...
+## ##
+##   
+go down.
+running.
+##...
+##...
+## ##
+##   
+##   
+go down.
+running.
+##...
+## ##
+##   
+##   
+##<  
+go down.
+running.
+## ##
+##   
+##   
+##<  
+##   
+go down.
+escaped.
+##   
+##   
+##<  
+##   
+#####
+reset
+running.
+#####
+#....
+#.>..
+#####
+#####
+go right.
+running.
+#####
+.... 
+.>..#
+#####
+#####
+go right.
+running.
+#####
+...  
+>..# 
+####<
+#####
+go up.
+running.
+#####
+#####
+...  
+>..# 
+####<
+go right.
+running.
+#####
+#####
+..   
+..#  
+###< 
+go right.
+running.
+#####
+#####
+.   #
+.#  #
+##< #
+go down.
+running.
+#####
+.   #
+.#  #
+##< #
+#####
+go down.
+escaped.
+.   #
+.#  #
+##< #
+#####
+#####

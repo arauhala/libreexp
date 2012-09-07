@@ -1,0 +1,8 @@
+for train data:
+predfilter: entropy     naive e     err         naive err   cost        naiveCost   
+5           0.668       0.881       0.216       0.300       0.483       0.700       
+
+for test data:
+predfilter: entropy     naive e     err         naive err   cost        naiveCost   
+5           0.721       0.883       0.237       0.300       0.518       0.700       
+

@@ -1,0 +1,15 @@
+
+matrix:
+X..
+.X.
+...
+
+matrix 2:
+..X
+...
+X.X
+
+matrix 1+2:
+X.X
+.X.
+X.X

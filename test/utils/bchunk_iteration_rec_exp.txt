@@ -1,0 +1,4 @@
+2 iteration:bcistream prop:us 384
+2 iteration:bcistream prop:true 36094
+2 iteration:bcvector prop:us 342
+2 iteration:bcvector prop:true 36094

@@ -1,0 +1,40 @@
+<px(r), px(r + x)>
+<px(r - 2x), px(r - x)>
+independent
+
+<px(r), px(r + x)>
+<px(r - x), px(r)>
+overlap
+
+<px(r), px(r + x)>
+<px(r), px(r + x)>
+overlap
+
+<px(r), px(r + x)>
+<px(r + x), px(r + 2x)>
+overlap
+
+<px(r), px(r + x)>
+<px(r + 2x), px(r + 3x)>
+independent
+
+<px(r), px(r + x)>
+<px(r - 2x + y), px(r - x + y)>
+independent
+
+<px(r), px(r + x)>
+<px(r - x + y), px(r + y)>
+independent
+
+<px(r), px(r + x)>
+<px(r + y), px(r + x + y)>
+independent
+
+<px(r), px(r + x)>
+<px(r + x + y), px(r + 2x + y)>
+independent
+
+<px(r), px(r + x)>
+<px(r + 2x + y), px(r + 3x + y)>
+independent
+

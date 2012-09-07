@@ -1,0 +1,305 @@
+7 expressions added.
+
+exps:
+
+b
+b
+
+c
+c
+c
+c
+
+d
+d
+d
+
+ee
+ee
+ee
+ee
+
+ff
+ff
+ff
+
+g
+g
+g
+g
+g
+
+h
+h
+h
+h
+h
+h
+h
+h
+
+predicting:
+
+d0(r):
+
+#39 119.704 <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, d0(r)
+
+c
+c
+c
+c
+
+#187 96.7004 <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>>, d0(r)
+
+h
+h
+h
+h
+h
+h
+h
+h
+
+#160 24.6424 <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, px(r + 4y)>, d0(r)
+
+g
+g
+g
+g
+g
+
+#86 5.88062 <<px(r), px(r + y)>, px(r + 2y)>, d0(r)
+
+d
+d
+d
+
+d1(r):
+
+#127 257.5 <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + x), px(r + x + y)>, <px(r + x + 2y), px(r + x + 3y)>>>, d1(r)
+
+ee
+ee
+ee
+ee
+
+#188 47.7304 <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>>, d1(r)
+
+h
+h
+h
+h
+h
+h
+h
+h
+
+#5 11.3207 px(r), d1(r)
+
+0
+
+d2(r):
+
+#162 10.9667 <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, px(r + 4y)>, d2(r)
+
+g
+g
+g
+g
+g
+
+d3(r):
+
+#155 97.2016 <<<px(r), px(r + y)>, px(r + 2y)>, <<px(r + x), px(r + x + y)>, px(r + x + 2y)>>, d3(r)
+
+ff
+ff
+ff
+
+#91 59.4067 <<px(r), px(r + y)>, px(r + 2y)>, d3(r)
+
+d
+d
+d
+
+#17 42.6531 <px(r), px(r + y)>, d3(r)
+
+b
+b
+
+d4(r):
+
+#50 162.099 <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, d4(r)
+
+c
+c
+c
+c
+
+#167 93.5508 <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, px(r + 4y)>, d4(r)
+
+g
+g
+g
+g
+g
+
+#18 26.6238 <px(r), px(r + y)>, d4(r)
+
+b
+b
+
+#95 13.0067 <<px(r), px(r + y)>, px(r + 2y)>, d4(r)
+
+d
+d
+d
+
+#191 6.65126 <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>>, d4(r)
+
+h
+h
+h
+h
+h
+h
+h
+h
+
+d5(r):
+
+#157 84.8521 <<<px(r), px(r + y)>, px(r + 2y)>, <<px(r + x), px(r + x + y)>, px(r + x + 2y)>>, d5(r)
+
+ff
+ff
+ff
+
+d6(r):
+
+#193 57.8495 <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>>, d6(r)
+
+h
+h
+h
+h
+h
+h
+h
+h
+
+#26 57.0479 <px(r), px(r + y)>, d6(r)
+
+b
+b
+
+#158 44.5401 <<<px(r), px(r + y)>, px(r + 2y)>, <<px(r + x), px(r + x + y)>, px(r + x + 2y)>>, d6(r)
+
+ff
+ff
+ff
+
+#60 0.925739 <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, d6(r)
+
+c
+c
+c
+c
+
+d7(r):
+
+#133 110.869 <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + x), px(r + x + y)>, <px(r + x + 2y), px(r + x + 3y)>>>, d7(r)
+
+ee
+ee
+ee
+ee
+
+#11 67.1275 px(r), d7(r)
+
+0
+
+#98 12.9202 <<px(r), px(r + y)>, px(r + 2y)>, d7(r)
+
+d
+d
+d
+
+d8(r):
+
+#31 134.359 <px(r), px(r + y)>, d8(r)
+
+b
+b
+
+#100 51.991 <<px(r), px(r + y)>, px(r + 2y)>, d8(r)
+
+d
+d
+d
+
+#62 40.4141 <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, d8(r)
+
+c
+c
+c
+c
+
+#12 33.8125 px(r), d8(r)
+
+0
+
+#171 1.53306 <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, px(r + 4y)>, d8(r)
+
+g
+g
+g
+g
+g
+
+#145 1.09915 <<<px(r), px(r + y)>, px(r + 2y)>, <<px(r + x), px(r + x + y)>, px(r + x + 2y)>>, d8(r)
+
+ff
+ff
+ff
+
+d9(r):
+
+#172 43.3447 <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, px(r + 4y)>, d9(r)
+
+g
+g
+g
+g
+g
+
+#32 35.3215 <px(r), px(r + y)>, d9(r)
+
+b
+b
+
+#104 17.1714 <<px(r), px(r + y)>, px(r + 2y)>, d9(r)
+
+d
+d
+d
+
+#204 15.7347 <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>>, d9(r)
+
+h
+h
+h
+h
+h
+h
+h
+h
+
+#146 13.922 <<<px(r), px(r + y)>, px(r + 2y)>, <<px(r + x), px(r + x + y)>, px(r + x + 2y)>>, d9(r)
+
+ff
+ff
+ff
+
+entropy	  2.37 / 3.32
+accuracy    0.44
+error       0.56

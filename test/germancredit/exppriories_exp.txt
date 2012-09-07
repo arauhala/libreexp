@@ -1,0 +1,185 @@
+prioriP=1  group:1  accountEmpty(r)  274/274 [0]
+
+prioriP=0.5  group:1  accountUnder200DM(r)  269/543 [542.967]
+
+prioriP=0.333333  group:1  accountOver200DM(r)  63/606 [291.744]
+
+prioriP=0.4  group:1  noAccount(r)  394/746 [744.293]
+
+prioriP=1  group:3  noCreditTakenOrPaidDuly(r)  40/40 [0]
+
+prioriP=0.5  group:3  creditForThisBankPaidDuly(r)  49/89 [88.3424]
+
+prioriP=0.333333  group:3  creditForThisBankPaidDulyTillNow(r)  530/619 [367.719]
+
+prioriP=0.15625  group:3  creditDelays(r)  31/650 [179.733]
+
+prioriP=0.111111  group:3  criticalAccount(r)  70/777 [339.371]
+
+prioriP=1  group:4  forNewCar(r)  234/234 [0]
+
+prioriP=0.5  group:4  forUsedCar(r)  103/337 [299.281]
+
+prioriP=0.333333  group:4  forFurnitudeOrEquipment(r)  181/518 [483.579]
+
+prioriP=0.25  group:4  forRadioTelevision(r)  280/798 [746.01]
+
+prioriP=0.2  group:4  forDomesticAppliance(r)  12/810 [90.1053]
+
+prioriP=0.166667  group:4  forRepairs(r)  22/832 [146.618]
+
+prioriP=0.142857  group:4  forEducation(r)  50/882 [277.089]
+
+prioriP=0.125  group:4  forVacation(r)  0/882 [0]
+
+prioriP=0.111111  group:4  forRetraining(r)  9/891 [72.5827]
+
+prioriP=0.1  group:4  forBusiness(r)  97/988 [457.635]
+
+prioriP=0.0909091  group:4  forOthers(r)  12/1000 [93.7779]
+
+prioriP=1  group:6  savings(<100)(r)  603/603 [0]
+
+prioriP=0.5  group:6  savings(100-500)(r)  103/706 [423.222]
+
+prioriP=0.333333  group:6  savings(500-1k)(r)  63/769 [314.463]
+
+prioriP=0.25  group:6  savings(>1k)(r)  48/817 [263.457]
+
+prioriP=0.2  group:6  savingsUnknown(r)  183/1000 [686.596]
+
+prioriP=1  group:7  unemployed(r)  62/62 [0]
+
+prioriP=0.5  group:7  employed(<1y)(r)  172/234 [195.188]
+
+prioriP=0.333333  group:7  employed(1y-4y)(r)  339/573 [559.042]
+
+prioriP=0.25  group:7  employed(4y-7y)(r)  174/747 [584.966]
+
+prioriP=0.047619  group:7  employed(>7y)(r)  27/774 [168.98]
+
+prioriP=1  group:9  male&divorced/separated(r)  50/50 [0]
+
+prioriP=0.5  group:9  femaled&divorced/separated/married(r)  310/360 [209.276]
+
+prioriP=0.2  group:9  male&single(r)  412/772 [769.472]
+
+prioriP=0.25  group:9  male&married/widowed(r)  92/1000 [443.111]
+
+prioriP=0.2  group:9  female&single(r)  0/1000 [0]
+
+prioriP=1  group:10  singleApplicantNoGuarantor(r)  907/907 [0]
+
+prioriP=0.5  group:10  coapplicant(r)  41/948 [243.631]
+
+prioriP=0.333333  group:10  guarantor(r)  52/1000 [294.833]
+
+prioriP=1  group:12  hasRealEstate(r)  282/282 [0]
+
+prioriP=0.5  group:12  hasLifeInsurance(r)  232/514 [510.486]
+
+prioriP=0.333333  group:12  hasCarOrOther(r)  332/846 [817.535]
+
+prioriP=0.181818  group:12  unknownOrNoProperty(r)  50/896 [278.258]
+
+prioriP=1  group:14  hasBankPlans(r)  139/139 [0]
+
+prioriP=0.5  group:14  hasStorePlans(r)  47/186 [151.685]
+
+prioriP=0.333333  group:14  hasNoPlan(r)  814/1000 [693.028]
+
+prioriP=1  group:15  home(rent)(r)  179/179 [0]
+
+prioriP=0.5  group:15  home(own)(r)  713/892 [645.158]
+
+prioriP=0.272727  group:15  home(free)(r)  4/846 [36.6552]
+
+prioriP=1  group:17  unemployedOrUnskilled(r)  22/170 [94.4899]
+
+prioriP=0.666667  group:17  unskilled(r)  200/237 [148.111]
+
+prioriP=0.4  group:17  skilled(r)  630/867 [733.69]
+
+prioriP=0.25  group:17  managementOrHighSkillOrSelfEmployed(r)  0/1000 [0]
+
+prioriP=1  group:19  noTelephone(r)  596/596 [0]
+
+prioriP=0.333333  group:19  hasTelephone(r)  271/830 [756.393]
+
+prioriP=1  group:20  foreignWorker(r)  963/963 [0]
+
+prioriP=0.5  group:20  notForeignWorker(r)  37/1000 [228.364]
+
+prioriP=0.8  group:21  good(r)  348/394 [204.86]
+
+prioriP=1  group:22  duration0(r)  213/229 [83.6845]
+
+prioriP=0.428571  group:22  duration1(r)  261/490 [488.491]
+
+prioriP=0.2  group:22  duration2(r)  88/721 [385.903]
+
+prioriP=0.186047  group:22  duration3(r)  20/926 [139.199]
+
+prioriP=1  group:23  credits0(r)  176/246 [211.949]
+
+prioriP=0.5  group:23  credits1(r)  322/568 [560.643]
+
+prioriP=0.116279  group:23  credits2(r)  9/228 [54.6912]
+
+prioriP=0.157895  group:23  credits3(r)  21/756 [138.44]
+
+prioriP=1  group:24  installmentRate0(r)  157/633 [511.548]
+
+prioriP=0.5  group:24  installmentRate1(r)  231/864 [723.732]
+
+prioriP=0.333333  group:24  installmentRate2(r)  136/1000 [573.667]
+
+prioriP=1  group:25  presentResidence0(r)  149/562 [468.922]
+
+prioriP=0.5  group:25  presentResidence1(r)  308/870 [815.72]
+
+prioriP=0.333333  group:25  presentResidence2(r)  130/1000 [557.438]
+
+prioriP=1  group:26  age0(r)  44/51 [29.4272]
+
+prioriP=0.5  group:26  age1(r)  74/125 [121.93]
+
+prioriP=0.333333  group:26  age2(r)  174/299 [293.181]
+
+prioriP=0.25  group:26  age3(r)  330/629 [627.897]
+
+prioriP=0.238095  group:26  age4(r)  344/747 [743.635]
+
+prioriP=1  group:27  creditsInBank0(r)  333/367 [163.4]
+
+prioriP=0.625  group:27  creditsInBank1(r)  532/619 [362.533]
+
+prioriP=0.6  group:28  maintainsPeople0(r)  433/452 [113.7]
+
+prioriP=0.0833333  group:-1  <home(free)(r), unknownOrNoProperty(r)>  104/1000 [481.549]
+
+prioriP=0.1  group:-1  <!creditsInBank1(r), criticalAccount(r)>  223/943 [744.156]
+
+prioriP=0.375  group:-1  <!good(r), !noAccount(r)>  254/1000 [817.557]
+
+prioriP=0.16  group:-1  <!age4(r), employed(>7y)(r)>  226/1000 [770.973]
+
+prioriP=0.1  group:-1  <hasTelephone(r), !unskilled(r)>  0/630 [0]
+
+prioriP=0.166667  group:-1  <<hasTelephone(r), !unskilled(r)>, !skilled(r)>  133/1000 [565.609]
+
+prioriP=0.111111  group:-1  <credits2(r), duration2(r)>  123/754 [483.876]
+
+prioriP=0.0625  group:-1  <credits3(r), duration2(r)>  62/967 [332.233]
+
+prioriP=0.111111  group:-1  <!creditsInBank1(r), creditDelays(r)>  57/1000 [315.419]
+
+prioriP=0.125  group:-1  <credits2(r), duration1(r)>  143/959 [582.705]
+
+prioriP=0.05  group:-1  <credits3(r), duration3(r)>  33/959 [207.193]
+
+prioriP=0.0300752  group:-1  <credits2(r), duration3(r)>  41/1000 [246.859]
+
+prioriP=0.166667  group:-1  <!maintainsPeople0(r), male&single(r)>  136/1000 [573.667]
+
+naive entropy: 29967.3

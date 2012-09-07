@@ -1,0 +1,4 @@
+2.66   px(r), px(r + x)                                  
+2.40   !px(r), !px(r + x)                                
+0.34   !px(r), !px(r + y)                                
+0.32   px(r), px(r + y)                                  

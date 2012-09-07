@@ -1,0 +1,36 @@
+
+matrix m1:
+X..
+.X.
+...
+
+matrix m2:
+..X
+...
+X.X
+
+matrix m3:
+
+matrix m3+=m1:
+X..
+.X.
+...
+
+matrix m3+=m2:
+X.X
+.X.
+X.X
+
+matrix m3+=m1@-1,-1:
+X...
+.X.X
+..X.
+.X.X
+
+matrix m3+=m1@-1,-1:
+..X...
+...X.X
+....X.
+..XX.X
+......
+X.X...

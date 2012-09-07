@@ -1,0 +1,37 @@
+XX...
+.XX..
+.....
+..XX.
+...XX
+vars:
+
+px(r)  8/25 [22.6095]
+
+exp added
+
+vars:
+
+px(r)  5/10 [10]
+
+<!px(r), !px(r + x)>  6/17 [15.9233]
+
+information 22.6095 -> 25.9233
+
+entropy increased!
+
+
+px(r)
+
+X???.
+.X???
+????.
+??X?.
+??.XX
+
+<!px(r), !px(r + x)>
+
+.?X.
+..?X
+X?X.
+X...
+X...

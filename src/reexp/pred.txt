@@ -1,0 +1,41 @@
+Simpler way of thinking predicting:
+-----------------------------------
+
+   1. Let's make naive assumption
+   2. We have relationship R(x1, x2, ..., xn)
+   3. xi is the unknown interesting variable
+   4. Some xj, xk, ... are known, let's mark c = xj & xk & ...
+  
+The interesting values are: 
+
+   d(xi; c) 
+   d(!xi; c)
+   
+That is, how many times more likely than normal the variable is or is not 
+under context c.
+
+Then the math will reduce to:
+
+   wT = d(xi; c1) d(xi; c2) d(xi; c3) ...
+   wF = d(!xi; c1) d(!xi; c2) d(!xi; c3) ...
+   c = c1 & c2 & c3 ...
+   
+   p(xi|c) = wT / (wT + wF) 
+
+In case we are going logarithmic, the math is 
+
+  s(x, c) = log2(d(xi & c1)) 
+  wT = s(xi; c1) + s(xi; c2) + s(xi; c3) + ...
+  wF = s(!xi; c1) + s(!xi; c2) + s(!xi; c3) + ...
+  
+  p(xi|c) = exp2(wT) / (exp(wT) + exp(wF))
+  
+
+One part of equation is to get the dependency d(xi & c1) or its
+logarithm log(xi & ci). In relationship r, some of the 
+variables may be unknown. It is relatively easy to gather 
+statistics of such situations. There are some variables 
+xj, xk, ..., xl which states vary or may be unknown. For 
+n variables, there is n options, for which we can keep statistics. 
+	
+

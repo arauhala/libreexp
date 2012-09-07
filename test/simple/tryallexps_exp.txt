@@ -1,0 +1,88 @@
+exp added
+
+vars:
+
+px(r)  5/10 [10]
+
+<!px(r), !px(r + x)>  6/17 [15.9233]
+
+information 22.6095 -> 25.9233
+
+entropy increased!
+
+exp added
+
+vars:
+
+px(r)  5/11 [10.9343]
+
+<px(r), !px(r + x)>  3/17 [11.429]
+
+information 22.6095 -> 22.3633
+
+exp added
+
+vars:
+
+px(r)  4/18 [13.7557]
+
+<!px(r), px(r + x)>  3/18 [11.7004]
+
+information 22.6095 -> 25.4561
+
+entropy increased!
+
+exp added
+
+vars:
+
+px(r)  0/14 [0]
+
+<px(r), px(r + x)>  4/17 [13.3812]
+
+information 22.6095 -> 13.3812
+
+exp added
+
+vars:
+
+px(r)  4/9 [8.91968]
+
+<!px(r), !px(r + y)>  6/16 [15.2709]
+
+information 22.6095 -> 24.1906
+
+entropy increased!
+
+exp added
+
+vars:
+
+px(r)  4/9 [8.91968]
+
+<px(r), !px(r + y)>  4/17 [13.3812]
+
+information 22.6095 -> 22.3008
+
+exp added
+
+vars:
+
+px(r)  3/16 [11.1394]
+
+<!px(r), px(r + y)>  4/17 [13.3812]
+
+information 22.6095 -> 24.5205
+
+entropy increased!
+
+exp added
+
+vars:
+
+px(r)  4/17 [13.3812]
+
+<px(r), px(r + y)>  2/19 [9.22375]
+
+information 22.6095 -> 22.6049
+

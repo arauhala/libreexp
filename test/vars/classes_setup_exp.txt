@@ -1,0 +1,122 @@
+test:
+class0
+p(input0|class0)=0.840188, info=0.63386
+p(output|class0)=0.394383, info=0.96757
+class1
+p(input0|class1)=0.783099, info=0.754468
+p(output|class1)=0.79844, info=0.725037
+
+stats:
+p(class0(r))=-nan
+p(class1(r))=-nan
+p(input0(r))=0.8071
+p(output(r))=0.5985
+
+data info: 0.85252
+
+
+example samples:
+s:0111, d:0011
+s:1010, d:0011
+s:1011, d:0011
+s:0111, d:0011
+s:1000, d:0011
+s:1010, d:0011
+s:1010, d:0011
+s:1011, d:0011
+test:
+class0
+p(input0|class0)=0.88763, info=0.507024
+p(input1|class0)=0.438261, info=0.988974
+p(output|class0)=0.23352, info=0.784098
+class1
+p(input0|class1)=0.989492, info=0.0841446
+p(input1|class1)=0.545878, info=0.993918
+p(output|class1)=0.750195, info=0.810969
+
+stats:
+p(class0(r))=-nan
+p(class1(r))=-nan
+p(input0(r))=0.9417
+p(input1(r))=0.4879
+p(output(r))=0.4889
+
+data info: 0.794408
+
+
+example samples:
+s:01101, d:00111
+s:01110, d:00111
+s:01101, d:00111
+s:01110, d:00111
+s:01101, d:00111
+s:10010, d:00111
+s:10100, d:00111
+s:10100, d:00111
+test:
+class0
+p(input0|class0)=0.635558, info=0.946309
+p(input1|class0)=0.231883, info=0.781279
+p(input2|class0)=0.875529, info=0.542078
+p(output|class0)=0.715517, info=0.861488
+class1
+p(input0|class1)=0.527412, info=0.997831
+p(input1|class1)=0.953154, info=0.272846
+p(input2|class1)=0.624081, info=0.955108
+p(output|class1)=0.454624, info=0.994051
+
+stats:
+p(class0(r))=-nan
+p(class1(r))=-nan
+p(input0(r))=0.5764
+p(input1(r))=0.5948
+p(input2(r))=0.7489
+p(output(r))=0.5837
+
+data info: 0.930732
+
+
+example samples:
+s:100011, d:001111
+s:010111, d:001111
+s:101010, d:001111
+s:011100, d:001111
+s:101011, d:001111
+s:011110, d:001111
+s:100011, d:001111
+s:010100, d:001111
+test:
+class0
+p(input0|class0)=0.769547, info=0.7788
+p(input1|class0)=0.94072, info=0.324579
+p(input2|class0)=0.189919, info=0.701302
+p(input3|class0)=0.196882, info=0.715649
+p(output|class0)=0.768075, info=0.781351
+class1
+p(input0|class1)=0.0693777, info=0.363597
+p(input1|class1)=0.380553, info=0.958431
+p(input2|class1)=0.129, info=0.554689
+p(input3|class1)=0.8196, info=0.680951
+p(output|class1)=0.0372439, info=0.229509
+
+stats:
+p(class0(r))=-nan
+p(class1(r))=-nan
+p(input0(r))=0.4198
+p(input1(r))=0.6602
+p(input2(r))=0.1597
+p(input3(r))=0.5127
+p(output(r))=0.4023
+
+data info: 0.495667
+
+
+example samples:
+s:0101100, d:0011111
+s:0100000, d:0011111
+s:1011001, d:0011111
+s:0100010, d:0011111
+s:0101010, d:0011111
+s:1011001, d:0011111
+s:0101100, d:0011111
+s:1011001, d:0011111

@@ -1,0 +1,140 @@
+6 data:test predfilter:0 prioriw:2 prop:entropy relfilter:1.6 threshold:8 0.735159
+6 data:test predfilter:0 prioriw:2 prop:naive e relfilter:1.6 threshold:8 0.663865
+6 data:test predfilter:0 prioriw:2 prop:err relfilter:1.6 threshold:8 0.146465
+6 data:test predfilter:0 prioriw:2 prop:naive err relfilter:1.6 threshold:8 0.171717
+6 data:test predfilter:0 prioriw:2 prop:cost relfilter:1.6 threshold:8 0.146465
+6 data:test predfilter:0 prioriw:2 prop:naiveCost relfilter:1.6 threshold:8 0.171717
+6 data:test perf:ns predfilter:0 prioriw:2 relfilter:1.6 threshold:8 719606
+6 data:train predfilter:0 prioriw:2 prop:entropy relfilter:1.6 threshold:8 0.551694
+6 data:train predfilter:0 prioriw:2 prop:naive e relfilter:1.6 threshold:8 0.672196
+6 data:train predfilter:0 prioriw:2 prop:err relfilter:1.6 threshold:8 0.141791
+6 data:train predfilter:0 prioriw:2 prop:naive err relfilter:1.6 threshold:8 0.176617
+6 data:train predfilter:0 prioriw:2 prop:cost relfilter:1.6 threshold:8 0.141791
+6 data:train predfilter:0 prioriw:2 prop:naiveCost relfilter:1.6 threshold:8 0.176617
+6 data:train perf:ns predfilter:0 prioriw:2 relfilter:1.6 threshold:8 735060
+5 exp:reexp us predfilter:0 prioriw:2 relfilter:1.6 threshold:8 269506
+5 exp:apply us predfilter:0 prioriw:2 relfilter:1.6 threshold:8 13994
+5 exp:exps predfilter:0 prioriw:2 relfilter:1.6 threshold:8 13.6667
+5 exp:naive info predfilter:0 prioriw:2 relfilter:1.6 threshold:8 1831.77
+5 exp:act rels predfilter:0 prioriw:2 relfilter:1.6 threshold:8 18.6667
+5 exp:all rels predfilter:0 prioriw:2 relfilter:1.6 threshold:8 152.667
+6 data:test predfilter:0 prioriw:2 prop:entropy relfilter:3.2 threshold:16 0.719007
+6 data:test predfilter:0 prioriw:2 prop:naive e relfilter:3.2 threshold:16 0.663865
+6 data:test predfilter:0 prioriw:2 prop:err relfilter:3.2 threshold:16 0.146465
+6 data:test predfilter:0 prioriw:2 prop:naive err relfilter:3.2 threshold:16 0.171717
+6 data:test predfilter:0 prioriw:2 prop:cost relfilter:3.2 threshold:16 0.146465
+6 data:test predfilter:0 prioriw:2 prop:naiveCost relfilter:3.2 threshold:16 0.171717
+6 data:test perf:ns predfilter:0 prioriw:2 relfilter:3.2 threshold:16 485061
+6 data:train predfilter:0 prioriw:2 prop:entropy relfilter:3.2 threshold:16 0.569989
+6 data:train predfilter:0 prioriw:2 prop:naive e relfilter:3.2 threshold:16 0.672196
+6 data:train predfilter:0 prioriw:2 prop:err relfilter:3.2 threshold:16 0.149254
+6 data:train predfilter:0 prioriw:2 prop:naive err relfilter:3.2 threshold:16 0.176617
+6 data:train predfilter:0 prioriw:2 prop:cost relfilter:3.2 threshold:16 0.149254
+6 data:train predfilter:0 prioriw:2 prop:naiveCost relfilter:3.2 threshold:16 0.176617
+6 data:train perf:ns predfilter:0 prioriw:2 relfilter:3.2 threshold:16 485664
+5 exp:reexp us predfilter:0 prioriw:2 relfilter:3.2 threshold:16 186836
+5 exp:apply us predfilter:0 prioriw:2 relfilter:3.2 threshold:16 8159.67
+5 exp:exps predfilter:0 prioriw:2 relfilter:3.2 threshold:16 8
+5 exp:naive info predfilter:0 prioriw:2 relfilter:3.2 threshold:16 1904.19
+5 exp:act rels predfilter:0 prioriw:2 relfilter:3.2 threshold:16 18.6667
+5 exp:all rels predfilter:0 prioriw:2 relfilter:3.2 threshold:16 142.333
+6 data:test predfilter:0 prioriw:2 prop:entropy relfilter:6.4 threshold:32 0.726183
+6 data:test predfilter:0 prioriw:2 prop:naive e relfilter:6.4 threshold:32 0.663865
+6 data:test predfilter:0 prioriw:2 prop:err relfilter:6.4 threshold:32 0.146465
+6 data:test predfilter:0 prioriw:2 prop:naive err relfilter:6.4 threshold:32 0.171717
+6 data:test predfilter:0 prioriw:2 prop:cost relfilter:6.4 threshold:32 0.146465
+6 data:test predfilter:0 prioriw:2 prop:naiveCost relfilter:6.4 threshold:32 0.171717
+6 data:test perf:ns predfilter:0 prioriw:2 relfilter:6.4 threshold:32 412929
+6 data:train predfilter:0 prioriw:2 prop:entropy relfilter:6.4 threshold:32 0.578343
+6 data:train predfilter:0 prioriw:2 prop:naive e relfilter:6.4 threshold:32 0.672196
+6 data:train predfilter:0 prioriw:2 prop:err relfilter:6.4 threshold:32 0.149254
+6 data:train predfilter:0 prioriw:2 prop:naive err relfilter:6.4 threshold:32 0.176617
+6 data:train predfilter:0 prioriw:2 prop:cost relfilter:6.4 threshold:32 0.149254
+6 data:train predfilter:0 prioriw:2 prop:naiveCost relfilter:6.4 threshold:32 0.176617
+6 data:train perf:ns predfilter:0 prioriw:2 relfilter:6.4 threshold:32 408301
+5 exp:reexp us predfilter:0 prioriw:2 relfilter:6.4 threshold:32 141737
+5 exp:apply us predfilter:0 prioriw:2 relfilter:6.4 threshold:32 6375.67
+5 exp:exps predfilter:0 prioriw:2 relfilter:6.4 threshold:32 6
+5 exp:naive info predfilter:0 prioriw:2 relfilter:6.4 threshold:32 1957.25
+5 exp:act rels predfilter:0 prioriw:2 relfilter:6.4 threshold:32 18.6667
+5 exp:all rels predfilter:0 prioriw:2 relfilter:6.4 threshold:32 133.333
+6 data:test predfilter:0 prioriw:2 prop:entropy relfilter:12.8 threshold:64 0.727352
+6 data:test predfilter:0 prioriw:2 prop:naive e relfilter:12.8 threshold:64 0.663865
+6 data:test predfilter:0 prioriw:2 prop:err relfilter:12.8 threshold:64 0.146465
+6 data:test predfilter:0 prioriw:2 prop:naive err relfilter:12.8 threshold:64 0.171717
+6 data:test predfilter:0 prioriw:2 prop:cost relfilter:12.8 threshold:64 0.146465
+6 data:test predfilter:0 prioriw:2 prop:naiveCost relfilter:12.8 threshold:64 0.171717
+6 data:test perf:ns predfilter:0 prioriw:2 relfilter:12.8 threshold:64 361677
+6 data:train predfilter:0 prioriw:2 prop:entropy relfilter:12.8 threshold:64 0.589385
+6 data:train predfilter:0 prioriw:2 prop:naive e relfilter:12.8 threshold:64 0.672196
+6 data:train predfilter:0 prioriw:2 prop:err relfilter:12.8 threshold:64 0.151741
+6 data:train predfilter:0 prioriw:2 prop:naive err relfilter:12.8 threshold:64 0.176617
+6 data:train predfilter:0 prioriw:2 prop:cost relfilter:12.8 threshold:64 0.151741
+6 data:train predfilter:0 prioriw:2 prop:naiveCost relfilter:12.8 threshold:64 0.176617
+6 data:train perf:ns predfilter:0 prioriw:2 relfilter:12.8 threshold:64 377328
+5 exp:reexp us predfilter:0 prioriw:2 relfilter:12.8 threshold:64 107115
+5 exp:apply us predfilter:0 prioriw:2 relfilter:12.8 threshold:64 5135.33
+5 exp:exps predfilter:0 prioriw:2 relfilter:12.8 threshold:64 5
+5 exp:naive info predfilter:0 prioriw:2 relfilter:12.8 threshold:64 1995.83
+5 exp:act rels predfilter:0 prioriw:2 relfilter:12.8 threshold:64 16
+5 exp:all rels predfilter:0 prioriw:2 relfilter:12.8 threshold:64 127.667
+6 data:test predfilter:0 prioriw:2 prop:entropy relfilter:25.6 threshold:128 0.727291
+6 data:test predfilter:0 prioriw:2 prop:naive e relfilter:25.6 threshold:128 0.663865
+6 data:test predfilter:0 prioriw:2 prop:err relfilter:25.6 threshold:128 0.146465
+6 data:test predfilter:0 prioriw:2 prop:naive err relfilter:25.6 threshold:128 0.171717
+6 data:test predfilter:0 prioriw:2 prop:cost relfilter:25.6 threshold:128 0.146465
+6 data:test predfilter:0 prioriw:2 prop:naiveCost relfilter:25.6 threshold:128 0.171717
+6 data:test perf:ns predfilter:0 prioriw:2 relfilter:25.6 threshold:128 325758
+6 data:train predfilter:0 prioriw:2 prop:entropy relfilter:25.6 threshold:128 0.589396
+6 data:train predfilter:0 prioriw:2 prop:naive e relfilter:25.6 threshold:128 0.672196
+6 data:train predfilter:0 prioriw:2 prop:err relfilter:25.6 threshold:128 0.151741
+6 data:train predfilter:0 prioriw:2 prop:naive err relfilter:25.6 threshold:128 0.176617
+6 data:train predfilter:0 prioriw:2 prop:cost relfilter:25.6 threshold:128 0.151741
+6 data:train predfilter:0 prioriw:2 prop:naiveCost relfilter:25.6 threshold:128 0.176617
+6 data:train perf:ns predfilter:0 prioriw:2 relfilter:25.6 threshold:128 320127
+5 exp:reexp us predfilter:0 prioriw:2 relfilter:25.6 threshold:128 76870
+5 exp:apply us predfilter:0 prioriw:2 relfilter:25.6 threshold:128 4109.33
+5 exp:exps predfilter:0 prioriw:2 relfilter:25.6 threshold:128 4
+5 exp:naive info predfilter:0 prioriw:2 relfilter:25.6 threshold:128 2078.73
+5 exp:act rels predfilter:0 prioriw:2 relfilter:25.6 threshold:128 11.6667
+5 exp:all rels predfilter:0 prioriw:2 relfilter:25.6 threshold:128 123
+6 data:test predfilter:0 prioriw:2 prop:entropy relfilter:51.2 threshold:256 0.745592
+6 data:test predfilter:0 prioriw:2 prop:naive e relfilter:51.2 threshold:256 0.663865
+6 data:test predfilter:0 prioriw:2 prop:err relfilter:51.2 threshold:256 0.151515
+6 data:test predfilter:0 prioriw:2 prop:naive err relfilter:51.2 threshold:256 0.171717
+6 data:test predfilter:0 prioriw:2 prop:cost relfilter:51.2 threshold:256 0.151515
+6 data:test predfilter:0 prioriw:2 prop:naiveCost relfilter:51.2 threshold:256 0.171717
+6 data:test perf:ns predfilter:0 prioriw:2 relfilter:51.2 threshold:256 309136
+6 data:train predfilter:0 prioriw:2 prop:entropy relfilter:51.2 threshold:256 0.609146
+6 data:train predfilter:0 prioriw:2 prop:naive e relfilter:51.2 threshold:256 0.672196
+6 data:train predfilter:0 prioriw:2 prop:err relfilter:51.2 threshold:256 0.161692
+6 data:train predfilter:0 prioriw:2 prop:naive err relfilter:51.2 threshold:256 0.176617
+6 data:train predfilter:0 prioriw:2 prop:cost relfilter:51.2 threshold:256 0.161692
+6 data:train predfilter:0 prioriw:2 prop:naiveCost relfilter:51.2 threshold:256 0.176617
+6 data:train perf:ns predfilter:0 prioriw:2 relfilter:51.2 threshold:256 322303
+5 exp:reexp us predfilter:0 prioriw:2 relfilter:51.2 threshold:256 56338.7
+5 exp:apply us predfilter:0 prioriw:2 relfilter:51.2 threshold:256 3756
+5 exp:exps predfilter:0 prioriw:2 relfilter:51.2 threshold:256 3.66667
+5 exp:naive info predfilter:0 prioriw:2 relfilter:51.2 threshold:256 2147.93
+5 exp:act rels predfilter:0 prioriw:2 relfilter:51.2 threshold:256 9.33333
+5 exp:all rels predfilter:0 prioriw:2 relfilter:51.2 threshold:256 118
+6 data:test predfilter:0 prioriw:2 prop:entropy relfilter:102.4 threshold:512 0.671364
+6 data:test predfilter:0 prioriw:2 prop:naive e relfilter:102.4 threshold:512 0.663865
+6 data:test predfilter:0 prioriw:2 prop:err relfilter:102.4 threshold:512 0.171717
+6 data:test predfilter:0 prioriw:2 prop:naive err relfilter:102.4 threshold:512 0.171717
+6 data:test predfilter:0 prioriw:2 prop:cost relfilter:102.4 threshold:512 0.171717
+6 data:test predfilter:0 prioriw:2 prop:naiveCost relfilter:102.4 threshold:512 0.171717
+6 data:test perf:ns predfilter:0 prioriw:2 relfilter:102.4 threshold:512 163268
+6 data:train predfilter:0 prioriw:2 prop:entropy relfilter:102.4 threshold:512 0.67184
+6 data:train predfilter:0 prioriw:2 prop:naive e relfilter:102.4 threshold:512 0.672196
+6 data:train predfilter:0 prioriw:2 prop:err relfilter:102.4 threshold:512 0.176617
+6 data:train predfilter:0 prioriw:2 prop:naive err relfilter:102.4 threshold:512 0.176617
+6 data:train predfilter:0 prioriw:2 prop:cost relfilter:102.4 threshold:512 0.176617
+6 data:train predfilter:0 prioriw:2 prop:naiveCost relfilter:102.4 threshold:512 0.176617
+6 data:train perf:ns predfilter:0 prioriw:2 relfilter:102.4 threshold:512 161475
+5 exp:reexp us predfilter:0 prioriw:2 relfilter:102.4 threshold:512 146
+5 exp:apply us predfilter:0 prioriw:2 relfilter:102.4 threshold:512 1.33333
+5 exp:exps predfilter:0 prioriw:2 relfilter:102.4 threshold:512 0
+5 exp:naive info predfilter:0 prioriw:2 relfilter:102.4 threshold:512 3244.94
+5 exp:act rels predfilter:0 prioriw:2 relfilter:102.4 threshold:512 9
+5 exp:all rels predfilter:0 prioriw:2 relfilter:102.4 threshold:512 107

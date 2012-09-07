@@ -1,0 +1,7269 @@
+1 expressions added.
+
+information 482.388 -> 395.381
+
+scan:
+
+77.26   <px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>      
+54.70   <px(r), px(r + y)>, <px(r + x + y), px(r + x + 2y)>
+52.34   <px(r), px(r + y)>, px(r + 2y)                    
+
+vars:
+
+px(r)  18/317 [99.7083]
+
+d0(r)  2/2 [0]
+
+d1(r)  0/2 [0]
+
+d2(r)  0/2 [0]
+
+d3(r)  0/2 [0]
+
+d4(r)  0/2 [0]
+
+d5(r)  0/2 [0]
+
+d6(r)  0/2 [0]
+
+d7(r)  0/2 [0]
+
+d8(r)  0/2 [0]
+
+d9(r)  0/2 [0]
+
+<px(r), px(r + y)>  83/403 [295.673]
+
+
+rels:
+
+px(r), px(r + x)
+    DISABLED
+
+px(r), px(r + y)
+    DISABLED
+
+px(r), px(r + x + y)
+    DISABLED
+
+px(r + y), px(r + x)
+    DISABLED
+
+px(r), d0(r)
+    0 0 299 18 / 317
+    -0 -0 0.0795485 0.234989 / 0.314537
+    0.0131368 0.00234387 0.0835628 0.233115 / 0.332159
+    -0 0 0.598759 -0.590621 
+
+px(r), d1(r)
+    299 18 0 0 / 317
+    0.0795485 0.234989 -0 -0 / 0.314537
+    0.0835628 0.233115 0.0131368 0.00234387 / 0.332159
+    0.598759 -0.590621 -0 0 
+
+px(r), d2(r)
+    299 18 0 0 / 317
+    0.0795485 0.234989 -0 -0 / 0.314537
+    0.0835628 0.233115 0.0131368 0.00234387 / 0.332159
+    0.598759 -0.590621 -0 0 
+
+px(r), d3(r)
+    299 18 0 0 / 317
+    0.0795485 0.234989 -0 -0 / 0.314537
+    0.0835628 0.233115 0.0131368 0.00234387 / 0.332159
+    0.598759 -0.590621 -0 0 
+
+px(r), d4(r)
+    299 18 0 0 / 317
+    0.0795485 0.234989 -0 -0 / 0.314537
+    0.0835628 0.233115 0.0131368 0.00234387 / 0.332159
+    0.598759 -0.590621 -0 0 
+
+px(r), d5(r)
+    299 18 0 0 / 317
+    0.0795485 0.234989 -0 -0 / 0.314537
+    0.0835628 0.233115 0.0131368 0.00234387 / 0.332159
+    0.598759 -0.590621 -0 0 
+
+px(r), d6(r)
+    299 18 0 0 / 317
+    0.0795485 0.234989 -0 -0 / 0.314537
+    0.0835628 0.233115 0.0131368 0.00234387 / 0.332159
+    0.598759 -0.590621 -0 0 
+
+px(r), d7(r)
+    299 18 0 0 / 317
+    0.0795485 0.234989 -0 -0 / 0.314537
+    0.0835628 0.233115 0.0131368 0.00234387 / 0.332159
+    0.598759 -0.590621 -0 0 
+
+px(r), d8(r)
+    299 18 0 0 / 317
+    0.0795485 0.234989 -0 -0 / 0.314537
+    0.0835628 0.233115 0.0131368 0.00234387 / 0.332159
+    0.598759 -0.590621 -0 0 
+
+px(r), d9(r)
+    299 18 0 0 / 317
+    0.0795485 0.234989 -0 -0 / 0.314537
+    0.0835628 0.233115 0.0131368 0.00234387 / 0.332159
+    0.598759 -0.590621 -0 0 
+
+<px(r), px(r + y)>, d0(r)
+    0 0 320 83 / 403
+    -0 -0 0.264185 0.469495 / 0.73368
+    0.00927498 0.00369205 0.266306 0.468359 / 0.747632
+    -0 0 0.391628 -0.390693 
+
+<px(r), px(r + y)>, d1(r)
+    320 83 0 0 / 403
+    0.264185 0.469495 -0 -0 / 0.73368
+    0.266306 0.468359 0.00927498 0.00369205 / 0.747632
+    0.391628 -0.390693 -0 0 
+
+<px(r), px(r + y)>, d2(r)
+    320 83 0 0 / 403
+    0.264185 0.469495 -0 -0 / 0.73368
+    0.266306 0.468359 0.00927498 0.00369205 / 0.747632
+    0.391628 -0.390693 -0 0 
+
+<px(r), px(r + y)>, d3(r)
+    320 83 0 0 / 403
+    0.264185 0.469495 -0 -0 / 0.73368
+    0.266306 0.468359 0.00927498 0.00369205 / 0.747632
+    0.391628 -0.390693 -0 0 
+
+<px(r), px(r + y)>, d4(r)
+    320 83 0 0 / 403
+    0.264185 0.469495 -0 -0 / 0.73368
+    0.266306 0.468359 0.00927498 0.00369205 / 0.747632
+    0.391628 -0.390693 -0 0 
+
+<px(r), px(r + y)>, d5(r)
+    320 83 0 0 / 403
+    0.264185 0.469495 -0 -0 / 0.73368
+    0.266306 0.468359 0.00927498 0.00369205 / 0.747632
+    0.391628 -0.390693 -0 0 
+
+<px(r + y), px(r + 2y)>, px(r + x)
+    DISABLED
+
+<px(r), px(r + y)>, px(r + x)
+    DISABLED
+
+px(r + y), <px(r + x), px(r + x + y)>
+    DISABLED
+
+<px(r + y), px(r + 2y)>, <px(r + x), px(r + x + y)>
+    DISABLED
+
+<px(r), px(r + y)>, <px(r + x), px(r + x + y)>
+    DISABLED
+
+px(r + 2y), <px(r + x), px(r + x + y)>
+    DISABLED
+
+<px(r), px(r + y)>, d6(r)
+    320 83 0 0 / 403
+    0.264185 0.469495 -0 -0 / 0.73368
+    0.266306 0.468359 0.00927498 0.00369205 / 0.747632
+    0.391628 -0.390693 -0 0 
+
+<px(r), px(r + y)>, d7(r)
+    320 83 0 0 / 403
+    0.264185 0.469495 -0 -0 / 0.73368
+    0.266306 0.468359 0.00927498 0.00369205 / 0.747632
+    0.391628 -0.390693 -0 0 
+
+<px(r), px(r + y)>, px(r + 2y)
+    248 13 1 17 / 279
+    0.151044 0.206121 0.0291187 0.245961 / 0.632246
+    0.235348 0.155699 0.0158098 0.432893 / 0.83975
+    23.2597 -14.394 -3.92759 52.3415 
+
+px(r), <px(r + y), px(r + 2y)>
+    DISABLED
+
+<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>
+    227 24 23 49 / 323
+    0.357607 0.27867 0.271431 0.412735 / 1.32044
+    0.517367 0.187051 0.181143 0.651156 / 1.53672
+    51.5035 -29.7131 -29.2894 77.2641 
+
+<px(r), px(r + y)>, d8(r)
+    320 83 0 0 / 403
+    0.264185 0.469495 -0 -0 / 0.73368
+    0.266306 0.468359 0.00927498 0.00369205 / 0.747632
+    0.391628 -0.390693 -0 0 
+
+<px(r), px(r + y)>, d9(r)
+    320 83 0 0 / 403
+    0.264185 0.469495 -0 -0 / 0.73368
+    0.266306 0.468359 0.00927498 0.00369205 / 0.747632
+    0.391628 -0.390693 -0 0 
+
+<px(r), px(r + y)>, px(r + x + y)
+    DISABLED
+
+px(r), <px(r + x), px(r + x + y)>
+    DISABLED
+
+<px(r), px(r + y)>, <px(r + x + y), px(r + x + 2y)>
+    216 30 23 37 / 306
+    0.354706 0.32848 0.280647 0.368541 / 1.33237
+    0.476059 0.246016 0.204038 0.546703 / 1.47282
+    37.0243 -25.3286 -23.5836 54.6973 
+
+<px(r), px(r + y)>, px(r + x + 2y)
+    DISABLED
+
+px(r), <px(r + x + y), px(r + x + 2y)>
+    DISABLED
+
+<px(r), px(r + y)>, <px(r + x + 2y), px(r + x + 3y)>
+    DISABLED
+
+
+log priori true:  1.58496
+log priori false: 0
+rel 4
+depStateV(0)=log2((299+0.888889)/(317+1))=-0.0845987
+depStateNotV(0)=log2((0+0.888889)/(0+1))=-0.169925
+depStateV(1)=log2((18+0.111111)/(317+1))=-4.13408
+depStateNotV(1)=log2((0+0.111111)/(0+1))=-3.16993
+depStateV(2)=log2((317+1)/(317+1))=0
+depStateNotV(2)=log2((0+1)/(0+1))=0
+var 1 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.0845987
+logTrue -> 0.738976
+logFalse += 10 * -0.169925
+logFalse -> -1.69925
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> 0.738976
+logFalse += 0 * -3.16993
+logFalse -> -1.69925
+var 1 at [0, 1, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.0845987
+logTrue -> 0.062186
+logFalse += 8 * -0.169925
+logFalse -> -3.05865
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> 0.062186
+logFalse += 0 * -3.16993
+logFalse -> -3.05865
+var 1 at [0, 2, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.0845987
+logTrue -> -0.614604
+logFalse += 8 * -0.169925
+logFalse -> -4.41805
+state 1, freq=1
+logTrue += 1 * -4.13408
+logTrue -> -4.74868
+logFalse += 1 * -3.16993
+logFalse -> -7.58798
+var 1 at [0, 3, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.0845987
+logTrue -> -5.59467
+logFalse += 10 * -0.169925
+logFalse -> -9.28723
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -5.59467
+logFalse += 0 * -3.16993
+logFalse -> -9.28723
+var 1 at [0, 4, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.0845987
+logTrue -> -6.35606
+logFalse += 9 * -0.169925
+logFalse -> -10.8166
+state 1, freq=2
+logTrue += 2 * -4.13408
+logTrue -> -14.6242
+logFalse += 2 * -3.16993
+logFalse -> -17.1564
+var 1 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.0845987
+logTrue -> -15.5548
+logFalse += 11 * -0.169925
+logFalse -> -19.0256
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -15.5548
+logFalse += 0 * -3.16993
+logFalse -> -19.0256
+var 1 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.0845987
+logTrue -> -16.4008
+logFalse += 10 * -0.169925
+logFalse -> -20.7248
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -16.4008
+logFalse += 0 * -3.16993
+logFalse -> -20.7248
+var 1 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.0845987
+logTrue -> -17.2468
+logFalse += 10 * -0.169925
+logFalse -> -22.4241
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -17.2468
+logFalse += 0 * -3.16993
+logFalse -> -22.4241
+var 1 at [0, 8, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.0845987
+logTrue -> -18.0928
+logFalse += 10 * -0.169925
+logFalse -> -24.1233
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -18.0928
+logFalse += 0 * -3.16993
+logFalse -> -24.1233
+var 1 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.0845987
+logTrue -> -19.0234
+logFalse += 11 * -0.169925
+logFalse -> -25.9925
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -19.0234
+logFalse += 0 * -3.16993
+logFalse -> -25.9925
+var 1 at [0, 10, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.0845987
+logTrue -> -19.8693
+logFalse += 10 * -0.169925
+logFalse -> -27.6918
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -19.8693
+logFalse += 0 * -3.16993
+logFalse -> -27.6918
+var 1 at [0, 11, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.0845987
+logTrue -> -20.6307
+logFalse += 9 * -0.169925
+logFalse -> -29.2211
+state 1, freq=1
+logTrue += 1 * -4.13408
+logTrue -> -24.7648
+logFalse += 1 * -3.16993
+logFalse -> -32.391
+var 1 at [0, 12, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.0845987
+logTrue -> -25.5262
+logFalse += 9 * -0.169925
+logFalse -> -33.9203
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -25.5262
+logFalse += 0 * -3.16993
+logFalse -> -33.9203
+var 1 at [0, 13, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.0845987
+logTrue -> -26.2876
+logFalse += 9 * -0.169925
+logFalse -> -35.4497
+state 1, freq=2
+logTrue += 2 * -4.13408
+logTrue -> -34.5557
+logFalse += 2 * -3.16993
+logFalse -> -41.7895
+var 1 at [0, 14, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.0845987
+logTrue -> -35.4863
+logFalse += 11 * -0.169925
+logFalse -> -43.6587
+state 1, freq=3
+logTrue += 3 * -4.13408
+logTrue -> -47.8886
+logFalse += 3 * -3.16993
+logFalse -> -53.1685
+var 1 at [0, 15, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.0845987
+logTrue -> -49.0729
+logFalse += 14 * -0.169925
+logFalse -> -55.5474
+state 1, freq=2
+logTrue += 2 * -4.13408
+logTrue -> -57.3411
+logFalse += 2 * -3.16993
+logFalse -> -61.8873
+var 1 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.0845987
+logTrue -> 0.654377
+logFalse += 11 * -0.169925
+logFalse -> -1.86918
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> 0.654377
+logFalse += 0 * -3.16993
+logFalse -> -1.86918
+var 1 at [0, 1, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.0845987
+logTrue -> -0.107011
+logFalse += 9 * -0.169925
+logFalse -> -3.3985
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -0.107011
+logFalse += 0 * -3.16993
+logFalse -> -3.3985
+var 1 at [0, 2, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.0845987
+logTrue -> -0.783801
+logFalse += 8 * -0.169925
+logFalse -> -4.7579
+state 1, freq=2
+logTrue += 2 * -4.13408
+logTrue -> -9.05196
+logFalse += 2 * -3.16993
+logFalse -> -11.0978
+var 1 at [0, 3, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.0845987
+logTrue -> -9.72875
+logFalse += 8 * -0.169925
+logFalse -> -12.4572
+state 1, freq=1
+logTrue += 1 * -4.13408
+logTrue -> -13.8628
+logFalse += 1 * -3.16993
+logFalse -> -15.6271
+var 1 at [0, 4, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.0845987
+logTrue -> -14.5396
+logFalse += 8 * -0.169925
+logFalse -> -16.9865
+state 1, freq=2
+logTrue += 2 * -4.13408
+logTrue -> -22.8078
+logFalse += 2 * -3.16993
+logFalse -> -23.3263
+var 1 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.0845987
+logTrue -> -23.5692
+logFalse += 9 * -0.169925
+logFalse -> -24.8557
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -23.5692
+logFalse += 0 * -3.16993
+logFalse -> -24.8557
+var 1 at [0, 6, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.0845987
+logTrue -> -24.246
+logFalse += 8 * -0.169925
+logFalse -> -26.2151
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -24.246
+logFalse += 0 * -3.16993
+logFalse -> -26.2151
+var 1 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.0845987
+logTrue -> -25.0073
+logFalse += 9 * -0.169925
+logFalse -> -27.7444
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -25.0073
+logFalse += 0 * -3.16993
+logFalse -> -27.7444
+var 1 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.0845987
+logTrue -> -25.7687
+logFalse += 9 * -0.169925
+logFalse -> -29.2737
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -25.7687
+logFalse += 0 * -3.16993
+logFalse -> -29.2737
+var 1 at [0, 9, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.0845987
+logTrue -> -26.5301
+logFalse += 9 * -0.169925
+logFalse -> -30.803
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -26.5301
+logFalse += 0 * -3.16993
+logFalse -> -30.803
+var 1 at [0, 10, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.0845987
+logTrue -> -27.2915
+logFalse += 9 * -0.169925
+logFalse -> -32.3324
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -27.2915
+logFalse += 0 * -3.16993
+logFalse -> -32.3324
+var 1 at [0, 11, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.0845987
+logTrue -> -27.9683
+logFalse += 8 * -0.169925
+logFalse -> -33.6918
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -27.9683
+logFalse += 0 * -3.16993
+logFalse -> -33.6918
+var 1 at [0, 12, 1](1):
+state 0, freq=7
+logTrue += 7 * -0.0845987
+logTrue -> -28.5605
+logFalse += 7 * -0.169925
+logFalse -> -34.8812
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -28.5605
+logFalse += 0 * -3.16993
+logFalse -> -34.8812
+var 1 at [0, 13, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.0845987
+logTrue -> -29.2373
+logFalse += 8 * -0.169925
+logFalse -> -36.2406
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -29.2373
+logFalse += 0 * -3.16993
+logFalse -> -36.2406
+var 1 at [0, 14, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.0845987
+logTrue -> -29.9987
+logFalse += 9 * -0.169925
+logFalse -> -37.77
+state 1, freq=0
+logTrue += 0 * -4.13408
+logTrue -> -29.9987
+logFalse += 0 * -3.16993
+logFalse -> -37.77
+var 1 at [0, 15, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.0845987
+logTrue -> -30.9293
+logFalse += 11 * -0.169925
+logFalse -> -39.6391
+state 1, freq=2
+logTrue += 2 * -4.13408
+logTrue -> -39.1974
+logFalse += 2 * -3.16993
+logFalse -> -45.979
+rel 14
+depStateV(0)=log2((320+0.75)/(403+1))=-0.332906
+depStateNotV(0)=log2((0+0.75)/(0+1))=-0.415037
+depStateV(1)=log2((83+0.25)/(403+1))=-2.27883
+depStateNotV(1)=log2((0+0.25)/(0+1))=-2
+depStateV(2)=log2((403+1)/(403+1))=0
+depStateNotV(2)=log2((0+1)/(0+1))=0
+var 1 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.332906
+logTrue -> -60.6702
+logFalse += 10 * -0.415037
+logFalse -> -66.0376
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -67.5067
+logFalse += 3 * -2
+logFalse -> -72.0376
+var 1 at [0, 1, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.332906
+logTrue -> -70.8357
+logFalse += 10 * -0.415037
+logFalse -> -76.188
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -77.6722
+logFalse += 3 * -2
+logFalse -> -82.188
+var 1 at [0, 2, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.332906
+logTrue -> -81.0013
+logFalse += 10 * -0.415037
+logFalse -> -86.3384
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -87.8378
+logFalse += 3 * -2
+logFalse -> -92.3384
+var 1 at [0, 3, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.332906
+logTrue -> -91.8327
+logFalse += 12 * -0.415037
+logFalse -> -97.3188
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -98.6692
+logFalse += 3 * -2
+logFalse -> -103.319
+var 1 at [0, 4, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.332906
+logTrue -> -102.331
+logFalse += 11 * -0.415037
+logFalse -> -107.884
+state 1, freq=1
+logTrue += 1 * -2.27883
+logTrue -> -104.61
+logFalse += 1 * -2
+logFalse -> -109.884
+var 1 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.332906
+logTrue -> -108.272
+logFalse += 11 * -0.415037
+logFalse -> -114.45
+state 1, freq=4
+logTrue += 4 * -2.27883
+logTrue -> -117.387
+logFalse += 4 * -2
+logFalse -> -122.45
+var 1 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.332906
+logTrue -> -120.716
+logFalse += 10 * -0.415037
+logFalse -> -126.6
+state 1, freq=1
+logTrue += 1 * -2.27883
+logTrue -> -122.995
+logFalse += 1 * -2
+logFalse -> -128.6
+var 1 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.332906
+logTrue -> -126.324
+logFalse += 10 * -0.415037
+logFalse -> -132.75
+state 1, freq=5
+logTrue += 5 * -2.27883
+logTrue -> -137.718
+logFalse += 5 * -2
+logFalse -> -142.75
+var 1 at [0, 8, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.332906
+logTrue -> -141.713
+logFalse += 12 * -0.415037
+logFalse -> -147.731
+state 1, freq=1
+logTrue += 1 * -2.27883
+logTrue -> -143.992
+logFalse += 1 * -2
+logFalse -> -149.731
+var 1 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.332906
+logTrue -> -147.654
+logFalse += 11 * -0.415037
+logFalse -> -154.296
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -154.491
+logFalse += 3 * -2
+logFalse -> -160.296
+var 1 at [0, 10, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.332906
+logTrue -> -158.485
+logFalse += 12 * -0.415037
+logFalse -> -165.277
+state 1, freq=2
+logTrue += 2 * -2.27883
+logTrue -> -163.043
+logFalse += 2 * -2
+logFalse -> -169.277
+var 1 at [0, 11, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.332906
+logTrue -> -166.705
+logFalse += 11 * -0.415037
+logFalse -> -173.842
+state 1, freq=2
+logTrue += 2 * -2.27883
+logTrue -> -171.263
+logFalse += 2 * -2
+logFalse -> -177.842
+var 1 at [0, 12, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.332906
+logTrue -> -174.925
+logFalse += 11 * -0.415037
+logFalse -> -182.408
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -181.761
+logFalse += 3 * -2
+logFalse -> -188.408
+var 1 at [0, 13, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.332906
+logTrue -> -186.422
+logFalse += 14 * -0.415037
+logFalse -> -194.218
+state 1, freq=2
+logTrue += 2 * -2.27883
+logTrue -> -190.98
+logFalse += 2 * -2
+logFalse -> -198.218
+var 1 at [0, 14, 0](0):
+state 0, freq=16
+logTrue += 16 * -0.332906
+logTrue -> -196.306
+logFalse += 16 * -0.415037
+logFalse -> -204.859
+state 1, freq=0
+logTrue += 0 * -2.27883
+logTrue -> -196.306
+logFalse += 0 * -2
+logFalse -> -204.859
+var 1 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.332906
+logTrue -> -42.8594
+logFalse += 11 * -0.415037
+logFalse -> -50.5444
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -49.6959
+logFalse += 3 * -2
+logFalse -> -56.5444
+var 1 at [0, 1, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.332906
+logTrue -> -53.3578
+logFalse += 11 * -0.415037
+logFalse -> -61.1098
+state 1, freq=2
+logTrue += 2 * -2.27883
+logTrue -> -57.9155
+logFalse += 2 * -2
+logFalse -> -65.1098
+var 1 at [0, 2, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.332906
+logTrue -> -61.5775
+logFalse += 11 * -0.415037
+logFalse -> -69.6752
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -68.414
+logFalse += 3 * -2
+logFalse -> -75.6752
+var 1 at [0, 3, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.332906
+logTrue -> -72.0759
+logFalse += 11 * -0.415037
+logFalse -> -80.2406
+state 1, freq=2
+logTrue += 2 * -2.27883
+logTrue -> -76.6336
+logFalse += 2 * -2
+logFalse -> -84.2406
+var 1 at [0, 4, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.332906
+logTrue -> -79.9627
+logFalse += 10 * -0.415037
+logFalse -> -88.391
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -86.7992
+logFalse += 3 * -2
+logFalse -> -94.391
+var 1 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.332906
+logTrue -> -89.7953
+logFalse += 9 * -0.415037
+logFalse -> -98.1263
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -96.6318
+logFalse += 3 * -2
+logFalse -> -104.126
+var 1 at [0, 6, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.332906
+logTrue -> -99.628
+logFalse += 9 * -0.415037
+logFalse -> -107.862
+state 1, freq=4
+logTrue += 4 * -2.27883
+logTrue -> -108.743
+logFalse += 4 * -2
+logFalse -> -115.862
+var 1 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.332906
+logTrue -> -111.739
+logFalse += 9 * -0.415037
+logFalse -> -119.597
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -118.576
+logFalse += 3 * -2
+logFalse -> -125.597
+var 1 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.332906
+logTrue -> -121.572
+logFalse += 9 * -0.415037
+logFalse -> -129.332
+state 1, freq=4
+logTrue += 4 * -2.27883
+logTrue -> -130.687
+logFalse += 4 * -2
+logFalse -> -137.332
+var 1 at [0, 9, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.332906
+logTrue -> -134.017
+logFalse += 10 * -0.415037
+logFalse -> -141.483
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -140.853
+logFalse += 3 * -2
+logFalse -> -147.483
+var 1 at [0, 10, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.332906
+logTrue -> -144.182
+logFalse += 10 * -0.415037
+logFalse -> -151.633
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -151.019
+logFalse += 3 * -2
+logFalse -> -157.633
+var 1 at [0, 11, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.332906
+logTrue -> -154.015
+logFalse += 9 * -0.415037
+logFalse -> -161.368
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -160.851
+logFalse += 3 * -2
+logFalse -> -167.368
+var 1 at [0, 12, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.332906
+logTrue -> -163.514
+logFalse += 8 * -0.415037
+logFalse -> -170.689
+state 1, freq=4
+logTrue += 4 * -2.27883
+logTrue -> -172.63
+logFalse += 4 * -2
+logFalse -> -178.689
+var 1 at [0, 13, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.332906
+logTrue -> -175.626
+logFalse += 9 * -0.415037
+logFalse -> -182.424
+state 1, freq=4
+logTrue += 4 * -2.27883
+logTrue -> -184.741
+logFalse += 4 * -2
+logFalse -> -190.424
+var 1 at [0, 14, 1](1):
+state 0, freq=13
+logTrue += 13 * -0.332906
+logTrue -> -189.069
+logFalse += 13 * -0.415037
+logFalse -> -195.82
+state 1, freq=3
+logTrue += 3 * -2.27883
+logTrue -> -195.906
+logFalse += 3 * -2
+logFalse -> -201.82
+var 1 at 0:
+0.997344 = exp2(-196.306)/(exp2(-196.306)+exp2(-204.859))
+0.997344 = 8.05372e-60/(8.05372e-60+2.14485e-62)
+var 1 at 1:
+0.983686 = exp2(-195.906)/(exp2(-195.906)+exp2(-201.82))
+0.983686 = 1.06304e-59/(1.06304e-59+1.76302e-61)
+log priori true:  0
+log priori false: 1.58496
+rel 5
+depStateV(0)=log2((0+0.888889)/(0+1))=-0.169925
+depStateNotV(0)=log2((299+0.888889)/(317+1))=-0.0845987
+depStateV(1)=log2((0+0.111111)/(0+1))=-3.16993
+depStateNotV(1)=log2((18+0.111111)/(317+1))=-4.13408
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((317+1)/(317+1))=0
+var 2 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -1.69925
+logFalse += 10 * -0.0845987
+logFalse -> 0.738976
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.69925
+logFalse += 0 * -4.13408
+logFalse -> 0.738976
+var 2 at [0, 1, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -3.05865
+logFalse += 8 * -0.0845987
+logFalse -> 0.062186
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.05865
+logFalse += 0 * -4.13408
+logFalse -> 0.062186
+var 2 at [0, 2, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.41805
+logFalse += 8 * -0.0845987
+logFalse -> -0.614604
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -7.58798
+logFalse += 1 * -4.13408
+logFalse -> -4.74868
+var 2 at [0, 3, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -9.28723
+logFalse += 10 * -0.0845987
+logFalse -> -5.59467
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -9.28723
+logFalse += 0 * -4.13408
+logFalse -> -5.59467
+var 2 at [0, 4, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -10.8166
+logFalse += 9 * -0.0845987
+logFalse -> -6.35606
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -17.1564
+logFalse += 2 * -4.13408
+logFalse -> -14.6242
+var 2 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -19.0256
+logFalse += 11 * -0.0845987
+logFalse -> -15.5548
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -19.0256
+logFalse += 0 * -4.13408
+logFalse -> -15.5548
+var 2 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -20.7248
+logFalse += 10 * -0.0845987
+logFalse -> -16.4008
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -20.7248
+logFalse += 0 * -4.13408
+logFalse -> -16.4008
+var 2 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -22.4241
+logFalse += 10 * -0.0845987
+logFalse -> -17.2468
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -22.4241
+logFalse += 0 * -4.13408
+logFalse -> -17.2468
+var 2 at [0, 8, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -24.1233
+logFalse += 10 * -0.0845987
+logFalse -> -18.0928
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.1233
+logFalse += 0 * -4.13408
+logFalse -> -18.0928
+var 2 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -25.9925
+logFalse += 11 * -0.0845987
+logFalse -> -19.0234
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -25.9925
+logFalse += 0 * -4.13408
+logFalse -> -19.0234
+var 2 at [0, 10, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -27.6918
+logFalse += 10 * -0.0845987
+logFalse -> -19.8693
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.6918
+logFalse += 0 * -4.13408
+logFalse -> -19.8693
+var 2 at [0, 11, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2211
+logFalse += 9 * -0.0845987
+logFalse -> -20.6307
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -32.391
+logFalse += 1 * -4.13408
+logFalse -> -24.7648
+var 2 at [0, 12, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -33.9203
+logFalse += 9 * -0.0845987
+logFalse -> -25.5262
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.9203
+logFalse += 0 * -4.13408
+logFalse -> -25.5262
+var 2 at [0, 13, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -35.4497
+logFalse += 9 * -0.0845987
+logFalse -> -26.2876
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -41.7895
+logFalse += 2 * -4.13408
+logFalse -> -34.5557
+var 2 at [0, 14, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -43.6587
+logFalse += 11 * -0.0845987
+logFalse -> -35.4863
+state 1, freq=3
+logTrue += 3 * -3.16993
+logTrue -> -53.1685
+logFalse += 3 * -4.13408
+logFalse -> -47.8886
+var 2 at [0, 15, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.169925
+logTrue -> -55.5474
+logFalse += 14 * -0.0845987
+logFalse -> -49.0729
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -61.8873
+logFalse += 2 * -4.13408
+logFalse -> -57.3411
+var 2 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -1.86918
+logFalse += 11 * -0.0845987
+logFalse -> 0.654377
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.86918
+logFalse += 0 * -4.13408
+logFalse -> 0.654377
+var 2 at [0, 1, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -3.3985
+logFalse += 9 * -0.0845987
+logFalse -> -0.107011
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.3985
+logFalse += 0 * -4.13408
+logFalse -> -0.107011
+var 2 at [0, 2, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.7579
+logFalse += 8 * -0.0845987
+logFalse -> -0.783801
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -11.0978
+logFalse += 2 * -4.13408
+logFalse -> -9.05196
+var 2 at [0, 3, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -12.4572
+logFalse += 8 * -0.0845987
+logFalse -> -9.72875
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -15.6271
+logFalse += 1 * -4.13408
+logFalse -> -13.8628
+var 2 at [0, 4, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -16.9865
+logFalse += 8 * -0.0845987
+logFalse -> -14.5396
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -23.3263
+logFalse += 2 * -4.13408
+logFalse -> -22.8078
+var 2 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -24.8557
+logFalse += 9 * -0.0845987
+logFalse -> -23.5692
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.8557
+logFalse += 0 * -4.13408
+logFalse -> -23.5692
+var 2 at [0, 6, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -26.2151
+logFalse += 8 * -0.0845987
+logFalse -> -24.246
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -26.2151
+logFalse += 0 * -4.13408
+logFalse -> -24.246
+var 2 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -27.7444
+logFalse += 9 * -0.0845987
+logFalse -> -25.0073
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.7444
+logFalse += 0 * -4.13408
+logFalse -> -25.0073
+var 2 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2737
+logFalse += 9 * -0.0845987
+logFalse -> -25.7687
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -29.2737
+logFalse += 0 * -4.13408
+logFalse -> -25.7687
+var 2 at [0, 9, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -30.803
+logFalse += 9 * -0.0845987
+logFalse -> -26.5301
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -30.803
+logFalse += 0 * -4.13408
+logFalse -> -26.5301
+var 2 at [0, 10, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -32.3324
+logFalse += 9 * -0.0845987
+logFalse -> -27.2915
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -32.3324
+logFalse += 0 * -4.13408
+logFalse -> -27.2915
+var 2 at [0, 11, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -33.6918
+logFalse += 8 * -0.0845987
+logFalse -> -27.9683
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.6918
+logFalse += 0 * -4.13408
+logFalse -> -27.9683
+var 2 at [0, 12, 1](1):
+state 0, freq=7
+logTrue += 7 * -0.169925
+logTrue -> -34.8812
+logFalse += 7 * -0.0845987
+logFalse -> -28.5605
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -34.8812
+logFalse += 0 * -4.13408
+logFalse -> -28.5605
+var 2 at [0, 13, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -36.2406
+logFalse += 8 * -0.0845987
+logFalse -> -29.2373
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -36.2406
+logFalse += 0 * -4.13408
+logFalse -> -29.2373
+var 2 at [0, 14, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -37.77
+logFalse += 9 * -0.0845987
+logFalse -> -29.9987
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -37.77
+logFalse += 0 * -4.13408
+logFalse -> -29.9987
+var 2 at [0, 15, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -39.6391
+logFalse += 11 * -0.0845987
+logFalse -> -30.9293
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -45.979
+logFalse += 2 * -4.13408
+logFalse -> -39.1974
+rel 15
+depStateV(0)=log2((0+0.75)/(0+1))=-0.415037
+depStateNotV(0)=log2((320+0.75)/(403+1))=-0.332906
+depStateV(1)=log2((0+0.25)/(0+1))=-2
+depStateNotV(1)=log2((83+0.25)/(403+1))=-2.27883
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((403+1)/(403+1))=0
+var 2 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -66.0376
+logFalse += 10 * -0.332906
+logFalse -> -60.6702
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -72.0376
+logFalse += 3 * -2.27883
+logFalse -> -67.5067
+var 2 at [0, 1, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -76.188
+logFalse += 10 * -0.332906
+logFalse -> -70.8357
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -82.188
+logFalse += 3 * -2.27883
+logFalse -> -77.6722
+var 2 at [0, 2, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -86.3384
+logFalse += 10 * -0.332906
+logFalse -> -81.0013
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -92.3384
+logFalse += 3 * -2.27883
+logFalse -> -87.8378
+var 2 at [0, 3, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -97.3188
+logFalse += 12 * -0.332906
+logFalse -> -91.8327
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -103.319
+logFalse += 3 * -2.27883
+logFalse -> -98.6692
+var 2 at [0, 4, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -107.884
+logFalse += 11 * -0.332906
+logFalse -> -102.331
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -109.884
+logFalse += 1 * -2.27883
+logFalse -> -104.61
+var 2 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -114.45
+logFalse += 11 * -0.332906
+logFalse -> -108.272
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -122.45
+logFalse += 4 * -2.27883
+logFalse -> -117.387
+var 2 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -126.6
+logFalse += 10 * -0.332906
+logFalse -> -120.716
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -128.6
+logFalse += 1 * -2.27883
+logFalse -> -122.995
+var 2 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -132.75
+logFalse += 10 * -0.332906
+logFalse -> -126.324
+state 1, freq=5
+logTrue += 5 * -2
+logTrue -> -142.75
+logFalse += 5 * -2.27883
+logFalse -> -137.718
+var 2 at [0, 8, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -147.731
+logFalse += 12 * -0.332906
+logFalse -> -141.713
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -149.731
+logFalse += 1 * -2.27883
+logFalse -> -143.992
+var 2 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -154.296
+logFalse += 11 * -0.332906
+logFalse -> -147.654
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -160.296
+logFalse += 3 * -2.27883
+logFalse -> -154.491
+var 2 at [0, 10, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -165.277
+logFalse += 12 * -0.332906
+logFalse -> -158.485
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -169.277
+logFalse += 2 * -2.27883
+logFalse -> -163.043
+var 2 at [0, 11, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -173.842
+logFalse += 11 * -0.332906
+logFalse -> -166.705
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -177.842
+logFalse += 2 * -2.27883
+logFalse -> -171.263
+var 2 at [0, 12, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -182.408
+logFalse += 11 * -0.332906
+logFalse -> -174.925
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -188.408
+logFalse += 3 * -2.27883
+logFalse -> -181.761
+var 2 at [0, 13, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.415037
+logTrue -> -194.218
+logFalse += 14 * -0.332906
+logFalse -> -186.422
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -198.218
+logFalse += 2 * -2.27883
+logFalse -> -190.98
+var 2 at [0, 14, 0](0):
+state 0, freq=16
+logTrue += 16 * -0.415037
+logTrue -> -204.859
+logFalse += 16 * -0.332906
+logFalse -> -196.306
+state 1, freq=0
+logTrue += 0 * -2
+logTrue -> -204.859
+logFalse += 0 * -2.27883
+logFalse -> -196.306
+var 2 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -50.5444
+logFalse += 11 * -0.332906
+logFalse -> -42.8594
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -56.5444
+logFalse += 3 * -2.27883
+logFalse -> -49.6959
+var 2 at [0, 1, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -61.1098
+logFalse += 11 * -0.332906
+logFalse -> -53.3578
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -65.1098
+logFalse += 2 * -2.27883
+logFalse -> -57.9155
+var 2 at [0, 2, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -69.6752
+logFalse += 11 * -0.332906
+logFalse -> -61.5775
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -75.6752
+logFalse += 3 * -2.27883
+logFalse -> -68.414
+var 2 at [0, 3, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -80.2406
+logFalse += 11 * -0.332906
+logFalse -> -72.0759
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -84.2406
+logFalse += 2 * -2.27883
+logFalse -> -76.6336
+var 2 at [0, 4, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -88.391
+logFalse += 10 * -0.332906
+logFalse -> -79.9627
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -94.391
+logFalse += 3 * -2.27883
+logFalse -> -86.7992
+var 2 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -98.1263
+logFalse += 9 * -0.332906
+logFalse -> -89.7953
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -104.126
+logFalse += 3 * -2.27883
+logFalse -> -96.6318
+var 2 at [0, 6, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -107.862
+logFalse += 9 * -0.332906
+logFalse -> -99.628
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -115.862
+logFalse += 4 * -2.27883
+logFalse -> -108.743
+var 2 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -119.597
+logFalse += 9 * -0.332906
+logFalse -> -111.739
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -125.597
+logFalse += 3 * -2.27883
+logFalse -> -118.576
+var 2 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -129.332
+logFalse += 9 * -0.332906
+logFalse -> -121.572
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -137.332
+logFalse += 4 * -2.27883
+logFalse -> -130.687
+var 2 at [0, 9, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -141.483
+logFalse += 10 * -0.332906
+logFalse -> -134.017
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -147.483
+logFalse += 3 * -2.27883
+logFalse -> -140.853
+var 2 at [0, 10, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -151.633
+logFalse += 10 * -0.332906
+logFalse -> -144.182
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -157.633
+logFalse += 3 * -2.27883
+logFalse -> -151.019
+var 2 at [0, 11, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -161.368
+logFalse += 9 * -0.332906
+logFalse -> -154.015
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -167.368
+logFalse += 3 * -2.27883
+logFalse -> -160.851
+var 2 at [0, 12, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.415037
+logTrue -> -170.689
+logFalse += 8 * -0.332906
+logFalse -> -163.514
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -178.689
+logFalse += 4 * -2.27883
+logFalse -> -172.63
+var 2 at [0, 13, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -182.424
+logFalse += 9 * -0.332906
+logFalse -> -175.626
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -190.424
+logFalse += 4 * -2.27883
+logFalse -> -184.741
+var 2 at [0, 14, 1](1):
+state 0, freq=13
+logTrue += 13 * -0.415037
+logTrue -> -195.82
+logFalse += 13 * -0.332906
+logFalse -> -189.069
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -201.82
+logFalse += 3 * -2.27883
+logFalse -> -195.906
+var 2 at 0:
+0.00265611 = exp2(-204.859)/(exp2(-204.859)+exp2(-196.306))
+0.00265611 = 2.14485e-62/(2.14485e-62+8.05372e-60)
+var 2 at 1:
+0.0163142 = exp2(-201.82)/(exp2(-201.82)+exp2(-195.906))
+0.0163142 = 1.76302e-61/(1.76302e-61+1.06304e-59)
+log priori true:  0
+log priori false: 1.58496
+rel 6
+depStateV(0)=log2((0+0.888889)/(0+1))=-0.169925
+depStateNotV(0)=log2((299+0.888889)/(317+1))=-0.0845987
+depStateV(1)=log2((0+0.111111)/(0+1))=-3.16993
+depStateNotV(1)=log2((18+0.111111)/(317+1))=-4.13408
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((317+1)/(317+1))=0
+var 3 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -1.69925
+logFalse += 10 * -0.0845987
+logFalse -> 0.738976
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.69925
+logFalse += 0 * -4.13408
+logFalse -> 0.738976
+var 3 at [0, 1, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -3.05865
+logFalse += 8 * -0.0845987
+logFalse -> 0.062186
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.05865
+logFalse += 0 * -4.13408
+logFalse -> 0.062186
+var 3 at [0, 2, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.41805
+logFalse += 8 * -0.0845987
+logFalse -> -0.614604
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -7.58798
+logFalse += 1 * -4.13408
+logFalse -> -4.74868
+var 3 at [0, 3, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -9.28723
+logFalse += 10 * -0.0845987
+logFalse -> -5.59467
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -9.28723
+logFalse += 0 * -4.13408
+logFalse -> -5.59467
+var 3 at [0, 4, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -10.8166
+logFalse += 9 * -0.0845987
+logFalse -> -6.35606
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -17.1564
+logFalse += 2 * -4.13408
+logFalse -> -14.6242
+var 3 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -19.0256
+logFalse += 11 * -0.0845987
+logFalse -> -15.5548
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -19.0256
+logFalse += 0 * -4.13408
+logFalse -> -15.5548
+var 3 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -20.7248
+logFalse += 10 * -0.0845987
+logFalse -> -16.4008
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -20.7248
+logFalse += 0 * -4.13408
+logFalse -> -16.4008
+var 3 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -22.4241
+logFalse += 10 * -0.0845987
+logFalse -> -17.2468
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -22.4241
+logFalse += 0 * -4.13408
+logFalse -> -17.2468
+var 3 at [0, 8, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -24.1233
+logFalse += 10 * -0.0845987
+logFalse -> -18.0928
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.1233
+logFalse += 0 * -4.13408
+logFalse -> -18.0928
+var 3 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -25.9925
+logFalse += 11 * -0.0845987
+logFalse -> -19.0234
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -25.9925
+logFalse += 0 * -4.13408
+logFalse -> -19.0234
+var 3 at [0, 10, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -27.6918
+logFalse += 10 * -0.0845987
+logFalse -> -19.8693
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.6918
+logFalse += 0 * -4.13408
+logFalse -> -19.8693
+var 3 at [0, 11, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2211
+logFalse += 9 * -0.0845987
+logFalse -> -20.6307
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -32.391
+logFalse += 1 * -4.13408
+logFalse -> -24.7648
+var 3 at [0, 12, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -33.9203
+logFalse += 9 * -0.0845987
+logFalse -> -25.5262
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.9203
+logFalse += 0 * -4.13408
+logFalse -> -25.5262
+var 3 at [0, 13, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -35.4497
+logFalse += 9 * -0.0845987
+logFalse -> -26.2876
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -41.7895
+logFalse += 2 * -4.13408
+logFalse -> -34.5557
+var 3 at [0, 14, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -43.6587
+logFalse += 11 * -0.0845987
+logFalse -> -35.4863
+state 1, freq=3
+logTrue += 3 * -3.16993
+logTrue -> -53.1685
+logFalse += 3 * -4.13408
+logFalse -> -47.8886
+var 3 at [0, 15, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.169925
+logTrue -> -55.5474
+logFalse += 14 * -0.0845987
+logFalse -> -49.0729
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -61.8873
+logFalse += 2 * -4.13408
+logFalse -> -57.3411
+var 3 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -1.86918
+logFalse += 11 * -0.0845987
+logFalse -> 0.654377
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.86918
+logFalse += 0 * -4.13408
+logFalse -> 0.654377
+var 3 at [0, 1, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -3.3985
+logFalse += 9 * -0.0845987
+logFalse -> -0.107011
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.3985
+logFalse += 0 * -4.13408
+logFalse -> -0.107011
+var 3 at [0, 2, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.7579
+logFalse += 8 * -0.0845987
+logFalse -> -0.783801
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -11.0978
+logFalse += 2 * -4.13408
+logFalse -> -9.05196
+var 3 at [0, 3, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -12.4572
+logFalse += 8 * -0.0845987
+logFalse -> -9.72875
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -15.6271
+logFalse += 1 * -4.13408
+logFalse -> -13.8628
+var 3 at [0, 4, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -16.9865
+logFalse += 8 * -0.0845987
+logFalse -> -14.5396
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -23.3263
+logFalse += 2 * -4.13408
+logFalse -> -22.8078
+var 3 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -24.8557
+logFalse += 9 * -0.0845987
+logFalse -> -23.5692
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.8557
+logFalse += 0 * -4.13408
+logFalse -> -23.5692
+var 3 at [0, 6, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -26.2151
+logFalse += 8 * -0.0845987
+logFalse -> -24.246
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -26.2151
+logFalse += 0 * -4.13408
+logFalse -> -24.246
+var 3 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -27.7444
+logFalse += 9 * -0.0845987
+logFalse -> -25.0073
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.7444
+logFalse += 0 * -4.13408
+logFalse -> -25.0073
+var 3 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2737
+logFalse += 9 * -0.0845987
+logFalse -> -25.7687
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -29.2737
+logFalse += 0 * -4.13408
+logFalse -> -25.7687
+var 3 at [0, 9, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -30.803
+logFalse += 9 * -0.0845987
+logFalse -> -26.5301
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -30.803
+logFalse += 0 * -4.13408
+logFalse -> -26.5301
+var 3 at [0, 10, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -32.3324
+logFalse += 9 * -0.0845987
+logFalse -> -27.2915
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -32.3324
+logFalse += 0 * -4.13408
+logFalse -> -27.2915
+var 3 at [0, 11, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -33.6918
+logFalse += 8 * -0.0845987
+logFalse -> -27.9683
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.6918
+logFalse += 0 * -4.13408
+logFalse -> -27.9683
+var 3 at [0, 12, 1](1):
+state 0, freq=7
+logTrue += 7 * -0.169925
+logTrue -> -34.8812
+logFalse += 7 * -0.0845987
+logFalse -> -28.5605
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -34.8812
+logFalse += 0 * -4.13408
+logFalse -> -28.5605
+var 3 at [0, 13, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -36.2406
+logFalse += 8 * -0.0845987
+logFalse -> -29.2373
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -36.2406
+logFalse += 0 * -4.13408
+logFalse -> -29.2373
+var 3 at [0, 14, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -37.77
+logFalse += 9 * -0.0845987
+logFalse -> -29.9987
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -37.77
+logFalse += 0 * -4.13408
+logFalse -> -29.9987
+var 3 at [0, 15, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -39.6391
+logFalse += 11 * -0.0845987
+logFalse -> -30.9293
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -45.979
+logFalse += 2 * -4.13408
+logFalse -> -39.1974
+rel 16
+depStateV(0)=log2((0+0.75)/(0+1))=-0.415037
+depStateNotV(0)=log2((320+0.75)/(403+1))=-0.332906
+depStateV(1)=log2((0+0.25)/(0+1))=-2
+depStateNotV(1)=log2((83+0.25)/(403+1))=-2.27883
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((403+1)/(403+1))=0
+var 3 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -66.0376
+logFalse += 10 * -0.332906
+logFalse -> -60.6702
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -72.0376
+logFalse += 3 * -2.27883
+logFalse -> -67.5067
+var 3 at [0, 1, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -76.188
+logFalse += 10 * -0.332906
+logFalse -> -70.8357
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -82.188
+logFalse += 3 * -2.27883
+logFalse -> -77.6722
+var 3 at [0, 2, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -86.3384
+logFalse += 10 * -0.332906
+logFalse -> -81.0013
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -92.3384
+logFalse += 3 * -2.27883
+logFalse -> -87.8378
+var 3 at [0, 3, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -97.3188
+logFalse += 12 * -0.332906
+logFalse -> -91.8327
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -103.319
+logFalse += 3 * -2.27883
+logFalse -> -98.6692
+var 3 at [0, 4, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -107.884
+logFalse += 11 * -0.332906
+logFalse -> -102.331
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -109.884
+logFalse += 1 * -2.27883
+logFalse -> -104.61
+var 3 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -114.45
+logFalse += 11 * -0.332906
+logFalse -> -108.272
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -122.45
+logFalse += 4 * -2.27883
+logFalse -> -117.387
+var 3 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -126.6
+logFalse += 10 * -0.332906
+logFalse -> -120.716
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -128.6
+logFalse += 1 * -2.27883
+logFalse -> -122.995
+var 3 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -132.75
+logFalse += 10 * -0.332906
+logFalse -> -126.324
+state 1, freq=5
+logTrue += 5 * -2
+logTrue -> -142.75
+logFalse += 5 * -2.27883
+logFalse -> -137.718
+var 3 at [0, 8, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -147.731
+logFalse += 12 * -0.332906
+logFalse -> -141.713
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -149.731
+logFalse += 1 * -2.27883
+logFalse -> -143.992
+var 3 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -154.296
+logFalse += 11 * -0.332906
+logFalse -> -147.654
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -160.296
+logFalse += 3 * -2.27883
+logFalse -> -154.491
+var 3 at [0, 10, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -165.277
+logFalse += 12 * -0.332906
+logFalse -> -158.485
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -169.277
+logFalse += 2 * -2.27883
+logFalse -> -163.043
+var 3 at [0, 11, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -173.842
+logFalse += 11 * -0.332906
+logFalse -> -166.705
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -177.842
+logFalse += 2 * -2.27883
+logFalse -> -171.263
+var 3 at [0, 12, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -182.408
+logFalse += 11 * -0.332906
+logFalse -> -174.925
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -188.408
+logFalse += 3 * -2.27883
+logFalse -> -181.761
+var 3 at [0, 13, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.415037
+logTrue -> -194.218
+logFalse += 14 * -0.332906
+logFalse -> -186.422
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -198.218
+logFalse += 2 * -2.27883
+logFalse -> -190.98
+var 3 at [0, 14, 0](0):
+state 0, freq=16
+logTrue += 16 * -0.415037
+logTrue -> -204.859
+logFalse += 16 * -0.332906
+logFalse -> -196.306
+state 1, freq=0
+logTrue += 0 * -2
+logTrue -> -204.859
+logFalse += 0 * -2.27883
+logFalse -> -196.306
+var 3 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -50.5444
+logFalse += 11 * -0.332906
+logFalse -> -42.8594
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -56.5444
+logFalse += 3 * -2.27883
+logFalse -> -49.6959
+var 3 at [0, 1, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -61.1098
+logFalse += 11 * -0.332906
+logFalse -> -53.3578
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -65.1098
+logFalse += 2 * -2.27883
+logFalse -> -57.9155
+var 3 at [0, 2, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -69.6752
+logFalse += 11 * -0.332906
+logFalse -> -61.5775
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -75.6752
+logFalse += 3 * -2.27883
+logFalse -> -68.414
+var 3 at [0, 3, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -80.2406
+logFalse += 11 * -0.332906
+logFalse -> -72.0759
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -84.2406
+logFalse += 2 * -2.27883
+logFalse -> -76.6336
+var 3 at [0, 4, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -88.391
+logFalse += 10 * -0.332906
+logFalse -> -79.9627
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -94.391
+logFalse += 3 * -2.27883
+logFalse -> -86.7992
+var 3 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -98.1263
+logFalse += 9 * -0.332906
+logFalse -> -89.7953
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -104.126
+logFalse += 3 * -2.27883
+logFalse -> -96.6318
+var 3 at [0, 6, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -107.862
+logFalse += 9 * -0.332906
+logFalse -> -99.628
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -115.862
+logFalse += 4 * -2.27883
+logFalse -> -108.743
+var 3 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -119.597
+logFalse += 9 * -0.332906
+logFalse -> -111.739
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -125.597
+logFalse += 3 * -2.27883
+logFalse -> -118.576
+var 3 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -129.332
+logFalse += 9 * -0.332906
+logFalse -> -121.572
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -137.332
+logFalse += 4 * -2.27883
+logFalse -> -130.687
+var 3 at [0, 9, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -141.483
+logFalse += 10 * -0.332906
+logFalse -> -134.017
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -147.483
+logFalse += 3 * -2.27883
+logFalse -> -140.853
+var 3 at [0, 10, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -151.633
+logFalse += 10 * -0.332906
+logFalse -> -144.182
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -157.633
+logFalse += 3 * -2.27883
+logFalse -> -151.019
+var 3 at [0, 11, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -161.368
+logFalse += 9 * -0.332906
+logFalse -> -154.015
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -167.368
+logFalse += 3 * -2.27883
+logFalse -> -160.851
+var 3 at [0, 12, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.415037
+logTrue -> -170.689
+logFalse += 8 * -0.332906
+logFalse -> -163.514
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -178.689
+logFalse += 4 * -2.27883
+logFalse -> -172.63
+var 3 at [0, 13, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -182.424
+logFalse += 9 * -0.332906
+logFalse -> -175.626
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -190.424
+logFalse += 4 * -2.27883
+logFalse -> -184.741
+var 3 at [0, 14, 1](1):
+state 0, freq=13
+logTrue += 13 * -0.415037
+logTrue -> -195.82
+logFalse += 13 * -0.332906
+logFalse -> -189.069
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -201.82
+logFalse += 3 * -2.27883
+logFalse -> -195.906
+var 3 at 0:
+0.00265611 = exp2(-204.859)/(exp2(-204.859)+exp2(-196.306))
+0.00265611 = 2.14485e-62/(2.14485e-62+8.05372e-60)
+var 3 at 1:
+0.0163142 = exp2(-201.82)/(exp2(-201.82)+exp2(-195.906))
+0.0163142 = 1.76302e-61/(1.76302e-61+1.06304e-59)
+log priori true:  0
+log priori false: 1.58496
+rel 7
+depStateV(0)=log2((0+0.888889)/(0+1))=-0.169925
+depStateNotV(0)=log2((299+0.888889)/(317+1))=-0.0845987
+depStateV(1)=log2((0+0.111111)/(0+1))=-3.16993
+depStateNotV(1)=log2((18+0.111111)/(317+1))=-4.13408
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((317+1)/(317+1))=0
+var 4 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -1.69925
+logFalse += 10 * -0.0845987
+logFalse -> 0.738976
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.69925
+logFalse += 0 * -4.13408
+logFalse -> 0.738976
+var 4 at [0, 1, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -3.05865
+logFalse += 8 * -0.0845987
+logFalse -> 0.062186
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.05865
+logFalse += 0 * -4.13408
+logFalse -> 0.062186
+var 4 at [0, 2, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.41805
+logFalse += 8 * -0.0845987
+logFalse -> -0.614604
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -7.58798
+logFalse += 1 * -4.13408
+logFalse -> -4.74868
+var 4 at [0, 3, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -9.28723
+logFalse += 10 * -0.0845987
+logFalse -> -5.59467
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -9.28723
+logFalse += 0 * -4.13408
+logFalse -> -5.59467
+var 4 at [0, 4, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -10.8166
+logFalse += 9 * -0.0845987
+logFalse -> -6.35606
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -17.1564
+logFalse += 2 * -4.13408
+logFalse -> -14.6242
+var 4 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -19.0256
+logFalse += 11 * -0.0845987
+logFalse -> -15.5548
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -19.0256
+logFalse += 0 * -4.13408
+logFalse -> -15.5548
+var 4 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -20.7248
+logFalse += 10 * -0.0845987
+logFalse -> -16.4008
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -20.7248
+logFalse += 0 * -4.13408
+logFalse -> -16.4008
+var 4 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -22.4241
+logFalse += 10 * -0.0845987
+logFalse -> -17.2468
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -22.4241
+logFalse += 0 * -4.13408
+logFalse -> -17.2468
+var 4 at [0, 8, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -24.1233
+logFalse += 10 * -0.0845987
+logFalse -> -18.0928
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.1233
+logFalse += 0 * -4.13408
+logFalse -> -18.0928
+var 4 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -25.9925
+logFalse += 11 * -0.0845987
+logFalse -> -19.0234
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -25.9925
+logFalse += 0 * -4.13408
+logFalse -> -19.0234
+var 4 at [0, 10, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -27.6918
+logFalse += 10 * -0.0845987
+logFalse -> -19.8693
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.6918
+logFalse += 0 * -4.13408
+logFalse -> -19.8693
+var 4 at [0, 11, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2211
+logFalse += 9 * -0.0845987
+logFalse -> -20.6307
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -32.391
+logFalse += 1 * -4.13408
+logFalse -> -24.7648
+var 4 at [0, 12, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -33.9203
+logFalse += 9 * -0.0845987
+logFalse -> -25.5262
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.9203
+logFalse += 0 * -4.13408
+logFalse -> -25.5262
+var 4 at [0, 13, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -35.4497
+logFalse += 9 * -0.0845987
+logFalse -> -26.2876
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -41.7895
+logFalse += 2 * -4.13408
+logFalse -> -34.5557
+var 4 at [0, 14, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -43.6587
+logFalse += 11 * -0.0845987
+logFalse -> -35.4863
+state 1, freq=3
+logTrue += 3 * -3.16993
+logTrue -> -53.1685
+logFalse += 3 * -4.13408
+logFalse -> -47.8886
+var 4 at [0, 15, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.169925
+logTrue -> -55.5474
+logFalse += 14 * -0.0845987
+logFalse -> -49.0729
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -61.8873
+logFalse += 2 * -4.13408
+logFalse -> -57.3411
+var 4 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -1.86918
+logFalse += 11 * -0.0845987
+logFalse -> 0.654377
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.86918
+logFalse += 0 * -4.13408
+logFalse -> 0.654377
+var 4 at [0, 1, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -3.3985
+logFalse += 9 * -0.0845987
+logFalse -> -0.107011
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.3985
+logFalse += 0 * -4.13408
+logFalse -> -0.107011
+var 4 at [0, 2, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.7579
+logFalse += 8 * -0.0845987
+logFalse -> -0.783801
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -11.0978
+logFalse += 2 * -4.13408
+logFalse -> -9.05196
+var 4 at [0, 3, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -12.4572
+logFalse += 8 * -0.0845987
+logFalse -> -9.72875
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -15.6271
+logFalse += 1 * -4.13408
+logFalse -> -13.8628
+var 4 at [0, 4, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -16.9865
+logFalse += 8 * -0.0845987
+logFalse -> -14.5396
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -23.3263
+logFalse += 2 * -4.13408
+logFalse -> -22.8078
+var 4 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -24.8557
+logFalse += 9 * -0.0845987
+logFalse -> -23.5692
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.8557
+logFalse += 0 * -4.13408
+logFalse -> -23.5692
+var 4 at [0, 6, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -26.2151
+logFalse += 8 * -0.0845987
+logFalse -> -24.246
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -26.2151
+logFalse += 0 * -4.13408
+logFalse -> -24.246
+var 4 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -27.7444
+logFalse += 9 * -0.0845987
+logFalse -> -25.0073
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.7444
+logFalse += 0 * -4.13408
+logFalse -> -25.0073
+var 4 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2737
+logFalse += 9 * -0.0845987
+logFalse -> -25.7687
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -29.2737
+logFalse += 0 * -4.13408
+logFalse -> -25.7687
+var 4 at [0, 9, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -30.803
+logFalse += 9 * -0.0845987
+logFalse -> -26.5301
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -30.803
+logFalse += 0 * -4.13408
+logFalse -> -26.5301
+var 4 at [0, 10, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -32.3324
+logFalse += 9 * -0.0845987
+logFalse -> -27.2915
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -32.3324
+logFalse += 0 * -4.13408
+logFalse -> -27.2915
+var 4 at [0, 11, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -33.6918
+logFalse += 8 * -0.0845987
+logFalse -> -27.9683
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.6918
+logFalse += 0 * -4.13408
+logFalse -> -27.9683
+var 4 at [0, 12, 1](1):
+state 0, freq=7
+logTrue += 7 * -0.169925
+logTrue -> -34.8812
+logFalse += 7 * -0.0845987
+logFalse -> -28.5605
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -34.8812
+logFalse += 0 * -4.13408
+logFalse -> -28.5605
+var 4 at [0, 13, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -36.2406
+logFalse += 8 * -0.0845987
+logFalse -> -29.2373
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -36.2406
+logFalse += 0 * -4.13408
+logFalse -> -29.2373
+var 4 at [0, 14, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -37.77
+logFalse += 9 * -0.0845987
+logFalse -> -29.9987
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -37.77
+logFalse += 0 * -4.13408
+logFalse -> -29.9987
+var 4 at [0, 15, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -39.6391
+logFalse += 11 * -0.0845987
+logFalse -> -30.9293
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -45.979
+logFalse += 2 * -4.13408
+logFalse -> -39.1974
+rel 17
+depStateV(0)=log2((0+0.75)/(0+1))=-0.415037
+depStateNotV(0)=log2((320+0.75)/(403+1))=-0.332906
+depStateV(1)=log2((0+0.25)/(0+1))=-2
+depStateNotV(1)=log2((83+0.25)/(403+1))=-2.27883
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((403+1)/(403+1))=0
+var 4 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -66.0376
+logFalse += 10 * -0.332906
+logFalse -> -60.6702
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -72.0376
+logFalse += 3 * -2.27883
+logFalse -> -67.5067
+var 4 at [0, 1, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -76.188
+logFalse += 10 * -0.332906
+logFalse -> -70.8357
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -82.188
+logFalse += 3 * -2.27883
+logFalse -> -77.6722
+var 4 at [0, 2, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -86.3384
+logFalse += 10 * -0.332906
+logFalse -> -81.0013
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -92.3384
+logFalse += 3 * -2.27883
+logFalse -> -87.8378
+var 4 at [0, 3, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -97.3188
+logFalse += 12 * -0.332906
+logFalse -> -91.8327
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -103.319
+logFalse += 3 * -2.27883
+logFalse -> -98.6692
+var 4 at [0, 4, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -107.884
+logFalse += 11 * -0.332906
+logFalse -> -102.331
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -109.884
+logFalse += 1 * -2.27883
+logFalse -> -104.61
+var 4 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -114.45
+logFalse += 11 * -0.332906
+logFalse -> -108.272
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -122.45
+logFalse += 4 * -2.27883
+logFalse -> -117.387
+var 4 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -126.6
+logFalse += 10 * -0.332906
+logFalse -> -120.716
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -128.6
+logFalse += 1 * -2.27883
+logFalse -> -122.995
+var 4 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -132.75
+logFalse += 10 * -0.332906
+logFalse -> -126.324
+state 1, freq=5
+logTrue += 5 * -2
+logTrue -> -142.75
+logFalse += 5 * -2.27883
+logFalse -> -137.718
+var 4 at [0, 8, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -147.731
+logFalse += 12 * -0.332906
+logFalse -> -141.713
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -149.731
+logFalse += 1 * -2.27883
+logFalse -> -143.992
+var 4 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -154.296
+logFalse += 11 * -0.332906
+logFalse -> -147.654
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -160.296
+logFalse += 3 * -2.27883
+logFalse -> -154.491
+var 4 at [0, 10, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -165.277
+logFalse += 12 * -0.332906
+logFalse -> -158.485
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -169.277
+logFalse += 2 * -2.27883
+logFalse -> -163.043
+var 4 at [0, 11, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -173.842
+logFalse += 11 * -0.332906
+logFalse -> -166.705
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -177.842
+logFalse += 2 * -2.27883
+logFalse -> -171.263
+var 4 at [0, 12, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -182.408
+logFalse += 11 * -0.332906
+logFalse -> -174.925
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -188.408
+logFalse += 3 * -2.27883
+logFalse -> -181.761
+var 4 at [0, 13, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.415037
+logTrue -> -194.218
+logFalse += 14 * -0.332906
+logFalse -> -186.422
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -198.218
+logFalse += 2 * -2.27883
+logFalse -> -190.98
+var 4 at [0, 14, 0](0):
+state 0, freq=16
+logTrue += 16 * -0.415037
+logTrue -> -204.859
+logFalse += 16 * -0.332906
+logFalse -> -196.306
+state 1, freq=0
+logTrue += 0 * -2
+logTrue -> -204.859
+logFalse += 0 * -2.27883
+logFalse -> -196.306
+var 4 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -50.5444
+logFalse += 11 * -0.332906
+logFalse -> -42.8594
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -56.5444
+logFalse += 3 * -2.27883
+logFalse -> -49.6959
+var 4 at [0, 1, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -61.1098
+logFalse += 11 * -0.332906
+logFalse -> -53.3578
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -65.1098
+logFalse += 2 * -2.27883
+logFalse -> -57.9155
+var 4 at [0, 2, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -69.6752
+logFalse += 11 * -0.332906
+logFalse -> -61.5775
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -75.6752
+logFalse += 3 * -2.27883
+logFalse -> -68.414
+var 4 at [0, 3, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -80.2406
+logFalse += 11 * -0.332906
+logFalse -> -72.0759
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -84.2406
+logFalse += 2 * -2.27883
+logFalse -> -76.6336
+var 4 at [0, 4, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -88.391
+logFalse += 10 * -0.332906
+logFalse -> -79.9627
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -94.391
+logFalse += 3 * -2.27883
+logFalse -> -86.7992
+var 4 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -98.1263
+logFalse += 9 * -0.332906
+logFalse -> -89.7953
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -104.126
+logFalse += 3 * -2.27883
+logFalse -> -96.6318
+var 4 at [0, 6, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -107.862
+logFalse += 9 * -0.332906
+logFalse -> -99.628
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -115.862
+logFalse += 4 * -2.27883
+logFalse -> -108.743
+var 4 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -119.597
+logFalse += 9 * -0.332906
+logFalse -> -111.739
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -125.597
+logFalse += 3 * -2.27883
+logFalse -> -118.576
+var 4 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -129.332
+logFalse += 9 * -0.332906
+logFalse -> -121.572
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -137.332
+logFalse += 4 * -2.27883
+logFalse -> -130.687
+var 4 at [0, 9, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -141.483
+logFalse += 10 * -0.332906
+logFalse -> -134.017
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -147.483
+logFalse += 3 * -2.27883
+logFalse -> -140.853
+var 4 at [0, 10, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -151.633
+logFalse += 10 * -0.332906
+logFalse -> -144.182
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -157.633
+logFalse += 3 * -2.27883
+logFalse -> -151.019
+var 4 at [0, 11, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -161.368
+logFalse += 9 * -0.332906
+logFalse -> -154.015
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -167.368
+logFalse += 3 * -2.27883
+logFalse -> -160.851
+var 4 at [0, 12, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.415037
+logTrue -> -170.689
+logFalse += 8 * -0.332906
+logFalse -> -163.514
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -178.689
+logFalse += 4 * -2.27883
+logFalse -> -172.63
+var 4 at [0, 13, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -182.424
+logFalse += 9 * -0.332906
+logFalse -> -175.626
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -190.424
+logFalse += 4 * -2.27883
+logFalse -> -184.741
+var 4 at [0, 14, 1](1):
+state 0, freq=13
+logTrue += 13 * -0.415037
+logTrue -> -195.82
+logFalse += 13 * -0.332906
+logFalse -> -189.069
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -201.82
+logFalse += 3 * -2.27883
+logFalse -> -195.906
+var 4 at 0:
+0.00265611 = exp2(-204.859)/(exp2(-204.859)+exp2(-196.306))
+0.00265611 = 2.14485e-62/(2.14485e-62+8.05372e-60)
+var 4 at 1:
+0.0163142 = exp2(-201.82)/(exp2(-201.82)+exp2(-195.906))
+0.0163142 = 1.76302e-61/(1.76302e-61+1.06304e-59)
+log priori true:  0
+log priori false: 1.58496
+rel 8
+depStateV(0)=log2((0+0.888889)/(0+1))=-0.169925
+depStateNotV(0)=log2((299+0.888889)/(317+1))=-0.0845987
+depStateV(1)=log2((0+0.111111)/(0+1))=-3.16993
+depStateNotV(1)=log2((18+0.111111)/(317+1))=-4.13408
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((317+1)/(317+1))=0
+var 5 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -1.69925
+logFalse += 10 * -0.0845987
+logFalse -> 0.738976
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.69925
+logFalse += 0 * -4.13408
+logFalse -> 0.738976
+var 5 at [0, 1, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -3.05865
+logFalse += 8 * -0.0845987
+logFalse -> 0.062186
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.05865
+logFalse += 0 * -4.13408
+logFalse -> 0.062186
+var 5 at [0, 2, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.41805
+logFalse += 8 * -0.0845987
+logFalse -> -0.614604
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -7.58798
+logFalse += 1 * -4.13408
+logFalse -> -4.74868
+var 5 at [0, 3, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -9.28723
+logFalse += 10 * -0.0845987
+logFalse -> -5.59467
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -9.28723
+logFalse += 0 * -4.13408
+logFalse -> -5.59467
+var 5 at [0, 4, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -10.8166
+logFalse += 9 * -0.0845987
+logFalse -> -6.35606
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -17.1564
+logFalse += 2 * -4.13408
+logFalse -> -14.6242
+var 5 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -19.0256
+logFalse += 11 * -0.0845987
+logFalse -> -15.5548
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -19.0256
+logFalse += 0 * -4.13408
+logFalse -> -15.5548
+var 5 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -20.7248
+logFalse += 10 * -0.0845987
+logFalse -> -16.4008
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -20.7248
+logFalse += 0 * -4.13408
+logFalse -> -16.4008
+var 5 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -22.4241
+logFalse += 10 * -0.0845987
+logFalse -> -17.2468
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -22.4241
+logFalse += 0 * -4.13408
+logFalse -> -17.2468
+var 5 at [0, 8, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -24.1233
+logFalse += 10 * -0.0845987
+logFalse -> -18.0928
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.1233
+logFalse += 0 * -4.13408
+logFalse -> -18.0928
+var 5 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -25.9925
+logFalse += 11 * -0.0845987
+logFalse -> -19.0234
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -25.9925
+logFalse += 0 * -4.13408
+logFalse -> -19.0234
+var 5 at [0, 10, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -27.6918
+logFalse += 10 * -0.0845987
+logFalse -> -19.8693
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.6918
+logFalse += 0 * -4.13408
+logFalse -> -19.8693
+var 5 at [0, 11, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2211
+logFalse += 9 * -0.0845987
+logFalse -> -20.6307
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -32.391
+logFalse += 1 * -4.13408
+logFalse -> -24.7648
+var 5 at [0, 12, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -33.9203
+logFalse += 9 * -0.0845987
+logFalse -> -25.5262
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.9203
+logFalse += 0 * -4.13408
+logFalse -> -25.5262
+var 5 at [0, 13, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -35.4497
+logFalse += 9 * -0.0845987
+logFalse -> -26.2876
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -41.7895
+logFalse += 2 * -4.13408
+logFalse -> -34.5557
+var 5 at [0, 14, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -43.6587
+logFalse += 11 * -0.0845987
+logFalse -> -35.4863
+state 1, freq=3
+logTrue += 3 * -3.16993
+logTrue -> -53.1685
+logFalse += 3 * -4.13408
+logFalse -> -47.8886
+var 5 at [0, 15, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.169925
+logTrue -> -55.5474
+logFalse += 14 * -0.0845987
+logFalse -> -49.0729
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -61.8873
+logFalse += 2 * -4.13408
+logFalse -> -57.3411
+var 5 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -1.86918
+logFalse += 11 * -0.0845987
+logFalse -> 0.654377
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.86918
+logFalse += 0 * -4.13408
+logFalse -> 0.654377
+var 5 at [0, 1, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -3.3985
+logFalse += 9 * -0.0845987
+logFalse -> -0.107011
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.3985
+logFalse += 0 * -4.13408
+logFalse -> -0.107011
+var 5 at [0, 2, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.7579
+logFalse += 8 * -0.0845987
+logFalse -> -0.783801
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -11.0978
+logFalse += 2 * -4.13408
+logFalse -> -9.05196
+var 5 at [0, 3, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -12.4572
+logFalse += 8 * -0.0845987
+logFalse -> -9.72875
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -15.6271
+logFalse += 1 * -4.13408
+logFalse -> -13.8628
+var 5 at [0, 4, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -16.9865
+logFalse += 8 * -0.0845987
+logFalse -> -14.5396
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -23.3263
+logFalse += 2 * -4.13408
+logFalse -> -22.8078
+var 5 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -24.8557
+logFalse += 9 * -0.0845987
+logFalse -> -23.5692
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.8557
+logFalse += 0 * -4.13408
+logFalse -> -23.5692
+var 5 at [0, 6, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -26.2151
+logFalse += 8 * -0.0845987
+logFalse -> -24.246
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -26.2151
+logFalse += 0 * -4.13408
+logFalse -> -24.246
+var 5 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -27.7444
+logFalse += 9 * -0.0845987
+logFalse -> -25.0073
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.7444
+logFalse += 0 * -4.13408
+logFalse -> -25.0073
+var 5 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2737
+logFalse += 9 * -0.0845987
+logFalse -> -25.7687
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -29.2737
+logFalse += 0 * -4.13408
+logFalse -> -25.7687
+var 5 at [0, 9, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -30.803
+logFalse += 9 * -0.0845987
+logFalse -> -26.5301
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -30.803
+logFalse += 0 * -4.13408
+logFalse -> -26.5301
+var 5 at [0, 10, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -32.3324
+logFalse += 9 * -0.0845987
+logFalse -> -27.2915
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -32.3324
+logFalse += 0 * -4.13408
+logFalse -> -27.2915
+var 5 at [0, 11, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -33.6918
+logFalse += 8 * -0.0845987
+logFalse -> -27.9683
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.6918
+logFalse += 0 * -4.13408
+logFalse -> -27.9683
+var 5 at [0, 12, 1](1):
+state 0, freq=7
+logTrue += 7 * -0.169925
+logTrue -> -34.8812
+logFalse += 7 * -0.0845987
+logFalse -> -28.5605
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -34.8812
+logFalse += 0 * -4.13408
+logFalse -> -28.5605
+var 5 at [0, 13, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -36.2406
+logFalse += 8 * -0.0845987
+logFalse -> -29.2373
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -36.2406
+logFalse += 0 * -4.13408
+logFalse -> -29.2373
+var 5 at [0, 14, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -37.77
+logFalse += 9 * -0.0845987
+logFalse -> -29.9987
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -37.77
+logFalse += 0 * -4.13408
+logFalse -> -29.9987
+var 5 at [0, 15, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -39.6391
+logFalse += 11 * -0.0845987
+logFalse -> -30.9293
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -45.979
+logFalse += 2 * -4.13408
+logFalse -> -39.1974
+rel 18
+depStateV(0)=log2((0+0.75)/(0+1))=-0.415037
+depStateNotV(0)=log2((320+0.75)/(403+1))=-0.332906
+depStateV(1)=log2((0+0.25)/(0+1))=-2
+depStateNotV(1)=log2((83+0.25)/(403+1))=-2.27883
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((403+1)/(403+1))=0
+var 5 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -66.0376
+logFalse += 10 * -0.332906
+logFalse -> -60.6702
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -72.0376
+logFalse += 3 * -2.27883
+logFalse -> -67.5067
+var 5 at [0, 1, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -76.188
+logFalse += 10 * -0.332906
+logFalse -> -70.8357
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -82.188
+logFalse += 3 * -2.27883
+logFalse -> -77.6722
+var 5 at [0, 2, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -86.3384
+logFalse += 10 * -0.332906
+logFalse -> -81.0013
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -92.3384
+logFalse += 3 * -2.27883
+logFalse -> -87.8378
+var 5 at [0, 3, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -97.3188
+logFalse += 12 * -0.332906
+logFalse -> -91.8327
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -103.319
+logFalse += 3 * -2.27883
+logFalse -> -98.6692
+var 5 at [0, 4, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -107.884
+logFalse += 11 * -0.332906
+logFalse -> -102.331
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -109.884
+logFalse += 1 * -2.27883
+logFalse -> -104.61
+var 5 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -114.45
+logFalse += 11 * -0.332906
+logFalse -> -108.272
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -122.45
+logFalse += 4 * -2.27883
+logFalse -> -117.387
+var 5 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -126.6
+logFalse += 10 * -0.332906
+logFalse -> -120.716
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -128.6
+logFalse += 1 * -2.27883
+logFalse -> -122.995
+var 5 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -132.75
+logFalse += 10 * -0.332906
+logFalse -> -126.324
+state 1, freq=5
+logTrue += 5 * -2
+logTrue -> -142.75
+logFalse += 5 * -2.27883
+logFalse -> -137.718
+var 5 at [0, 8, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -147.731
+logFalse += 12 * -0.332906
+logFalse -> -141.713
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -149.731
+logFalse += 1 * -2.27883
+logFalse -> -143.992
+var 5 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -154.296
+logFalse += 11 * -0.332906
+logFalse -> -147.654
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -160.296
+logFalse += 3 * -2.27883
+logFalse -> -154.491
+var 5 at [0, 10, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -165.277
+logFalse += 12 * -0.332906
+logFalse -> -158.485
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -169.277
+logFalse += 2 * -2.27883
+logFalse -> -163.043
+var 5 at [0, 11, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -173.842
+logFalse += 11 * -0.332906
+logFalse -> -166.705
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -177.842
+logFalse += 2 * -2.27883
+logFalse -> -171.263
+var 5 at [0, 12, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -182.408
+logFalse += 11 * -0.332906
+logFalse -> -174.925
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -188.408
+logFalse += 3 * -2.27883
+logFalse -> -181.761
+var 5 at [0, 13, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.415037
+logTrue -> -194.218
+logFalse += 14 * -0.332906
+logFalse -> -186.422
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -198.218
+logFalse += 2 * -2.27883
+logFalse -> -190.98
+var 5 at [0, 14, 0](0):
+state 0, freq=16
+logTrue += 16 * -0.415037
+logTrue -> -204.859
+logFalse += 16 * -0.332906
+logFalse -> -196.306
+state 1, freq=0
+logTrue += 0 * -2
+logTrue -> -204.859
+logFalse += 0 * -2.27883
+logFalse -> -196.306
+var 5 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -50.5444
+logFalse += 11 * -0.332906
+logFalse -> -42.8594
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -56.5444
+logFalse += 3 * -2.27883
+logFalse -> -49.6959
+var 5 at [0, 1, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -61.1098
+logFalse += 11 * -0.332906
+logFalse -> -53.3578
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -65.1098
+logFalse += 2 * -2.27883
+logFalse -> -57.9155
+var 5 at [0, 2, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -69.6752
+logFalse += 11 * -0.332906
+logFalse -> -61.5775
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -75.6752
+logFalse += 3 * -2.27883
+logFalse -> -68.414
+var 5 at [0, 3, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -80.2406
+logFalse += 11 * -0.332906
+logFalse -> -72.0759
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -84.2406
+logFalse += 2 * -2.27883
+logFalse -> -76.6336
+var 5 at [0, 4, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -88.391
+logFalse += 10 * -0.332906
+logFalse -> -79.9627
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -94.391
+logFalse += 3 * -2.27883
+logFalse -> -86.7992
+var 5 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -98.1263
+logFalse += 9 * -0.332906
+logFalse -> -89.7953
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -104.126
+logFalse += 3 * -2.27883
+logFalse -> -96.6318
+var 5 at [0, 6, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -107.862
+logFalse += 9 * -0.332906
+logFalse -> -99.628
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -115.862
+logFalse += 4 * -2.27883
+logFalse -> -108.743
+var 5 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -119.597
+logFalse += 9 * -0.332906
+logFalse -> -111.739
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -125.597
+logFalse += 3 * -2.27883
+logFalse -> -118.576
+var 5 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -129.332
+logFalse += 9 * -0.332906
+logFalse -> -121.572
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -137.332
+logFalse += 4 * -2.27883
+logFalse -> -130.687
+var 5 at [0, 9, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -141.483
+logFalse += 10 * -0.332906
+logFalse -> -134.017
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -147.483
+logFalse += 3 * -2.27883
+logFalse -> -140.853
+var 5 at [0, 10, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -151.633
+logFalse += 10 * -0.332906
+logFalse -> -144.182
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -157.633
+logFalse += 3 * -2.27883
+logFalse -> -151.019
+var 5 at [0, 11, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -161.368
+logFalse += 9 * -0.332906
+logFalse -> -154.015
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -167.368
+logFalse += 3 * -2.27883
+logFalse -> -160.851
+var 5 at [0, 12, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.415037
+logTrue -> -170.689
+logFalse += 8 * -0.332906
+logFalse -> -163.514
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -178.689
+logFalse += 4 * -2.27883
+logFalse -> -172.63
+var 5 at [0, 13, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -182.424
+logFalse += 9 * -0.332906
+logFalse -> -175.626
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -190.424
+logFalse += 4 * -2.27883
+logFalse -> -184.741
+var 5 at [0, 14, 1](1):
+state 0, freq=13
+logTrue += 13 * -0.415037
+logTrue -> -195.82
+logFalse += 13 * -0.332906
+logFalse -> -189.069
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -201.82
+logFalse += 3 * -2.27883
+logFalse -> -195.906
+var 5 at 0:
+0.00265611 = exp2(-204.859)/(exp2(-204.859)+exp2(-196.306))
+0.00265611 = 2.14485e-62/(2.14485e-62+8.05372e-60)
+var 5 at 1:
+0.0163142 = exp2(-201.82)/(exp2(-201.82)+exp2(-195.906))
+0.0163142 = 1.76302e-61/(1.76302e-61+1.06304e-59)
+log priori true:  0
+log priori false: 1.58496
+rel 9
+depStateV(0)=log2((0+0.888889)/(0+1))=-0.169925
+depStateNotV(0)=log2((299+0.888889)/(317+1))=-0.0845987
+depStateV(1)=log2((0+0.111111)/(0+1))=-3.16993
+depStateNotV(1)=log2((18+0.111111)/(317+1))=-4.13408
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((317+1)/(317+1))=0
+var 6 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -1.69925
+logFalse += 10 * -0.0845987
+logFalse -> 0.738976
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.69925
+logFalse += 0 * -4.13408
+logFalse -> 0.738976
+var 6 at [0, 1, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -3.05865
+logFalse += 8 * -0.0845987
+logFalse -> 0.062186
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.05865
+logFalse += 0 * -4.13408
+logFalse -> 0.062186
+var 6 at [0, 2, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.41805
+logFalse += 8 * -0.0845987
+logFalse -> -0.614604
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -7.58798
+logFalse += 1 * -4.13408
+logFalse -> -4.74868
+var 6 at [0, 3, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -9.28723
+logFalse += 10 * -0.0845987
+logFalse -> -5.59467
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -9.28723
+logFalse += 0 * -4.13408
+logFalse -> -5.59467
+var 6 at [0, 4, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -10.8166
+logFalse += 9 * -0.0845987
+logFalse -> -6.35606
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -17.1564
+logFalse += 2 * -4.13408
+logFalse -> -14.6242
+var 6 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -19.0256
+logFalse += 11 * -0.0845987
+logFalse -> -15.5548
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -19.0256
+logFalse += 0 * -4.13408
+logFalse -> -15.5548
+var 6 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -20.7248
+logFalse += 10 * -0.0845987
+logFalse -> -16.4008
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -20.7248
+logFalse += 0 * -4.13408
+logFalse -> -16.4008
+var 6 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -22.4241
+logFalse += 10 * -0.0845987
+logFalse -> -17.2468
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -22.4241
+logFalse += 0 * -4.13408
+logFalse -> -17.2468
+var 6 at [0, 8, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -24.1233
+logFalse += 10 * -0.0845987
+logFalse -> -18.0928
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.1233
+logFalse += 0 * -4.13408
+logFalse -> -18.0928
+var 6 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -25.9925
+logFalse += 11 * -0.0845987
+logFalse -> -19.0234
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -25.9925
+logFalse += 0 * -4.13408
+logFalse -> -19.0234
+var 6 at [0, 10, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -27.6918
+logFalse += 10 * -0.0845987
+logFalse -> -19.8693
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.6918
+logFalse += 0 * -4.13408
+logFalse -> -19.8693
+var 6 at [0, 11, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2211
+logFalse += 9 * -0.0845987
+logFalse -> -20.6307
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -32.391
+logFalse += 1 * -4.13408
+logFalse -> -24.7648
+var 6 at [0, 12, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -33.9203
+logFalse += 9 * -0.0845987
+logFalse -> -25.5262
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.9203
+logFalse += 0 * -4.13408
+logFalse -> -25.5262
+var 6 at [0, 13, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -35.4497
+logFalse += 9 * -0.0845987
+logFalse -> -26.2876
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -41.7895
+logFalse += 2 * -4.13408
+logFalse -> -34.5557
+var 6 at [0, 14, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -43.6587
+logFalse += 11 * -0.0845987
+logFalse -> -35.4863
+state 1, freq=3
+logTrue += 3 * -3.16993
+logTrue -> -53.1685
+logFalse += 3 * -4.13408
+logFalse -> -47.8886
+var 6 at [0, 15, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.169925
+logTrue -> -55.5474
+logFalse += 14 * -0.0845987
+logFalse -> -49.0729
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -61.8873
+logFalse += 2 * -4.13408
+logFalse -> -57.3411
+var 6 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -1.86918
+logFalse += 11 * -0.0845987
+logFalse -> 0.654377
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.86918
+logFalse += 0 * -4.13408
+logFalse -> 0.654377
+var 6 at [0, 1, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -3.3985
+logFalse += 9 * -0.0845987
+logFalse -> -0.107011
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.3985
+logFalse += 0 * -4.13408
+logFalse -> -0.107011
+var 6 at [0, 2, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.7579
+logFalse += 8 * -0.0845987
+logFalse -> -0.783801
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -11.0978
+logFalse += 2 * -4.13408
+logFalse -> -9.05196
+var 6 at [0, 3, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -12.4572
+logFalse += 8 * -0.0845987
+logFalse -> -9.72875
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -15.6271
+logFalse += 1 * -4.13408
+logFalse -> -13.8628
+var 6 at [0, 4, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -16.9865
+logFalse += 8 * -0.0845987
+logFalse -> -14.5396
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -23.3263
+logFalse += 2 * -4.13408
+logFalse -> -22.8078
+var 6 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -24.8557
+logFalse += 9 * -0.0845987
+logFalse -> -23.5692
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.8557
+logFalse += 0 * -4.13408
+logFalse -> -23.5692
+var 6 at [0, 6, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -26.2151
+logFalse += 8 * -0.0845987
+logFalse -> -24.246
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -26.2151
+logFalse += 0 * -4.13408
+logFalse -> -24.246
+var 6 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -27.7444
+logFalse += 9 * -0.0845987
+logFalse -> -25.0073
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.7444
+logFalse += 0 * -4.13408
+logFalse -> -25.0073
+var 6 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2737
+logFalse += 9 * -0.0845987
+logFalse -> -25.7687
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -29.2737
+logFalse += 0 * -4.13408
+logFalse -> -25.7687
+var 6 at [0, 9, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -30.803
+logFalse += 9 * -0.0845987
+logFalse -> -26.5301
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -30.803
+logFalse += 0 * -4.13408
+logFalse -> -26.5301
+var 6 at [0, 10, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -32.3324
+logFalse += 9 * -0.0845987
+logFalse -> -27.2915
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -32.3324
+logFalse += 0 * -4.13408
+logFalse -> -27.2915
+var 6 at [0, 11, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -33.6918
+logFalse += 8 * -0.0845987
+logFalse -> -27.9683
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.6918
+logFalse += 0 * -4.13408
+logFalse -> -27.9683
+var 6 at [0, 12, 1](1):
+state 0, freq=7
+logTrue += 7 * -0.169925
+logTrue -> -34.8812
+logFalse += 7 * -0.0845987
+logFalse -> -28.5605
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -34.8812
+logFalse += 0 * -4.13408
+logFalse -> -28.5605
+var 6 at [0, 13, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -36.2406
+logFalse += 8 * -0.0845987
+logFalse -> -29.2373
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -36.2406
+logFalse += 0 * -4.13408
+logFalse -> -29.2373
+var 6 at [0, 14, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -37.77
+logFalse += 9 * -0.0845987
+logFalse -> -29.9987
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -37.77
+logFalse += 0 * -4.13408
+logFalse -> -29.9987
+var 6 at [0, 15, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -39.6391
+logFalse += 11 * -0.0845987
+logFalse -> -30.9293
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -45.979
+logFalse += 2 * -4.13408
+logFalse -> -39.1974
+rel 19
+depStateV(0)=log2((0+0.75)/(0+1))=-0.415037
+depStateNotV(0)=log2((320+0.75)/(403+1))=-0.332906
+depStateV(1)=log2((0+0.25)/(0+1))=-2
+depStateNotV(1)=log2((83+0.25)/(403+1))=-2.27883
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((403+1)/(403+1))=0
+var 6 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -66.0376
+logFalse += 10 * -0.332906
+logFalse -> -60.6702
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -72.0376
+logFalse += 3 * -2.27883
+logFalse -> -67.5067
+var 6 at [0, 1, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -76.188
+logFalse += 10 * -0.332906
+logFalse -> -70.8357
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -82.188
+logFalse += 3 * -2.27883
+logFalse -> -77.6722
+var 6 at [0, 2, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -86.3384
+logFalse += 10 * -0.332906
+logFalse -> -81.0013
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -92.3384
+logFalse += 3 * -2.27883
+logFalse -> -87.8378
+var 6 at [0, 3, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -97.3188
+logFalse += 12 * -0.332906
+logFalse -> -91.8327
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -103.319
+logFalse += 3 * -2.27883
+logFalse -> -98.6692
+var 6 at [0, 4, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -107.884
+logFalse += 11 * -0.332906
+logFalse -> -102.331
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -109.884
+logFalse += 1 * -2.27883
+logFalse -> -104.61
+var 6 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -114.45
+logFalse += 11 * -0.332906
+logFalse -> -108.272
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -122.45
+logFalse += 4 * -2.27883
+logFalse -> -117.387
+var 6 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -126.6
+logFalse += 10 * -0.332906
+logFalse -> -120.716
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -128.6
+logFalse += 1 * -2.27883
+logFalse -> -122.995
+var 6 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -132.75
+logFalse += 10 * -0.332906
+logFalse -> -126.324
+state 1, freq=5
+logTrue += 5 * -2
+logTrue -> -142.75
+logFalse += 5 * -2.27883
+logFalse -> -137.718
+var 6 at [0, 8, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -147.731
+logFalse += 12 * -0.332906
+logFalse -> -141.713
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -149.731
+logFalse += 1 * -2.27883
+logFalse -> -143.992
+var 6 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -154.296
+logFalse += 11 * -0.332906
+logFalse -> -147.654
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -160.296
+logFalse += 3 * -2.27883
+logFalse -> -154.491
+var 6 at [0, 10, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -165.277
+logFalse += 12 * -0.332906
+logFalse -> -158.485
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -169.277
+logFalse += 2 * -2.27883
+logFalse -> -163.043
+var 6 at [0, 11, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -173.842
+logFalse += 11 * -0.332906
+logFalse -> -166.705
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -177.842
+logFalse += 2 * -2.27883
+logFalse -> -171.263
+var 6 at [0, 12, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -182.408
+logFalse += 11 * -0.332906
+logFalse -> -174.925
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -188.408
+logFalse += 3 * -2.27883
+logFalse -> -181.761
+var 6 at [0, 13, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.415037
+logTrue -> -194.218
+logFalse += 14 * -0.332906
+logFalse -> -186.422
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -198.218
+logFalse += 2 * -2.27883
+logFalse -> -190.98
+var 6 at [0, 14, 0](0):
+state 0, freq=16
+logTrue += 16 * -0.415037
+logTrue -> -204.859
+logFalse += 16 * -0.332906
+logFalse -> -196.306
+state 1, freq=0
+logTrue += 0 * -2
+logTrue -> -204.859
+logFalse += 0 * -2.27883
+logFalse -> -196.306
+var 6 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -50.5444
+logFalse += 11 * -0.332906
+logFalse -> -42.8594
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -56.5444
+logFalse += 3 * -2.27883
+logFalse -> -49.6959
+var 6 at [0, 1, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -61.1098
+logFalse += 11 * -0.332906
+logFalse -> -53.3578
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -65.1098
+logFalse += 2 * -2.27883
+logFalse -> -57.9155
+var 6 at [0, 2, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -69.6752
+logFalse += 11 * -0.332906
+logFalse -> -61.5775
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -75.6752
+logFalse += 3 * -2.27883
+logFalse -> -68.414
+var 6 at [0, 3, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -80.2406
+logFalse += 11 * -0.332906
+logFalse -> -72.0759
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -84.2406
+logFalse += 2 * -2.27883
+logFalse -> -76.6336
+var 6 at [0, 4, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -88.391
+logFalse += 10 * -0.332906
+logFalse -> -79.9627
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -94.391
+logFalse += 3 * -2.27883
+logFalse -> -86.7992
+var 6 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -98.1263
+logFalse += 9 * -0.332906
+logFalse -> -89.7953
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -104.126
+logFalse += 3 * -2.27883
+logFalse -> -96.6318
+var 6 at [0, 6, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -107.862
+logFalse += 9 * -0.332906
+logFalse -> -99.628
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -115.862
+logFalse += 4 * -2.27883
+logFalse -> -108.743
+var 6 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -119.597
+logFalse += 9 * -0.332906
+logFalse -> -111.739
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -125.597
+logFalse += 3 * -2.27883
+logFalse -> -118.576
+var 6 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -129.332
+logFalse += 9 * -0.332906
+logFalse -> -121.572
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -137.332
+logFalse += 4 * -2.27883
+logFalse -> -130.687
+var 6 at [0, 9, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -141.483
+logFalse += 10 * -0.332906
+logFalse -> -134.017
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -147.483
+logFalse += 3 * -2.27883
+logFalse -> -140.853
+var 6 at [0, 10, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -151.633
+logFalse += 10 * -0.332906
+logFalse -> -144.182
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -157.633
+logFalse += 3 * -2.27883
+logFalse -> -151.019
+var 6 at [0, 11, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -161.368
+logFalse += 9 * -0.332906
+logFalse -> -154.015
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -167.368
+logFalse += 3 * -2.27883
+logFalse -> -160.851
+var 6 at [0, 12, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.415037
+logTrue -> -170.689
+logFalse += 8 * -0.332906
+logFalse -> -163.514
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -178.689
+logFalse += 4 * -2.27883
+logFalse -> -172.63
+var 6 at [0, 13, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -182.424
+logFalse += 9 * -0.332906
+logFalse -> -175.626
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -190.424
+logFalse += 4 * -2.27883
+logFalse -> -184.741
+var 6 at [0, 14, 1](1):
+state 0, freq=13
+logTrue += 13 * -0.415037
+logTrue -> -195.82
+logFalse += 13 * -0.332906
+logFalse -> -189.069
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -201.82
+logFalse += 3 * -2.27883
+logFalse -> -195.906
+var 6 at 0:
+0.00265611 = exp2(-204.859)/(exp2(-204.859)+exp2(-196.306))
+0.00265611 = 2.14485e-62/(2.14485e-62+8.05372e-60)
+var 6 at 1:
+0.0163142 = exp2(-201.82)/(exp2(-201.82)+exp2(-195.906))
+0.0163142 = 1.76302e-61/(1.76302e-61+1.06304e-59)
+log priori true:  0
+log priori false: 1.58496
+rel 10
+depStateV(0)=log2((0+0.888889)/(0+1))=-0.169925
+depStateNotV(0)=log2((299+0.888889)/(317+1))=-0.0845987
+depStateV(1)=log2((0+0.111111)/(0+1))=-3.16993
+depStateNotV(1)=log2((18+0.111111)/(317+1))=-4.13408
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((317+1)/(317+1))=0
+var 7 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -1.69925
+logFalse += 10 * -0.0845987
+logFalse -> 0.738976
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.69925
+logFalse += 0 * -4.13408
+logFalse -> 0.738976
+var 7 at [0, 1, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -3.05865
+logFalse += 8 * -0.0845987
+logFalse -> 0.062186
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.05865
+logFalse += 0 * -4.13408
+logFalse -> 0.062186
+var 7 at [0, 2, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.41805
+logFalse += 8 * -0.0845987
+logFalse -> -0.614604
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -7.58798
+logFalse += 1 * -4.13408
+logFalse -> -4.74868
+var 7 at [0, 3, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -9.28723
+logFalse += 10 * -0.0845987
+logFalse -> -5.59467
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -9.28723
+logFalse += 0 * -4.13408
+logFalse -> -5.59467
+var 7 at [0, 4, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -10.8166
+logFalse += 9 * -0.0845987
+logFalse -> -6.35606
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -17.1564
+logFalse += 2 * -4.13408
+logFalse -> -14.6242
+var 7 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -19.0256
+logFalse += 11 * -0.0845987
+logFalse -> -15.5548
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -19.0256
+logFalse += 0 * -4.13408
+logFalse -> -15.5548
+var 7 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -20.7248
+logFalse += 10 * -0.0845987
+logFalse -> -16.4008
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -20.7248
+logFalse += 0 * -4.13408
+logFalse -> -16.4008
+var 7 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -22.4241
+logFalse += 10 * -0.0845987
+logFalse -> -17.2468
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -22.4241
+logFalse += 0 * -4.13408
+logFalse -> -17.2468
+var 7 at [0, 8, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -24.1233
+logFalse += 10 * -0.0845987
+logFalse -> -18.0928
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.1233
+logFalse += 0 * -4.13408
+logFalse -> -18.0928
+var 7 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -25.9925
+logFalse += 11 * -0.0845987
+logFalse -> -19.0234
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -25.9925
+logFalse += 0 * -4.13408
+logFalse -> -19.0234
+var 7 at [0, 10, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -27.6918
+logFalse += 10 * -0.0845987
+logFalse -> -19.8693
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.6918
+logFalse += 0 * -4.13408
+logFalse -> -19.8693
+var 7 at [0, 11, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2211
+logFalse += 9 * -0.0845987
+logFalse -> -20.6307
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -32.391
+logFalse += 1 * -4.13408
+logFalse -> -24.7648
+var 7 at [0, 12, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -33.9203
+logFalse += 9 * -0.0845987
+logFalse -> -25.5262
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.9203
+logFalse += 0 * -4.13408
+logFalse -> -25.5262
+var 7 at [0, 13, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -35.4497
+logFalse += 9 * -0.0845987
+logFalse -> -26.2876
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -41.7895
+logFalse += 2 * -4.13408
+logFalse -> -34.5557
+var 7 at [0, 14, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -43.6587
+logFalse += 11 * -0.0845987
+logFalse -> -35.4863
+state 1, freq=3
+logTrue += 3 * -3.16993
+logTrue -> -53.1685
+logFalse += 3 * -4.13408
+logFalse -> -47.8886
+var 7 at [0, 15, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.169925
+logTrue -> -55.5474
+logFalse += 14 * -0.0845987
+logFalse -> -49.0729
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -61.8873
+logFalse += 2 * -4.13408
+logFalse -> -57.3411
+var 7 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -1.86918
+logFalse += 11 * -0.0845987
+logFalse -> 0.654377
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.86918
+logFalse += 0 * -4.13408
+logFalse -> 0.654377
+var 7 at [0, 1, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -3.3985
+logFalse += 9 * -0.0845987
+logFalse -> -0.107011
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.3985
+logFalse += 0 * -4.13408
+logFalse -> -0.107011
+var 7 at [0, 2, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.7579
+logFalse += 8 * -0.0845987
+logFalse -> -0.783801
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -11.0978
+logFalse += 2 * -4.13408
+logFalse -> -9.05196
+var 7 at [0, 3, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -12.4572
+logFalse += 8 * -0.0845987
+logFalse -> -9.72875
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -15.6271
+logFalse += 1 * -4.13408
+logFalse -> -13.8628
+var 7 at [0, 4, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -16.9865
+logFalse += 8 * -0.0845987
+logFalse -> -14.5396
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -23.3263
+logFalse += 2 * -4.13408
+logFalse -> -22.8078
+var 7 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -24.8557
+logFalse += 9 * -0.0845987
+logFalse -> -23.5692
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.8557
+logFalse += 0 * -4.13408
+logFalse -> -23.5692
+var 7 at [0, 6, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -26.2151
+logFalse += 8 * -0.0845987
+logFalse -> -24.246
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -26.2151
+logFalse += 0 * -4.13408
+logFalse -> -24.246
+var 7 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -27.7444
+logFalse += 9 * -0.0845987
+logFalse -> -25.0073
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.7444
+logFalse += 0 * -4.13408
+logFalse -> -25.0073
+var 7 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2737
+logFalse += 9 * -0.0845987
+logFalse -> -25.7687
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -29.2737
+logFalse += 0 * -4.13408
+logFalse -> -25.7687
+var 7 at [0, 9, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -30.803
+logFalse += 9 * -0.0845987
+logFalse -> -26.5301
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -30.803
+logFalse += 0 * -4.13408
+logFalse -> -26.5301
+var 7 at [0, 10, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -32.3324
+logFalse += 9 * -0.0845987
+logFalse -> -27.2915
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -32.3324
+logFalse += 0 * -4.13408
+logFalse -> -27.2915
+var 7 at [0, 11, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -33.6918
+logFalse += 8 * -0.0845987
+logFalse -> -27.9683
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.6918
+logFalse += 0 * -4.13408
+logFalse -> -27.9683
+var 7 at [0, 12, 1](1):
+state 0, freq=7
+logTrue += 7 * -0.169925
+logTrue -> -34.8812
+logFalse += 7 * -0.0845987
+logFalse -> -28.5605
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -34.8812
+logFalse += 0 * -4.13408
+logFalse -> -28.5605
+var 7 at [0, 13, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -36.2406
+logFalse += 8 * -0.0845987
+logFalse -> -29.2373
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -36.2406
+logFalse += 0 * -4.13408
+logFalse -> -29.2373
+var 7 at [0, 14, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -37.77
+logFalse += 9 * -0.0845987
+logFalse -> -29.9987
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -37.77
+logFalse += 0 * -4.13408
+logFalse -> -29.9987
+var 7 at [0, 15, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -39.6391
+logFalse += 11 * -0.0845987
+logFalse -> -30.9293
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -45.979
+logFalse += 2 * -4.13408
+logFalse -> -39.1974
+rel 26
+depStateV(0)=log2((0+0.75)/(0+1))=-0.415037
+depStateNotV(0)=log2((320+0.75)/(403+1))=-0.332906
+depStateV(1)=log2((0+0.25)/(0+1))=-2
+depStateNotV(1)=log2((83+0.25)/(403+1))=-2.27883
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((403+1)/(403+1))=0
+var 7 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -66.0376
+logFalse += 10 * -0.332906
+logFalse -> -60.6702
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -72.0376
+logFalse += 3 * -2.27883
+logFalse -> -67.5067
+var 7 at [0, 1, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -76.188
+logFalse += 10 * -0.332906
+logFalse -> -70.8357
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -82.188
+logFalse += 3 * -2.27883
+logFalse -> -77.6722
+var 7 at [0, 2, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -86.3384
+logFalse += 10 * -0.332906
+logFalse -> -81.0013
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -92.3384
+logFalse += 3 * -2.27883
+logFalse -> -87.8378
+var 7 at [0, 3, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -97.3188
+logFalse += 12 * -0.332906
+logFalse -> -91.8327
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -103.319
+logFalse += 3 * -2.27883
+logFalse -> -98.6692
+var 7 at [0, 4, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -107.884
+logFalse += 11 * -0.332906
+logFalse -> -102.331
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -109.884
+logFalse += 1 * -2.27883
+logFalse -> -104.61
+var 7 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -114.45
+logFalse += 11 * -0.332906
+logFalse -> -108.272
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -122.45
+logFalse += 4 * -2.27883
+logFalse -> -117.387
+var 7 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -126.6
+logFalse += 10 * -0.332906
+logFalse -> -120.716
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -128.6
+logFalse += 1 * -2.27883
+logFalse -> -122.995
+var 7 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -132.75
+logFalse += 10 * -0.332906
+logFalse -> -126.324
+state 1, freq=5
+logTrue += 5 * -2
+logTrue -> -142.75
+logFalse += 5 * -2.27883
+logFalse -> -137.718
+var 7 at [0, 8, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -147.731
+logFalse += 12 * -0.332906
+logFalse -> -141.713
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -149.731
+logFalse += 1 * -2.27883
+logFalse -> -143.992
+var 7 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -154.296
+logFalse += 11 * -0.332906
+logFalse -> -147.654
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -160.296
+logFalse += 3 * -2.27883
+logFalse -> -154.491
+var 7 at [0, 10, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -165.277
+logFalse += 12 * -0.332906
+logFalse -> -158.485
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -169.277
+logFalse += 2 * -2.27883
+logFalse -> -163.043
+var 7 at [0, 11, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -173.842
+logFalse += 11 * -0.332906
+logFalse -> -166.705
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -177.842
+logFalse += 2 * -2.27883
+logFalse -> -171.263
+var 7 at [0, 12, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -182.408
+logFalse += 11 * -0.332906
+logFalse -> -174.925
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -188.408
+logFalse += 3 * -2.27883
+logFalse -> -181.761
+var 7 at [0, 13, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.415037
+logTrue -> -194.218
+logFalse += 14 * -0.332906
+logFalse -> -186.422
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -198.218
+logFalse += 2 * -2.27883
+logFalse -> -190.98
+var 7 at [0, 14, 0](0):
+state 0, freq=16
+logTrue += 16 * -0.415037
+logTrue -> -204.859
+logFalse += 16 * -0.332906
+logFalse -> -196.306
+state 1, freq=0
+logTrue += 0 * -2
+logTrue -> -204.859
+logFalse += 0 * -2.27883
+logFalse -> -196.306
+var 7 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -50.5444
+logFalse += 11 * -0.332906
+logFalse -> -42.8594
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -56.5444
+logFalse += 3 * -2.27883
+logFalse -> -49.6959
+var 7 at [0, 1, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -61.1098
+logFalse += 11 * -0.332906
+logFalse -> -53.3578
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -65.1098
+logFalse += 2 * -2.27883
+logFalse -> -57.9155
+var 7 at [0, 2, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -69.6752
+logFalse += 11 * -0.332906
+logFalse -> -61.5775
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -75.6752
+logFalse += 3 * -2.27883
+logFalse -> -68.414
+var 7 at [0, 3, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -80.2406
+logFalse += 11 * -0.332906
+logFalse -> -72.0759
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -84.2406
+logFalse += 2 * -2.27883
+logFalse -> -76.6336
+var 7 at [0, 4, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -88.391
+logFalse += 10 * -0.332906
+logFalse -> -79.9627
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -94.391
+logFalse += 3 * -2.27883
+logFalse -> -86.7992
+var 7 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -98.1263
+logFalse += 9 * -0.332906
+logFalse -> -89.7953
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -104.126
+logFalse += 3 * -2.27883
+logFalse -> -96.6318
+var 7 at [0, 6, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -107.862
+logFalse += 9 * -0.332906
+logFalse -> -99.628
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -115.862
+logFalse += 4 * -2.27883
+logFalse -> -108.743
+var 7 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -119.597
+logFalse += 9 * -0.332906
+logFalse -> -111.739
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -125.597
+logFalse += 3 * -2.27883
+logFalse -> -118.576
+var 7 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -129.332
+logFalse += 9 * -0.332906
+logFalse -> -121.572
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -137.332
+logFalse += 4 * -2.27883
+logFalse -> -130.687
+var 7 at [0, 9, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -141.483
+logFalse += 10 * -0.332906
+logFalse -> -134.017
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -147.483
+logFalse += 3 * -2.27883
+logFalse -> -140.853
+var 7 at [0, 10, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -151.633
+logFalse += 10 * -0.332906
+logFalse -> -144.182
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -157.633
+logFalse += 3 * -2.27883
+logFalse -> -151.019
+var 7 at [0, 11, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -161.368
+logFalse += 9 * -0.332906
+logFalse -> -154.015
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -167.368
+logFalse += 3 * -2.27883
+logFalse -> -160.851
+var 7 at [0, 12, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.415037
+logTrue -> -170.689
+logFalse += 8 * -0.332906
+logFalse -> -163.514
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -178.689
+logFalse += 4 * -2.27883
+logFalse -> -172.63
+var 7 at [0, 13, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -182.424
+logFalse += 9 * -0.332906
+logFalse -> -175.626
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -190.424
+logFalse += 4 * -2.27883
+logFalse -> -184.741
+var 7 at [0, 14, 1](1):
+state 0, freq=13
+logTrue += 13 * -0.415037
+logTrue -> -195.82
+logFalse += 13 * -0.332906
+logFalse -> -189.069
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -201.82
+logFalse += 3 * -2.27883
+logFalse -> -195.906
+var 7 at 0:
+0.00265611 = exp2(-204.859)/(exp2(-204.859)+exp2(-196.306))
+0.00265611 = 2.14485e-62/(2.14485e-62+8.05372e-60)
+var 7 at 1:
+0.0163142 = exp2(-201.82)/(exp2(-201.82)+exp2(-195.906))
+0.0163142 = 1.76302e-61/(1.76302e-61+1.06304e-59)
+log priori true:  0
+log priori false: 1.58496
+rel 11
+depStateV(0)=log2((0+0.888889)/(0+1))=-0.169925
+depStateNotV(0)=log2((299+0.888889)/(317+1))=-0.0845987
+depStateV(1)=log2((0+0.111111)/(0+1))=-3.16993
+depStateNotV(1)=log2((18+0.111111)/(317+1))=-4.13408
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((317+1)/(317+1))=0
+var 8 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -1.69925
+logFalse += 10 * -0.0845987
+logFalse -> 0.738976
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.69925
+logFalse += 0 * -4.13408
+logFalse -> 0.738976
+var 8 at [0, 1, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -3.05865
+logFalse += 8 * -0.0845987
+logFalse -> 0.062186
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.05865
+logFalse += 0 * -4.13408
+logFalse -> 0.062186
+var 8 at [0, 2, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.41805
+logFalse += 8 * -0.0845987
+logFalse -> -0.614604
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -7.58798
+logFalse += 1 * -4.13408
+logFalse -> -4.74868
+var 8 at [0, 3, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -9.28723
+logFalse += 10 * -0.0845987
+logFalse -> -5.59467
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -9.28723
+logFalse += 0 * -4.13408
+logFalse -> -5.59467
+var 8 at [0, 4, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -10.8166
+logFalse += 9 * -0.0845987
+logFalse -> -6.35606
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -17.1564
+logFalse += 2 * -4.13408
+logFalse -> -14.6242
+var 8 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -19.0256
+logFalse += 11 * -0.0845987
+logFalse -> -15.5548
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -19.0256
+logFalse += 0 * -4.13408
+logFalse -> -15.5548
+var 8 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -20.7248
+logFalse += 10 * -0.0845987
+logFalse -> -16.4008
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -20.7248
+logFalse += 0 * -4.13408
+logFalse -> -16.4008
+var 8 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -22.4241
+logFalse += 10 * -0.0845987
+logFalse -> -17.2468
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -22.4241
+logFalse += 0 * -4.13408
+logFalse -> -17.2468
+var 8 at [0, 8, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -24.1233
+logFalse += 10 * -0.0845987
+logFalse -> -18.0928
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.1233
+logFalse += 0 * -4.13408
+logFalse -> -18.0928
+var 8 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -25.9925
+logFalse += 11 * -0.0845987
+logFalse -> -19.0234
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -25.9925
+logFalse += 0 * -4.13408
+logFalse -> -19.0234
+var 8 at [0, 10, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -27.6918
+logFalse += 10 * -0.0845987
+logFalse -> -19.8693
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.6918
+logFalse += 0 * -4.13408
+logFalse -> -19.8693
+var 8 at [0, 11, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2211
+logFalse += 9 * -0.0845987
+logFalse -> -20.6307
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -32.391
+logFalse += 1 * -4.13408
+logFalse -> -24.7648
+var 8 at [0, 12, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -33.9203
+logFalse += 9 * -0.0845987
+logFalse -> -25.5262
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.9203
+logFalse += 0 * -4.13408
+logFalse -> -25.5262
+var 8 at [0, 13, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -35.4497
+logFalse += 9 * -0.0845987
+logFalse -> -26.2876
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -41.7895
+logFalse += 2 * -4.13408
+logFalse -> -34.5557
+var 8 at [0, 14, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -43.6587
+logFalse += 11 * -0.0845987
+logFalse -> -35.4863
+state 1, freq=3
+logTrue += 3 * -3.16993
+logTrue -> -53.1685
+logFalse += 3 * -4.13408
+logFalse -> -47.8886
+var 8 at [0, 15, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.169925
+logTrue -> -55.5474
+logFalse += 14 * -0.0845987
+logFalse -> -49.0729
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -61.8873
+logFalse += 2 * -4.13408
+logFalse -> -57.3411
+var 8 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -1.86918
+logFalse += 11 * -0.0845987
+logFalse -> 0.654377
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.86918
+logFalse += 0 * -4.13408
+logFalse -> 0.654377
+var 8 at [0, 1, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -3.3985
+logFalse += 9 * -0.0845987
+logFalse -> -0.107011
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.3985
+logFalse += 0 * -4.13408
+logFalse -> -0.107011
+var 8 at [0, 2, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.7579
+logFalse += 8 * -0.0845987
+logFalse -> -0.783801
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -11.0978
+logFalse += 2 * -4.13408
+logFalse -> -9.05196
+var 8 at [0, 3, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -12.4572
+logFalse += 8 * -0.0845987
+logFalse -> -9.72875
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -15.6271
+logFalse += 1 * -4.13408
+logFalse -> -13.8628
+var 8 at [0, 4, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -16.9865
+logFalse += 8 * -0.0845987
+logFalse -> -14.5396
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -23.3263
+logFalse += 2 * -4.13408
+logFalse -> -22.8078
+var 8 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -24.8557
+logFalse += 9 * -0.0845987
+logFalse -> -23.5692
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.8557
+logFalse += 0 * -4.13408
+logFalse -> -23.5692
+var 8 at [0, 6, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -26.2151
+logFalse += 8 * -0.0845987
+logFalse -> -24.246
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -26.2151
+logFalse += 0 * -4.13408
+logFalse -> -24.246
+var 8 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -27.7444
+logFalse += 9 * -0.0845987
+logFalse -> -25.0073
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.7444
+logFalse += 0 * -4.13408
+logFalse -> -25.0073
+var 8 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2737
+logFalse += 9 * -0.0845987
+logFalse -> -25.7687
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -29.2737
+logFalse += 0 * -4.13408
+logFalse -> -25.7687
+var 8 at [0, 9, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -30.803
+logFalse += 9 * -0.0845987
+logFalse -> -26.5301
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -30.803
+logFalse += 0 * -4.13408
+logFalse -> -26.5301
+var 8 at [0, 10, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -32.3324
+logFalse += 9 * -0.0845987
+logFalse -> -27.2915
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -32.3324
+logFalse += 0 * -4.13408
+logFalse -> -27.2915
+var 8 at [0, 11, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -33.6918
+logFalse += 8 * -0.0845987
+logFalse -> -27.9683
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.6918
+logFalse += 0 * -4.13408
+logFalse -> -27.9683
+var 8 at [0, 12, 1](1):
+state 0, freq=7
+logTrue += 7 * -0.169925
+logTrue -> -34.8812
+logFalse += 7 * -0.0845987
+logFalse -> -28.5605
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -34.8812
+logFalse += 0 * -4.13408
+logFalse -> -28.5605
+var 8 at [0, 13, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -36.2406
+logFalse += 8 * -0.0845987
+logFalse -> -29.2373
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -36.2406
+logFalse += 0 * -4.13408
+logFalse -> -29.2373
+var 8 at [0, 14, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -37.77
+logFalse += 9 * -0.0845987
+logFalse -> -29.9987
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -37.77
+logFalse += 0 * -4.13408
+logFalse -> -29.9987
+var 8 at [0, 15, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -39.6391
+logFalse += 11 * -0.0845987
+logFalse -> -30.9293
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -45.979
+logFalse += 2 * -4.13408
+logFalse -> -39.1974
+rel 27
+depStateV(0)=log2((0+0.75)/(0+1))=-0.415037
+depStateNotV(0)=log2((320+0.75)/(403+1))=-0.332906
+depStateV(1)=log2((0+0.25)/(0+1))=-2
+depStateNotV(1)=log2((83+0.25)/(403+1))=-2.27883
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((403+1)/(403+1))=0
+var 8 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -66.0376
+logFalse += 10 * -0.332906
+logFalse -> -60.6702
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -72.0376
+logFalse += 3 * -2.27883
+logFalse -> -67.5067
+var 8 at [0, 1, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -76.188
+logFalse += 10 * -0.332906
+logFalse -> -70.8357
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -82.188
+logFalse += 3 * -2.27883
+logFalse -> -77.6722
+var 8 at [0, 2, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -86.3384
+logFalse += 10 * -0.332906
+logFalse -> -81.0013
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -92.3384
+logFalse += 3 * -2.27883
+logFalse -> -87.8378
+var 8 at [0, 3, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -97.3188
+logFalse += 12 * -0.332906
+logFalse -> -91.8327
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -103.319
+logFalse += 3 * -2.27883
+logFalse -> -98.6692
+var 8 at [0, 4, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -107.884
+logFalse += 11 * -0.332906
+logFalse -> -102.331
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -109.884
+logFalse += 1 * -2.27883
+logFalse -> -104.61
+var 8 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -114.45
+logFalse += 11 * -0.332906
+logFalse -> -108.272
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -122.45
+logFalse += 4 * -2.27883
+logFalse -> -117.387
+var 8 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -126.6
+logFalse += 10 * -0.332906
+logFalse -> -120.716
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -128.6
+logFalse += 1 * -2.27883
+logFalse -> -122.995
+var 8 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -132.75
+logFalse += 10 * -0.332906
+logFalse -> -126.324
+state 1, freq=5
+logTrue += 5 * -2
+logTrue -> -142.75
+logFalse += 5 * -2.27883
+logFalse -> -137.718
+var 8 at [0, 8, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -147.731
+logFalse += 12 * -0.332906
+logFalse -> -141.713
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -149.731
+logFalse += 1 * -2.27883
+logFalse -> -143.992
+var 8 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -154.296
+logFalse += 11 * -0.332906
+logFalse -> -147.654
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -160.296
+logFalse += 3 * -2.27883
+logFalse -> -154.491
+var 8 at [0, 10, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -165.277
+logFalse += 12 * -0.332906
+logFalse -> -158.485
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -169.277
+logFalse += 2 * -2.27883
+logFalse -> -163.043
+var 8 at [0, 11, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -173.842
+logFalse += 11 * -0.332906
+logFalse -> -166.705
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -177.842
+logFalse += 2 * -2.27883
+logFalse -> -171.263
+var 8 at [0, 12, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -182.408
+logFalse += 11 * -0.332906
+logFalse -> -174.925
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -188.408
+logFalse += 3 * -2.27883
+logFalse -> -181.761
+var 8 at [0, 13, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.415037
+logTrue -> -194.218
+logFalse += 14 * -0.332906
+logFalse -> -186.422
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -198.218
+logFalse += 2 * -2.27883
+logFalse -> -190.98
+var 8 at [0, 14, 0](0):
+state 0, freq=16
+logTrue += 16 * -0.415037
+logTrue -> -204.859
+logFalse += 16 * -0.332906
+logFalse -> -196.306
+state 1, freq=0
+logTrue += 0 * -2
+logTrue -> -204.859
+logFalse += 0 * -2.27883
+logFalse -> -196.306
+var 8 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -50.5444
+logFalse += 11 * -0.332906
+logFalse -> -42.8594
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -56.5444
+logFalse += 3 * -2.27883
+logFalse -> -49.6959
+var 8 at [0, 1, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -61.1098
+logFalse += 11 * -0.332906
+logFalse -> -53.3578
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -65.1098
+logFalse += 2 * -2.27883
+logFalse -> -57.9155
+var 8 at [0, 2, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -69.6752
+logFalse += 11 * -0.332906
+logFalse -> -61.5775
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -75.6752
+logFalse += 3 * -2.27883
+logFalse -> -68.414
+var 8 at [0, 3, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -80.2406
+logFalse += 11 * -0.332906
+logFalse -> -72.0759
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -84.2406
+logFalse += 2 * -2.27883
+logFalse -> -76.6336
+var 8 at [0, 4, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -88.391
+logFalse += 10 * -0.332906
+logFalse -> -79.9627
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -94.391
+logFalse += 3 * -2.27883
+logFalse -> -86.7992
+var 8 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -98.1263
+logFalse += 9 * -0.332906
+logFalse -> -89.7953
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -104.126
+logFalse += 3 * -2.27883
+logFalse -> -96.6318
+var 8 at [0, 6, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -107.862
+logFalse += 9 * -0.332906
+logFalse -> -99.628
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -115.862
+logFalse += 4 * -2.27883
+logFalse -> -108.743
+var 8 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -119.597
+logFalse += 9 * -0.332906
+logFalse -> -111.739
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -125.597
+logFalse += 3 * -2.27883
+logFalse -> -118.576
+var 8 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -129.332
+logFalse += 9 * -0.332906
+logFalse -> -121.572
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -137.332
+logFalse += 4 * -2.27883
+logFalse -> -130.687
+var 8 at [0, 9, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -141.483
+logFalse += 10 * -0.332906
+logFalse -> -134.017
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -147.483
+logFalse += 3 * -2.27883
+logFalse -> -140.853
+var 8 at [0, 10, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -151.633
+logFalse += 10 * -0.332906
+logFalse -> -144.182
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -157.633
+logFalse += 3 * -2.27883
+logFalse -> -151.019
+var 8 at [0, 11, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -161.368
+logFalse += 9 * -0.332906
+logFalse -> -154.015
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -167.368
+logFalse += 3 * -2.27883
+logFalse -> -160.851
+var 8 at [0, 12, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.415037
+logTrue -> -170.689
+logFalse += 8 * -0.332906
+logFalse -> -163.514
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -178.689
+logFalse += 4 * -2.27883
+logFalse -> -172.63
+var 8 at [0, 13, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -182.424
+logFalse += 9 * -0.332906
+logFalse -> -175.626
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -190.424
+logFalse += 4 * -2.27883
+logFalse -> -184.741
+var 8 at [0, 14, 1](1):
+state 0, freq=13
+logTrue += 13 * -0.415037
+logTrue -> -195.82
+logFalse += 13 * -0.332906
+logFalse -> -189.069
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -201.82
+logFalse += 3 * -2.27883
+logFalse -> -195.906
+var 8 at 0:
+0.00265611 = exp2(-204.859)/(exp2(-204.859)+exp2(-196.306))
+0.00265611 = 2.14485e-62/(2.14485e-62+8.05372e-60)
+var 8 at 1:
+0.0163142 = exp2(-201.82)/(exp2(-201.82)+exp2(-195.906))
+0.0163142 = 1.76302e-61/(1.76302e-61+1.06304e-59)
+log priori true:  0
+log priori false: 1.58496
+rel 12
+depStateV(0)=log2((0+0.888889)/(0+1))=-0.169925
+depStateNotV(0)=log2((299+0.888889)/(317+1))=-0.0845987
+depStateV(1)=log2((0+0.111111)/(0+1))=-3.16993
+depStateNotV(1)=log2((18+0.111111)/(317+1))=-4.13408
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((317+1)/(317+1))=0
+var 9 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -1.69925
+logFalse += 10 * -0.0845987
+logFalse -> 0.738976
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.69925
+logFalse += 0 * -4.13408
+logFalse -> 0.738976
+var 9 at [0, 1, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -3.05865
+logFalse += 8 * -0.0845987
+logFalse -> 0.062186
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.05865
+logFalse += 0 * -4.13408
+logFalse -> 0.062186
+var 9 at [0, 2, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.41805
+logFalse += 8 * -0.0845987
+logFalse -> -0.614604
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -7.58798
+logFalse += 1 * -4.13408
+logFalse -> -4.74868
+var 9 at [0, 3, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -9.28723
+logFalse += 10 * -0.0845987
+logFalse -> -5.59467
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -9.28723
+logFalse += 0 * -4.13408
+logFalse -> -5.59467
+var 9 at [0, 4, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -10.8166
+logFalse += 9 * -0.0845987
+logFalse -> -6.35606
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -17.1564
+logFalse += 2 * -4.13408
+logFalse -> -14.6242
+var 9 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -19.0256
+logFalse += 11 * -0.0845987
+logFalse -> -15.5548
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -19.0256
+logFalse += 0 * -4.13408
+logFalse -> -15.5548
+var 9 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -20.7248
+logFalse += 10 * -0.0845987
+logFalse -> -16.4008
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -20.7248
+logFalse += 0 * -4.13408
+logFalse -> -16.4008
+var 9 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -22.4241
+logFalse += 10 * -0.0845987
+logFalse -> -17.2468
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -22.4241
+logFalse += 0 * -4.13408
+logFalse -> -17.2468
+var 9 at [0, 8, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -24.1233
+logFalse += 10 * -0.0845987
+logFalse -> -18.0928
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.1233
+logFalse += 0 * -4.13408
+logFalse -> -18.0928
+var 9 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -25.9925
+logFalse += 11 * -0.0845987
+logFalse -> -19.0234
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -25.9925
+logFalse += 0 * -4.13408
+logFalse -> -19.0234
+var 9 at [0, 10, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -27.6918
+logFalse += 10 * -0.0845987
+logFalse -> -19.8693
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.6918
+logFalse += 0 * -4.13408
+logFalse -> -19.8693
+var 9 at [0, 11, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2211
+logFalse += 9 * -0.0845987
+logFalse -> -20.6307
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -32.391
+logFalse += 1 * -4.13408
+logFalse -> -24.7648
+var 9 at [0, 12, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -33.9203
+logFalse += 9 * -0.0845987
+logFalse -> -25.5262
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.9203
+logFalse += 0 * -4.13408
+logFalse -> -25.5262
+var 9 at [0, 13, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -35.4497
+logFalse += 9 * -0.0845987
+logFalse -> -26.2876
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -41.7895
+logFalse += 2 * -4.13408
+logFalse -> -34.5557
+var 9 at [0, 14, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -43.6587
+logFalse += 11 * -0.0845987
+logFalse -> -35.4863
+state 1, freq=3
+logTrue += 3 * -3.16993
+logTrue -> -53.1685
+logFalse += 3 * -4.13408
+logFalse -> -47.8886
+var 9 at [0, 15, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.169925
+logTrue -> -55.5474
+logFalse += 14 * -0.0845987
+logFalse -> -49.0729
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -61.8873
+logFalse += 2 * -4.13408
+logFalse -> -57.3411
+var 9 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -1.86918
+logFalse += 11 * -0.0845987
+logFalse -> 0.654377
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.86918
+logFalse += 0 * -4.13408
+logFalse -> 0.654377
+var 9 at [0, 1, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -3.3985
+logFalse += 9 * -0.0845987
+logFalse -> -0.107011
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.3985
+logFalse += 0 * -4.13408
+logFalse -> -0.107011
+var 9 at [0, 2, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.7579
+logFalse += 8 * -0.0845987
+logFalse -> -0.783801
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -11.0978
+logFalse += 2 * -4.13408
+logFalse -> -9.05196
+var 9 at [0, 3, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -12.4572
+logFalse += 8 * -0.0845987
+logFalse -> -9.72875
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -15.6271
+logFalse += 1 * -4.13408
+logFalse -> -13.8628
+var 9 at [0, 4, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -16.9865
+logFalse += 8 * -0.0845987
+logFalse -> -14.5396
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -23.3263
+logFalse += 2 * -4.13408
+logFalse -> -22.8078
+var 9 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -24.8557
+logFalse += 9 * -0.0845987
+logFalse -> -23.5692
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.8557
+logFalse += 0 * -4.13408
+logFalse -> -23.5692
+var 9 at [0, 6, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -26.2151
+logFalse += 8 * -0.0845987
+logFalse -> -24.246
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -26.2151
+logFalse += 0 * -4.13408
+logFalse -> -24.246
+var 9 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -27.7444
+logFalse += 9 * -0.0845987
+logFalse -> -25.0073
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.7444
+logFalse += 0 * -4.13408
+logFalse -> -25.0073
+var 9 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2737
+logFalse += 9 * -0.0845987
+logFalse -> -25.7687
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -29.2737
+logFalse += 0 * -4.13408
+logFalse -> -25.7687
+var 9 at [0, 9, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -30.803
+logFalse += 9 * -0.0845987
+logFalse -> -26.5301
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -30.803
+logFalse += 0 * -4.13408
+logFalse -> -26.5301
+var 9 at [0, 10, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -32.3324
+logFalse += 9 * -0.0845987
+logFalse -> -27.2915
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -32.3324
+logFalse += 0 * -4.13408
+logFalse -> -27.2915
+var 9 at [0, 11, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -33.6918
+logFalse += 8 * -0.0845987
+logFalse -> -27.9683
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.6918
+logFalse += 0 * -4.13408
+logFalse -> -27.9683
+var 9 at [0, 12, 1](1):
+state 0, freq=7
+logTrue += 7 * -0.169925
+logTrue -> -34.8812
+logFalse += 7 * -0.0845987
+logFalse -> -28.5605
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -34.8812
+logFalse += 0 * -4.13408
+logFalse -> -28.5605
+var 9 at [0, 13, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -36.2406
+logFalse += 8 * -0.0845987
+logFalse -> -29.2373
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -36.2406
+logFalse += 0 * -4.13408
+logFalse -> -29.2373
+var 9 at [0, 14, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -37.77
+logFalse += 9 * -0.0845987
+logFalse -> -29.9987
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -37.77
+logFalse += 0 * -4.13408
+logFalse -> -29.9987
+var 9 at [0, 15, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -39.6391
+logFalse += 11 * -0.0845987
+logFalse -> -30.9293
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -45.979
+logFalse += 2 * -4.13408
+logFalse -> -39.1974
+rel 31
+depStateV(0)=log2((0+0.75)/(0+1))=-0.415037
+depStateNotV(0)=log2((320+0.75)/(403+1))=-0.332906
+depStateV(1)=log2((0+0.25)/(0+1))=-2
+depStateNotV(1)=log2((83+0.25)/(403+1))=-2.27883
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((403+1)/(403+1))=0
+var 9 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -66.0376
+logFalse += 10 * -0.332906
+logFalse -> -60.6702
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -72.0376
+logFalse += 3 * -2.27883
+logFalse -> -67.5067
+var 9 at [0, 1, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -76.188
+logFalse += 10 * -0.332906
+logFalse -> -70.8357
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -82.188
+logFalse += 3 * -2.27883
+logFalse -> -77.6722
+var 9 at [0, 2, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -86.3384
+logFalse += 10 * -0.332906
+logFalse -> -81.0013
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -92.3384
+logFalse += 3 * -2.27883
+logFalse -> -87.8378
+var 9 at [0, 3, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -97.3188
+logFalse += 12 * -0.332906
+logFalse -> -91.8327
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -103.319
+logFalse += 3 * -2.27883
+logFalse -> -98.6692
+var 9 at [0, 4, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -107.884
+logFalse += 11 * -0.332906
+logFalse -> -102.331
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -109.884
+logFalse += 1 * -2.27883
+logFalse -> -104.61
+var 9 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -114.45
+logFalse += 11 * -0.332906
+logFalse -> -108.272
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -122.45
+logFalse += 4 * -2.27883
+logFalse -> -117.387
+var 9 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -126.6
+logFalse += 10 * -0.332906
+logFalse -> -120.716
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -128.6
+logFalse += 1 * -2.27883
+logFalse -> -122.995
+var 9 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -132.75
+logFalse += 10 * -0.332906
+logFalse -> -126.324
+state 1, freq=5
+logTrue += 5 * -2
+logTrue -> -142.75
+logFalse += 5 * -2.27883
+logFalse -> -137.718
+var 9 at [0, 8, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -147.731
+logFalse += 12 * -0.332906
+logFalse -> -141.713
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -149.731
+logFalse += 1 * -2.27883
+logFalse -> -143.992
+var 9 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -154.296
+logFalse += 11 * -0.332906
+logFalse -> -147.654
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -160.296
+logFalse += 3 * -2.27883
+logFalse -> -154.491
+var 9 at [0, 10, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -165.277
+logFalse += 12 * -0.332906
+logFalse -> -158.485
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -169.277
+logFalse += 2 * -2.27883
+logFalse -> -163.043
+var 9 at [0, 11, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -173.842
+logFalse += 11 * -0.332906
+logFalse -> -166.705
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -177.842
+logFalse += 2 * -2.27883
+logFalse -> -171.263
+var 9 at [0, 12, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -182.408
+logFalse += 11 * -0.332906
+logFalse -> -174.925
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -188.408
+logFalse += 3 * -2.27883
+logFalse -> -181.761
+var 9 at [0, 13, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.415037
+logTrue -> -194.218
+logFalse += 14 * -0.332906
+logFalse -> -186.422
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -198.218
+logFalse += 2 * -2.27883
+logFalse -> -190.98
+var 9 at [0, 14, 0](0):
+state 0, freq=16
+logTrue += 16 * -0.415037
+logTrue -> -204.859
+logFalse += 16 * -0.332906
+logFalse -> -196.306
+state 1, freq=0
+logTrue += 0 * -2
+logTrue -> -204.859
+logFalse += 0 * -2.27883
+logFalse -> -196.306
+var 9 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -50.5444
+logFalse += 11 * -0.332906
+logFalse -> -42.8594
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -56.5444
+logFalse += 3 * -2.27883
+logFalse -> -49.6959
+var 9 at [0, 1, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -61.1098
+logFalse += 11 * -0.332906
+logFalse -> -53.3578
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -65.1098
+logFalse += 2 * -2.27883
+logFalse -> -57.9155
+var 9 at [0, 2, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -69.6752
+logFalse += 11 * -0.332906
+logFalse -> -61.5775
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -75.6752
+logFalse += 3 * -2.27883
+logFalse -> -68.414
+var 9 at [0, 3, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -80.2406
+logFalse += 11 * -0.332906
+logFalse -> -72.0759
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -84.2406
+logFalse += 2 * -2.27883
+logFalse -> -76.6336
+var 9 at [0, 4, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -88.391
+logFalse += 10 * -0.332906
+logFalse -> -79.9627
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -94.391
+logFalse += 3 * -2.27883
+logFalse -> -86.7992
+var 9 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -98.1263
+logFalse += 9 * -0.332906
+logFalse -> -89.7953
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -104.126
+logFalse += 3 * -2.27883
+logFalse -> -96.6318
+var 9 at [0, 6, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -107.862
+logFalse += 9 * -0.332906
+logFalse -> -99.628
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -115.862
+logFalse += 4 * -2.27883
+logFalse -> -108.743
+var 9 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -119.597
+logFalse += 9 * -0.332906
+logFalse -> -111.739
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -125.597
+logFalse += 3 * -2.27883
+logFalse -> -118.576
+var 9 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -129.332
+logFalse += 9 * -0.332906
+logFalse -> -121.572
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -137.332
+logFalse += 4 * -2.27883
+logFalse -> -130.687
+var 9 at [0, 9, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -141.483
+logFalse += 10 * -0.332906
+logFalse -> -134.017
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -147.483
+logFalse += 3 * -2.27883
+logFalse -> -140.853
+var 9 at [0, 10, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -151.633
+logFalse += 10 * -0.332906
+logFalse -> -144.182
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -157.633
+logFalse += 3 * -2.27883
+logFalse -> -151.019
+var 9 at [0, 11, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -161.368
+logFalse += 9 * -0.332906
+logFalse -> -154.015
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -167.368
+logFalse += 3 * -2.27883
+logFalse -> -160.851
+var 9 at [0, 12, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.415037
+logTrue -> -170.689
+logFalse += 8 * -0.332906
+logFalse -> -163.514
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -178.689
+logFalse += 4 * -2.27883
+logFalse -> -172.63
+var 9 at [0, 13, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -182.424
+logFalse += 9 * -0.332906
+logFalse -> -175.626
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -190.424
+logFalse += 4 * -2.27883
+logFalse -> -184.741
+var 9 at [0, 14, 1](1):
+state 0, freq=13
+logTrue += 13 * -0.415037
+logTrue -> -195.82
+logFalse += 13 * -0.332906
+logFalse -> -189.069
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -201.82
+logFalse += 3 * -2.27883
+logFalse -> -195.906
+var 9 at 0:
+0.00265611 = exp2(-204.859)/(exp2(-204.859)+exp2(-196.306))
+0.00265611 = 2.14485e-62/(2.14485e-62+8.05372e-60)
+var 9 at 1:
+0.0163142 = exp2(-201.82)/(exp2(-201.82)+exp2(-195.906))
+0.0163142 = 1.76302e-61/(1.76302e-61+1.06304e-59)
+log priori true:  0
+log priori false: 1.58496
+rel 13
+depStateV(0)=log2((0+0.888889)/(0+1))=-0.169925
+depStateNotV(0)=log2((299+0.888889)/(317+1))=-0.0845987
+depStateV(1)=log2((0+0.111111)/(0+1))=-3.16993
+depStateNotV(1)=log2((18+0.111111)/(317+1))=-4.13408
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((317+1)/(317+1))=0
+var 10 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -1.69925
+logFalse += 10 * -0.0845987
+logFalse -> 0.738976
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.69925
+logFalse += 0 * -4.13408
+logFalse -> 0.738976
+var 10 at [0, 1, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -3.05865
+logFalse += 8 * -0.0845987
+logFalse -> 0.062186
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.05865
+logFalse += 0 * -4.13408
+logFalse -> 0.062186
+var 10 at [0, 2, 0](0):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.41805
+logFalse += 8 * -0.0845987
+logFalse -> -0.614604
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -7.58798
+logFalse += 1 * -4.13408
+logFalse -> -4.74868
+var 10 at [0, 3, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -9.28723
+logFalse += 10 * -0.0845987
+logFalse -> -5.59467
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -9.28723
+logFalse += 0 * -4.13408
+logFalse -> -5.59467
+var 10 at [0, 4, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -10.8166
+logFalse += 9 * -0.0845987
+logFalse -> -6.35606
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -17.1564
+logFalse += 2 * -4.13408
+logFalse -> -14.6242
+var 10 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -19.0256
+logFalse += 11 * -0.0845987
+logFalse -> -15.5548
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -19.0256
+logFalse += 0 * -4.13408
+logFalse -> -15.5548
+var 10 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -20.7248
+logFalse += 10 * -0.0845987
+logFalse -> -16.4008
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -20.7248
+logFalse += 0 * -4.13408
+logFalse -> -16.4008
+var 10 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -22.4241
+logFalse += 10 * -0.0845987
+logFalse -> -17.2468
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -22.4241
+logFalse += 0 * -4.13408
+logFalse -> -17.2468
+var 10 at [0, 8, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -24.1233
+logFalse += 10 * -0.0845987
+logFalse -> -18.0928
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.1233
+logFalse += 0 * -4.13408
+logFalse -> -18.0928
+var 10 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -25.9925
+logFalse += 11 * -0.0845987
+logFalse -> -19.0234
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -25.9925
+logFalse += 0 * -4.13408
+logFalse -> -19.0234
+var 10 at [0, 10, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.169925
+logTrue -> -27.6918
+logFalse += 10 * -0.0845987
+logFalse -> -19.8693
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.6918
+logFalse += 0 * -4.13408
+logFalse -> -19.8693
+var 10 at [0, 11, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2211
+logFalse += 9 * -0.0845987
+logFalse -> -20.6307
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -32.391
+logFalse += 1 * -4.13408
+logFalse -> -24.7648
+var 10 at [0, 12, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -33.9203
+logFalse += 9 * -0.0845987
+logFalse -> -25.5262
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.9203
+logFalse += 0 * -4.13408
+logFalse -> -25.5262
+var 10 at [0, 13, 0](0):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -35.4497
+logFalse += 9 * -0.0845987
+logFalse -> -26.2876
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -41.7895
+logFalse += 2 * -4.13408
+logFalse -> -34.5557
+var 10 at [0, 14, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -43.6587
+logFalse += 11 * -0.0845987
+logFalse -> -35.4863
+state 1, freq=3
+logTrue += 3 * -3.16993
+logTrue -> -53.1685
+logFalse += 3 * -4.13408
+logFalse -> -47.8886
+var 10 at [0, 15, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.169925
+logTrue -> -55.5474
+logFalse += 14 * -0.0845987
+logFalse -> -49.0729
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -61.8873
+logFalse += 2 * -4.13408
+logFalse -> -57.3411
+var 10 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -1.86918
+logFalse += 11 * -0.0845987
+logFalse -> 0.654377
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -1.86918
+logFalse += 0 * -4.13408
+logFalse -> 0.654377
+var 10 at [0, 1, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -3.3985
+logFalse += 9 * -0.0845987
+logFalse -> -0.107011
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -3.3985
+logFalse += 0 * -4.13408
+logFalse -> -0.107011
+var 10 at [0, 2, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -4.7579
+logFalse += 8 * -0.0845987
+logFalse -> -0.783801
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -11.0978
+logFalse += 2 * -4.13408
+logFalse -> -9.05196
+var 10 at [0, 3, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -12.4572
+logFalse += 8 * -0.0845987
+logFalse -> -9.72875
+state 1, freq=1
+logTrue += 1 * -3.16993
+logTrue -> -15.6271
+logFalse += 1 * -4.13408
+logFalse -> -13.8628
+var 10 at [0, 4, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -16.9865
+logFalse += 8 * -0.0845987
+logFalse -> -14.5396
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -23.3263
+logFalse += 2 * -4.13408
+logFalse -> -22.8078
+var 10 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -24.8557
+logFalse += 9 * -0.0845987
+logFalse -> -23.5692
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -24.8557
+logFalse += 0 * -4.13408
+logFalse -> -23.5692
+var 10 at [0, 6, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -26.2151
+logFalse += 8 * -0.0845987
+logFalse -> -24.246
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -26.2151
+logFalse += 0 * -4.13408
+logFalse -> -24.246
+var 10 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -27.7444
+logFalse += 9 * -0.0845987
+logFalse -> -25.0073
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -27.7444
+logFalse += 0 * -4.13408
+logFalse -> -25.0073
+var 10 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -29.2737
+logFalse += 9 * -0.0845987
+logFalse -> -25.7687
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -29.2737
+logFalse += 0 * -4.13408
+logFalse -> -25.7687
+var 10 at [0, 9, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -30.803
+logFalse += 9 * -0.0845987
+logFalse -> -26.5301
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -30.803
+logFalse += 0 * -4.13408
+logFalse -> -26.5301
+var 10 at [0, 10, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -32.3324
+logFalse += 9 * -0.0845987
+logFalse -> -27.2915
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -32.3324
+logFalse += 0 * -4.13408
+logFalse -> -27.2915
+var 10 at [0, 11, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -33.6918
+logFalse += 8 * -0.0845987
+logFalse -> -27.9683
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -33.6918
+logFalse += 0 * -4.13408
+logFalse -> -27.9683
+var 10 at [0, 12, 1](1):
+state 0, freq=7
+logTrue += 7 * -0.169925
+logTrue -> -34.8812
+logFalse += 7 * -0.0845987
+logFalse -> -28.5605
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -34.8812
+logFalse += 0 * -4.13408
+logFalse -> -28.5605
+var 10 at [0, 13, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.169925
+logTrue -> -36.2406
+logFalse += 8 * -0.0845987
+logFalse -> -29.2373
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -36.2406
+logFalse += 0 * -4.13408
+logFalse -> -29.2373
+var 10 at [0, 14, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.169925
+logTrue -> -37.77
+logFalse += 9 * -0.0845987
+logFalse -> -29.9987
+state 1, freq=0
+logTrue += 0 * -3.16993
+logTrue -> -37.77
+logFalse += 0 * -4.13408
+logFalse -> -29.9987
+var 10 at [0, 15, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.169925
+logTrue -> -39.6391
+logFalse += 11 * -0.0845987
+logFalse -> -30.9293
+state 1, freq=2
+logTrue += 2 * -3.16993
+logTrue -> -45.979
+logFalse += 2 * -4.13408
+logFalse -> -39.1974
+rel 32
+depStateV(0)=log2((0+0.75)/(0+1))=-0.415037
+depStateNotV(0)=log2((320+0.75)/(403+1))=-0.332906
+depStateV(1)=log2((0+0.25)/(0+1))=-2
+depStateNotV(1)=log2((83+0.25)/(403+1))=-2.27883
+depStateV(2)=log2((0+1)/(0+1))=0
+depStateNotV(2)=log2((403+1)/(403+1))=0
+var 10 at [0, 0, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -66.0376
+logFalse += 10 * -0.332906
+logFalse -> -60.6702
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -72.0376
+logFalse += 3 * -2.27883
+logFalse -> -67.5067
+var 10 at [0, 1, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -76.188
+logFalse += 10 * -0.332906
+logFalse -> -70.8357
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -82.188
+logFalse += 3 * -2.27883
+logFalse -> -77.6722
+var 10 at [0, 2, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -86.3384
+logFalse += 10 * -0.332906
+logFalse -> -81.0013
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -92.3384
+logFalse += 3 * -2.27883
+logFalse -> -87.8378
+var 10 at [0, 3, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -97.3188
+logFalse += 12 * -0.332906
+logFalse -> -91.8327
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -103.319
+logFalse += 3 * -2.27883
+logFalse -> -98.6692
+var 10 at [0, 4, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -107.884
+logFalse += 11 * -0.332906
+logFalse -> -102.331
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -109.884
+logFalse += 1 * -2.27883
+logFalse -> -104.61
+var 10 at [0, 5, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -114.45
+logFalse += 11 * -0.332906
+logFalse -> -108.272
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -122.45
+logFalse += 4 * -2.27883
+logFalse -> -117.387
+var 10 at [0, 6, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -126.6
+logFalse += 10 * -0.332906
+logFalse -> -120.716
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -128.6
+logFalse += 1 * -2.27883
+logFalse -> -122.995
+var 10 at [0, 7, 0](0):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -132.75
+logFalse += 10 * -0.332906
+logFalse -> -126.324
+state 1, freq=5
+logTrue += 5 * -2
+logTrue -> -142.75
+logFalse += 5 * -2.27883
+logFalse -> -137.718
+var 10 at [0, 8, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -147.731
+logFalse += 12 * -0.332906
+logFalse -> -141.713
+state 1, freq=1
+logTrue += 1 * -2
+logTrue -> -149.731
+logFalse += 1 * -2.27883
+logFalse -> -143.992
+var 10 at [0, 9, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -154.296
+logFalse += 11 * -0.332906
+logFalse -> -147.654
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -160.296
+logFalse += 3 * -2.27883
+logFalse -> -154.491
+var 10 at [0, 10, 0](0):
+state 0, freq=12
+logTrue += 12 * -0.415037
+logTrue -> -165.277
+logFalse += 12 * -0.332906
+logFalse -> -158.485
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -169.277
+logFalse += 2 * -2.27883
+logFalse -> -163.043
+var 10 at [0, 11, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -173.842
+logFalse += 11 * -0.332906
+logFalse -> -166.705
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -177.842
+logFalse += 2 * -2.27883
+logFalse -> -171.263
+var 10 at [0, 12, 0](0):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -182.408
+logFalse += 11 * -0.332906
+logFalse -> -174.925
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -188.408
+logFalse += 3 * -2.27883
+logFalse -> -181.761
+var 10 at [0, 13, 0](0):
+state 0, freq=14
+logTrue += 14 * -0.415037
+logTrue -> -194.218
+logFalse += 14 * -0.332906
+logFalse -> -186.422
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -198.218
+logFalse += 2 * -2.27883
+logFalse -> -190.98
+var 10 at [0, 14, 0](0):
+state 0, freq=16
+logTrue += 16 * -0.415037
+logTrue -> -204.859
+logFalse += 16 * -0.332906
+logFalse -> -196.306
+state 1, freq=0
+logTrue += 0 * -2
+logTrue -> -204.859
+logFalse += 0 * -2.27883
+logFalse -> -196.306
+var 10 at [0, 0, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -50.5444
+logFalse += 11 * -0.332906
+logFalse -> -42.8594
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -56.5444
+logFalse += 3 * -2.27883
+logFalse -> -49.6959
+var 10 at [0, 1, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -61.1098
+logFalse += 11 * -0.332906
+logFalse -> -53.3578
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -65.1098
+logFalse += 2 * -2.27883
+logFalse -> -57.9155
+var 10 at [0, 2, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -69.6752
+logFalse += 11 * -0.332906
+logFalse -> -61.5775
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -75.6752
+logFalse += 3 * -2.27883
+logFalse -> -68.414
+var 10 at [0, 3, 1](1):
+state 0, freq=11
+logTrue += 11 * -0.415037
+logTrue -> -80.2406
+logFalse += 11 * -0.332906
+logFalse -> -72.0759
+state 1, freq=2
+logTrue += 2 * -2
+logTrue -> -84.2406
+logFalse += 2 * -2.27883
+logFalse -> -76.6336
+var 10 at [0, 4, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -88.391
+logFalse += 10 * -0.332906
+logFalse -> -79.9627
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -94.391
+logFalse += 3 * -2.27883
+logFalse -> -86.7992
+var 10 at [0, 5, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -98.1263
+logFalse += 9 * -0.332906
+logFalse -> -89.7953
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -104.126
+logFalse += 3 * -2.27883
+logFalse -> -96.6318
+var 10 at [0, 6, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -107.862
+logFalse += 9 * -0.332906
+logFalse -> -99.628
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -115.862
+logFalse += 4 * -2.27883
+logFalse -> -108.743
+var 10 at [0, 7, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -119.597
+logFalse += 9 * -0.332906
+logFalse -> -111.739
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -125.597
+logFalse += 3 * -2.27883
+logFalse -> -118.576
+var 10 at [0, 8, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -129.332
+logFalse += 9 * -0.332906
+logFalse -> -121.572
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -137.332
+logFalse += 4 * -2.27883
+logFalse -> -130.687
+var 10 at [0, 9, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -141.483
+logFalse += 10 * -0.332906
+logFalse -> -134.017
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -147.483
+logFalse += 3 * -2.27883
+logFalse -> -140.853
+var 10 at [0, 10, 1](1):
+state 0, freq=10
+logTrue += 10 * -0.415037
+logTrue -> -151.633
+logFalse += 10 * -0.332906
+logFalse -> -144.182
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -157.633
+logFalse += 3 * -2.27883
+logFalse -> -151.019
+var 10 at [0, 11, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -161.368
+logFalse += 9 * -0.332906
+logFalse -> -154.015
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -167.368
+logFalse += 3 * -2.27883
+logFalse -> -160.851
+var 10 at [0, 12, 1](1):
+state 0, freq=8
+logTrue += 8 * -0.415037
+logTrue -> -170.689
+logFalse += 8 * -0.332906
+logFalse -> -163.514
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -178.689
+logFalse += 4 * -2.27883
+logFalse -> -172.63
+var 10 at [0, 13, 1](1):
+state 0, freq=9
+logTrue += 9 * -0.415037
+logTrue -> -182.424
+logFalse += 9 * -0.332906
+logFalse -> -175.626
+state 1, freq=4
+logTrue += 4 * -2
+logTrue -> -190.424
+logFalse += 4 * -2.27883
+logFalse -> -184.741
+var 10 at [0, 14, 1](1):
+state 0, freq=13
+logTrue += 13 * -0.415037
+logTrue -> -195.82
+logFalse += 13 * -0.332906
+logFalse -> -189.069
+state 1, freq=3
+logTrue += 3 * -2
+logTrue -> -201.82
+logFalse += 3 * -2.27883
+logFalse -> -195.906
+var 10 at 0:
+0.00265611 = exp2(-204.859)/(exp2(-204.859)+exp2(-196.306))
+0.00265611 = 2.14485e-62/(2.14485e-62+8.05372e-60)
+var 10 at 1:
+0.0163142 = exp2(-201.82)/(exp2(-201.82)+exp2(-195.906))
+0.0163142 = 1.76302e-61/(1.76302e-61+1.06304e-59)
+entropy	  0.12 / 3.32
+accuracy    1.00
+error       0.00

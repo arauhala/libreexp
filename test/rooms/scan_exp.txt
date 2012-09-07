@@ -1,0 +1,144 @@
+iswall(r)  20460/33119 [31781]
+
+isdark(r)  5750/12817 [12719.2]
+
+isbright(r)  7107/7107 [0]
+
+isexit(r)  818/33925 [5561.8]
+
+victory(r)  165/199 [131.271]
+
+escape(r)  165/1357 [724.528]
+
+goleft(r)  5250/29375 [19895]
+
+goright(r)  7275/29375 [23721.7]
+
+goup (r)  6500/29375 [22398.2]
+
+godown(r)  7300/29375 [23761.7]
+
+idle(r)  3050/29375 [14129.9]
+
+underplayer(r)  1357/100000 [10362.5]
+
+nearplayer(r)  12213/100000 [53545.3]
+
+scans:
+8593.29   !iswall(r), !iswall(r + turn)                         [f(s)=8371, f(!iswall(r))=10543, f(!iswall(r))=10813]
+7255.57   iswall(r), iswall(r + turn)                           [f(s)=14759, f(iswall(r))=17201, f(iswall(r))=16931]
+6173.64   !iswall(r), !iswall(r + x)                            [f(s)=7569, f(!iswall(r))=10353, f(!iswall(r))=10674]
+5864.78   !iswall(r), !iswall(r + y)                            [f(s)=7490, f(!iswall(r))=10334, f(!iswall(r))=10822]
+5486.12   iswall(r), iswall(r + x)                              [f(s)=12240, f(iswall(r))=15345, f(iswall(r))=15024]
+5244.46   iswall(r), iswall(r + y)                              [f(s)=12027, f(iswall(r))=15359, f(iswall(r))=14871]
+4677.93   !iswall(r), nearplayer(r)                             [f(s)=7071, f(!iswall(r))=12659, f(nearplayer(r))=11695]
+4405.59   !iswall(r + x), !iswall(r + turn)                     [f(s)=6408, f(!iswall(r))=9470, f(!iswall(r))=9297]
+4098.84   iswall(r), !nearplayer(r)                             [f(s)=15836, f(iswall(r))=20460, f(!nearplayer(r))=21424]
+4029.34   iswall(r + x), iswall(r + turn)                       [f(s)=9769, f(iswall(r))=12658, f(iswall(r))=12831]
+4028.80   !iswall(r + y), !iswall(r + turn)                     [f(s)=6283, f(!iswall(r))=9598, f(!iswall(r))=9284]
+3815.47   !iswall(r), !iswall(r + x + turn)                     [f(s)=6072, f(!iswall(r))=9073, f(!iswall(r))=9559]
+3754.87   !iswall(r), !iswall(r + y + turn)                     [f(s)=6139, f(!iswall(r))=9118, f(!iswall(r))=9736]
+3711.90   iswall(r + y), iswall(r + turn)                       [f(s)=9521, f(iswall(r))=12522, f(iswall(r))=12836]
+3504.56   iswall(r), iswall(r + x + turn)                       [f(s)=9520, f(iswall(r))=13007, f(iswall(r))=12521]
+3476.49   isdark(r), isdark(r + turn)                           [f(s)=3777, f(isdark(r))=4308, f(isdark(r))=3908]
+3469.49   iswall(r), iswall(r + y + turn)                       [f(s)=9381, f(iswall(r))=12978, f(iswall(r))=12360]
+3402.10   !isdark(r), !isdark(r + turn)                         [f(s)=3998, f(!isdark(r))=4129, f(!isdark(r))=4529]
+2874.75   isdark(r), isdark(r + y)                              [f(s)=3288, f(isdark(r))=3708, f(isdark(r))=3678]
+2858.15   isdark(r), isdark(r + x)                              [f(s)=3294, f(isdark(r))=3666, f(isdark(r))=3783]
+2809.90   !isdark(r), !isdark(r + y)                            [f(s)=3506, f(!isdark(r))=3896, f(!isdark(r))=3926]
+2790.13   !isdark(r), !isdark(r + x)                            [f(s)=3528, f(!isdark(r))=4017, f(!isdark(r))=3900]
+2470.89   isdark(r + y), isdark(r + turn)                       [f(s)=2740, f(isdark(r))=3203, f(isdark(r))=2898]
+2467.28   isdark(r + x), isdark(r + turn)                       [f(s)=2786, f(isdark(r))=3329, f(isdark(r))=2926]
+2405.20   !isdark(r + x), !isdark(r + turn)                     [f(s)=2991, f(!isdark(r))=3131, f(!isdark(r))=3534]
+2399.73   !isdark(r + y), !isdark(r + turn)                     [f(s)=2969, f(!isdark(r))=3127, f(!isdark(r))=3432]
+2345.65   isdark(r), isdark(r + y + turn)                       [f(s)=2628, f(isdark(r))=3164, f(isdark(r))=2771]
+2268.53   !isdark(r), !isdark(r + y + turn)                     [f(s)=2887, f(!isdark(r))=3030, f(!isdark(r))=3423]
+2229.07   isdark(r), isdark(r + x + turn)                       [f(s)=2556, f(isdark(r))=3052, f(isdark(r))=2806]
+2152.11   !isdark(r), !isdark(r + x + turn)                     [f(s)=2831, f(!isdark(r))=3081, f(!isdark(r))=3327]
+1653.52   !iswall(r), underplayer(r)                            [f(s)=1192, f(!iswall(r))=12659, f(underplayer(r))=1192]
+1082.04   iswall(r), !underplayer(r)                            [f(s)=20460, f(iswall(r))=20460, f(!underplayer(r))=31927]
+935.45   isdark(r), !victory(r)                                [f(s)=2811, f(isdark(r))=5750, f(!victory(r))=4975]
+889.03   !isdark(r), victory(r)                                [f(s)=4903, f(!isdark(r))=7067, f(victory(r))=7842]
+802.34   !isdark(r), escape(r)                                 [f(s)=1161, f(!isdark(r))=7067, f(escape(r))=1304]
+664.15   isdark(r), !escape(r)                                 [f(s)=5607, f(isdark(r))=5750, f(!escape(r))=11513]
+481.29   isexit(r + x), isexit(r + turn)                       [f(s)=147, f(isexit(r))=556, f(isexit(r))=633]
+435.54   isexit(r), nearplayer(r)                              [f(s)=524, f(isexit(r))=818, f(nearplayer(r))=12213]
+426.13   isexit(r + y), isexit(r + turn)                       [f(s)=135, f(isexit(r))=574, f(isexit(r))=611]
+423.70   isexit(r), !iswall(r + y)                             [f(s)=530, f(isexit(r))=708, f(!iswall(r))=11349]
+385.28   isexit(r), underplayer(r)                             [f(s)=165, f(isexit(r))=818, f(underplayer(r))=1357]
+372.13   isexit(r), isexit(r + turn)                           [f(s)=124, f(isexit(r))=631, f(isexit(r))=711]
+359.92   isexit(r), !isdark(r + y)                             [f(s)=491, f(isexit(r))=534, f(!isdark(r))=6348]
+343.14   isexit(r), !isdark(r + x)                             [f(s)=450, f(isexit(r))=487, f(!isdark(r))=6140]
+338.45   isexit(r), isexit(r + y + turn)                       [f(s)=115, f(isexit(r))=525, f(isexit(r))=660]
+333.01   !isexit(r), !nearplayer(r)                            [f(s)=21418, f(!isexit(r))=33107, f(!nearplayer(r))=21712]
+327.93   !isexit(r), iswall(r + y)                             [f(s)=14865, f(!isexit(r))=25684, f(iswall(r))=15043]
+314.92   iswall(r), escape(r)                                  [f(s)=2656, f(iswall(r))=20460, f(escape(r))=3960]
+314.72   isexit(r), !iswall(r + x)                             [f(s)=482, f(isexit(r))=726, f(!iswall(r))=11151]
+305.17   !iswall(r), !escape(r)                                [f(s)=11355, f(!iswall(r))=12659, f(!escape(r))=29159]
+
+goright deps:
+139.05 !isdark(r), goright(r)                                [f(s)=1543, n=11376, f(!isdark(r))=5786, f(goright(r))=2850]
+136.30 isdark(r), !goright(r)                                [f(s)=4283, n=11376, f(isdark(r))=5590, f(!goright(r))=8526]
+81.57 !iswall(r), goright(r)                                [f(s)=2831, n=28750, f(!iswall(r))=11218, f(goright(r))=7112]
+80.94 iswall(r), !goright(r)                                [f(s)=13251, n=28750, f(iswall(r))=17532, f(!goright(r))=21638]
+12.36 isexit(r), goright(r)                                 [f(s)=166, n=29375, f(isexit(r))=637, f(goright(r))=7275]
+12.07 !isexit(r), !goright(r)                               [f(s)=21629, n=29375, f(!isexit(r))=28738, f(!goright(r))=22100]
+0.17 isbright(r), !goright(r)                              [f(s)=4281, n=5826, f(isbright(r))=5826, f(!goright(r))=4281]
+
+goleft deps:
+23.72 !isdark(r), goleft(r)                                 [f(s)=1060, n=11376, f(!isdark(r))=5786, f(goleft(r))=2052]
+23.59 isdark(r), !goleft(r)                                 [f(s)=4598, n=11376, f(isdark(r))=5590, f(!goleft(r))=9324]
+1.89 isexit(r), goleft(r)                                  [f(s)=115, n=29375, f(isexit(r))=637, f(goleft(r))=5250]
+1.89 !isexit(r), !goleft(r)                                [f(s)=23603, n=29375, f(!isexit(r))=28738, f(!goleft(r))=24125]
+0.34 iswall(r), !goleft(r)                                 [f(s)=14399, n=28750, f(iswall(r))=17532, f(!goleft(r))=23612]
+0.34 !iswall(r), goleft(r)                                 [f(s)=2005, n=28750, f(!iswall(r))=11218, f(goleft(r))=5138]
+0.23 isbright(r), !goleft(r)                               [f(s)=4751, n=5826, f(isbright(r))=5826, f(!goleft(r))=4751]
+
+goup deps:
+115.30 isdark(r), goup (r)                                   [f(s)=1306, n=11376, f(isdark(r))=5590, f(goup (r))=2500]
+112.81 !isdark(r), !goup (r)                                 [f(s)=4592, n=11376, f(!isdark(r))=5786, f(!goup (r))=8876]
+76.05 iswall(r), goup (r)                                   [f(s)=3932, n=28750, f(iswall(r))=17532, f(goup (r))=6362]
+75.77 !iswall(r), !goup (r)                                 [f(s)=8788, n=28750, f(!iswall(r))=11218, f(!goup (r))=22388]
+3.16 isexit(r), goup (r)                                   [f(s)=143, n=29375, f(isexit(r))=637, f(goup (r))=6500]
+3.15 !isexit(r), !goup (r)                                 [f(s)=22381, n=29375, f(!isexit(r))=28738, f(!goup (r))=22875]
+0.21 isbright(r), !goup (r)                                [f(s)=4617, n=5826, f(isbright(r))=5826, f(!goup (r))=4617]
+
+godown deps:
+87.64 !iswall(r), godown(r)                                 [f(s)=2848, n=28750, f(!iswall(r))=11218, f(godown(r))=7145]
+86.92 iswall(r), !godown(r)                                 [f(s)=13235, n=28750, f(iswall(r))=17532, f(!godown(r))=21605]
+47.06 !isdark(r), godown(r)                                 [f(s)=1492, n=11376, f(!isdark(r))=5786, f(godown(r))=2870]
+46.74 isdark(r), !godown(r)                                 [f(s)=4212, n=11376, f(isdark(r))=5590, f(!godown(r))=8506]
+3.15 isexit(r), !godown(r)                                 [f(s)=481, n=29375, f(isexit(r))=637, f(!godown(r))=22075]
+3.15 !isexit(r), godown(r)                                 [f(s)=7144, n=29375, f(!isexit(r))=28738, f(godown(r))=7300]
+0.17 isbright(r), !godown(r)                               [f(s)=4326, n=5826, f(isbright(r))=5826, f(!godown(r))=4326]
+
+idle deps:
+98.36 isdark(r), idle(r)                                    [f(s)=607, n=11376, f(isdark(r))=5590, f(idle(r))=1104]
+93.64 !isdark(r), !idle(r)                                  [f(s)=5289, n=11376, f(!isdark(r))=5786, f(!idle(r))=10272]
+93.62 iswall(r), idle(r)                                    [f(s)=1889, n=28750, f(iswall(r))=17532, f(idle(r))=2993]
+92.33 !iswall(r), !idle(r)                                  [f(s)=10114, n=28750, f(!iswall(r))=11218, f(!idle(r))=25757]
+13.01 isexit(r), !idle(r)                                   [f(s)=580, n=29375, f(isexit(r))=637, f(!idle(r))=26325]
+12.93 !isexit(r), idle(r)                                   [f(s)=2993, n=29375, f(!isexit(r))=28738, f(idle(r))=3050]
+0.30 isbright(r), !idle(r)                                 [f(s)=5329, n=5826, f(isbright(r))=5826, f(!idle(r))=5329]
+
+escape deps:
+802.34 !isdark(r), escape(r)                                 [f(s)=1161, n=12817, f(!isdark(r))=7067, f(escape(r))=1304]
+664.15 isdark(r), !escape(r)                                 [f(s)=5607, n=12817, f(isdark(r))=5750, f(!escape(r))=11513]
+314.92 iswall(r), escape(r)                                  [f(s)=2656, n=33119, f(iswall(r))=20460, f(escape(r))=3960]
+305.17 !iswall(r), !escape(r)                                [f(s)=11355, n=33119, f(!iswall(r))=12659, f(!escape(r))=29159]
+120.68 isexit(r), escape(r)                                  [f(s)=165, n=33925, f(isexit(r))=818, f(escape(r))=4125]
+116.70 escape(r), victory(r)                                 [f(s)=165, n=1357, f(escape(r))=165, f(victory(r))=830]
+98.45 !escape(r), !victory(r)                               [f(s)=527, n=1357, f(!escape(r))=1192, f(!victory(r))=527]
+94.92 !isexit(r), !escape(r)                                [f(s)=29147, n=33925, f(!isexit(r))=33107, f(!escape(r))=29800]
+0.24 isbright(r), !escape(r)                               [f(s)=5946, n=7107, f(isbright(r))=7107, f(!escape(r))=5946]
+
+victory deps:
+935.45 isdark(r), !victory(r)                                [f(s)=2811, n=12817, f(isdark(r))=5750, f(!victory(r))=4975]
+889.03 !isdark(r), victory(r)                                [f(s)=4903, n=12817, f(!isdark(r))=7067, f(victory(r))=7842]
+133.48 isexit(r), victory(r)                                 [f(s)=586, n=33925, f(isexit(r))=818, f(victory(r))=20750]
+123.94 !isexit(r), !victory(r)                               [f(s)=12943, n=33925, f(!isexit(r))=33107, f(!victory(r))=13175]
+116.70 escape(r), victory(r)                                 [f(s)=165, n=1357, f(escape(r))=165, f(victory(r))=830]
+98.45 !escape(r), !victory(r)                               [f(s)=527, n=1357, f(!escape(r))=1192, f(!victory(r))=527]
+40.27 !iswall(r), !victory(r)                               [f(s)=4975, n=33119, f(!iswall(r))=12659, f(!victory(r))=12943]
+40.21 iswall(r), victory(r)                                 [f(s)=12492, n=33119, f(iswall(r))=20460, f(victory(r))=20176]
+0.14 isbright(r), victory(r)                               [f(s)=4943, n=7107, f(isbright(r))=7107, f(victory(r))=4943]

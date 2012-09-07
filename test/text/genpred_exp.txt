@@ -1,0 +1,693 @@
+original:
+aabaaaab
+abbbbbbb
+bbaaaabb
+bbbbbbba
+bbabaaaa
+aaabbbbb
+abaaaaab
+bbbbaaba
+aaabaabb
+aababbab
+abbaabba
+bbaababb
+abbabaaa
+babbaabb
+aaaabaaa
+baababab
+babaabba
+bbbbbabb
+babbaaab
+abbbbabb
+
+text:
+0 0:  a|a|b|a|a|a|a|b|
+1 1:  a|b|b|b|b|b|b|b|
+2 0:  b|b|a|a|a|a|b|b|
+3 1:  b|b|b|b|b|b|b|a|
+4 0:  b|b|a|b|a|a|a|a|
+5 1:  a|a|a|b|b|b|b|b|
+6 0:  a|b|a|a|a|a|a|b|
+7 1:  b|b|b|b|a|a|b|a|
+8 0:  a|a|a|b|a|a|b|b|
+9 1:  a|a|b|a|b|b|a|b|
+10 0:  a|b|b|a|a|b|b|a|
+11 1:  b|b|a|a|b|a|b|b|
+12 0:  a|b|b|a|b|a|a|a|
+13 1:  b|a|b|b|a|a|b|b|
+14 0:  a|a|a|a|b|a|a|a|
+15 1:  b|a|a|b|a|b|a|b|
+16 0:  b|a|b|a|a|b|b|a|
+17 1:  b|b|b|b|b|a|b|b|
+18 0:  b|a|b|b|a|a|a|b|
+19 1:  a|b|b|b|b|a|b|b|
+
+
+ (r)  0/160 [0]
+
+a(r)  75/160 [159.549]
+
+b(r)  85/160 [159.549]
+
+c(r)  0/160 [0]
+
+d(r)  0/160 [0]
+
+e(r)  0/160 [0]
+
+f(r)  0/160 [0]
+
+g(r)  0/160 [0]
+
+h(r)  0/160 [0]
+
+i(r)  0/160 [0]
+
+j(r)  0/160 [0]
+
+k(r)  0/160 [0]
+
+l(r)  0/160 [0]
+
+m(r)  0/160 [0]
+
+n(r)  0/160 [0]
+
+o(r)  0/160 [0]
+
+p(r)  0/160 [0]
+
+q(r)  0/160 [0]
+
+r(r)  0/160 [0]
+
+s(r)  0/160 [0]
+
+t(r)  0/160 [0]
+
+u(r)  0/160 [0]
+
+v(r)  0/160 [0]
+
+w(r)  0/160 [0]
+
+x(r)  0/160 [0]
+
+y(r)  0/160 [0]
+
+z(r)  0/160 [0]
+
+moreA(r)  10/20 [20]
+
+moreB(r)  10/20 [20]
+
+
+
+p(moreA|[0, 0]) = 1.00% [true]
+p(moreA|[0, 1]) = 0.00% [false]
+p(moreA|[0, 2]) = 0.66% [true]
+p(moreA|[0, 3]) = 0.00% [false]
+p(moreA|[0, 4]) = 0.96% [true]
+p(moreA|[0, 5]) = 0.13% [false]
+p(moreA|[0, 6]) = 1.00% [true]
+p(moreA|[0, 7]) = 0.13% [false]
+p(moreA|[0, 8]) = 0.96% [true]
+p(moreA|[0, 9]) = 0.66% [false]
+p(moreA|[0, 10]) = 0.66% [true]
+p(moreA|[0, 11]) = 0.13% [false]
+p(moreA|[0, 12]) = 0.96% [true]
+p(moreA|[0, 13]) = 0.13% [false]
+p(moreA|[0, 14]) = 1.00% [true]
+p(moreA|[0, 15]) = 0.66% [false]
+p(moreA|[0, 16]) = 0.66% [true]
+p(moreA|[0, 17]) = 0.00% [false]
+p(moreA|[0, 18]) = 0.66% [true]
+p(moreA|[0, 19]) = 0.01% [false]
+
+total info: 6.52
+entry info: 0.33
+
+predicted: moreA(r)
+state 0: ! (r)
+state 1:  (r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !a(r)
+state 1: a(r)
+state 2: 
+depStateV(0)=log2((30.00+0.50)/(80.00+1.00))=-1.41
+depStateNotV(0)=log2((55.00+0.50)/(80.00+1.00))=-0.55
+depStateV(1)=log2((50.00+0.50)/(80.00+1.00))=-0.68
+depStateNotV(1)=log2((25.00+0.50)/(80.00+1.00))=-1.67
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !b(r)
+state 1: b(r)
+state 2: 
+depStateV(0)=log2((50.00+0.50)/(80.00+1.00))=-0.68
+depStateNotV(0)=log2((25.00+0.50)/(80.00+1.00))=-1.67
+depStateV(1)=log2((30.00+0.50)/(80.00+1.00))=-1.41
+depStateNotV(1)=log2((55.00+0.50)/(80.00+1.00))=-0.55
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !c(r)
+state 1: c(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !d(r)
+state 1: d(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !e(r)
+state 1: e(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !f(r)
+state 1: f(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !g(r)
+state 1: g(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !h(r)
+state 1: h(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !i(r)
+state 1: i(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !j(r)
+state 1: j(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !k(r)
+state 1: k(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !l(r)
+state 1: l(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !m(r)
+state 1: m(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !n(r)
+state 1: n(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !o(r)
+state 1: o(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !p(r)
+state 1: p(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !q(r)
+state 1: q(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !r(r)
+state 1: r(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !s(r)
+state 1: s(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !t(r)
+state 1: t(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !u(r)
+state 1: u(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !v(r)
+state 1: v(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !w(r)
+state 1: w(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !x(r)
+state 1: x(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !y(r)
+state 1: y(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreA(r)
+state 0: !z(r)
+state 1: z(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+p(moreB|[0, 0]) = 0.00% [false]
+p(moreB|[0, 1]) = 1.00% [true]
+p(moreB|[0, 2]) = 0.34% [false]
+p(moreB|[0, 3]) = 1.00% [true]
+p(moreB|[0, 4]) = 0.04% [false]
+p(moreB|[0, 5]) = 0.87% [true]
+p(moreB|[0, 6]) = 0.00% [false]
+p(moreB|[0, 7]) = 0.87% [true]
+p(moreB|[0, 8]) = 0.04% [false]
+p(moreB|[0, 9]) = 0.34% [true]
+p(moreB|[0, 10]) = 0.34% [false]
+p(moreB|[0, 11]) = 0.87% [true]
+p(moreB|[0, 12]) = 0.04% [false]
+p(moreB|[0, 13]) = 0.87% [true]
+p(moreB|[0, 14]) = 0.00% [false]
+p(moreB|[0, 15]) = 0.34% [true]
+p(moreB|[0, 16]) = 0.34% [false]
+p(moreB|[0, 17]) = 1.00% [true]
+p(moreB|[0, 18]) = 0.34% [false]
+p(moreB|[0, 19]) = 0.99% [true]
+
+total info: 6.52
+entry info: 0.33
+
+predicted: moreB(r)
+state 0: ! (r)
+state 1:  (r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !a(r)
+state 1: a(r)
+state 2: 
+depStateV(0)=log2((55.00+0.50)/(80.00+1.00))=-0.55
+depStateNotV(0)=log2((30.00+0.50)/(80.00+1.00))=-1.41
+depStateV(1)=log2((25.00+0.50)/(80.00+1.00))=-1.67
+depStateNotV(1)=log2((50.00+0.50)/(80.00+1.00))=-0.68
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !b(r)
+state 1: b(r)
+state 2: 
+depStateV(0)=log2((25.00+0.50)/(80.00+1.00))=-1.67
+depStateNotV(0)=log2((50.00+0.50)/(80.00+1.00))=-0.68
+depStateV(1)=log2((55.00+0.50)/(80.00+1.00))=-0.55
+depStateNotV(1)=log2((30.00+0.50)/(80.00+1.00))=-1.41
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !c(r)
+state 1: c(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !d(r)
+state 1: d(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !e(r)
+state 1: e(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !f(r)
+state 1: f(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !g(r)
+state 1: g(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !h(r)
+state 1: h(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !i(r)
+state 1: i(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !j(r)
+state 1: j(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !k(r)
+state 1: k(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !l(r)
+state 1: l(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !m(r)
+state 1: m(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !n(r)
+state 1: n(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !o(r)
+state 1: o(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !p(r)
+state 1: p(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !q(r)
+state 1: q(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !r(r)
+state 1: r(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !s(r)
+state 1: s(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !t(r)
+state 1: t(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !u(r)
+state 1: u(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !v(r)
+state 1: v(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !w(r)
+state 1: w(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !x(r)
+state 1: x(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !y(r)
+state 1: y(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+predicted: moreB(r)
+state 0: !z(r)
+state 1: z(r)
+state 2: 
+depStateV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateNotV(0)=log2((80.00+0.50)/(80.00+1.00))=-0.01
+depStateV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateNotV(1)=log2((0.00+0.50)/(80.00+1.00))=-7.34
+depStateV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00
+depStateNotV(2)=log2((80.00+1.00)/(80.00+1.00))=0.00

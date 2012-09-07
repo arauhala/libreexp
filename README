@@ -1,0 +1,80 @@
+The project has been developed and tested only on Ubuntu Linux 
+and GCC v4.6.3. There's no guarantees that the program would compile 
+in any other environment or compiler. In fact attempting to compile 
+sources with other compilers (e.g. clang) will quite possibly fail without
+extra porting, as all sources are written in C++0x11, which support varies. 
+
+Preparations (gor Ubuntu)
+
+1. Install ccache: 
+
+  sudo apt-get install ccache 
+
+2. Check that GCC is relatively new (v 4.6.3, similar or newer)
+
+   gcc -v
+
+3. Install meld (optional). Test suite uses meld for 
+   displaying test output differences. 
+
+  sudo apt-get install meld
+
+Building:
+
+  make clean && make -j2 release
+
+
+About libreexptest (the test suite). 
+
+  1. libreexptest is not a unittest suite. It runs also very heavy tests
+    used to systematically evaluate the algorithm performance. 
+
+  2. libreexptest is not a fast suite. Running it may take hours  
+     (I have never run it fully, so I wouldn't know) 
+
+  3. libreexptest tests by comparing test case output to previously validated
+     output (thanks Ferenc Dosa-Rocz for the idea). This means, that output 
+     files are easily human readable, delightful, easy to generate and update, 
+     but easily breakable. Some lines are not checked for validity (e.g.
+     undeterministic output, like speed measurements). 
+
+  4. Because cases 2) and 3), the test suite may be broken. E.g. if formatting
+     of plots changes, this breaks dozens of very slow tests. Because running
+     the slow tests take lots and lots of time, I may not have patience to 
+     revalidate and refreeze all test cases' outputs. Also some ambigious 
+     sorting functionality may provide different outputs for debug and release 
+     or in different build environments. This may 'break' the tests.
+
+Running libreexptest:
+
+  ./libreexptest [filter] [options]
+
+     Runs all test cases matching filter
+ 
+     [options] 
+         -v      verbose run. normally the test case output is not shown.
+
+     E.g. ./libreexptest image/invaders
+          ./libreexptest image/invaders -v
+
+
+  ./libreexptest [filter] -l 
+
+     Lists all test cases matching the filter. 
+     
+     E.g. ./libreexptest -l
+
+  ./libreexptest [filter] -p
+
+     Prints all test case expectation files (= output of validated run) 
+     into stdout. 
+
+     E.g. ./libreexptest vars/dists_ldeps_exps -p | less
+
+  ./librepexptest [filter] --path 
+
+     Prints a list of the file paths of all expectation files matching 
+     the filter. 
+
+     E.g. less `./libreexptest vars/dists_ldeps_exps --path`
+
