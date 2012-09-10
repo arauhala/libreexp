@@ -533,61 +533,6 @@ namespace {
 		run_generic_germancredit_exps_test(t, undef_nothing);
 	}
 
-	void setup_km(pred_problem<statlogbits_problem>& pr) {
-		setup_statlogbits(pr, "km", undef_excluded);
-		pr.predvars_.resize(pr.lang_.var_count());
-		for (int i = 0; i < pr.lang_.var_count(); ++i) {
-			if (pr.names_.vnames_[i].substr(0, 5) == "Ma/vk") {
-				pr.predvars_[i] = true;
-				pr.data_.var(i).defined().fill(true);
-			}
-		}
-		pr.type_ = classification_problem;
-
-	}
-
-	void run_km_test(TestTool& t) {
-		pred_problem<statlogbits_problem> pr;
-		setup_km(pr);
-
-		explib::stats<statlogbits_problem> s(pr.data_);
-		explib::stats_info<statlogbits_problem> si(pr.names_, s);
-
-		t<<si.vars_tostring();
-
-//		std::priority_queue<candidate<P> >& cands;
-
-		explib::bits from;
-		from.resize(pr.lang_.var_count());
-		from.assignNeg(pr.predvars_);
-
-		t<<si.top_influence_tostring(from, pr.predvars_, 10);
-
-		double th = 10000000000;
-		pred_args args = {th, th*0.2, 0., 2, false};
-		random_crossvalidate_run(t, pr, args);
-
-		Table traintable(
-			t.report(ToTable<Average>({"run:out"}, "prop:", "data:")));
-		t<<"metrics:\n"<<traintable<<"\n";
-	}
-
-	void run_km_exps_test(TestTool& t) {
-		pred_problem<statlogbits_problem> pr;
-		setup_km(pr);
-
-		explib::stats<statlogbits_problem> s(pr.data_);
-		explib::stats_info<statlogbits_problem> si(pr.names_, s);
-
-		double th = 100;
-		for (int i = 0; i < 4; ++i) {
-			pred_args args = {th, th*0.4, 0, 2, false};
-			random_crossvalidate_run(t, pr, args);
-
-			th *= 2;
-		}
-		print_data_by(t, "threshold:", false);
-	}
 
 }
 
