@@ -15,6 +15,7 @@ void addvarstest(TestRunner& runner);
 void addroomstest(TestRunner& runner);
 void addutilstest(TestRunner& runner);
 void addoptdigitstest(TestRunner& runner);
+void addoptdigits2test(TestRunner& runner);
 void addsimpletest(TestRunner& runner);
 void adddigitstest(TestRunner& runner);
 void addimagetest(TestRunner& runner);
@@ -33,6 +34,7 @@ int main(int argc, char** argv) {
 	addroomstest(runner);
 	addutilstest(runner);
 	addoptdigitstest(runner);
+	addoptdigits2test(runner);
 	addsimpletest(runner);
 	addstatlogbitstest(runner);
 /*	adddigitstest(runner);*/

@@ -328,8 +328,10 @@ namespace explib {
 			// only once.
 			//
 			void apply_exps() {
-				for (int i = 0; i < lang_.exp_count(); i++) {
-					var_added(lang_.exp(i));
+				for (int i = vars_.size(); i < lang_.var_count(); i++) {
+					const explib::exp<P>* e(
+						dynamic_cast<const explib::exp<P>*>(&lang_.var(i)));
+					if (e) var_added(*e);
 				}
 			}
 			void set_obs(explib::data_obs<P>& obs) {

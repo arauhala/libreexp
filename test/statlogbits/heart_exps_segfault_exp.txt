@@ -66,7 +66,7 @@ serumCholestoral[0.11<=X<0.35](r)  23/270 [113.452]
 
 serumCholestoral[0.35<=X<0.60](r)  21/270 [106.461]
 
-serumCholestoral[0.60<=X<0.91](r)  22/270 [109.992]
+serumCholestoral[0.60<=X<0.91](r)  3/251 [23.4619]
 
 serumCholestoral[0.91<=X](r)  22/183 [96.988]
 
@@ -92,13 +92,13 @@ maximumHeartRate[123.40<=X<136.50](r)  0/239 [0]
 
 maximumHeartRate[136.50<=X<149.60](r)  0/225 [0]
 
-maximumHeartRate[149.60<=X<162.70](r)  71/72 [7.60255]
+maximumHeartRate[149.60<=X<162.70](r)  71/77 [30.4007]
 
 maximumHeartRate[162.70<=X<175.80](r)  0/71 [0]
 
 maximumHeartRate[175.80<=X<188.90](r)  0/201 [0]
 
-maximumHeartRate[188.90<=X](r)  0/264 [0]
+maximumHeartRate[188.90<=X](r)  5/270 [35.9207]
 
 exerciseInducedAngina[0.0](r)  181/181 [0]
 
@@ -150,7 +150,7 @@ class[1](r)  108/130 [85.2725]
 
 <!sex[1.0](r), sex[0.0](r)>  63/223 [191.524]
 
-<!restingElectrocardioGraphic[2.0](r), restingElectrocardioGraphic[0.0](r)>  131/270 [269.829]
+<!restingElectrocardioGraphic[2.0](r), restingElectrocardioGraphic[0.0](r)>  128/248 [247.814]
 
 <thal[7.0](r), !thal[3.0](r)>  2/76 [13.3429]
 
@@ -196,15 +196,15 @@ class[1](r)  108/130 [85.2725]
 
 <<<!slopeOfPeakExercise[1.0](r), slopeOfPeakExercise[2.0](r)>, !oldpeak[X<0.62](r)>, oldpeak[2.48<=X<3.10](r)>  7/236 [45.4746]
 
-<maximumHeartRate[162.70<=X<175.80](r), !maximumHeartRate[149.60<=X<162.70](r)>  54/126 [124.139]
+<maximumHeartRate[162.70<=X<175.80](r), !maximumHeartRate[149.60<=X<162.70](r)>  54/131 [128.072]
 
-<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[136.50<=X<149.60](r)>  45/171 [142.182]
+<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[136.50<=X<149.60](r)>  45/176 [144.348]
 
-<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[123.40<=X<136.50](r)>  31/202 [124.926]
+<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[123.40<=X<136.50](r)>  31/207 [126.112]
 
-<maximumHeartRate[175.80<=X<188.90](r), !maximumHeartRate[149.60<=X<162.70](r)>  24/226 [110.363]
+<maximumHeartRate[175.80<=X<188.90](r), !maximumHeartRate[149.60<=X<162.70](r)>  24/231 [111.163]
 
-<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[110.30<=X<123.40](r)>  23/249 [110.638]
+<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[110.30<=X<123.40](r)>  23/254 [111.33]
 
 <!restingBloodPressure[125.80<=X<136.40](r), restingBloodPressure[115.20<=X<125.80](r)>  61/129 [128.726]
 
@@ -214,7 +214,7 @@ class[1](r)  108/130 [85.2725]
 
 <restingBloodPressure[147.00<=X<157.60](r), !restingBloodPressure[125.80<=X<136.40](r)>  24/241 [112.711]
 
-<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[97.20<=X<110.30](r)>  11/260 [65.7214]
+<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[97.20<=X<110.30](r)>  11/265 [66.0302]
 
 <!class[1](r), <exerciseInducedAngina[1.0](r), !exerciseInducedAngina[0.0](r)>>  10/206 [57.7167]
 
@@ -230,9 +230,9 @@ class[1](r)  108/130 [85.2725]
 
 <oldpeak[1.24<=X<1.86](r), <<<!class[1](r), <thal[7.0](r), !thal[3.0](r)>>, <exerciseInducedAngina[1.0](r), !exerciseInducedAngina[0.0](r)>>, <<!slopeOfPeakExercise[1.0](r), slopeOfPeakExercise[2.0](r)>, !oldpeak[X<0.62](r)>>>  5/205 [33.9125]
 
-<<<!slopeOfPeakExercise[1.0](r), slopeOfPeakExercise[2.0](r)>, !oldpeak[X<0.62](r)>, oldpeak[3.10<=X<3.72](r)>  4/267 [29.9701]
-
 <!age[57.80<=X<62.60](r), age[53.00<=X<57.80](r)>  50/111 [110.212]
+
+<<<!slopeOfPeakExercise[1.0](r), slopeOfPeakExercise[2.0](r)>, !oldpeak[X<0.62](r)>, oldpeak[3.10<=X<3.72](r)>  4/267 [29.9701]
 
 <serumCholestoral[0.91<=X](r), <!sex[1.0](r), sex[0.0](r)>>  24/247 [113.607]
 
@@ -262,21 +262,35 @@ class[1](r)  108/130 [85.2725]
 
 <oldpeak[1.86<=X<2.48](r), !oldpeak[X<0.62](r)>  3/270 [23.7795]
 
-<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[84.10<=X<97.20](r)>  5/265 [35.7846]
+<!<!restingElectrocardioGraphic[2.0](r), restingElectrocardioGraphic[0.0](r)>, serumCholestoral[0.60<=X<0.91](r)>  19/270 [99.1722]
 
-<maximumHeartRate[188.90<=X](r), !maximumHeartRate[149.60<=X<162.70](r)>  5/270 [35.9207]
+<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[84.10<=X<97.20](r)>  5/270 [35.9207]
 
-<!<!restingElectrocardioGraphic[2.0](r), restingElectrocardioGraphic[0.0](r)>, serumCholestoral[0.60<=X<0.91](r)>
+<maximumHeartRate[188.90<=X](r), !maximumHeartRate[149.60<=X<162.70](r)>
 rootmasks:
-<!restingElectrocardioGraphic[2.0](r), restingElectrocardioGraphic[0.0](r)>:
+maximumHeartRate[188.90<=X](r):
 X    [0]
-serumCholestoral[0.60<=X<0.91](r):
+maximumHeartRate[149.60<=X<162.70](r):
 X    [0]
 
 exclmasks:
-<!restingElectrocardioGraphic[2.0](r), restingElectrocardioGraphic[0.0](r)>:
+maximumHeartRate[188.90<=X](r):
 X    [0]
-<!<!restingElectrocardioGraphic[2.0](r), restingElectrocardioGraphic[0.0](r)>, serumCholestoral[0.60<=X<0.91](r)>:
+<maximumHeartRate[188.90<=X](r), !maximumHeartRate[149.60<=X<162.70](r)>:
 X    [0]
-serumCholestoral[0.60<=X<0.91](r):
+maximumHeartRate[149.60<=X<162.70](r):
+X    [0]
+<maximumHeartRate[162.70<=X<175.80](r), !maximumHeartRate[149.60<=X<162.70](r)>:
+X    [0]
+<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[136.50<=X<149.60](r)>:
+X    [0]
+<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[123.40<=X<136.50](r)>:
+X    [0]
+<maximumHeartRate[175.80<=X<188.90](r), !maximumHeartRate[149.60<=X<162.70](r)>:
+X    [0]
+<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[110.30<=X<123.40](r)>:
+X    [0]
+<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[97.20<=X<110.30](r)>:
+X    [0]
+<!maximumHeartRate[149.60<=X<162.70](r), maximumHeartRate[84.10<=X<97.20](r)>:
 X    [0]

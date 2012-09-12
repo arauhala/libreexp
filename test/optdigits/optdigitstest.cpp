@@ -626,7 +626,7 @@ namespace {
 					 explib::data<P>& data,
 					 explib::stats<P>& stats,
 					 explib::learner<P>& learner) {
-		int tsamples = 100;
+		int tsamples = 200;
 		std::set<std::string> tags = {sup()<<"exps: "<<lang.exp_count()};
 		explib::data<P> tdata(lang, optdigits_dim(tsamples));
 		populate<P>(tdata, tsamples, true);
