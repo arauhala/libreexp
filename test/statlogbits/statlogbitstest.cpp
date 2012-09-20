@@ -375,14 +375,14 @@ namespace {
 	}
 
 
-	void run_generic_statlog_shuttle_exps_test(TestTool& t, undef_t undefs) {
+	void run_generic_statlog_shuttle_exps_test(TestTool& t, undef_t undefs, bool logDepB = false) {
 		pred_problem<statlogbits_problem> pr;
 		setup_statlog_shuttle(pr, undefs);
 
 		int steps = 9;
 		double th = 100;
 		for (int i = 0; i < steps ; ++i) {
-			pred_args args(th, 0.4*th, 0, 1.);
+			pred_args args(th, 0.4*th, 0, 1., 0, logDepB);
 			separate_train_test_datas_run(t, pr, args, 43500);
 			th*=2;
 		}
@@ -431,6 +431,10 @@ namespace {
 
 	void run_statlog_shuttle_exps_noundef_test(TestTool& t) {
 		run_generic_statlog_shuttle_exps_test(t, undef_nothing);
+	}
+
+	void run_statlog_shuttle_exps_noundef_b_test(TestTool& t) {
+		run_generic_statlog_shuttle_exps_test(t, undef_nothing, true);
 	}
 
 	void setup_australian(pred_problem<statlogbits_problem>& pr, undef_t undefs = undef_excluded) {
@@ -586,6 +590,7 @@ void addstatlogbitstest(TestRunner& runner) {
 	runner.add("statlogbits/statlog_shuttle_filter_noundef",{"func"}, &run_statlog_shuttle_filter_noundef_test);
 	runner.add("statlogbits/statlog_shuttle_exps",  {"func"}, &run_statlog_shuttle_exps_test);
 	runner.add("statlogbits/statlog_shuttle_exps_noundef",  {"func"}, &run_statlog_shuttle_exps_noundef_test);
+	runner.add("statlogbits/statlog_shuttle_exps_noundef_b",  {"func"}, &run_statlog_shuttle_exps_noundef_b_test);
 	runner.add("statlogbits/australian", 			{"func"}, &run_australian_test);
 	runner.add("statlogbits/australian_filter", 	{"func"}, &run_australian_filter_test);
 	runner.add("statlogbits/australian_exps", 	    {"func"}, &run_australian_exps_test);
