@@ -495,6 +495,127 @@ namespace {
 			 "sample");*/
 	}
 
+
+
+	void setup_text_lang(explib::lang<text_problem>& l,
+						 std::vector<int>& v,
+						 int& len,
+						 std::istream& in) {
+		v.resize(256);
+		for (size_t i = 0; i < v.size(); ++i) {
+			v[i] = -1;
+		}
+		len = 0;
+		while (in) {
+			int c = in.get();
+			if (c < 0) break;
+			len++;
+			if (v[c] < 0) {
+				v[c] = l.var_count();
+				l.add_orig(explib::orig<text_problem>(explib::cvec<text_problem>(0, 0)));
+			}
+		}
+		for (int i = 0; i < l.var_count(); ++i) {
+			for (int j = 0; j < l.var_count(); ++j) {
+				setup_forward_rels<text_problem>(l, l.var(i), l.var(j));
+			}
+		}
+	}
+
+	void populate_text(explib::data<text_problem>& d, std::vector<int>& v, int len, std::istream& in) {
+		int at = 0;
+		for (size_t i = 0; i < d.var_count(); ++i) {
+			d.var(i).defined().fill(true);
+		}
+		while (in && at < len) {
+			int c = in.get();
+			explib::data_var<text_problem>& dv = d.var(v[c]);
+			*dv[explib::cvec<text_problem>(at, 0)] = true;
+#if 0
+			for (int i = 0; i < v[c]; ++i) {
+				explib::data_var<text_problem>& dv = d.var(i);
+				dv[explib::cvec<text_problem>(at, 0)] = false;
+			}
+#endif
+			at++;
+		}
+	}
+
+	void setup_names(explib::pinfo& info, explib::lang<text_problem>& l, std::vector<int>& v) {
+		info.vnames_.resize(l.var_count());
+		for (size_t i = 0; i < v.size(); ++i) {
+			if (v[i] >= 0) {
+				info.vnames_[v[i]] = sup()<<char(i);
+			}
+		}
+		for (int i = 0; i < text_problem::DIM; ++i) {
+			info.cvnames_.push_back(cvarnames[i]);
+		}
+
+	}
+
+	void code_test(TestTool& t) {
+		typedef text_problem p;
+		explib::lang<p> lang;
+
+		std::vector<int> char_vars;
+		int len;
+		{
+			std::ifstream file("src/reexp/lang.h");
+			setup_text_lang(lang, char_vars, len, file);
+		}
+		explib::data<p> data(lang, explib::cvec<p>(len, 1));
+		{
+			std::ifstream file("src/reexp/lang.h");
+			populate_text(data, char_vars, len, file);
+		}
+
+		explib::stats<p> s(data);
+		double th = 100;
+		explib::learner<p> l(lang, s, th, 0.4*th);
+		explib::pinfo names;
+		setup_names(names, lang, char_vars);
+		explib::stats_info<p> si(names, s);
+
+		t<<si.vars_tostring()<<"\n";
+
+		t<<"scan:\n"<<si.scan_tostring()<<"\n";
+
+		double naiveInfo = s.naiveInfo();
+		int exps = l.reexpress(true);
+		double naiveInfo2 = s.naiveInfo();
+
+		t<<exps<<" exps added.\n\n";
+
+		t<<"naive information dropped "<<(naiveInfo/8)<<"B -> "<<(naiveInfo2/8)<<"B for "<<len<<"B of text.\n\n";
+
+		//print_text(t, data, names, si.lang_info(), 2);
+
+
+		t<<"\nvars:\n";
+
+		std::vector<std::pair<double, int> > ordered;
+
+		for (int i = lang.orig_count(); i < lang.var_count(); ++i) {
+			ordered.push_back(std::pair<double, int>(s.var(i).freq(), i));
+		}
+		std::sort(ordered.begin(), ordered.end());
+		std::reverse(ordered.begin(), ordered.end());
+
+		for (std::pair<double, int>& o : ordered) {
+			if (o.first >= 5) {
+
+				std::ostringstream buf;
+				write_var(buf, lang, names, o.second);
+				std::string str = buf.str();
+				t<<"\""<<str<<"\"";
+				for (int i = 2 + str.length(); i < 30; ++i) t<<" ";
+				t<<"["<<o.first<<"]\n";
+			}
+		}
+
+	}
+
 }
 
 void addtexttest(TestRunner& runner) {
@@ -503,4 +624,5 @@ void addtexttest(TestRunner& runner) {
 	runner.add("text/predicting", 	{"func"},  	&predicting_test);
 	runner.add("text/genpred", 		{"func"}, 	&genpred_test);
 	runner.add("text/genpredeval", 	{"func"}, 	&genpredeval_test);
+	runner.add("text/code", 	    {"func"}, 	&code_test);
 }

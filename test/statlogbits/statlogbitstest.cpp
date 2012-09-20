@@ -242,13 +242,13 @@ namespace {
 		print_data_by(t, "prioriw:", true);
 	}
 
-	void generic_run_heart_exps_test(TestTool& t, undef_t undefs) {
+	void generic_run_heart_exps_test(TestTool& t, undef_t undefs, bool logDepB = false) {
 		pred_problem<statlogbits_problem> pr;
 		setup_heart(pr, undefs);
-		int steps = 22;
+		int steps = 24;
 		for (int i = 0; i < steps ; ++i) {
 			double th = 10 + i * 5;
-			pred_args args(th, 0.2*th, -1000., 2.);
+			pred_args args(th, 0.2*th, -1000., 2., 0, logDepB);
 			crossvalidate_run(t, pr, args, 10);
 		}
 
@@ -261,6 +261,22 @@ namespace {
 
 	void run_heart_exps_test_noundefs(TestTool& t) {
 		generic_run_heart_exps_test(t, undef_nothing);
+	}
+
+	void run_heart_exps_b_test_noundefs(TestTool& t) {
+		generic_run_heart_exps_test(t, undef_nothing, true);
+	}
+
+	void run_heart_narrowexps_b_test_noundefs(TestTool& t) {
+		pred_problem<statlogbits_problem> pr;
+		setup_heart(pr, undef_nothing);
+		int steps = 20;
+		for (int i = 0; i < steps ; ++i) {
+			double th = 6 + i;
+			pred_args args(th, 0.2*th, -1000., 2., 0, true);
+			crossvalidate_run(t, pr, args, 10);
+		}
+		print_data_by(t, "threshold:", true);
 	}
 
 	void setup_statlog_shuttle(pred_problem<statlogbits_problem>& pr, undef_t undefs = undef_excluded) {
@@ -461,6 +477,18 @@ namespace {
 		print_data_by(t, "threshold:", false);
 	}
 
+	void run_australian_exps_b_test(TestTool& t) {
+		pred_problem<statlogbits_problem> pr;
+		setup_australian(pr, undef_nothing);
+		int steps = 22;
+		for (int i = 0; i < steps ; ++i) {
+			double th = 30 + i * 15;
+			pred_args args(th, 0.2*th, 0, 2., false, true);
+			crossvalidate_run(t, pr, args, 10);
+		}
+		print_data_by(t, "threshold:", false);
+	}
+
 	void run_australian_prioriw_test(TestTool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_australian(pr);
@@ -513,13 +541,13 @@ namespace {
 		t<<si.var_deps_tostring(pr.lang_.var_count()-1, 10);
 	}
 
-	void run_generic_germancredit_exps_test(TestTool& t, undef_t undefs) {
+	void run_generic_germancredit_exps_test(TestTool& t, undef_t undefs, bool predLogDepB = false) {
 		pred_problem<statlogbits_problem> pr;
 		setup_germancredit(pr, undefs);
 		int steps = 20;
 		for (int i = 0; i < steps ; ++i) {
 			double th = 40 + i * 15;
-			pred_args args(th, 0.2*th, 0, 2);
+			pred_args args(th, 0.2*th, 0, 2., false, predLogDepB);
 			crossvalidate_run(t, pr, args, 10);
 		}
 		print_data_by(t, "threshold:", true);
@@ -531,6 +559,10 @@ namespace {
 
 	void run_germancredit_exps_noundef_test(TestTool& t) {
 		run_generic_germancredit_exps_test(t, undef_nothing);
+	}
+
+	void run_germancredit_exps_noundef_b_test(TestTool& t) {
+		run_generic_germancredit_exps_test(t, undef_nothing, true);
 	}
 
 
@@ -545,6 +577,8 @@ void addstatlogbitstest(TestRunner& runner) {
 	runner.add("statlogbits/heart_prioriw", 		{"func"}, &run_heart_prioriw_test);
 	runner.add("statlogbits/heart_exps", 			{"func"}, &run_heart_exps_test_undef);
  	runner.add("statlogbits/heart_exps_noundefs", 	{"func"}, &run_heart_exps_test_noundefs);
+ 	runner.add("statlogbits/heart_exps_noundefs_b", 	{"func"}, &run_heart_exps_b_test_noundefs);
+ 	runner.add("statlogbits/heart_narrowexps_noundefs_b", 	{"func"}, &run_heart_narrowexps_b_test_noundefs);
 	runner.add("statlogbits/heart_exps_segfault", 	{"func"}, &run_heart_exps_segfault_test);
 	runner.add("statlogbits/setup_statlog_shuttle", {"func"}, &run_setup_statlog_shuttle_test);
 	runner.add("statlogbits/statlog_shuttle_singlerun",{"func"}, &run_statlog_shuttle_singlerun_test);
@@ -555,9 +589,10 @@ void addstatlogbitstest(TestRunner& runner) {
 	runner.add("statlogbits/australian", 			{"func"}, &run_australian_test);
 	runner.add("statlogbits/australian_filter", 	{"func"}, &run_australian_filter_test);
 	runner.add("statlogbits/australian_exps", 	    {"func"}, &run_australian_exps_test);
+	runner.add("statlogbits/australian_exps_b", 	    {"func"}, &run_australian_exps_b_test);
 	runner.add("statlogbits/australian_prioriw", 	{"func"}, &run_australian_prioriw_test);
 	runner.add("statlogbits/setup_germancredit", 	{"func"}, &run_setup_germancredit_test);
 	runner.add("statlogbits/germancredit_exps", 	{"func"}, &run_germancredit_exps_test);
 	runner.add("statlogbits/germancredit_exps_noundef", 	{"func"}, &run_germancredit_exps_noundef_test);
-
+	runner.add("statlogbits/germancredit_exps_noundef_b", 	{"func"}, &run_germancredit_exps_noundef_b_test);
 }

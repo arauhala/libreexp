@@ -259,6 +259,22 @@ expression counts by threshold and train data:
 n:          naive       256         64          
 4096        0.000       5.550       12.250      
 
+train data naive entropy before re-expression:
+ldeps:      naive       256         64          
+0           6.444       6.444       6.444       
+0.2         6.330       6.330       6.330       
+0.4         6.275       6.275       6.275       
+0.6         6.221       6.221       6.221       
+0.8         6.177       6.177       6.177       
+
+train data naive entropy after re-expression:
+ldeps:      naive       256         64          
+0           6.444       6.444       6.444       
+0.2         6.330       5.829       5.671       
+0.4         6.275       5.424       5.214       
+0.6         6.221       5.181       4.933       
+0.8         6.177       4.983       4.726       
+
 entropy based on average p, input ignored:
 ldeps:      naive       256         64          
 0           0.732       0.732       0.732       

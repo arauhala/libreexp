@@ -1,6 +1,5 @@
 vars:
 
-px(r)
 d0(r)
 d1(r)
 d2(r)
@@ -11,6 +10,7 @@ d6(r)
 d7(r)
 d8(r)
 d9(r)
+px(r)
 
 
 rels:

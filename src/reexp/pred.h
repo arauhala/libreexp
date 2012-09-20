@@ -96,9 +96,13 @@ namespace explib {
 		private:
 			const stats<P>& stats_;
 			double prioriWeight_;
+			bool useLogDepB_;
 
 		public:
-			pred(const stats<P>& s, double prioriWeight = 2.) : stats_(s), prioriWeight_(prioriWeight) {}
+			pred(const stats<P>& s, double prioriWeight = 2., bool useLogDepB = false)
+			: stats_(s), prioriWeight_(prioriWeight), useLogDepB_(useLogDepB) {}
+
+#if 0
 
 			std::vector<double> bitP(const data<P>& d, int varid) {
 				const var_stats<P>& vs = stats_.var(varid);
@@ -116,8 +120,8 @@ namespace explib {
 					wFalse[i] = vs.n() - vs.freq() + 1;
 				}
 
-				const std::vector<rel<P>*>& rels = v.rels(); // use these for prediction work
-
+				// use relations for prediction work
+				const std::vector<rel<P>*>& rels = v.rels();
 				for (auto i = rels.begin(); i != rels.end(); ++i) {
 					const rel<P>& r = **i;
 					if (!r.disabled()) {
@@ -184,42 +188,13 @@ namespace explib {
 
 				return rv;
 			}
+#endif
 
-#if 0
 			template <typename Out>
-			inline void getInputStateLogDep(const explib::rel_stats<P>& rs,
-											const rel_inputvars<P>& riv,
-											inputstate_logdep& inputStateLogDep,
-											Out& explain) {
-				const explib::rel<P>& r = rs.data().rel();
-				int vidx = riv.predicted_;
-				double n = rs.n();
-				double f = rs.varFreqs()[vidx];
-				for (int i = 0; i < riv.stateCount(); ++i) {
-					double predVarTrue = 0;
-					double stateFreq = 0;
-					for (int s = 0; s < r.stateCount(); ++s) {
-						if (riv.includesRelState(i, s)) {
-							int sfreq = rs.stateFreqs()[s];
-							bool predVarState = r.varState(vidx, s);
-							if (predVarState) {
-								predVarTrue += sfreq;
-							}
-							stateFreq += sfreq;
-						}
-					}
-					inputStateLogDep.depStateV(i) = log2(predVarTrue + prioriWeight_) - log2(f + prioriWeight_);
-					explain<<"depStateV("<<i<<")=log2("<<predVarTrue<<"+"<<prioriWeight_<<") - log2("<<f<<"+"<<prioriWeight_<<")="<<inputStateLogDep.depStateV(i)<<"\n";
-					inputStateLogDep.depStateNotV(i) = log2((stateFreq-predVarTrue)+prioriWeight_)  - log2(n - f + prioriWeight_);
-					explain<<"depStateNotV("<<i<<")=log2("<<(stateFreq-predVarTrue)<<"+"<<prioriWeight_<<") - log2("<<(n-f)<<"+"<<prioriWeight_<<")="<<inputStateLogDep.depStateNotV(i)<<"\n";
-				}
-			}
-#else
-			template <typename Out>
-			inline void getInputStateLogDep(const explib::rel_stats<P>& rs,
-											const rel_inputvars<P>& riv,
-											inputstate_logdep& inputStateLogDep,
-											Out& explain) {
+			inline void getInputStateLogDepA(const explib::rel_stats<P>& rs,
+											 const rel_inputvars<P>& riv,
+											 inputstate_logdep& inputStateLogDep,
+											 Out& explain) {
 				const explib::rel<P>& r = rs.data().rel();
 				int vidx = riv.predicted_;
 				double n = rs.n();
@@ -256,12 +231,56 @@ namespace explib {
 														  <<")/("<<(n - f)<<"+"<<prioriWeight_*(1-varPrioriP)<<"))="<<inputStateLogDep.depStateNotV(i)<<"\n";
 				}
 			}
-#endif
 
 			template <typename Out>
-			std::vector<double> bitP2(const data<P>& d,
-									  int varid,
-									  Out& explain) {
+			inline void getInputStateLogDepB(const explib::rel_stats<P>& rs,
+											 const rel_inputvars<P>& riv,
+											 inputstate_logdep& inputStateLogDep,
+											 Out& explain) {
+				const explib::rel<P>& r = rs.data().rel();
+				int vidx = riv.predicted_;
+				double n = rs.n();
+				double f = rs.varFreqs()[vidx];
+				for (int i = 0; i < riv.stateCount(); ++i) {
+					double predVarTrue = 0;
+					double stateFreq = 0;
+					for (int s = 0; s < r.stateCount(); ++s) {
+						if (riv.includesRelState(i, s)) {
+							int sfreq = rs.stateFreqs()[s];
+							bool predVarState = r.varState(vidx, s);
+							if (predVarState) {
+								predVarTrue += sfreq;
+							}
+							stateFreq += sfreq;
+						}
+					}
+					inputStateLogDep.depStateV(i) = log2(predVarTrue + prioriWeight_) - log2(f + prioriWeight_);
+					explain<<"depStateV("<<i<<")=log2("<<predVarTrue<<"+"<<prioriWeight_<<") - log2("<<f<<"+"<<prioriWeight_<<")="<<inputStateLogDep.depStateV(i)<<"\n";
+					inputStateLogDep.depStateNotV(i) = log2((stateFreq-predVarTrue)+prioriWeight_)  - log2(n - f + prioriWeight_);
+					explain<<"depStateNotV("<<i<<")=log2("<<(stateFreq-predVarTrue)<<"+"<<prioriWeight_<<") - log2("<<(n-f)<<"+"<<prioriWeight_<<")="<<inputStateLogDep.depStateNotV(i)<<"\n";
+				}
+			}
+			template <typename Out>
+			inline void getInputStateLogDep(const explib::rel_stats<P>& rs,
+											const rel_inputvars<P>& riv,
+											inputstate_logdep& inputStateLogDep,
+											Out& explain) {
+				if (!useLogDepB_) {
+					getInputStateLogDepA(rs, riv, inputStateLogDep, explain);
+				} else {
+					getInputStateLogDepB(rs, riv, inputStateLogDep, explain);
+				}
+			}
+
+
+
+			/**
+			 * Bit by bit predicting
+			 */
+			template <typename Out>
+			std::vector<double> bitP(const data<P>& d,
+									 int varid,
+									 Out& explain) {
 				const data_var<P>& dv = d.var(varid);
 				const var<P>& v = dv.var_;
 				const cvec<P>& dim = dv.dim();
@@ -283,8 +302,8 @@ namespace explib {
 					explain<<"log priori false: "<<logPrioriFalse<<"\n";
 				}
 
-				const std::vector<rel<P>*>& rels = v.rels(); // use these for prediction work
-
+				// predict using target variable relations
+				const std::vector<rel<P>*>& rels = v.rels();
 				for (auto i = rels.begin(); i != rels.end(); ++i) {
 					const rel<P>& r = **i;
 					if (!r.disabled()) {
@@ -329,22 +348,6 @@ namespace explib {
 
 							wTrue[sidx]  += inputStateLogDep.depStateV(rivs);
 							wFalse[sidx] += inputStateLogDep.depStateNotV(rivs);
-
-/*							explain<<"state "<<rivs<<"\n";
-							explain<<"logTrue += "<<statecount<<" * "<<inputStateLogDep.depStateV(s)<<"\n";
-							explain<<"logTrue -> "<<wTrue[sidx]<<"\n";
-							explain<<"logFalse += "<<statecount<<" * "<<inputStateLogDep.depStateNotV(s)<<"\n";
-							explain<<"logFalse -> "<<wFalse[sidx]<<"\n";*/
-/*							int sidx = dim.offset(at);
-							long& wt = wTrue[sidx];
-							long& wf = wFalse[sidx];
-							wt *= freqTrue * (rs.n() - rs.varFreqs()[vidx] + 1);
-							wf *= freqFalse * (1+rs.varFreqs()[vidx]);
-							const long bigNumber = 0x10000000;
-							while (wt > bigNumber || wf > bigNumber) {
-								wt >>= 1;
-								wf >>= 1;
-							}*/
 						}
 					}
 				}
@@ -359,10 +362,15 @@ namespace explib {
 				return rv;
 			}
 
-			inline std::vector<double> bitP2(const data<P>& d, int varid) {
+			inline std::vector<double> bitP(const data<P>& d, int varid) {
 				fake_output out;
-				return bitP2(d, varid, out);
+				return bitP(d, varid, out);
 			}
+
+			/**
+			 * Row predicting. This method of predicting is especially optimized
+			 * for situation, where relation has many-to-single bits mapping.
+			 */
 			template <typename Out = fake_output>
 			std::vector<double> rowP(const data<P>& d, int varid, Out explain = Out()) {
 				const data_var<P>& dv = d.var(varid);
@@ -499,7 +507,7 @@ namespace explib {
 				if (v.ctx().v_[0] < 0) {
 					return rowP(d, varid);
 				} else {
-					return bitP2(d, varid);
+					return bitP(d, varid);
 				}
 			}
 

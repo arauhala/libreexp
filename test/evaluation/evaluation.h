@@ -37,12 +37,19 @@ namespace evaluation {
 		double predrelfilter_;
 		double prioriweight_;
 		int verbose_;
-		pred_args(double expthreshold, double exprelfilter, double predrelfilter, double prioriweight = 2., int verbose = 0)
+		bool useLogDepB_;
+		pred_args(double expthreshold,
+				  double exprelfilter,
+				  double predrelfilter,
+				  double prioriweight = 2.,
+				  int verbose = 0,
+				  bool useLogDepB = false)
 		:   expthreshold_(expthreshold),
 		    exprelfilter_(exprelfilter),
 		    predrelfilter_(predrelfilter),
 		    prioriweight_(prioriweight),
-		    verbose_(verbose) {}
+		    verbose_(verbose),
+		    useLogDepB_(useLogDepB) {}
 	};
 	enum {
 		true_positive = 0,
@@ -259,7 +266,7 @@ namespace evaluation {
 							 pred_data_stats& s,
 							 const explib::stats<P>& trainstats,
 							 const explib::data<P>& predicted) {
-		explib::pred<P> pred(trainstats, args.prioriweight_);
+		explib::pred<P> pred(trainstats, args.prioriweight_, args.useLogDepB_);
 
 		std::ostringstream buf;
 		buf.setf(std::ios::fixed,std::ios::floatfield);
@@ -270,7 +277,7 @@ namespace evaluation {
 			ps.push_back(std::vector<double>());
 			if (pr.predvars_[v]) {
 				TimeSentry time;
-				ps.back() = pred.bitP2(predicted, v);
+				ps.back() = pred.bitP(predicted, v);
 				s.us_ += time.us();
 			}
 		}

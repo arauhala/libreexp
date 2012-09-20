@@ -94,7 +94,11 @@ namespace explib {
 						const rel_stats<P>& r( stats_.rel(i) );
 						int stateCount = r.stateCount();
 						for (int j = 0; j < stateCount; j++) {
+#if 1
 							double b = r.eStateBias(j);
+#else
+							double b = std::abs(r.eStateBias(j));
+#endif
 							if (b > threshold_) {
 								candidate<P> cand(r, j, b);
 								c.push(cand);

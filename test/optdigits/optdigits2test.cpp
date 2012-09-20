@@ -17,45 +17,43 @@
 #include <iostream>
 #include <algorithm>
 
+#include "optdigits.h"
+
+// bit variables (used to group bits)
+namespace optdigits {
+	namespace varid {
+		static const int first_pixel = 10;
+	}
+}
+
 namespace {
+
+	using namespace optdigits;
 
 	//
 	// Each data entry is 7*3 + 9 = 30 bits
 	//
+	static const int Pack = 2;
 
-	static int OriginalWidth = 32;
+	static const int Width = OriginalWidth / Pack;
 
-	static int OriginalHeight = 32;
+	static const int Height = OriginalHeight / Pack;
 
-	static int Pack = 2;
+	static const int PixelBits = 1;
 
-	static int Width = OriginalWidth / Pack;
+	static const int PixelBitBound[] = {
+		2,
+	};
 
-	static int Height = OriginalHeight / Pack;
 
 //	static int PixelCount = Width * Height;
 
-	static int DigitCount = 10;
+	static const int DigitCount = 10;
 
-	// context variables
 	namespace cvarid {
 		static const int sample = 0;
 	}
 
-	// bit variables (used to group bits)
-	namespace varid {
-		static const int digit0 = 0;
-		static const int digit1 = 1;
-		static const int digit2 = 2;
-		static const int digit3 = 3;
-		static const int digit4 = 4;
-		static const int digit5 = 5;
-		static const int digit6 = 6;
-		static const int digit7 = 7;
-		static const int digit8 = 8;
-		static const int digit9 = 9;
-		static const int first_pixel = 10;
-	}
 
 	const char* dig_varnames[] =  {
 		"d0",
@@ -79,25 +77,13 @@ namespace {
 		static const int MAX_REL_VARS = 2;
 	};
 
-	int pixel_varid(int x, int y) {
-		return varid::first_pixel + (x + y*Width);
+	int pixel_varid(int x, int y, int bit) {
+		return varid::first_pixel + PixelBits * (x + y*Width) + bit;
 	}
 
 	explib::cvec<optdigits_problem> optdigits_dim(int samples) {
 		return explib::cvec<optdigits_problem>(samples);
 	}
-
-	const char* TRA_DATA_FILE = "test/optdigits/optdigits-orig.tra";
-	int TRA_DATA_FILE_SAMPLES = 1934;
-	const char* CV_DATA_FILE = "test/optdigits/optdigits-orig.cv";
-	int CV_DATA_FILE_SAMPLES = 946;
-	const char* WDEP_DATA_FILE = "test/optdigits/optdigits-orig.wdep";
-	int WDEP_DATA_FILE_SAMPLES = 943;
-	// use this one testing
-	const char* WINDEP_DATA_FILE = "test/optdigits/optdigits-orig.windep";
-	int WINDEP_DATA_FILE_SAMPLES = 1797;
-
-	int DATA_FILE_HEADER_LINES = 21;
 
 	template <typename P>
 	int populate(explib::data<P>& data, int samples, std::ifstream& in, int offset = 0) {
@@ -130,9 +116,12 @@ namespace {
 							if (pic.get(x*Pack + x2, y*Pack + y2)) popcount++;
 						}
 					}
-					explib::data_var<P>& p = data.var(pixel_varid(x, y));
-					p[at] = true;
-					*p[at] = (popcount*2 >= Pack*Pack);
+					for (int j = 0; j < PixelBits; ++j) {
+						explib::data_var<P>& p = data.var(pixel_varid(x, y, j));
+						p[at] = true;
+						//*p[at] = (popcount*2 >= Pack*Pack);
+						*p[at] = (popcount >= PixelBitBound[j]);
+					}
 				}
 			}
 
@@ -161,34 +150,78 @@ namespace {
 		}
 		for (int x = 0; x < Width; ++x) {
 			for (int y = 0; y < Height; ++y) {
-				lang.add_orig(explib::orig<P>(ctx));
+				for (int b = 0; b < PixelBits; ++b) {
+					lang.add_orig(explib::orig<P>(ctx));
+				}
 			}
 		}
 
 		for (int x = 0; x < Width; ++x) {
 			for (int y = 0; y < Height; ++y) {
-				explib::var<P>& pixel = lang.var(pixel_varid(x, y));
-				if (x+1 <Width) {
-					explib::var<P>& rightpixel = lang.var(pixel_varid(x+1, y));
-					explib::rel<P>& rl(lang.alloc_rel(ctx)); // left right
-					rl.add_var(explib::cvec<P>(0), pixel);
-					rl.add_var(explib::cvec<P>(0), rightpixel);
-					lang.rel_done();
-				}
-				if (y+1 < Height) {
-					explib::var<P>& downpixel = lang.var(pixel_varid(x, y+1));
-					explib::rel<P>& up(lang.alloc_rel(ctx)); // up down
-					up.add_var(explib::cvec<P>(0), pixel);
-					up.add_var(explib::cvec<P>(0), downpixel);
-					lang.rel_done();
-				}
-				for (int i = 0; i < DigitCount; ++i) {
-					explib::rel<P>& ps(lang.alloc_rel(ctx)); // pixel-shape
-					ps.add_var(explib::cvec<P>(0), // pixel
-							   pixel);
-					ps.add_var(explib::cvec<P>(0), // shape
-							   lang.var(varid::digit0 + i));
-					lang.rel_done();
+				for (int b = 0; b < PixelBits; ++b) {
+					explib::var<P>& pixel = lang.var(pixel_varid(x, y, b));
+					for (int b2 = 0; b2 <= b; ++b2) {
+						if (b2 != b) {
+							explib::var<P>& pixel2 = lang.var(pixel_varid(x, y, b2));
+							explib::rel<P>& rl(lang.alloc_rel(ctx)); // left right
+							rl.add_var(explib::cvec<P>(0), pixel);
+							rl.add_var(explib::cvec<P>(0), pixel2);
+							lang.rel_done();
+						}
+						if (x+1 <Width) {
+							explib::var<P>& rightpixel = lang.var(pixel_varid(x+1, y, b2));
+							explib::rel<P>& rl(lang.alloc_rel(ctx)); // left right
+							rl.add_var(explib::cvec<P>(0), pixel);
+							rl.add_var(explib::cvec<P>(0), rightpixel);
+							lang.rel_done();
+							if (b2 != b) {
+								explib::var<P>& leftpixel2 = lang.var(pixel_varid(x, y, b2));
+								explib::var<P>& rightpixel2 = lang.var(pixel_varid(x+1, y, b));
+								explib::rel<P>& rl2(lang.alloc_rel(ctx)); // left right
+								rl2.add_var(explib::cvec<P>(0), leftpixel2);
+								rl2.add_var(explib::cvec<P>(0), rightpixel2);
+								lang.rel_done();
+							}
+						}
+						if (y+1 < Height) {
+							explib::var<P>& downpixel = lang.var(pixel_varid(x, y+1, b2));
+							explib::rel<P>& ud(lang.alloc_rel(ctx)); // up down
+							ud.add_var(explib::cvec<P>(0), pixel);
+							ud.add_var(explib::cvec<P>(0), downpixel);
+							lang.rel_done();
+							if (b2 != b) {
+								explib::var<P>& downpixel2 = lang.var(pixel_varid(x, y, b2));
+								explib::var<P>& uppixel2 = lang.var(pixel_varid(x, y+1, b));
+								explib::rel<P>& ud2(lang.alloc_rel(ctx)); // left right
+								ud2.add_var(explib::cvec<P>(0), downpixel2);
+								ud2.add_var(explib::cvec<P>(0), uppixel2);
+								lang.rel_done();
+							}
+						}
+						if (x+1 < Width && y+1 < Height) {
+							explib::var<P>& rightup = lang.var(pixel_varid(x+1, y, b));
+							explib::var<P>& leftdown = lang.var(pixel_varid(x, y+1, b2));
+							explib::rel<P>& r1(lang.alloc_rel(ctx)); // left right
+							r1.add_var(explib::cvec<P>(0), rightup);
+							r1.add_var(explib::cvec<P>(0), leftdown);
+							lang.rel_done();
+
+							explib::var<P>& rightdown = lang.var(pixel_varid(x+1, y+1, b));
+							explib::var<P>& leftup = lang.var(pixel_varid(x, y, b2));
+							explib::rel<P>& r2(lang.alloc_rel(ctx)); // left right
+							r2.add_var(explib::cvec<P>(0), rightdown);
+							r2.add_var(explib::cvec<P>(0), leftup);
+							lang.rel_done();
+						}
+					}
+					for (int i = 0; i < DigitCount; ++i) {
+						explib::rel<P>& ps(lang.alloc_rel(ctx)); // pixel-shape
+						ps.add_var(explib::cvec<P>(0), // pixel
+								   pixel);
+						ps.add_var(explib::cvec<P>(0), // shape
+								   lang.var(varid::digit0 + i));
+						lang.rel_done();
+					}
 				}
 			}
 		}
@@ -294,104 +327,6 @@ namespace {
 	}
 
 
-	template <typename P>
-	void evaluate(TestTool& t,
-			      const explib::data<P>& data,
-			      const explib::stats<P>& stats,
-			      const std::set<std::string>& tags) {
-		explib::pred<P> pred(stats);
-		std::vector<double> ps[10];
-
-		TimeSentry timer;
-		for (int i = 0; i < 10; i++) {
-			ps[i] = std::move(pred.p(data, i+varid::digit0));
-		}
-		long us = timer.us();
-		int samples = ps[0].size();
-		t.record(tags+"perf:pred us", us/samples);
-
-		std::vector<int> decisions;
-		std::vector<int> correct;
-		decisions.resize(samples);
-		correct.resize(samples);
-		const explib::data_var<P>* vars[10];
-
-		for (int i = 0; i < 10; i++) {
-			vars[i] = &data.var(i + varid::digit0);
-		}
-
-		timer.reset();
-		double infos[10];
-		int oks[10];
-		int ns[10];
-		for (int i = 0; i < 10; ++i) {
-			oks[i] = 0; infos[i] = 0; ns[i] = 0;
-		}
-		explib::cvec<P> at;
-		int ok = 0;
-		double info = 0;
-		for (int s = 0; s < samples; s++) {
-			int digit = -1;
-			// find out the right answer
-			at[cvarid::sample] = s;
-			for (int i = 0; i < 10; i++) {
-				if (*((*vars[i])[at])) {
-					correct[s] = digit = i;
-					break;
-				}
-			}
-			// normalize
-			double totalP = 0;
-			for (int d = 0; d < 10; d++) {
-				totalP += ps[d][s];
-			}
-			for (int d = 0; d < 10; d++) {
-				ps[d][s] /= totalP;
-			}
-			// find out the peak probability & calculate information
-			int top = -1;
-			double topP = -1;
-			double i = 0;
-			for (int d = 0; d < 10; d++) {
-				if (ps[d][s] > topP) {
-					top = d;
-					topP = ps[d][s];
-				}
-			}
-			i = -log(ps[digit][s]) / log(2);
-			info += i;
-			infos[digit] += i;
-			ns[digit]++;
-			decisions[s] = top;
-			if (digit == top) {
-				ok++;
-				oks[digit]++;
-			}
-		}
-		us = timer.us();
-		t.record(tags+"perf:norm us", us/samples);
-
-		info /= samples;
-
-		t.record(tags+"prop:entropy", info);
-		t.record(tags+"prop:accuracy", (ok/(double)samples));
-		t.record(tags+"prop:error", ((samples-ok)/(double)samples));
-	}
-
-	template <typename P>
-	void do_evaluate(TestTool& t,
-					 explib::lang<P>& lang,
-					 explib::data<P>& data,
-					 explib::data<P>& tdata,
-					 explib::stats<P>& stats,
-					 explib::learner<P>& learner) {
-		std::set<std::string> tags = {sup()<<"exps: "<<lang.exp_count()};
-		t.record(tags+"gen:info", stats.naiveInfo());
-		evaluate(t, data, stats, tags+"data:train");
-		evaluate(t, tdata, stats, tags+"data:test");
-	}
-
-
 	void byexps_test(TestTool& t) {
 		typedef optdigits_problem p;
 
@@ -413,12 +348,13 @@ namespace {
 
 		explib::stats<p> stats(data);
 
-		explib::learner<p> learner(lang, stats, 40, 15, rel_filter);
+		double th = 30;
+		explib::learner<p> learner(lang, stats, th, 0.4*th, rel_filter);
 		setup_learner<p>(learner);
 
 		int expsPerStep = 50;
 		int exps = 0;
-		do_evaluate(t, lang, data, tdata, stats, learner);
+		do_evaluate(t, lang, data, tdata, stats, learner, cvarid::sample);
 
 		while (exps < 1000) {
 			TimeSentry timer;
@@ -429,7 +365,7 @@ namespace {
 				t.record(tags+"perf:reexp us", us/added);
 				exps += added;
 				tdata.apply_exps();
-				do_evaluate(t, lang, data, tdata, stats, learner);
+				do_evaluate(t, lang, data, tdata, stats, learner, cvarid::sample);
 			}
 			// do measuring here
 			if (added < expsPerStep) break;
@@ -465,8 +401,8 @@ namespace {
 		t<<"\nentropy:\n\n"<<t.report(ToTable<Average>(tags+"prop:entropy", "data:", "exps:"))
 			.toplot(3, 20)<<"\n";
 
-		t<<"\naccuracy:\n\n"<<t.report(ToTable<Average>(tags+"prop:accuracy", "data:", "exps:"))
-			.toplot(3, 20)<<"\n";
+/*		t<<"\naccuracy:\n\n"<<t.report(ToTable<Average>(tags+"prop:accuracy", "data:", "exps:"))
+			.toplot(3, 20)<<"\n";*/
 
 		t<<"\nerror:\n\n"<<t.report(ToTable<Average>(tags+"prop:error", "data:", "exps:"))
 			.toplot(3, 20)<<"\n";
@@ -479,7 +415,6 @@ namespace {
 // Unlike in optdigits test suite, optdigits2 uses separate variable for
 // each pixel
 void addoptdigits2test(TestRunner& runner) {
-
 	runner.add("optdigits/o2_setup", 			{"func"},   &setup_test);
 	runner.add("optdigits/o2_learning", 		{"func"},   &learning_test);
 	runner.add("optdigits/o2_exps", 			{"func"},  	&byexps_test);
