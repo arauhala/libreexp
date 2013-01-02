@@ -1,0 +1,8 @@
+prop:       1048576     
+setup ms    6598.000    
+stats ms    735.000     
+exps        0.000       
+populate ms 6.000       
+apply ms    0.000       
+active rels 210.000     
+rels        210.000     

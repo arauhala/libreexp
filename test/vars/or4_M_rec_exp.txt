@@ -1,0 +1,12 @@
+2 n:1048576 prop:stats ms 47
+2 n:1048576 prop:data_entropy:orig 4.33751
+2 n:1048576 prop:data_entropy:reexp 4.33751
+2 n:1048576 prop:exps 0
+4 n:1048576 prop:info sample:train x 50829
+4 n:1048576 prop:entryinfo sample:train x 0.0484743
+4 n:1048576 prop:naivepredinfo sample:train x 0.0932002
+4 n:1048576 prop:idealinfo sample:train x 0
+4 n:1048576 prop:info sample:test x 44.9427
+4 n:1048576 prop:entryinfo sample:test x 0.0438894
+4 n:1048576 prop:naivepredinfo sample:test x 0.0932002
+4 n:1048576 prop:idealinfo sample:test x 0
