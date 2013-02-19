@@ -79,8 +79,8 @@ namespace {
 		static const int MAX_REL_VARS = 2;
 	};
 
-	explib::cvec<recognition_problem> sample_dim() {
-		explib::cvec<recognition_problem> dim;
+	reexp::cvec<recognition_problem> sample_dim() {
+		reexp::cvec<recognition_problem> dim;
 		dim[cvarid::x] = Width;
 		dim[cvarid::y] = Height;
 		dim[cvarid::sample] = SampleCount;
@@ -192,15 +192,15 @@ namespace {
 	}
 
 	template <typename P>
-	void populate(explib::data<P>& data) {
-		explib::data_var<P>& p = data.var(varid::pixel);
-		explib::cvec<P> at(0, 0, 0);
+	void populate(reexp::data<P>& data) {
+		reexp::data_var<P>& p = data.var(varid::pixel);
+		reexp::cvec<P> at(0, 0, 0);
 
 		for (int i = 0; i < SampleCount; i++) {
 			sample& sa = samples[i];
 			at[cvarid::sample] = i;
 			for (int j = 0; j < DigitCount; j++) {
-				explib::data_var<P>& digit = data.var(varid::digit0 + j);
+				reexp::data_var<P>& digit = data.var(varid::digit0 + j);
 				digit[at] = true;
 				*digit[at] = (sa.number_ == j);
 			}
@@ -216,47 +216,47 @@ namespace {
 	}
 
 	template <typename P>
-	void setup_lang(explib::lang<P>& lang) {
-		explib::ctx<P> pixel_ctx(explib::cvec<P>(0, 0, 0));
-		explib::ctx<P> shape_ctx(explib::cvec<P>(-1, -1, 0));
-		explib::ctx<P> full_ctx(explib::cvec<P>(0, 0, 0));
+	void setup_lang(reexp::lang<P>& lang) {
+		reexp::ctx<P> pixel_ctx(reexp::cvec<P>(0, 0, 0));
+		reexp::ctx<P> shape_ctx(reexp::cvec<P>(-1, -1, 0));
+		reexp::ctx<P> full_ctx(reexp::cvec<P>(0, 0, 0));
 
-		lang.add_orig(explib::orig<P>(pixel_ctx));
+		lang.add_orig(reexp::orig<P>(pixel_ctx));
 		for (int i = 0; i < DigitCount; ++i) {
-			lang.add_orig(explib::orig<P>(shape_ctx));
+			lang.add_orig(reexp::orig<P>(shape_ctx));
 		}
 
-		explib::rel<P>& rl(lang.alloc_rel(pixel_ctx)); // right left
-		rl.add_var(explib::cvec<P>(0, 0, 0, 0),
+		reexp::rel<P>& rl(lang.alloc_rel(pixel_ctx)); // right left
+		rl.add_var(reexp::cvec<P>(0, 0, 0, 0),
 				   lang.var(varid::pixel));
-		rl.add_var(explib::cvec<P>(1, 0, 0, 0),
+		rl.add_var(reexp::cvec<P>(1, 0, 0, 0),
 				  lang.var(varid::pixel));
 		lang.rel_done();
 
-		explib::rel<P>& ud(lang.alloc_rel(pixel_ctx)); // up down
-		ud.add_var(explib::cvec<P>(0, 0, 0, 0),
+		reexp::rel<P>& ud(lang.alloc_rel(pixel_ctx)); // up down
+		ud.add_var(reexp::cvec<P>(0, 0, 0, 0),
 				   lang.var(varid::pixel));
-		ud.add_var(explib::cvec<P>(0, 1, 0, 0),
+		ud.add_var(reexp::cvec<P>(0, 1, 0, 0),
 				   lang.var(varid::pixel));
 		lang.rel_done();
 
 		for (int i = 0; i < DigitCount; ++i) {
-			explib::rel<P>& ps(lang.alloc_rel(full_ctx)); // pixel-shape
-			ps.add_var(explib::cvec<P>(0, 0, 0, 0), // pixel
+			reexp::rel<P>& ps(lang.alloc_rel(full_ctx)); // pixel-shape
+			ps.add_var(reexp::cvec<P>(0, 0, 0, 0), // pixel
 					   lang.var(varid::pixel));
-			ps.add_var(explib::cvec<P>(0, 0, 0, 0), // shape
+			ps.add_var(reexp::cvec<P>(0, 0, 0, 0), // shape
 					   lang.var(varid::digit0 + i));
 			lang.rel_done();
 		}
 	}
 
 	template <typename P>
-	void setup_reg(explib::lang<P>& lang, explib::data<P>& data) {
+	void setup_reg(reexp::lang<P>& lang, reexp::data<P>& data) {
 		setup_lang(lang);
 		populate(data);
 	}
 
-	void setup_pinfo(explib::pinfo& info) {
+	void setup_pinfo(reexp::pinfo& info) {
 		for (int i = 0; i < VarCount; ++i) {
 			info.vnames_.push_back(varnames[i]);
 
@@ -268,19 +268,19 @@ namespace {
 	}
 
 	template <typename P>
-	void setup_learner(explib::learner<P>& learner) {
+	void setup_learner(reexp::learner<P>& learner) {
 		for (int i = varid::digit0; i <= varid::digit9; ++i) {
 			learner.exclude(i);
 		}
 	}
 
 	template <typename P>
-	void print_pixels(TestTool& t, const explib::data_var<P>& pixels) {
-		explib::cvec<P> d = pixels.dim();
+	void print_pixels(test_tool& t, const reexp::data_var<P>& pixels) {
+		reexp::cvec<P> d = pixels.dim();
 		for (int k = 0; k < d[cvarid::sample]; k++) {
 			for (int i = 0; i < d[cvarid::y]; i++) {
 				for (int j = 0; j < d[cvarid::x]; j++) {
-					explib::cvec<P> at(j, i, k, 0);
+					reexp::cvec<P> at(j, i, k, 0);
 					auto b = pixels[at];
 					if (b) {
 						if (*b) {
@@ -299,11 +299,11 @@ namespace {
 	}
 
 	template <typename P>
-	void print_offsets(TestTool& t, explib::data<P>& data, int var, int x, int y, int sample) {
-		explib::cvec<P> at(x, y, sample);
-		explib::ctx<P> ctx( data.lang().var(var).ctx() );
-		explib::cvec<P> dim = data.dim();
-		const explib::data_var<P>& dvar = data.var(var);
+	void print_offsets(test_tool& t, reexp::data<P>& data, int var, int x, int y, int sample) {
+		reexp::cvec<P> at(x, y, sample);
+		reexp::ctx<P> ctx( data.lang().var(var).ctx() );
+		reexp::cvec<P> dim = data.dim();
+		const reexp::data_var<P>& dvar = data.var(var);
 		t<<"var id "<<var<<" dim "<<ctx.dim(dim)<<checkl;
 		t<<"offset a for "<<at<<" = "<<ctx.offset(dim, at)<<checkl;
 		t<<"offset b for "<<at<<" = "<<ctx.dim(dim).offset(at)<<checkl;
@@ -314,17 +314,17 @@ namespace {
 	}
 
 	void run_ctx_test(bool& ok) {
-		TestTool t("test/digits/ctx", ok);
+		test_tool t("test/digits/ctx", ok);
 
 		typedef recognition_problem p;
 
-		explib::lang<p> lang;
+		reexp::lang<p> lang;
 
-		explib::data<p> data(lang, sample_dim());
+		reexp::data<p> data(lang, sample_dim());
 		setup_reg<p>(lang, data);
 
-		explib::var<p>& pixel( lang.var(varid::pixel) );
-		explib::var<p>& shape( lang.var(varid::digit0) );
+		reexp::var<p>& pixel( lang.var(varid::pixel) );
+		reexp::var<p>& shape( lang.var(varid::digit0) );
 
 		t<<"shape has "<<shape.ctx().dim(data.dim()).volume()<<" bits."<<checkl<<checkl;
 
@@ -353,7 +353,7 @@ namespace {
 		print_offsets<p>(t, data, varid::pixel, 2, 4, 9);
 	}
 
-	void print_bits(TestTool& t, explib::cond_bits& bits, int offset, int n) {
+	void print_bits(test_tool& t, reexp::cond_bits& bits, int offset, int n) {
 		for (int i = 0; i < n; i++) {
 			if (!(i % 10)&&i) {
 				t<<checkl;
@@ -373,22 +373,22 @@ namespace {
 	}
 
 	void run_setup_test(bool& ok) {
-		TestTool t("test/digits/setup", ok);
+		test_tool t("test/digits/setup", ok);
 
 		typedef recognition_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, sample_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, sample_dim());
 		setup_reg<p>(lang, data);
 
-		explib::data_var<p>& pixels(data.var(varid::pixel));
+		reexp::data_var<p>& pixels(data.var(varid::pixel));
 		int psz = pixels.dim().volume();
 		t<<"pixels, "<<psz<<" bits"<<checkl;
 		print_bits(t, pixels.bits(), 0, pixels.bits().size());
 		t<<checkl;
 
 		for (int i = 0; i < DigitCount; ++i) {
-			explib::data_var<p>& digit(data.var(varid::digit0+i));
+			reexp::data_var<p>& digit(data.var(varid::digit0+i));
 			int dsz = digit.dim().volume();
 			t<<"digit"<<i<<", "<<dsz<<" bits"<<checkl;
 			print_bits(t, digit.bits(), 0, digit.bits().size());
@@ -397,7 +397,7 @@ namespace {
 	}
 
 	template <typename P>
-	void print_var_name(TestTool& t, const explib::var<P>& var) {
+	void print_var_name(test_tool& t, const reexp::var<P>& var) {
 		switch (var.id()) {
 			case 0: t<<"px"; break;
 			case varid::digit0:
@@ -416,7 +416,7 @@ namespace {
 	}
 
 	template <typename P>
-	void print_var(TestTool& t, const explib::var<P>& var) {
+	void print_var(test_tool& t, const reexp::var<P>& var) {
 		switch (var.id()) {
 			case 0: t<<"px"<<checkl; break;
 			case varid::digit0:
@@ -431,7 +431,7 @@ namespace {
 			case varid::digit9:
 				t<<"d"<<(var.id()-1)<<checkl; break;
 			default: {
-				const explib::exp<P>& v = dynamic_cast<const explib::exp<P>&>(var);
+				const reexp::exp<P>& v = dynamic_cast<const reexp::exp<P>&>(var);
 				print_rel(t, v.rel(), v.state());
 				break;
 			}
@@ -441,11 +441,11 @@ namespace {
 
 
 	template <typename P>
-	void print_vars(TestTool& t, const explib::stats<P>& stats) {
-		const explib::lang<P>& lang = stats.data().lang();
+	void print_vars(test_tool& t, const reexp::stats<P>& stats) {
+		const reexp::lang<P>& lang = stats.data().lang();
 		double info = 0;
 		for (int i = 0; i < lang.var_count(); i++) {
-			const explib::var_stats<P>& s( stats.var( i ) );
+			const reexp::var_stats<P>& s( stats.var( i ) );
 			print_var(t, lang.var(i));
 			info += s.information();
 			t<<s.freq()<<"/"<<s.n()<<" "<<s.information()<<checkl<<checkl;
@@ -454,13 +454,13 @@ namespace {
 	}
 
 	template <typename P>
-	void print_rel(TestTool& t, const explib::rel<P>& rel, int state = -1) {
+	void print_rel(test_tool& t, const reexp::rel<P>& rel, int state = -1) {
 		int varn = rel.entries().size();
 		t<<"[";
 		for (int j = 0; j < varn; j++) {
-			const explib::rel_entry<P>& e = rel.entries()[j];
-			const explib::var<P>& var( *e.var_ );
-			const explib::cvec<P>& cv( e.shift_ );
+			const reexp::rel_entry<P>& e = rel.entries()[j];
+			const reexp::var<P>& var( *e.var_ );
+			const reexp::cvec<P>& cv( e.shift_ );
 			if (state != -1 && !rel.varState(j, state)) t<<"!";
 			print_var_name(t, var);
 			t<<"(r";
@@ -479,11 +479,11 @@ namespace {
 	}
 
 	template <typename P>
-	void print_rels(TestTool& t, explib::stats<P>& st) {
-		const explib::lang<P>& lang = st.data().lang();
+	void print_rels(test_tool& t, reexp::stats<P>& st) {
+		const reexp::lang<P>& lang = st.data().lang();
 		for (int i = 0; i < lang.rel_count(); i++) {
-			const explib::rel<P>& rel( lang.rel(i) );
-			const explib::rel_stats<P>& s( st.rel( i ) );
+			const reexp::rel<P>& rel( lang.rel(i) );
+			const reexp::rel_stats<P>& s( st.rel( i ) );
 
 			t<<i<<" ";
 			print_rel(t, rel);
@@ -507,7 +507,7 @@ namespace {
 		}
 	}
 
-	void print_multiline(TestTool& t, int pad, const char* txt) {
+	void print_multiline(test_tool& t, int pad, const char* txt) {
 		std::string p;
 		for (int i = 0; i < pad; i++) p += " ";
 
@@ -524,16 +524,16 @@ namespace {
 
 
 	void run_exp_stats_test(bool& ok) {
-		TestTool t("test/digits/exp_stats", ok);
+		test_tool t("test/digits/exp_stats", ok);
 
 		typedef recognition_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, sample_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, sample_dim());
 
 		setup_reg<p>(lang, data);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
 		t<<"before:"<<checkl;
 
@@ -560,12 +560,12 @@ namespace {
 	}
 
 	void run_add_exp_test(bool& ok) {
-		TestTool t("test/digits/add_exp", ok);
+		test_tool t("test/digits/add_exp", ok);
 
 		typedef recognition_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, sample_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, sample_dim());
 		setup_reg<p>(lang, data);
 
 		lang.add_exp(lang.rel(relid::left_right), 3);
@@ -573,24 +573,24 @@ namespace {
 
 		print_pixels(t, data.var(varid::pixel));
 
-		const explib::exp<p>& exp = lang.exp_back();
+		const reexp::exp<p>& exp = lang.exp_back();
 
 		t<<"exp:"<<checkl<<checkl;
 		print_pixels(t, data.var(exp.id()));
 	}
 
 	void run_gen_rel_test(bool& ok) {
-		TestTool t("test/digits/gen_rel", ok);
+		test_tool t("test/digits/gen_rel", ok);
 
 		typedef recognition_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, sample_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, sample_dim());
 		setup_reg<p>(lang, data);
 
-		explib::pinfo info;
+		reexp::pinfo info;
 		setup_pinfo(info);
-		explib::lang_info<p> li(info, lang);
+		reexp::lang_info<p> li(info, lang);
 
 		t<<"vars:\n\n"<<li.drawn_vars_tostring(cvarid::x, cvarid::y);
 
@@ -602,31 +602,31 @@ namespace {
 	}
 
 	void run_print_test(bool& ok) {
-		TestTool t("test/digits/print", ok);
+		test_tool t("test/digits/print", ok);
 
 		typedef recognition_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, sample_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, sample_dim());
 		setup_reg<p>(lang, data);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
 		print_pixels(t, data.var(varid::pixel));
 
 	}
 
 	void run_stats_test(bool& ok) {
-		TestTool t("test/digits/stats", ok);
+		test_tool t("test/digits/stats", ok);
 
 		typedef recognition_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, sample_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, sample_dim());
 
 		setup_reg<p>(lang, data);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
 		print_vars(t, stats);
 		print_rels(t, stats);
@@ -636,11 +636,11 @@ namespace {
 	}
 
 	template <typename P>
-	void print_scan(TestTool& t, explib::lang<P>& lang, explib::stats<P>& stats) {
-		explib::learner<P> learner(lang, stats);
+	void print_scan(test_tool& t, reexp::lang<P>& lang, reexp::stats<P>& stats) {
+		reexp::learner<P> learner(lang, stats);
 		setup_learner(learner);
 
-		std::priority_queue<explib::candidate<P> > cands;
+		std::priority_queue<reexp::candidate<P> > cands;
 		learner.scan(cands);
 
 		t<<"top 10 scan results:"<<checkl<<checkl;
@@ -648,7 +648,7 @@ namespace {
 		int n = 10;
 
 		while (!cands.empty() && n--) {
-			const explib::candidate<P>& c( cands.top() );
+			const reexp::candidate<P>& c( cands.top() );
 			t<<c.bias_<<"   ";
 			print_rel(t, c.rel_->data().rel_, c.state_);
 
@@ -658,15 +658,15 @@ namespace {
 	}
 
 	void run_scan_test(bool& ok) {
-		TestTool t("test/digits/scan", ok);
+		test_tool t("test/digits/scan", ok);
 
 		typedef recognition_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, sample_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, sample_dim());
 		setup_reg<p>(lang, data);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
 		print_rels(t, stats);
 
@@ -674,7 +674,7 @@ namespace {
 	}
 
 	template <typename P>
-	void print_var_deps(TestTool& t, explib::var<P>& v) {
+	void print_var_deps(test_tool& t, reexp::var<P>& v) {
 		t<<"deps for ";
 		print_var(t, v);
 
@@ -690,19 +690,19 @@ namespace {
 
 
 	void run_learning_once_test(bool& ok) {
-		TestTool t("test/digits/learning_once", ok);
+		test_tool t("test/digits/learning_once", ok);
 
 		typedef recognition_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, sample_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, sample_dim());
 		setup_reg<p>(lang, data);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
 		print_vars(t, stats);
 
-		explib::learner<p> learner(lang, stats);
+		reexp::learner<p> learner(lang, stats);
 
 		learner.add_exp();
 
@@ -711,9 +711,9 @@ namespace {
 		print_vars(t, stats);
 		print_rels(t, stats);
 
-		explib::pinfo info;
+		reexp::pinfo info;
 		setup_pinfo(info);
-		explib::lang_info<p> li(info, lang);
+		reexp::lang_info<p> li(info, lang);
 
 		t<<"rels:\n\n"<<li.drawn_rels_tostring(cvarid::x, cvarid::y);
 
@@ -727,19 +727,19 @@ namespace {
 
 
 	void run_learning_test(bool& ok) {
-		TestTool t("test/digits/learning", ok);
+		test_tool t("test/digits/learning", ok);
 
 		typedef recognition_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, sample_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, sample_dim());
 		setup_reg<p>(lang, data);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
 		print_vars(t, stats);
 
-		explib::learner<p> learner(lang, stats);
+		reexp::learner<p> learner(lang, stats);
 
 		int rounds = 7;
 
@@ -753,9 +753,9 @@ namespace {
 
 		t<<checkl<<"learning done."<<checkl<<checkl;
 
-		explib::pinfo info;
+		reexp::pinfo info;
 		setup_pinfo(info);
-		explib::lang_info<p> li(info, lang);
+		reexp::lang_info<p> li(info, lang);
 
 		t<<"vars:\n\n"<<li.drawn_vars_tostring(cvarid::x, cvarid::y);
 		print_vars(t, stats);
@@ -775,15 +775,15 @@ namespace {
 		print_var_deps(t, lang.var(1));
 		print_var_deps(t, lang.var(2));
 
-		std::priority_queue<explib::candidate<p> > cands;
+		std::priority_queue<reexp::candidate<p> > cands;
 		learner.scan(cands);
 
 		while (!cands.empty()) {
-			const explib::candidate<p>& c( cands.top() );
+			const reexp::candidate<p>& c( cands.top() );
 			t<<c.bias_<<"   ";
 			print_rel(t, c.rel_->data().rel_, c.state_);
 
-			const_cast<explib::rel_stats<p>&>(*c.rel_).update(stats);
+			const_cast<reexp::rel_stats<p>&>(*c.rel_).update(stats);
 
 			cands.pop();
 		}
@@ -791,29 +791,29 @@ namespace {
 	}
 
 	void run_bitset_test(bool& ok) {
-		TestTool t("test/digits/bitset", ok);
+		test_tool t("test/digits/bitset", ok);
 
 		typedef recognition_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, sample_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, sample_dim());
 		setup_reg<p>(lang, data);
 	}
 }
 
 template <typename P>
-void print_prediction(TestTool& t, explib::stats<P>& stats) {
-	explib::pred<P> pred(stats);
+void print_prediction(test_tool& t, reexp::stats<P>& stats) {
+	reexp::pred<P> pred(stats);
 
 	print_vars<P>(t, stats);
 	print_rels<P>(t, stats);
 
 	for (int i = 0; i < DigitCount; ++i) {
 		std::vector<double> pr( pred.p( stats.data(), varid::digit0 + i ) );
-		explib::cvec<P> dim( stats.data().var( varid::digit0 + i ).dim() );
+		reexp::cvec<P> dim( stats.data().var( varid::digit0 + i ).dim() );
 
 		for (int j = 0; j < SampleCount; ++j) {
-			explib::cvec<P> at(0, 0, j);
+			reexp::cvec<P> at(0, 0, j);
 			int idx = dim.offset(at);
 			double sp = pr[idx];
 			printf("p(s%d=='%d') = %d%%\n",j, i, int(100*sp));
@@ -823,29 +823,29 @@ void print_prediction(TestTool& t, explib::stats<P>& stats) {
 }
 
 void run_predicting_test(bool& ok) {
-	TestTool t("test/digits/predicting", ok);
+	test_tool t("test/digits/predicting", ok);
 
 	typedef recognition_problem p;
 
-	explib::lang<p> lang;
-	explib::data<p> data(lang, sample_dim());
+	reexp::lang<p> lang;
+	reexp::data<p> data(lang, sample_dim());
 	setup_reg<p>(lang, data);
 
-	explib::stats<p> stats(data);
+	reexp::stats<p> stats(data);
 
 	print_prediction(t, stats);
 }
 
 void run_learn_picked_predict_test(bool& ok) {
-	TestTool t("test/digits/learn_picked_predict", ok);
+	test_tool t("test/digits/learn_picked_predict", ok);
 
 	typedef recognition_problem p;
 
-	explib::lang<p> lang;
-	explib::data<p> data(lang, sample_dim());
+	reexp::lang<p> lang;
+	reexp::data<p> data(lang, sample_dim());
 	setup_reg<p>(lang, data);
 
-	explib::stats<p> stats(data);
+	reexp::stats<p> stats(data);
 
 
 	float before = stats.naiveInfo();
@@ -861,9 +861,9 @@ void run_learn_picked_predict_test(bool& ok) {
 
 	print_scan(t, lang, stats);
 
-	explib::pinfo info;
+	reexp::pinfo info;
 	setup_pinfo(info);
-	explib::lang_info<p> li(info, lang);
+	reexp::lang_info<p> li(info, lang);
 
 	t<<"vars:\n\n"<<li.drawn_vars_tostring(cvarid::x, cvarid::y);
 
@@ -879,17 +879,17 @@ void run_learn_picked_predict_test(bool& ok) {
 
 
 void run_learn_predict_test(bool& ok) {
-	TestTool t("test/digits/learn_predict", ok);
+	test_tool t("test/digits/learn_predict", ok);
 
 	typedef recognition_problem p;
 
-	explib::lang<p> lang;
-	explib::data<p> data(lang, sample_dim());
+	reexp::lang<p> lang;
+	reexp::data<p> data(lang, sample_dim());
 	setup_reg<p>(lang, data);
 
-	explib::stats<p> stats(data);
+	reexp::stats<p> stats(data);
 
-	explib::learner<p> learner(lang, stats);
+	reexp::learner<p> learner(lang, stats);
 	setup_learner(learner);
 
 	int rounds = 3;
@@ -906,9 +906,9 @@ void run_learn_predict_test(bool& ok) {
 
 	print_scan(t, lang, stats);
 
-	explib::pinfo info;
+	reexp::pinfo info;
 	setup_pinfo(info);
-	explib::lang_info<p> li(info, lang);
+	reexp::lang_info<p> li(info, lang);
 
 	t<<"vars:\n\n"<<li.drawn_vars_tostring(cvarid::x, cvarid::y);
 
@@ -923,15 +923,15 @@ void run_learn_predict_test(bool& ok) {
 }
 
 void run_exp_predicting_test(bool& ok) {
-	TestTool t("test/digits/exp_predicting", ok);
+	test_tool t("test/digits/exp_predicting", ok);
 
 	typedef recognition_problem p;
 
-	explib::lang<p> lang;
-	explib::data<p> data(lang, sample_dim());
+	reexp::lang<p> lang;
+	reexp::data<p> data(lang, sample_dim());
 	setup_reg<p>(lang, data);
 
-	explib::stats<p> stats(data);
+	reexp::stats<p> stats(data);
 
 	lang.add_exp(lang.rel(relid::up_down), 3);
 	t<<"exp added."<<checkl<<checkl;

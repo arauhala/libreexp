@@ -5,8 +5,8 @@
  *      Author: arau
  */
 
-#ifndef EXPTESTTOOLS_H_
-#define EXPTESTTOOLS_H_
+#ifndef EXPtest_toolS_H_
+#define EXPtest_toolS_H_
 
 #include "tester.h"
 #include "reexp/all.h"
@@ -14,13 +14,13 @@
 namespace exptest {
 
 	template <typename P>
-	void print_pixels(TestTool& t,
-					  const explib::data_var<P>& pixels,
+	void print_pixels(test_tool& t,
+					  const reexp::data_var<P>& pixels,
 					  int xvarid,
 					  int yvarid,
-					  const explib::cvec<P>& at = explib::cvec<P>()) {
-		explib::cvec<P> d = pixels.dim();
-		explib::cvec<P> a( at );
+					  const reexp::cvec<P>& at = reexp::cvec<P>()) {
+		reexp::cvec<P> d = pixels.dim();
+		reexp::cvec<P> a( at );
 		for (int i = at[yvarid]; i < d[yvarid]; i++) {
 			a[yvarid] = i;
 			for (int j = at[xvarid]; j < d[xvarid]; j++) {
@@ -43,4 +43,4 @@ namespace exptest {
 	std::vector<std::string> read_split_line(std::istream& in);
 }
 
-#endif /* EXPTESTTOOLS_H_ */
+#endif /* EXPtest_toolS_H_ */

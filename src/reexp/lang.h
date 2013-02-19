@@ -5,8 +5,8 @@
  *      Author: arauhala
  */
 
-#ifndef LANG_H_
-#define LANG_H_
+#ifndef REEXP_LANG_H_
+#define REEXP_LANG_H_
 
 #include "ctx.h"
 #include "bits.h"
@@ -17,7 +17,7 @@
 #include <unordered_set>
 
 
-namespace explib {
+namespace reexp {
 
 	template <typename P>
 	class lang;
@@ -37,8 +37,8 @@ namespace explib {
 	template <typename P>
 	struct dep_var {
 		public:
-			explib::cvec<P> shift_;
-			explib::var<P>* var_;
+			reexp::cvec<P> shift_;
+			reexp::var<P>* var_;
 			dep_var(const cvec<P>& s, var<P>& v)
 			: shift_(s), var_(&v) {}
 	};
@@ -48,10 +48,10 @@ namespace explib {
 	 */
 	template <typename P>
 	struct ndim {
-		explib::cvec<P> shift_;
-		explib::cvec<P> dim_;
+		reexp::cvec<P> shift_;
+		reexp::cvec<P> dim_;
 		ndim() : shift_(), dim_() {}
-		bool fit(const explib::cvec<P>& shift, const explib::cvec<P>& dim) {
+		bool fit(const reexp::cvec<P>& shift, const reexp::cvec<P>& dim) {
 			bool changed = false;
 			for (int i = 0; i < P::DIM; ++i) {
 				if (dim[i]) {
@@ -74,26 +74,26 @@ namespace explib {
 
 	template <typename P>
 	struct bitmatrix {
-		explib::ndim<P> ndim_;
-		explib::bits bits_;
+		reexp::ndim<P> ndim_;
+		reexp::bits bits_;
 		bitmatrix() : ndim_(), bits_() {}
 		bitmatrix(const ndim<P>& ndim)
 		:   ndim_(ndim),
 		    bits_(ndim_.dim_.volume()) {}
-		bool operator[](const explib::cvec<P>& at) const {
+		bool operator[](const reexp::cvec<P>& at) const {
 			return bits_[ndim_.dim_.offset(at)];
 		}
-		bit_ref operator[](const explib::cvec<P>& at) {
+		bit_ref operator[](const reexp::cvec<P>& at) {
 			return bits_[ndim_.dim_.offset(at - ndim_.shift_)];
 		}
-		void unite(const explib::cvec<P>& shift, const explib::cvec<P>& dim) {
+		void unite(const reexp::cvec<P>& shift, const reexp::cvec<P>& dim) {
 			ndim_.fit(shift, dim);
 			if (ndim_.dim_.volume() > bits_.size()) {
 				bits_.resize(ndim_.dim_.volume());
 			}
 		}
-		bool fit(const explib::cvec<P>& shift, const explib::cvec<P>& dim) {
-			explib::ndim<P> ndim(ndim_);
+		bool fit(const reexp::cvec<P>& shift, const reexp::cvec<P>& dim) {
+			reexp::ndim<P> ndim(ndim_);
 			bool resize = ndim.fit(shift, dim);
 			if (resize) {
 				bitmatrix<P> resized(ndim);
@@ -102,7 +102,7 @@ namespace explib {
 			}
 			return resize;
 		}
-		void resizing_blit(const explib::cvec<P>& shift, const bitmatrix& v) {
+		void resizing_blit(const reexp::cvec<P>& shift, const bitmatrix& v) {
 			fit(shift + v.ndim_.shift_, v.ndim_.dim_);
 			blit(shift, v);
 		}
@@ -185,14 +185,14 @@ namespace explib {
 	// mask marking that which variables are implicitly known
 	template <typename P>
 	struct implmask {
-		const explib::var<P>* var_;
+		const reexp::var<P>* var_;
 		bitmatrix<P> mask_;
-		inline implmask(const explib::var<P>* var)
+		inline implmask(const reexp::var<P>* var)
 		: var_(var), mask_() {
 		}
 		inline implmask() : var_(), mask_() {}
 		inline implmask(const implmask& o) : var_(o.var_), mask_(o.mask_) {}
-		inline void unite(const explib::cvec<P>& shift, const explib::cvec<P>& dim) {
+		inline void unite(const reexp::cvec<P>& shift, const reexp::cvec<P>& dim) {
 			mask_.unite(shift, dim);
 		}
 		inline void blit(const cvec<P>& shift, const implmask& v) {
@@ -216,7 +216,7 @@ namespace explib {
 	class var {
 		protected:
 			size_t id_;
-			explib::ctx<P> ctx_;
+			reexp::ctx<P> ctx_;
 			std::vector<rel<P>*> rels_;
 			std::vector<dep_var<P>> deps_;
 			std::vector<implmask<P> > rootmasks_; // used for checking the overlap
@@ -226,7 +226,7 @@ namespace explib {
 
 			// utility function
 			static implmask<P>& have_implmask(std::vector<implmask<P> >& vm,
-								  	  	  	  const explib::var<P>& v) {
+								  	  	  	  const reexp::var<P>& v) {
 				size_t found = 0;
 				for (; found < vm.size(); ++found) {
 					if (vm[found].var_ == &v) break;
@@ -237,7 +237,7 @@ namespace explib {
 
 		public:
 
-			var(const explib::ctx<P>& ctx, double prioriP)
+			var(const reexp::ctx<P>& ctx, double prioriP)
 			: id_(),
 			  ctx_(ctx),
 			  rels_(),
@@ -268,7 +268,7 @@ namespace explib {
 			inline const std::vector<implmask<P> >& expmasks() const {
 				return expmasks_;
 			}
-			const explib::ctx<P>& ctx() const {
+			const reexp::ctx<P>& ctx() const {
 				return ctx_;
 			}
 			const std::vector<rel<P>*>& rels() const {
@@ -293,10 +293,10 @@ namespace explib {
 			/**
 			 * In principle, the dependencies should be filled.
 			 */
-			void add_dep(const explib::cvec<P>& shift,
-						 explib::var<P>& v) {
+			void add_dep(const reexp::cvec<P>& shift,
+						 reexp::var<P>& v) {
 
-				deps_.push_back(explib::dep_var<P>(shift, v));
+				deps_.push_back(reexp::dep_var<P>(shift, v));
 				// here goes the magic
 			}
 			const std::vector<dep_var<P>>& deps() const {
@@ -313,7 +313,7 @@ namespace explib {
 			orig(const ctx<P>& c) : var<P>(c, 0.5f) {}
 			void init() {
 				var<P>::rootmasks_.push_back(implmask<P>(this));
-				var<P>::rootmasks_.back().resizing_set(explib::cvec<P>(), true);
+				var<P>::rootmasks_.back().resizing_set(reexp::cvec<P>(), true);
 			}
 	};
 
@@ -332,8 +332,14 @@ namespace explib {
 
 	template <typename P>
 	class rel {
+		private:
+			int id_;
+			bool disabled_;
+			util::hash_code hash_;
+			reexp::ctx<P> ctx_;
+			std::vector<rel_entry<P> > e_;
 		public:
-			rel(int id, const explib::ctx<P>& c)
+			rel(int id, const reexp::ctx<P>& c)
 			: id_(id), disabled_(false), hash_(), ctx_(c), e_() {
 				for (int i = 0; i < P::DIM; ++i) {
 					hash_ << (ctx_.v_[i] < 0);
@@ -373,7 +379,7 @@ namespace explib {
 			inline const std::vector<rel_entry<P> >& entries() const {
 				return e_;
 			}
-			const explib::ctx<P>& ctx() const {
+			const reexp::ctx<P>& ctx() const {
 				return ctx_;
 			}
 			int stateCount() const {
@@ -388,7 +394,7 @@ namespace explib {
 			int hash() const {
 				return hash_();
 			}
-			bool operator==(explib::rel<P>& r) const {
+			bool operator==(reexp::rel<P>& r) const {
 				if (hash_() != r.hash_()) return false;
 				if (ctx_.v_ != r.ctx_.v_) return false;
 				if (e_.size() != r.e_.size()) return false;
@@ -399,12 +405,6 @@ namespace explib {
 				}
 				return true;
 			}
-		private:
-			int id_;
-			bool disabled_;
-			util::hash_code hash_;
-			explib::ctx<P> ctx_;
-			std::vector<rel_entry<P> > e_;
 	};
 
 	template <typename P>
@@ -422,11 +422,11 @@ namespace explib {
 	template <typename P>
 	class exp : public var<P> {
 		private:
-			const explib::rel<P>& rel_;
+			const reexp::rel<P>& rel_;
 			int state_;
-			std::vector<explib::rel<P>*> rels_;
+			std::vector<reexp::rel<P>*> rels_;
 		public:
-			exp(const explib::rel<P>& rel, int state)
+			exp(const reexp::rel<P>& rel, int state)
 			:	var<P>(rel.ctx(), rel.statePrioriP(state)), rel_(rel), state_(state), rels_() {
 			}
 			int min_var_idx() const {
@@ -470,8 +470,8 @@ namespace explib {
 					const cvec<P>& shift = m.mask_.ndim_.shift_;
 					const cvec<P>& d = m.mask_.ndim_.dim_;
 					if (v.id() >= minvar) {
-						implmask<P>& imask = have_implmask(var<P>::expmasks_, v);
-						imask.resizing_blit(explib::cvec<P>(), m);
+						implmask<P>& imask = var<P>::have_implmask(var<P>::expmasks_, v);
+						imask.resizing_blit(reexp::cvec<P>(), m);
 					}
 					dim_iterator<P> i(d);
 					int offset = 0;
@@ -482,7 +482,7 @@ namespace explib {
 							for (const dep_var<P>& dep : deps) {
 								const var<P>& dvar = *dep.var_;
 								if (dvar.id() >= minvar) {
-									implmask<P>& imask = have_implmask(var<P>::expmasks_, dvar);
+									implmask<P>& imask = var<P>::have_implmask(var<P>::expmasks_, dvar);
 									imask.resizing_set(at + dep.shift_, true);
 								}
 							}
@@ -499,7 +499,7 @@ namespace explib {
 						for (const implmask<P>& rvarmask : v.expmasks()) {
 							if (rvarmask.var_->id() >= minvar &&
 								rvarmask.var_->id() <= v.id()) {
-								implmask<P>& mymask = have_implmask(var<P>::expmasks_, *rvarmask.var_);
+								implmask<P>& mymask = var<P>::have_implmask(var<P>::expmasks_, *rvarmask.var_);
 								if (rvarmask.var_->id() == v.id()) {
 									mymask.blitAndNegBefore(s, rvarmask, s); // TODO: blit only pixels before the target exp
 								} else {
@@ -544,7 +544,7 @@ namespace explib {
 				fill_rootmasks();
 				fill_expmasks();
 			}
-			void add_deps(const cvec<P>& shift, const explib::exp<P>& at) {
+			void add_deps(const cvec<P>& shift, const reexp::exp<P>& at) {
 				const std::vector<rel_entry<P> >& re = at.rel_.entries();
 				for (size_t i = 0; i < re.size(); ++i) {
 					const rel_entry<P>& e = re[i];
@@ -552,7 +552,7 @@ namespace explib {
 					bool s = at.rel_.varState(i, at.state_);
 					e.var_->add_dep(sh, *this);
 					// add also the states
-					explib::exp<P>* ex = dynamic_cast<explib::exp<P>*>(e.var_);
+					reexp::exp<P>* ex = dynamic_cast<reexp::exp<P>*>(e.var_);
 					if (s && ex) add_deps(sh, *ex); // go recursive
 				}
 			}
@@ -560,9 +560,9 @@ namespace explib {
 				return rel_.hash() + state_;
 			}
 
-			static inline bool is_overlap(const explib::var<P>& v1,
+			static inline bool is_overlap(const reexp::var<P>& v1,
 								   	   	  const cvec<P>& shift,
-								   	   	  const explib::var<P>& v2) {
+								   	   	  const reexp::var<P>& v2) {
 				for (const implmask<P>& im : v1.rootmasks()) {
 					for (const implmask<P>& jm : v2.rootmasks()) {
 						if (im.var_ == jm.var_) {
@@ -576,12 +576,12 @@ namespace explib {
 				return false;
 			}
 
-			static bool is_overlap(const std::vector<explib::rel_entry<P> >& rvars) {
+			static bool is_overlap(const std::vector<reexp::rel_entry<P> >& rvars) {
 				for (size_t i = 1; i < rvars.size(); ++i) {
-					const explib::rel_entry<P>& ie( rvars[i] );
+					const reexp::rel_entry<P>& ie( rvars[i] );
 					for (size_t j = 0; j < i; j++) {
-						const explib::rel_entry<P>& je( rvars[j] );
-						explib::cvec<P> delta(je.shift_);
+						const reexp::rel_entry<P>& je( rvars[j] );
+						reexp::cvec<P> delta(je.shift_);
 						delta -= ie.shift_;
 						if (is_overlap(*ie.var_, delta, *je.var_)) {
 							return true;
@@ -593,10 +593,10 @@ namespace explib {
 
 			static bool is_overlap(bitmatrix<P>& matrix,
 								   std::vector<int>& vars,
-								   const std::vector<explib::rel_entry<P> >& rvars) {
+								   const std::vector<reexp::rel_entry<P> >& rvars) {
 				std::fill(vars.begin(), vars.end(), 0);
 				for (size_t i = 0; i < rvars.size(); i++) {
-					const explib::rel_entry<P>& ie( rvars[i] );
+					const reexp::rel_entry<P>& ie( rvars[i] );
 					for (const implmask<P>& o : ie.var_->rootmasks()) {
 						matrix.unite(ie.shift_, o.mask_.ndim_.dim_);
 						vars[o.var_->id()]++;
@@ -605,7 +605,7 @@ namespace explib {
 				for (size_t v = 0; v < vars.size(); ++v) {
 					matrix.bits_.fill(false);
 					for (size_t i = 0; vars[v] && i < rvars.size(); i++) {
-						const explib::rel_entry<P>& ie( rvars[i] );
+						const reexp::rel_entry<P>& ie( rvars[i] );
 						for (const implmask<P>& o : ie.var_->rootmasks()) {
 							if (o.var_->id() == v) {
 								if (matrix.blit(ie.shift_, o.mask_)) {
@@ -621,13 +621,13 @@ namespace explib {
 			}
 
 			void gen_rels(lang<P>& lang) {
-				const std::vector<explib::rel_entry<P> >& vars( rel_.entries() );
+				const std::vector<reexp::rel_entry<P> >& vars( rel_.entries() );
 
-				typedef std::unordered_set<explib::rel<P>*,
+				typedef std::unordered_set<reexp::rel<P>*,
 										   typename rel_ptr_hash<P>::func_type> rel_set;
 				rel_set	rs(10, &rel_ptr_hash<P>::hash);
 				for (auto i = vars.begin(); i != vars.end(); i++) {
-					const std::vector<explib::rel<P>*>& v( i->var_->rels() );
+					const std::vector<reexp::rel<P>*>& v( i->var_->rels() );
 					for (auto r = v.begin(); r != v.end(); r++) {
 						if (!(*r)->disabled()) rs.insert(*r);
 					}
@@ -642,8 +642,8 @@ namespace explib {
 				 * Big loop goes through the relations.
 				 */
 				for (auto i = rs.begin(); i != rs.end(); i++) {
-					explib::rel<P>& r = **i;
-					std::vector<explib::rel_entry<P> > rvars( r.entries() );
+					reexp::rel<P>& r = **i;
+					std::vector<reexp::rel_entry<P> > rvars( r.entries() );
 					std::vector<int> up; // we use this to mark current combination
 					up.resize(rvars.size());
 
@@ -662,10 +662,10 @@ namespace explib {
 
 						repeat:
 						for (size_t j = 0; j < rvars.size(); j++) {
-							explib::rel_entry<P>& re( rvars[j] );
-							explib::var<P>* replaced = r.entries()[j].var_;
+							reexp::rel_entry<P>& re( rvars[j] );
+							reexp::var<P>* replaced = r.entries()[j].var_;
 							for (size_t k = up[j]; k < vars.size(); k++) {
-								const explib::rel_entry<P>& te( vars[k] );
+								const reexp::rel_entry<P>& te( vars[k] );
 
 								if (replaced == te.var_) {
 									// relation variable matches expression variable
@@ -683,14 +683,14 @@ namespace explib {
 
 									if (!is_overlap(rvars)) {
 										// normalization
-										explib::cvec<P> norm;
+										reexp::cvec<P> norm;
 										for (int l = 0; l < P::DIM; l++) {
 											norm[l] = 1000; // replace with MAX_INT
 										}
 
 										for (size_t k = 0; k < rvars.size(); k++) {
-											explib::cvec<P>& v = rvars[k].shift_;
-											const explib::ctx<P>& ctx = rvars[k].var_->ctx();
+											reexp::cvec<P>& v = rvars[k].shift_;
+											const reexp::ctx<P>& ctx = rvars[k].var_->ctx();
 											for (int l = 0; l < P::DIM; l++) {
 												if (ctx.v_[l] >= 0) {
 													norm[l] = std::min(norm[l], v[l]);
@@ -698,8 +698,8 @@ namespace explib {
 											}
 										}
 										for (size_t k = 0; k < rvars.size(); k++) {
-											explib::cvec<P>& v = rvars[k].shift_;
-											const explib::ctx<P>& ctx = rvars[k].var_->ctx();
+											reexp::cvec<P>& v = rvars[k].shift_;
+											const reexp::ctx<P>& ctx = rvars[k].var_->ctx();
 											for (int l = 0; l < P::DIM; l++) {
 												if (ctx.v_[l] >= 0) {
 													v[l] -= norm[l];
@@ -710,7 +710,7 @@ namespace explib {
 										}
 
 										// add redundancy calculations later
-										explib::rel<P>& nr(lang.alloc_rel(r.ctx()));
+										reexp::rel<P>& nr(lang.alloc_rel(r.ctx()));
 										for (size_t k = 0; k < rvars.size(); k++) {
 											nr.add_var(rvars[k].shift_, *rvars[k].var_);
 										}
@@ -738,15 +738,15 @@ namespace explib {
 			int state() const {
 				return state_;
 			}
-			void add_rel(explib::rel<P>* rel) {
+			void add_rel(reexp::rel<P>* rel) {
 				if (std::find(rels_.begin(), rels_.end(), rel) == rels_.end()) {
 					rels_.push_back(rel);
 				}
 			}
-			const explib::rel<P>& rel() const {
+			const reexp::rel<P>& rel() const {
 				return rel_;
 			}
-			const std::vector<explib::rel<P>*>& rels() const {
+			const std::vector<reexp::rel<P>*>& rels() const {
 				return rels_;
 			}
 
@@ -774,27 +774,27 @@ namespace explib {
 					throw std::runtime_error("constructing lang with new exps not yet supported");
 				}
 				for (int i = 0; i < l.orig_count(); ++i) {
-					add_orig(explib::orig<P>(l.orig(i).ctx()));
+					add_orig(reexp::orig<P>(l.orig(i).ctx()));
 					origs_.back().setPrioriP(l.orig(i).prioriP());
 				}
 				for (int i = 0; i < l.rel_count(); ++i) {
-					const explib::rel<P>& orig = l.rel(i);
-					explib::rel<P>& rl(alloc_rel(orig.ctx()));
+					const reexp::rel<P>& orig = l.rel(i);
+					reexp::rel<P>& rl(alloc_rel(orig.ctx()));
 					for (const rel_entry<P>& e : orig.entries()) {
 						rl.add_var(e.shift_, var(e.var_->id()));
 					}
 					rel_done();
 				}
 			}
-			const explib::orig<P>& orig(int i) const {
+			const reexp::orig<P>& orig(int i) const {
 				assert(i >= 0 && i < origs_.size());
 				return origs_[i];
 			}
-			const explib::exp<P>& exp(int i) const {
+			const reexp::exp<P>& exp(int i) const {
 				assert(i >= 0 && i < exps_.size());
 				return exps_[i];
 			}
-			const explib::rel<P>& rel(int i) const {
+			const reexp::rel<P>& rel(int i) const {
 				assert(i >= 0 && i < rels_.size());
 				return rels_[i];
 			}
@@ -811,7 +811,7 @@ namespace explib {
 			int rel_count() const {
 				return rels_.size();
 			}
-			explib::var<P>& var(int i) {
+			reexp::var<P>& var(int i) {
 				assert(i >= 0 && i < var_count());
 				if (i < origs_.size()) {
 					return origs_[i];
@@ -819,7 +819,7 @@ namespace explib {
 				i -= origs_.size();
 				return exps_[i];
 			}
-			const explib::var<P>& var(int i) const {
+			const reexp::var<P>& var(int i) const {
 				assert(i >= 0 && i < var_count());
 				if (i < origs_.size()) {
 					return origs_[i];
@@ -836,22 +836,22 @@ namespace explib {
 			int var_count() const {
 				return origs_.size() + exps_.size();
 			}
-			const explib::exp<P>& exp_back() const {
+			const reexp::exp<P>& exp_back() const {
 				return exps_.back();
 			}
-			void add_orig(const explib::orig<P>& o) {
+			void add_orig(const reexp::orig<P>& o) {
 				int id = origs_.size();
 				origs_.push_back(o);
 				origs_.back().set_id(id);
 				origs_.back().init();
 				if (obs_) obs_->var_added(origs_.back());
 			}
-			explib::rel<P>& alloc_rel(const explib::ctx<P>& ctx) {
-				rels_.push_back(explib::rel<P>(rels_.size(), ctx));
+			reexp::rel<P>& alloc_rel(const reexp::ctx<P>& ctx) {
+				rels_.push_back(reexp::rel<P>(rels_.size(), ctx));
 				return rels_.back();
 			}
 			bool is_rel_back_unique() {
-				explib::rel<P>& rel = rels_.back(); // is this duplicate or unique?
+				reexp::rel<P>& rel = rels_.back(); // is this duplicate or unique?
 				for (int i = 0; i < rels_.size()-1; ++i) {
 					if (rel == rels_[i]) return false;
 				}
@@ -865,9 +865,9 @@ namespace explib {
 				rels_.back().finalize();
 				if (obs_) obs_->rel_added(rels_.back());
 			}
-			void add_exp(const explib::rel<P>& rel, int state) {
+			void add_exp(const reexp::rel<P>& rel, int state) {
 				int id = origs_.size() + exps_.size();
-				exps_.push_back(explib::exp<P>(rel, state));
+				exps_.push_back(reexp::exp<P>(rel, state));
 				exps_.back().init(id);
 				if (obs_) obs_->var_added(exps_.back());
 				exps_.back().gen_rels(*this);
@@ -881,11 +881,11 @@ namespace explib {
 		private:
 		public: // needed for measuring performance
 			/** Organizes bits in variables */
-			util::arrays_list<explib::orig<P> > origs_;
+			util::arrays_list<reexp::orig<P> > origs_;
 			/** Expressions */
-			util::arrays_list<explib::exp<P> > exps_;
+			util::arrays_list<reexp::exp<P> > exps_;
 			/** Organizes variables in relations */
-			util::arrays_list<explib::rel<P> > rels_;
+			util::arrays_list<reexp::rel<P> > rels_;
 			/**/
 			lang_obs<P>* obs_;
 	};
@@ -894,4 +894,4 @@ namespace explib {
 
 }
 
-#endif /* LANG_H_ */
+#endif /* REEXP_LANG_H_ */

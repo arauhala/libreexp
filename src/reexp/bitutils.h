@@ -5,8 +5,8 @@
  *      Author: arau
  */
 
-#ifndef BITUTILS_H_
-#define BITUTILS_H_
+#ifndef REEXP_H_
+#define REEXP_H_
 
 #include "reexp/bits.h"
 #include "reexp/ctx.h"
@@ -24,4 +24,4 @@ namespace explib {
 }
 
 
-#endif /* BITUTILS_H_ */
+#endif /* REEXP_H_ */

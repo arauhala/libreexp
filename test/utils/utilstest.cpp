@@ -9,8 +9,8 @@
 
 #include "tester.h"
 
-void run_bit_ref_test(TestTool& t) {
-	explib::bits b;
+void run_bit_ref_test(test_tool& t) {
+	reexp::bits b;
 	b.resize(8);
 	for (int i = 4; i < 8; ++i) {
 		b[i] = true;
@@ -22,20 +22,20 @@ void run_bit_ref_test(TestTool& t) {
 	t<<"ref [4, 8]: "<<vector_todensestring(b.between(4, 8))<<"\n";
 }
 
-void copy_and_print(TestTool& t, explib::bits& dest, explib::bits& src, int offset) {
+void copy_and_print(test_tool& t, reexp::bits& dest, reexp::bits& src, int offset) {
 	dest = src.from(offset, dest.size());
 	t<<"bits ["<<offset<<", "<<offset+dest.size()<<"]\n"<<vector_tolines(dest, 32)<<"\n";
 }
 
-void run_bit_copy_test(TestTool& t) {
-	explib::bits b;
+void run_bit_copy_test(test_tool& t) {
+	reexp::bits b;
 	b.resize(128);
 	b.fill(false);
 	for (int i = 32; i < b.size()-32; i+=2) {
 		b[i] = true;
 	}
 	t<<"src:\n"<<vector_tolines(b, 32)<<"\n";
-	explib::bits b2;
+	reexp::bits b2;
 	b2.resize(64);
 	copy_and_print(t, b2, b, 0);
 	copy_and_print(t, b2, b, 3);
@@ -45,10 +45,10 @@ void run_bit_copy_test(TestTool& t) {
 	copy_and_print(t, b2, b, 61);
 	copy_and_print(t, b2, b, 64);
 }
-void run_bits_bitop_test(TestTool& t) {
-	explib::bits b1;
-	explib::bits b2;
-	explib::bits b3;
+void run_bits_bitop_test(test_tool& t) {
+	reexp::bits b1;
+	reexp::bits b2;
+	reexp::bits b3;
 	b1.resize(256);
 	b2.resize(256);
 	b3.resize(256);
@@ -78,10 +78,10 @@ void run_bits_bitop_test(TestTool& t) {
 	t<<"b1 & ~b2, pop "<<b3.popcount()<<":\n"<<vector_tolines(b3, 64)<<"\n\n";
 }
 
-void run_bits_ref_andneg_test(TestTool& t) {
-	explib::bits b1;
-	explib::bits b2;
-	explib::bits b3;
+void run_bits_ref_andneg_test(test_tool& t) {
+	reexp::bits b1;
+	reexp::bits b2;
+	reexp::bits b3;
 	b1.resize(256);
 	b2.resize(256);
 	b3.resize(256);
@@ -94,7 +94,7 @@ void run_bits_ref_andneg_test(TestTool& t) {
 	t<<"b1, pop "<<b1.popcount()<<":\n"<<vector_tolines(b1, 64)<<"\n\n";
 	t<<"b2, pop "<<b2.popcount()<<":\n"<<vector_tolines(b2, 64)<<"\n\n";
 
-	explib::bits b4;
+	reexp::bits b4;
 	b4.resize(256);
 	b4.fill(true);
 
@@ -136,11 +136,11 @@ void run_bits_ref_andneg_test(TestTool& t) {
 	t<<"b1[9,19] & ~b2[43,53], pop "<<b3.popcount()<<":\n"<<vector_tolines(b3, 64)<<"\n\n";
 }
 
-void run_bits_andneg_test(TestTool& t) {
-	explib::bits b1;
-	explib::bits b2;
-	explib::bits b3;
-	explib::bits b4;
+void run_bits_andneg_test(test_tool& t) {
+	reexp::bits b1;
+	reexp::bits b2;
+	reexp::bits b3;
+	reexp::bits b4;
 	b1.resize(256);
 	b2.resize(256);
 	b3.resize(256);
@@ -171,10 +171,10 @@ void run_bits_andneg_test(TestTool& t) {
 }
 
 
-void run_bits_ref_and_test(TestTool& t) {
-	explib::bits b1;
-	explib::bits b2;
-	explib::bits b3;
+void run_bits_ref_and_test(test_tool& t) {
+	reexp::bits b1;
+	reexp::bits b2;
+	reexp::bits b3;
 	b1.resize(256);
 	b2.resize(256);
 	b3.resize(256);
@@ -187,7 +187,7 @@ void run_bits_ref_and_test(TestTool& t) {
 	t<<"b1, pop "<<b1.popcount()<<":\n"<<vector_tolines(b1, 64)<<"\n\n";
 	t<<"b2, pop "<<b2.popcount()<<":\n"<<vector_tolines(b2, 64)<<"\n\n";
 
-	explib::bits b4;
+	reexp::bits b4;
 	b4.resize(256);
 	b4.fill(0);
 
@@ -231,10 +231,10 @@ void run_bits_ref_and_test(TestTool& t) {
 
 }
 
-void run_bits_ref_or_test(TestTool& t) {
-	explib::bits b1;
-	explib::bits b2;
-	explib::bits b3;
+void run_bits_ref_or_test(test_tool& t) {
+	reexp::bits b1;
+	reexp::bits b2;
+	reexp::bits b3;
 	b1.resize(256);
 	b2.resize(256);
 	b3.resize(256);
@@ -247,7 +247,7 @@ void run_bits_ref_or_test(TestTool& t) {
 	t<<"b1, pop "<<b1.popcount()<<":\n"<<vector_tolines(b1, 64)<<"\n\n";
 	t<<"b2, pop "<<b2.popcount()<<":\n"<<vector_tolines(b2, 64)<<"\n\n";
 
-	explib::bits b4;
+	reexp::bits b4;
 	b4.resize(256);
 	b4.fill(1);
 
@@ -289,9 +289,9 @@ void run_bits_ref_or_test(TestTool& t) {
 	t<<"b1[32,98] | b2[92,156], pop "<<b3.popcount()<<":\n"<<vector_tolines(b3, 64)<<"\n\n";
 }
 
-void run_bits_ref_fill_test(TestTool& t) {
-	explib::bits b1;
-	explib::bits b;
+void run_bits_ref_fill_test(test_tool& t) {
+	reexp::bits b1;
+	reexp::bits b;
 	b1.resize(256);
 	b.resize(256);
 
@@ -341,11 +341,11 @@ void run_bits_ref_fill_test(TestTool& t) {
 
 }
 
-void run_bits_ref_perf_test(TestTool& t) {
-	explib::bits b1;
+void run_bits_ref_perf_test(test_tool& t) {
+	reexp::bits b1;
 	b1.resize(8*1024*1024);
 
-	explib::bits b2;
+	reexp::bits b2;
 	b2.resize(8*1024*1024);
 
 	srand(0);
@@ -367,7 +367,7 @@ void run_bits_ref_perf_test(TestTool& t) {
 		int max2 = b2.size() - size;
 
 		{
-			TimeSentry time;
+			time_sentry time;
 
 			for (int j = 0; j < times; ++j) {
 				int destpos = ((j<<3) + j)%max1;
@@ -378,7 +378,7 @@ void run_bits_ref_perf_test(TestTool& t) {
 			t.record({buf, "property:&~_time(us)"}, double(us));
 		}
 		{
-			TimeSentry time;
+			time_sentry time;
 			for (int j = 0; j < times; ++j) {
 				int destpos = ((j<<3) + j)%max1;
 				int srcpos = ((j<<3) + j)%max2;
@@ -388,7 +388,7 @@ void run_bits_ref_perf_test(TestTool& t) {
 			t.record({buf, "property:&_time(us)"}, double(us));
 		}
 		{
-			TimeSentry time;
+			time_sentry time;
 			for (int j = 0; j < times; ++j) {
 				int destpos = ((j<<3) + j)%max1;
 				int srcpos = ((j<<3) + j)%max2;
@@ -399,15 +399,15 @@ void run_bits_ref_perf_test(TestTool& t) {
 		}
 		size *= 2;
 	}
-	Table table(
-		t.report(ToTable<Average>({}, "property:", "size:")));
+	table table(
+		t.report(to_table<average>({}, "property:", "size:")));
 	t.reported()<<table;
 
 }
 
-void run_popcount_test(TestTool& t) {
-	explib::bits b1;
-	explib::bits b2;
+void run_popcount_test(test_tool& t) {
+	reexp::bits b1;
+	reexp::bits b2;
 	b1.resize(256);
 	b2.resize(7);
 
@@ -438,8 +438,8 @@ void run_popcount_test(TestTool& t) {
 
 }
 
-void run_big_popcount_test(TestTool& t) {
-	explib::bits b1;
+void run_big_popcount_test(test_tool& t) {
+	reexp::bits b1;
 	b1.resize(8*1024*1024);
 
 	int ln = 13;
@@ -451,9 +451,9 @@ void run_big_popcount_test(TestTool& t) {
 	t<<"popcount: "<<b1.popcount()<<"\n\n";
 }
 
-void run_big_16b_popcount_test(TestTool& t) {
+void run_big_16b_popcount_test(test_tool& t) {
 	static const int units = 16*1024;
-	explib::bits b[units];
+	reexp::bits b[units];
 
 	int ln = 13;
 	for (int i = 0; i < units; i++) {
@@ -483,11 +483,11 @@ struct problem3d {
 };
 
 template <typename P>
-std::string bitmatrix_tostring(const explib::bitmatrix<P>& m) {
+std::string bitmatrix_tostring(const reexp::bitmatrix<P>& m) {
 	std::ostringstream buf;
-	const explib::cvec<P>& dim = m.ndim_.dim_;
+	const reexp::cvec<P>& dim = m.ndim_.dim_;
 
-	for (explib::dim_row_iterator<P> i(dim, dim.rowdim()); i; ++i) {
+	for (reexp::dim_row_iterator<P> i(dim, dim.rowdim()); i; ++i) {
 		int offset = dim.offset(i.begin());
 		for (int j = 0; j < i.length(); ++j) {
 			if (m.bits_[offset+j]) {
@@ -501,13 +501,13 @@ std::string bitmatrix_tostring(const explib::bitmatrix<P>& m) {
 	return buf.str();
 }
 
-void run_ndim_test(TestTool& t) {
+void run_ndim_test(test_tool& t) {
 	typedef problem2d p;
 
-	explib::ndim<p> v;
+	reexp::ndim<p> v;
 
-	auto fit= [&](const explib::cvec<p>& shift,
-					const explib::cvec<p>& dim) {
+	auto fit= [&](const reexp::cvec<p>& shift,
+					const reexp::cvec<p>& dim) {
 		t<<"applying "<<dim<<" at "<<shift<<"\n";
 		v.fit(shift, dim);
 		t<<"shift: "<<v.shift_<<"  ndim: "<<v.dim_<<"  vol:"<<v.dim_.volume()<<"\n\n";
@@ -520,10 +520,10 @@ void run_ndim_test(TestTool& t) {
 }
 
 template <typename P>
-void run_dim_bchunk_iteration_test_round(TestTool& t, int rowlen) {
+void run_dim_bchunk_iteration_test_round(test_tool& t, int rowlen) {
 	typedef P p;
 	int size = 8*1024*1024;// 1 megabyte
-	explib::cvec<p> dim;
+	reexp::cvec<p> dim;
 	dim[0] = rowlen;
 	if (P::DIM ==2 ) {
 		int rows = size / rowlen;
@@ -534,7 +534,7 @@ void run_dim_bchunk_iteration_test_round(TestTool& t, int rowlen) {
 		dim[1] = rows;
 		dim[2] = 512;
 	}
-	explib::bits data;
+	reexp::bits data;
 	data.resize(dim.volume());
 
 	for (int i = 0; i < data.size(); ++i) {
@@ -544,15 +544,15 @@ void run_dim_bchunk_iteration_test_round(TestTool& t, int rowlen) {
 	}
 
 	int true_chunks = 0;
-	TimeSentry time;
-	explib::dim_row_iterator<p> i(dim);
+	time_sentry time;
+	reexp::dim_row_iterator<p> i(dim);
 	while (i) {
-		explib::cvec<p> beginv = i.begin();
+		reexp::cvec<p> beginv = i.begin();
 		int begini = dim.offset(beginv);
-		explib::bits_ref row = data.from(begini, i.length());
-		auto j = row.chunk_istream2<explib::false_tail_fill>();
+		reexp::bits_ref row = data.from(begini, i.length());
+		auto j = row.chunk_istream2<reexp::false_tail_fill>();
 		while (j) {
-			explib::bchunk c;
+			reexp::bchunk c;
 			j>>c;
 			if (c) true_chunks++;
 		}
@@ -564,10 +564,10 @@ void run_dim_bchunk_iteration_test_round(TestTool& t, int rowlen) {
 	t.record({sup()<<"rowlen:"<<rowlen, "prop:true"}, true_chunks);
 }
 
-void run_bchunk_iteration_test(TestTool& t) {
+void run_bchunk_iteration_test(test_tool& t) {
 	srand(0);
 	int size = 8*1024*1024; // 1 megabyte
-	explib::bits data;
+	reexp::bits data;
 	data.resize(size);
 	for (int i = 0; i < data.size(); ++i) {
 		if ((rand() % 200) == 0) { // fill around every third 64 bit chunk
@@ -577,10 +577,10 @@ void run_bchunk_iteration_test(TestTool& t) {
 
 	{
 		int true_chunks = 0;
-		TimeSentry time;
-		explib::bchunk_istream i = data.from(0).chunk_istream(explib::false_tail_fill);
+		time_sentry time;
+		reexp::bchunk_istream i = data.from(0).chunk_istream(reexp::false_tail_fill);
 		while (i) {
-			explib::bchunk c;
+			reexp::bchunk c;
 			i>>c;
 			if (c) true_chunks++;
 		}
@@ -591,20 +591,20 @@ void run_bchunk_iteration_test(TestTool& t) {
 
 	{
 		int true_chunks = 0;
-		TimeSentry time;
-		for (explib::bchunk c : data.chunks()) {
+		time_sentry time;
+		for (reexp::bchunk c : data.chunks()) {
 			if (c) true_chunks++;
 		}
 		long us = time.us();
 		t.record({"iteration:bcvector", "prop:us"}, us);
 		t.record({"iteration:bcvector", "prop:true"}, true_chunks);
 	}
-	Table table(
-		t.report(ToTable<Average>({}, "prop:", "iteration:")));
+	table table(
+		t.report(to_table<average>({}, "prop:", "iteration:")));
 	t.reported()<<table;
 }
 
-void run_dim_bchunk_iteration_test(TestTool& t) {
+void run_dim_bchunk_iteration_test(test_tool& t) {
 	srand(0);
 	typedef problem2d p;
 	run_dim_bchunk_iteration_test_round<p>(t, 1);
@@ -615,12 +615,12 @@ void run_dim_bchunk_iteration_test(TestTool& t) {
 	run_dim_bchunk_iteration_test_round<p>(t, 1024);
 	run_dim_bchunk_iteration_test_round<p>(t, 4096);
 
-	Table table(
-		t.report(ToTable<Average>({}, "prop:", "rowlen:")));
+	table table(
+		t.report(to_table<average>({}, "prop:", "rowlen:")));
 	t.reported()<<table;
 }
 
-void run_3dim_bchunk_iteration_test(TestTool& t) {
+void run_3dim_bchunk_iteration_test(test_tool& t) {
 	srand(0);
 	typedef problem3d p;
 	run_dim_bchunk_iteration_test_round<p>(t, 1);
@@ -631,73 +631,73 @@ void run_3dim_bchunk_iteration_test(TestTool& t) {
 	run_dim_bchunk_iteration_test_round<p>(t, 1024);
 	run_dim_bchunk_iteration_test_round<p>(t, 4096);
 
-	Table table(
-		t.report(ToTable<Average>({}, "prop:", "rowlen:")));
+	table table(
+		t.report(to_table<average>({}, "prop:", "rowlen:")));
 	t.reported()<<table;
 }
 
-void run_bitmatrix_test(TestTool& t) {
+void run_bitmatrix_test(test_tool& t) {
 	typedef problem2d p;
-	explib::bitmatrix<p> m;
-	m.unite(explib::cvec<p>(), explib::cvec<p>(3, 3));
-	m[explib::cvec<p>(1, 1)] = true;
-	m[explib::cvec<p>(0, 0)] = true;
+	reexp::bitmatrix<p> m;
+	m.unite(reexp::cvec<p>(), reexp::cvec<p>(3, 3));
+	m[reexp::cvec<p>(1, 1)] = true;
+	m[reexp::cvec<p>(0, 0)] = true;
 
 	t<<"\nmatrix:\n"<<bitmatrix_tostring(m);
 
-	explib::bitmatrix<p> m2;
-	m2.unite(explib::cvec<p>(), explib::cvec<p>(3, 3));
-	m2[explib::cvec<p>(2, 2)] = true;
-	m2[explib::cvec<p>(0, 2)] = true;
-	m2[explib::cvec<p>(2, 0)] = true;
+	reexp::bitmatrix<p> m2;
+	m2.unite(reexp::cvec<p>(), reexp::cvec<p>(3, 3));
+	m2[reexp::cvec<p>(2, 2)] = true;
+	m2[reexp::cvec<p>(0, 2)] = true;
+	m2[reexp::cvec<p>(2, 0)] = true;
 
 	t<<"\nmatrix 2:\n"<<bitmatrix_tostring(m2);
-	m.blit(explib::cvec<p>(0, 0), m2);
+	m.blit(reexp::cvec<p>(0, 0), m2);
 	t<<"\nmatrix 1+2:\n"<<bitmatrix_tostring(m);
 }
 
-void run_bitmatrix_rzblit_test(TestTool& t) {
+void run_bitmatrix_rzblit_test(test_tool& t) {
 	typedef problem2d p;
-	explib::bitmatrix<p> m;
-	m.unite(explib::cvec<p>(), explib::cvec<p>(3, 3));
-	m[explib::cvec<p>(1, 1)] = true;
-	m[explib::cvec<p>(0, 0)] = true;
+	reexp::bitmatrix<p> m;
+	m.unite(reexp::cvec<p>(), reexp::cvec<p>(3, 3));
+	m[reexp::cvec<p>(1, 1)] = true;
+	m[reexp::cvec<p>(0, 0)] = true;
 
-	explib::bitmatrix<p> m2;
-	m2.unite(explib::cvec<p>(), explib::cvec<p>(3, 3));
-	m2[explib::cvec<p>(2, 2)] = true;
-	m2[explib::cvec<p>(0, 2)] = true;
-	m2[explib::cvec<p>(2, 0)] = true;
+	reexp::bitmatrix<p> m2;
+	m2.unite(reexp::cvec<p>(), reexp::cvec<p>(3, 3));
+	m2[reexp::cvec<p>(2, 2)] = true;
+	m2[reexp::cvec<p>(0, 2)] = true;
+	m2[reexp::cvec<p>(2, 0)] = true;
 
-	explib::bitmatrix<p> m3;
+	reexp::bitmatrix<p> m3;
 
 	t<<"\nmatrix m1:\n"<<bitmatrix_tostring(m);
 	t<<"\nmatrix m2:\n"<<bitmatrix_tostring(m2);
 	t<<"\nmatrix m3:\n"<<bitmatrix_tostring(m3);
-	m3.resizing_blit(explib::cvec<p>(0, 0), m);
+	m3.resizing_blit(reexp::cvec<p>(0, 0), m);
 	t<<"\nmatrix m3+=m1:\n"<<bitmatrix_tostring(m3);
-	m3.resizing_blit(explib::cvec<p>(0, 0), m2);
+	m3.resizing_blit(reexp::cvec<p>(0, 0), m2);
 	t<<"\nmatrix m3+=m2:\n"<<bitmatrix_tostring(m3);
-	m3.resizing_blit(explib::cvec<p>(-1, -1), m);
+	m3.resizing_blit(reexp::cvec<p>(-1, -1), m);
 	t<<"\nmatrix m3+=m1@-1,-1:\n"<<bitmatrix_tostring(m3);
-	m3.resizing_blit(explib::cvec<p>(-3, 2), m2);
+	m3.resizing_blit(reexp::cvec<p>(-3, 2), m2);
 	t<<"\nmatrix m3+=m1@-1,-1:\n"<<bitmatrix_tostring(m3);
 }
 
-void run_bitmatrix_rzsetblit_test(TestTool& t) {
+void run_bitmatrix_rzsetblit_test(test_tool& t) {
 	typedef problem2d p;
-	explib::bitmatrix<p> m;
-	m.unite(explib::cvec<p>(), explib::cvec<p>(3, 3));
-	m[explib::cvec<p>(1, 1)] = true;
-	m[explib::cvec<p>(0, 0)] = true;
+	reexp::bitmatrix<p> m;
+	m.unite(reexp::cvec<p>(), reexp::cvec<p>(3, 3));
+	m[reexp::cvec<p>(1, 1)] = true;
+	m[reexp::cvec<p>(0, 0)] = true;
 
-	explib::bitmatrix<p> m2;
-	m2.unite(explib::cvec<p>(), explib::cvec<p>(3, 3));
-	m2[explib::cvec<p>(2, 2)] = true;
-	m2[explib::cvec<p>(0, 2)] = true;
-	m2[explib::cvec<p>(2, 0)] = true;
+	reexp::bitmatrix<p> m2;
+	m2.unite(reexp::cvec<p>(), reexp::cvec<p>(3, 3));
+	m2[reexp::cvec<p>(2, 2)] = true;
+	m2[reexp::cvec<p>(0, 2)] = true;
+	m2[reexp::cvec<p>(2, 0)] = true;
 
-	explib::bitmatrix<p> m3;
+	reexp::bitmatrix<p> m3;
 	t<<"\nmatrix m3:\n"<<bitmatrix_tostring(m3);
 	m3.resizing_set({0, 0}, true);
 	t<<"\nmatrix m3:\n"<<bitmatrix_tostring(m3);
@@ -715,25 +715,25 @@ void run_bitmatrix_rzsetblit_test(TestTool& t) {
 	t<<"\nmatrix m1:\n"<<bitmatrix_tostring(m);
 	t<<"\nmatrix m2:\n"<<bitmatrix_tostring(m2);
 	t<<"\nmatrix m3:\n"<<bitmatrix_tostring(m3);
-	m3.resizing_blit(explib::cvec<p>(0, 0), m);
+	m3.resizing_blit(reexp::cvec<p>(0, 0), m);
 	t<<"\nmatrix m3+=m1:\n"<<bitmatrix_tostring(m3);
-	m3.resizing_blit(explib::cvec<p>(0, 0), m2);
+	m3.resizing_blit(reexp::cvec<p>(0, 0), m2);
 	t<<"\nmatrix m3+=m2:\n"<<bitmatrix_tostring(m3);
-	m3.resizing_blit(explib::cvec<p>(-1, -1), m);
+	m3.resizing_blit(reexp::cvec<p>(-1, -1), m);
 	t<<"\nmatrix m3+=m1@-1,-1:\n"<<bitmatrix_tostring(m3);
-	m3.resizing_blit(explib::cvec<p>(-3, 2), m2);
+	m3.resizing_blit(reexp::cvec<p>(-3, 2), m2);
 	t<<"\nmatrix m3+=m1@-1,-1:\n"<<bitmatrix_tostring(m3);
 
 	m3.resizing_set({3, 3}, true);
 	m3.resizing_set({-3, 3}, true);
 	m3.resizing_set({0, 1000}, true);
 
-	explib::bitmatrix<p> m4;
+	reexp::bitmatrix<p> m4;
 	t<<"\nmatrix m4:\n"<<bitmatrix_tostring(m4);
 	m4.resizing_blit({1, 1}, m);
 	t<<"\nmatrix m4:\n"<<bitmatrix_tostring(m4);
 
-	explib::bitmatrix<p> m5;
+	reexp::bitmatrix<p> m5;
 	t<<"\nmatrix m5:\n"<<bitmatrix_tostring(m5);
 	m5.resizing_blit({-1, -1}, m);
 	t<<"\nmatrix m5:\n"<<bitmatrix_tostring(m5);

@@ -5,14 +5,14 @@
  *      Author: arauhala
  */
 
-#ifndef EXP_H_
-#define EXP_H_
+#ifndef REEXP_EXP_H_
+#define REEXP_EXP_H_
 
 #include "learner.h"
 #include "pred.h"
 
 
-namespace explib {
+namespace reexp {
 
 	/*
 	 * Problems and have they are solved:
@@ -76,4 +76,4 @@ namespace explib {
 
 }
 
-#endif /* EXP_H_ */
+#endif /* REEXP_EXP_H_ */

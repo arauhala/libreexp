@@ -39,15 +39,15 @@ namespace optdigits {
 	}
 
 	template <typename P>
-	void evaluate(TestTool& t,
-				  const explib::data<P>& data,
-				  const explib::stats<P>& stats,
+	void evaluate(test_tool& t,
+				  const reexp::data<P>& data,
+				  const reexp::stats<P>& stats,
 				  const std::set<std::string>& tags,
 				  int sample_cvarid) {
-		explib::pred<P> pred(stats);
+		reexp::pred<P> pred(stats);
 		std::vector<double> ps[10];
 
-		TimeSentry timer;
+		time_sentry timer;
 		for (int i = 0; i < 10; i++) {
 			ps[i] = std::move(pred.p(data, i+varid::digit0));
 		}
@@ -59,7 +59,7 @@ namespace optdigits {
 		std::vector<int> correct;
 		decisions.resize(samples);
 		correct.resize(samples);
-		const explib::data_var<P>* vars[10];
+		const reexp::data_var<P>* vars[10];
 
 		for (int i = 0; i < 10; i++) {
 			vars[i] = &data.var(i + varid::digit0);
@@ -72,7 +72,7 @@ namespace optdigits {
 		for (int i = 0; i < 10; ++i) {
 			oks[i] = 0; infos[i] = 0; ns[i] = 0;
 		}
-		explib::cvec<P> at;
+		reexp::cvec<P> at;
 		int ok = 0;
 		double info = 0;
 		for (int s = 0; s < samples; s++) {
@@ -124,12 +124,12 @@ namespace optdigits {
 	}
 
 	template <typename P>
-	void do_evaluate(TestTool& t,
-					 explib::lang<P>& lang,
-					 explib::data<P>& data,
-					 explib::data<P>& tdata,
-					 explib::stats<P>& stats,
-					 explib::learner<P>& learner,
+	void do_evaluate(test_tool& t,
+					 reexp::lang<P>& lang,
+					 reexp::data<P>& data,
+					 reexp::data<P>& tdata,
+					 reexp::stats<P>& stats,
+					 reexp::learner<P>& learner,
 					 int sample_cvarid) {
 		tdata.apply_exps();
 		std::set<std::string> tags = {sup()<<"exps: "<<lang.exp_count()};

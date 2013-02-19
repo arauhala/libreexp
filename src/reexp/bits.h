@@ -1,5 +1,5 @@
-#ifndef EXPLIB_BITS_H__
-#define EXPLIB_BITS_H__
+#ifndef REEXP_BITS_H__
+#define REEXP_BITS_H__
 
 #include <stdlib.h>
 #include <vector>
@@ -9,7 +9,7 @@
 #include <stdexcept>
 #include <assert.h>
 
-namespace explib {
+namespace reexp {
 
 	class bits;
 	class cond_bits;
@@ -670,4 +670,4 @@ namespace explib {
 
 }
 
-#endif /*EXPLIB_BITS_H__*/
+#endif /*REEXP_BITS_H__*/

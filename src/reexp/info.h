@@ -5,12 +5,12 @@
  *      Author: arauhala
  */
 
-#ifndef INFO_H_
-#define INFO_H_
+#ifndef REEXP_INFO_H_
+#define REEXP_INFO_H_
 
 #include "math.h"
 
-namespace explib {
+namespace reexp {
 
 	inline double information(double pS) {
 		return (pS == 1. || pS == 0 || isnan(pS)) ? 0 : -pS * log2(pS);
@@ -60,4 +60,4 @@ namespace explib {
 
 }
 
-#endif /* INFO_H_ */
+#endif /* REEXP_INFO_H_ */

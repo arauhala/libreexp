@@ -5,17 +5,15 @@
  *      Author: arauhala
  */
 
-#ifndef STATS_H_
-#define STATS_H_
+#ifndef REEXP_STATS_H_
+#define REEXP_STATS_H_
 
 #include "data.h"
 #include "info.h"
 
 #include <stdexcept>
 
-#define USE_ROW_UPDATE
-
-namespace explib {
+namespace reexp {
 
 	template <typename P>
 	class stats;
@@ -25,7 +23,7 @@ namespace explib {
 		public:
 			var_stats(const data_var<P>& var)
 			:	var_(var), disabled_(false), version_(-1) {
-				const explib::ctx<P>& c = var.var_.ctx();
+				const reexp::ctx<P>& c = var.var_.ctx();
 				for (rowdim_= 0; c.v_[rowdim_] < 0; ++rowdim_) {}
 			}
 			int freq() const {
@@ -47,16 +45,13 @@ namespace explib {
 				states &= var_.defined();
 				freq_ = states.popcount();
 			}
-			void states_undefined(const explib::bits& undefs) {
+			void states_undefined(const reexp::bits& undefs) {
 				row_update(); // no optimization needed
 			}
 			void update() {
 				if (var_.version_ > version_) {
-#ifdef USE_ROW_UPDATE
 					row_update();
-#else
-					bit_update();
-#endif
+					//bit_update();
 					version_ = var_.version_;
 				}
 			}
@@ -76,16 +71,16 @@ namespace explib {
 				}
 			}
 			double p() const {
-				return explib::p(freq_, n_);
+				return reexp::p(freq_, n_);
 			}
 			double eP() const {
-				return explib::hatP(freq_, n_);
+				return reexp::hatP(freq_, n_);
 			}
 			double eEntropy() const {
-				return explib::entropy(eP());
+				return reexp::entropy(eP());
 			}
 			double entropy() const {
-				return explib::entropy(p());
+				return reexp::entropy(p());
 			}
 			double information() const {
 				return entropy() * n_;
@@ -107,10 +102,20 @@ namespace explib {
 
 
 	/**
-	 * Relation statistics for some specif{ic data set
+	 * Relation statistics for some specific data set
 	 */
 	template <typename P>
 	struct rel_stats {
+		private:
+			data_rel<P> rel_;
+			std::vector<int> varFreqs_;
+			std::vector<int> stateFreqs_;
+			int n_;
+			// optimization related
+			int rowdim_;
+			std::bitset<P::MAX_REL_VARS> varrows_;
+			int version_;
+
 		public:
 			rel_stats(const data_rel<P>& rel)
 			:	rel_(rel),
@@ -124,7 +129,7 @@ namespace explib {
 				varFreqs_.resize(vars);
 				stateFreqs_.resize(1<<vars);
 				const std::vector<rel_entry<P> >& e = rel.entries();
-				const explib::ctx<P>& c = rel.rel().ctx();
+				const reexp::ctx<P>& c = rel.rel().ctx();
 				for (; c.v_[rowdim_] < 0; ++rowdim_) {}
 				varrows_.reset();
 				for (size_t i = 0; i < e.size(); ++i) {
@@ -180,12 +185,6 @@ namespace explib {
 			double stateP(int state) const {
 				return stateFreqs_[state] / (double)n_;
 			}
-/*			inline double statePriori(int state) const {
-				for (size_t i = 0; i < varFreqs_.size(); ++i) {
-
-				}
-				return 0.25;
-			}*/
 			double eStateP(int state) const {
 				return (stateFreqs_[state]+rel_.rel().statePrioriP(state)*prioriWeight()) / (double)(n_+prioriWeight());
 			}
@@ -264,16 +263,16 @@ namespace explib {
 				return stateFreqs_[state] * (eStateNaiveInfo(state) - eStateInfo(state));
 			}
 
-			void row_update2() {
+			void row_update() {
 				reset();
-				const explib::rel<P>& r = rel_.rel();
+				const reexp::rel<P>& r = rel_.rel();
 				if (r.disabled()) {
 					return; // skip
 				}
 
-				explib::cvec<P> dim = rel_.dim();
-				explib::bits defs(dim.volume());
-				explib::bits var_states(defs.size());
+				reexp::cvec<P> dim = rel_.dim();
+				reexp::bits defs(dim.volume());
+				reexp::bits var_states(defs.size());
 
 				// 1. first solve the defined vector
 				//
@@ -285,7 +284,7 @@ namespace explib {
 
 				// 2. init the state bit vectors with the defined vector
 				//
-				explib::bits rel_states[1<<P::MAX_REL_VARS];
+				reexp::bits rel_states[1<<P::MAX_REL_VARS];
 				for (int s = 0; s < stateCount(); ++s) {
 					rel_states[s] = defs;
 				}
@@ -312,91 +311,17 @@ namespace explib {
 				}
 			}
 
-			void row_update() {
 
-				// few thoughts:
-				//  * row is only exist to the lowest
-				//    context variable that is defined for variable
-				//  * sometimes the 'row' dimension is not
-				//    for the first context variable
-				//  * sometimes the row dimension for all variables
-				//    is not the same.
-				//  * Is it even possible that there is no row?
-
-				reset();
-				const explib::rel<P>& r = rel_.rel();
-				if (r.disabled()) {
-					return; // skip
-				}
-				typedef cond_bit_ref cbit;
-				cvec<P> d( rel_.dim() );
-
-				dim_row_iterator<P> i( d, rowdim_ );
-				int vars = rel_.entries().size();
-				int states = stateCount();
-				int rowl = i.length();
-				bits defined(rowl);
-				bits statef[1<<P::MAX_REL_VARS];
-				bits rows[P::MAX_REL_VARS]; // support at max 8 vars in rel
-				for (int j = 0; j < states; ++j) {
-					statef[j].resize(rowl);
-				}
-				for (int j = 0; j < P::MAX_REL_VARS; ++j) {
-					rows[j].resize(rowl);
-				}
-				for (; i; ++i) {
-					defined.fill(true);
-					// make copy of the row and figure out
-					// defined bits
-					cvec<P> begin( i.begin() );
-					for (int j = 0; j < vars; ++j) {
-						if (varrows_[j]) {
-							cond_bits_ref row = rel_.var(j).bitrow(begin, rowl);
-							rows[j] = row;
-							defined &= rows[j];
-							rows[j] = *row;
-						} else {
-							cond_bit_ref bit = rel_.var(j)[begin];
-							if (!bit) defined.fill(false);
-							rows[j].fill(*bit);
-						}
-					}
-
-					for (int j = 0; j < states; ++j) {
-						statef[j] = defined;
-					}
-					for (int j = 0; j < vars; ++j) {
-						bits& row = rows[j];
-						row &= defined;
-						for (int k = 0; k < states; ++k) {
-							if (r.varState(j, k)) {
-								statef[k] &= row;
-							} else {
-								statef[k].andNeg(row); // &= ~
-							}
-						}
-					}
-					n_ += defined.popcount();
-					for (int k = 0; k < vars; ++k) {
-						varFreqs_[k] += rows[k].popcount();
-					}
-					for (int k = 0; k < states; ++k) {
-						//std::cout<<"state "<<k<<" "<<vector_todensestring(statef[k])<<"\n";
-						stateFreqs_[k] += statef[k].popcount();
-					}
-				}
-			}
-
-			void states_sparse_undefined(const explib::data_var<P>& dv,
+			void states_sparse_undefined(const reexp::data_var<P>& dv,
 								   	     const std::vector<int>& dirtychunks,
-								   	     const explib::bits& undefs) {
+								   	     const reexp::bits& undefs) {
 
 				// NOTE: DOES NOT WORK
 				// NOTE: SPEED BOTTLENECK IS ELSEWHERE (after delta optimization)
-				const explib::rel<P>& r = rel_.rel();
+				const reexp::rel<P>& r = rel_.rel();
 				if (r.disabled()) return; // skip
-				const explib::var<P>& v = dv.var();
-				const explib::cvec<P>& vdim = dv.dim();
+				const reexp::var<P>& v = dv.var();
+				const reexp::cvec<P>& vdim = dv.dim();
 
 				typedef cond_bit_ref cbit;
 				cvec<P> d( rel_.dim() );
@@ -408,13 +333,13 @@ namespace explib {
 					}
 				}
 
-				const explib::bits* statebits[P::MAX_REL_VARS];
-				const explib::bits* defbits[P::MAX_REL_VARS];
-				explib::cvec<P> dims[P::MAX_REL_VARS];
+				const reexp::bits* statebits[P::MAX_REL_VARS];
+				const reexp::bits* defbits[P::MAX_REL_VARS];
+				reexp::cvec<P> dims[P::MAX_REL_VARS];
 				int shifts[P::MAX_REL_VARS];
 
 				for (size_t i = 0; i < rel_.entries().size(); ++i) {
-					const explib::data_var<P>& dv = rel_.data_.var(rel_.entries()[i].var_->id());
+					const reexp::data_var<P>& dv = rel_.data_.var(rel_.entries()[i].var_->id());
 					statebits[i] = &dv.states();
 					defbits[i] = &dv.defined();
 					dims[i] = dv.dim();
@@ -464,13 +389,13 @@ namespace explib {
 			 *    One way would be in preparing separate delta row
 			 *    in cases, where there are 2 variables.
 			 */
-			void states_undefined(const explib::data_var<P>& dv,
-								  const explib::bits& undefs,
+			void states_undefined(const reexp::data_var<P>& dv,
+								  const reexp::bits& undefs,
 								  bool version) {
-				const explib::rel<P>& r = rel_.rel();
+				const reexp::rel<P>& r = rel_.rel();
 				if (r.disabled()) return; // skip
-				const explib::var<P>& v = dv.var();
-				const explib::cvec<P>& vdim = dv.dim();
+				const reexp::var<P>& v = dv.var();
+				const reexp::cvec<P>& vdim = dv.dim();
 
 				typedef cond_bit_ref cbit;
 				cvec<P> d( rel_.dim() );
@@ -486,13 +411,13 @@ namespace explib {
 				if (changedvars > 1) {
 					return;
 				}
-				const explib::bits* statebits[P::MAX_REL_VARS];
-				const explib::bits* defbits[P::MAX_REL_VARS];
-				explib::cvec<P> dims[P::MAX_REL_VARS];
+				const reexp::bits* statebits[P::MAX_REL_VARS];
+				const reexp::bits* defbits[P::MAX_REL_VARS];
+				reexp::cvec<P> dims[P::MAX_REL_VARS];
 				int shifts[P::MAX_REL_VARS];
 
 				for (size_t i = 0; i < rel_.entries().size(); ++i) {
-					const explib::data_var<P>& dv =
+					const reexp::data_var<P>& dv =
 						rel_.data_.var(rel_.entries()[i].var_->id());
 					statebits[i] = &dv.states();
 					defbits[i] = &dv.defined();
@@ -511,7 +436,7 @@ namespace explib {
 					cvec<P> begin( i.begin() );
 					int rowbegin = vdim.offset(begin) + vshift;
 
-					explib::bchunk_istream2<false_tail_fill> in(undefs.chunks().data(), rowbegin, i.length());
+					reexp::bchunk_istream2<false_tail_fill> in(undefs.chunks().data(), rowbegin, i.length());
 					int at = 0;
 					while (in) {
 						bchunk undefc;
@@ -550,17 +475,13 @@ namespace explib {
 				version_ = version;
 			}
 
-			int targetVersion(explib::stats<P>& stats) const;
+			int targetVersion(reexp::stats<P>& stats) const;
 
-			void update(explib::stats<P>& stats) {
+			void update(reexp::stats<P>& stats) {
 				int v = targetVersion(stats);
 				if (v > version_ && rel_.dim().volume()) {
-#ifdef USE_ROW_UPDATE
-					row_update2();
-					//row_update();
-#else
-					bit_update();
-#endif
+					row_update();
+					//bit_update();
 					version_ = v;
 				}
 			}
@@ -599,54 +520,148 @@ namespace explib {
 				}
 
 			}
+	};
+
+	/**
+	 * exp_rel_stats provides statistics for the version of a relation
+	 * that the expression was based on.
+	 *
+	 * FIXME: Even if someone changes the data (by hand) this entry
+	 *        will not be updated.
+	 */
+	template <typename P>
+	class exp_rel_stats {
 		private:
-			data_rel<P> rel_;
+			const exp<P>* exp_;
 			std::vector<int> varFreqs_;
 			std::vector<int> stateFreqs_;
 			int n_;
-			// optimization related
-			int rowdim_;
-			std::bitset<P::MAX_REL_VARS> varrows_;
-			int version_;
+
+		public:
+			inline const std::vector<int>& varFreqs() const {
+				return varFreqs_;
+			}
+			inline const std::vector<int>& stateFreqs() const {
+				return stateFreqs_;
+			}
+			inline int n() const {
+				return n_;
+			}
+		public:
+			exp_rel_stats(const exp<P>* e)
+			: exp_(e),
+			  varFreqs_(),
+			  stateFreqs_(),
+			  n_() {
+				if (exp_)
+				{
+					const rel<P>& r = exp_->rel();
+					int vars = r.varCount();
+					varFreqs_.resize(vars);
+					stateFreqs_.resize(1<<vars);
+				}
+			}
+
+			void update(const data<P>& d) {
+				if (exp_)
+				{
+					const rel<P>& r = exp_->rel();
+					data_rel<P> dr = d.rel(r.id());
+
+					// FIXME: redundancy with rel::row_update()
+
+					for (size_t i = 0; i < varFreqs_.size(); i++) {
+						varFreqs_[i] = 0;
+					}
+					for (size_t i = 0; i < stateFreqs_.size(); i++) {
+						stateFreqs_[i] = 0;
+					}
+
+					reexp::cvec<P> dim = dr.dim();
+					int vol = dim.volume();
+					reexp::bits defs(vol);
+					reexp::bits var_states(defs.size());
+
+					// 1. first copy the defined vector from cache
+					//
+					defs = d.exp_rel_defs(exp_->id());
+					n_ = defs.popcount();
+
+					// 2. init the state bit vectors with the defined vector
+					//
+					reexp::bits rel_states[1<<P::MAX_REL_VARS];
+					for (int s = 0; s < r.stateCount(); ++s) {
+						rel_states[s] = defs;
+					}
+
+					// 3. read state vectors for each variable and resolve state vectors
+					//
+					for (int v = 0; v < r.varCount(); ++v) {
+						var_states.copy(defs); // init
+						dr.setand_var_state_bits(v, var_states);
+						varFreqs_[v] = var_states.popcount();
+						for (int s = 0; s < r.stateCount(); ++s) {
+							if (r.varState(v, s)) {
+								rel_states[s] &= var_states;
+							} else {
+								rel_states[s].andNeg(var_states);
+							}
+						}
+					}
+
+					// 4. read statistics from state vectors
+					//
+					for (int s = 0; s < r.stateCount(); ++s) {
+						stateFreqs_[s] = rel_states[s].popcount();
+					}
+				}
+			}
 	};
 
 	template <typename P>
 	class stats : public data_obs<P> {
+		private:
+			const reexp::data<P>& data_;
+			util::dense_vector<var_stats<P> > vars_;
+			util::dense_vector<rel_stats<P> > rels_;
+			util::dense_vector<exp_rel_stats<P> > exp_rels_;
 		public:
-			stats(explib::data<P>& data)
-			: data_(data) {
+			stats(reexp::data<P>& data)
+			: data_(data), vars_(), rels_(), exp_rels_() {
 				data.set_obs(*this);
 				const lang<P>& lang = data_.lang();
 				for (int i = 0; i < lang.var_count(); i++) {
-					vars_.push_back(var_stats<P>(data_.var(i)));
+					var_added(data_.var(i));
 				}
 				for (int i = 0; i < lang.rel_count(); i++) {
-					rels_.push_back(rel_stats<P>(data.rel(i)));
+					rel_added(data.rel(i));
 				}
-				update();
 			}
 			void set_disabled(int varid, bool state) {
 				vars_[varid].set_disabled(state);
 			}
 			void rel_added(const data_rel<P>& rel) {
 				rels_.push_back(rel_stats<P>(rel));
-				rels_.back().update(*this); // NOTE: the real bottleneck
+				rels_.back().update(*this);
 			}
 			void var_added(const data_var<P>& var) {
 				vars_.push_back(var_stats<P>(var));
+				const exp<P>* e = dynamic_cast<const exp<P>*>(&var.var_);
+				exp_rels_.push_back(exp_rel_stats<P>(e));
+				exp_rels_.back().update(data_);
 				update();
 			}
 			void states_undefined(const data_var<P>& var,
-								  const explib::bits& undefs,
+								  const reexp::bits& undefs,
 								  int version) {
-				const explib::var<P>& v = var.var();
+				const reexp::var<P>& v = var.var();
 
 /*				std::vector<int> dirtychunks;
 				for (size_t i = 0; i < undefs.chunks().size(); ++i) {
 					if (undefs.chunks()[i]) dirtychunks.push_back(i);
 				}*/
 
-				for (const explib::rel<P>* r : v.rels()) {
+				for (const reexp::rel<P>* r : v.rels()) {
 //					rels_[r->id()].states_sparse_undefined(var, dirtychunks, undefs);
 					rels_[r->id()].states_undefined(var, undefs, version);
 				}
@@ -666,7 +681,7 @@ namespace explib {
 				}
 				return rv;
 			}
-			const explib::data<P>& data() const {
+			const reexp::data<P>& data() const {
 				return data_;
 			}
 			const var_stats<P>& var(int i) const {
@@ -675,18 +690,17 @@ namespace explib {
 			const rel_stats<P>& rel(int i) const {
 				return rels_[i];
 			}
-		private:
-			const explib::data<P>& data_;
-			util::dense_vector<var_stats<P> > vars_;
-			util::dense_vector<rel_stats<P> > rels_;
+			const exp_rel_stats<P>& exp_rel(int i) const {
+				return exp_rels_[i];
+			}
 	};
 
 	template <typename P>
-	int rel_stats<P>::targetVersion(explib::stats<P>& stats) const {
+	int rel_stats<P>::targetVersion(reexp::stats<P>& stats) const {
 		int v = -1;
 		typedef typename std::vector<rel_entry<P> >::const_iterator iter;
 		for (iter i = rel_.entries().begin(); i != rel_.entries().end(); ++i) {
-			const explib::var_stats<P>& vs = stats.var(i->var_->id());
+			const reexp::var_stats<P>& vs = stats.var(i->var_->id());
 			if (vs.disabled()) return -1;
 			v = std::max(v, vs.data().version_);
 		}
@@ -694,10 +708,10 @@ namespace explib {
 	}
 
 	template <typename P>
-	void filter_rels(explib::lang<P>& l, const explib::stats<P>& s, double threshold) {
+	void filter_rels(reexp::lang<P>& l, const reexp::stats<P>& s, double threshold) {
 		for (int i = 0; i < l.rel_count(); i++) {
 			if (!l.rel(i).disabled()) {
-				const explib::rel_stats<P>& r( s.rel(i) );
+				const reexp::rel_stats<P>& r( s.rel(i) );
 				int s = r.stateCount();
 				while (--s >= 0) {
 					if (r.eStateBias(s) >= threshold) break;
@@ -721,4 +735,4 @@ namespace explib {
 
 }
 
-#endif /* STATS_H_ */
+#endif /* REEXP_STATS_H_ */

@@ -225,16 +225,16 @@ namespace {
 		return groups;
 	}
 
-	void setup_lang(explib::lang<germancredit_problem>& lang, undef_t undefs = undef_nothing) {
+	void setup_lang(reexp::lang<germancredit_problem>& lang, undef_t undefs = undef_nothing) {
 		typedef germancredit_problem p;
-		explib::ctx<p> varctx(explib::cvec<p>(0));
+		reexp::ctx<p> varctx(reexp::cvec<p>(0));
 
 		std::vector<int> groups = variable_groups();
 		int group = -1;
 		int groupBegin = 0;
 		size_t i = 0;
 		for (; i < groups.size(); ++i) {
-			lang.add_orig(explib::orig<p>(varctx));
+			lang.add_orig(reexp::orig<p>(varctx));
 			if (group != groups[i]) {
 				double pLeft = 1.;
 				for (int j = i-1; j >= groupBegin; --j) {
@@ -255,7 +255,7 @@ namespace {
 			}
 		}
 		while (i < variable_bitcount()) {
-			lang.add_orig(explib::orig<p>(varctx));
+			lang.add_orig(reexp::orig<p>(varctx));
 			++i;
 		}
 		lang.var(good_idx()).setPrioriP(0.5); // binary variable, not one-in-many option
@@ -263,9 +263,9 @@ namespace {
 			if (lang.var(i).prioriP() < 1.0) {
 				for (int j = 0; j < i; ++j) {
 					if (lang.var(j).prioriP() < 1.0) {
-						explib::rel<p>& rl(lang.alloc_rel(varctx));
-						rl.add_var(explib::cvec<p>(0), lang.var(i));
-						rl.add_var(explib::cvec<p>(0), lang.var(j));
+						reexp::rel<p>& rl(lang.alloc_rel(varctx));
+						rl.add_var(reexp::cvec<p>(0), lang.var(i));
+						rl.add_var(reexp::cvec<p>(0), lang.var(j));
 						lang.rel_done();
 					}
 				}
@@ -309,7 +309,7 @@ namespace {
 		offset += bitCount;
 	}*/
 
-	void writeIntInLogBits(explib::cond_bits& bits,
+	void writeIntInLogBits(reexp::cond_bits& bits,
 						  int& offset,
 						  double value,
 						  int bitCount,
@@ -332,7 +332,7 @@ namespace {
 		offset += bitCount;
 	}
 
-	void writeIntInDivBits(explib::cond_bits& to,
+	void writeIntInDivBits(reexp::cond_bits& to,
 						   int& offset,
 						   double value,
 						   int bitCount,
@@ -355,12 +355,12 @@ namespace {
 		offset += bitCount;
 	}
 
-	void populate(explib::data<germancredit_problem>& data,
+	void populate(reexp::data<germancredit_problem>& data,
 				  std::istream& in,
 				  undef_t undefs = undef_nothing) {
 		typedef germancredit_problem p;
 
-		explib::cvec<p> at;
+		reexp::cvec<p> at;
 
 		for (int i = 0; i < data.lang().orig_count(); ++i) {
 			data.var(i).defined().fill(true);
@@ -391,7 +391,7 @@ namespace {
 
 			bool undefNumeric = undefs & undef_excluded_numeric_vars;
 
-			explib::cond_bits bits;
+			reexp::cond_bits bits;
 			bits.resize(numeric_variable_bitcount());
 			bits.defined().fill(true);
 			int offset = 0;
@@ -445,13 +445,13 @@ namespace {
 		}
 	}
 
-	void add_numericlabels(explib::pinfo& names, const char* title, int bits) {
+	void add_numericlabels(reexp::pinfo& names, const char* title, int bits) {
 		for (int i = 0; i < bits; ++i) {
 			names.vnames_.push_back(sup()<<title<<i);
 		}
 
 	}
-	void setup_names(explib::pinfo& names) {
+	void setup_names(reexp::pinfo& names) {
 		for (const auto& var : discrete_variables) {
 			names.vnames_.push_back(var.second);
 		}
@@ -466,9 +466,9 @@ namespace {
 		names.cvnames_.push_back("s"); // sample
 	}
 
-	void setup(explib::lang<germancredit_problem>& lang,
-			   explib::data<germancredit_problem>& data,
-			   explib::pinfo& names,
+	void setup(reexp::lang<germancredit_problem>& lang,
+			   reexp::data<germancredit_problem>& data,
+			   reexp::pinfo& names,
 			   std::istream& in,
 			   undef_t undefs = undef_nothing) {
 		setup_lang(lang, undefs);
@@ -478,17 +478,17 @@ namespace {
 
 	struct germancredit {
 		typedef germancredit_problem p;
-		explib::lang<p> lang_;
-		explib::cvec<p> cv_;
-		explib::data<p> data_;
-		explib::pinfo names_;
-		explib::stats<p> stats_;
-		explib::stats_info<p> si_;
+		reexp::lang<p> lang_;
+		reexp::cvec<p> cv_;
+		reexp::data<p> data_;
+		reexp::pinfo names_;
+		reexp::stats<p> stats_;
+		reexp::stats_info<p> si_;
 		germancredit(undef_t undefs = undef_nothing)
 		: lang_(), cv_(SampleCount), data_(lang_, cv_), names_(), stats_(data_), si_(names_, stats_) {
 			std::ifstream in("test/germancredit/german.data");
 			setup(lang_, data_, names_, in, undefs);
-			int v = explib::util::next_version();
+			int v = reexp::util::next_version();
 			for (size_t i = 0; i < data_.var_count(); ++i) {
 				data_.var(i).version_ = v;
 			}
@@ -496,14 +496,14 @@ namespace {
 		}
 	};
 
-	void vars_test(TestTool& t) {
+	void vars_test(test_tool& t) {
 		std::vector<int> groups = discrete_variable_groups();
 		for (size_t i = 0; i < discrete_variables.size(); ++i) {
 			t<<discrete_variables[i].first<<" ["<<groups[i]<<"] = "<<discrete_variables[i].second<<"\n";
 		}
 	}
 
-	void setup_test(TestTool& t) {
+	void setup_test(test_tool& t) {
 		germancredit pr(undef_nothing);
 
 		t<<pr.si_.vars_tostring();
@@ -513,7 +513,7 @@ namespace {
 		t<<pr.si_.var_deps_tostring(good_idx(), 20);
 	}
 
-	void printdata(TestTool& t, const germancredit& cr) {
+	void printdata(test_tool& t, const germancredit& cr) {
 		std::vector<std::string> labels;
 		for (int c = 0; c < 3; ++c) {
 			for (size_t i = 0; int(i) < cr.lang_.var_count(); ++i) {
@@ -538,11 +538,11 @@ namespace {
 		}
 		t<<"\n";
 
-		explib::cvec<germancredit_problem> at;
+		reexp::cvec<germancredit_problem> at;
 		for (int s = 0; s < cr.data_.dim()[0]; ++s) {
 			at[0] = s;
 			for (int v = 0; v < cr.lang_.var_count(); ++v) {
-				const explib::data_var<germancredit_problem>& dv = cr.data_.var(v);
+				const reexp::data_var<germancredit_problem>& dv = cr.data_.var(v);
 				if (dv[at]) {
 					if (*dv[at]) {
 						t<<"1";
@@ -557,26 +557,26 @@ namespace {
 		}
 	}
 
-	void printdata_test(TestTool& t) {
+	void printdata_test(test_tool& t) {
 		germancredit pr(undef_nothing);
 		printdata(t, pr);
 
 		t<<"\n"<<pr.si_.vars_tostring();
 	}
 
-	void printdata_undefs_test(TestTool& t) {
+	void printdata_undefs_test(test_tool& t) {
 		germancredit pr(undef_all_excluded_vars);
 		printdata(t, pr);
 
 		t<<"\n"<<pr.si_.vars_tostring();
 	}
 
-	void applynexps_test(TestTool& t, int exps, undef_t undefs = undef_nothing) {
+	void applynexps_test(test_tool& t, int exps, undef_t undefs = undef_nothing) {
 		germancredit pr(undefs);
 
 //		t<<"\n"<<pr.si_.rels_tostring();
 
-		explib::learner<germancredit_problem> learner(pr.lang_, pr.stats_, 70., 3.);
+		reexp::learner<germancredit_problem> learner(pr.lang_, pr.stats_, 70., 3.);
 		for (int i = 0; i < exps; ++i) learner.add_exp();
 		printdata(t, pr);
 
@@ -588,47 +588,47 @@ namespace {
 //		t<<"\n"<<pr.si_.rels_tostring();
 	}
 
-	void apply1exp_test(TestTool& t) {
+	void apply1exp_test(test_tool& t) {
 		applynexps_test(t, 1);
 	}
 
-	void apply2exp_test(TestTool& t) {
+	void apply2exp_test(test_tool& t) {
 		applynexps_test(t, 2);
 	}
 
-	void apply3exp_test(TestTool& t) {
+	void apply3exp_test(test_tool& t) {
 		applynexps_test(t, 3);
 	}
 
-	void apply4exp_test(TestTool& t) {
+	void apply4exp_test(test_tool& t) {
 		applynexps_test(t, 4);
 	}
 
-	void apply10exp_test(TestTool& t) {
+	void apply10exp_test(test_tool& t) {
 		applynexps_test(t, 10);
 	}
 
-	void apply1exp_undefs_test(TestTool& t) {
+	void apply1exp_undefs_test(test_tool& t) {
 		applynexps_test(t, 1, undef_all_excluded_vars);
 	}
 
-	void apply2exp_undefs_test(TestTool& t) {
+	void apply2exp_undefs_test(test_tool& t) {
 		applynexps_test(t, 2, undef_all_excluded_vars);
 	}
 
-	void apply3exp_undefs_test(TestTool& t) {
+	void apply3exp_undefs_test(test_tool& t) {
 		applynexps_test(t, 3, undef_all_excluded_vars);
 	}
 
-	void apply4exp_undefs_test(TestTool& t) {
+	void apply4exp_undefs_test(test_tool& t) {
 		applynexps_test(t, 4, undef_all_excluded_vars);
 	}
 
-	void apply10exp_undefs_test(TestTool& t) {
+	void apply10exp_undefs_test(test_tool& t) {
 		applynexps_test(t, 10, undef_all_excluded_vars);
 	}
 
-	void setupundefs_test(TestTool& t) {
+	void setupundefs_test(test_tool& t) {
 		germancredit pr(undef_all_excluded_vars);
 
 		t<<pr.si_.vars_tostring();
@@ -638,37 +638,37 @@ namespace {
 		t<<pr.si_.var_deps_tostring(good_idx(), 20);
 	}
 
-	void prioriesnoundef_test(TestTool& t) {
+	void prioriesnoundef_test(test_tool& t) {
 		germancredit pr(undef_nothing);
 
 		std::vector<int> groups = variable_groups();
 
 		for (int i = 0; i < pr.lang_.var_count(); ++i) {
-			const explib::var<germancredit_problem>& v( pr.lang_.var(i) );
+			const reexp::var<germancredit_problem>& v( pr.lang_.var(i) );
 			t<<"prioriP="<<v.prioriP()<<"  "<<"group:"<<groups[i]<<"  "<<pr.si_.var_tostring(i)<<"\n";
 		}
 	}
 
-	void priories_test(TestTool& t) {
+	void priories_test(test_tool& t) {
 		germancredit pr(undef_all_excluded_vars);
 
 		std::vector<int> groups = variable_groups();
 
 		for (int i = 0; i < pr.lang_.var_count(); ++i) {
-			const explib::var<germancredit_problem>& v( pr.lang_.var(i) );
+			const reexp::var<germancredit_problem>& v( pr.lang_.var(i) );
 			t<<"prioriP="<<v.prioriP()<<"  "<<"group:"<<groups[i]<<"  "<<pr.si_.var_tostring(i)<<"\n";
 		}
 		t<<"naive entropy: "<<pr.stats_.naiveInfo()<<"\n";
 	}
 
-	void exppriories_test(TestTool& t) {
+	void exppriories_test(test_tool& t) {
 		germancredit pr(undef_all_excluded_vars);
-		explib::learner<germancredit_problem> learner(pr.lang_, pr.stats_, 70., 3.);
+		reexp::learner<germancredit_problem> learner(pr.lang_, pr.stats_, 70., 3.);
 		learner.reexpress(true);
 
 		std::vector<int> groups = variable_groups();
 		for (int i = 0; i < pr.lang_.var_count(); ++i) {
-			const explib::var<germancredit_problem>& v( pr.lang_.var(i) );
+			const reexp::var<germancredit_problem>& v( pr.lang_.var(i) );
 			int group = -1;
 			if (size_t(i) < groups.size()) group = groups[i];
 			t<<"prioriP="<<v.prioriP()<<"  "<<"group:"<<group<<"  "<<pr.si_.var_tostring(i)<<"\n";
@@ -676,15 +676,15 @@ namespace {
 		t<<"naive entropy: "<<pr.stats_.naiveInfo()<<"\n";
 	}
 
-	void logdeps_test(TestTool& t) {
+	void logdeps_test(test_tool& t) {
 		germancredit pr(undef_all_excluded_vars);
 
 		t<<pr.si_.row_logdep_tostring(good_idx());
 	}
 
-	void explogdeps_test(TestTool& t) {
+	void explogdeps_test(test_tool& t) {
 		germancredit pr(undef_all_excluded_vars);
-		explib::learner<germancredit_problem> learner(pr.lang_, pr.stats_, 70., 3.);
+		reexp::learner<germancredit_problem> learner(pr.lang_, pr.stats_, 70., 3.);
 		learner.reexpress(true);
 
 		t<<pr.si_.row_logdep_tostring(good_idx());
@@ -703,8 +703,8 @@ namespace {
 		pr.costs_[false_negative] = 1;
 	}
 
-	void naivepredict_test(TestTool& t) {
-		explib::cvec<germancredit_problem> dim(SampleCount);
+	void naivepredict_test(test_tool& t) {
+		reexp::cvec<germancredit_problem> dim(SampleCount);
 		pred_problem<germancredit_problem> p(dim);
 		setup_preproblem(p);
 
@@ -712,15 +712,15 @@ namespace {
 		crossvalidate_run(t, p, args, 10);
 	}
 
-	void verboserun_test(TestTool& t) {
-		explib::cvec<germancredit_problem> dim(SampleCount);
+	void verboserun_test(test_tool& t) {
+		reexp::cvec<germancredit_problem> dim(SampleCount);
 		pred_problem<germancredit_problem> p(dim);
 		setup_preproblem(p);
 
 		pred_args args(1000, 1000, 0, 2., 2);
 		pred_stats stats;
 
-		explib::bits testsamples;
+		reexp::bits testsamples;
 		testsamples.resize(1000);
 		for (int j = 0; j < 100; ++j) {
 			testsamples[900 + j] = true;
@@ -742,8 +742,8 @@ namespace {
 		}
 	}
 
-	void singlerun_test(TestTool& t) {
-		explib::cvec<germancredit_problem> dim(SampleCount);
+	void singlerun_test(test_tool& t) {
+		reexp::cvec<germancredit_problem> dim(SampleCount);
 		pred_problem<germancredit_problem> p(dim);
 		setup_preproblem(p, undef_all_excluded_vars);
 
@@ -751,17 +751,17 @@ namespace {
 		pred_args args(th, th*0.2, 5);
 		crossvalidate_run(t, p, args, 10);
 
-		Table table(
-			t.report(ToTable<Average>({"run:out", "data:train"}, "prop:", "predfilter:")));
-		t<<"for train data:\n"<<table<<"\n";
+		table tbl(
+			t.report(to_table<average>({"run:out", "data:train"}, "prop:", "predfilter:")));
+		t<<"for train data:\n"<<tbl<<"\n";
 
-		Table table2(
-			t.report(ToTable<Average>({"run:out", "data:test"}, "prop:", "predfilter:")));
-		t<<"for test data:\n"<<table2<<"\n";
+		table tbl2(
+			t.report(to_table<average>({"run:out", "data:test"}, "prop:", "predfilter:")));
+		t<<"for test data:\n"<<tbl2<<"\n";
 	}
 
-	void genericfilter_test(TestTool& t, double filterbegin, double filterstep, int filtersteps) {
-		explib::cvec<germancredit_problem> dim(SampleCount);
+	void genericfilter_test(test_tool& t, double filterbegin, double filterstep, int filtersteps) {
+		reexp::cvec<germancredit_problem> dim(SampleCount);
 		pred_problem<germancredit_problem> p(dim);
 		setup_preproblem(p);
 
@@ -770,41 +770,41 @@ namespace {
 			crossvalidate_run(t, p, args, 10);
 		}
 
-		Table exptable(
-			t.report(ToTable<Average>({"run:out"}, "exp:", "predfilter:")));
+		table exptable(
+			t.report(to_table<average>({"run:out"}, "exp:", "predfilter:")));
 		t.ignored()<<"expression & relations:\n"<<exptable<<"\n";
 
-		Table traintable(
-			t.report(ToTable<Average>({"run:out", "data:train"}, "prop:", "predfilter:")));
+		table traintable(
+			t.report(to_table<average>({"run:out", "data:train"}, "prop:", "predfilter:")));
 		t<<"train:\n"<<traintable<<"\n";
 
-		Table testtable(
-			t.report(ToTable<Average>({"run:out", "data:test"}, "prop:", "predfilter:")));
+		table testtable(
+			t.report(to_table<average>({"run:out", "data:test"}, "prop:", "predfilter:")));
 		t<<"test:\n"<<testtable<<"\n";
 
 		t<<"entropy:\n";
 
-		Table table2(
-			t.report(ToTable<Average>({"run:out", "prop:entropy"}, "data:", "predfilter:")));
+		table table2(
+			t.report(to_table<average>({"run:out", "prop:entropy"}, "data:", "predfilter:")));
 
-		t<<table2.toplot(2, 20, 0.7)<<"\n";
+		t<<table2.to_plot(2, 20, 0.7)<<"\n";
 
 		t<<"err:\n";
 
-		Table table3(
-			t.report(ToTable<Average>({"run:out", "prop:err"}, "data:", "predfilter:")));
+		table table3(
+			t.report(to_table<average>({"run:out", "prop:err"}, "data:", "predfilter:")));
 
-		t<<table3.toplot(2, 20, 0.2)<<"\n";
+		t<<table3.to_plot(2, 20, 0.2)<<"\n";
 
 		t<<"cost:\n";
 
-		Table table4(
-			t.report(ToTable<Average>({"run:out", "prop:cost"}, "data:", "predfilter:")));
+		table table4(
+			t.report(to_table<average>({"run:out", "prop:cost"}, "data:", "predfilter:")));
 
-		t<<table4.toplot(2, 20, 0.5)<<"\n";
+		t<<table4.to_plot(2, 20, 0.5)<<"\n";
 
-		Table table5(
-			t.report(ToTable<Average>({"run:out", "perf:ns"}, "data:", "predfilter:")));
+		table table5(
+			t.report(to_table<average>({"run:out", "perf:ns"}, "data:", "predfilter:")));
 
 		t<<"\nperformance (ns / entry)\n";
 		t.ignored()<<table5;
@@ -812,22 +812,22 @@ namespace {
 		t<<"\nns by filter\n";
 
 		t.ignored()<<
-			Table(t.report(ToTable<Average>({"run:out", "perf:ns"}, "data:", "predfilter:")))
-				.toplot(2, 20, 0)<<"\n";
+			table(t.report(to_table<average>({"run:out", "perf:ns"}, "data:", "predfilter:")))
+				.to_plot(2, 20, 0)<<"\n";
 	}
 
-	void narrowfilter_test(TestTool& t) {
+	void narrowfilter_test(test_tool& t) {
 		genericfilter_test(t, 0, 0.5, 30);
 	}
 
-	void filter_test(TestTool& t) {
+	void filter_test(test_tool& t) {
 		genericfilter_test(t, 0, 5, 30);
 	}
 
-	void generic_exps_test(TestTool& t, double expthbegin, double expthstep, int expthsteps,
+	void generic_exps_test(test_tool& t, double expthbegin, double expthstep, int expthsteps,
 										double filterbegin, double filterstep, int filtersteps,
 										undef_t undefs = undef_all_excluded_vars) {
-		explib::cvec<germancredit_problem> dim(SampleCount);
+		reexp::cvec<germancredit_problem> dim(SampleCount);
 		pred_problem<germancredit_problem> p(dim);
 		setup_preproblem(p, undefs);
 
@@ -840,14 +840,14 @@ namespace {
 			}
 			std::string thstr = sup()<<"threshold:"<<th;
 
-			Table exptable(
-				t.report(ToTable<Average>({thstr, "run:out"}, "exp:", "predfilter:")));
+			table exptable(
+				t.report(to_table<average>({thstr, "run:out"}, "exp:", "predfilter:")));
 			t.ignored()<<"expression & relations:\n"<<exptable<<"\n";
-			Table train(
-				t.report(ToTable<Average>({thstr, "data:train", "run:out"}, "prop:", "predfilter:")));
+			table train(
+				t.report(to_table<average>({thstr, "data:train", "run:out"}, "prop:", "predfilter:")));
 			t<<"train:\n"<<train<<"\n";
-			Table test(
-				t.report(ToTable<Average>({thstr, "data:test", "run:out"}, "prop:", "predfilter:")));
+			table test(
+				t.report(to_table<average>({thstr, "data:test", "run:out"}, "prop:", "predfilter:")));
 			t<<"test:\n"<<test<<"\n";
 		}
 		std::set<std::string> traintags;
@@ -857,65 +857,65 @@ namespace {
 		testtags.insert("run:out");
 		testtags.insert("data:test");
 
-		Table traintable(
-			t.report(ToTable<Average>(traintags, "prop:", "threshold:")));
+		table traintable(
+			t.report(to_table<average>(traintags, "prop:", "threshold:")));
 		t<<"train data:\n"<<traintable<<"\n";
 
-		Table testtable(
-			t.report(ToTable<Average>(testtags, "prop:", "threshold:")));
+		table testtable(
+			t.report(to_table<average>(testtags, "prop:", "threshold:")));
 		t<<"test data:\n"<<testtable<<"\n";
 
 		t<<"\ntrain data entropy:\n";
 
-		Table table2(
-			t.report(ToTable<Average>(traintags+"prop:entropy", "threshold:", "predfilter:")));
+		table table2(
+			t.report(to_table<average>(traintags+"prop:entropy", "threshold:", "predfilter:")));
 
-		t<<table2.toplot(2, 20, 0.74)<<"\n";
+		t<<table2.to_plot(2, 20, 0.74)<<"\n";
 
 		t<<"following statistics are for test data only:";
 		t<<"\nentropy:\n";
 
-		t<<t.report(ToTable<Average>(testtags+"prop:entropy", "threshold:", "predfilter:")).toplot(2, 20, 0.74)<<"\n";
+		t<<t.report(to_table<average>(testtags+"prop:entropy", "threshold:", "predfilter:")).to_plot(2, 20, 0.74)<<"\n";
 
 		t<<"\nentropy by threshold:\n";
 
-		t<<t.report(ToTable<Average>(testtags+"prop:entropy", "predfilter:", "threshold:"))
-			.toplot(2, 20, 0.74)<<"\n";
+		t<<t.report(to_table<average>(testtags+"prop:entropy", "predfilter:", "threshold:"))
+			.to_plot(2, 20, 0.74)<<"\n";
 
 		t<<"\nerr:\n";
 
-		Table table3(
-			t.report(ToTable<Average>(testtags+"prop:err", "threshold:", "predfilter:")));
+		table table3(
+			t.report(to_table<average>(testtags+"prop:err", "threshold:", "predfilter:")));
 
-		t<<table3.toplot(2, 20, 0.25)<<"\n";
+		t<<table3.to_plot(2, 20, 0.25)<<"\n";
 
 		t<<"\nerr by threshold:\n";
 
-		t<<t.report(ToTable<Average>(testtags+"prop:entropy", "predfilter:", "threshold:"))
-			.toplot(2, 20, 0.74)<<"\n";
+		t<<t.report(to_table<average>(testtags+"prop:entropy", "predfilter:", "threshold:"))
+			.to_plot(2, 20, 0.74)<<"\n";
 
 		t<<"\ncost:\n";
 
-		Table table5(
-			t.report(ToTable<Average>(testtags+"prop:cost", "threshold:", "predfilter:")));
+		table table5(
+			t.report(to_table<average>(testtags+"prop:cost", "threshold:", "predfilter:")));
 
-		t<<table5.toplot(2, 20, 0.5)<<"\n";
+		t<<table5.to_plot(2, 20, 0.5)<<"\n";
 
 		t<<"\ncost by threshold:\n";
 
-		Table table6(
-			t.report(ToTable<Average>(testtags+"prop:cost", "predfilter:", "threshold:")));
+		table table6(
+			t.report(to_table<average>(testtags+"prop:cost", "predfilter:", "threshold:")));
 
-		t<<table6.toplot(2, 20, 0.5)<<"\n";
+		t<<table6.to_plot(2, 20, 0.5)<<"\n";
 
-		Table table7(
-			t.report(ToTable<Average>(traintags+"perf:ns", "threshold:", "predfilter:")));
+		table table7(
+			t.report(to_table<average>(traintags+"perf:ns", "threshold:", "predfilter:")));
 
 		t<<"\ntrain performance (ns / entry)\n";
 		t.ignored()<<table7;
 
-		Table table8(
-			t.report(ToTable<Average>(testtags+"perf:ns", "threshold:", "predfilter:")));
+		table table8(
+			t.report(to_table<average>(testtags+"perf:ns", "threshold:", "predfilter:")));
 
 		t<<"\ntest performance (ns / entry)\n";
 		t.ignored()<<table8;
@@ -923,24 +923,24 @@ namespace {
 		t<<"\nns:\n";
 
 		t.ignored()<<
-			Table(t.report(ToTable<Average>(testtags+"perf:ns", "threshold:", "predfilter:")))
-				.toplot(2, 20, 0)<<"\n";
+			table(t.report(to_table<average>(testtags+"perf:ns", "threshold:", "predfilter:")))
+				.to_plot(2, 20, 0)<<"\n";
 	}
 
-	void exps_test(TestTool& t) {
+	void exps_test(test_tool& t) {
 		generic_exps_test(t, 50, 20, 8, 0, 1, 10);
 	}
 
-	void exps_noundef_test(TestTool& t) {
+	void exps_noundef_test(test_tool& t) {
 		generic_exps_test(t, 50, 20, 8, 0, 1, 10, undef_all_excluded_vars);
 	}
 
-	void exps_nonumundef_test(TestTool& t) {
+	void exps_nonumundef_test(test_tool& t) {
 		generic_exps_test(t, 50, 20, 8, 0, 1, 10, undef_excluded_discrete_vars);
 	}
 
-	void generic_wideexps_test(TestTool& t, undef_t undefs, double predfilter) {
-		explib::cvec<germancredit_problem> dim(SampleCount);
+	void generic_wideexps_test(test_tool& t, undef_t undefs, double predfilter) {
+		reexp::cvec<germancredit_problem> dim(SampleCount);
 		pred_problem<germancredit_problem> p(dim);
 		setup_preproblem(p, undefs);
 
@@ -953,69 +953,69 @@ namespace {
 		std::set<std::string> tags;
 		tags.insert("run:out");
 
-		Table exptable(
-			t.report(ToTable<Average>({"run:out"}, "exp:", "threshold:")));
+		table exptable(
+			t.report(to_table<average>({"run:out"}, "exp:", "threshold:")));
 		t.ignored()<<"expression & relations:\n"<<exptable<<"\n";
 
-		Table traintable(
-			t.report(ToTable<Average>(tags+"data:train", "prop:", "threshold:")));
+		table traintable(
+			t.report(to_table<average>(tags+"data:train", "prop:", "threshold:")));
 		t<<"train data:\n"<<traintable<<"\n";
 
-		Table testtable(
-			t.report(ToTable<Average>(tags+"data:test", "prop:", "threshold:")));
+		table testtable(
+			t.report(to_table<average>(tags+"data:test", "prop:", "threshold:")));
 		t<<"test data:\n"<<testtable<<"\n";
 
 		t<<"\nentropy by threshold:\n";
 
-		t<<t.report(ToTable<Average>(tags+"prop:entropy", "data:", "threshold:"))
-			.toplot(2, 20, 0.74)<<"\n";
+		t<<t.report(to_table<average>(tags+"prop:entropy", "data:", "threshold:"))
+			.to_plot(2, 20, 0.74)<<"\n";
 
 		t<<"\nerr by threshold:\n";
 
-		t<<t.report(ToTable<Average>(tags+"prop:err", "data:", "threshold:"))
-			.toplot(2, 20, 0.74)<<"\n";
+		t<<t.report(to_table<average>(tags+"prop:err", "data:", "threshold:"))
+			.to_plot(2, 20, 0.74)<<"\n";
 
 		t<<"\ncost by threshold:\n";
 
-		Table table6(
-			t.report(ToTable<Average>(tags+"prop:cost", "data:", "threshold:")));
+		table table6(
+			t.report(to_table<average>(tags+"prop:cost", "data:", "threshold:")));
 
-		t<<table6.toplot(2, 20, 0.5)<<"\n";
+		t<<table6.to_plot(2, 20, 0.5)<<"\n";
 
-		Table table7(
-			t.report(ToTable<Average>(tags+"perf:ns", "data:", "threshold:")));
+		table table7(
+			t.report(to_table<average>(tags+"perf:ns", "data:", "threshold:")));
 
 		t<<"\nns / entry\n";
 		t.ignored()<<table7;
 
-		Table table8(
-			t.report(ToTable<Average>(tags+"perf:ns", "data:", "threshold:")));
+		table table8(
+			t.report(to_table<average>(tags+"perf:ns", "data:", "threshold:")));
 
 		t<<"\nns / entrys:\n";
 
 		t.ignored()<<
-			Table(t.report(ToTable<Average>(tags+"perf:ns", "data:", "threshold:")))
-				.toplot(2, 20, 0)<<"\n";
+			table(t.report(to_table<average>(tags+"perf:ns", "data:", "threshold:")))
+				.to_plot(2, 20, 0)<<"\n";
 
 	}
 
-	void wideexps_test(TestTool& t) {
+	void wideexps_test(test_tool& t) {
 		generic_wideexps_test(t, undef_all_excluded_vars, 5);
 	}
 
-	void wideexps_noundef_test(TestTool& t) {
+	void wideexps_noundef_test(test_tool& t) {
 		generic_wideexps_test(t, undef_nothing, 0);
 	}
 
-	void wideexps_nonumundef_test(TestTool& t) {
+	void wideexps_nonumundef_test(test_tool& t) {
 		generic_wideexps_test(t, undef_excluded_discrete_vars, 4);
 	}
 
-	void peak_test(TestTool& t) {
+	void peak_test(test_tool& t) {
 		generic_exps_test(t, 80, 5, 7, 0, 0.5, 5);
 	}
 
-	void entropypeak_test(TestTool& t) {
+	void entropypeak_test(test_tool& t) {
 		generic_exps_test(t, 50, 10, 10, 1, 2, 6);
 	}
 

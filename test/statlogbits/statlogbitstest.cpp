@@ -50,11 +50,11 @@ namespace {
 		}
 		int samples = 0;
 		in>>samples;
-	    pr.data_.set_dim(explib::cvec<p>(samples));
+	    pr.data_.set_dim(reexp::cvec<p>(samples));
 
-		explib::ctx<p> varctx(explib::cvec<p>(0));
+		reexp::ctx<p> varctx(reexp::cvec<p>(0));
 		for (int i = 0; i < bits; ++i) {
-			pr.lang_.add_orig(explib::orig<p>(varctx));
+			pr.lang_.add_orig(reexp::orig<p>(varctx));
 		}
 
 		std::string b;
@@ -80,9 +80,9 @@ namespace {
 					int f2 = pr.data_.var(j).states().popcount();
 					int n2 = pr.data_.var(j).defined().popcount();
 					if (f2 && f2 != n2) { // is not constant
-						explib::rel<p>& rl(pr.lang_.alloc_rel(varctx));
-						rl.add_var(explib::cvec<p>(0), pr.lang_.var(i));
-						rl.add_var(explib::cvec<p>(0), pr.lang_.var(j));
+						reexp::rel<p>& rl(pr.lang_.alloc_rel(varctx));
+						rl.add_var(reexp::cvec<p>(0), pr.lang_.var(i));
+						rl.add_var(reexp::cvec<p>(0), pr.lang_.var(j));
 						pr.lang_.rel_done();
 					}
 				}
@@ -104,7 +104,7 @@ namespace {
 			pr.lang_.var(i).setPrioriP((double)(f+1)/(double)(n+2));
 		}*/
 
-		int v = explib::util::next_version();
+		int v = reexp::util::next_version();
 		for (size_t i = 0; i < pr.data_.var_count(); ++i) {
 			pr.data_.var(i).version_ = v;
 		}
@@ -120,37 +120,37 @@ namespace {
 		pr.costs_[false_negative] = 1;
 	}
 
-	void setup_heart_test(TestTool& t) {
+	void setup_heart_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_heart(pr);
 
-		explib::stats<statlogbits_problem> stats(pr.data_);
-		explib::stats_info<statlogbits_problem> si(pr.names_, stats);
+		reexp::stats<statlogbits_problem> stats(pr.data_);
+		reexp::stats_info<statlogbits_problem> si(pr.names_, stats);
 
 		t<<si.vars_tostring();
 	}
 
-	void heart_exp_priories_test(TestTool& t) {
+	void heart_exp_priories_test(test_tool& t) {
 		typedef statlogbits_problem p;
 		pred_problem<p> pr;
 		setup_heart(pr);
 
-		explib::stats<p> stats(pr.data_);
+		reexp::stats<p> stats(pr.data_);
 
-		explib::learner<p> learner(pr.lang_, stats, 25.,25*0.2,0);
+		reexp::learner<p> learner(pr.lang_, stats, 25.,25*0.2,0);
 		learner.reexpress(true);
 
-		explib::stats_info<p> si(pr.names_, stats);
+		reexp::stats_info<p> si(pr.names_, stats);
 
 		double totalPrioriInfo = 0;
 		double totalAverInfo = 0;
 		std::ostringstream buf;
 		buf.precision(3);
 		for (int i = 0; i < pr.lang_.var_count(); ++i) {
-			const explib::var<p>& v = pr.lang_.var(i);
-			const explib::var_stats<p>& vs = stats.var(i);
-			double prioriInfo = explib::estimateEntropy(vs.p(), v.prioriP());
-			double averInfo = explib::entropy(vs.p());
+			const reexp::var<p>& v = pr.lang_.var(i);
+			const reexp::var_stats<p>& vs = stats.var(i);
+			double prioriInfo = reexp::estimateEntropy(vs.p(), v.prioriP());
+			double averInfo = reexp::entropy(vs.p());
 			buf<<si.var_tostring(i);
 			buf<<"priori:     "; buf.width(6); buf<<v.prioriP()<<"\t aver:     "; buf.width(6); buf<<vs.p()<<"\n";
 			buf<<"prioriInfo: "; buf.width(6); buf<<prioriInfo<< "\t averInfo: "; buf.width(6); buf<<averInfo<<"\n";
@@ -161,7 +161,7 @@ namespace {
 		t<<buf.str();
 	}
 
-	void run_heart_test(TestTool& t) {
+	void run_heart_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_heart(pr);
 
@@ -170,44 +170,44 @@ namespace {
 		crossvalidate_run(t, pr, args, 10);
 	}
 
-	void print_data_by(TestTool& t, const char* tag, bool includeCost) {
-		Table exptable(
-			t.report(ToTable<Average>({"run:out"}, "exp:", tag)));
+	void print_data_by(test_tool& t, const char* tag, bool includeCost) {
+		table exptable(
+			t.report(to_table<average>({"run:out"}, "exp:", tag)));
 		t.ignored()<<"expression & relations:\n"<<exptable<<"\n";
 
-		Table traintable(
-			t.report(ToTable<Average>({"run:out", "data:train"}, "prop:", tag)));
+		table traintable(
+			t.report(to_table<average>({"run:out", "data:train"}, "prop:", tag)));
 		t<<"train:\n"<<traintable<<"\n";
 
-		Table testtable(
-			t.report(ToTable<Average>({"run:out", "data:test"}, "prop:", tag)));
+		table testtable(
+			t.report(to_table<average>({"run:out", "data:test"}, "prop:", tag)));
 		t<<"test:\n"<<testtable<<"\n";
 
 		t<<"entropy:\n";
 
-		Table table2(
-			t.report(ToTable<Average>({"run:out", "prop:entropy"}, "data:", tag)));
+		table table2(
+			t.report(to_table<average>({"run:out", "prop:entropy"}, "data:", tag)));
 
-		t<<table2.toplot(2, 20, 0.7)<<"\n";
+		t<<table2.to_plot(2, 20, 0.7)<<"\n";
 
 		t<<"err%:\n";
 
-		Table table3(
-			t.report(ToTable<Average>({"run:out", "prop:err"}, "data:", tag)));
+		table table3(
+			t.report(to_table<average>({"run:out", "prop:err"}, "data:", tag)));
 
-		t<<table3.toplot(2, 20, 0.2)<<"\n";
+		t<<table3.to_plot(2, 20, 0.2)<<"\n";
 
 		if (includeCost) {
 			t<<"cost:\n";
 
-			Table table4(
-				t.report(ToTable<Average>({"run:out", "prop:cost"}, "data:", tag)));
+			table table4(
+				t.report(to_table<average>({"run:out", "prop:cost"}, "data:", tag)));
 
-			t<<table4.toplot(2, 20, 0.5)<<"\n";
+			t<<table4.to_plot(2, 20, 0.5)<<"\n";
 		}
 
-		Table table5(
-			t.report(ToTable<Average>({"run:out", "perf:ns"}, "data:", tag)));
+		table table5(
+			t.report(to_table<average>({"run:out", "perf:ns"}, "data:", tag)));
 
 		t<<"\nperformance (ns / entry)\n";
 		t.ignored()<<table5;
@@ -215,11 +215,11 @@ namespace {
 		t<<"\nns\n";
 
 		t.ignored()<<
-			Table(t.report(ToTable<Average>({"run:out", "perf:ns"}, "data:", tag)))
-				.toplot(2, 20, 0)<<"\n";
+			table(t.report(to_table<average>({"run:out", "perf:ns"}, "data:", tag)))
+				.to_plot(2, 20, 0)<<"\n";
 	}
 
-	void run_heart_filter_test(TestTool& t) {
+	void run_heart_filter_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_heart(pr);
 		int filtersteps = 10;
@@ -230,7 +230,7 @@ namespace {
 		print_data_by(t, "predfilter:", true);
 	}
 
-	void run_heart_prioriw_test(TestTool& t) {
+	void run_heart_prioriw_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_heart(pr, undef_excluded);
 		int filtersteps = 15;
@@ -242,7 +242,7 @@ namespace {
 		print_data_by(t, "prioriw:", true);
 	}
 
-	void generic_run_heart_exps_test(TestTool& t, undef_t undefs, bool logDepB = false) {
+	void generic_run_heart_exps_test(test_tool& t, undef_t undefs, bool logDepB = false) {
 		pred_problem<statlogbits_problem> pr;
 		setup_heart(pr, undefs);
 		int steps = 24;
@@ -255,19 +255,19 @@ namespace {
 		print_data_by(t, "threshold:", true);
 	}
 
-	void run_heart_exps_test_undef(TestTool& t) {
+	void run_heart_exps_test_undef(test_tool& t) {
 		generic_run_heart_exps_test(t, undef_excluded);
 	}
 
-	void run_heart_exps_test_noundefs(TestTool& t) {
+	void run_heart_exps_test_noundefs(test_tool& t) {
 		generic_run_heart_exps_test(t, undef_nothing);
 	}
 
-	void run_heart_exps_b_test_noundefs(TestTool& t) {
+	void run_heart_exps_b_test_noundefs(test_tool& t) {
 		generic_run_heart_exps_test(t, undef_nothing, true);
 	}
 
-	void run_heart_narrowexps_b_test_noundefs(TestTool& t) {
+	void run_heart_narrowexps_b_test_noundefs(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_heart(pr, undef_nothing);
 		int steps = 20;
@@ -290,18 +290,18 @@ namespace {
 		pr.type_ = classification_problem;
 	}
 
-	void run_setup_statlog_shuttle_test(TestTool& t) {
+	void run_setup_statlog_shuttle_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_statlog_shuttle(pr, undef_nothing );
 
-		explib::stats<statlogbits_problem> stats(pr.data_);
-		explib::stats_info<statlogbits_problem> si(pr.names_, stats);
+		reexp::stats<statlogbits_problem> stats(pr.data_);
+		reexp::stats_info<statlogbits_problem> si(pr.names_, stats);
 
 		t<<si.vars_tostring();
 
 	}
 
-	void run_statlog_shuttle_singlerun_test(TestTool& t) {
+	void run_statlog_shuttle_singlerun_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_statlog_shuttle(pr, undef_nothing );
 		double th = 100;
@@ -309,16 +309,16 @@ namespace {
 		pred_args args(th, th*0.4, 0, 1.);
 		separate_train_test_datas_run(t, pr, args, 43500);
 
-		Table exptable(
-			t.report(ToTable<Average>({"run:out"}, "exp:", "predfilter:")));
+		table exptable(
+			t.report(to_table<average>({"run:out"}, "exp:", "predfilter:")));
 		t.ignored()<<"expression & relations:\n"<<exptable<<"\n";
 
-		Table props(
-			t.report(ToTable<Average>({"run:out"}, "prop:", "data:")));
+		table props(
+			t.report(to_table<average>({"run:out"}, "prop:", "data:")));
 		t<<"properties:\n"<<props.formatted(4)<<"\n";
 	}
 
-	void run_generic_statlog_shuttle_filter_test(TestTool& t, undef_t undefs) {
+	void run_generic_statlog_shuttle_filter_test(test_tool& t, undef_t undefs) {
 		pred_problem<statlogbits_problem> pr;
 		setup_statlog_shuttle(pr, undefs);
 
@@ -328,34 +328,34 @@ namespace {
 			separate_train_test_datas_run(t, pr, args, 43500);
 		}
 
-		Table exptable(
-			t.report(ToTable<Average>({"run:out"}, "exp:", "predfilter:")));
+		table exptable(
+			t.report(to_table<average>({"run:out"}, "exp:", "predfilter:")));
 		t.ignored()<<"expression & relations:\n"<<exptable<<"\n";
 
-		Table traintable(
-			t.report(ToTable<Average>({"run:out", "data:train"}, "prop:", "predfilter:")));
+		table traintable(
+			t.report(to_table<average>({"run:out", "data:train"}, "prop:", "predfilter:")));
 		t<<"train:\n"<<traintable<<"\n";
 
-		Table testtable(
-			t.report(ToTable<Average>({"run:out", "data:test"}, "prop:", "predfilter:")));
+		table testtable(
+			t.report(to_table<average>({"run:out", "data:test"}, "prop:", "predfilter:")));
 		t<<"test:\n"<<testtable<<"\n";
 
 		t<<"entropy:\n";
 
-		Table table2(
-			t.report(ToTable<Average>({"run:out", "prop:entropy"}, "data:", "predfilter:")));
+		table table2(
+			t.report(to_table<average>({"run:out", "prop:entropy"}, "data:", "predfilter:")));
 
-		t<<table2.toplot(2, 20, 0.7)<<"\n";
+		t<<table2.to_plot(2, 20, 0.7)<<"\n";
 
 		t<<"err%:\n";
 
-		Table table3(
-			t.report(ToTable<Multiplied<Average, 100> >({"run:out", "prop:err"}, "data:", "predfilter:")));
+		table table3(
+			t.report(to_table<multiplied<average, 100> >({"run:out", "prop:err"}, "data:", "predfilter:")));
 
-		t<<table3.toplot(2, 20, 0.2)<<"\n";
+		t<<table3.to_plot(2, 20, 0.2)<<"\n";
 
-		Table table5(
-			t.report(ToTable<Average>({"run:out", "perf:ns"}, "data:", "predfilter:")));
+		table table5(
+			t.report(to_table<average>({"run:out", "perf:ns"}, "data:", "predfilter:")));
 
 		t<<"\nperformance (ns / entry)\n";
 		t.ignored()<<table5;
@@ -363,19 +363,19 @@ namespace {
 		t<<"\nns by filter\n";
 
 		t.ignored()<<
-			Table(t.report(ToTable<Average>({"run:out", "perf:ns"}, "data:", "predfilter:")))
-				.toplot(2, 20, 0)<<"\n";
+			table(t.report(to_table<average>({"run:out", "perf:ns"}, "data:", "predfilter:")))
+				.to_plot(2, 20, 0)<<"\n";
 
 	}
-	void run_statlog_shuttle_filter_test(TestTool& t) {
+	void run_statlog_shuttle_filter_test(test_tool& t) {
 		run_generic_statlog_shuttle_filter_test(t, undef_excluded);
 	}
-	void run_statlog_shuttle_filter_noundef_test(TestTool& t) {
+	void run_statlog_shuttle_filter_noundef_test(test_tool& t) {
 		run_generic_statlog_shuttle_filter_test(t, undef_nothing);
 	}
 
 
-	void run_generic_statlog_shuttle_exps_test(TestTool& t, undef_t undefs, bool logDepB = false) {
+	void run_generic_statlog_shuttle_exps_test(test_tool& t, undef_t undefs, bool logDepB = false) {
 		pred_problem<statlogbits_problem> pr;
 		setup_statlog_shuttle(pr, undefs);
 
@@ -386,34 +386,34 @@ namespace {
 			separate_train_test_datas_run(t, pr, args, 43500);
 			th*=2;
 		}
-		Table exptable(
-			t.report(ToTable<Average>({"run:out"}, "exp:", "threshold:")));
+		table exptable(
+			t.report(to_table<average>({"run:out"}, "exp:", "threshold:")));
 		t.ignored()<<"expression & relations:\n"<<exptable<<"\n";
 
-		Table traintable(
-			t.report(ToTable<Average>({"run:out", "data:train"}, "prop:", "threshold:")));
+		table traintable(
+			t.report(to_table<average>({"run:out", "data:train"}, "prop:", "threshold:")));
 		t<<"train:\n"<<traintable.formatted(4)<<"\n";
 
-		Table testtable(
-			t.report(ToTable<Average>({"run:out", "data:test"}, "prop:", "threshold:")));
+		table testtable(
+			t.report(to_table<average>({"run:out", "data:test"}, "prop:", "threshold:")));
 		t<<"test:\n"<<testtable.formatted(4)<<"\n";
 
 		t<<"entropy:\n";
 
-		Table table2(
-			t.report(ToTable<Average>({"run:out", "prop:entropy"}, "data:", "threshold:")));
+		table table2(
+			t.report(to_table<average>({"run:out", "prop:entropy"}, "data:", "threshold:")));
 
-		t<<table2.toplot(3, 30, 0)<<"\n";
+		t<<table2.to_plot(3, 30, 0)<<"\n";
 
 		t<<"err%:\n";
 
-		Table table3(
-			t.report(ToTable<Multiplied<Average, 100>> ({"run:out", "prop:err"}, "data:", "threshold:")));
+		table table3(
+			t.report(to_table<multiplied<average, 100>> ({"run:out", "prop:err"}, "data:", "threshold:")));
 
-		t<<table3.toplot(3, 30, 0)<<"\n";
+		t<<table3.to_plot(3, 30, 0)<<"\n";
 
-		Table table5(
-			t.report(ToTable<Average>({"run:out", "perf:ns"}, "data:", "threshold:")));
+		table table5(
+			t.report(to_table<average>({"run:out", "perf:ns"}, "data:", "threshold:")));
 
 		t<<"\nperformance (ns / entry)\n";
 		t.ignored()<<table5;
@@ -421,19 +421,19 @@ namespace {
 		t<<"\nns by filter\n";
 
 		t.ignored()<<
-			Table(t.report(ToTable<Average>({"run:out", "perf:ns"}, "data:", "threshold:")))
-				.toplot(3, 30, 0)<<"\n";
+			table(t.report(to_table<average>({"run:out", "perf:ns"}, "data:", "threshold:")))
+				.to_plot(3, 30, 0)<<"\n";
 	}
 
-	void run_statlog_shuttle_exps_test(TestTool& t) {
+	void run_statlog_shuttle_exps_test(test_tool& t) {
 		run_generic_statlog_shuttle_exps_test(t, undef_excluded);
 	}
 
-	void run_statlog_shuttle_exps_noundef_test(TestTool& t) {
+	void run_statlog_shuttle_exps_noundef_test(test_tool& t) {
 		run_generic_statlog_shuttle_exps_test(t, undef_nothing);
 	}
 
-	void run_statlog_shuttle_exps_noundef_b_test(TestTool& t) {
+	void run_statlog_shuttle_exps_noundef_b_test(test_tool& t) {
 		run_generic_statlog_shuttle_exps_test(t, undef_nothing, true);
 	}
 
@@ -448,7 +448,7 @@ namespace {
 		pr.type_ = classification_problem;
 	}
 
-	void run_australian_test(TestTool& t) {
+	void run_australian_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_australian(pr);
 
@@ -457,7 +457,7 @@ namespace {
 		crossvalidate_run(t, pr, args, 10);
 	}
 
-	void run_australian_filter_test(TestTool& t) {
+	void run_australian_filter_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_australian(pr);
 
@@ -469,7 +469,7 @@ namespace {
 		print_data_by(t, "predfilter:", false);
 	}
 
-	void run_australian_exps_test(TestTool& t) {
+	void run_australian_exps_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_australian(pr, undef_nothing);
 		int steps = 22;
@@ -481,7 +481,7 @@ namespace {
 		print_data_by(t, "threshold:", false);
 	}
 
-	void run_australian_exps_b_test(TestTool& t) {
+	void run_australian_exps_b_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_australian(pr, undef_nothing);
 		int steps = 22;
@@ -493,7 +493,7 @@ namespace {
 		print_data_by(t, "threshold:", false);
 	}
 
-	void run_australian_prioriw_test(TestTool& t) {
+	void run_australian_prioriw_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_australian(pr);
 
@@ -505,14 +505,14 @@ namespace {
 		print_data_by(t, "prioriw:", false);
 	}
 
-	void run_heart_exps_segfault_test(TestTool& t) {
+	void run_heart_exps_segfault_test(test_tool& t) {
 		typedef statlogbits_problem p;
 		pred_problem<p> pr;
 		setup_heart(pr, undef_nothing);
 		double th = 5;
-		explib::stats<p> stats(pr.data_);
-		explib::learner<p> learner(pr.lang_, stats, th, 0.2*th, 0.);
-		explib::stats_info<p> si(pr.names_, stats);
+		reexp::stats<p> stats(pr.data_);
+		reexp::learner<p> learner(pr.lang_, stats, th, 0.2*th, 0.);
+		reexp::stats_info<p> si(pr.names_, stats);
 		for (int i = 0; i < 60; ++i) {
 			if (!learner.add_exp()) break;
 		}
@@ -534,18 +534,18 @@ namespace {
 		pr.costs_[false_negative] = 1;
 	}
 
-	void run_setup_germancredit_test(TestTool& t) {
+	void run_setup_germancredit_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_germancredit(pr, undef_nothing);
 
-		explib::stats<statlogbits_problem> s(pr.data_);
-		explib::stats_info<statlogbits_problem> si(pr.names_, s);
+		reexp::stats<statlogbits_problem> s(pr.data_);
+		reexp::stats_info<statlogbits_problem> si(pr.names_, s);
 
 		t<<si.vars_tostring();
 		t<<si.var_deps_tostring(pr.lang_.var_count()-1, 10);
 	}
 
-	void run_generic_germancredit_exps_test(TestTool& t, undef_t undefs, bool predLogDepB = false) {
+	void run_generic_germancredit_exps_test(test_tool& t, undef_t undefs, bool predLogDepB = false) {
 		pred_problem<statlogbits_problem> pr;
 		setup_germancredit(pr, undefs);
 		int steps = 20;
@@ -557,15 +557,15 @@ namespace {
 		print_data_by(t, "threshold:", true);
 	}
 
-	void run_germancredit_exps_test(TestTool& t) {
+	void run_germancredit_exps_test(test_tool& t) {
 		run_generic_germancredit_exps_test(t, undef_excluded);
 	}
 
-	void run_germancredit_exps_noundef_test(TestTool& t) {
+	void run_germancredit_exps_noundef_test(test_tool& t) {
 		run_generic_germancredit_exps_test(t, undef_nothing);
 	}
 
-	void run_germancredit_exps_noundef_b_test(TestTool& t) {
+	void run_germancredit_exps_noundef_b_test(test_tool& t) {
 		run_generic_germancredit_exps_test(t, undef_nothing, true);
 	}
 

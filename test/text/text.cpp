@@ -46,8 +46,8 @@ namespace {
 	};
 
 	template <typename P>
-	void populate(explib::data<P>& data, const sample* samples) {
-		explib::cvec<P> at;
+	void populate(reexp::data<P>& data, const sample* samples) {
+		reexp::cvec<P> at;
 		for (int i = 0; samples[i].text_; ++i) {
 			const sample& s = samples[i];
 			at[cvarid::sample] = i;
@@ -69,33 +69,33 @@ namespace {
 	}
 
 	template <typename P>
-	void setup_forward_rels(explib::lang<P>& lang, explib::var<P>& var1, explib::var<P>& var2) {
-		explib::ctx<P> var_ctx(explib::cvec<P>(0, 0));
-		explib::rel<P>& rl(lang.alloc_rel(var_ctx)); // prev next
-		rl.add_var(explib::cvec<P>(0, 0), var1);
-		rl.add_var(explib::cvec<P>(1, 0), var2);
+	void setup_forward_rels(reexp::lang<P>& lang, reexp::var<P>& var1, reexp::var<P>& var2) {
+		reexp::ctx<P> var_ctx(reexp::cvec<P>(0, 0));
+		reexp::rel<P>& rl(lang.alloc_rel(var_ctx)); // prev next
+		rl.add_var(reexp::cvec<P>(0, 0), var1);
+		rl.add_var(reexp::cvec<P>(1, 0), var2);
 		lang.rel_done();
 	}
 
 	template <typename P>
-	void setup_class_rels(explib::lang<P>& lang, explib::var<P>& charvar, explib::var<P>& classvar) {
-		explib::ctx<P> var_ctx(explib::cvec<P>(0, 0));
-		explib::rel<P>& rl(lang.alloc_rel(var_ctx));
-		rl.add_var(explib::cvec<P>(0, 0), charvar);
-		rl.add_var(explib::cvec<P>(0, 0), classvar);
+	void setup_class_rels(reexp::lang<P>& lang, reexp::var<P>& charvar, reexp::var<P>& classvar) {
+		reexp::ctx<P> var_ctx(reexp::cvec<P>(0, 0));
+		reexp::rel<P>& rl(lang.alloc_rel(var_ctx));
+		rl.add_var(reexp::cvec<P>(0, 0), charvar);
+		rl.add_var(reexp::cvec<P>(0, 0), classvar);
 		lang.rel_done();
 	}
 
 	template <typename P>
-	void setup_lang(explib::lang<P>& lang, int classes) {
-		explib::ctx<P> charctx(explib::cvec<P>(0, 0));
-		lang.add_orig(explib::orig<P>(charctx)); // ws
+	void setup_lang(reexp::lang<P>& lang, int classes) {
+		reexp::ctx<P> charctx(reexp::cvec<P>(0, 0));
+		lang.add_orig(reexp::orig<P>(charctx)); // ws
 		for (int c = 'a'; c <= 'z'; c++) {
-			lang.add_orig(explib::orig<P>(charctx));
+			lang.add_orig(reexp::orig<P>(charctx));
 		}
-		explib::ctx<P> classctx(explib::cvec<P>(-1, 0));
+		reexp::ctx<P> classctx(reexp::cvec<P>(-1, 0));
 		for (int i = 0; i < classes; ++i) {
-			lang.add_orig(explib::orig<P>(classctx));
+			lang.add_orig(reexp::orig<P>(classctx));
 		}
 		for (int i = varid::ws; i <= varid::z; ++i) {
 			for (int j = varid::ws; j <= varid::z; ++j) {
@@ -110,13 +110,13 @@ namespace {
 	}
 
 	template <typename P>
-	void setup_reg(explib::lang<P>& lang, explib::data<P>& data) {
+	void setup_reg(reexp::lang<P>& lang, reexp::data<P>& data) {
 		setup_lang(lang);
 		populate(data);
 	}
 
 	template <typename P>
-	void setup_names(explib::pinfo& info, const char** classNames) {
+	void setup_names(reexp::pinfo& info, const char** classNames) {
 		info.vnames_.push_back(" "); // whitespace
 		for (char i = 'a'; i <= 'z'; ++i) {
 			char buf[2] = {i, '\0'};
@@ -130,8 +130,8 @@ namespace {
 		}
 	}
 
-	explib::cvec<text_problem> text_dim(const sample* samples) {
-		explib::cvec<text_problem> v = {0, 0};
+	reexp::cvec<text_problem> text_dim(const sample* samples) {
+		reexp::cvec<text_problem> v = {0, 0};
 		for (int i = 0; samples[i].text_; ++i) {
 			v[cvarid::index] = std::max(size_t(v[cvarid::index]),
 										strlen(samples[i].text_));
@@ -142,13 +142,13 @@ namespace {
 
 	template <typename Out>
 	void write_var(Out& out,
-				   const explib::lang<text_problem>& l,
-				   explib::pinfo& info,
+				   const reexp::lang<text_problem>& l,
+				   reexp::pinfo& info,
 				   int vi) {
-		const explib::var<text_problem>& var = l.var(vi);
-		const explib::exp<text_problem>* exp = dynamic_cast<const explib::exp<text_problem>*>(&var);
+		const reexp::var<text_problem>& var = l.var(vi);
+		const reexp::exp<text_problem>* exp = dynamic_cast<const reexp::exp<text_problem>*>(&var);
 		if (exp) {
-			const std::vector<explib::rel_entry<text_problem> >& e = exp->rel().entries();
+			const std::vector<reexp::rel_entry<text_problem> >& e = exp->rel().entries();
 			write_var(out, l, info, e[0].var_->id());
 			write_var(out, l, info, e[1].var_->id());
 		} else {
@@ -156,21 +156,21 @@ namespace {
 		}
 	}
 
-	void print_text(TestTool& t,
-					const explib::data<text_problem>& d,
-					explib::pinfo& info,
-					const explib::lang_info<text_problem>& li,
+	void print_text(test_tool& t,
+					const reexp::data<text_problem>& d,
+					reexp::pinfo& info,
+					const reexp::lang_info<text_problem>& li,
 					int classes) {
 		typedef text_problem p;
 
-		explib::cvec<p> dim = d.dim();
+		reexp::cvec<p> dim = d.dim();
 
 		for (int s = 0; s < dim[cvarid::sample]; ++s) {
-			explib::cvec<p> at;
+			reexp::cvec<p> at;
 			at[cvarid::sample] = s;
 			int c = -1;
 			for (int i = 0; i < classes; ++i) {
-				const explib::data_var<p>& cv = d.var(varid::firstclass + i);
+				const reexp::data_var<p>& cv = d.var(varid::firstclass + i);
 				if (cv[at] && *cv[at]) { c = i; break; }
 			}
 			t<<s;
@@ -180,7 +180,7 @@ namespace {
 				at[cvarid::index] = i;
 				int v = -1;
 				for (size_t j = 0; j < d.var_count(); ++j) {
-					const explib::data_var<p>& dv = d.var(j);
+					const reexp::data_var<p>& dv = d.var(j);
 					if (dv.var().ctx().v_[0]>=0&&i<size_t(dv.dim()[0])&&dv[at]&&*dv[at]) {
 						v = j;
 						break;
@@ -216,21 +216,21 @@ namespace {
 		0
 	};
 
-	void setup_test(TestTool& t) {
+	void setup_test(test_tool& t) {
 		typedef text_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, text_dim(piratevsbear));
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, text_dim(piratevsbear));
 
 		setup_lang(lang, 2);
 		populate(data, piratevsbear);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo names;
+		reexp::pinfo names;
 		setup_names<p>(names, piratevsbear_classes);
 
-		explib::stats_info<p> si(names, stats);
+		reexp::stats_info<p> si(names, stats);
 
 		t<<"text:\n";
 		print_text(t, data, names, si.lang_info(), 2);
@@ -238,25 +238,25 @@ namespace {
 		t<<si.vars_tostring();
 	}
 
-	void learning_test(TestTool& t) {
+	void learning_test(test_tool& t) {
 		typedef text_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, text_dim(piratevsbear));
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, text_dim(piratevsbear));
 
 		setup_lang(lang, 2);
 		populate(data, piratevsbear);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo names;
+		reexp::pinfo names;
 		setup_names<p>(names, piratevsbear_classes);
-		explib::stats_info<p> si(names, stats);
+		reexp::stats_info<p> si(names, stats);
 
-		explib::learner<p> learner(lang, stats, 7);
+		reexp::learner<p> learner(lang, stats, 7);
 		int exps = learner.reexpress(true);
 		t<<exps<<" exps added\n\n";
-		explib::pinfo i;
+		reexp::pinfo i;
 
 		print_text(t, data, names, si.lang_info(), 2);
 
@@ -267,26 +267,26 @@ namespace {
 		}
 	}
 
-	void predicting_test(TestTool& t) {
+	void predicting_test(test_tool& t) {
 		typedef text_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, text_dim(piratevsbear));
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, text_dim(piratevsbear));
 
 		setup_lang(lang, 2);
 		populate(data, piratevsbear);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo names;
+		reexp::pinfo names;
 		setup_names<p>(names, piratevsbear_classes);
-		explib::stats_info<p> si(names, stats);
+		reexp::stats_info<p> si(names, stats);
 
 		t<<si.preds_tostring(varid::firstclass, varid::firstclass+2, true)<<"\n";
 		t<<si.entropy_tostring(varid::firstclass)<<"\n";
 		t<<si.entropy_tostring(varid::firstclass+1)<<"\n";
 
-		explib::learner<p> learner(lang, stats, 7);
+		reexp::learner<p> learner(lang, stats, 7);
 		int exps = learner.reexpress(true);
 		t<<exps<<" exps added\n\n";
 
@@ -316,7 +316,7 @@ namespace {
 		buf[len] = '\0';
 	}
 
-	void genpred_test(TestTool& t) {
+	void genpred_test(test_tool& t) {
 		srand(0);
 
 		typedef text_problem p;
@@ -339,18 +339,18 @@ namespace {
 		t<<"\n";
 		samples.push_back({-1, NULL});
 
-		explib::cvec<p> dim = {textlen, n};
-		explib::lang<p> lang;
-		explib::data<p> data(lang, dim);
+		reexp::cvec<p> dim = {textlen, n};
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, dim);
 
 		setup_lang(lang, classes);
 		populate(data, samples.data());
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo names;
+		reexp::pinfo names;
 		setup_names<p>(names, generated_classes);
-		explib::stats_info<p> si(names, stats);
+		reexp::stats_info<p> si(names, stats);
 
 		t<<"text:\n";
 		print_text(t, data, names, si.lang_info(), classes);
@@ -375,7 +375,7 @@ namespace {
 		t<<si.entropy_tostring(varid::firstclass+1, true)<<"\n";*/
 	}
 
-	void eval_genpredwith(TestTool& t, int n, int tn) {
+	void eval_genpredwith(test_tool& t, int n, int tn) {
 
 		typedef text_problem p;
 
@@ -384,9 +384,9 @@ namespace {
 		std::vector<std::string> texts;
 //		t<<"test generated text with "<<n<<" samples:\n\n";
 
-		explib::cvec<p> dim = {textlen, n};
-		explib::lang<p> lang;
-		explib::data<p> data(lang, dim);
+		reexp::cvec<p> dim = {textlen, n};
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, dim);
 
 		setup_lang(lang, classes);
 		{
@@ -403,10 +403,10 @@ namespace {
 			populate(data, samples.data());
 		}
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::cvec<p> tdim = {textlen, tn};
-		explib::data<p> tdata(lang, tdim);
+		reexp::cvec<p> tdim = {textlen, tn};
+		reexp::data<p> tdata(lang, tdim);
 		{
 			std::vector<sample> samples;
 			for (int i = 0; i < tn; ++i) {
@@ -422,16 +422,16 @@ namespace {
 		}
 		tdata.apply_exps();
 
-		explib::pinfo names;
+		reexp::pinfo names;
 		setup_names<p>(names, generated_classes);
-		explib::stats_info<p> si(names, stats);
+		reexp::stats_info<p> si(names, stats);
 
 		std::ostringstream nlabel;
 		nlabel<<"n:"<<n;
 
 /*		t<<"for "<<n<<" samples: \n";*/
 
-		explib::pred<p> pred(stats);
+		reexp::pred<p> pred(stats);
 
 
 		for (int i = 0; i < classes; ++i) {
@@ -443,7 +443,7 @@ namespace {
 
 //			t<<names.vnames_[clz]<<":\n";
 			{
-//				pred.rowP<TestTool&>(data, clz, t);
+//				pred.rowP<test_tool&>(data, clz, t);
 				pred.info(data, clz, totalinfo, entryinfo);
 				t<<"teach total: "<<totalinfo<<ignorel;
 				t<<"teach entry: "<<entryinfo<<ignorel;
@@ -451,7 +451,7 @@ namespace {
 				t.record({names.vnames_[clz], "sample:teach", "entryinfo", nlabel.str()}, entryinfo);
 			}
 			{
-//				pred.rowP<TestTool&>(tdata, clz, t);
+//				pred.rowP<test_tool&>(tdata, clz, t);
 				pred.info(tdata, clz, totalinfo, entryinfo);
 
 				t<<"test total: "<<totalinfo<<ignorel;
@@ -465,7 +465,7 @@ namespace {
 		t<<".";
 	}
 
-	void genpredeval_test(TestTool& t) {
+	void genpredeval_test(test_tool& t) {
 		srand(0);
 
 		t<<"running genpred eval:\n\n";
@@ -483,8 +483,8 @@ namespace {
 			t<<"\n";
 		}
 
-		Table table(
-			t.report(ToTable<Average>({"entryinfo"}, "sample:", "n:")));
+		table table(
+			t.report(to_table<average>({"entryinfo"}, "sample:", "n:")));
 		std::ostringstream buf;
 		table>>buf;
 		t<<"\nresults:\n\n"<<buf.str()<<"\n";
@@ -497,7 +497,7 @@ namespace {
 
 
 
-	void setup_text_lang(explib::lang<text_problem>& l,
+	void setup_text_lang(reexp::lang<text_problem>& l,
 						 std::vector<int>& v,
 						 int& len,
 						 std::istream& in) {
@@ -512,7 +512,7 @@ namespace {
 			len++;
 			if (v[c] < 0) {
 				v[c] = l.var_count();
-				l.add_orig(explib::orig<text_problem>(explib::cvec<text_problem>(0, 0)));
+				l.add_orig(reexp::orig<text_problem>(reexp::cvec<text_problem>(0, 0)));
 			}
 		}
 		for (int i = 0; i < l.var_count(); ++i) {
@@ -522,26 +522,26 @@ namespace {
 		}
 	}
 
-	void populate_text(explib::data<text_problem>& d, std::vector<int>& v, int len, std::istream& in) {
+	void populate_text(reexp::data<text_problem>& d, std::vector<int>& v, int len, std::istream& in) {
 		int at = 0;
 		for (size_t i = 0; i < d.var_count(); ++i) {
 			d.var(i).defined().fill(true);
 		}
 		while (in && at < len) {
 			int c = in.get();
-			explib::data_var<text_problem>& dv = d.var(v[c]);
-			*dv[explib::cvec<text_problem>(at, 0)] = true;
+			reexp::data_var<text_problem>& dv = d.var(v[c]);
+			*dv[reexp::cvec<text_problem>(at, 0)] = true;
 #if 0
 			for (int i = 0; i < v[c]; ++i) {
-				explib::data_var<text_problem>& dv = d.var(i);
-				dv[explib::cvec<text_problem>(at, 0)] = false;
+				reexp::data_var<text_problem>& dv = d.var(i);
+				dv[reexp::cvec<text_problem>(at, 0)] = false;
 			}
 #endif
 			at++;
 		}
 	}
 
-	void setup_names(explib::pinfo& info, explib::lang<text_problem>& l, std::vector<int>& v) {
+	void setup_names(reexp::pinfo& info, reexp::lang<text_problem>& l, std::vector<int>& v) {
 		info.vnames_.resize(l.var_count());
 		for (size_t i = 0; i < v.size(); ++i) {
 			if (v[i] >= 0) {
@@ -554,9 +554,9 @@ namespace {
 
 	}
 
-	void code_test(TestTool& t) {
+	void code_test(test_tool& t) {
 		typedef text_problem p;
-		explib::lang<p> lang;
+		reexp::lang<p> lang;
 
 		std::vector<int> char_vars;
 		int len;
@@ -564,18 +564,18 @@ namespace {
 			std::ifstream file("src/reexp/lang.h");
 			setup_text_lang(lang, char_vars, len, file);
 		}
-		explib::data<p> data(lang, explib::cvec<p>(len, 1));
+		reexp::data<p> data(lang, reexp::cvec<p>(len, 1));
 		{
 			std::ifstream file("src/reexp/lang.h");
 			populate_text(data, char_vars, len, file);
 		}
 
-		explib::stats<p> s(data);
+		reexp::stats<p> s(data);
 		double th = 100;
-		explib::learner<p> l(lang, s, th, 0.4*th);
-		explib::pinfo names;
+		reexp::learner<p> l(lang, s, th, 0.4*th);
+		reexp::pinfo names;
 		setup_names(names, lang, char_vars);
-		explib::stats_info<p> si(names, s);
+		reexp::stats_info<p> si(names, s);
 
 		t<<si.vars_tostring()<<"\n";
 
@@ -604,7 +604,6 @@ namespace {
 
 		for (std::pair<double, int>& o : ordered) {
 			if (o.first >= 5) {
-
 				std::ostringstream buf;
 				write_var(buf, lang, names, o.second);
 				std::string str = buf.str();

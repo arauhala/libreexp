@@ -1,12 +1,12 @@
 image w:217 h:248 threshold:25
 
-rexpression took 3702 ms.
+rexpression took 3295 ms.
 
 108 exps formed
 
 vars:
 
-<<px(r + 5x + 3y), px(r + 6x + 3y)>, <<<px(r + x + 6y), px(r + 2x + 6y)>, <<<px(r + 8x + 7y), px(r + 9x + 7y)>, <<<px(r + 4x), px(r + 5x)>, <px(r + 6x), px(r + 7x)>>, <<<px(r + 3y), px(r + x + 3y)>, px(r + 2x + 3y)>, <<<<<<<px(r + 2y), px(r + x + 2y)>, <px(r + 2x + 2y), px(r + 3x + 2y)>>, <<px(r + 4x + 2y), px(r + 5x + 2y)>, <px(r + 6x + 2y), px(r + 7x + 2y)>>>, <<px(r + 8x + 2y), px(r + 9x + 2y)>, <px(r + 10x + 2y), px(r + 11x + 2y)>>>, <<<<px(r + x + y), px(r + 2x + y)>, <px(r + 3x + y), px(r + 4x + y)>>, <<px(r + 5x + y), px(r + 6x + y)>, <px(r + 7x + y), px(r + 8x + y)>>>, <px(r + 9x + y), px(r + 10x + y)>>>, <<<<px(r + 9x + 3y), px(r + 10x + 3y)>, px(r + 11x + 3y)>, <<<<px(r + 4y), px(r + x + 4y)>, <px(r + 2x + 4y), px(r + 3x + 4y)>>, <<px(r + 4x + 4y), px(r + 5x + 4y)>, <px(r + 6x + 4y), px(r + 7x + 4y)>>>, <<px(r + 8x + 4y), px(r + 9x + 4y)>, <px(r + 10x + 4y), px(r + 11x + 4y)>>>>, <<<px(r + 7x + 5y), px(r + 8x + 5y)>, px(r + 9x + 5y)>, <px(r + 9x + 6y), px(r + 10x + 6y)>>>>, <<px(r + 2x + 5y), px(r + 3x + 5y)>, px(r + 4x + 5y)>>>>>, <px(r + 5x + 6y), px(r + 6x + 6y)>>>, <px(r + 2x + 7y), px(r + 3x + 7y)>>>
+<<<<px(r + x + 6y), px(r + 2x + 6y)>, <<<px(r + 8x + 7y), px(r + 9x + 7y)>, <<<<<<<<px(r + 7x + 5y), px(r + 8x + 5y)>, px(r + 9x + 5y)>, <px(r + 9x + 6y), px(r + 10x + 6y)>>, <<<<<px(r + 4y), px(r + x + 4y)>, <px(r + 2x + 4y), px(r + 3x + 4y)>>, <<px(r + 4x + 4y), px(r + 5x + 4y)>, <px(r + 6x + 4y), px(r + 7x + 4y)>>>, <<px(r + 8x + 4y), px(r + 9x + 4y)>, <px(r + 10x + 4y), px(r + 11x + 4y)>>>, <<px(r + 9x + 3y), px(r + 10x + 3y)>, px(r + 11x + 3y)>>>, <<<<<px(r + x + y), px(r + 2x + y)>, <px(r + 3x + y), px(r + 4x + y)>>, <<px(r + 5x + y), px(r + 6x + y)>, <px(r + 7x + y), px(r + 8x + y)>>>, <px(r + 9x + y), px(r + 10x + y)>>, <<<<px(r + 2y), px(r + x + 2y)>, <px(r + 2x + 2y), px(r + 3x + 2y)>>, <<px(r + 4x + 2y), px(r + 5x + 2y)>, <px(r + 6x + 2y), px(r + 7x + 2y)>>>, <<px(r + 8x + 2y), px(r + 9x + 2y)>, <px(r + 10x + 2y), px(r + 11x + 2y)>>>>>, <<px(r + 2x + 5y), px(r + 3x + 5y)>, px(r + 4x + 5y)>>, <<px(r + 3y), px(r + x + 3y)>, px(r + 2x + 3y)>>, <<px(r + 4x), px(r + 5x)>, <px(r + 6x), px(r + 7x)>>>>, <px(r + 5x + 6y), px(r + 6x + 6y)>>>, <px(r + 2x + 7y), px(r + 3x + 7y)>>, <px(r + 5x + 3y), px(r + 6x + 3y)>>
 freq: 17/32968
 
 ....EEEE....
@@ -19,7 +19,7 @@ EEEEEEEEEEEE
 ..EE....EE..
 
 
-<<<<px(r + 5y), px(r + 6y)>, <<px(r + 6x + 7y), px(r + 7x + 7y)>, <<<px(r + 2x + 6y), <px(r + 3x + 7y), px(r + 4x + 7y)>>, <<<<px(r + 2x + 5y), px(r + 3x + 5y)>, <px(r + 4x + 5y), px(r + 5x + 5y)>>, <px(r + 6x + 5y), px(r + 7x + 5y)>>, <<<<px(r + 2x + 2y), px(r + 3x + 2y)>, <px(r + 4x + 2y), px(r + 5x + 2y)>>, <<<<<<px(r + 6x + 2y), px(r + 7x + 2y)>, px(r + 8x + 2y)>, <px(r + 8x + 3y), px(r + 9x + 3y)>>, <px(r + 7x + y), px(r + 8x)>>, <<<<px(r + 4y), px(r + x + 4y)>, <px(r + 2x + 4y), px(r + 3x + 4y)>>, <<px(r + 4x + 4y), px(r + 5x + 4y)>, <px(r + 6x + 4y), px(r + 7x + 4y)>>>, <px(r + 8x + 4y), px(r + 9x + 4y)>>>, <<px(r + 4x + 3y), px(r + 5x + 3y)>, px(r + 6x + 3y)>>>, <px(r + 2x), px(r + 3x + y)>>>>, <px(r + 8x + 5y), px(r + 8x + 6y)>>>>, <px(r + 10x + 4y), px(r + 10x + 5y)>>, <px(r + x + 3y), px(r + 2x + 3y)>>
+<<<<px(r + 5y), px(r + 6y)>, <<px(r + 6x + 7y), px(r + 7x + 7y)>, <<<px(r + 2x + 6y), <px(r + 3x + 7y), px(r + 4x + 7y)>>, <<<<px(r + 2x + 5y), px(r + 3x + 5y)>, <px(r + 4x + 5y), px(r + 5x + 5y)>>, <px(r + 6x + 5y), px(r + 7x + 5y)>>, <<<<px(r + 2x + 2y), px(r + 3x + 2y)>, <px(r + 4x + 2y), px(r + 5x + 2y)>>, <<<px(r + 4x + 3y), px(r + 5x + 3y)>, px(r + 6x + 3y)>, <<<<<px(r + 4y), px(r + x + 4y)>, <px(r + 2x + 4y), px(r + 3x + 4y)>>, <<px(r + 4x + 4y), px(r + 5x + 4y)>, <px(r + 6x + 4y), px(r + 7x + 4y)>>>, <px(r + 8x + 4y), px(r + 9x + 4y)>>, <<px(r + 7x + y), px(r + 8x)>, <<<px(r + 6x + 2y), px(r + 7x + 2y)>, px(r + 8x + 2y)>, <px(r + 8x + 3y), px(r + 9x + 3y)>>>>>>, <px(r + 2x), px(r + 3x + y)>>>>, <px(r + 8x + 5y), px(r + 8x + 6y)>>>>, <px(r + 10x + 4y), px(r + 10x + 5y)>>, <px(r + x + 3y), px(r + 2x + 3y)>>
 freq: 16/37881
 
 ..H.....H..
@@ -32,7 +32,7 @@ H.H.....H..
 ...HH.HH...
 
 
-<px(r + 7y), <px(r + 5x + 7y), <<px(r + 3x), px(r + 4x)>, <<px(r + 3y), px(r + x + 3y)>, <<<<px(r + x + 6y), px(r + 2x + 7y)>, <<<<px(r + 2x + y), px(r + 3x + y)>, <px(r + 4x + y), px(r + 5x + y)>>, <<<px(r + x + 2y), px(r + 2x + 2y)>, <px(r + 3x + 2y), px(r + 4x + 2y)>>, <px(r + 5x + 2y), px(r + 6x + 2y)>>>, <<px(r + 2x + 5y), <px(r + 3x + 6y), px(r + 4x + 6y)>>, <<px(r + 6x + 3y), px(r + 7x + 3y)>, <<<px(r + 4y), px(r + x + 4y)>, <px(r + 2x + 4y), px(r + 3x + 4y)>>, <<px(r + 4x + 4y), px(r + 5x + 4y)>, <px(r + 6x + 4y), px(r + 7x + 4y)>>>>>>>, <<px(r + 5x + 5y), px(r + 6x + 6y)>, px(r + 7x + 7y)>>, <px(r + 3x + 3y), px(r + 4x + 3y)>>>>>>
+<px(r + 7y), <<<px(r + 3x), px(r + 4x)>, <<px(r + 3y), px(r + x + 3y)>, <<px(r + 3x + 3y), px(r + 4x + 3y)>, <<<px(r + x + 6y), px(r + 2x + 7y)>, <<<<px(r + 2x + y), px(r + 3x + y)>, <px(r + 4x + y), px(r + 5x + y)>>, <<<px(r + x + 2y), px(r + 2x + 2y)>, <px(r + 3x + 2y), px(r + 4x + 2y)>>, <px(r + 5x + 2y), px(r + 6x + 2y)>>>, <<<px(r + 6x + 3y), px(r + 7x + 3y)>, <<<px(r + 4y), px(r + x + 4y)>, <px(r + 2x + 4y), px(r + 3x + 4y)>>, <<px(r + 4x + 4y), px(r + 5x + 4y)>, <px(r + 6x + 4y), px(r + 7x + 4y)>>>>, <px(r + 2x + 5y), <px(r + 3x + 6y), px(r + 4x + 6y)>>>>>, <<px(r + 5x + 5y), px(r + 6x + 6y)>, px(r + 7x + 7y)>>>>>, px(r + 5x + 7y)>>
 freq: 11/42705
 
 ...XX...
@@ -45,7 +45,7 @@ XXXXXXXX
 X.X..X.X
 
 
-<<px(r + y), px(r + 2y)>, <<<<<px(r + 8x + 6y), px(r + 9x + 7y)>, <<px(r + x + 7y), px(r + 2x + 6y)>, <<<<<px(r + 2x + 2y), px(r + 3x + 2y)>, <px(r + 4x + 2y), px(r + 5x + 2y)>>, <<<<<<px(r + 6x + 2y), px(r + 7x + 2y)>, px(r + 8x + 2y)>, <px(r + 8x + 3y), px(r + 9x + 3y)>>, <px(r + 7x + y), px(r + 8x)>>, <<<<px(r + 4y), px(r + x + 4y)>, <px(r + 2x + 4y), px(r + 3x + 4y)>>, <<px(r + 4x + 4y), px(r + 5x + 4y)>, <px(r + 6x + 4y), px(r + 7x + 4y)>>>, <px(r + 8x + 4y), px(r + 9x + 4y)>>>, <<px(r + 4x + 3y), px(r + 5x + 3y)>, px(r + 6x + 3y)>>>, <px(r + 2x), px(r + 3x + y)>>, <<<<px(r + x + 5y), px(r + 2x + 5y)>, <px(r + 3x + 5y), px(r + 4x + 5y)>>, <<px(r + 5x + 5y), px(r + 6x + 5y)>, <px(r + 7x + 5y), px(r + 8x + 5y)>>>, px(r + 9x + 5y)>>>>, <<px(r + 3y), px(r + x + 3y)>, px(r + 2x + 3y)>>, <px(r + 10x + 3y), px(r + 10x + 4y)>>, <px(r + 10x + y), px(r + 10x + 2y)>>>
+<<px(r + y), px(r + 2y)>, <<<<<px(r + 3y), px(r + x + 3y)>, px(r + 2x + 3y)>, <<<px(r + x + 7y), px(r + 2x + 6y)>, <<<<<px(r + x + 5y), px(r + 2x + 5y)>, <px(r + 3x + 5y), px(r + 4x + 5y)>>, <<px(r + 5x + 5y), px(r + 6x + 5y)>, <px(r + 7x + 5y), px(r + 8x + 5y)>>>, px(r + 9x + 5y)>, <<<<px(r + 2x + 2y), px(r + 3x + 2y)>, <px(r + 4x + 2y), px(r + 5x + 2y)>>, <<<px(r + 4x + 3y), px(r + 5x + 3y)>, px(r + 6x + 3y)>, <<<<<px(r + 4y), px(r + x + 4y)>, <px(r + 2x + 4y), px(r + 3x + 4y)>>, <<px(r + 4x + 4y), px(r + 5x + 4y)>, <px(r + 6x + 4y), px(r + 7x + 4y)>>>, <px(r + 8x + 4y), px(r + 9x + 4y)>>, <<px(r + 7x + y), px(r + 8x)>, <<<px(r + 6x + 2y), px(r + 7x + 2y)>, px(r + 8x + 2y)>, <px(r + 8x + 3y), px(r + 9x + 3y)>>>>>>, <px(r + 2x), px(r + 3x + y)>>>>, <px(r + 8x + 6y), px(r + 9x + 7y)>>>, <px(r + 10x + 3y), px(r + 10x + 4y)>>, <px(r + 10x + y), px(r + 10x + 2y)>>>
 freq: 5/45018
 
 ..?.....?..
@@ -58,7 +58,7 @@ freq: 5/45018
 .?.......?.
 
 
-<<<<<<<<px(r + 5x + 2y), px(r + 6x + 2y)>, <px(r + 5x + y), px(r + 6x + y)>>, <<<px(r + x + 3y), px(r + 2x + 3y)>, <px(r + 3x + 3y), px(r + 4x + 3y)>>, <<px(r + 5x + 3y), px(r + 6x + 3y)>, <px(r + 7x + 3y), px(r + 8x + 3y)>>>>, <<<<<px(r + 9x + 3y), px(r + 10x + 3y)>, px(r + 11x + 3y)>, <<<<px(r + 4y), px(r + x + 4y)>, <px(r + 2x + 4y), px(r + 3x + 4y)>>, <<px(r + 4x + 4y), px(r + 5x + 4y)>, <px(r + 6x + 4y), px(r + 7x + 4y)>>>, <<px(r + 8x + 4y), px(r + 9x + 4y)>, <px(r + 10x + 4y), px(r + 11x + 4y)>>>>, <<<<<px(r + 5y), px(r + x + 5y)>, <px(r + 2x + 5y), px(r + 3x + 5y)>>, <<px(r + 4x + 5y), px(r + 5x + 5y)>, <px(r + 6x + 5y), px(r + 7x + 5y)>>>, <<px(r + 8x + 5y), px(r + 9x + 5y)>, <px(r + 10x + 5y), px(r + 11x + 5y)>>>, <<<<px(r + 6y), px(r + x + 6y)>, <px(r + 2x + 6y), px(r + 3x + 6y)>>, <<px(r + 4x + 6y), px(r + 5x + 6y)>, <px(r + 6x + 6y), px(r + 7x + 6y)>>>, <<px(r + 8x + 6y), px(r + 9x + 6y)>, <px(r + 10x + 6y), px(r + 11x + 6y)>>>>>, <<<<px(r + 7y), px(r + x + 7y)>, <px(r + 2x + 7y), px(r + 3x + 7y)>>, <<px(r + 4x + 7y), px(r + 5x + 7y)>, <px(r + 6x + 7y), px(r + 7x + 7y)>>>, <<px(r + 8x + 7y), px(r + 9x + 7y)>, <px(r + 10x + 7y), px(r + 11x + 7y)>>>>>, <px(r + 12x + 6y), px(r + 12x + 7y)>>, <px(r + 12x + 4y), px(r + 12x + 5y)>>, px(r + 6x)>, <px(r + 7x + y), px(r + 7x + 2y)>>
+<<<<<<<<<<px(r + 7y), px(r + x + 7y)>, <px(r + 2x + 7y), px(r + 3x + 7y)>>, <<px(r + 4x + 7y), px(r + 5x + 7y)>, <px(r + 6x + 7y), px(r + 7x + 7y)>>>, <<px(r + 8x + 7y), px(r + 9x + 7y)>, <px(r + 10x + 7y), px(r + 11x + 7y)>>>, <<<<<<px(r + 4y), px(r + x + 4y)>, <px(r + 2x + 4y), px(r + 3x + 4y)>>, <<px(r + 4x + 4y), px(r + 5x + 4y)>, <px(r + 6x + 4y), px(r + 7x + 4y)>>>, <<px(r + 8x + 4y), px(r + 9x + 4y)>, <px(r + 10x + 4y), px(r + 11x + 4y)>>>, <<px(r + 9x + 3y), px(r + 10x + 3y)>, px(r + 11x + 3y)>>, <<<<<px(r + 5y), px(r + x + 5y)>, <px(r + 2x + 5y), px(r + 3x + 5y)>>, <<px(r + 4x + 5y), px(r + 5x + 5y)>, <px(r + 6x + 5y), px(r + 7x + 5y)>>>, <<px(r + 8x + 5y), px(r + 9x + 5y)>, <px(r + 10x + 5y), px(r + 11x + 5y)>>>, <<<<px(r + 6y), px(r + x + 6y)>, <px(r + 2x + 6y), px(r + 3x + 6y)>>, <<px(r + 4x + 6y), px(r + 5x + 6y)>, <px(r + 6x + 6y), px(r + 7x + 6y)>>>, <<px(r + 8x + 6y), px(r + 9x + 6y)>, <px(r + 10x + 6y), px(r + 11x + 6y)>>>>>>, <<<<px(r + x + 3y), px(r + 2x + 3y)>, <px(r + 3x + 3y), px(r + 4x + 3y)>>, <<px(r + 5x + 3y), px(r + 6x + 3y)>, <px(r + 7x + 3y), px(r + 8x + 3y)>>>, <<px(r + 5x + 2y), px(r + 6x + 2y)>, <px(r + 5x + y), px(r + 6x + y)>>>>, <px(r + 12x + 6y), px(r + 12x + 7y)>>, <px(r + 12x + 4y), px(r + 12x + 5y)>>, px(r + 6x)>, <px(r + 7x + y), px(r + 7x + 2y)>>
 freq: 3/47611
 
 ......?......
@@ -71,7 +71,7 @@ freq: 3/47611
 ?????????????
 
 
-<<<<<px(r + 3y), px(r + x + 3y)>, <px(r + 2x + 3y), px(r + 3x + 3y)>>, <<px(r + 4x + 3y), px(r + 5x + 3y)>, <px(r + 6x + 3y), px(r + 7x + 3y)>>>, <<<px(r + x + 2y), px(r + 2x + 2y)>, <px(r + 3x + 2y), px(r + 4x + 2y)>>, <<px(r + 5x + 2y), px(r + 6x + 2y)>, <px(r + 7x + 2y), px(r + 8x + 2y)>>>>, <<<<<<px(r + 3x), px(r + 4x)>, <px(r + 5x), px(r + 6x)>>, <<px(r + 7x), px(r + 8x)>, <px(r + 9x), px(r + 10x)>>>, <<px(r + 11x), px(r + 12x)>, <px(r + 13x), px(r + 14x)>>>, <px(r + 15x), px(r + 16x)>>, <<<<<<px(r + 8x + 3y), px(r + 9x + 3y)>, <px(r + 10x + 3y), px(r + 11x + 3y)>>, <<px(r + 12x + 3y), px(r + 13x + 3y)>, <px(r + 14x + 3y), px(r + 15x + 3y)>>>, <<px(r + 16x + 3y), px(r + 17x + 3y)>, <px(r + 18x + 3y), px(r + 19x + 3y)>>>, <<<<px(r + 9x + 2y), px(r + 10x + 2y)>, <px(r + 11x + 2y), px(r + 12x + 2y)>>, <<px(r + 13x + 2y), px(r + 14x + 2y)>, <px(r + 15x + 2y), px(r + 16x + 2y)>>>, <px(r + 17x + 2y), px(r + 18x + 2y)>>>, <<<<px(r + 2x + y), px(r + 3x + y)>, <px(r + 4x + y), px(r + 5x + y)>>, <<px(r + 6x + y), px(r + 7x + y)>, <px(r + 8x + y), px(r + 9x + y)>>>, <<<px(r + 10x + y), px(r + 11x + y)>, <px(r + 12x + y), px(r + 13x + y)>>, <<px(r + 14x + y), px(r + 15x + y)>, <px(r + 16x + y), px(r + 17x + y)>>>>>>>
+<<<<<px(r + 3y), px(r + x + 3y)>, <px(r + 2x + 3y), px(r + 3x + 3y)>>, <<px(r + 4x + 3y), px(r + 5x + 3y)>, <px(r + 6x + 3y), px(r + 7x + 3y)>>>, <<<px(r + x + 2y), px(r + 2x + 2y)>, <px(r + 3x + 2y), px(r + 4x + 2y)>>, <<px(r + 5x + 2y), px(r + 6x + 2y)>, <px(r + 7x + 2y), px(r + 8x + 2y)>>>>, <<<<<<px(r + 3x), px(r + 4x)>, <px(r + 5x), px(r + 6x)>>, <<px(r + 7x), px(r + 8x)>, <px(r + 9x), px(r + 10x)>>>, <<px(r + 11x), px(r + 12x)>, <px(r + 13x), px(r + 14x)>>>, <px(r + 15x), px(r + 16x)>>, <<<<<<px(r + 9x + 2y), px(r + 10x + 2y)>, <px(r + 11x + 2y), px(r + 12x + 2y)>>, <<px(r + 13x + 2y), px(r + 14x + 2y)>, <px(r + 15x + 2y), px(r + 16x + 2y)>>>, <px(r + 17x + 2y), px(r + 18x + 2y)>>, <<<<px(r + 8x + 3y), px(r + 9x + 3y)>, <px(r + 10x + 3y), px(r + 11x + 3y)>>, <<px(r + 12x + 3y), px(r + 13x + 3y)>, <px(r + 14x + 3y), px(r + 15x + 3y)>>>, <<px(r + 16x + 3y), px(r + 17x + 3y)>, <px(r + 18x + 3y), px(r + 19x + 3y)>>>>, <<<<px(r + 2x + y), px(r + 3x + y)>, <px(r + 4x + y), px(r + 5x + y)>>, <<px(r + 6x + y), px(r + 7x + y)>, <px(r + 8x + y), px(r + 9x + y)>>>, <<<px(r + 10x + y), px(r + 11x + y)>, <px(r + 12x + y), px(r + 13x + y)>>, <<px(r + 14x + y), px(r + 15x + y)>, <px(r + 16x + y), px(r + 17x + y)>>>>>>>
 freq: 2/47990
 
 ...??????????????...
@@ -98,14 +98,7 @@ freq: 3/41126
 ????????????????????????????????
 
 
-<<<<<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, <px(r + 6x), px(r + 7x)>>>, <<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <<px(r + 4x + y), px(r + 5x + y)>, <px(r + 6x + y), px(r + 7x + y)>>>>, <<<<<px(r + 8x), px(r + 9x)>, <px(r + 10x), px(r + 11x)>>, <<px(r + 12x), px(r + 13x)>, <px(r + 14x), px(r + 15x)>>>, <<px(r + 16x), px(r + 17x)>, <px(r + 18x), px(r + 19x)>>>, <<<<px(r + 8x + y), px(r + 9x + y)>, <px(r + 10x + y), px(r + 11x + y)>>, <<px(r + 12x + y), px(r + 13x + y)>, <px(r + 14x + y), px(r + 15x + y)>>>, <<px(r + 16x + y), px(r + 17x + y)>, <px(r + 18x + y), px(r + 19x + y)>>>>>, <<px(r + 20x + y), px(r + 21x + y)>, <px(r + 20x), px(r + 21x)>>>
-freq: 2/43390
-
-??????????????????????
-??????????????????????
-
-
-<<<<<<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, <px(r + 6x), px(r + 7x)>>>, <<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <<px(r + 4x + y), px(r + 5x + y)>, <px(r + 6x + y), px(r + 7x + y)>>>>, <<<<<px(r + 8x), px(r + 9x)>, <px(r + 10x), px(r + 11x)>>, <<px(r + 12x), px(r + 13x)>, <px(r + 14x), px(r + 15x)>>>, <<px(r + 16x), px(r + 17x)>, <px(r + 18x), px(r + 19x)>>>, <<<<px(r + 8x + y), px(r + 9x + y)>, <px(r + 10x + y), px(r + 11x + y)>>, <<px(r + 12x + y), px(r + 13x + y)>, <px(r + 14x + y), px(r + 15x + y)>>>, <<px(r + 16x + y), px(r + 17x + y)>, <px(r + 18x + y), px(r + 19x + y)>>>>>, <<px(r + 20x + y), px(r + 21x + y)>, <px(r + 20x), px(r + 21x)>>>, <<<<<<px(r + 2y), px(r + x + 2y)>, <px(r + 2x + 2y), px(r + 3x + 2y)>>, <<px(r + 4x + 2y), px(r + 5x + 2y)>, <px(r + 6x + 2y), px(r + 7x + 2y)>>>, <<<px(r + 3y), px(r + x + 3y)>, <px(r + 2x + 3y), px(r + 3x + 3y)>>, <<px(r + 4x + 3y), px(r + 5x + 3y)>, <px(r + 6x + 3y), px(r + 7x + 3y)>>>>, <<<<<px(r + 8x + 2y), px(r + 9x + 2y)>, <px(r + 10x + 2y), px(r + 11x + 2y)>>, <<px(r + 12x + 2y), px(r + 13x + 2y)>, <px(r + 14x + 2y), px(r + 15x + 2y)>>>, <<px(r + 16x + 2y), px(r + 17x + 2y)>, <px(r + 18x + 2y), px(r + 19x + 2y)>>>, <<<<px(r + 8x + 3y), px(r + 9x + 3y)>, <px(r + 10x + 3y), px(r + 11x + 3y)>>, <<px(r + 12x + 3y), px(r + 13x + 3y)>, <px(r + 14x + 3y), px(r + 15x + 3y)>>>, <<px(r + 16x + 3y), px(r + 17x + 3y)>, <px(r + 18x + 3y), px(r + 19x + 3y)>>>>>, <<px(r + 20x + 3y), px(r + 21x + 3y)>, <px(r + 20x + 2y), px(r + 21x + 2y)>>>>
+<<<<<<<px(r + 3y), px(r + x + 3y)>, <px(r + 2x + 3y), px(r + 3x + 3y)>>, <<px(r + 4x + 3y), px(r + 5x + 3y)>, <px(r + 6x + 3y), px(r + 7x + 3y)>>>, <<<px(r + 2y), px(r + x + 2y)>, <px(r + 2x + 2y), px(r + 3x + 2y)>>, <<px(r + 4x + 2y), px(r + 5x + 2y)>, <px(r + 6x + 2y), px(r + 7x + 2y)>>>>, <<<<<px(r + 8x + 2y), px(r + 9x + 2y)>, <px(r + 10x + 2y), px(r + 11x + 2y)>>, <<px(r + 12x + 2y), px(r + 13x + 2y)>, <px(r + 14x + 2y), px(r + 15x + 2y)>>>, <<px(r + 16x + 2y), px(r + 17x + 2y)>, <px(r + 18x + 2y), px(r + 19x + 2y)>>>, <<<<px(r + 8x + 3y), px(r + 9x + 3y)>, <px(r + 10x + 3y), px(r + 11x + 3y)>>, <<px(r + 12x + 3y), px(r + 13x + 3y)>, <px(r + 14x + 3y), px(r + 15x + 3y)>>>, <<px(r + 16x + 3y), px(r + 17x + 3y)>, <px(r + 18x + 3y), px(r + 19x + 3y)>>>>>, <<px(r + 20x + 3y), px(r + 21x + 3y)>, <px(r + 20x + 2y), px(r + 21x + 2y)>>>, <<<<<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <<px(r + 4x + y), px(r + 5x + y)>, <px(r + 6x + y), px(r + 7x + y)>>>, <<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, <px(r + 6x), px(r + 7x)>>>>, <<<<<px(r + 8x), px(r + 9x)>, <px(r + 10x), px(r + 11x)>>, <<px(r + 12x), px(r + 13x)>, <px(r + 14x), px(r + 15x)>>>, <<px(r + 16x), px(r + 17x)>, <px(r + 18x), px(r + 19x)>>>, <<<<px(r + 8x + y), px(r + 9x + y)>, <px(r + 10x + y), px(r + 11x + y)>>, <<px(r + 12x + y), px(r + 13x + y)>, <px(r + 14x + y), px(r + 15x + y)>>>, <<px(r + 16x + y), px(r + 17x + y)>, <px(r + 18x + y), px(r + 19x + y)>>>>>, <<px(r + 20x + y), px(r + 21x + y)>, <px(r + 20x), px(r + 21x)>>>>
 freq: 1/46816
 
 ??????????????????????
@@ -126,7 +119,7 @@ freq: 4/49247
 ?????
 
 
-<<<<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <px(r + 4x + y), px(r + 5x + y)>>, <<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, px(r + 6x)>>>, <<<px(r + 3y), px(r + x + 3y)>, <px(r + 2x + 3y), px(r + 3x + 3y)>>, <<<px(r + 2y), px(r + x + 2y)>, <px(r + 2x + 2y), px(r + 3x + 2y)>>, <px(r + 4x + 2y), px(r + 4x + 3y)>>>>
+<<<<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, px(r + 6x)>>, <<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <px(r + 4x + y), px(r + 5x + y)>>>, <<<<px(r + 2y), px(r + x + 2y)>, <px(r + 2x + 2y), px(r + 3x + 2y)>>, <px(r + 4x + 2y), px(r + 4x + 3y)>>, <<px(r + 3y), px(r + x + 3y)>, <px(r + 2x + 3y), px(r + 3x + 3y)>>>>
 freq: 3/49884
 
 ???????
@@ -155,7 +148,7 @@ freq: 33/47553
 
 
 <<px(r), px(r + x)>, px(r + 2x)>
-freq: 19/46761
+freq: 19/46767
 
 555
 
@@ -166,7 +159,7 @@ freq: 7/41579
 33333333
 
 
-<<<<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, <px(r + 6x), px(r + 7x)>>>, <<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <<px(r + 4x + y), px(r + 5x + y)>, <px(r + 6x + y), px(r + 7x + y)>>>>, <<<<px(r + 2y), px(r + x + 2y)>, <px(r + 2x + 2y), px(r + 3x + 2y)>>, <<px(r + 4x + 2y), px(r + 5x + 2y)>, <px(r + 6x + 2y), px(r + 7x + 2y)>>>, <px(r + 8x + 2y), px(r + 9x + 2y)>>>
+<<<<<px(r + 2y), px(r + x + 2y)>, <px(r + 2x + 2y), px(r + 3x + 2y)>>, <<px(r + 4x + 2y), px(r + 5x + 2y)>, <px(r + 6x + 2y), px(r + 7x + 2y)>>>, <px(r + 8x + 2y), px(r + 9x + 2y)>>, <<<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <<px(r + 4x + y), px(r + 5x + y)>, <px(r + 6x + y), px(r + 7x + y)>>>, <<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, <px(r + 6x), px(r + 7x)>>>>>
 freq: 2/50357
 
 ????????..
@@ -174,7 +167,7 @@ freq: 2/50357
 ??????????
 
 
-<<<<<<px(r + x), px(r + 2x)>, <px(r + 3x), px(r + 4x)>>, <<px(r + 5x), px(r + 6x)>, <px(r + 7x), px(r + 8x)>>>, <<px(r + 9x), px(r + 10x)>, <px(r + 11x), px(r + 12x)>>>, <px(r + 13x), px(r + 14x)>>, <<<<<<px(r + 6x + 3y), px(r + 7x + 3y)>, <px(r + 8x + 3y), px(r + 9x + 3y)>>, <<px(r + 10x + 3y), px(r + 11x + 3y)>, <px(r + 12x + 3y), px(r + 13x + 3y)>>>, <<px(r + 14x + 3y), px(r + 15x + 3y)>, <px(r + 16x + 3y), px(r + 17x + 3y)>>>, <<<<px(r + 7x + 2y), px(r + 8x + 2y)>, <px(r + 9x + 2y), px(r + 10x + 2y)>>, <<px(r + 11x + 2y), px(r + 12x + 2y)>, <px(r + 13x + 2y), px(r + 14x + 2y)>>>, <px(r + 15x + 2y), px(r + 16x + 2y)>>>, <<<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <<px(r + 4x + y), px(r + 5x + y)>, <px(r + 6x + y), px(r + 7x + y)>>>, <<<px(r + 8x + y), px(r + 9x + y)>, <px(r + 10x + y), px(r + 11x + y)>>, <<px(r + 12x + y), px(r + 13x + y)>, <px(r + 14x + y), px(r + 15x + y)>>>>>>
+<<<<<<px(r + x), px(r + 2x)>, <px(r + 3x), px(r + 4x)>>, <<px(r + 5x), px(r + 6x)>, <px(r + 7x), px(r + 8x)>>>, <<px(r + 9x), px(r + 10x)>, <px(r + 11x), px(r + 12x)>>>, <px(r + 13x), px(r + 14x)>>, <<<<<<px(r + 7x + 2y), px(r + 8x + 2y)>, <px(r + 9x + 2y), px(r + 10x + 2y)>>, <<px(r + 11x + 2y), px(r + 12x + 2y)>, <px(r + 13x + 2y), px(r + 14x + 2y)>>>, <px(r + 15x + 2y), px(r + 16x + 2y)>>, <<<<px(r + 6x + 3y), px(r + 7x + 3y)>, <px(r + 8x + 3y), px(r + 9x + 3y)>>, <<px(r + 10x + 3y), px(r + 11x + 3y)>, <px(r + 12x + 3y), px(r + 13x + 3y)>>>, <<px(r + 14x + 3y), px(r + 15x + 3y)>, <px(r + 16x + 3y), px(r + 17x + 3y)>>>>, <<<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <<px(r + 4x + y), px(r + 5x + y)>, <px(r + 6x + y), px(r + 7x + y)>>>, <<<px(r + 8x + y), px(r + 9x + y)>, <px(r + 10x + y), px(r + 11x + y)>>, <<px(r + 12x + y), px(r + 13x + y)>, <px(r + 14x + y), px(r + 15x + y)>>>>>>
 freq: 1/46484
 
 .??????????????...
@@ -203,8 +196,8 @@ freq: 3/38325
 llllllllllllllll
 
 
-<<<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, <px(r + 6x), px(r + 7x)>>>, <<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <<px(r + 4x + y), px(r + 5x + y)>, <px(r + 6x + y), px(r + 7x + y)>>>>
-freq: 3/40668
+<<<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <<px(r + 4x + y), px(r + 5x + y)>, <px(r + 6x + y), px(r + 7x + y)>>>, <<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, <px(r + 6x), px(r + 7x)>>>>
+freq: 3/40669
 
 pppppppp
 pppppppp
@@ -228,7 +221,14 @@ freq: 3/49996
 .???.
 
 
-<<<<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, <px(r + 6x), px(r + 7x)>>>, <<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <<px(r + 4x + y), px(r + 5x + y)>, <px(r + 6x + y), px(r + 7x + y)>>>>, <<<<<px(r + 8x), px(r + 9x)>, <px(r + 10x), px(r + 11x)>>, <<px(r + 12x), px(r + 13x)>, <px(r + 14x), px(r + 15x)>>>, <<px(r + 16x), px(r + 17x)>, <px(r + 18x), px(r + 19x)>>>, <<<<px(r + 8x + y), px(r + 9x + y)>, <px(r + 10x + y), px(r + 11x + y)>>, <<px(r + 12x + y), px(r + 13x + y)>, <px(r + 14x + y), px(r + 15x + y)>>>, <<px(r + 16x + y), px(r + 17x + y)>, <px(r + 18x + y), px(r + 19x + y)>>>>>
+<<<<<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <<px(r + 4x + y), px(r + 5x + y)>, <px(r + 6x + y), px(r + 7x + y)>>>, <<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, <px(r + 6x), px(r + 7x)>>>>, <<<<<px(r + 8x), px(r + 9x)>, <px(r + 10x), px(r + 11x)>>, <<px(r + 12x), px(r + 13x)>, <px(r + 14x), px(r + 15x)>>>, <<px(r + 16x), px(r + 17x)>, <px(r + 18x), px(r + 19x)>>>, <<<<px(r + 8x + y), px(r + 9x + y)>, <px(r + 10x + y), px(r + 11x + y)>>, <<px(r + 12x + y), px(r + 13x + y)>, <px(r + 14x + y), px(r + 15x + y)>>>, <<px(r + 16x + y), px(r + 17x + y)>, <px(r + 18x + y), px(r + 19x + y)>>>>>, <<px(r + 20x + y), px(r + 21x + y)>, <px(r + 20x), px(r + 21x)>>>
+freq: 1/43388
+
+??????????????????????
+??????????????????????
+
+
+<<<<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <<px(r + 4x + y), px(r + 5x + y)>, <px(r + 6x + y), px(r + 7x + y)>>>, <<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, <px(r + 6x), px(r + 7x)>>>>, <<<<<px(r + 8x), px(r + 9x)>, <px(r + 10x), px(r + 11x)>>, <<px(r + 12x), px(r + 13x)>, <px(r + 14x), px(r + 15x)>>>, <<px(r + 16x), px(r + 17x)>, <px(r + 18x), px(r + 19x)>>>, <<<<px(r + 8x + y), px(r + 9x + y)>, <px(r + 10x + y), px(r + 11x + y)>>, <<px(r + 12x + y), px(r + 13x + y)>, <px(r + 14x + y), px(r + 15x + y)>>>, <<px(r + 16x + y), px(r + 17x + y)>, <px(r + 18x + y), px(r + 19x + y)>>>>>
 freq: 1/43742
 
 ????????????????????
@@ -251,13 +251,13 @@ freq: 3/49035
 
 
 <<<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, <px(r + 6x), px(r + 7x)>>>, <<px(r + 8x), px(r + 9x)>, <px(r + 10x), px(r + 11x)>>>
-freq: 3/39932
+freq: 3/39904
 
 777777777777
 
 
 <<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <px(r + 4x), px(r + 5x)>>
-freq: 6/43981
+freq: 6/43982
 
 888888
 
@@ -292,13 +292,13 @@ freq: 11/46953
 
 
 <<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, px(r + 6x)>>
-freq: 3/48717
+freq: 3/48713
 
 ZZZZZZZ
 
 
 <<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>
-freq: 5/44866
+freq: 5/44868
 
 2222
 
@@ -311,13 +311,13 @@ zzzzzz
 
 
 <<<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, <px(r + 6x), px(r + 7x)>>>, <px(r + 8x), px(r + 9x)>>
-freq: 2/41181
+freq: 2/41175
 
 9999999999
 
 
 <<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <px(r + 4x), px(r + 4x + y)>>
-freq: 3/49754
+freq: 3/49749
 
 ?????
 ....?
@@ -352,7 +352,7 @@ freq: 7/47508
 b.
 
 
-<<<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <px(r + 4x + y), px(r + 5x + y)>>, <<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, px(r + 6x)>>>
+<<<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <<px(r + 4x), px(r + 5x)>, px(r + 6x)>>, <<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <px(r + 4x + y), px(r + 5x + y)>>>
 freq: 1/49759
 
 ???????
@@ -367,7 +367,7 @@ y...
 y...
 
 
-<<<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>, <<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <px(r + 4x), px(r + 4x + y)>>>
+<<<<px(r), px(r + x)>, <px(r + 2x), px(r + 3x)>>, <px(r + 4x), px(r + 4x + y)>>, <<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>>
 freq: 1/50549
 
 ?????
@@ -410,4 +410,4 @@ freq: 1/50091
 .?
 
 
-entropy 22236.5 -> 3966.34
+entropy 22236.5 -> 3951.49

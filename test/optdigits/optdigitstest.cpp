@@ -86,14 +86,14 @@ namespace {
 		static const int MAX_REL_VARS = 2;
 	};
 
-	explib::cvec<optdigits_problem> optdigits_dim(int samples) {
-		return explib::cvec<optdigits_problem>(Width, Height, samples);
+	reexp::cvec<optdigits_problem> optdigits_dim(int samples) {
+		return reexp::cvec<optdigits_problem>(Width, Height, samples);
 	}
 
 	template <typename P>
-	void populate(explib::data<P>& data, int samples, std::ifstream& in, int offset) {
-		explib::data_var<P>& p = data.var(varid::pixel);
-		explib::cvec<P> at(0, 0, 0);
+	void populate(reexp::data<P>& data, int samples, std::ifstream& in, int offset) {
+		reexp::data_var<P>& p = data.var(varid::pixel);
+		reexp::cvec<P> at(0, 0, 0);
 
 		std::string line;
 
@@ -101,7 +101,7 @@ namespace {
 			std::getline(in, line);
 		}
 
-		explib::bitmap pic;
+		reexp::bitmap pic;
 
 		for (int i = 0; i < samples; i++) {
 			// read
@@ -133,7 +133,7 @@ namespace {
 			}
 
 			for (int j = 0; j < DigitCount; j++) {
-				explib::data_var<P>& digit = data.var(varid::digit0 + j);
+				reexp::data_var<P>& digit = data.var(varid::digit0 + j);
 				digit[at] = true;
 				*digit[at] = (number == j);
 			}
@@ -141,7 +141,7 @@ namespace {
 	}
 
 	template <typename P>
-	int populate_from_file(explib::data<P>& data, int samples, const char* name, int offset = 0) {
+	int populate_from_file(reexp::data<P>& data, int samples, const char* name, int offset = 0) {
 		std::ifstream in(name);
 		populate<P>(data, samples, in, offset);
 		return offset + samples;
@@ -149,27 +149,27 @@ namespace {
 
 
 	template <typename P>
-	void setup_lang(explib::lang<P>& lang) {
-		explib::ctx<P> pixel_ctx(explib::cvec<P>(0, 0, 0));
-		explib::ctx<P> shape_ctx(explib::cvec<P>(-1, -1, 0));
-		explib::ctx<P> full_ctx(explib::cvec<P>(0, 0, 0));
+	void setup_lang(reexp::lang<P>& lang) {
+		reexp::ctx<P> pixel_ctx(reexp::cvec<P>(0, 0, 0));
+		reexp::ctx<P> shape_ctx(reexp::cvec<P>(-1, -1, 0));
+		reexp::ctx<P> full_ctx(reexp::cvec<P>(0, 0, 0));
 
 		for (int i = 0; i < DigitCount; ++i) {
-			lang.add_orig(explib::orig<P>(shape_ctx));
+			lang.add_orig(reexp::orig<P>(shape_ctx));
 		}
-		lang.add_orig(explib::orig<P>(pixel_ctx));
+		lang.add_orig(reexp::orig<P>(pixel_ctx));
 
-		explib::rel<P>& rl(lang.alloc_rel(pixel_ctx)); // left right
-		rl.add_var(explib::cvec<P>(0, 0, 0),
+		reexp::rel<P>& rl(lang.alloc_rel(pixel_ctx)); // left right
+		rl.add_var(reexp::cvec<P>(0, 0, 0),
 				   lang.var(varid::pixel));
-		rl.add_var(explib::cvec<P>(1, 0, 0),
+		rl.add_var(reexp::cvec<P>(1, 0, 0),
 				  lang.var(varid::pixel));
 		lang.rel_done();
 
-		explib::rel<P>& ud(lang.alloc_rel(pixel_ctx)); // up down
-		ud.add_var(explib::cvec<P>(0, 0, 0),
+		reexp::rel<P>& ud(lang.alloc_rel(pixel_ctx)); // up down
+		ud.add_var(reexp::cvec<P>(0, 0, 0),
 				   lang.var(varid::pixel));
-		ud.add_var(explib::cvec<P>(0, 1, 0),
+		ud.add_var(reexp::cvec<P>(0, 1, 0),
 				   lang.var(varid::pixel));
 		lang.rel_done();
 
@@ -188,23 +188,23 @@ namespace {
 		lang.rel_done();*/
 
 		for (int i = 0; i < DigitCount; ++i) {
-			explib::rel<P>& ps(lang.alloc_rel(full_ctx)); // pixel-shape
-			ps.add_var(explib::cvec<P>(0, 0, 0), // pixel
+			reexp::rel<P>& ps(lang.alloc_rel(full_ctx)); // pixel-shape
+			ps.add_var(reexp::cvec<P>(0, 0, 0), // pixel
 					   lang.var(varid::pixel));
-			ps.add_var(explib::cvec<P>(0, 0, 0), // shape
+			ps.add_var(reexp::cvec<P>(0, 0, 0), // shape
 					   lang.var(varid::digit0 + i));
 			lang.rel_done();
 		}
 	}
 
 	template <typename P>
-	void setup_problem(explib::lang<P>& lang, explib::data<P>& data) {
+	void setup_problem(reexp::lang<P>& lang, reexp::data<P>& data) {
 		setup_lang(lang);
 		populate_from_file(data, DefaultSampleCount, TRA_DATA_FILE, 0);
 	}
 
 	template <typename P>
-	void setup_names(explib::pinfo& info) {
+	void setup_names(reexp::pinfo& info) {
 		for (int i = 0; i < VarCount; ++i) {
 			info.vnames_.push_back(varnames[i]);
 		}
@@ -214,24 +214,24 @@ namespace {
 	}
 
 	template <typename P>
-	void setup_learner(explib::learner<P>& learner) {
+	void setup_learner(reexp::learner<P>& learner) {
 		for (int i = varid::digit0; i <= varid::digit9; ++i) {
 			learner.exclude(i);
 		}
 	}
 
-	void setup_test(TestTool& t) {
+	void setup_test(test_tool& t) {
 		typedef optdigits_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, optdigits_dim(DefaultSampleCount));
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, optdigits_dim(DefaultSampleCount));
 
 		setup_problem<p>(lang, data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
 
-		explib::lang_info<p> li(i, lang);
+		reexp::lang_info<p> li(i, lang);
 
 		t<<"vars:\n\n";
 		t<<li.vars_tostring()<<"\n\n";
@@ -240,7 +240,7 @@ namespace {
 		t<<"pixels:\n\n";
 
 		for (int i = 0; i < 5; ++i) {
-			explib::cvec<p> at(0, 0, i);
+			reexp::cvec<p> at(0, 0, i);
 			for (int j = 0; j < DigitCount; ++j) {
 				if (*data.var(varid::digit0+j)[at]) {
 					t<<j<<":\n\n";
@@ -257,28 +257,28 @@ namespace {
 		}
 	}
 
-	void learning_test(TestTool& t) {
+	void learning_test(test_tool& t) {
 		typedef optdigits_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, optdigits_dim(DefaultSampleCount));
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, optdigits_dim(DefaultSampleCount));
 
 		setup_problem<p>(lang, data);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
 
 
-		explib::stats_info<p> si(i, stats);
+		reexp::stats_info<p> si(i, stats);
 		t<<"scan:\n\n"<<si.scan_tostring(3, 2)<<"\n";
 
-		explib::learner<p> learner(lang, stats, DefaultThreshold, FilterThreshold);
+		reexp::learner<p> learner(lang, stats, DefaultThreshold, FilterThreshold);
 		setup_learner<p>(learner);
 
 		{
-			TimeSentry time;
+			time_sentry time;
 			while (true) {
 				float before = stats.naiveInfo();
 				if (!learner.add_exp()) break;
@@ -302,14 +302,14 @@ namespace {
 #if 0
 
 	template <typename P>
-	void evaluate(TestTool& t,
-			      const explib::data<P>& data,
-			      const explib::stats<P>& stats,
+	void evaluate(test_tool& t,
+			      const reexp::data<P>& data,
+			      const reexp::stats<P>& stats,
 			      const std::set<std::string>& tags) {
-		explib::pred<P> pred(stats);
+		reexp::pred<P> pred(stats);
 		std::vector<double> ps[10];
 
-		TimeSentry timer;
+		time_sentry timer;
 		for (int i = 0; i < 10; i++) {
 			ps[i] = std::move(pred.p(data, i+varid::digit0));
 		}
@@ -321,7 +321,7 @@ namespace {
 		std::vector<int> correct;
 		decisions.resize(samples);
 		correct.resize(samples);
-		const explib::data_var<P>* vars[10];
+		const reexp::data_var<P>* vars[10];
 
 		for (int i = 0; i < 10; i++) {
 			vars[i] = &data.var(i + varid::digit0);
@@ -334,7 +334,7 @@ namespace {
 		for (int i = 0; i < 10; ++i) {
 			oks[i] = 0; infos[i] = 0; ns[i] = 0;
 		}
-		explib::cvec<P> at;
+		reexp::cvec<P> at;
 		int ok = 0;
 		double info = 0;
 		for (int s = 0; s < samples; s++) {
@@ -386,9 +386,9 @@ namespace {
 	}
 #endif
 	template <typename P>
-	std::string predictions_tostring(const explib::data<P>& data, const explib::stats<P>& stats, bool details = false) {
+	std::string predictions_tostring(const reexp::data<P>& data, const reexp::stats<P>& stats, bool details = false) {
 		std::ostringstream buf;
-		explib::pred<P> pred(stats);
+		reexp::pred<P> pred(stats);
 		std::vector<double> ps[10];
 		for (int i = 0; i < 10; i++) {
 			ps[i] = std::move(pred.p(data, i+varid::digit0));
@@ -398,7 +398,7 @@ namespace {
 		std::vector<int> correct;
 		decisions.resize(samples);
 		correct.resize(samples);
-		const explib::data_var<P>* vars[10];
+		const reexp::data_var<P>* vars[10];
 
 		for (int i = 0; i < 10; i++) {
 			vars[i] = &data.var(i + varid::digit0);
@@ -412,7 +412,7 @@ namespace {
 		for (int i = 0; i < 10; ++i) {
 			oks[i] = 0; infos[i] = 0; ns[i] = 0;
 		}
-		explib::cvec<P> at;
+		reexp::cvec<P> at;
 		int ok = 0;
 		double info = 0;
 		for (int s = 0; s < samples; s++) {
@@ -483,25 +483,25 @@ namespace {
 		return buf.str();
 	}
 
-	void predict_test(TestTool& t) {
+	void predict_test(test_tool& t) {
 		typedef optdigits_problem p;
 
 		int samples = 100;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, optdigits_dim(samples));
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, optdigits_dim(samples));
 
 		setup_lang<p>(lang);
 		populate_from_file<p>(data, samples, TRA_DATA_FILE);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
 
-		explib::stats_info<p> si(i, stats);
+		reexp::stats_info<p> si(i, stats);
 
-		explib::learner<p> learner(lang, stats, 50);
+		reexp::learner<p> learner(lang, stats, 50);
 		setup_learner<p>(learner);
 
 		double before = stats.naiveInfo();
@@ -520,25 +520,25 @@ namespace {
 	}
 
 
-	void detailedpredict_test(TestTool& t) {
+	void detailedpredict_test(test_tool& t) {
 		typedef optdigits_problem p;
 
 		int samples = 100;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, optdigits_dim(samples));
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, optdigits_dim(samples));
 
 		setup_lang<p>(lang);
 		populate_from_file<p>(data, samples, TRA_DATA_FILE);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
 
-		explib::stats_info<p> si(i, stats);
+		reexp::stats_info<p> si(i, stats);
 
-		explib::learner<p> learner(lang, stats, 50);
+		reexp::learner<p> learner(lang, stats, 50);
 		setup_learner<p>(learner);
 
 		double before = stats.naiveInfo();
@@ -553,36 +553,36 @@ namespace {
 
 //		t<<"predictions:\n\n"<<si.preds_tostring(varid::digit0, varid::digit9, true);
 
-		explib::pred<p> pred(stats);
+		reexp::pred<p> pred(stats);
 		for (int i = 0; i < 10; i++) {
-			typedef TestTool& ref_type;
+			typedef test_tool& ref_type;
 			pred.rowP<ref_type>(data, i+varid::digit0, t);
 		}
 
 		t<<predictions_tostring(data, stats, false);
 	}
 
-	void visuals_test(TestTool& t) {
+	void visuals_test(test_tool& t) {
 		typedef optdigits_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, optdigits_dim(DefaultSampleCount));
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, optdigits_dim(DefaultSampleCount));
 
 		setup_problem<p>(lang, data);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
 
-		explib::stats_info<p> si(i, stats);
-		const explib::lang_info<p>& li = si.lang_info();
+		reexp::stats_info<p> si(i, stats);
+		const reexp::lang_info<p>& li = si.lang_info();
 
-		explib::learner<p> learner(lang, stats, DefaultThreshold, FilterThreshold);
+		reexp::learner<p> learner(lang, stats, DefaultThreshold, FilterThreshold);
 		setup_learner<p>(learner);
 
 		{
-			TimeSentry time;
+			time_sentry time;
 			int exps = learner.reexpress(true);
 			t<<exps<<" expressions added.\n\n";
 //			printf("reexpression took %dms.\n", int(time.ms()));
@@ -596,18 +596,18 @@ namespace {
 		t<<"predicting:\n\n"; // <<si.lang_info().drawn_vars_tostring(cvarid::x, cvarid::y);
 
 		for (int i = 0; i < 10; ++i) {
-			explib::var<p>& var(lang.var(varid::digit0 + i));
+			reexp::var<p>& var(lang.var(varid::digit0 + i));
 			t<<si.lang_info().var_tostring(var)<<":\n\n";
 
-			std::priority_queue<explib::candidate<p>> cands;
+			std::priority_queue<reexp::candidate<p>> cands;
 			si.var_scan(var, cands);
 
 			int top = 10;
 			while (cands.size() && top) {
-				const explib::candidate<p>& c = cands.top();
+				const reexp::candidate<p>& c = cands.top();
 				if (c.state_ == 3) {
-					const explib::rel<p>& rel = c.rel_->data().rel();
-					const explib::var<p>& cvar = *rel.entries()[0].var_;
+					const reexp::rel<p>& rel = c.rel_->data().rel();
+					const reexp::var<p>& cvar = *rel.entries()[0].var_;
 
 					t<<"#"<<rel.id()<<" "<<c.bias_<<" "<<li.rel_tostring(rel, c.state_)<<"\n\n";
 					t<<li.drawn_var_tostring(cvarid::x, cvarid::y, cvar)<<"\n";
@@ -621,14 +621,14 @@ namespace {
 	}
 #if 0
 	template <typename P>
-	void do_evaluate(TestTool& t,
-					 explib::lang<P>& lang,
-					 explib::data<P>& data,
-					 explib::stats<P>& stats,
-					 explib::learner<P>& learner) {
+	void do_evaluate(test_tool& t,
+					 reexp::lang<P>& lang,
+					 reexp::data<P>& data,
+					 reexp::stats<P>& stats,
+					 reexp::learner<P>& learner) {
 		int tsamples = 200;
 		std::set<std::string> tags = {sup()<<"exps: "<<lang.exp_count()};
-		explib::data<P> tdata(lang, optdigits_dim(tsamples));
+		reexp::data<P> tdata(lang, optdigits_dim(tsamples));
 		populate<P>(tdata, tsamples, true);
 		tdata.apply_exps();
 		t.record(tags+"gen:info", stats.naiveInfo());
@@ -638,7 +638,7 @@ namespace {
 	}
 #endif
 
-	void byexps_test(TestTool& t) {
+	void byexps_test(test_tool& t) {
 		typedef optdigits_problem p;
 
 		int samples = TRA_DATA_FILE_SAMPLES;
@@ -649,23 +649,23 @@ namespace {
 		int tsamples = CV_DATA_FILE_SAMPLES;
 //		int samples = 500;
 
-		explib::lang<p> lang;
+		reexp::lang<p> lang;
 		setup_lang<p>(lang);
 
-		explib::data<p> tdata(lang, optdigits_dim(tsamples));
+		reexp::data<p> tdata(lang, optdigits_dim(tsamples));
 //		populate_from_file(tdata, WINDEP_DATA_FILE_SAMPLES, WINDEP_DATA_FILE, 0);
 		populate_from_file(tdata, CV_DATA_FILE_SAMPLES, CV_DATA_FILE, 0);
 
-		explib::data<p> data(lang, optdigits_dim(samples));
+		reexp::data<p> data(lang, optdigits_dim(samples));
 		int at = 0;
 		at = populate_from_file(data, TRA_DATA_FILE_SAMPLES, TRA_DATA_FILE, at);
 /*		at = populate_from_file(data, CV_DATA_FILE_SAMPLES, CV_DATA_FILE, at);
 		at = populate_from_file(data, WDEP_DATA_FILE_SAMPLES, WDEP_DATA_FILE, at);*/
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
 		double th = 350;
-		explib::learner<p> learner(lang, stats, th, 0.4*th, 0);
+		reexp::learner<p> learner(lang, stats, th, 0.4*th, 0);
 		setup_learner<p>(learner);
 
 		int expsPerStep = 5;
@@ -673,7 +673,7 @@ namespace {
 		do_evaluate(t, lang, data, tdata, stats, learner, cvarid::sample);
 
 		while (exps < 150) {
-			TimeSentry timer;
+			time_sentry timer;
 			int added = learner.reexpress(true, expsPerStep);
 			if (added) {
 				long us = timer.us();
@@ -691,54 +691,54 @@ namespace {
 		std::set<std::string> tags;
 		tags.insert("run:out");
 
-		Table exptable(
-			t.report(ToTable<Average>(tags+"data:test", "prop:", "exps:")));
+		table exptable(
+			t.report(to_table<average>(tags+"data:test", "prop:", "exps:")));
 		t<<"prediction quality: (test)\n\n"<<exptable<<"\n";
 
-		Table exptable3(
-			t.report(ToTable<Average>(tags+"data:train", "prop:", "exps:")));
+		table exptable3(
+			t.report(to_table<average>(tags+"data:train", "prop:", "exps:")));
 		t<<"prediction quality: (train)\n\n"<<exptable3<<"\n";
 
-		Table exptable4(
-			t.report(ToTable<Average>(tags, "gen:", "exps:")));
+		table exptable4(
+			t.report(to_table<average>(tags, "gen:", "exps:")));
 		t<<"train sample compression: \n\n"<<exptable4<<"\n";
 
-		Table exptable2(
-			t.report(ToTable<Average>(tags, "perf:", "exps:")));
+		table exptable2(
+			t.report(to_table<average>(tags, "perf:", "exps:")));
 		t.ignored()<<"performance:\n\n"<<exptable2<<"\n";
 
 		t.ignored()<<"reexp us/exp:\n"
-				   <<t.report(ToTable<Average>(tags, "perf:reexp us", "exps:"))
-					  .toplot(3, 20)<<"\n";
+				   <<t.report(to_table<average>(tags, "perf:reexp us", "exps:"))
+					  .to_plot(3, 20)<<"\n";
 
 		t.ignored()<<"pred us:\n"
-				   <<t.report(ToTable<Average>(tags+"perf:pred us", "data:", "exps:"))
-					  .toplot(3, 20)<<"\n";
-		t<<"\nentropy:\n\n"<<t.report(ToTable<Average>(tags+"prop:entropy", "data:", "exps:"))
-			.toplot(3, 20)<<"\n";
+				   <<t.report(to_table<average>(tags+"perf:pred us", "data:", "exps:"))
+					  .to_plot(3, 20)<<"\n";
+		t<<"\nentropy:\n\n"<<t.report(to_table<average>(tags+"prop:entropy", "data:", "exps:"))
+			.to_plot(3, 20)<<"\n";
 
-		t<<"\naccuracy:\n\n"<<t.report(ToTable<Average>(tags+"prop:accuracy", "data:", "exps:"))
-			.toplot(3, 20)<<"\n";
+		t<<"\naccuracy:\n\n"<<t.report(to_table<average>(tags+"prop:accuracy", "data:", "exps:"))
+			.to_plot(3, 20)<<"\n";
 
 	}
 
-	void big_test(TestTool& t) {
+	void big_test(test_tool& t) {
 		typedef optdigits_problem p;
 
 		int samples = 945;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, optdigits_dim(samples));
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, optdigits_dim(samples));
 
 		setup_lang<p>(lang);
 		populate_from_file<p>(data, samples, TRA_DATA_FILE);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
 
-		explib::learner<p> learner(lang, stats, 100);
+		reexp::learner<p> learner(lang, stats, 100);
 		setup_learner<p>(learner);
 
 		double before = stats.naiveInfo();
@@ -746,8 +746,8 @@ namespace {
 		t<<exps<<" expressions added.\n\n";
 		t<<"information "<<before<<" -> "<<stats.naiveInfo()<<"\n\n";
 
-		explib::stats_info<p> si(i, stats);
-		const explib::lang_info<p>& li = si.lang_info();
+		reexp::stats_info<p> si(i, stats);
+		const reexp::lang_info<p>& li = si.lang_info();
 
 		t<<"exps:\n\n";
 		for (int i = varid::digit9+1; i < lang.var_count(); ++i) {
@@ -757,18 +757,18 @@ namespace {
 		t<<"predicting:\n\n"; // <<si.lang_info().drawn_vars_tostring(cvarid::x, cvarid::y);
 
 		for (int i = 0; i < 10; ++i) {
-			explib::var<p>& var(lang.var(varid::digit0 + i));
+			reexp::var<p>& var(lang.var(varid::digit0 + i));
 			t<<si.lang_info().var_tostring(var)<<":\n\n";
 
-			std::priority_queue<explib::candidate<p>> cands;
+			std::priority_queue<reexp::candidate<p>> cands;
 			si.var_scan(var, cands);
 
 			int top = 10;
 			while (cands.size() && top) {
-				const explib::candidate<p>& c = cands.top();
+				const reexp::candidate<p>& c = cands.top();
 				if (c.state_ == 3) {
-					const explib::rel<p>& rel = c.rel_->data().rel();
-					const explib::var<p>& cvar = *rel.entries()[0].var_;
+					const reexp::rel<p>& rel = c.rel_->data().rel();
+					const reexp::var<p>& cvar = *rel.entries()[0].var_;
 
 					t<<"#"<<rel.id()<<" "<<c.bias_<<" "<<li.rel_tostring(rel, c.state_)<<"\n\n";
 					t<<li.drawn_var_tostring(cvarid::x, cvarid::y, cvar)<<"\n";
@@ -778,13 +778,13 @@ namespace {
 			}
 		}
 
-		t<<si.drawn_data_tostring(explib::cvec<p>(), cvarid::x, cvarid::y, cvarid::sample, 40)<<"\n";
+		t<<si.drawn_data_tostring(reexp::cvec<p>(), cvarid::x, cvarid::y, cvarid::sample, 40)<<"\n";
 
 		t<<predictions_tostring(data, stats, true);
 
 		int tsamples = 200;
 		t<<"prepared test data... ";
-		explib::data<p> tdata(lang, optdigits_dim(tsamples));
+		reexp::data<p> tdata(lang, optdigits_dim(tsamples));
 		t<<"ok.\npopulating it... ";
 		populate_from_file<p>(data, tsamples, CV_DATA_FILE);
 		t<<"ok.\nre-expressing it... ";
@@ -794,24 +794,24 @@ namespace {
 		t<<"done.\n";
 	}
 
-	void measure_test(TestTool& t) {
+	void measure_test(test_tool& t) {
 		int samples = DefaultSampleCount;
 
 		typedef optdigits_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, optdigits_dim(samples));
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, optdigits_dim(samples));
 
 		setup_lang<p>(lang);
 		populate_from_file<p>(data, samples, TRA_DATA_FILE);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
 
-		explib::stats_info<p> si(i, stats);
-		explib::learner<p> learner(lang, stats, 65);
+		reexp::stats_info<p> si(i, stats);
+		reexp::learner<p> learner(lang, stats, 65);
 		setup_learner<p>(learner);
 
 		t<<predictions_tostring(data, stats, false);

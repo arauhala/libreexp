@@ -87,24 +87,24 @@ namespace {
 	};
 
 	template <typename P>
-	void populate(explib::data<P>& data) {
+	void populate(reexp::data<P>& data) {
 		std::ifstream in("test/rooms/game.txt");
 
-		explib::data_var<P>& iswall      = data.var(varid::iswall);
-		explib::data_var<P>& isdark      = data.var(varid::isdark);
-		explib::data_var<P>& isbright    = data.var(varid::isbright);
-		explib::data_var<P>& isexit      = data.var(varid::isexit);
-		explib::data_var<P>& victory     = data.var(varid::victory);
-		explib::data_var<P>& escape 	 = data.var(varid::escape);
+		reexp::data_var<P>& iswall      = data.var(varid::iswall);
+		reexp::data_var<P>& isdark      = data.var(varid::isdark);
+		reexp::data_var<P>& isbright    = data.var(varid::isbright);
+		reexp::data_var<P>& isexit      = data.var(varid::isexit);
+		reexp::data_var<P>& victory     = data.var(varid::victory);
+		reexp::data_var<P>& escape 	 	= data.var(varid::escape);
 
-		explib::data_var<P>& goleft 	 = data.var(varid::goleft);
-		explib::data_var<P>& goright 	 = data.var(varid::goright);
-		explib::data_var<P>& godown 	 = data.var(varid::godown);
-		explib::data_var<P>& goup 		 = data.var(varid::goup);
-		explib::data_var<P>& idle 		 = data.var(varid::idle);
+		reexp::data_var<P>& goleft 	 	= data.var(varid::goleft);
+		reexp::data_var<P>& goright 	= data.var(varid::goright);
+		reexp::data_var<P>& godown 	 	= data.var(varid::godown);
+		reexp::data_var<P>& goup 		= data.var(varid::goup);
+		reexp::data_var<P>& idle 		= data.var(varid::idle);
 
-		explib::data_var<P>& underplayer = data.var(varid::underplayer);
-		explib::data_var<P>& nearplayer  = data.var(varid::nearplayer);
+		reexp::data_var<P>& underplayer = data.var(varid::underplayer);
+		reexp::data_var<P>& nearplayer  = data.var(varid::nearplayer);
 
 		iswall.defined().fill(false);
 		isdark.defined().fill(false);
@@ -122,7 +122,7 @@ namespace {
 		int game = 0;
 		int turn = 0;
 		int l = 0;
-		explib::cvec<P> at;
+		reexp::cvec<P> at;
 		while (in && game < Games) {
 			std::string line;
 			std::getline(in, line); ++l;
@@ -235,8 +235,8 @@ namespace {
 		}
 	}
 
-	explib::cvec<rooms_problem> rooms_dim() {
-		explib::cvec<rooms_problem> v;
+	reexp::cvec<rooms_problem> rooms_dim() {
+		reexp::cvec<rooms_problem> v;
 		v[cvarid::x] = Width;
 		v[cvarid::y] = Height;
 		v[cvarid::turn] = MaxTime;
@@ -245,50 +245,50 @@ namespace {
 	}
 
 	template <typename P>
-	void setup_heuristic_rels(explib::lang<P>& lang, explib::var<P>& var) {
-		explib::rel<P>& rel(lang.alloc_rel(var.ctx()));
-		rel.add_var(explib::cvec<P>(0, 0, 0, 0), var);
-		rel.add_var(explib::cvec<P>(0, 0, 0, 0), lang.var(varid::victory));
+	void setup_heuristic_rels(reexp::lang<P>& lang, reexp::var<P>& var) {
+		reexp::rel<P>& rel(lang.alloc_rel(var.ctx()));
+		rel.add_var(reexp::cvec<P>(0, 0, 0, 0), var);
+		rel.add_var(reexp::cvec<P>(0, 0, 0, 0), lang.var(varid::victory));
 		lang.rel_done();
 	}
 
 	template <typename P>
-	void setup_map_rels(explib::lang<P>& lang, explib::var<P>& var, explib::var<P>& var2) {
-		explib::ctx<P> map_ctx(explib::cvec<P>(0, 0, 0, 0));
+	void setup_map_rels(reexp::lang<P>& lang, reexp::var<P>& var, reexp::var<P>& var2) {
+		reexp::ctx<P> map_ctx(reexp::cvec<P>(0, 0, 0, 0));
 
-		explib::rel<P>& rl(lang.alloc_rel(map_ctx)); // right left
-		rl.add_var(explib::cvec<P>(0, 0, 0, 0), var);
-		rl.add_var(explib::cvec<P>(1, 0, 0, 0), var2);
+		reexp::rel<P>& rl(lang.alloc_rel(map_ctx)); // right left
+		rl.add_var(reexp::cvec<P>(0, 0, 0, 0), var);
+		rl.add_var(reexp::cvec<P>(1, 0, 0, 0), var2);
 		lang.rel_done();
 
-		explib::rel<P>& ud(lang.alloc_rel(map_ctx)); // up down
-		ud.add_var(explib::cvec<P>(0, 0, 0, 0), var);
-		ud.add_var(explib::cvec<P>(0, 1, 0, 0), var2);
+		reexp::rel<P>& ud(lang.alloc_rel(map_ctx)); // up down
+		ud.add_var(reexp::cvec<P>(0, 0, 0, 0), var);
+		ud.add_var(reexp::cvec<P>(0, 1, 0, 0), var2);
 		lang.rel_done();
 
-		explib::rel<P>& pf(lang.alloc_rel(map_ctx)); // past future
-		pf.add_var(explib::cvec<P>(0, 0, 0, 0), var);
-		pf.add_var(explib::cvec<P>(0, 0, 1, 0), var2);
+		reexp::rel<P>& pf(lang.alloc_rel(map_ctx)); // past future
+		pf.add_var(reexp::cvec<P>(0, 0, 0, 0), var);
+		pf.add_var(reexp::cvec<P>(0, 0, 1, 0), var2);
 		lang.rel_done();
 
-		explib::rel<P>& pfl(lang.alloc_rel(map_ctx)); // past future left
-		pfl.add_var(explib::cvec<P>(1, 0, 0, 0), var);
-		pfl.add_var(explib::cvec<P>(0, 0, 1, 0), var2);
+		reexp::rel<P>& pfl(lang.alloc_rel(map_ctx)); // past future left
+		pfl.add_var(reexp::cvec<P>(1, 0, 0, 0), var);
+		pfl.add_var(reexp::cvec<P>(0, 0, 1, 0), var2);
 		lang.rel_done();
 
-		explib::rel<P>& pfr(lang.alloc_rel(map_ctx)); // past future right
-		pfr.add_var(explib::cvec<P>(0, 0, 0, 0), var);
-		pfr.add_var(explib::cvec<P>(1, 0, 1, 0), var2);
+		reexp::rel<P>& pfr(lang.alloc_rel(map_ctx)); // past future right
+		pfr.add_var(reexp::cvec<P>(0, 0, 0, 0), var);
+		pfr.add_var(reexp::cvec<P>(1, 0, 1, 0), var2);
 		lang.rel_done();
 
-		explib::rel<P>& pfu(lang.alloc_rel(map_ctx)); // past future up
-		pfu.add_var(explib::cvec<P>(0, 1, 0, 0), var);
-		pfu.add_var(explib::cvec<P>(0, 0, 1, 0), var2);
+		reexp::rel<P>& pfu(lang.alloc_rel(map_ctx)); // past future up
+		pfu.add_var(reexp::cvec<P>(0, 1, 0, 0), var);
+		pfu.add_var(reexp::cvec<P>(0, 0, 1, 0), var2);
 		lang.rel_done();
 
-		explib::rel<P>& pfd(lang.alloc_rel(map_ctx)); // past future down
-		pfd.add_var(explib::cvec<P>(0, 0, 0, 0), var);
-		pfd.add_var(explib::cvec<P>(0, 1, 1, 0), var2);
+		reexp::rel<P>& pfd(lang.alloc_rel(map_ctx)); // past future down
+		pfd.add_var(reexp::cvec<P>(0, 0, 0, 0), var);
+		pfd.add_var(reexp::cvec<P>(0, 1, 1, 0), var2);
 		lang.rel_done();
 
 
@@ -297,26 +297,26 @@ namespace {
 
 
 	template <typename P>
-	void setup_lang(explib::lang<P>& lang) {
+	void setup_lang(reexp::lang<P>& lang) {
 
-		explib::ctx<P> map_ctx(explib::cvec<P>(0, 0, 0, 0));
-		explib::ctx<P> turn_ctx(explib::cvec<P>(-1, -1, 0, 0));
-		explib::ctx<P> game_ctx(explib::cvec<P>(-1, -1, -1, 0));
-		lang.add_orig(explib::orig<P>(map_ctx)); // iswall
-		lang.add_orig(explib::orig<P>(map_ctx)); // isdark
-		lang.add_orig(explib::orig<P>(map_ctx)); // isbright
-		lang.add_orig(explib::orig<P>(map_ctx)); // isexit
-		lang.add_orig(explib::orig<P>(game_ctx)); // victory
-		lang.add_orig(explib::orig<P>(turn_ctx)); // escape
+		reexp::ctx<P> map_ctx(reexp::cvec<P>(0, 0, 0, 0));
+		reexp::ctx<P> turn_ctx(reexp::cvec<P>(-1, -1, 0, 0));
+		reexp::ctx<P> game_ctx(reexp::cvec<P>(-1, -1, -1, 0));
+		lang.add_orig(reexp::orig<P>(map_ctx)); // iswall
+		lang.add_orig(reexp::orig<P>(map_ctx)); // isdark
+		lang.add_orig(reexp::orig<P>(map_ctx)); // isbright
+		lang.add_orig(reexp::orig<P>(map_ctx)); // isexit
+		lang.add_orig(reexp::orig<P>(game_ctx)); // victory
+		lang.add_orig(reexp::orig<P>(turn_ctx)); // escape
 
-		lang.add_orig(explib::orig<P>(map_ctx)); // go left
-		lang.add_orig(explib::orig<P>(map_ctx)); // go right
-		lang.add_orig(explib::orig<P>(map_ctx)); // go up
-		lang.add_orig(explib::orig<P>(map_ctx)); // go down
-		lang.add_orig(explib::orig<P>(map_ctx)); // idle
+		lang.add_orig(reexp::orig<P>(map_ctx)); // go left
+		lang.add_orig(reexp::orig<P>(map_ctx)); // go right
+		lang.add_orig(reexp::orig<P>(map_ctx)); // go up
+		lang.add_orig(reexp::orig<P>(map_ctx)); // go down
+		lang.add_orig(reexp::orig<P>(map_ctx)); // idle
 
-		lang.add_orig(explib::orig<P>(map_ctx)); // under player
-		lang.add_orig(explib::orig<P>(map_ctx)); // near player
+		lang.add_orig(reexp::orig<P>(map_ctx)); // under player
+		lang.add_orig(reexp::orig<P>(map_ctx)); // near player
 
 		for (int i = varid::iswall; i <= varid::escape; ++i) {
 			if (i != varid::victory) {
@@ -334,9 +334,9 @@ namespace {
 				lang.rel_done();
 			}*/
 			for (int j = varid::escape; j <= varid::nearplayer; ++j) {
-				explib::rel<P>& rel(lang.alloc_rel(map_ctx));
-				rel.add_var(explib::cvec<P>(0, 0, 0, 0), lang.var(i));
-				rel.add_var(explib::cvec<P>(0, 0, 0, 0), lang.var(j));
+				reexp::rel<P>& rel(lang.alloc_rel(map_ctx));
+				rel.add_var(reexp::cvec<P>(0, 0, 0, 0), lang.var(i));
+				rel.add_var(reexp::cvec<P>(0, 0, 0, 0), lang.var(j));
 				lang.rel_done();
 			}
 		}
@@ -345,13 +345,13 @@ namespace {
 	}
 
 	template <typename P>
-	void setup_reg(explib::lang<P>& lang, explib::data<P>& data) {
+	void setup_reg(reexp::lang<P>& lang, reexp::data<P>& data) {
 		setup_lang(lang);
 		populate(data);
 	}
 
 	template <typename P>
-	void setup_names(explib::pinfo& info) {
+	void setup_names(reexp::pinfo& info) {
 		for (int i = 0; i < VarCount; ++i) {
 			info.vnames_.push_back(varnames[i]);
 		}
@@ -361,17 +361,17 @@ namespace {
 	}
 
 	template <typename P>
-	void draw_map(TestTool& t, const explib::data<P>& data, int turn, int game) {
+	void draw_map(test_tool& t, const reexp::data<P>& data, int turn, int game) {
 		typedef rooms_problem p;
 
-		const explib::data_var<P>& iswall     = data.var(varid::iswall);
-		const explib::data_var<P>& isdark     = data.var(varid::isdark);
-		const explib::data_var<P>& isbright   = data.var(varid::isbright);
-		const explib::data_var<P>& isexit     = data.var(varid::isexit);
+		const reexp::data_var<P>& iswall     = data.var(varid::iswall);
+		const reexp::data_var<P>& isdark     = data.var(varid::isdark);
+		const reexp::data_var<P>& isbright   = data.var(varid::isbright);
+		const reexp::data_var<P>& isexit     = data.var(varid::isexit);
 
 		int w = data.dim()[cvarid::x];
 		int h = data.dim()[cvarid::y];
-		explib::cvec<P> at;
+		reexp::cvec<P> at;
 		at[cvarid::turn] = turn;
 		at[cvarid::game] = game;
 		for (int y = 0; y < h; y++) {
@@ -394,24 +394,24 @@ namespace {
 		}
 	}
 
-	void setup_test(TestTool& t) {
+	void setup_test(test_tool& t) {
 		typedef rooms_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, rooms_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, rooms_dim());
 
 		setup_reg<p>(lang, data);
 
-		explib::pinfo info;
+		reexp::pinfo info;
 		setup_names<p>(info);
 
-		explib::lang_info<p> li(info, lang);
+		reexp::lang_info<p> li(info, lang);
 		t<<"vars:\n"<<li.vars_tostring();
 		t<<"rels:\n"<<li.rels_tostring();
 
-		const explib::data_var<p>& iswall     = data.var(varid::iswall);
-		const explib::data_var<p>& victory     = data.var(varid::victory);
-		explib::cvec<p> at = {0, 0, 0, 0};
+		const reexp::data_var<p>& iswall     = data.var(varid::iswall);
+		const reexp::data_var<p>& victory     = data.var(varid::victory);
+		reexp::cvec<p> at = {0, 0, 0, 0};
 		for (int i = 0; i < 10; ++i) {
 			at[cvarid::game] = i;
 
@@ -432,19 +432,19 @@ namespace {
 		}
 	}
 
-	void scan_test(TestTool& t) {
+	void scan_test(test_tool& t) {
 		typedef rooms_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, rooms_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, rooms_dim());
 
 		setup_reg<p>(lang, data);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
-		explib::stats_info<p> si(i, stats);
+		reexp::stats_info<p> si(i, stats);
 
 		t<<si.vars_tostring();
 		t<<"scans:\n"<<si.scan_tostring(50, 1);
@@ -459,24 +459,24 @@ namespace {
 		t<<"\nvictory deps:\n"<<si.var_deps_tostring(varid::victory, 20);
 	}
 
-	void learning_test(TestTool& t) {
+	void learning_test(test_tool& t) {
 		typedef rooms_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, rooms_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, rooms_dim());
 
 		setup_reg<p>(lang, data);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::learner<p> learner(lang, stats, 50, 25);
+		reexp::learner<p> learner(lang, stats, 50, 25);
 		learner.exclude(varid::victory);
 		learner.exclude(varid::escape);
 		int exps = learner.reexpress(true, 20);
 		t<<exps<<" exps added\n\n";
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
-		explib::stats_info<p> si(i, stats);
+		reexp::stats_info<p> si(i, stats);
 
 		t<<si.vars_tostring();
 		t<<si.lang_info().drawn_vars_tostring(cvarid::x, cvarid::y);
@@ -507,7 +507,7 @@ namespace {
 		pr.samplecvar_ = cvarid::game;
 	}
 
-	void heuristics_byfilter_test(TestTool& t) {
+	void heuristics_byfilter_test(test_tool& t) {
 		typedef rooms_problem p;
 
 		pred_problem<p> pr(rooms_dim());
@@ -518,17 +518,17 @@ namespace {
 			crossvalidate_run(t, pr, args, 3);
 		}
 
-		t.ignored()<<"expression & relations:\n"<<t.report(ToTable<Average>({"run:out"}, "exp:", "predfilter:"))<<"\n";
+		t.ignored()<<"expression & relations:\n"<<t.report(to_table<average>({"run:out"}, "exp:", "predfilter:"))<<"\n";
 
-		t<<"results (train):\n"<<t.report(ToTable<Average>({"run:out", "data:train"}, "prop:", "predfilter:"))<<"\n";
+		t<<"results (train):\n"<<t.report(to_table<average>({"run:out", "data:train"}, "prop:", "predfilter:"))<<"\n";
 
-		t<<"results (test):\n"<<t.report(ToTable<Average>({"run:out", "data:test"}, "prop:", "predfilter:"))<<"\n";
+		t<<"results (test):\n"<<t.report(to_table<average>({"run:out", "data:test"}, "prop:", "predfilter:"))<<"\n";
 
 		t<<"entropy by filter:\n"
-		 <<t.report(ToTable<Average>({"run:out", "prop:entropy"}, "data:", "predfilter:")).toplot(3, 20, 0.5)<<"\n";
+		 <<t.report(to_table<average>({"run:out", "prop:entropy"}, "data:", "predfilter:")).to_plot(3, 20, 0.5)<<"\n";
 	}
 
-	void heuristics_byexps_test(TestTool& t) {
+	void heuristics_byexps_test(test_tool& t) {
 		typedef rooms_problem p;
 
 		pred_problem<p> pr(rooms_dim());
@@ -543,14 +543,14 @@ namespace {
 			th<<=1;
 		}
 
-		t.ignored()<<"expression & relations:\n"<<t.report(ToTable<Average>({"run:out"}, "exp:", "threshold:"))<<"\n";
+		t.ignored()<<"expression & relations:\n"<<t.report(to_table<average>({"run:out"}, "exp:", "threshold:"))<<"\n";
 
-		t<<"results (train):\n"<<t.report(ToTable<Average>({"run:out", "data:train"}, "prop:", "threshold:"))<<"\n";
+		t<<"results (train):\n"<<t.report(to_table<average>({"run:out", "data:train"}, "prop:", "threshold:"))<<"\n";
 
-		t<<"results (test):\n"<<t.report(ToTable<Average>({"run:out", "data:test"}, "prop:", "threshold:"))<<"\n";
+		t<<"results (test):\n"<<t.report(to_table<average>({"run:out", "data:test"}, "prop:", "threshold:"))<<"\n";
 
 		t<<"entropy by threshold:\n"
-		 <<t.report(ToTable<Average>({"run:out", "prop:entropy"}, "data:", "threshold:")).toplot(3, 20, 0.5)<<"\n";
+		 <<t.report(to_table<average>({"run:out", "prop:entropy"}, "data:", "threshold:")).to_plot(3, 20, 0.5)<<"\n";
 	}
 
 }

@@ -46,9 +46,9 @@ namespace {
 	};
 
 	template <typename P>
-	void populate(explib::data<P>& data, std::istream& in, int w, int h) {
-		explib::data_var<P>& p = data.var(varid::pixel);
-		explib::cvec<P> at(0, 0);
+	void populate(reexp::data<P>& data, std::istream& in, int w, int h) {
+		reexp::data_var<P>& p = data.var(varid::pixel);
+		reexp::cvec<P> at(0, 0);
 
 		std::string line;
 
@@ -64,48 +64,48 @@ namespace {
 	}
 
 	template <typename P>
-	void setup_lang(explib::lang<P>& lang) {
-		explib::ctx<P> pixel_ctx(explib::cvec<P>(0, 0, 0));
+	void setup_lang(reexp::lang<P>& lang) {
+		reexp::ctx<P> pixel_ctx(reexp::cvec<P>(0, 0, 0));
 
-		lang.add_orig(explib::orig<P>(pixel_ctx));
+		lang.add_orig(reexp::orig<P>(pixel_ctx));
 
-		explib::rel<P>& rl(lang.alloc_rel(pixel_ctx)); // left right
-		rl.add_var(explib::cvec<P>(0, 0),
+		reexp::rel<P>& rl(lang.alloc_rel(pixel_ctx)); // left right
+		rl.add_var(reexp::cvec<P>(0, 0),
 				   lang.var(varid::pixel));
-		rl.add_var(explib::cvec<P>(1, 0),
+		rl.add_var(reexp::cvec<P>(1, 0),
 				  lang.var(varid::pixel));
 		lang.rel_done();
 
-		explib::rel<P>& ud(lang.alloc_rel(pixel_ctx)); // up down
-		ud.add_var(explib::cvec<P>(0, 0),
+		reexp::rel<P>& ud(lang.alloc_rel(pixel_ctx)); // up down
+		ud.add_var(reexp::cvec<P>(0, 0),
 				   lang.var(varid::pixel));
-		ud.add_var(explib::cvec<P>(0, 1),
+		ud.add_var(reexp::cvec<P>(0, 1),
 				   lang.var(varid::pixel));
 
-		explib::rel<P>& lrd(lang.alloc_rel(pixel_ctx)); // left right down
-		lrd.add_var(explib::cvec<P>(0, 0),
+		reexp::rel<P>& lrd(lang.alloc_rel(pixel_ctx)); // left right down
+		lrd.add_var(reexp::cvec<P>(0, 0),
 				   lang.var(varid::pixel));
-		lrd.add_var(explib::cvec<P>(1, 1),
+		lrd.add_var(reexp::cvec<P>(1, 1),
 				  lang.var(varid::pixel));
 		lang.rel_done();
 
-		explib::rel<P>& lru(lang.alloc_rel(pixel_ctx)); // left right up
-		lru.add_var(explib::cvec<P>(0, 1),
+		reexp::rel<P>& lru(lang.alloc_rel(pixel_ctx)); // left right up
+		lru.add_var(reexp::cvec<P>(0, 1),
 				    lang.var(varid::pixel));
-		lru.add_var(explib::cvec<P>(1, 0),
+		lru.add_var(reexp::cvec<P>(1, 0),
 				    lang.var(varid::pixel));
 
 		lang.rel_done();
 	}
 
 	template <typename P>
-	void setup_reg(explib::lang<P>& lang, explib::data<P>& data) {
+	void setup_reg(reexp::lang<P>& lang, reexp::data<P>& data) {
 		setup_lang(lang);
 		populate(data);
 	}
 
 	template <typename P>
-	void setup_names(explib::pinfo& info) {
+	void setup_names(reexp::pinfo& info) {
 		for (int i = 0; i < VarCount; ++i) {
 			info.vnames_.push_back(varnames[i]);
 		}
@@ -114,7 +114,7 @@ namespace {
 		}
 	}
 
-	void setup_test(TestTool& t) {
+	void setup_test(test_tool& t) {
 		std::ifstream in("test/image/letters.txt");
 
 		int w, h;
@@ -124,19 +124,19 @@ namespace {
 
 		typedef image_problem p;
 
-		explib::cvec<p> dim(w, h);
-		explib::lang<p> lang;
-		explib::data<p> data(lang, dim);
+		reexp::cvec<p> dim(w, h);
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, dim);
 
 		setup_lang<p>(lang);
 		populate<p>(data, in, w, h);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo names;
+		reexp::pinfo names;
 		setup_names<p>(names);
 
-		explib::stats_info<p> si(names, stats);
+		reexp::stats_info<p> si(names, stats);
 		t<<"vars:\n\n";
 		t<<si.vars_tostring();
 		t<<"rels:\n\n";
@@ -148,7 +148,7 @@ namespace {
 								 cvarid::y);
 	}
 
-	void test_image(TestTool& t, const char* file, double threshold) {
+	void test_image(test_tool& t, const char* file, double threshold) {
 		std::ifstream in(file);
 
 		int w, h;
@@ -158,22 +158,22 @@ namespace {
 
 		typedef image_problem p;
 
-		explib::cvec<p> dim(w, h);
-		explib::lang<p> lang;
-		explib::data<p> data(lang, dim);
+		reexp::cvec<p> dim(w, h);
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, dim);
 
 		setup_lang<p>(lang);
 		populate<p>(data, in, w, h);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 		std::vector<double> varorigPs;
 		for (int i = 0; i < lang.var_count(); ++i) {
 			varorigPs.push_back(stats.var(i).p());
 		}
-		explib::learner<p> learner(lang, stats, threshold, 0.35*threshold);
+		reexp::learner<p> learner(lang, stats, threshold, 0.35*threshold);
 
 		double infoBefore = stats.naiveInfo();
-		TimeSentry ms;
+		time_sentry ms;
 		int exps = learner.reexpress(true);
 		t.ignored()<<"rexpression took "<<ms.ms()<<" ms.\n\n";
 /*		while (true) {
@@ -192,10 +192,10 @@ namespace {
 		t<<exps<<" exps formed\n\n";
 		double infoAfter = stats.naiveInfo();
 
-		explib::pinfo names;
+		reexp::pinfo names;
 		setup_names<p>(names);
 
-		explib::stats_info<p> si(names, stats);
+		reexp::stats_info<p> si(names, stats);
 
 		t<<"vars:\n\n";
 		t<<si.drawn_vars_tostring_byexpbias(varorigPs, cvarid::x, cvarid::y);
@@ -203,18 +203,18 @@ namespace {
 		t<<"entropy "<<infoBefore<<" -> "<<infoAfter<<"\n";
 	}
 
-	void letters_test(TestTool& t) {
+	void letters_test(test_tool& t) {
 		test_image(t, "test/image/letters.txt", 9);
 	}
 
-	void invaders_test(TestTool& t) {
+	void invaders_test(test_tool& t) {
 		test_image(t, "test/image/invaders.txt", 25);
 	}
 
-	typedef std::vector<std::pair<explib::var<image_problem>*,
-							      explib::bits> >& effect_mask;
+	typedef std::vector<std::pair<reexp::var<image_problem>*,
+							      reexp::bits> >& effect_mask;
 
-	void overlap_test(TestTool& t) {
+	void overlap_test(test_tool& t) {
 		std::ifstream in("test/image/letters.txt");
 
 		int w, h;
@@ -224,22 +224,22 @@ namespace {
 
 		typedef image_problem p;
 
-		explib::cvec<p> dim(w, h);
-		explib::lang<p> lang;
-		explib::data<p> data(lang, dim);
+		reexp::cvec<p> dim(w, h);
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, dim);
 
 		setup_lang<p>(lang);
 		populate<p>(data, in, w, h);
 
-		explib::stats<p> stats(data);
-		explib::learner<p> learner(lang, stats, 20, 20);
+		reexp::stats<p> stats(data);
+		reexp::learner<p> learner(lang, stats, 20, 20);
 
 		learner.reexpress(true);
 
-		explib::pinfo names;
+		reexp::pinfo names;
 		setup_names<p>(names);
 
-		explib::stats_info<p> si(names, stats);
+		reexp::stats_info<p> si(names, stats);
 
 		for (int i = 0; i < lang.exp_count(); ++i) {
 			t<<si.lang_info().drawn_var_tostring(cvarid::x, cvarid::y, lang.exp(i))<<"->\n";
@@ -248,43 +248,43 @@ namespace {
 	}
 
 
-	void deps_test(TestTool& t) {
+	void deps_test(test_tool& t) {
 		std::ifstream in("test/image/invaders.txt");
 
 		int w, h;
 		in>>w>>h;
 		typedef image_problem p;
-		explib::cvec<p> dim(w, h);
-		explib::lang<p> lang;
-		explib::data<p> data(lang, dim);
+		reexp::cvec<p> dim(w, h);
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, dim);
 		setup_lang<p>(lang);
 		populate<p>(data, in, w, h);
 
-		explib::stats<p> stats(data);
-		explib::learner<p> learner(lang, stats, 10, 10);
+		reexp::stats<p> stats(data);
+		reexp::learner<p> learner(lang, stats, 10, 10);
 		for (int i = 0; i < 40; ++i) {
 			std::ostringstream buf;
 			buf<<"exp:"<<i;
 			{
-				TimeSentry time;
-				std::priority_queue<explib::candidate<p> > cands;
+				time_sentry time;
+				std::priority_queue<reexp::candidate<p> > cands;
 				learner.scan(cands);
 				if (cands.empty()) break;
-				const explib::candidate<p>& c( cands.top() );
+				const reexp::candidate<p>& c( cands.top() );
 				// lang.add_exp(c.rel_->data().rel_, c.state_);
-				const explib::rel<p>& rel = c.rel_->data().rel_;
+				const reexp::rel<p>& rel = c.rel_->data().rel_;
 				int state = c.state_;
 				int id = lang.origs_.size() + lang.exps_.size();
-				lang.exps_.push_back(explib::exp<p>(rel, state));
+				lang.exps_.push_back(reexp::exp<p>(rel, state));
 				lang.exps_.back().init(id);
 				{	// re-expression
-					TimeSentry time2;
+					time_sentry time2;
 					data.var_added(lang.exps_.back());
 					t.record({"property:data ms", buf.str()}, time2.ms());
 				}
 				{
 					int relsBefore = lang.rel_count();
-					TimeSentry time2;
+					time_sentry time2;
 					lang.exps_.back().gen_rels(lang);
 					t.record({"property:gen rels ms", buf.str()}, time2.ms());
 					int relsAfter = lang.rel_count();
@@ -292,7 +292,7 @@ namespace {
 					t.record({"property:postgen rel", buf.str()}, lang.enabled_rel_count());
 				}
 				{
-					TimeSentry time2;
+					time_sentry time2;
 					learner.disable_rels();
 					t.record({"property:filter ms", buf.str()}, time2.ms());
 					t.record({"property:filtered rl", buf.str()}, lang.enabled_rel_count());
@@ -300,10 +300,10 @@ namespace {
 				t.record({"property:rexp ms", buf.str()}, time.ms());
 			}
 
-			const std::vector<explib::implmask<p>>& masks( lang.exp_back().expmasks() );
+			const std::vector<reexp::implmask<p>>& masks( lang.exp_back().expmasks() );
 			// mark affected variables as dirty:
-			int v = explib::util::next_version();
-			for (const explib::implmask<p>& m : masks) {
+			int v = reexp::util::next_version();
+			for (const reexp::implmask<p>& m : masks) {
 				data.var(m.var_->id()).version_ = v;
 			}
 			int influence = 0;
@@ -313,38 +313,38 @@ namespace {
 			t.record({"property:influence", buf.str()}, masks.size());
 
 			{
-				TimeSentry time;
+				time_sentry time;
 				stats.update();
 				long ms = time.ms();
 				t.record({"property:update ms", 		buf.str()},	      ms);
 			}
 		}
 
-		Table table(
-			t.report(ToTable<Average>({}, "property:", "exp:")));
+		table table(
+			t.report(to_table<average>({}, "property:", "exp:")));
 		t.ignored()<<table;
 	}
 
-	void implmask_test(TestTool& t) {
+	void implmask_test(test_tool& t) {
 		std::ifstream in("test/image/letters.txt");
 
 		int w, h;
 		in>>w>>h;
 		typedef image_problem p;
-		explib::cvec<p> dim(w, h);
-		explib::lang<p> lang;
-		explib::data<p> data(lang, dim);
+		reexp::cvec<p> dim(w, h);
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, dim);
 		setup_lang<p>(lang);
 		populate<p>(data, in, w, h);
 
-		explib::stats<p> stats(data);
-		explib::learner<p> learner(lang, stats, 20, 20);
+		reexp::stats<p> stats(data);
+		reexp::learner<p> learner(lang, stats, 20, 20);
 		learner.reexpress(true, 5);
 
-		explib::pinfo names;
+		reexp::pinfo names;
 		setup_names<p>(names);
 
-		explib::stats_info<p> si(names, stats);
+		reexp::stats_info<p> si(names, stats);
 
 		t<<"vars:\n\n";
 		t<<si.lang_info().drawn_vars_tostring(cvarid::x, cvarid::y);
@@ -357,26 +357,26 @@ namespace {
 		}
 	}
 
-	void applybits_test(TestTool& t, const char* file, int exps) {
+	void applybits_test(test_tool& t, const char* file, int exps) {
 		std::ifstream in(file);
 
 		int w, h;
 		in>>w>>h;
 		typedef image_problem p;
-		explib::cvec<p> dim(w, h);
-		explib::lang<p> lang;
-		explib::data<p> data(lang, dim);
+		reexp::cvec<p> dim(w, h);
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, dim);
 		setup_lang<p>(lang);
 		populate<p>(data, in, w, h);
 
-		explib::stats<p> stats(data);
-		explib::learner<p> learner(lang, stats, 20, 20);
+		reexp::stats<p> stats(data);
+		reexp::learner<p> learner(lang, stats, 20, 20);
 
-		explib::pinfo names;
+		reexp::pinfo names;
 		setup_names<p>(names);
 
-		explib::stats_info<p> si(names, stats);
-		const explib::lang_info<p>& li(si.lang_info());
+		reexp::stats_info<p> si(names, stats);
+		const reexp::lang_info<p>& li(si.lang_info());
 
 		t<<si.rels_tostring()<<"\n";
 
@@ -385,7 +385,7 @@ namespace {
 		learner.reexpress(true, exps);
 
 		for (int i = 0; i < lang.var_count(); ++i) {
-			const explib::var<p>& v = lang.var(i);
+			const reexp::var<p>& v = lang.var(i);
 
 			t<<si.var_tostring(i);
 			t<<"\n\n";
@@ -401,32 +401,32 @@ namespace {
 		t<<"entropy "<<infoBefore<<" -> "<<infoAfter<<"\n";
 	}
 
-	void applybits_1exp_test(TestTool& t) {
+	void applybits_1exp_test(test_tool& t) {
 		applybits_test(t, "test/image/letters.txt", 1);
 	}
 
-	void applybits_2exp_test(TestTool& t) {
+	void applybits_2exp_test(test_tool& t) {
 		applybits_test(t, "test/image/letters.txt", 2);
 	}
 
-	void applybits_3exp_test(TestTool& t) {
+	void applybits_3exp_test(test_tool& t) {
 		applybits_test(t, "test/image/letters.txt", 3);
 	}
 
-	void inv_applybits_1exp_test(TestTool& t) {
+	void inv_applybits_1exp_test(test_tool& t) {
 		applybits_test(t, "test/image/invaders.txt", 1);
 	}
 
-	void inv_applybits_2exp_test(TestTool& t) {
+	void inv_applybits_2exp_test(test_tool& t) {
 		applybits_test(t, "test/image/invaders.txt", 2);
 	}
-	void inv_applybits_3exp_test(TestTool& t) {
+	void inv_applybits_3exp_test(test_tool& t) {
 		applybits_test(t, "test/image/invaders.txt", 3);
 	}
-	void inv_applybits_4exp_test(TestTool& t) {
+	void inv_applybits_4exp_test(test_tool& t) {
 		applybits_test(t, "test/image/invaders.txt", 4);
 	}
-	void inv_applybits_11exp_test(TestTool& t) {
+	void inv_applybits_11exp_test(test_tool& t) {
 		applybits_test(t, "test/image/invaders.txt", 11);
 	}
 

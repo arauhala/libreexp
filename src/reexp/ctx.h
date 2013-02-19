@@ -5,8 +5,8 @@
  *      Author: arauhala
  */
 
-#ifndef CTX_H_
-#define CTX_H_
+#ifndef REEXP_CTX_H_
+#define REEXP_CTX_H_
 
 #include <stdarg.h>
 #include <algorithm>
@@ -16,7 +16,7 @@
 
 #include "util.h"
 
-namespace explib {
+namespace reexp {
 
 	/**
 	 * So, we basically have following kind of thing
@@ -174,7 +174,7 @@ namespace explib {
 
 	template <typename P>
 	std::ostream& operator<<(std::ostream& out,
-							 const explib::cvec<P>& cvec) {
+							 const reexp::cvec<P>& cvec) {
 		out<<"[";
 		for (int i = 0; i < P::DIM; i++) {
 			if (i) out<<", ";
@@ -357,4 +357,4 @@ namespace explib {
 
 }
 
-#endif /* CTX_H_ */
+#endif /* REEXP_CTX_H_ */

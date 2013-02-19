@@ -5,8 +5,8 @@
  *      Author: arau
  */
 
-#ifndef PRINTER_H_
-#define PRINTER_H_
+#ifndef REEXP_PRINTER_H_
+#define REEXP_PRINTER_H_
 
 #include "reexp/learner.h"
 #include "reexp/pred.h"
@@ -14,7 +14,7 @@
 #include <sstream>
 #include <string>
 
-namespace explib {
+namespace reexp {
 
 	inline char char_symbol_for(int i) {
 		if (i < 10) {
@@ -90,7 +90,7 @@ namespace explib {
 		bitmap() : w_(0), x_(), h_(0), y_(), bits_() {}
 		int w_, x_;
 		int h_, y_;
-		explib::bits bits_;
+		reexp::bits bits_;
 	};
 
 	struct var_graphics {
@@ -158,15 +158,15 @@ namespace explib {
 	template <typename P>
 	class lang_info {
 		public:
-			lang_info(const pinfo& i, const explib::lang<P>& l)
+			lang_info(const pinfo& i, const reexp::lang<P>& l)
 			: info_(i), lang_(l) {}
 
 			std::string varid_tostring(size_t i) const {
 				if (i < info_.vnames_.size()) {
 					return info_.vnames_[i];
 				} else {
-					const explib::var<P>& v = lang_.var(i);
-					const explib::exp<P>* e = dynamic_cast<const exp<P>*>(&v);
+					const reexp::var<P>& v = lang_.var(i);
+					const reexp::exp<P>* e = dynamic_cast<const exp<P>*>(&v);
 					std::ostringstream buf;
 					if (e) {
 						buf<<"e"<<i;
@@ -197,7 +197,7 @@ namespace explib {
 				return buf.str();
 			}
 
-			std::string rel_tostring(const rel<P>& r, int state = 0xffff, const cvec<P>& shift = explib::cvec<P>()) const {
+			std::string rel_tostring(const rel<P>& r, int state = 0xffff, const cvec<P>& shift = reexp::cvec<P>()) const {
 				std::ostringstream buf;
 				const std::vector<rel_entry<P> >& e = r.entries();
 				for (size_t i = 0; i < e.size(); ++i) {
@@ -256,16 +256,16 @@ namespace explib {
 				return buf.str();
 			}
 
-			static void draw_rel(var_graphics& g, const explib::rel<P>& r, size_t state = 0xffff) {
+			static void draw_rel(var_graphics& g, const reexp::rel<P>& r, size_t state = 0xffff) {
 				for (size_t i = 0; i < r.entries().size(); i++) {
-					const explib::rel_entry<P>& re = r.entries()[i];
+					const reexp::rel_entry<P>& re = r.entries()[i];
 					translation_sentry s(g, re.shift_[g.xcvar_], re.shift_[g.ycvar_]);
 					draw_var(g, *re.var_, bool((state>>i)&1));
 				}
 			}
 
-			static void draw_var(var_graphics& g, const explib::var<P>& v, bool s) {
-				const explib::exp<P>* e = dynamic_cast<const explib::exp<P>*>(&v);
+			static void draw_var(var_graphics& g, const reexp::var<P>& v, bool s) {
+				const reexp::exp<P>* e = dynamic_cast<const reexp::exp<P>*>(&v);
 				if (e) {
 					draw_rel(g, e->rel(), s ? e->state() : 0);
 				} else {
@@ -275,7 +275,7 @@ namespace explib {
 
 			std::string drawn_implmask_to_string(const implmask<P>& o) const {
 				std::ostringstream buf;
-				const explib::var<P>& v = *o.var_;
+				const reexp::var<P>& v = *o.var_;
 				buf<<var_tostring(v.id())<<":\n";
 				const cvec<P>& dim = o.mask_.ndim_.dim_;
 				dim_row_iterator<P> i(dim, dim.rowdim());
@@ -295,7 +295,7 @@ namespace explib {
 				return buf.str();
 			}
 
-			std::string drawn_var_rootmasks_to_string(const explib::var<P>& var) const {
+			std::string drawn_var_rootmasks_to_string(const reexp::var<P>& var) const {
 				std::ostringstream buf;
 				for (const implmask<P>& o : var.rootmasks()) {
 					buf<<drawn_implmask_to_string(o);
@@ -303,7 +303,7 @@ namespace explib {
 				return buf.str();
 			}
 
-			std::string drawn_var_expmasks_to_string(const explib::var<P>& var) const {
+			std::string drawn_var_expmasks_to_string(const reexp::var<P>& var) const {
 				std::ostringstream buf;
 				for (const implmask<P>& o : var.expmasks()) {
 					buf<<drawn_implmask_to_string(o);
@@ -311,7 +311,7 @@ namespace explib {
 				return buf.str();
 			}
 
-			std::string drawn_var_implmasks_to_string(const explib::var<P>& var) const {
+			std::string drawn_var_implmasks_to_string(const reexp::var<P>& var) const {
 				std::ostringstream buf;
 				buf<<"rootmasks:\n";
 				buf<<drawn_var_rootmasks_to_string(var);
@@ -320,7 +320,7 @@ namespace explib {
 				return buf.str();
 			}
 
-			std::string drawn_var_tostring(int xcvar, int ycvar, const explib::var<P>& v) const {
+			std::string drawn_var_tostring(int xcvar, int ycvar, const reexp::var<P>& v) const {
 				bitmap bm;
 				bitmap bm2;
 				var_graphics g(bm, bm2, xcvar, ycvar);
@@ -328,7 +328,7 @@ namespace explib {
 				return g.to_string(char_symbol_for(v.id()));
 			}
 
-			std::string drawn_rel_tostring(int xcvar, int ycvar, const explib::rel<P>& r) const {
+			std::string drawn_rel_tostring(int xcvar, int ycvar, const reexp::rel<P>& r) const {
 				bitmap bm;
 				bitmap bm2;
 				var_graphics g(bm, bm2, xcvar, ycvar);
@@ -356,20 +356,20 @@ namespace explib {
 				return buf.str();
 			}
 
-			const explib::lang<P>& lang() const {
+			const reexp::lang<P>& lang() const {
 				return lang_;
 			}
 
 		private:
 			const pinfo& info_;
-			const explib::lang<P>& lang_;
+			const reexp::lang<P>& lang_;
 
 	};
 
 	template <typename P>
 	class stats_info {
 		public:
-			stats_info(const pinfo& i, const explib::stats<P>& s)
+			stats_info(const pinfo& i, const reexp::stats<P>& s)
 			: info_(i), lang_(i, s.data().lang()), stats_(s) {}
 
 			const pinfo& info() const {
@@ -378,11 +378,11 @@ namespace explib {
 
 			std::string drawn_data_var_tostring(int xvarid,
 										  	    int yvarid,
-										  	    const explib::data_var<P>& pixels,
-										  	   	const explib::cvec<P>& at = explib::cvec<P>()) {
+										  	    const reexp::data_var<P>& pixels,
+										  	   	const reexp::cvec<P>& at = reexp::cvec<P>()) {
 				std::ostringstream buf;
-				explib::cvec<P> d = pixels.dim();
-				explib::cvec<P> a( at );
+				reexp::cvec<P> d = pixels.dim();
+				reexp::cvec<P> a( at );
 				for (int i = at[yvarid]; i < d[yvarid]; i++) {
 					a[yvarid] = i;
 					for (int j = at[xvarid]; j < d[xvarid]; j++) {
@@ -404,7 +404,7 @@ namespace explib {
 			}
 
 			std::string drawn_data_tostring(cvec<P> at, int xcvar, int ycvar) const {
-				const explib::data<P>& d = stats_.data();
+				const reexp::data<P>& d = stats_.data();
 				int w = d.dim()[xcvar];
 				int h = d.dim()[ycvar];
 				std::string chars;
@@ -526,10 +526,10 @@ namespace explib {
 
 			std::string scan_tostring(size_t max = 8, int details = 0) const {
 				std::ostringstream buf;
-				explib::learner<P> learner(const_cast<explib::lang<P>&>(stats_.data().lang()),
-										   const_cast<explib::stats<P>&>(stats_));
+				reexp::learner<P> learner(const_cast<reexp::lang<P>&>(stats_.data().lang()),
+										   const_cast<reexp::stats<P>&>(stats_));
 
-				std::priority_queue<explib::candidate<P> > cands;
+				std::priority_queue<reexp::candidate<P> > cands;
 				learner.scan(cands);
 
 				buf.setf(std::ios::fixed,std::ios::floatfield);
@@ -538,7 +538,7 @@ namespace explib {
 
 				size_t n = std::min(max, cands.size());
 				for (size_t i = 0; i < n; ++i) {
-					const explib::candidate<P>& c( cands.top() );
+					const reexp::candidate<P>& c( cands.top() );
 					buf<<c.bias_<<"   ";
 					buf.width(50);
 					buf<<lang_.rel_tostring(c.rel_->data().rel_, c.state_);
@@ -570,7 +570,7 @@ namespace explib {
 				return buf.str();
 			}
 
-			void var_scan(const explib::var<P>& var,
+			void var_scan(const reexp::var<P>& var,
 						  std::priority_queue<candidate<P>>& cands) const {
 				const std::vector<rel<P>*>& rels = var.rels();
 				for (size_t i = 0; i < rels.size(); i++) {
@@ -587,13 +587,13 @@ namespace explib {
 				}
 			}
 
-			double calc_influence(int from, const explib::bits& to) {
-				const explib::stats<P>& s = stats();
-				const explib::lang<P>& l = s.data().lang();
+			double calc_influence(int from, const reexp::bits& to) {
+				const reexp::stats<P>& s = stats();
+				const reexp::lang<P>& l = s.data().lang();
 				double rv = 0;
 
 				for (int i = 0; i < l.rel_count(); ++i) {
-					const explib::rel<P>& r = l.rel(i);
+					const reexp::rel<P>& r = l.rel(i);
 					bool inflFound = 0;
 					bool efound = 0;
 					for (size_t j = 0; j < r.entries().size(); ++j) {
@@ -602,15 +602,15 @@ namespace explib {
 						if (id < to.size() && to[id]) efound = true;
 					}
 					if (inflFound && efound) {
-						const explib::rel_stats<P>& rs = s.rel(i);
+						const reexp::rel_stats<P>& rs = s.rel(i);
 						rv += rs.n() * (rs.eNaiveEntropy() - rs.eEntropy());
 					}
 				}
 				return rv;
 			}
 
-			std::string top_influence_tostring(const explib::bits& from,
-											   const explib::bits& to,
+			std::string top_influence_tostring(const reexp::bits& from,
+											   const reexp::bits& to,
 											   int cap) {
 				std::priority_queue< std::pair<double, int> > cands;
 
@@ -634,7 +634,7 @@ namespace explib {
 				return buf.str();
 			}
 
-			std::string var_deps_tostring(const explib::var<P>& var, int cap = 7) const {
+			std::string var_deps_tostring(const reexp::var<P>& var, int cap = 7) const {
 				std::priority_queue<candidate<P>> cands;
 				var_scan(var, cands);
 
@@ -668,15 +668,15 @@ namespace explib {
 			std::string var_deps_tostring(int var, int cap = 7) const {
 				return var_deps_tostring(stats_.data().lang().var(var), cap);
 			}
-			std::string pred_tostring(const explib::data<P>& d, int var, bool showbit = false) const {
+			std::string pred_tostring(const reexp::data<P>& d, int var, bool showbit = false) const {
 				std::ostringstream buf;
 				buf.setf(std::ios::fixed,std::ios::floatfield);
 				buf.precision(2);
 
-				explib::pred<P> pred(stats_);
+				reexp::pred<P> pred(stats_);
 				std::vector<double> p = pred.p(d, var);
-				const explib::data_var<P>& dv = d.var(var);
-				explib::cvec<P> dim = dv.dim();
+				const reexp::data_var<P>& dv = d.var(var);
+				reexp::cvec<P> dim = dv.dim();
 				for (size_t i = 0; i < p.size(); ++i) {
 					buf<<"p("<<lang_.varid_tostring(var)<<"|"<<dim.at(i)<<") = "<<p[i]<<"%";
 					if (showbit) {
@@ -702,8 +702,8 @@ namespace explib {
 				buf.setf(std::ios::fixed,std::ios::floatfield);
 				buf.precision(2);
 
-				explib::pred<P> pred(stats_);
-				const explib::var<P>& v = stats_.data().lang().var(var);
+				reexp::pred<P> pred(stats_);
+				const reexp::var<P>& v = stats_.data().lang().var(var);
 				const std::vector<rel<P>*>& rels = v.rels(); // use these for prediction work
 				inputstate_logdep logdep(P::MAX_REL_VARS);
 				for (auto i = rels.begin(); i != rels.end(); ++i) {
@@ -763,7 +763,7 @@ namespace explib {
 				buf.precision(2);
 
 				double info = 0, entryinfo = 0;
-				explib::pred<P> pred(stats_);
+				reexp::pred<P> pred(stats_);
 				pred.info(stats_.data(), var, info, entryinfo);
 
 				buf<<"total info: "<<info<<"\n";
@@ -779,16 +779,16 @@ namespace explib {
 				return buf.str();
 			}
 
-			const explib::lang_info<P>& lang_info() const {
+			const reexp::lang_info<P>& lang_info() const {
 				return lang_;
 			}
 
-			const explib::stats<P>& stats() const {
+			const reexp::stats<P>& stats() const {
 				return stats_;
 			}
 
 			double var_naive_p(const std::vector<double>& origvarPs, int v) const {
-				const explib::exp<P>* e = dynamic_cast<const explib::exp<P>* >(&lang_.lang().var(v));
+				const reexp::exp<P>* e = dynamic_cast<const reexp::exp<P>* >(&lang_.lang().var(v));
 				double rv = 1;
 				if (e) {
 					for (auto entry : e->rel().entries()) {
@@ -831,12 +831,12 @@ namespace explib {
 		private:
 
 			const pinfo& info_;
-			explib::lang_info<P> lang_;
-			const explib::stats<P>& stats_;
+			reexp::lang_info<P> lang_;
+			const reexp::stats<P>& stats_;
 
 	};
 
 };
 
 
-#endif /* PRINTER_H_ */
+#endif /* REEXP_PRINTER_H_ */

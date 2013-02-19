@@ -19,14 +19,14 @@ namespace evaluation {
 	template <typename P>
 	class pred_problem {
 		public:
-			explib::lang<P> lang_;
-			explib::data<P> data_;
-			explib::bits predvars_;
-			explib::pinfo names_;
+			reexp::lang<P> lang_;
+			reexp::data<P> data_;
+			reexp::bits predvars_;
+			reexp::pinfo names_;
 			int costs_[4];
 			int samplecvar_;
 			pred_problem_type type_;
-			inline pred_problem(const explib::cvec<P>& dim = explib::cvec<P>(), pred_problem_type type = var_pred_problem)
+			inline pred_problem(const reexp::cvec<P>& dim = reexp::cvec<P>(), pred_problem_type type = var_pred_problem)
 			: lang_(), data_(lang_, dim), predvars_(),
 			  names_(), costs_(), samplecvar_(), type_(type) {}
 	};
@@ -91,7 +91,7 @@ namespace evaluation {
 			return naiveCosts_ / double(n_);
 		}
 
-		inline void record(TestTool& t, const std::set<std::string>& tags) {
+		inline void record(test_tool& t, const std::set<std::string>& tags) {
 			t.record(tags+"prop:entropy",    unitEntropy());
 			t.record(tags+"prop:naive e", 	 unitNaiveEntropy());
 			t.record(tags+"prop:err",		 errorRate());
@@ -142,15 +142,15 @@ namespace evaluation {
 						  pred_problem<P>& pr,
 						  pred_args& args,
 						  pred_data_stats& s,
-						  const explib::stats<P>& trainstats,
-						  const explib::data<P>& predicted,
+						  const reexp::stats<P>& trainstats,
+						  const reexp::data<P>& predicted,
 						  const std::vector<std::vector<double> >& allps) {
 		for (int v = 0; v < pr.predvars_.size(); v++) {
 			if (pr.predvars_[v]) {
 				const std::vector<double>& ps = allps[v];
-				const explib::data_var<P>& datavar = predicted.var(v);
-				const explib::var_stats<P>& vs = trainstats.var(v);
-				explib::cvec<P> at;
+				const reexp::data_var<P>& datavar = predicted.var(v);
+				const reexp::var_stats<P>& vs = trainstats.var(v);
+				reexp::cvec<P> at;
 				for (size_t i = 0; i < ps.size(); i++) {
 					at[pr.samplecvar_] = i;
 					bool value = *datavar[at];
@@ -209,18 +209,18 @@ namespace evaluation {
 								pred_problem<P>& pr,
 								pred_args& args,
 								pred_data_stats& s,
-								const explib::stats<P>& trainstats,
-								const explib::data<P>& predicted,
+								const reexp::stats<P>& trainstats,
+								const reexp::data<P>& predicted,
   							    const std::vector<std::vector<double> >& allps) {
 		size_t samples = predicted.dim()[0];
 		for (size_t i = 0; i < samples; i++) {
-			explib::cvec<P> at(i);
+			reexp::cvec<P> at(i);
 			double sum = 0, naiveSum = 0, selectedP = -1, naiveSelectedP= -1;
 			int selected = -1, naiveSelected = -1;
 			int correct = -1;
 			for (int v = 0; v < pr.predvars_.size(); v++) {
-				const explib::data_var<P>& datavar = predicted.var(v);
-				const explib::var_stats<P>& vs = trainstats.var(v);
+				const reexp::data_var<P>& datavar = predicted.var(v);
+				const reexp::var_stats<P>& vs = trainstats.var(v);
 				if (pr.predvars_[v]) {
 					double p = allps[v][i];
 					double naiveP = vs.eP();
@@ -260,13 +260,13 @@ namespace evaluation {
 
 
 	template <typename P>
-	void predict_and_measure(TestTool& t,
+	void predict_and_measure(test_tool& t,
 							 pred_problem<P>& pr,
 							 pred_args& args,
 							 pred_data_stats& s,
-							 const explib::stats<P>& trainstats,
-							 const explib::data<P>& predicted) {
-		explib::pred<P> pred(trainstats, args.prioriweight_, args.useLogDepB_);
+							 const reexp::stats<P>& trainstats,
+							 const reexp::data<P>& predicted) {
+		reexp::pred<P> pred(trainstats, args.prioriweight_, args.useLogDepB_);
 
 		std::ostringstream buf;
 		buf.setf(std::ios::fixed,std::ios::floatfield);
@@ -276,7 +276,7 @@ namespace evaluation {
 		for (int v = 0; v < pr.predvars_.size(); v++) {
 			ps.push_back(std::vector<double>());
 			if (pr.predvars_[v]) {
-				TimeSentry time;
+				time_sentry time;
 				ps.back() = pred.bitP(predicted, v);
 				s.us_ += time.us();
 			}
@@ -296,31 +296,31 @@ namespace evaluation {
 	}
 
 	template <typename P>
-	void teach_test_measure(TestTool& t,
+	void teach_test_measure(test_tool& t,
 							pred_problem<P>& pr,
-							explib::bits& testsamples,
+							reexp::bits& testsamples,
 							pred_args& args,
 							pred_stats& s) {
 		int samplecvar = pr.samplecvar_; // assumption
 		int sampleN = pr.data_.dim()[samplecvar];
 		int testN = testsamples.popcount();
 		int trainN = sampleN - testN;
-		explib::lang<P> lang(pr.lang_);
-		explib::cvec<P> traindim = pr.data_.dim();
+		reexp::lang<P> lang(pr.lang_);
+		reexp::cvec<P> traindim = pr.data_.dim();
 		traindim[samplecvar] = trainN;
-		explib::data<P> train(lang, traindim);
-		explib::cvec<P> testdim = pr.data_.dim();
+		reexp::data<P> train(lang, traindim);
+		reexp::cvec<P> testdim = pr.data_.dim();
 		testdim[samplecvar] = testN;
-		explib::data<P> test(lang, testdim);
+		reexp::data<P> test(lang, testdim);
 		lang.set_obs(train); // notify solely the train data of new exps
 
 		for (int v = 0; v < pr.lang_.var_count(); ++v) {
-			const explib::data_var<P>& datavar = pr.data_.var(v);
-			explib::cvec<P> dataAt;
-			explib::data_var<P>& trainvar = train.var(v);
-			explib::cvec<P> trainAt;
-			explib::data_var<P>& testvar = test.var(v);
-			explib::cvec<P> testAt;
+			const reexp::data_var<P>& datavar = pr.data_.var(v);
+			reexp::cvec<P> dataAt;
+			reexp::data_var<P>& trainvar = train.var(v);
+			reexp::cvec<P> trainAt;
+			reexp::data_var<P>& testvar = test.var(v);
+			reexp::cvec<P> testAt;
 			for (int s = 0; s < sampleN; ++s) {
 				auto databit = datavar[dataAt];
 				if (testsamples[s]) {
@@ -335,13 +335,13 @@ namespace evaluation {
 				dataAt[samplecvar]++;
 			}
 		}
-		explib::stats<P> trainstats(train);
+		reexp::stats<P> trainstats(train);
 
-		explib::learner<P> learner(lang, trainstats, args.expthreshold_, args.exprelfilter_, args.predrelfilter_);
+		reexp::learner<P> learner(lang, trainstats, args.expthreshold_, args.exprelfilter_, args.predrelfilter_);
 		learner.exclude(pr.predvars_);
 		int exps;
 		{
-			TimeSentry time;
+			time_sentry time;
 			exps = learner.reexpress(true);
 			s.reexpus_ += time.us();
 		}
@@ -349,7 +349,7 @@ namespace evaluation {
 
 		// also reexpress the test data with learned expressions
 		{
-			TimeSentry time;
+			time_sentry time;
 			test.apply_exps();
 			s.applyus_ += time.us();
 		}
@@ -382,7 +382,7 @@ namespace evaluation {
 		predict_and_measure(t, pr, args, s.test_,  trainstats, test);
 	}
 
-	inline void report_measurements(TestTool& t, pred_args& args, pred_stats& stats) {
+	inline void report_measurements(test_tool& t, pred_args& args, pred_stats& stats) {
 		std::string thstr = (sup()<<"threshold:"<<args.expthreshold_);
 		std::string expfilstr = (sup()<<"relfilter:"<<args.exprelfilter_);
 		std::string predfilstr = (sup()<<"predfilter:"<<args.predrelfilter_);
@@ -420,11 +420,11 @@ namespace evaluation {
 	}
 
 	template <typename P>
-	void crossvalidate_run(TestTool& t, pred_problem<P>& pr, pred_args& args, int split) {
+	void crossvalidate_run(test_tool& t, pred_problem<P>& pr, pred_args& args, int split) {
 		pred_stats stats;
 		int samples = pr.data_.dim()[pr.samplecvar_];
 		int chunkSize = samples / split;
-		explib::bits testsamples;
+		reexp::bits testsamples;
 		testsamples.resize(samples);
 		for (int i = 0; i < split; ++i) {
 			testsamples.fill(false);
@@ -437,11 +437,11 @@ namespace evaluation {
 	}
 
 	template <typename P>
-	void random_crossvalidate_run(TestTool& t, pred_problem<P>& pr, pred_args& args) {
+	void random_crossvalidate_run(test_tool& t, pred_problem<P>& pr, pred_args& args) {
 		pred_stats stats;
 		int samples = pr.data_.dim()[pr.samplecvar_];
 		int left = samples/2;
-		explib::bits testsamples;
+		reexp::bits testsamples;
 		testsamples.resize(samples);
 		for (int i = 0; i < samples; ++i) {
 			double p = double(left)/(samples-i);
@@ -460,10 +460,10 @@ namespace evaluation {
 	}
 
 	template <typename P>
-	void separate_train_test_datas_run(TestTool& t, pred_problem<P>& pr, pred_args& args, int train) {
+	void separate_train_test_datas_run(test_tool& t, pred_problem<P>& pr, pred_args& args, int train) {
 		pred_stats stats;
 		int samples = pr.data_.dim()[pr.samplecvar_];
-		explib::bits testsamples;
+		reexp::bits testsamples;
 		testsamples.resize(samples);
 		testsamples.fill(false);
 		for (int i = train; i < samples ; ++i) {

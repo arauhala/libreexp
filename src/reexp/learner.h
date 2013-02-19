@@ -5,14 +5,14 @@
  *      Author: arauhala
  */
 
-#ifndef LEARNER_H_
-#define LEARNER_H_
+#ifndef REEXP_LEARNER_H_
+#define REEXP_LEARNER_H_
 
 #include "stats.h"
 
 #include <queue>
 
-namespace explib {
+namespace reexp {
 
 	template <typename P>
 	struct candidate {
@@ -52,7 +52,7 @@ namespace explib {
 				}
 				exclude_[var] = true;
 			}
-			void exclude(const explib::bits& b) {
+			void exclude(const reexp::bits& b) {
 				if (b.size() >= exclude_.size()) {
 					exclude_.resize(b.size());
 				}
@@ -63,7 +63,7 @@ namespace explib {
 					exclude_[var] = false;
 				}
 			}
-			void unexclude(const explib::bits& b) {
+			void unexclude(const reexp::bits& b) {
 				if (b.size() >= exclude_.size()) {
 					exclude_.resize(b.size());
 				}
@@ -124,10 +124,10 @@ namespace explib {
 				// optimization. updating relations' statistics is pretty much the
 				// performance bottleneck for re-expression, so getting rid of
 				// uninteresting relations brings major performance improvement.
-				explib::lang<P>& l = lang_;
+				reexp::lang<P>& l = lang_;
 				for (int i = 0; i < l.rel_count(); i++) {
 					if (!l.rel(i).disabled()) {
-						const explib::rel_stats<P>& r( stats_.rel(i) );
+						const reexp::rel_stats<P>& r( stats_.rel(i) );
 						int s = r.stateCount();
 						double ft = excluded(l.rel(i))?predFilterThreshold_:filterThreshold_;
 						if (ft > 0) {
@@ -167,4 +167,4 @@ namespace explib {
 }
 
 
-#endif /* LEARNER_H_ */
+#endif /* REEXP_LEARNER_H_ */

@@ -5,10 +5,10 @@
  *      Author: arau
  */
 
-#ifndef ALL_H_
-#define ALL_H_
+#ifndef REEXP_ALL_H_
+#define REEXP_ALL_H_
 
 #include "reexp/reexp.h"
 #include "reexp/printer.h"
 
-#endif /* ALL_H_ */
+#endif /* REEXP_ALL_H_ */

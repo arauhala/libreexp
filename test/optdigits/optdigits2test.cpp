@@ -81,19 +81,19 @@ namespace {
 		return varid::first_pixel + PixelBits * (x + y*Width) + bit;
 	}
 
-	explib::cvec<optdigits_problem> optdigits_dim(int samples) {
-		return explib::cvec<optdigits_problem>(samples);
+	reexp::cvec<optdigits_problem> optdigits_dim(int samples) {
+		return reexp::cvec<optdigits_problem>(samples);
 	}
 
 	template <typename P>
-	int populate(explib::data<P>& data, int samples, std::ifstream& in, int offset = 0) {
+	int populate(reexp::data<P>& data, int samples, std::ifstream& in, int offset = 0) {
 		std::string line;
 
 		for (int i = 0; i < DATA_FILE_HEADER_LINES; ++i) {
 			std::getline(in, line);
 		}
 
-		explib::bitmap pic;
+		reexp::bitmap pic;
 
 		for (int i = 0; i < samples; i++) {
 			// read
@@ -107,7 +107,7 @@ namespace {
 			std::getline(in, line);
 			int number = line[1]-'0';
 
-			explib::cvec<P> at(offset+i);
+			reexp::cvec<P> at(offset+i);
 			for (int x = 0; x < Width; x++) {
 				for (int y = 0; y < Height; y++) {
 					int popcount = 0;
@@ -117,7 +117,7 @@ namespace {
 						}
 					}
 					for (int j = 0; j < PixelBits; ++j) {
-						explib::data_var<P>& p = data.var(pixel_varid(x, y, j));
+						reexp::data_var<P>& p = data.var(pixel_varid(x, y, j));
 						p[at] = true;
 						//*p[at] = (popcount*2 >= Pack*Pack);
 						*p[at] = (popcount >= PixelBitBound[j]);
@@ -126,7 +126,7 @@ namespace {
 			}
 
 			for (int j = 0; j < DigitCount; j++) {
-				explib::data_var<P>& digit = data.var(varid::digit0 + j);
+				reexp::data_var<P>& digit = data.var(varid::digit0 + j);
 				digit[at] = true;
 				*digit[at] = (number == j);
 			}
@@ -135,23 +135,23 @@ namespace {
 	}
 
 	template <typename P>
-	int populate_from_file(explib::data<P>& data, int samples, const char* name, int offset) {
+	int populate_from_file(reexp::data<P>& data, int samples, const char* name, int offset) {
 		std::ifstream in(name);
 		populate<P>(data, samples, in, offset);
 		return offset + samples;
 	}
 
 	template <typename P>
-	void setup_lang(explib::lang<P>& lang) {
-		explib::ctx<P> ctx(explib::cvec<P>(0));
+	void setup_lang(reexp::lang<P>& lang) {
+		reexp::ctx<P> ctx(reexp::cvec<P>(0));
 
 		for (int i = 0; i < DigitCount; ++i) {
-			lang.add_orig(explib::orig<P>(ctx));
+			lang.add_orig(reexp::orig<P>(ctx));
 		}
 		for (int x = 0; x < Width; ++x) {
 			for (int y = 0; y < Height; ++y) {
 				for (int b = 0; b < PixelBits; ++b) {
-					lang.add_orig(explib::orig<P>(ctx));
+					lang.add_orig(reexp::orig<P>(ctx));
 				}
 			}
 		}
@@ -159,66 +159,66 @@ namespace {
 		for (int x = 0; x < Width; ++x) {
 			for (int y = 0; y < Height; ++y) {
 				for (int b = 0; b < PixelBits; ++b) {
-					explib::var<P>& pixel = lang.var(pixel_varid(x, y, b));
+					reexp::var<P>& pixel = lang.var(pixel_varid(x, y, b));
 					for (int b2 = 0; b2 <= b; ++b2) {
 						if (b2 != b) {
-							explib::var<P>& pixel2 = lang.var(pixel_varid(x, y, b2));
-							explib::rel<P>& rl(lang.alloc_rel(ctx)); // left right
-							rl.add_var(explib::cvec<P>(0), pixel);
-							rl.add_var(explib::cvec<P>(0), pixel2);
+							reexp::var<P>& pixel2 = lang.var(pixel_varid(x, y, b2));
+							reexp::rel<P>& rl(lang.alloc_rel(ctx)); // left right
+							rl.add_var(reexp::cvec<P>(0), pixel);
+							rl.add_var(reexp::cvec<P>(0), pixel2);
 							lang.rel_done();
 						}
 						if (x+1 <Width) {
-							explib::var<P>& rightpixel = lang.var(pixel_varid(x+1, y, b2));
-							explib::rel<P>& rl(lang.alloc_rel(ctx)); // left right
-							rl.add_var(explib::cvec<P>(0), pixel);
-							rl.add_var(explib::cvec<P>(0), rightpixel);
+							reexp::var<P>& rightpixel = lang.var(pixel_varid(x+1, y, b2));
+							reexp::rel<P>& rl(lang.alloc_rel(ctx)); // left right
+							rl.add_var(reexp::cvec<P>(0), pixel);
+							rl.add_var(reexp::cvec<P>(0), rightpixel);
 							lang.rel_done();
 							if (b2 != b) {
-								explib::var<P>& leftpixel2 = lang.var(pixel_varid(x, y, b2));
-								explib::var<P>& rightpixel2 = lang.var(pixel_varid(x+1, y, b));
-								explib::rel<P>& rl2(lang.alloc_rel(ctx)); // left right
-								rl2.add_var(explib::cvec<P>(0), leftpixel2);
-								rl2.add_var(explib::cvec<P>(0), rightpixel2);
+								reexp::var<P>& leftpixel2 = lang.var(pixel_varid(x, y, b2));
+								reexp::var<P>& rightpixel2 = lang.var(pixel_varid(x+1, y, b));
+								reexp::rel<P>& rl2(lang.alloc_rel(ctx)); // left right
+								rl2.add_var(reexp::cvec<P>(0), leftpixel2);
+								rl2.add_var(reexp::cvec<P>(0), rightpixel2);
 								lang.rel_done();
 							}
 						}
 						if (y+1 < Height) {
-							explib::var<P>& downpixel = lang.var(pixel_varid(x, y+1, b2));
-							explib::rel<P>& ud(lang.alloc_rel(ctx)); // up down
-							ud.add_var(explib::cvec<P>(0), pixel);
-							ud.add_var(explib::cvec<P>(0), downpixel);
+							reexp::var<P>& downpixel = lang.var(pixel_varid(x, y+1, b2));
+							reexp::rel<P>& ud(lang.alloc_rel(ctx)); // up down
+							ud.add_var(reexp::cvec<P>(0), pixel);
+							ud.add_var(reexp::cvec<P>(0), downpixel);
 							lang.rel_done();
 							if (b2 != b) {
-								explib::var<P>& downpixel2 = lang.var(pixel_varid(x, y, b2));
-								explib::var<P>& uppixel2 = lang.var(pixel_varid(x, y+1, b));
-								explib::rel<P>& ud2(lang.alloc_rel(ctx)); // left right
-								ud2.add_var(explib::cvec<P>(0), downpixel2);
-								ud2.add_var(explib::cvec<P>(0), uppixel2);
+								reexp::var<P>& downpixel2 = lang.var(pixel_varid(x, y, b2));
+								reexp::var<P>& uppixel2 = lang.var(pixel_varid(x, y+1, b));
+								reexp::rel<P>& ud2(lang.alloc_rel(ctx)); // left right
+								ud2.add_var(reexp::cvec<P>(0), downpixel2);
+								ud2.add_var(reexp::cvec<P>(0), uppixel2);
 								lang.rel_done();
 							}
 						}
 						if (x+1 < Width && y+1 < Height) {
-							explib::var<P>& rightup = lang.var(pixel_varid(x+1, y, b));
-							explib::var<P>& leftdown = lang.var(pixel_varid(x, y+1, b2));
-							explib::rel<P>& r1(lang.alloc_rel(ctx)); // left right
-							r1.add_var(explib::cvec<P>(0), rightup);
-							r1.add_var(explib::cvec<P>(0), leftdown);
+							reexp::var<P>& rightup = lang.var(pixel_varid(x+1, y, b));
+							reexp::var<P>& leftdown = lang.var(pixel_varid(x, y+1, b2));
+							reexp::rel<P>& r1(lang.alloc_rel(ctx)); // left right
+							r1.add_var(reexp::cvec<P>(0), rightup);
+							r1.add_var(reexp::cvec<P>(0), leftdown);
 							lang.rel_done();
 
-							explib::var<P>& rightdown = lang.var(pixel_varid(x+1, y+1, b));
-							explib::var<P>& leftup = lang.var(pixel_varid(x, y, b2));
-							explib::rel<P>& r2(lang.alloc_rel(ctx)); // left right
-							r2.add_var(explib::cvec<P>(0), rightdown);
-							r2.add_var(explib::cvec<P>(0), leftup);
+							reexp::var<P>& rightdown = lang.var(pixel_varid(x+1, y+1, b));
+							reexp::var<P>& leftup = lang.var(pixel_varid(x, y, b2));
+							reexp::rel<P>& r2(lang.alloc_rel(ctx)); // left right
+							r2.add_var(reexp::cvec<P>(0), rightdown);
+							r2.add_var(reexp::cvec<P>(0), leftup);
 							lang.rel_done();
 						}
 					}
 					for (int i = 0; i < DigitCount; ++i) {
-						explib::rel<P>& ps(lang.alloc_rel(ctx)); // pixel-shape
-						ps.add_var(explib::cvec<P>(0), // pixel
+						reexp::rel<P>& ps(lang.alloc_rel(ctx)); // pixel-shape
+						ps.add_var(reexp::cvec<P>(0), // pixel
 								   pixel);
-						ps.add_var(explib::cvec<P>(0), // shape
+						ps.add_var(reexp::cvec<P>(0), // shape
 								   lang.var(varid::digit0 + i));
 						lang.rel_done();
 					}
@@ -228,7 +228,7 @@ namespace {
 	}
 
 	template <typename P>
-	void setup_names(explib::pinfo& info) {
+	void setup_names(reexp::pinfo& info) {
 		for (int i = 0; i < varid::first_pixel; ++i) {
 			info.vnames_.push_back(dig_varnames[i]);
 		}
@@ -243,27 +243,27 @@ namespace {
 	}
 
 	template <typename P>
-	void setup_learner(explib::learner<P>& learner) {
+	void setup_learner(reexp::learner<P>& learner) {
 		for (int i = varid::digit0; i <= varid::digit9; ++i) {
 			learner.exclude(i);
 		}
 	}
 
-	void setup_test(TestTool& t) {
+	void setup_test(test_tool& t) {
 		typedef optdigits_problem p;
 		int samples = 1000;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, optdigits_dim(samples));
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, optdigits_dim(samples));
 
 		setup_lang<p>(lang);
 		std::ifstream in(TRA_DATA_FILE);
 		populate(data, samples, in);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
 
-		explib::lang_info<p> li(i, lang);
+		reexp::lang_info<p> li(i, lang);
 
 		t<<"vars:\n\n";
 		t<<li.vars_tostring()<<"\n\n";
@@ -272,34 +272,34 @@ namespace {
 	}
 
 
-	void learning_test(TestTool& t) {
+	void learning_test(test_tool& t) {
 		typedef optdigits_problem p;
 		int samples = 1934;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, optdigits_dim(samples));
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, optdigits_dim(samples));
 
 		setup_lang<p>(lang);
 		std::ifstream in(TRA_DATA_FILE);
 		populate(data, samples, in);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
 
-		explib::stats_info<p> si(i, stats);
+		reexp::stats_info<p> si(i, stats);
 
 		t<<"scan:\n\n"<<si.scan_tostring(3, 2)<<"\n";
 
 		double threshold = 200;
-		explib::learner<p> learner(lang, stats, threshold, 0.4*threshold, 5);
+		reexp::learner<p> learner(lang, stats, threshold, 0.4*threshold, 5);
 		setup_learner<p>(learner);
 
 		int exps = learner.reexpress();
 		/*
 		{
-			TimeSentry time;
+			time_sentry time;
 			while (true) {
 				float before = stats.naiveInfo();
 				if (!learner.add_exp()) break;
@@ -327,29 +327,29 @@ namespace {
 	}
 
 
-	void byexps_test(TestTool& t) {
+	void byexps_test(test_tool& t) {
 		typedef optdigits_problem p;
 
 		int samples = TRA_DATA_FILE_SAMPLES+CV_DATA_FILE_SAMPLES+WDEP_DATA_FILE_SAMPLES;
 		int tsamples = WINDEP_DATA_FILE_SAMPLES;
 		static const double rel_filter = 0;
 
-		explib::lang<p> lang;
+		reexp::lang<p> lang;
 		setup_lang<p>(lang);
 
-		explib::data<p> tdata(lang, optdigits_dim(tsamples));
+		reexp::data<p> tdata(lang, optdigits_dim(tsamples));
 		populate_from_file<p>(tdata, WINDEP_DATA_FILE_SAMPLES, WINDEP_DATA_FILE, 0);
 
-		explib::data<p> data(lang, optdigits_dim(samples));
+		reexp::data<p> data(lang, optdigits_dim(samples));
 		int at = 0;
 		at = populate_from_file<p>(data, TRA_DATA_FILE_SAMPLES, TRA_DATA_FILE, at);
 		at = populate_from_file<p>(data, CV_DATA_FILE_SAMPLES, CV_DATA_FILE, at);
 		at = populate_from_file<p>(data, WDEP_DATA_FILE_SAMPLES, WDEP_DATA_FILE, at);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
 		double th = 30;
-		explib::learner<p> learner(lang, stats, th, 0.4*th, rel_filter);
+		reexp::learner<p> learner(lang, stats, th, 0.4*th, rel_filter);
 		setup_learner<p>(learner);
 
 		int expsPerStep = 50;
@@ -357,7 +357,7 @@ namespace {
 		do_evaluate(t, lang, data, tdata, stats, learner, cvarid::sample);
 
 		while (exps < 1000) {
-			TimeSentry timer;
+			time_sentry timer;
 			int added = learner.reexpress(true, expsPerStep);
 			if (added) {
 				long us = timer.us();
@@ -375,37 +375,37 @@ namespace {
 		std::set<std::string> tags;
 		tags.insert("run:out");
 
-		Table exptable(
-			t.report(ToTable<Average>(tags+"data:test", "prop:", "exps:")));
+		table exptable(
+			t.report(to_table<average>(tags+"data:test", "prop:", "exps:")));
 		t<<"prediction quality: (test)\n\n"<<exptable<<"\n";
 
-		Table exptable3(
-			t.report(ToTable<Average>(tags+"data:train", "prop:", "exps:")));
+		table exptable3(
+			t.report(to_table<average>(tags+"data:train", "prop:", "exps:")));
 		t<<"prediction quality: (train)\n\n"<<exptable3<<"\n";
 
-		Table exptable4(
-			t.report(ToTable<Average>(tags, "gen:", "exps:")));
+		table exptable4(
+			t.report(to_table<average>(tags, "gen:", "exps:")));
 		t<<"train sample compression: \n\n"<<exptable4<<"\n";
 
-		Table exptable2(
-			t.report(ToTable<Average>(tags, "perf:", "exps:")));
+		table exptable2(
+			t.report(to_table<average>(tags, "perf:", "exps:")));
 		t.ignored()<<"performance:\n\n"<<exptable2<<"\n";
 
 		t.ignored()<<"reexp us/exp:\n"
-				   <<t.report(ToTable<Average>(tags, "perf:reexp us", "exps:"))
-					  .toplot(3, 20)<<"\n";
+				   <<t.report(to_table<average>(tags, "perf:reexp us", "exps:"))
+					  .to_plot(3, 20)<<"\n";
 
 		t.ignored()<<"pred us:\n"
-				   <<t.report(ToTable<Average>(tags+"perf:pred us", "data:", "exps:"))
-					  .toplot(3, 20)<<"\n";
-		t<<"\nentropy:\n\n"<<t.report(ToTable<Average>(tags+"prop:entropy", "data:", "exps:"))
-			.toplot(3, 20)<<"\n";
+				   <<t.report(to_table<average>(tags+"perf:pred us", "data:", "exps:"))
+					  .to_plot(3, 20)<<"\n";
+		t<<"\nentropy:\n\n"<<t.report(to_table<average>(tags+"prop:entropy", "data:", "exps:"))
+			.to_plot(3, 20)<<"\n";
 
-/*		t<<"\naccuracy:\n\n"<<t.report(ToTable<Average>(tags+"prop:accuracy", "data:", "exps:"))
+/*		t<<"\naccuracy:\n\n"<<t.report(Totable<Average>(tags+"prop:accuracy", "data:", "exps:"))
 			.toplot(3, 20)<<"\n";*/
 
-		t<<"\nerror:\n\n"<<t.report(ToTable<Average>(tags+"prop:error", "data:", "exps:"))
-			.toplot(3, 20)<<"\n";
+		t<<"\nerror:\n\n"<<t.report(to_table<average>(tags+"prop:error", "data:", "exps:"))
+			.to_plot(3, 20)<<"\n";
 
 	}
 

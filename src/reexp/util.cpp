@@ -1,13 +1,13 @@
 /*
  * util.cpp
- *
  *  Created on: Oct 11, 2011
+ *
  *      Author: arau
  */
 
 #include "util.h"
 
-namespace explib {
+namespace reexp {
 	namespace util {
 
 		int next_version_ = 0;

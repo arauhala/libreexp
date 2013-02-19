@@ -5,8 +5,8 @@
  *      Author: arau
  */
 
-#ifndef KNN_H_
-#define KNN_H_
+#ifndef REEXP_KNN_H_
+#define REEXP_KNN_H_
 
 #include "stats.h"
 
@@ -24,7 +24,7 @@ namespace explib {
 		public:
 
 			knn(const stats<P>& stats, const explib::bits& pred, const cvec<P>& selection, int k)
-			: stats_(stats), pred_(pred), selection_(selection), influence_() {
+			: stats_(stats), pred_(pred), selection_(selection), influence_(), k_(k) {
 
 				selection_ = 1;
 				for (int i = 0; (select_>>i); ++i) {
@@ -83,4 +83,4 @@ namespace explib {
 
 
 
-#endif /* KNN_H_ */
+#endif /* REEXP_KNN_H_ */

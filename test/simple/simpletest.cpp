@@ -54,9 +54,9 @@ namespace {
 	};
 
 	template <typename P>
-	void populate(explib::data<P>& data) {
-		explib::data_var<P>& p = data.var(varid::pixel);
-		explib::cvec<P> at(0, 0);
+	void populate(reexp::data<P>& data) {
+		reexp::data_var<P>& p = data.var(varid::pixel);
+		reexp::cvec<P> at(0, 0);
 
 		for (int j = 0; j < Height; j++) {
 			at[cvarid::y] = j;
@@ -68,42 +68,42 @@ namespace {
 		}
 	}
 
-	explib::cvec<simple_problem> simple_dim() {
-		explib::cvec<simple_problem> v;
+	reexp::cvec<simple_problem> simple_dim() {
+		reexp::cvec<simple_problem> v;
 		v[cvarid::x] = Width;
 		v[cvarid::y] = Height;
 		return v;
 	}
 
 	template <typename P>
-	void setup_lang(explib::lang<P>& lang) {
-		explib::ctx<P> pixel_ctx(explib::cvec<P>(0, 0, 0));
+	void setup_lang(reexp::lang<P>& lang) {
+		reexp::ctx<P> pixel_ctx(reexp::cvec<P>(0, 0, 0));
 
-		lang.add_orig(explib::orig<P>(pixel_ctx));
+		lang.add_orig(reexp::orig<P>(pixel_ctx));
 
-		explib::rel<P>& rl(lang.alloc_rel(pixel_ctx)); // right left
-		rl.add_var(explib::cvec<P>(0, 0),
+		reexp::rel<P>& rl(lang.alloc_rel(pixel_ctx)); // right left
+		rl.add_var(reexp::cvec<P>(0, 0),
 				   lang.var(varid::pixel));
-		rl.add_var(explib::cvec<P>(1, 0),
+		rl.add_var(reexp::cvec<P>(1, 0),
 				  lang.var(varid::pixel));
 		lang.rel_done();
 
-		explib::rel<P>& ud(lang.alloc_rel(pixel_ctx)); // up down
-		ud.add_var(explib::cvec<P>(0, 0),
+		reexp::rel<P>& ud(lang.alloc_rel(pixel_ctx)); // up down
+		ud.add_var(reexp::cvec<P>(0, 0),
 				   lang.var(varid::pixel));
-		ud.add_var(explib::cvec<P>(0, 1),
+		ud.add_var(reexp::cvec<P>(0, 1),
 				   lang.var(varid::pixel));
 		lang.rel_done();
 	}
 
 	template <typename P>
-	void setup_reg(explib::lang<P>& lang, explib::data<P>& data) {
+	void setup_reg(reexp::lang<P>& lang, reexp::data<P>& data) {
 		setup_lang(lang);
 		populate(data);
 	}
 
 	template <typename P>
-	void setup_names(explib::pinfo& info) {
+	void setup_names(reexp::pinfo& info) {
 		for (int i = 0; i < VarCount; ++i) {
 			info.vnames_.push_back(varnames[i]);
 		}
@@ -113,7 +113,7 @@ namespace {
 	}
 
 	template <typename P>
-	void print_overview(TestTool& t, explib::stats_info<P>& si, explib::data<P>& data) {
+	void print_overview(test_tool& t, reexp::stats_info<P>& si, reexp::data<P>& data) {
 		t<<"vars:\n\n";
 		t<<si.vars_tostring();
 		t<<"rels:\n\n";
@@ -130,18 +130,18 @@ namespace {
 		}
 	}
 
-	void setuptest(TestTool& t) {
+	void setuptest(test_tool& t) {
 		typedef simple_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, simple_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, simple_dim());
 
 		setup_reg<p>(lang, data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
 
-		explib::lang_info<p> li(i, lang);
+		reexp::lang_info<p> li(i, lang);
 
 		t<<"vars:\n\n";
 		t<<li.vars_tostring()<<"\n\n";
@@ -154,17 +154,17 @@ namespace {
 								 cvarid::y);
 	}
 
-	void statstest(TestTool& t) {
+	void statstest(test_tool& t) {
 		typedef simple_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, simple_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, simple_dim());
 
 		setup_reg<p>(lang, data);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
 
 		exptest::print_pixels<p>(t,
@@ -174,19 +174,19 @@ namespace {
 
 		t<<"\n";
 
-		explib::stats_info<p> si(i, stats);
+		reexp::stats_info<p> si(i, stats);
 
 		print_overview(t, si, data);
 	}
 
 	template <typename P>
-	void test_overlap(TestTool& t,
-					  explib::lang_info<P>& li,
-					  const explib::var<P>& v1,
-					  const explib::cvec<P>& shift,
-					  const explib::var<P>& v2) {
+	void test_overlap(test_tool& t,
+					  reexp::lang_info<P>& li,
+					  const reexp::var<P>& v1,
+					  const reexp::cvec<P>& shift,
+					  const reexp::var<P>& v2) {
 		t<<li.var_tostring(v1)<<"\n"<<li.var_tostring(v1, shift)<<"\n";
-		if (explib::exp<P>::is_overlap(v1, shift, v2)) {
+		if (reexp::exp<P>::is_overlap(v1, shift, v2)) {
 			t<<"overlap";
 		} else {
 			t<<"independent";
@@ -194,66 +194,66 @@ namespace {
 		t<<"\n\n";
 	}
 
-	void overlaptest(TestTool& t) {
+	void overlaptest(test_tool& t) {
 		typedef simple_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, simple_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, simple_dim());
 		setup_reg<p>(lang, data);
 
 		lang.add_exp(lang.rel(relid::left_right), 3);
-		const explib::exp<p> le = lang.exp_back();
+		const reexp::exp<p> le = lang.exp_back();
 
-		explib::pinfo pi;
+		reexp::pinfo pi;
 		setup_names<p>(pi);
-		explib::lang_info<p> li(pi, lang);
+		reexp::lang_info<p> li(pi, lang);
 
-		test_overlap(t, li, le, explib::cvec<p>(-2, 0), le);
-		test_overlap(t, li, le, explib::cvec<p>(-1, 0), le);
-		test_overlap(t, li, le, explib::cvec<p>(0, 0), le);
-		test_overlap(t, li, le, explib::cvec<p>(1, 0), le);
-		test_overlap(t, li, le, explib::cvec<p>(2, 0), le);
+		test_overlap(t, li, le, reexp::cvec<p>(-2, 0), le);
+		test_overlap(t, li, le, reexp::cvec<p>(-1, 0), le);
+		test_overlap(t, li, le, reexp::cvec<p>(0, 0), le);
+		test_overlap(t, li, le, reexp::cvec<p>(1, 0), le);
+		test_overlap(t, li, le, reexp::cvec<p>(2, 0), le);
 
-		test_overlap(t, li, le, explib::cvec<p>(-2, 1), le);
-		test_overlap(t, li, le, explib::cvec<p>(-1, 1), le);
-		test_overlap(t, li, le, explib::cvec<p>(0, 1), le);
-		test_overlap(t, li, le, explib::cvec<p>(1, 1), le);
-		test_overlap(t, li, le, explib::cvec<p>(2, 1), le);
+		test_overlap(t, li, le, reexp::cvec<p>(-2, 1), le);
+		test_overlap(t, li, le, reexp::cvec<p>(-1, 1), le);
+		test_overlap(t, li, le, reexp::cvec<p>(0, 1), le);
+		test_overlap(t, li, le, reexp::cvec<p>(1, 1), le);
+		test_overlap(t, li, le, reexp::cvec<p>(2, 1), le);
 	}
 
 
-	void scantest(TestTool& t) {
+	void scantest(test_tool& t) {
 		typedef simple_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, simple_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, simple_dim());
 
 		setup_reg<p>(lang, data);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
-		explib::stats_info<p> si(i, stats);
+		reexp::stats_info<p> si(i, stats);
 		t<<si.scan_tostring();
 	}
 
 
-	void learningtest(TestTool& t, int n) {
+	void learningtest(test_tool& t, int n) {
 		typedef simple_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, simple_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, simple_dim());
 
 		setup_reg<p>(lang, data);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
-		explib::stats_info<p> si(i, stats);
+		reexp::stats_info<p> si(i, stats);
 
-		explib::learner<p> learner(lang, stats);
+		reexp::learner<p> learner(lang, stats);
 		double e = stats.naiveInfo();
 		t<<"scan:\n\n"<<si.scan_tostring(3)<<"\n";
 		for (int i = 0; i < n; ++i) {
@@ -266,31 +266,31 @@ namespace {
 		print_overview<p>(t, si, data);
 	}
 
-	void learning1test(TestTool& t) {
+	void learning1test(test_tool& t) {
 		learningtest(t, 1);
 	}
-	void learning2test(TestTool& t) {
+	void learning2test(test_tool& t) {
 		learningtest(t, 2);
 	}
-	void learning3test(TestTool& t) {
+	void learning3test(test_tool& t) {
 		learningtest(t, 3);
 	}
 
-	void tryallexpstest(TestTool& t) {
+	void tryallexpstest(test_tool& t) {
 		for (int r = 0; r < 2; ++r) {
 			for (int s = 0; s < 4; ++s) {
 				typedef simple_problem p;
 
-				explib::lang<p> lang;
-				explib::data<p> data(lang, simple_dim());
+				reexp::lang<p> lang;
+				reexp::data<p> data(lang, simple_dim());
 
 				setup_reg<p>(lang, data);
 
-				explib::stats<p> stats(data);
+				reexp::stats<p> stats(data);
 
-				explib::pinfo i;
+				reexp::pinfo i;
 				setup_names<p>(i);
-				explib::stats_info<p> si(i, stats);
+				reexp::stats_info<p> si(i, stats);
 
 				double e = stats.naiveInfo();
 				lang.add_exp(lang.rel(r), s);
@@ -308,19 +308,19 @@ namespace {
 		}
 	}
 
-	void entropytest(TestTool& t) {
+	void entropytest(test_tool& t) {
 		typedef simple_problem p;
 
-		explib::lang<p> lang;
-		explib::data<p> data(lang, simple_dim());
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, simple_dim());
 
 		setup_reg<p>(lang, data);
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
-		explib::stats_info<p> si(i, stats);
+		reexp::stats_info<p> si(i, stats);
 
 		exptest::print_pixels<p>(t,
 								 data.var(varid::pixel),
@@ -354,29 +354,29 @@ namespace {
 		}
 	}
 
-	void fourbittest(TestTool& t) {
+	void fourbittest(test_tool& t) {
 		typedef simple_problem p;
 
-		explib::lang<p> lang;
+		reexp::lang<p> lang;
 		setup_lang<p>(lang);
 
-		explib::data<p> data(lang, explib::cvec<p>(4, 1));
+		reexp::data<p> data(lang, reexp::cvec<p>(4, 1));
 		const char bitmap[] = "...X";
 
 		{
-			explib::data_var<p>& px = data.var(varid::pixel);
+			reexp::data_var<p>& px = data.var(varid::pixel);
 			for (int i = 0; i < 4; i++) {
-				explib::cvec<p> at(i, 0);
+				reexp::cvec<p> at(i, 0);
 				px[at] = true;
 				*px[at] = bitmap[i] == 'X';
 			}
 		}
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
-		explib::stats_info<p> si(i, stats);
+		reexp::stats_info<p> si(i, stats);
 
 		for (int i = 0; i < lang.var_count(); ++i) {
 			t<<"\n"<<si.lang_info().var_tostring(i)<<"\n\n";
@@ -411,29 +411,29 @@ namespace {
 		}
 	}
 
-	void fourbitallexptest(TestTool& t) {
+	void fourbitallexptest(test_tool& t) {
 		typedef simple_problem p;
 
-		explib::lang<p> lang;
+		reexp::lang<p> lang;
 		setup_lang<p>(lang);
 
-		explib::data<p> data(lang, explib::cvec<p>(4, 1));
+		reexp::data<p> data(lang, reexp::cvec<p>(4, 1));
 		const char bitmap[] = "...X";
 
 		{
-			explib::data_var<p>& px = data.var(varid::pixel);
+			reexp::data_var<p>& px = data.var(varid::pixel);
 			for (int i = 0; i < 4; i++) {
-				explib::cvec<p> at(i, 0);
+				reexp::cvec<p> at(i, 0);
 				px[at] = true;
 				*px[at] = bitmap[i] == 'X';
 			}
 		}
 
-		explib::stats<p> stats(data);
+		reexp::stats<p> stats(data);
 
-		explib::pinfo i;
+		reexp::pinfo i;
 		setup_names<p>(i);
-		explib::stats_info<p> si(i, stats);
+		reexp::stats_info<p> si(i, stats);
 
 		for (int i = 0; i < lang.var_count(); ++i) {
 			t<<"\n"<<si.lang_info().var_tostring(i)<<"\n\n";
@@ -471,9 +471,112 @@ namespace {
 		}
 	}
 
+	void print_exp_rel_stats(test_tool& t) {
+		typedef simple_problem p;
+
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, simple_dim());
+
+		setup_reg<p>(lang, data);
+		reexp::stats<p> stats(data);
+
+		reexp::pinfo i;
+		setup_names<p>(i);
+
+		reexp::learner<p> learner(lang, stats);
+		reexp::stats_info<p> si(i, stats);
+
+		learner.reexpress(0, 3);
+
+		for (int i = 0; i < lang.exp_count(); ++i) {
+			const reexp::exp<p>& e = lang.exp(i);
+			const reexp::exp_rel_stats<p>& ers =
+				stats.exp_rel(e.id());
+
+			const reexp::bits& rel_defs = data.exp_rel_defs(e.id());
+
+			t<<"exp: "<<si.var_tostring(e.id())<<":\n";
+			t<<"exp rel defs: "<<reexp::vector_todensestring(rel_defs)<<"\n";
+			t<<"    f: "<<rel_defs.popcount()<<" / "<<rel_defs.size()<<"\n";
+
+			t<<"n: "<<ers.n();
+			int expstate = e.state();
+			int expstatef = ers.stateFreqs()[expstate];
+			t<<"\nexpf: "<<expstatef<<"\n";
+			t<<"\nvars:  ";
+			for (size_t i = 0; i < ers.varFreqs().size(); ++i) {
+				if (i) t<<", ";
+				t<<ers.varFreqs()[i];
+			}
+			t<<"\nstats:  ";
+			for (size_t i = 0; i < ers.stateFreqs().size(); ++i) {
+				if (i) t<<", ";
+				t<<ers.stateFreqs()[i];
+			}
+
+			reexp::rel<p> r = e.rel();
+
+			for (size_t i  = 0; i < ers.varFreqs().size(); ++i) {
+				bool vstate = r.varState(i, expstate);
+				int vstatef = ers.varFreqs()[i];
+				if (!vstate) vstatef = ers.n() - vstatef;
+
+				// frequentist approach
+				double pExpOnV = (expstatef) / (double)vstatef;
+
+				// this is one plausible estimate
+				double hatPExpOnV = (expstatef + 1) / (double)(vstatef + 2);
+
+				t<<"\np(E|"<<si.lang_info().var_tostring(*r.entries()[i].var_)<<")="<<pExpOnV;
+				t<<"\nhat p(E|"<<si.lang_info().var_tostring(*r.entries()[i].var_)<<")="<<hatPExpOnV;
+			}
+
+			t<<"\n\n";
+		}
+	}
+#if 0
+
+	void probreexp(test_tool& t) {
+		typedef simple_problem p;
+
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, simple_dim());
+
+		setup_reg<p>(lang, data);
+		reexp::stats<p> stats(data);
+
+		reexp::pinfo i;
+		setup_names<p>(i);
+
+		reexp::learner<p> learner(lang, stats);
+//		learner.reexpress(0, 1);
+
+		reexp::stats_info<p> si(i, stats);
+
+		reexp::pred<p> pred(stats);
+
+		reexp::data<p> data2(lang, reexp::cvec<p>(5, 1));
+		data2.var(0).defined().fill(true);
+		data2.var(0).defined()[2] = false;
+		data2.var(0).defined()[4] = false;
+		data2.var(0).states()[1] = true;
+
+		std::vector<double> ps = pred.reexpress(data2);
+		for (size_t i = 0; i < ps.size(); ++i) {
+			if (i) t<<", ";
+			t<<ps[i];
+		}
+		t<<"\n";
+	}
+#endif
+
 }
 
 void addsimpletest(TestRunner& runner) {
+#if 0
+	runner.add("simple/probreexp", 		{"func"},   &probreexp);
+#endif
+	runner.add("simple/exprelstats", 	{"func"},   &print_exp_rel_stats);
 	runner.add("simple/fourbitallexp", 	{"func"},   &fourbitallexptest);
 	runner.add("simple/fourbit", 		{"func"},   &fourbittest);
 	runner.add("simple/entropy", 		{"func"},   &entropytest);

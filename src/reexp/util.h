@@ -5,14 +5,14 @@
  *      Author: arauhala
  */
 
-#ifndef UTIL_H_
-#define UTIL_H_
+#ifndef REEXP_UTIL_H_
+#define REEXP_UTIL_H_
 
 #include "stdlib.h"
 #include <memory>
 #include <vector>
 
-namespace explib {
+namespace reexp {
 	namespace util {
 
 		int next_version();
@@ -172,4 +172,4 @@ namespace explib {
 
 }
 
-#endif /* UTIL_H_ */
+#endif /* REEXP_UTIL_H_ */

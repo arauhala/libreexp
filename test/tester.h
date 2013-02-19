@@ -19,15 +19,6 @@
 #include <time.h>
 #include <sys/time.h>
 
-/*struct checkl_t {}; // end of line
-extern checkl_t checkl;
-struct ignorel_t {}; // end of line
-extern ignorel_t ignorel;
-struct warnl_t {}; // end of line
-extern warnl_t warnl;
-struct errorl_t {}; // end of line
-extern errorl_t errorl;*/
-
 enum linemod_t {
 	checkl = 0,
 	ignorel,
@@ -35,31 +26,12 @@ enum linemod_t {
 	faill,
 };
 
-/*class TimeSentry {
-private:
-	clock_t begin_;
-
-public:
-	TimeSentry()
-	: begin_(clock()) {
-	}
-
-	size_t ms() {
-		size_t end = clock();
-		return ((end-begin_)*1000) / CLOCKS_PER_SEC;
-	}
-	size_t us() {
-		size_t end = clock();
-		return ((end-begin_)*1000000) / CLOCKS_PER_SEC;
-	}
-};*/
-
-class TimeSentry {
+class time_sentry {
 private:
 	timeval begin_;
 
 public:
-	TimeSentry() : begin_() {
+	time_sentry() : begin_() {
 		reset();
 	}
 	void reset() {
@@ -87,11 +59,11 @@ class IReporter<T> {
 		virtual T report() = 0;
 };*/
 
-struct Average {
+struct average {
 	typedef double return_type;
 	double sum_;
 	int n_;
-	Average() : sum_(), n_() {}
+	average() : sum_(), n_() {}
 	inline void feed(const record_entry& e) {
 		sum_ += e.second;
 		n_++;
@@ -102,10 +74,10 @@ struct Average {
 };
 
 template <typename T, int N>
-struct Multiplied {
+struct multiplied {
 	typedef double return_type;
 	T t_;
-	Multiplied(const T& t = T()) : t_(t) {}
+	multiplied(const T& t = T()) : t_(t) {}
 	inline void feed(const record_entry& e) {
 		t_.feed(e);
 	}
@@ -115,11 +87,11 @@ struct Multiplied {
 };
 
 template <typename T, typename RV = typename T::type>
-struct Filtered {
+struct filtered {
 	typedef RV return_type;
 	const std::string& str_;
 	T v_;
-	Filtered(const std::string& str, const T& v)
+	filtered(const std::string& str, const T& v)
 	: str_(str), v_(v) {}
 	inline void feed(const record_entry& e) {
 		if (e.first.count(str_)) {
@@ -131,27 +103,28 @@ struct Filtered {
 	}
 };
 
-class TestTool;
+class test_tool;
 
-class ReportOutput {
+class report_output {
 	private:
-		TestTool& tool_;
+		test_tool& tool_;
 		linemod_t mod_;
 	public:
-		ReportOutput(TestTool& tool, linemod_t mod);
-		~ReportOutput();
+		report_output(test_tool& tool, linemod_t mod);
+		~report_output();
 
 		template <typename T>
-		ReportOutput& operator<<(const T& c);
+		report_output& operator<<(const T& c);
 
 };
 
-class TestTool {
+class test_tool {
 
 	private:
 
-		friend class ReportOutput;
+		friend class report_output;
 
+		std::string name_;
 		std::string expfile_;
 		std::string outfile_;
 		std::string recexpfile_;
@@ -167,16 +140,18 @@ class TestTool {
 		bool frozen_;
 		bool fail_;
 		bool& ok_;
-		TimeSentry time_;
+		time_sentry time_;
 
 		std::vector<record_entry> records_;
 
 	public:
 
-		TestTool(const std::string& test, bool& ok, bool verbose = false);
-		~TestTool();
+		test_tool(const std::string& test, bool& ok, bool verbose = false);
+		~test_tool();
 
-		TestTool& operator<<(linemod_t mod);
+		test_tool& operator<<(linemod_t mod);
+
+		std::string file_path(const std::string& name) const;
 
 		void record(const std::set<std::string>& tags, double value);
 		template <typename R, typename T = typename R::return_type>
@@ -187,20 +162,20 @@ class TestTool {
 			return r.report();
 		}
 
-		ReportOutput ignored() {
-			return ReportOutput(*this, ignorel);
+		report_output ignored() {
+			return report_output(*this, ignorel);
 		}
 
-		ReportOutput reported() {
-			return ReportOutput(*this, reportl);
+		report_output reported() {
+			return report_output(*this, reportl);
 		}
 
-		ReportOutput failed() {
-			return ReportOutput(*this, faill);
+		report_output failed() {
+			return report_output(*this, faill);
 		}
 
 		template <typename T>
-		TestTool& operator<<(const T& c) {
+		test_tool& operator<<(const T& c) {
 			std::ostringstream buf;
 			buf<<c;
 			std::string s( buf.str() );
@@ -217,7 +192,7 @@ class TestTool {
 };
 
 template <typename T>
-ReportOutput& ReportOutput::operator<<(const T& c) {
+report_output& report_output::operator<<(const T& c) {
 	std::ostringstream buf;
 	buf<<c;
 	std::string s( buf.str() );
@@ -231,7 +206,7 @@ ReportOutput& ReportOutput::operator<<(const T& c) {
 	return *this;
 }
 
-typedef void (*testfunc)(TestTool& t);
+typedef void (*testfunc)(test_tool& t);
 
 struct TestEntry {
 	std::string name_;
@@ -247,7 +222,7 @@ struct TestEntry {
 
 class TestRunner {
 	public:
-		TestRunner();
+		TestRunner(const char* testname);
 		void add(const char* name, const std::set<std::string>& tags, testfunc func);
 		template <typename F>
 		void map(const std::set<std::string>& keys, F f) {
@@ -264,7 +239,10 @@ class TestRunner {
 		}
 		bool run(const std::set<std::string>& keys, bool verbose = false);
 		std::string expfilepath(const std::string& testcase);
+		int exec(int argc, char** argv);
+
 	private:
+		std::string testname_;
 		std::vector<TestEntry> tests_;
 };
 
@@ -292,197 +270,56 @@ inline std::set<std::string> operator+(const std::set<std::string>& set, const s
 	return rv;
 }
 
-class Table;
+class table;
 
-struct TableFormat {
-	const Table& t_;
+struct table_format {
+	const table& t_;
 	int precision_;
-	TableFormat(const Table& t, int precision) : t_(t), precision_(precision) {}
+	table_format(const table& t, int precision) : t_(t), precision_(precision) {}
 };
 
-class Table {
+class table {
 	private:
 		std::vector<std::string> xlabels_;
 		std::vector<std::string> ylabels_;
 		std::string yprefix_;
 		std::vector<double> values_;
 	public:
-		Table(const std::vector<std::string>& xlabels,
+		table(const std::vector<std::string>& xlabels,
 			  const std::vector<std::string>& ylabels,
-			  const std::string& yprefix)
-		: 	xlabels_(xlabels),
-		  	ylabels_(ylabels),
-		  	yprefix_(yprefix),
-		  	values_() {
-			values_.resize(xlabels_.size() * ylabels_.size());
-		}
-		const std::vector<std::string>& xlabels() const {
-			return xlabels_;
-		}
-		const std::vector<std::string>& ylabels() const {
-			return ylabels_;
-		}
-		Table operator-(const Table& table) const {
-			if (xlabels_ != table.xlabels_
-	  		 || ylabels_ != table.ylabels_
-	  		 || yprefix_ != table.yprefix_) {
-				throw std::runtime_error("incompatible tables for operator-");
-			}
-			Table rv(xlabels_, ylabels_, yprefix_);
-			rv.values_ = values_;
-			for (size_t i = 0; i < values_.size(); ++i) {
-				rv.values_[i] -= table.values_[i];
-			}
-			return rv;
-		}
-		double& at(int x, int y) {
-			return values_[y * xlabels_.size() + x];
-		}
-		const double& at(int x, int y) const {
-			return values_[y * xlabels_.size() + x];
-		}
-		double& at(const std::string& x, const std::string& y) {
-			size_t xi = 0, yi = 0;
-			for( ;xi < xlabels_.size(); xi++) {
-				if (xlabels_[xi] == x) break;
-			}
-			for( ;yi < ylabels_.size(); yi++) {
-				if (ylabels_[yi] == y) break;
-			}
-			return at(xi, yi);
-		}
-		TableFormat formatted(int precision) const {
-			return TableFormat(*this, precision);
-		}
-		const Table& format(std::ostream& o, int precision = 3) const {
-			std::ostringstream buf;
-			buf.setf(std::ios::fixed,std::ios::floatfield);
-			buf.precision(precision);
-			buf.setf(std::ios::left, std::ios::adjustfield);
-
-			buf.width(12);
-			buf<<yprefix_;
-			for (size_t x = 0; x < xlabels_.size(); ++x) {
-				buf.width(12);
-				buf<<xlabels_[x];
-			}
-			buf<<std::endl;
-			for (size_t y = 0; y < ylabels_.size(); ++y) {
-				buf.width(12);
-				buf<<ylabels_[y];
-				for (size_t x = 0; x < xlabels_.size(); ++x) {
-					buf.width(12);
-					buf<<at(x, y);
-				}
-				buf<<std::endl;
-			}
-			o<<buf.str();
-			return *this;
-		}
-		const Table& operator>>(std::ostream& o) const {
-			return format(o);
-		}
-		std::string toplot(int xscale, int height, double minbase = 0) const {
-			std::ostringstream buf;
-			buf.setf(std::ios::fixed,std::ios::floatfield);
-			buf.setf(std::ios::left, std::ios::adjustfield);
-
-			double max = 0, min = minbase;
-			for (size_t y = 0; y < ylabels_.size(); ++y) {
-				for (size_t x = 0; x < xlabels_.size(); ++x) {
-					max = std::max(max, at(x, y));
-					min = std::min(min, at(x, y));
-				}
-			}
-			double vheight = (max - min)*1.1;
-
-			buf.precision(1);
-			size_t lsize = 4, l = 0;
-/*			for (size_t i = 0; i < ylabels_.size(); i++) {
-				lsize = std::max(lsize, ylabels_[i].size());
-			}
-			lsize = std::min(size_t(5), lsize); lsize = std::max(size_t(xscale), lsize);*/
-			for (size_t i = 0; i < ylabels_.size(); i++) {
-				size_t begin = xscale*i;
-				while (l < begin) {l++; buf<<' '; }
-				if (l == begin) {
-					int sz = std::min(size_t(lsize), ylabels_[i].size());
-					if (l + sz > xscale*ylabels_.size()) break;
-					buf<<ylabels_[i];
-					buf<<' ';
-					l += sz+1;
-				}
-			}
-			buf<<'\n';
-
-			buf.precision(3);
-			for (int y = height -1; y >= 0; y--) {
-				for (size_t i = 0; i < ylabels_.size(); i++) {
-					char c = '.';
-					for (size_t j = 0; j < xlabels_.size(); j++) {
-						double value = at(j, i);
-						double relat = (value - min) / vheight;
-						int discat = int(relat * height);
-						if (discat == y) {
-							c = char(j + 'A');
-						}
-					}
-					for (int j = 0; j < xscale; ++j) buf<<c;
-				}
-				buf<<"  ";
-				buf<<(((double(y))*vheight)/height+min);
-				buf<<'\n';
-			}
-			buf<<"\n";
-			for (size_t j = 0; j < xlabels_.size(); j++) {
-				buf<<char(j+'A')<<"   "<<xlabels_[j]<<"\n";
-			}
-
-
-			return buf.str();
-		}
+			  const std::string& yprefix);
+		const std::vector<std::string>& xlabels() const;
+		const std::vector<std::string>& ylabels() const;
+		table operator-(const table& table) const;
+		double& at(int x, int y);
+		const double& at(int x, int y) const;
+		double& at(const std::string& x, const std::string& y);
+		table_format formatted(int precision) const;
+		const table& format(std::ostream& o, int precision = 3) const;
+		const table& operator>>(std::ostream& o) const;
+		std::string to_plot(int xscale, int height, double minbase = 0) const;
+		std::string to_latex_pgf_plot(const std::string& quatity_label) const;
+		std::string to_latex_pgf_doc(const std::string& quatity_label) const;
 };
 
-inline std::ostream& operator<<(std::ostream& o, const Table& t) {
-	t>>o;
-	return o;
-}
+std::ostream& operator<<(std::ostream& o, const table& t);
 
-inline std::ostream& operator<<(std::ostream& o, const TableFormat& t) {
-	t.t_.format(o, t.precision_);
-	return o;
-}
+std::ostream& operator<<(std::ostream& o, const table_format& t);
 
-inline bool subset(const std::set<std::string>& set,
-				   const std::set<std::string>& subset) {
-	for (auto s : subset) {
-		if (set.count(s) == 0) return false;
-	}
-	return true;
-}
+bool subset(const std::set<std::string>& set,
+			const std::set<std::string>& subset);
 
-inline bool cuttail(const std::string& path,
-					const std::string& head,
-					std::string& tail) {
-	if (path.substr(0, head.size()) == head) {
-		tail = path.substr(head.size());
-		return true;
-	}
-	return false;
-}
+bool cuttail(const std::string& path,
+			 const std::string& head,
+			 std::string& tail);
 
-inline bool cuttail(const std::set<std::string>& paths,
-					const std::string& head,
-					std::string& tail) {
-	for (auto p : paths) {
-		if (cuttail(p, head, tail)) return true;
-	}
-	return false;
-}
+bool cuttail(const std::set<std::string>& paths,
+			 const std::string& head,
+			 std::string& tail);
 
 template <typename T>
-class ToTable {
-		typedef Table return_type;
+class to_table {
+		typedef table return_type;
 	private:
 		std::set<std::string> filter_;
 		std::string xprefix_;
@@ -491,7 +328,7 @@ class ToTable {
 		std::vector<std::string> xlabels_;
 		std::vector<std::string> ylabels_;
 	public:
-		ToTable(const std::set<std::string>& filter,
+		to_table(const std::set<std::string>& filter,
 				const std::string& xprefix,
 				const std::string& yprefix)
 		: filter_(filter), xprefix_(xprefix), yprefix_(yprefix), entries_(), xlabels_(), ylabels_() {}
@@ -515,8 +352,8 @@ class ToTable {
 				}
 			}
 		}
-		Table report() {
-			Table t(xlabels_, ylabels_, yprefix_);
+		table report() {
+			table t(xlabels_, ylabels_, yprefix_);
 			for (auto x : t.xlabels()) {
 				std::string fx = xprefix_;
 				fx += x;
@@ -534,15 +371,6 @@ class ToTable {
 			return t;
 		}
 
-
-};
-
-
-class Plot {
-	public:
-		Plot();
-		~Plot();
-	private:
 
 };
 
