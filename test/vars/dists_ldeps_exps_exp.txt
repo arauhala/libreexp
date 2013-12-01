@@ -397,11 +397,11 @@ ldeps:      naive       256         64
 
 entropy based on average p, input ignored:
 ldeps:      naive       256         64          
-0           0.655       0.655       0.655       
-0.2         0.575       0.575       0.575       
-0.4         0.584       0.584       0.584       
-0.6         0.586       0.586       0.586       
-0.8         0.588       0.588       0.588       
+0           0.657       0.657       0.657       
+0.2         0.573       0.573       0.573       
+0.4         0.571       0.571       0.571       
+0.6         0.584       0.584       0.584       
+0.8         0.591       0.591       0.591       
 
 average ideal variable entropy by threshold and train data:
 ldeps:      naive       256         64          

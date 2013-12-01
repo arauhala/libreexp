@@ -14,9 +14,13 @@ namespace reexp {
 	class bits;
 	class cond_bits;
 
+#if 0
 	typedef unsigned long bchunk;
+#else
+	typedef unsigned long long bchunk;
+#endif
 	static const unsigned int bchunk_bsize = sizeof(bchunk)*8;
-	static const unsigned int bchunk_divmask = 0x1f;
+//	static const unsigned int bchunk_divmask = 0x1f;
 	static const bchunk bchunk_mask = ~bchunk(0); // 64 bits
 
 	struct sample {
@@ -138,7 +142,7 @@ namespace reexp {
 				c = *(chunkp_++) >> offset_;
 				if (offset_) c |= *chunkp_ << (bchunk_bsize-offset_);
 				if (left_ < int(bchunk_bsize)) {
-					switch (FILL) { // let's hope fill_ get eliminated compile time, it should be possible
+					switch (FILL) {
 						case false_tail_fill:
 							c &= ~(bchunk_mask<<left_); // fill non-existing tail with zeros
 							break;
@@ -157,6 +161,50 @@ namespace reexp {
 			unsigned int offset_;
 			int left_;
 	};
+
+    struct bit_istream {
+    private:
+		const bchunk* chunkp_;
+		size_t i_;
+		size_t end_;
+    public:
+		bit_istream(const bchunk* chunkp, size_t offset, size_t length)
+		: chunkp_(chunkp), i_(offset), end_(length) {}
+		operator bool () const {
+			return i_ != end_;
+		}
+		inline bit_istream& operator>>(bool& b) {
+			size_t chunk = i_ / bchunk_bsize;
+			size_t bit = i_++ % bchunk_bsize;
+			b = bool(chunkp_[chunk] & (bchunk(1) << bit));
+			return *(this);
+		}
+    };
+    struct bit_ostream {
+    private:
+		bchunk* chunkp_;
+		size_t i_;
+		size_t end_;
+    public:
+		bit_ostream(bchunk* chunkp, size_t bitoffset, size_t bitlength)
+		: chunkp_(chunkp), i_(bitoffset), end_(bitlength) {}
+		operator bool () const {
+			return i_ != end_;
+		}
+		size_t pos() const {
+			return i_;
+		}
+		inline bit_ostream& operator<<(bool b) {
+			size_t chunk = i_ / bchunk_bsize;
+			size_t bit = i_++ % bchunk_bsize;
+			if (b) {
+				chunkp_[chunk] |= (bchunk(1) << bit);
+			} else {
+				chunkp_[chunk] &= ~(bchunk(1) << bit);
+			}
+			return *(this);
+		}
+    };
 
 	struct const_bits_ref {
 	public:
@@ -218,8 +266,8 @@ namespace reexp {
 
 	class bits {
 		public:
-			friend class bits_ref;
-			friend class bit_ref;
+			friend struct bits_ref;
+			friend struct bit_ref;
 			bits()
 			:	size_(0), chunks_() {}
 			bits(int size)
@@ -415,6 +463,12 @@ namespace reexp {
 				                   << (bchunk_bsize - boffset));
 				return b;
 			}
+			inline bit_istream istream(int offset = 0) {
+				return bit_istream(chunks_.data(), offset, size_);
+			}
+			inline bit_ostream ostream(int offset = 0) {
+				return bit_ostream(chunks_.data(), offset, size_);
+			}
 		private:
 			int size_;
 			std::vector<bchunk> chunks_;
@@ -578,8 +632,8 @@ namespace reexp {
 	class cond_bits {
 			friend struct cond_bits_ref;
 		public:
-			friend class cond_bit_ref;
-			friend class const_cond_bit_ref;
+			friend struct cond_bit_ref;
+			friend struct const_cond_bit_ref;
 			inline cond_bit_ref operator[](int i) {
 				return cond_bit_ref(*this, i);
 			}

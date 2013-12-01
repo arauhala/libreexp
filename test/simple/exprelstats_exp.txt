@@ -1,0 +1,42 @@
+exp: <px(r), px(r + x)>  1/6 [3.90013]
+:
+exp rel defs: 11111111111111111111
+    f: 20 / 20
+n: 20
+expf: 4
+
+vars:  7, 7
+stats:  10, 3, 3, 4
+p(E|px(r))=0.571429
+hat p(E|px(r))=0.555556
+p(E|px(r))=0.571429
+hat p(E|px(r))=0.555556
+
+exp: <!<px(r), px(r + x)>, !<px(r + x + y), px(r + 2x + y)>>  4/9 [8.91968]
+:
+exp rel defs: 111011011101
+    f: 9 / 12
+n: 9
+expf: 5
+
+vars:  3, 3
+stats:  5, 1, 1, 2
+p(E|<px(r), px(r + x)>)=0.833333
+hat p(E|<px(r), px(r + x)>)=0.75
+p(E|<px(r), px(r + x)>)=0.833333
+hat p(E|<px(r), px(r + x)>)=0.75
+
+exp: <!<!<px(r), px(r + x)>, !<px(r + x + y), px(r + 2x + y)>>, <px(r + 2x + 2y), px(r + 3x + 2y)>>  2/5 [4.85475]
+:
+exp rel defs: 011001
+    f: 3 / 6
+n: 3
+expf: 2
+
+vars:  1, 2
+stats:  0, 1, 2, 0
+p(E|<!<px(r), px(r + x)>, !<px(r + x + y), px(r + 2x + y)>>)=1
+hat p(E|<!<px(r), px(r + x)>, !<px(r + x + y), px(r + 2x + y)>>)=0.75
+p(E|<px(r), px(r + x)>)=1
+hat p(E|<px(r), px(r + x)>)=0.75
+

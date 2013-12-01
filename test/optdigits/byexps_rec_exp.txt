@@ -1,239 +1,263 @@
-2 exps: 0 gen:info 228052
-3 data:train exps: 0 perf:pred us 46
+2 exps: 0 gen:info 466613
+3 data:train exps: 0 perf:pred us 51
 3 data:train exps: 0 perf:norm us 0
-3 data:train exps: 0 prop:entropy 3.2525
-3 data:train exps: 0 prop:accuracy 0.13545
-3 data:train exps: 0 prop:error 0.86455
-3 data:test exps: 0 perf:pred us 46
+3 data:train exps: 0 prop:entropy 3.25446
+3 data:train exps: 0 prop:accuracy 0.131851
+3 data:train exps: 0 prop:error 0.868149
+3 data:test exps: 0 perf:pred us 43
 3 data:test exps: 0 perf:norm us 0
-3 data:test exps: 0 prop:entropy 3.24029
-3 data:test exps: 0 prop:accuracy 0.14
-3 data:test exps: 0 prop:error 0.86
-2 exps: 5 perf:reexp us 305753
-2 exps: 5 gen:info 148075
-3 data:train exps: 5 perf:pred us 209
+3 data:test exps: 0 prop:entropy 3.25836
+3 data:test exps: 0 prop:accuracy 0.130021
+3 data:test exps: 0 prop:error 0.869979
+2 exps: 5 perf:reexp us 574631
+2 exps: 5 gen:info 302071
+3 data:train exps: 5 perf:pred us 224
 3 data:train exps: 5 perf:norm us 0
-3 data:train exps: 5 prop:entropy 2.43945
-3 data:train exps: 5 prop:accuracy 0.41164
-3 data:train exps: 5 prop:error 0.58836
-3 data:test exps: 5 perf:pred us 209
+3 data:train exps: 5 prop:entropy 2.46697
+3 data:train exps: 5 prop:accuracy 0.408997
+3 data:train exps: 5 prop:error 0.591003
+3 data:test exps: 5 perf:pred us 223
 3 data:test exps: 5 perf:norm us 0
-3 data:test exps: 5 prop:entropy 2.09554
-3 data:test exps: 5 prop:accuracy 0.47
-3 data:test exps: 5 prop:error 0.53
-2 exps: 10 perf:reexp us 759167
-2 exps: 10 gen:info 137060
-3 data:train exps: 10 perf:pred us 335
+3 data:test exps: 5 prop:entropy 2.46356
+3 data:test exps: 5 prop:accuracy 0.418605
+3 data:test exps: 5 prop:error 0.581395
+2 exps: 10 perf:reexp us 1.91202e+06
+2 exps: 10 gen:info 280014
+3 data:train exps: 10 perf:pred us 367
 3 data:train exps: 10 perf:norm us 0
-3 data:train exps: 10 prop:entropy 2.29505
-3 data:train exps: 10 prop:accuracy 0.474074
-3 data:train exps: 10 prop:error 0.525926
-3 data:test exps: 10 perf:pred us 337
+3 data:train exps: 10 prop:entropy 2.36278
+3 data:train exps: 10 prop:accuracy 0.442606
+3 data:train exps: 10 prop:error 0.557394
+3 data:test exps: 10 perf:pred us 377
 3 data:test exps: 10 perf:norm us 0
-3 data:test exps: 10 prop:entropy 2.04689
-3 data:test exps: 10 prop:accuracy 0.54
-3 data:test exps: 10 prop:error 0.46
-2 exps: 15 perf:reexp us 601774
-2 exps: 15 gen:info 131674
-3 data:train exps: 15 perf:pred us 444
+3 data:test exps: 10 prop:entropy 2.36904
+3 data:test exps: 10 prop:accuracy 0.440803
+3 data:test exps: 10 prop:error 0.559197
+2 exps: 15 perf:reexp us 2.0595e+06
+2 exps: 15 gen:info 269370
+3 data:train exps: 15 perf:pred us 522
 3 data:train exps: 15 perf:norm us 0
-3 data:train exps: 15 prop:entropy 2.14556
-3 data:train exps: 15 prop:accuracy 0.520635
-3 data:train exps: 15 prop:error 0.479365
-3 data:test exps: 15 perf:pred us 446
+3 data:train exps: 15 prop:entropy 2.27475
+3 data:train exps: 15 prop:accuracy 0.467425
+3 data:train exps: 15 prop:error 0.532575
+3 data:test exps: 15 perf:pred us 520
 3 data:test exps: 15 perf:norm us 0
-3 data:test exps: 15 prop:entropy 1.99061
-3 data:test exps: 15 prop:accuracy 0.5
-3 data:test exps: 15 prop:error 0.5
-2 exps: 20 perf:reexp us 551397
-2 exps: 20 gen:info 129369
-3 data:train exps: 20 perf:pred us 547
+3 data:test exps: 15 prop:entropy 2.29632
+3 data:test exps: 15 prop:accuracy 0.451374
+3 data:test exps: 15 prop:error 0.548626
+2 exps: 20 perf:reexp us 2.14927e+06
+2 exps: 20 gen:info 264551
+3 data:train exps: 20 perf:pred us 652
 3 data:train exps: 20 perf:norm us 0
-3 data:train exps: 20 prop:entropy 2.02568
-3 data:train exps: 20 prop:accuracy 0.539683
-3 data:train exps: 20 prop:error 0.460317
-3 data:test exps: 20 perf:pred us 546
+3 data:train exps: 20 prop:entropy 2.18462
+3 data:train exps: 20 prop:accuracy 0.490693
+3 data:train exps: 20 prop:error 0.509307
+3 data:test exps: 20 perf:pred us 652
 3 data:test exps: 20 perf:norm us 0
-3 data:test exps: 20 prop:entropy 1.89156
-3 data:test exps: 20 prop:accuracy 0.55
-3 data:test exps: 20 prop:error 0.45
-2 exps: 25 perf:reexp us 467385
-2 exps: 25 gen:info 127710
-3 data:train exps: 25 perf:pred us 634
+3 data:test exps: 20 prop:entropy 2.19743
+3 data:test exps: 20 prop:accuracy 0.472516
+3 data:test exps: 20 prop:error 0.527484
+2 exps: 25 perf:reexp us 1.86852e+06
+2 exps: 25 gen:info 261045
+3 data:train exps: 25 perf:pred us 765
 3 data:train exps: 25 perf:norm us 0
-3 data:train exps: 25 prop:entropy 1.92404
-3 data:train exps: 25 prop:accuracy 0.565079
-3 data:train exps: 25 prop:error 0.434921
-3 data:test exps: 25 perf:pred us 636
+3 data:train exps: 25 prop:entropy 2.07551
+3 data:train exps: 25 prop:accuracy 0.51758
+3 data:train exps: 25 prop:error 0.48242
+3 data:test exps: 25 perf:pred us 768
 3 data:test exps: 25 perf:norm us 0
-3 data:test exps: 25 prop:entropy 1.77769
-3 data:test exps: 25 prop:accuracy 0.55
-3 data:test exps: 25 prop:error 0.45
-2 exps: 30 perf:reexp us 488827
-2 exps: 30 gen:info 126764
-3 data:train exps: 30 perf:pred us 778
+3 data:test exps: 25 prop:entropy 2.12531
+3 data:test exps: 25 prop:accuracy 0.511628
+3 data:test exps: 25 prop:error 0.488372
+2 exps: 30 perf:reexp us 1.96429e+06
+2 exps: 30 gen:info 259019
+3 data:train exps: 30 perf:pred us 931
 3 data:train exps: 30 perf:norm us 0
-3 data:train exps: 30 prop:entropy 1.84073
-3 data:train exps: 30 prop:accuracy 0.568254
-3 data:train exps: 30 prop:error 0.431746
-3 data:test exps: 30 perf:pred us 780
+3 data:train exps: 30 prop:entropy 2.00349
+3 data:train exps: 30 prop:accuracy 0.537229
+3 data:train exps: 30 prop:error 0.462771
+3 data:test exps: 30 perf:pred us 936
 3 data:test exps: 30 perf:norm us 0
-3 data:test exps: 30 prop:entropy 1.71953
-3 data:test exps: 30 prop:accuracy 0.62
-3 data:test exps: 30 prop:error 0.38
-2 exps: 35 perf:reexp us 365247
-2 exps: 35 gen:info 125484
-3 data:train exps: 35 perf:pred us 881
+3 data:test exps: 30 prop:entropy 2.0672
+3 data:test exps: 30 prop:accuracy 0.540169
+3 data:test exps: 30 prop:error 0.459831
+2 exps: 35 perf:reexp us 1.73469e+06
+2 exps: 35 gen:info 256453
+3 data:train exps: 35 perf:pred us 1085
 3 data:train exps: 35 perf:norm us 0
-3 data:train exps: 35 prop:entropy 1.79761
-3 data:train exps: 35 prop:accuracy 0.579894
-3 data:train exps: 35 prop:error 0.420106
-3 data:test exps: 35 perf:pred us 879
+3 data:train exps: 35 prop:entropy 1.97109
+3 data:train exps: 35 prop:accuracy 0.544467
+3 data:train exps: 35 prop:error 0.455533
+3 data:test exps: 35 perf:pred us 1077
 3 data:test exps: 35 perf:norm us 0
-3 data:test exps: 35 prop:entropy 1.8762
-3 data:test exps: 35 prop:accuracy 0.61
-3 data:test exps: 35 prop:error 0.39
-2 exps: 40 perf:reexp us 429438
-2 exps: 40 gen:info 124412
-3 data:train exps: 40 perf:pred us 949
+3 data:test exps: 35 prop:entropy 2.04035
+3 data:test exps: 35 prop:accuracy 0.55074
+3 data:test exps: 35 prop:error 0.44926
+2 exps: 40 perf:reexp us 1.85298e+06
+2 exps: 40 gen:info 254799
+3 data:train exps: 40 perf:pred us 1223
 3 data:train exps: 40 perf:norm us 0
-3 data:train exps: 40 prop:entropy 1.68776
-3 data:train exps: 40 prop:accuracy 0.61164
-3 data:train exps: 40 prop:error 0.38836
-3 data:test exps: 40 perf:pred us 953
+3 data:train exps: 40 prop:entropy 1.89861
+3 data:train exps: 40 prop:accuracy 0.557394
+3 data:train exps: 40 prop:error 0.442606
+3 data:test exps: 40 perf:pred us 1227
 3 data:test exps: 40 perf:norm us 0
-3 data:test exps: 40 prop:entropy 1.90971
-3 data:test exps: 40 prop:accuracy 0.6
-3 data:test exps: 40 prop:error 0.4
-2 exps: 45 perf:reexp us 464328
-2 exps: 45 gen:info 123673
-3 data:train exps: 45 perf:pred us 1045
+3 data:test exps: 40 prop:entropy 1.97822
+3 data:test exps: 40 prop:accuracy 0.56871
+3 data:test exps: 40 prop:error 0.43129
+2 exps: 45 perf:reexp us 1.80637e+06
+2 exps: 45 gen:info 252930
+3 data:train exps: 45 perf:pred us 1333
 3 data:train exps: 45 perf:norm us 0
-3 data:train exps: 45 prop:entropy 1.63109
-3 data:train exps: 45 prop:accuracy 0.631746
-3 data:train exps: 45 prop:error 0.368254
-3 data:test exps: 45 perf:pred us 1049
+3 data:train exps: 45 prop:entropy 1.81656
+3 data:train exps: 45 prop:accuracy 0.588935
+3 data:train exps: 45 prop:error 0.411065
+3 data:test exps: 45 perf:pred us 1333
 3 data:test exps: 45 perf:norm us 0
-3 data:test exps: 45 prop:entropy 1.85996
-3 data:test exps: 45 prop:accuracy 0.61
-3 data:test exps: 45 prop:error 0.39
-2 exps: 50 perf:reexp us 412372
-2 exps: 50 gen:info 122866
-3 data:train exps: 50 perf:pred us 1129
+3 data:test exps: 45 prop:entropy 1.92125
+3 data:test exps: 45 prop:accuracy 0.571882
+3 data:test exps: 45 prop:error 0.428118
+2 exps: 50 perf:reexp us 1.62116e+06
+2 exps: 50 gen:info 251120
+3 data:train exps: 50 perf:pred us 1451
 3 data:train exps: 50 perf:norm us 0
-3 data:train exps: 50 prop:entropy 1.56959
-3 data:train exps: 50 prop:accuracy 0.655026
-3 data:train exps: 50 prop:error 0.344974
-3 data:test exps: 50 perf:pred us 1136
+3 data:train exps: 50 prop:entropy 1.78928
+3 data:train exps: 50 prop:accuracy 0.603413
+3 data:train exps: 50 prop:error 0.396587
+3 data:test exps: 50 perf:pred us 1454
 3 data:test exps: 50 perf:norm us 0
-3 data:test exps: 50 prop:entropy 2.14268
-3 data:test exps: 50 prop:accuracy 0.63
-3 data:test exps: 50 prop:error 0.37
-2 exps: 55 perf:reexp us 448079
-2 exps: 55 gen:info 122279
-3 data:train exps: 55 perf:pred us 1204
+3 data:test exps: 50 prop:entropy 1.92146
+3 data:test exps: 50 prop:accuracy 0.562368
+3 data:test exps: 50 prop:error 0.437632
+2 exps: 55 perf:reexp us 1.85368e+06
+2 exps: 55 gen:info 250072
+3 data:train exps: 55 perf:pred us 1599
 3 data:train exps: 55 perf:norm us 0
-3 data:train exps: 55 prop:entropy 1.51811
-3 data:train exps: 55 prop:accuracy 0.671958
-3 data:train exps: 55 prop:error 0.328042
-3 data:test exps: 55 perf:pred us 1210
+3 data:train exps: 55 prop:entropy 1.7516
+3 data:train exps: 55 prop:accuracy 0.610651
+3 data:train exps: 55 prop:error 0.389349
+3 data:test exps: 55 perf:pred us 1661
 3 data:test exps: 55 perf:norm us 0
-3 data:test exps: 55 prop:entropy 2.12284
-3 data:test exps: 55 prop:accuracy 0.63
-3 data:test exps: 55 prop:error 0.37
-2 exps: 60 perf:reexp us 437581
-2 exps: 60 gen:info 121835
-3 data:train exps: 60 perf:pred us 1305
+3 data:test exps: 55 prop:entropy 1.88305
+3 data:test exps: 55 prop:accuracy 0.573996
+3 data:test exps: 55 prop:error 0.426004
+2 exps: 60 perf:reexp us 1.96071e+06
+2 exps: 60 gen:info 249260
+3 data:train exps: 60 perf:pred us 1758
 3 data:train exps: 60 perf:norm us 0
-3 data:train exps: 60 prop:entropy 1.45294
-3 data:train exps: 60 prop:accuracy 0.680423
-3 data:train exps: 60 prop:error 0.319577
-3 data:test exps: 60 perf:pred us 1314
+3 data:train exps: 60 prop:entropy 1.7109
+3 data:train exps: 60 prop:accuracy 0.625129
+3 data:train exps: 60 prop:error 0.374871
+3 data:test exps: 60 perf:pred us 1817
 3 data:test exps: 60 perf:norm us 0
-3 data:test exps: 60 prop:entropy 2.19934
-3 data:test exps: 60 prop:accuracy 0.65
-3 data:test exps: 60 prop:error 0.35
-2 exps: 65 perf:reexp us 451075
-2 exps: 65 gen:info 121476
-3 data:train exps: 65 perf:pred us 1410
+3 data:test exps: 60 prop:entropy 1.86173
+3 data:test exps: 60 prop:accuracy 0.581395
+3 data:test exps: 60 prop:error 0.418605
+2 exps: 65 perf:reexp us 1.90135e+06
+2 exps: 65 gen:info 248540
+3 data:train exps: 65 perf:pred us 1911
 3 data:train exps: 65 perf:norm us 0
-3 data:train exps: 65 prop:entropy 1.43042
-3 data:train exps: 65 prop:accuracy 0.687831
-3 data:train exps: 65 prop:error 0.312169
-3 data:test exps: 65 perf:pred us 1401
+3 data:train exps: 65 prop:entropy 1.67635
+3 data:train exps: 65 prop:accuracy 0.63909
+3 data:train exps: 65 prop:error 0.36091
+3 data:test exps: 65 perf:pred us 1919
 3 data:test exps: 65 perf:norm us 0
-3 data:test exps: 65 prop:entropy 2.22469
-3 data:test exps: 65 prop:accuracy 0.64
-3 data:test exps: 65 prop:error 0.36
-2 exps: 70 perf:reexp us 429363
-2 exps: 70 gen:info 121119
-3 data:train exps: 70 perf:pred us 1472
+3 data:test exps: 65 prop:entropy 1.83075
+3 data:test exps: 65 prop:accuracy 0.584567
+3 data:test exps: 65 prop:error 0.415433
+2 exps: 70 perf:reexp us 2.00499e+06
+2 exps: 70 gen:info 247897
+3 data:train exps: 70 perf:pred us 2064
 3 data:train exps: 70 perf:norm us 0
-3 data:train exps: 70 prop:entropy 1.37886
-3 data:train exps: 70 prop:accuracy 0.704762
-3 data:train exps: 70 prop:error 0.295238
-3 data:test exps: 70 perf:pred us 1481
+3 data:train exps: 70 prop:entropy 1.65153
+3 data:train exps: 70 prop:accuracy 0.649431
+3 data:train exps: 70 prop:error 0.350569
+3 data:test exps: 70 perf:pred us 2073
 3 data:test exps: 70 perf:norm us 0
-3 data:test exps: 70 prop:entropy 2.15685
-3 data:test exps: 70 prop:accuracy 0.64
-3 data:test exps: 70 prop:error 0.36
-2 exps: 75 perf:reexp us 439100
-2 exps: 75 gen:info 120737
-3 data:train exps: 75 perf:pred us 1541
+3 data:test exps: 70 prop:entropy 1.80906
+3 data:test exps: 70 prop:accuracy 0.608879
+3 data:test exps: 70 prop:error 0.391121
+2 exps: 75 perf:reexp us 1.94086e+06
+2 exps: 75 gen:info 247279
+3 data:train exps: 75 perf:pred us 2222
 3 data:train exps: 75 perf:norm us 0
-3 data:train exps: 75 prop:entropy 1.34038
-3 data:train exps: 75 prop:accuracy 0.713228
-3 data:train exps: 75 prop:error 0.286772
-3 data:test exps: 75 perf:pred us 1550
+3 data:train exps: 75 prop:entropy 1.62004
+3 data:train exps: 75 prop:accuracy 0.665977
+3 data:train exps: 75 prop:error 0.334023
+3 data:test exps: 75 perf:pred us 2244
 3 data:test exps: 75 perf:norm us 0
-3 data:test exps: 75 prop:entropy 2.29039
-3 data:test exps: 75 prop:accuracy 0.64
-3 data:test exps: 75 prop:error 0.36
-2 exps: 80 perf:reexp us 447726
-2 exps: 80 gen:info 120485
-3 data:train exps: 80 perf:pred us 1655
+3 data:test exps: 75 prop:entropy 1.78879
+3 data:test exps: 75 prop:accuracy 0.616279
+3 data:test exps: 75 prop:error 0.383721
+2 exps: 80 perf:reexp us 2.03066e+06
+2 exps: 80 gen:info 246679
+3 data:train exps: 80 perf:pred us 2371
 3 data:train exps: 80 perf:norm us 0
-3 data:train exps: 80 prop:entropy 1.28318
-3 data:train exps: 80 prop:accuracy 0.722751
-3 data:train exps: 80 prop:error 0.277249
-3 data:test exps: 80 perf:pred us 1664
+3 data:train exps: 80 prop:entropy 1.59386
+3 data:train exps: 80 prop:accuracy 0.671148
+3 data:train exps: 80 prop:error 0.328852
+3 data:test exps: 80 perf:pred us 2375
 3 data:test exps: 80 perf:norm us 0
-3 data:test exps: 80 prop:entropy 2.21672
-3 data:test exps: 80 prop:accuracy 0.66
-3 data:test exps: 80 prop:error 0.34
-2 exps: 85 perf:reexp us 416036
-2 exps: 85 gen:info 120031
-3 data:train exps: 85 perf:pred us 1727
+3 data:test exps: 80 prop:entropy 1.77884
+3 data:test exps: 80 prop:accuracy 0.607822
+3 data:test exps: 80 prop:error 0.392178
+2 exps: 85 perf:reexp us 2.03338e+06
+2 exps: 85 gen:info 245990
+3 data:train exps: 85 perf:pred us 2486
 3 data:train exps: 85 perf:norm us 0
-3 data:train exps: 85 prop:entropy 1.24989
-3 data:train exps: 85 prop:accuracy 0.722751
-3 data:train exps: 85 prop:error 0.277249
-3 data:test exps: 85 perf:pred us 1729
+3 data:train exps: 85 prop:entropy 1.57678
+3 data:train exps: 85 prop:accuracy 0.674767
+3 data:train exps: 85 prop:error 0.325233
+3 data:test exps: 85 perf:pred us 2493
 3 data:test exps: 85 perf:norm us 0
-3 data:test exps: 85 prop:entropy 2.59911
-3 data:test exps: 85 prop:accuracy 0.65
-3 data:test exps: 85 prop:error 0.35
-2 exps: 90 perf:reexp us 444277
-2 exps: 90 gen:info 119808
-3 data:train exps: 90 perf:pred us 1815
+3 data:test exps: 85 prop:entropy 1.76892
+3 data:test exps: 85 prop:accuracy 0.621564
+3 data:test exps: 85 prop:error 0.378436
+2 exps: 90 perf:reexp us 2.02594e+06
+2 exps: 90 gen:info 245536
+3 data:train exps: 90 perf:pred us 2696
 3 data:train exps: 90 perf:norm us 0
-3 data:train exps: 90 prop:entropy 1.21298
-3 data:train exps: 90 prop:accuracy 0.732275
-3 data:train exps: 90 prop:error 0.267725
-3 data:test exps: 90 perf:pred us 1824
+3 data:train exps: 90 prop:entropy 1.53791
+3 data:train exps: 90 prop:accuracy 0.687177
+3 data:train exps: 90 prop:error 0.312823
+3 data:test exps: 90 perf:pred us 2675
 3 data:test exps: 90 perf:norm us 0
-3 data:test exps: 90 prop:entropy 3.03697
-3 data:test exps: 90 prop:accuracy 0.64
-3 data:test exps: 90 prop:error 0.36
-2 exps: 94 perf:reexp us 506705
-2 exps: 94 gen:info 119666
-3 data:train exps: 94 perf:pred us 1869
-3 data:train exps: 94 perf:norm us 0
-3 data:train exps: 94 prop:entropy 1.1832
-3 data:train exps: 94 prop:accuracy 0.734392
-3 data:train exps: 94 prop:error 0.265608
-3 data:test exps: 94 perf:pred us 1900
-3 data:test exps: 94 perf:norm us 0
-3 data:test exps: 94 prop:entropy 3.01971
-3 data:test exps: 94 prop:accuracy 0.62
-3 data:test exps: 94 prop:error 0.38
+3 data:test exps: 90 prop:entropy 1.73582
+3 data:test exps: 90 prop:accuracy 0.62685
+3 data:test exps: 90 prop:error 0.37315
+2 exps: 95 perf:reexp us 2.0574e+06
+2 exps: 95 gen:info 244759
+3 data:train exps: 95 perf:pred us 3133
+3 data:train exps: 95 perf:norm us 0
+3 data:train exps: 95 prop:entropy 1.52948
+3 data:train exps: 95 prop:accuracy 0.692865
+3 data:train exps: 95 prop:error 0.307135
+3 data:test exps: 95 perf:pred us 2946
+3 data:test exps: 95 perf:norm us 0
+3 data:test exps: 95 prop:entropy 1.73725
+3 data:test exps: 95 prop:accuracy 0.620507
+3 data:test exps: 95 prop:error 0.379493
+2 exps: 100 perf:reexp us 2.2877e+06
+2 exps: 100 gen:info 244276
+3 data:train exps: 100 perf:pred us 3021
+3 data:train exps: 100 perf:norm us 0
+3 data:train exps: 100 prop:entropy 1.518
+3 data:train exps: 100 prop:accuracy 0.69545
+3 data:train exps: 100 prop:error 0.30455
+3 data:test exps: 100 perf:pred us 2887
+3 data:test exps: 100 perf:norm us 0
+3 data:test exps: 100 prop:entropy 1.72472
+3 data:test exps: 100 prop:accuracy 0.617336
+3 data:test exps: 100 prop:error 0.382664
+2 exps: 104 perf:reexp us 2.20386e+06
+2 exps: 104 gen:info 243813
+3 data:train exps: 104 perf:pred us 2971
+3 data:train exps: 104 perf:norm us 0
+3 data:train exps: 104 prop:entropy 1.50981
+3 data:train exps: 104 prop:accuracy 0.702689
+3 data:train exps: 104 prop:error 0.297311
+3 data:test exps: 104 perf:pred us 2978
+3 data:test exps: 104 perf:norm us 0
+3 data:test exps: 104 prop:entropy 1.73034
+3 data:test exps: 104 prop:accuracy 0.621564
+3 data:test exps: 104 prop:error 0.378436

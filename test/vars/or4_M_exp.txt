@@ -1,2 +1,8 @@
-prop:stats ms1048576     
-            47.000      
+prop:       1048576     
+setup ms    383.000     
+stats ms    4.000       
+exps        0.000       
+populate ms 0.000       
+apply ms    0.000       
+active rels 10.000      
+rels        10.000      

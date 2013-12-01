@@ -1,0 +1,9 @@
+vars:
+
+low(r)  100545/191400 [191046]
+
+high(r)  96553/191400 [191389]
+
+naive info: 382435 bits
+            119.886 bits/sample
+            1.99809 bits/dna

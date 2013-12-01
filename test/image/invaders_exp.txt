@@ -1,6 +1,6 @@
 image w:217 h:248 threshold:25
 
-rexpression took 3295 ms.
+rexpression took 801 ms.
 
 108 exps formed
 

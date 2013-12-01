@@ -11,7 +11,6 @@
 #include "learner.h"
 #include "pred.h"
 
-
 namespace reexp {
 
 	/*
@@ -73,6 +72,83 @@ namespace reexp {
 		typedef ExampleOffset<ExampleProblem> dim_to_offset;
 		static const int DIM = 3;
 	};*/
+
+	struct traits1d {
+		static const int DIM = 1;
+		static const int MAX_REL_VARS = 2;
+	};
+
+	struct traits2d {
+		static const int DIM = 2;
+		static const int MAX_REL_VARS = 2;
+	};
+
+	struct traits3d {
+		static const int DIM = 3;
+		static const int MAX_REL_VARS = 2;
+	};
+
+	struct traits4d {
+		static const int DIM = 4;
+		static const int MAX_REL_VARS = 2;
+	};
+
+	extern template class lang<traits1d>;
+	extern template class lang<traits2d>;
+	extern template class lang<traits3d>;
+	extern template class lang<traits4d>;
+
+	extern template class data<traits1d>;
+	extern template class data<traits2d>;
+	extern template class data<traits3d>;
+	extern template class data<traits4d>;
+
+	extern template struct rel_inputvars<traits1d>;
+	extern template struct rel_inputvars<traits2d>;
+	extern template struct rel_inputvars<traits3d>;
+	extern template struct rel_inputvars<traits4d>;
+
+	extern template struct rel_stats<traits1d>;
+	extern template struct rel_stats<traits2d>;
+	extern template struct rel_stats<traits3d>;
+	extern template struct rel_stats<traits4d>;
+
+	extern template class stats<traits1d>;
+	extern template class stats<traits2d>;
+	extern template class stats<traits3d>;
+	extern template class stats<traits4d>;
+
+	extern template class pred<traits1d>;
+	extern template class pred<traits2d>;
+	extern template class pred<traits3d>;
+	extern template class pred<traits4d>;
+
+	extern template void pred<traits1d>::getInputStateLogDep<std::ostream>(const rel_stats<traits1d>& rs,
+											   	   	  	  	  	    	   const rel_inputvars<traits1d>& riv,
+											   	   	  	  	  	    	   inputstate_logdep& inputStateLogDep,
+											   	   	  	  	  	    	   std::ostream& explain) const;
+	extern template void pred<traits2d>::getInputStateLogDep<std::ostream>(const rel_stats<traits2d>& rs,
+											   	   	  	  	  	    	   const rel_inputvars<traits2d>& riv,
+											   	   	  	  	  	           inputstate_logdep& inputStateLogDep,
+											   	   	  	  	  	    	   std::ostream& explain) const;
+	extern template void pred<traits3d>::getInputStateLogDep<std::ostream>(const rel_stats<traits3d>& rs,
+											   	   	  	  	  	    	   const rel_inputvars<traits3d>& riv,
+											   	   	  	  	  	    	   inputstate_logdep& inputStateLogDep,
+											   	   	  	  	  	    	   std::ostream& explain) const;
+	extern template void pred<traits4d>::getInputStateLogDep<std::ostream>(const rel_stats<traits4d>& rs,
+											   	   	  	  	  	    	   const rel_inputvars<traits4d>& riv,
+											   	   	  	  	  	    	   inputstate_logdep& inputStateLogDep,
+											   	   	  	  	  	    	   std::ostream& explain) const;
+
+	extern template class group_scaler<traits1d>;
+	extern template class group_scaler<traits2d>;
+	extern template class group_scaler<traits3d>;
+	extern template class group_scaler<traits4d>;
+
+	extern template class learner<traits1d>;
+	extern template class learner<traits2d>;
+	extern template class learner<traits3d>;
+	extern template class learner<traits4d>;
 
 }
 

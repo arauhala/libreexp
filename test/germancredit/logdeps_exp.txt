@@ -77,7 +77,7 @@ depStateNotV(0)=log2((89.00+0.50)/(106.00+1.00))=-0.26
 depStateV(1)=log2((86.00+0.50)/(231.00+1.00))=-1.42
 depStateNotV(1)=log2((17.00+0.50)/(106.00+1.00))=-2.61
 depStateV(2)=log2((231.00+1.00)/(231.00+1.00))=0.00
-depStateNotV(2)=log2((106.00+1.00)/(106.00+1.00))=-0.00
+depStateNotV(2)=log2((106.00+1.00)/(106.00+1.00))=0.00
 predicted: good(r)
 state 0: !forFurnitudeOrEquipment(r)
 state 1: forFurnitudeOrEquipment(r)
@@ -117,7 +117,7 @@ depStateNotV(0)=log2((230.00+0.83)/(238.00+1.00))=-0.05
 depStateV(1)=log2((14.00+0.17)/(594.00+1.00))=-5.39
 depStateNotV(1)=log2((8.00+0.17)/(238.00+1.00))=-4.87
 depStateV(2)=log2((594.00+1.00)/(594.00+1.00))=0.00
-depStateNotV(2)=log2((238.00+1.00)/(238.00+1.00))=-0.00
+depStateNotV(2)=log2((238.00+1.00)/(238.00+1.00))=0.00
 predicted: good(r)
 state 0: !forEducation(r)
 state 1: forEducation(r)
@@ -156,7 +156,7 @@ depStateV(0)=log2((630.00+0.90)/(693.00+1.00))=-0.14
 depStateNotV(0)=log2((261.00+0.90)/(295.00+1.00))=-0.18
 depStateV(1)=log2((63.00+0.10)/(693.00+1.00))=-3.46
 depStateNotV(1)=log2((34.00+0.10)/(295.00+1.00))=-3.12
-depStateV(2)=log2((693.00+1.00)/(693.00+1.00))=-0.00
+depStateV(2)=log2((693.00+1.00)/(693.00+1.00))=0.00
 depStateNotV(2)=log2((295.00+1.00)/(295.00+1.00))=0.00
 predicted: good(r)
 state 0: !forOthers(r)
@@ -237,7 +237,7 @@ depStateNotV(0)=log2((197.00+0.75)/(236.00+1.00))=-0.26
 depStateV(1)=log2((135.00+0.25)/(511.00+1.00))=-1.92
 depStateNotV(1)=log2((39.00+0.25)/(236.00+1.00))=-2.59
 depStateV(2)=log2((511.00+1.00)/(511.00+1.00))=0.00
-depStateNotV(2)=log2((236.00+1.00)/(236.00+1.00))=-0.00
+depStateNotV(2)=log2((236.00+1.00)/(236.00+1.00))=0.00
 predicted: good(r)
 state 0: !employed(>7y)(r)
 state 1: employed(>7y)(r)

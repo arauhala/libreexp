@@ -523,21 +523,6 @@ namespace reexp {
 					stateP = (stateP - var<P>::prioriP_) / (1 - var<P>::prioriP_);
 					v.setPrioriP(state?stateP:1-stateP);
 				}
-				/*double pFirstExcluded = 1;
-				for (size_t i = re.size()-1; i >= 0; --i) {
-					const rel_entry<P>& e = re[i];
-					var<P>& v = *e.var_;
-					bool state = rel_.varState(i, state_);
-					double stateP = state?v.prioriP():1-v.prioriP();
-					double stateN = (1 - var<P>::prioriP_);
-					if (i > 0) {
-						pFirstExcluded *= stateP;
-					} else {
-						stateN -= pFirstExcluded;
-					}
-					stateP = stateP / stateN;
-					v.setPrioriP(state?stateP:1-stateP);
-				}*/
 
 				var<P>::set_id(id);
 				add_deps(cvec<P>(), *this);
@@ -767,6 +752,17 @@ namespace reexp {
 	 */
 	template <typename P>
 	class lang {
+		private:
+		public: // needed for measuring performance
+			/** Organizes bits in variables */
+			util::arrays_list<reexp::orig<P> > origs_;
+			/** Expressions */
+			util::arrays_list<reexp::exp<P> > exps_;
+			/** Organizes variables in relations */
+			util::arrays_list<reexp::rel<P> > rels_;
+			/**/
+			lang_obs<P>* obs_;
+
 		public:
 			lang() : origs_(), exps_(), rels_(), obs_() {}
 			lang(const lang& l) : origs_(), exps_(), rels_(), obs_() {
@@ -878,16 +874,6 @@ namespace reexp {
 			void unset_obs() {
 				obs_ = 0;
 			}
-		private:
-		public: // needed for measuring performance
-			/** Organizes bits in variables */
-			util::arrays_list<reexp::orig<P> > origs_;
-			/** Expressions */
-			util::arrays_list<reexp::exp<P> > exps_;
-			/** Organizes variables in relations */
-			util::arrays_list<reexp::rel<P> > rels_;
-			/**/
-			lang_obs<P>* obs_;
 	};
 
 
