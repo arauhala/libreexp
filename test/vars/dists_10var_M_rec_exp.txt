@@ -1,7 +1,7 @@
-2 n:1048576 prop:setup ms 942
-2 n:1048576 prop:stats ms 23
+2 n:1048576 prop:setup ms 1633
+2 n:1048576 prop:stats ms 34
 2 n:1048576 prop:exps 0
-2 n:1048576 prop:populate ms 0
+2 n:1048576 prop:populate ms 1
 2 n:1048576 prop:apply ms 0
 2 n:1048576 prop:active rels 55
 2 n:1048576 prop:rels 55

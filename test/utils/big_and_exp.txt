@@ -1,0 +1,7 @@
+two big bit vectors and operated:
+
+check number: 8482864
+
+and took 1253us
+and took 26779Kb / ms
+and took 3347KB / ms

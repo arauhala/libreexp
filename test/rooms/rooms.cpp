@@ -12,10 +12,7 @@
 
 namespace {
 
-	struct rooms_problem {
-		static const int DIM = 4; // 4 context variables
-		static const int MAX_REL_VARS = 2; // two max relation variables
-	};
+	typedef reexp::traits4d rooms_problem;
 
 	static const int Width = 5;
 
@@ -362,8 +359,6 @@ namespace {
 
 	template <typename P>
 	void draw_map(test_tool& t, const reexp::data<P>& data, int turn, int game) {
-		typedef rooms_problem p;
-
 		const reexp::data_var<P>& iswall     = data.var(varid::iswall);
 		const reexp::data_var<P>& isdark     = data.var(varid::isdark);
 		const reexp::data_var<P>& isbright   = data.var(varid::isbright);

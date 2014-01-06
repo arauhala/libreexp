@@ -11,10 +11,7 @@
 
 namespace {
 
-	struct text_problem {
-		static const int DIM = 2;
-		static const int MAX_REL_VARS = 2; // two max relation variables
-	};
+	typedef reexp::traits2d text_problem;
 
 	// context variables
 	namespace cvarid {

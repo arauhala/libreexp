@@ -38,18 +38,34 @@ namespace evaluation {
 		double prioriweight_;
 		int verbose_;
 		bool useLogDepB_;
+		int scaling_group_sz_;
+		int dist_record_groups_;
+		std::set<std::string> tags_;
 		pred_args(double expthreshold,
 				  double exprelfilter,
 				  double predrelfilter,
 				  double prioriweight = 2.,
 				  int verbose = 0,
-				  bool useLogDepB = false)
+				  bool useLogDepB = false,
+				  int scaling_group_sz = -1)
 		:   expthreshold_(expthreshold),
 		    exprelfilter_(exprelfilter),
 		    predrelfilter_(predrelfilter),
 		    prioriweight_(prioriweight),
 		    verbose_(verbose),
-		    useLogDepB_(useLogDepB) {}
+		    useLogDepB_(useLogDepB),
+		    scaling_group_sz_(scaling_group_sz),
+		    dist_record_groups_(0),
+		    tags_() {
+			tags_.insert(sup()<<"threshold:"<<expthreshold_);
+			tags_.insert(sup()<<"relfilter:"<<exprelfilter_);
+			tags_.insert(sup()<<"predfilter:"<<predrelfilter_);
+			tags_.insert(sup()<<"prioriw:"<<prioriweight_);
+
+		}
+		const std::set<std::string>& tags() const {
+			return tags_;
+		}
 	};
 	enum {
 		true_positive = 0,
@@ -258,6 +274,70 @@ namespace evaluation {
 		}
 	}
 
+	template <typename P>
+	void record_distribution(test_tool& t,
+							 const std::set<std::string>& runtags,
+							 const reexp::stats<P>& trainstats,
+							 const reexp::data<P>& predicted,
+  							 const std::vector<std::vector<double> >& allps,
+  							 size_t groups) {
+		for (size_t i = 0; i < allps.size(); ++i) {
+			if (allps[i].size()) {
+				const std::vector<double>& ps = allps[i];
+
+				const reexp::data_var<P>& dv = predicted.var(i);
+
+				std::vector<std::pair<double, size_t> > pi;
+				for (size_t i = 0; i < ps.size(); ++i) {
+					pi.push_back(std::pair<double, size_t>{ps[i], i});
+				}
+				std::sort(pi.begin(), pi.end());
+				std::reverse(pi.begin(), pi.end());
+;
+				size_t at = 0;
+				std::vector<double> e_p_avers;
+				std::vector<double> f_avers;
+				std::vector<size_t> szs;
+				for (size_t i = 0; i < groups; ++i) {
+					size_t group_sz = (pi.size() - at) / (groups - i);
+					double f_sum = 0;
+					double e_p_sum = 0;
+		//					double i_sum = 0;
+					for (size_t j = 0; j < group_sz; ++j) {
+						double p = pi[at].first;
+						bool state = dv.states()[pi[at].second];
+						e_p_sum += p;
+						f_sum += state?1:0;
+						at++;
+					}
+					e_p_avers.push_back(e_p_sum / group_sz);
+					f_avers.push_back(f_sum / double(group_sz));
+					szs.push_back(group_sz);
+				}
+				// recording structure
+				//     input tags
+				//     index
+				//     real probability
+				//
+				size_t group = 0;
+				size_t of_group = 0;
+				for (size_t i = 0; i < pi.size(); ++i) {
+					t.record(runtags + (sup()<<"rank:"<<i) + "prop:e_p", pi[i].first);
+					//t.record(runtags + (sup()<<"rank:"<<i) + "prop:state", dv.states()[pi[i].second]);
+
+					if (of_group >= szs[group]) {
+						group++; of_group = 0;
+					}
+					t.record(runtags + (sup()<<"rank:"<<i) + "prop:aver_e_p", 	 e_p_avers[group]);
+					t.record(runtags + (sup()<<"rank:"<<i) + "prop:aver_f",      f_avers[group]);
+
+					of_group++;
+					//t.record(runtags + (sup()<<"rank:"<<i) + "prop:aver_delta",  e_p_avers[group]-p_avers[group]);
+				}
+			}
+		}
+	}
+
 
 	template <typename P>
 	void predict_and_measure(test_tool& t,
@@ -265,7 +345,8 @@ namespace evaluation {
 							 pred_args& args,
 							 pred_data_stats& s,
 							 const reexp::stats<P>& trainstats,
-							 const reexp::data<P>& predicted) {
+							 const reexp::data<P>& predicted,
+							 bool test = false) {
 		reexp::pred<P> pred(trainstats, args.prioriweight_, args.useLogDepB_);
 
 		std::ostringstream buf;
@@ -276,8 +357,10 @@ namespace evaluation {
 		for (int v = 0; v < pr.predvars_.size(); v++) {
 			ps.push_back(std::vector<double>());
 			if (pr.predvars_[v]) {
+				reexp::group_scaler<P> scaler(pred, v, args.scaling_group_sz_);
 				time_sentry time;
 				ps.back() = pred.bitP(predicted, v);
+				scaler.scale(ps.back());
 				s.us_ += time.us();
 			}
 		}
@@ -293,6 +376,10 @@ namespace evaluation {
 
 		if (args.verbose_)
 			t<<buf.str()<<"\n";
+
+		if (test && args.dist_record_groups_ > 0) {
+			record_distribution<P>(t, args.tags(), trainstats, predicted, ps, args.dist_record_groups_);
+		}
 	}
 
 	template <typename P>
@@ -379,19 +466,11 @@ namespace evaluation {
 			}
 		}
 		predict_and_measure(t, pr, args, s.train_, trainstats, train);
-		predict_and_measure(t, pr, args, s.test_,  trainstats, test);
+		predict_and_measure(t, pr, args, s.test_,  trainstats, test, true);
 	}
 
 	inline void report_measurements(test_tool& t, pred_args& args, pred_stats& stats) {
-		std::string thstr = (sup()<<"threshold:"<<args.expthreshold_);
-		std::string expfilstr = (sup()<<"relfilter:"<<args.exprelfilter_);
-		std::string predfilstr = (sup()<<"predfilter:"<<args.predrelfilter_);
-		std::string prioriw = (sup()<<"prioriw:"<<args.prioriweight_);
-		std::set<std::string> tags;
-		tags.insert(thstr);
-		tags.insert(expfilstr);
-		tags.insert(predfilstr);
-		tags.insert(prioriw);
+		const std::set<std::string>& tags = args.tags();
 
 		stats.test_.record(t, tags+"data:test");
 		stats.train_.record(t, tags+"data:train");

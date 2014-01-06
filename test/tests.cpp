@@ -17,10 +17,10 @@ void addutilstest(TestRunner& runner);
 void addoptdigitstest(TestRunner& runner);
 void addoptdigits2test(TestRunner& runner);
 void addsimpletest(TestRunner& runner);
-void adddigitstest(TestRunner& runner);
 void addimagetest(TestRunner& runner);
 void addroomstest(TestRunner& runner);
 void addstatlogbitstest(TestRunner& runner);
+void adddnasplicetest(TestRunner& runner);
 
 using namespace std;
 
@@ -37,6 +37,7 @@ int main(int argc, char** argv) {
 	addoptdigits2test(runner);
 	addsimpletest(runner);
 	addstatlogbitstest(runner);
+	adddnasplicetest(runner);
 /*	adddigitstest(runner);*/
 
 	return runner.exec(argc, argv);

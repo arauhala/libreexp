@@ -154,7 +154,19 @@ namespace reexp {
 	class data : public lang_obs<P> {
 		public:
 			data(reexp::lang<P>& lang, const reexp::cvec<P>& dim);
- 			// This is required, if the language already contains
+
+
+			// prepare exp vars is used for preparing the expression variable constructs
+			// before the serialized states are loaded into variable state vectors
+			//
+			void prepare_exp_vars() {
+				for (size_t i = 0; i < lang_.exp_count(); ++i) {
+					vars_.push_back(data_var<P>(*this, lang_.exp(i)));
+					exp_rel_defs_.push_back(bits());
+					if (obs_) obs_->var_added(vars_.back());
+				}
+			}
+			// This is required, if the language already contains
 			// expressions. This will add space for the expression variables
 			// and do re-expression for data. DO NOT call twice.
 			// It is important that each expression will be applied

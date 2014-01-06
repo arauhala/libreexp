@@ -71,11 +71,7 @@ namespace {
 		"s" // sample
 	};
 
-
-	struct optdigits_problem {
-		static const int DIM = 1;
-		static const int MAX_REL_VARS = 2;
-	};
+	typedef reexp::traits1d optdigits_problem;
 
 	int pixel_varid(int x, int y, int bit) {
 		return varid::first_pixel + PixelBits * (x + y*Width) + bit;
@@ -398,15 +394,24 @@ namespace {
 		t.ignored()<<"pred us:\n"
 				   <<t.report(to_table<average>(tags+"perf:pred us", "data:", "exps:"))
 					  .to_plot(3, 20)<<"\n";
-		t<<"\nentropy:\n\n"<<t.report(to_table<average>(tags+"prop:entropy", "data:", "exps:"))
-			.to_plot(3, 20)<<"\n";
+		table entropy = t.report(to_table<average>(tags+"prop:entropy", "data:", "exps:"));
+		t<<"\nentropy:\n\n"<<entropy.to_plot(3, 20)<<"\n";
 
 /*		t<<"\naccuracy:\n\n"<<t.report(Totable<Average>(tags+"prop:accuracy", "data:", "exps:"))
 			.toplot(3, 20)<<"\n";*/
 
-		t<<"\nerror:\n\n"<<t.report(to_table<average>(tags+"prop:error", "data:", "exps:"))
-			.to_plot(3, 20)<<"\n";
+		table error = t.report(to_table<average>(tags+"prop:error", "data:", "exps:"));
+		t<<"\nerror:\n\n"<<error.to_plot(3, 20)<<"\n";
 
+		{
+			std::ofstream f(t.file_path("entropy.tex"));
+			f<<entropy.to_latex_pgf_doc("cross entropy");
+		}
+
+		{
+			std::ofstream f(t.file_path("error.tex"));
+			f<<error.to_latex_pgf_doc("error");
+		}
 	}
 
 

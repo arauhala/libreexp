@@ -2,6 +2,7 @@
 #define REEXP_DATA_I_H_
 
 #include "reexp/data.h"
+#include "reexp/lang.i.h"
 
 namespace reexp {
 
@@ -177,15 +178,27 @@ namespace reexp {
 	template <typename P>
 	void data<P>::apply_state(const reexp::exp<P>& exp, cvec<P> at, bool state) {
 		data_var<P>& dvar(var(exp.id()));
-		*dvar[at] = state;
+		int index = dvar.index(at);
+		dvar.states()[index] = state;
 		if (state) {
 			for (const reexp::implmask<P>& mask : exp.expmasks()) {
 				data_var<P>& mvar = var(mask.var_->id());
-				apply_mask(at,
-						   mask,
-						   mvar.dim(),
-						   mvar.defined(),
-						   false);
+				if (mvar.var().id() == exp.id()) {
+					bits def( mvar.defined().size() );
+					apply_mask(at,
+							   mask,
+							   mvar.dim(),
+							   def,
+							   true); // copy only the delta
+					def.fill(false, index);
+					mvar.defined().andNeg(def); // apply only the states before the applied state
+				} else {
+					apply_mask(at,
+							   mask,
+							   mvar.dim(),
+							   mvar.defined(),
+							   false);
+				}
 			}
 		}
 	}

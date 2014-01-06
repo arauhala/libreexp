@@ -81,10 +81,7 @@ namespace {
 		"n" // sample
 	};
 
-	struct optdigits_problem {
-		static const int DIM = 3;
-		static const int MAX_REL_VARS = 2;
-	};
+	typedef reexp::traits3d optdigits_problem;
 
 	reexp::cvec<optdigits_problem> optdigits_dim(int samples) {
 		return reexp::cvec<optdigits_problem>(Width, Height, samples);
@@ -664,7 +661,7 @@ namespace {
 
 		reexp::stats<p> stats(data);
 
-		double th = 350;
+		double th = 200;
 		reexp::learner<p> learner(lang, stats, th, 0.4*th, 0);
 		setup_learner<p>(learner);
 
@@ -714,11 +711,22 @@ namespace {
 		t.ignored()<<"pred us:\n"
 				   <<t.report(to_table<average>(tags+"perf:pred us", "data:", "exps:"))
 					  .to_plot(3, 20)<<"\n";
-		t<<"\nentropy:\n\n"<<t.report(to_table<average>(tags+"prop:entropy", "data:", "exps:"))
-			.to_plot(3, 20)<<"\n";
 
-		t<<"\naccuracy:\n\n"<<t.report(to_table<average>(tags+"prop:accuracy", "data:", "exps:"))
-			.to_plot(3, 20)<<"\n";
+		table entropy = t.report(to_table<average>(tags+"prop:entropy", "data:", "exps:"));
+		t<<"\nentropy:\n\n"<<entropy.to_plot(3, 20)<<"\n";
+
+		table accuracy = t.report(to_table<average>(tags+"prop:accuracy", "data:", "exps:"));
+		t<<"\naccuracy:\n\n"<<accuracy.to_plot(3, 20)<<"\n";
+
+		{
+			std::ofstream f(t.file_path("entropy.tex"));
+			f<<entropy.to_latex_pgf_doc("cross entropy");
+		}
+
+		{
+			std::ofstream f(t.file_path("accuracy.tex"));
+			f<<accuracy.to_latex_pgf_doc("accuracy");
+		}
 
 	}
 

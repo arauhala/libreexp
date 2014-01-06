@@ -70,7 +70,6 @@ namespace reexp {
 			}
 			return true;
 		}
-
 		inline int volume() const {
 			int rv = 1;
 			for (int i = 0; i < P::DIM; i++) {
@@ -80,7 +79,6 @@ namespace reexp {
 			}
 			return rv;
 		}
-
 		cvec(std::initializer_list<int> list) {
 			int i = 0;
 			for (int v : list) {
@@ -169,6 +167,12 @@ namespace reexp {
 				h << (*this)[i];
 			}
 			return h();
+		}
+		bool contains(const cvec<P>& v) const {
+			for (int i = 0; i < P::DIM; ++i) {
+				if (v[i] < 0 || v[i] >= (*this)[i]) return false;
+			}
+			return true;
 		}
 	};
 

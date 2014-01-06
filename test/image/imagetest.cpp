@@ -10,14 +10,13 @@
 #include "tester.h"
 #include "exptesttools.h"
 
+#include "reexp/io.h"
+
 #include <fstream>
 
 namespace {
 
-	struct image_problem {
-		static const int DIM = 2; // two context variables
-		static const int MAX_REL_VARS = 2; // two max relation variables
-	};
+	typedef reexp::traits2d image_problem;
 
 	static const int VarCount = 1;
 
@@ -90,9 +89,9 @@ namespace {
 		lang.rel_done();
 
 		reexp::rel<P>& lru(lang.alloc_rel(pixel_ctx)); // left right up
-		lru.add_var(reexp::cvec<P>(0, 1),
-				    lang.var(varid::pixel));
 		lru.add_var(reexp::cvec<P>(1, 0),
+				    lang.var(varid::pixel));
+		lru.add_var(reexp::cvec<P>(0, 1),
 				    lang.var(varid::pixel));
 
 		lang.rel_done();
@@ -430,6 +429,170 @@ namespace {
 		applybits_test(t, "test/image/invaders.txt", 11);
 	}
 
+	void io_test(test_tool& t, const char* file, bool verbose, double threshold, int exps = -1) {
+		std::ifstream in(file);
+
+		int w, h;
+		in>>w>>h;
+		typedef image_problem p;
+		reexp::cvec<p> dim(w, h);
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, dim);
+		setup_lang<p>(lang);
+		populate<p>(data, in, w, h);
+
+		reexp::stats<p> stats(data);
+		reexp::learner<p> learner(lang, stats, threshold, 0.35*threshold);
+		learner.reexpress(true, exps);
+
+
+		reexp::pinfo names;
+		setup_names<p>(names);
+		reexp::stats_info<p> si(names, stats);
+
+		t<<"variablesl\n";
+		t<<si.vars_tostring();
+
+		{
+			reexp::bits buffer(64*1024*1024); // big enough buffer
+			reexp::bit_ostream bout = buffer.ostream(0);
+			reexp::arithmetic_bit_ostream out(bout);
+
+			reexp::io<p> io(stats);
+			io.write_states(out, data);
+			out.finish();
+
+			t<<"re-expressed image was serialized in "<<bout.pos()<<" bits, \n";
+			t<<"while naive description length was "<<stats.naiveInfo()<<".\n";
+
+
+			reexp::bit_istream bin = buffer.istream(0);
+			reexp::arithmetic_bit_istream in(bin);
+			reexp::data<p> data2(lang, dim);
+			data2.prepare_exp_vars();
+			io.read_states(in, data2);
+
+			t<<bin.pos()<<" bits read from encoded blob\n";
+
+			t<<"\n";
+
+			if (verbose) t<<"restored image, variable by variable:\n";
+
+			int ddiff = 0;
+			int sdiff = 0;
+			for (int i = 0; i < lang.var_count(); ++i) {
+//				t<<si.lang_info().drawn_var_expmasks_to_string(lang.var(i));
+				reexp::bits b;
+				b = data.var(i).defined();
+				b ^= data2.var(i).defined();
+				int dd = b.popcount();
+				b = data.var(i).states();
+				b ^= data2.var(i).states();
+				int sd = b.popcount();
+				ddiff += dd;
+				sdiff += sd;
+
+				b = data.var(i).states();
+				b ^= data2.var(i).states();
+				sdiff += b.popcount();
+
+				if (verbose || sd || dd) {
+					t<<"variable "<<si.var_tostring(i);
+
+					if (sd || dd) {
+						t<<" failed."<<faill;
+					} else {
+						t<<" ok.\n";
+					}
+					t<<dd<<" errors in defined.\n";
+
+					t<<sd<<" errors in states.\n";
+
+					t<<"\noriginal:\n\n";
+					t<<si.drawn_data_var_tostring(cvarid::x, cvarid::y, data.var(i));
+
+					t<<"\nrestored:\n\n";
+					t<<si.drawn_data_var_tostring(cvarid::x, cvarid::y, data2.var(i));
+
+					t<<"\n";
+					t<<"\n\n";
+				}
+			}
+
+			if (sdiff || ddiff) {
+				t<<"failed"<<faill;
+			} else {
+				t<<"ok.\n";
+			}
+			t<<ddiff<<" errors in defined.\n";
+			t<<sdiff<<" errors in states.\n";
+		}
+	}
+
+	void generate_test(test_tool& t, const char* file, bool verbose, double threshold, int exps = -1) {
+		std::ifstream in(file);
+
+		int w, h;
+		in>>w>>h;
+		typedef image_problem p;
+		reexp::cvec<p> dim(w, h);
+		reexp::lang<p> lang;
+		reexp::data<p> data(lang, dim);
+		setup_lang<p>(lang);
+		populate<p>(data, in, w, h);
+
+		reexp::stats<p> stats(data);
+		reexp::learner<p> learner(lang, stats, threshold, 0.35*threshold);
+		learner.reexpress(true, exps);
+
+
+		reexp::pinfo names;
+		setup_names<p>(names);
+		reexp::stats_info<p> si(names, stats);
+
+		t<<"variablesl\n";
+		t<<si.vars_tostring();
+
+		{
+			reexp::bits buffer(1024*1024); // big enough buffer
+
+			// fill the buffer with garbage
+			for (int i = 0; i < buffer.size(); ++i) {
+				buffer[i] = rand() % 2;
+			}
+			reexp::bit_istream bin = buffer.istream(0);
+			reexp::arithmetic_bit_istream in(bin);
+			reexp::data<p> data2(lang, dim);
+			data2.prepare_exp_vars();
+			reexp::io<p> io(stats);
+			io.read_states(in, data2);
+
+			t<<bin.pos()<<" bits read from encoded blob\n";
+
+			t<<"\n";
+
+			t<<"\n generated image:\n\n";
+			t<<si.drawn_data_tostring(reexp::cvec<p>(), cvarid::x, cvarid::y, data2);
+		}
+	}
+
+	void simple_io_test(test_tool& t) {
+		io_test(t, "test/image/simple.txt", true, 2, 2);
+	}
+
+	void verbose_invaders_io_test(test_tool& t) {
+		io_test(t, "test/image/invaders.txt", true, 25, -1);
+	}
+
+	void invaders_io_test(test_tool& t) {
+		io_test(t, "test/image/invaders.txt", false, 25, -1);
+	}
+
+	void generate_invaders_test(test_tool& t) {
+		generate_test(t, "test/image/invaders.txt", false, 25, -1);
+	}
+
+
 }
 
 void addimagetest(TestRunner& runner) {
@@ -447,4 +610,8 @@ void addimagetest(TestRunner& runner) {
 	runner.add("image/inv_applybits_3exp",{"func"}, &inv_applybits_3exp_test);
 	runner.add("image/inv_applybits_4exp",{"func"}, &inv_applybits_4exp_test);
 	runner.add("image/inv_applybits_11exp",{"func"}, &inv_applybits_11exp_test);
+	runner.add("image/io",{"func"}, 	&simple_io_test);
+	runner.add("image/verbose_invaders_io",{"func"}, 	&verbose_invaders_io_test);
+	runner.add("image/invaders_io",{"func"}, 	&invaders_io_test);
+	runner.add("image/generate_invaders",{"func"}, 	&generate_invaders_test);
 }

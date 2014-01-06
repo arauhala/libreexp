@@ -1,8 +1,8 @@
 prop:       1048576     
-setup ms    9178.000    
-stats ms    519.000     
+setup ms    19214.000   
+stats ms    706.000     
 exps        0.000       
-populate ms 8.000       
+populate ms 15.000      
 apply ms    0.000       
 active rels 1275.000    
 rels        1275.000    

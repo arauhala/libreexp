@@ -1,8 +1,12 @@
-CXX 		 = ccache g++
-CXXLINKER        = g++
+
+#GPP          = /usr/lib/gcc-snapshot/bin/g++
+GPP          = ccache clang++ -Qunused-arguments
+
+CXX 		 =  $(GPP)
+CXXLINKER    = $(GPP)
 
 LINKERFLAGS  = 
-CXXFLAGS 	 = -Wall -Werror -MMD -MP -fmessage-length=0 -Isrc -std=c++0x
+CXXFLAGS 	 = -Wall -Werror -MMD -MP -fmessage-length=0 -Isrc -std=c++11
 
 SRCS = $(shell find src -name *.cpp)
 
@@ -24,7 +28,7 @@ TEST_DEPS = $(patsubst %.o,%.d,$(TEST_OBJS))
 
 LIBS =
 
-TARGET =	  libreexp
+TARGET =	  libreexp.a
 
 OPTFLAGS = -Ofast -march=native -DNDEBUG
 

@@ -11,11 +11,7 @@
 
 namespace {
 
-	struct vars_problem {
-		static const int DIM = 1;
-		static const int MAX_REL_VARS = 2; // two max relation variables
-	};
-
+	typedef reexp::traits1d vars_problem;
 
 	class ivarstestcase {
 		public:
@@ -165,7 +161,7 @@ namespace {
 				return 0;
 			}
 			double p(int i, const reexp::cond_bits& states) const {
-				if (i == 0) return 0.5;
+				if (i == 0) return p_;
 				if (i == 1) return *states[0]?1.:0.;
 				if (i == 2) return *states[0]?0.75:0.25;
 				return 0.; // constant
@@ -474,6 +470,21 @@ namespace {
 		t<<si.rels_tostring();
 	}
 
+	/**
+	 * Note states parameter need to be properly resized and defined need to be filled with true
+	 */
+	double real_p_at(const ivarstestcase& test,
+					 const reexp::data<vars_problem>& data,
+					 int var,
+					 reexp::cond_bits& states,
+					 reexp::cvec<vars_problem> at) {
+		for (int j = 0; j < test.var_count(); ++j) {
+			states[j] = bool(data.var(j)[at]);
+			*states[j] = bool(*data.var(j)[at]);
+		}
+		return test.p(var, states);
+	}
+
 	double ideal_info(const ivarstestcase& test, const reexp::data<vars_problem>& data, int var) {
 		double rv = 0;
 		reexp::cond_bits states;
@@ -481,12 +492,7 @@ namespace {
 		states.defined().fill(true);
 		int n = data.dim()[0];
 		for (int s = 0; s < n; ++s) {
-			reexp::cvec<vars_problem> at(s);
-			for (int j = 0; j < test.var_count(); ++j) {
-				states[j] = bool(data.var(j)[at]);
-				*states[j] = bool(*data.var(j)[at]);
-			}
-			double p = test.p(var, states);
+			double p = real_p_at(test, data, var, states, s);
 			double info = *states[var]?-log2(p):-log2(1-p);
 			if (info != info) { // test for nan
 				printf("nan for p=%f state=%d\n", p, int(*states[var]));
@@ -508,7 +514,7 @@ namespace {
 		return rv / n;
 	}
 
-	void eval_genpredwith(test_tool& t, const std::set<std::string>& runtags, ivarstestcase& test, int n, int tn, double threshold, bool filter = true, int maxexps = -1, double prioriW = 2., int scaling_groups = -1) {
+	void eval_genpredwith(test_tool& t, const std::set<std::string>& runtags, ivarstestcase& test, int n, int tn, double threshold, double pred_filter = 0, bool filter = true, int maxexps = -1, double prioriW = 2., int scaling_groups = -1) {
 		std::ostringstream nlabel;
 		nlabel<<"n:"<<n;
 		std::set<std::string> tags(runtags);
@@ -530,7 +536,7 @@ namespace {
 		reexp::stats<p> stats(data);
 		ms = time1.ms();
 		t.record(tags+"prop:stats ms", ms);
-		reexp::learner<p> learner(lang, stats, threshold);
+		reexp::learner<p> learner(lang, stats, threshold, .4 * threshold, pred_filter);
 		for (int i = 0; i < lang.var_count(); ++i) {
 			if (test.is_output(i)) {
 				learner.exclude(i);
@@ -544,6 +550,7 @@ namespace {
 			long ms = time.ms();
 			t.record(tags+"prop:reexp ms", ms);
 		}
+		learner.disable_rels();
 		t.record(tags+"prop:entropy reexp", stats.naiveInfo()/n);
 
 		t.record(tags+"prop:exps", double(exps));
@@ -599,7 +606,7 @@ namespace {
 	void record_distribution(test_tool& t,
 						  	 const std::set<std::string>& runtags,
 						  	 ivarstestcase& test, int n, int tn,
-						  	 double threshold, bool filter = true,
+						  	 double threshold, double fthreshold, bool filter = true,
 						  	 int maxexps = -1, double prioriW = 2.,
 						  	 int scaling_groups = -1) {
 		typedef vars_problem p;
@@ -614,27 +621,98 @@ namespace {
 				learner.exclude(i);
 			}
 		}
-		learner.reexpress(filter, maxexps);
-		t.record(tags+"prop:entropy reexp", stats.naiveInfo()/n);
-
-		t.record(tags+"prop:exps", double(exps));
-
-		// test sample
+		if (threshold > 0) learner.reexpress(filter, maxexps);
 		reexp::data<p> tdata(lang, reexp::cvec<p>(tn));
 		populate(tdata, test, tn);
 		tdata.apply_exps();
-
 		reexp::pinfo names;
 		setup_names(names, test);
 		reexp::stats_info<p> si(names, stats);
 
 		reexp::pred<p> pred(stats, prioriW);
+
+		// infra for calculating real ps
+		reexp::cond_bits states;
+		states.resize(test.var_count());
+		states.defined().fill(true);
+
+		for (int v = 0; v < test.var_count(); ++v) {
+			if (test.is_output(v)) {
+				reexp::group_scaler<p> scaler(pred, v, scaling_groups);
+				//const reexp::data_var<p>& dv = tdata.var(v);
+				std::vector<double> ps = pred.p(tdata, v);
+				if (scaling_groups > 0) scaler.scale(ps);
+
+				double idealinfo = ideal_info(test, tdata, v);
+				double naivepredinfo = naive_pred_info(tdata, stats, v);
+				double totalinfo, entryinfo;
+				pred.info(ps, tdata, v, totalinfo, entryinfo);
+
+				t<<"ideal: "<< idealinfo<<"b\n";
+				t<<"naive: "<< naivepredinfo<<"b\n";
+				t<<"cross: "<< entryinfo<<"b\n";
+
+				std::vector<std::pair<double, size_t> > pi;
+				for (size_t i = 0; i < ps.size(); ++i) {
+					pi.push_back({ps[i], i});
+				}
+				std::sort(pi.begin(), pi.end());
+				std::reverse(pi.begin(), pi.end());
+
+				size_t groups = tn / 25;
+				size_t at = 0;
+				std::vector<double> e_p_avers;
+				std::vector<double> p_avers;
+	//			std::vector<double> f_avers;
+				std::vector<size_t> szs;
+				for (size_t i = 0; i < groups; ++i) {
+					size_t group_sz = (pi.size() - at) / (groups - i);
+					double e_p_sum = 0;
+					double p_sum = 0;
+//					double i_sum = 0;
+					for (size_t j = 0; j < group_sz; ++j) {
+						double p = pi[at].first;
+//						bool state = dv.states()[pi[at].second];
+						e_p_sum += p;
+						double real_p = real_p_at(test, tdata, v, states, pi[at].second);
+						p_sum += real_p;
+						//f_sum += state?1:0;
+						at++;
+					}
+					e_p_avers.push_back(e_p_sum / group_sz);
+					p_avers.push_back(p_sum / double(group_sz));
+					szs.push_back(group_sz);
+				}
+				// recording structure
+				//     input tags
+				//     index
+				//     real probability
+				//
+				size_t group = 0;
+				size_t of_group = 0;
+				for (size_t i = 0; i < pi.size(); ++i) {
+					t.record(runtags + (sup()<<"rank:"<<i) + "prop:p", pi[i].first);
+					//t.record(runtags + (sup()<<"rank:"<<i) + "prop:state", dv.states()[pi[i].second]);
+
+					if (of_group++ >= szs[group]) {
+						group++; of_group = 0;
+					}
+					//t.record(runtags + (sup()<<"rank:"<<i) + "prop:aver_p", 	 e_p_avers[group]);
+					t.record(runtags + (sup()<<"rank:"<<i) + "prop:aver_real_p", p_avers[group]);
+					//t.record(runtags + (sup()<<"rank:"<<i) + "prop:aver_delta",  e_p_avers[group]-p_avers[group]);
+				}
+			}
+		}
 	}
 
 
 	void measure_reexp(test_tool& t,
 					   const std::set<std::string>& tags,
-					   ivarstestcase& test, int n, int tn, double threshold, bool filter = true, int maxexps = -1) {
+					   ivarstestcase& test,
+					   int n,
+					   int tn,
+					   double threshold,
+					   bool filter = true, int maxexps = -1) {
 		std::ostringstream nlabel;
 		nlabel<<"n:"<<n;
 		std::set<std::string> tags2(tags);
@@ -925,7 +1003,7 @@ namespace {
 			for (int r = 0; r < repeats; r++) {
 				dep_problem test(invars);
 				for (int j = 1; j <= maxtrainsamples ; j*=2) {
-					eval_genpredwith(t, {sup()<<"vars:"<<i, sup()<<"n:"<<j}, test, j, testsamples, 10000, true, -1, 2.);
+					eval_genpredwith(t, {sup()<<"vars:"<<i, sup()<<"n:"<<j}, test, j, testsamples, 10000, 0, true, -1, 2.);
 				}
 			}
 		}
@@ -955,7 +1033,7 @@ namespace {
 				for (int r = 0; r < repeats; r++) {
 					dep_problem test(v);
 					for (int j = 1; j <= maxtrainsamples; j*=2) {
-						eval_genpredwith(t, {sup()<<"vars:"<<v, sup()<<"prioriw:"<<i, sup()<<"n:"<<j}, test, j, testsamples, 10000, true, -1, i);
+						eval_genpredwith(t, {sup()<<"vars:"<<v, sup()<<"prioriw:"<<i, sup()<<"n:"<<j}, test, j, testsamples, 10000, 0, true, -1, i);
 					}
 				}
 			}
@@ -1009,7 +1087,7 @@ namespace {
 										 {sup()<<"vars:"<<v,
 										  thtag,
 										  sup()<<"n:"<<j},
-										  test, j, testsamples, i, true, exps);
+										  test, j, testsamples, i, 0, true, exps);
 					}
 /*					double e = test.outputEntropy();
 					double ne = test.outputNaiveEntropy();
@@ -1081,7 +1159,7 @@ namespace {
 		generic_dists_exps_test(t, 1., 1);
  	}
 
-	void generic_dists_ldeps_exps_test(test_tool& t, int vars, int mintrainsamples, int maxtrainsamples, int scaling_groups = -1) {
+	void generic_dists_ldeps_exps_test(test_tool& t, int vars, int mintrainsamples, int maxtrainsamples, int scaling_group_sz = -1) {
 		int maxthreshold = 1024;
 		int minthreshold = 64;
 		int thresholdstep = 4;
@@ -1104,7 +1182,7 @@ namespace {
 										 {sup()<<"ldeps:"<<l,
 										  thtag,
 										  sup()<<"n:"<<j},
-										  test, j, testsamples, i, true, exps, 2., scaling_groups);
+										  test, j, testsamples, i, 0., true, exps, 2., scaling_group_sz);
 					}
 				}
 			}
@@ -1173,7 +1251,7 @@ namespace {
 	}
 
 	void dists_ldeps_exps_scaled_test(test_tool& t) {
-		generic_dists_ldeps_exps_test(t, 64, 1, 4096, 128);
+		generic_dists_ldeps_exps_test(t, 64, 1, 4096, 256);
 	}
 
 	void dists_8var_ldeps_exps_test(test_tool& t) {
@@ -1181,11 +1259,64 @@ namespace {
 	}
 
 	void dists_8var_ldeps_exps_scaled_test(test_tool& t) {
-		generic_dists_ldeps_exps_test(t, 8, 1, 4096, 128);
+		generic_dists_ldeps_exps_test(t, 8, 1, 4096, 256);
 	}
 
 	void dists_64var_fast_ldeps_exps_test(test_tool& t) {
 		generic_dists_ldeps_exps_test(t, 64, 4096, 4096);
+	}
+
+	void dists_write_tex_dist(test_tool& t,
+						  	  const std::string& name,
+						  	  const std::string& tag,
+						  	  const std::string& xprefix,
+						  	  const std::string yprefix) {
+		table tbl(
+			t.report(to_table<average>({tag, "run:out"}, xprefix, yprefix)));
+		std::ofstream o( t.file_path(name + ".tex") );
+		o<<tbl.to_latex_pgf_doc(yprefix);
+		t<<name<<":\n";
+		t<<tbl;
+		t<<"\n";
+	}
+
+	void dists_print_dist_test(test_tool& t) {
+		srand(1);
+		dep_problem test(64, 0.2, 0.8, 0);
+		size_t s = 1;
+		size_t n = 1024*4;
+		double th = 32;
+		srand(s);
+		record_distribution(t, {"alg:naive"}, test, n, 1000, -1, -1, 		true, 0, 2, -1);
+		srand(s);
+		record_distribution(t, {"alg:scaled_naive"}, test, n, 1000, -1, -1,  true, 0, 2, 100);
+		srand(s);
+		record_distribution(t, {"alg:reexp"}, test, n, 1000, th, 0, 	true, -1, 2, -1);
+		srand(s);
+		record_distribution(t, {"alg:scaled_reexp"}, test, n, 1000, th, 0, 	true, -1, 2, 100);
+
+		dists_write_tex_dist(t, "naive", "alg:naive", "prop:", "rank:");
+		dists_write_tex_dist(t, "scaled_naive", "alg:scaled_naive", "prop:", "rank:");
+		dists_write_tex_dist(t, "reexp", "alg:reexp", "prop:", "rank:");
+		dists_write_tex_dist(t, "scaled_reexp", "alg:scaled_reexp", "prop:", "rank:");
+		dists_write_tex_dist(t, "all_p", "prop:p",  "alg:", "rank:");
+		dists_write_tex_dist(t, "all_aver_real_p", "prop:aver_real_p", "alg:", "rank:");
+		dists_write_tex_dist(t, "all_aver_delta",  "prop:aver_delta", "alg:", "rank:");
+	}
+
+	void dists_512var_print_dist_test(test_tool& t) {
+		srand(1);
+		dep_problem test(128, 0.1, 0.2, 0);
+		size_t s = 1;
+		size_t n = 1024*4;
+		double th = 32;
+		srand(s);
+		record_distribution(t, {"alg:scaled_naive"}, test, n, 1000, -1, 0,  true, 0, 2, 64);
+		srand(s);
+		record_distribution(t, {"alg:scaled_reexp"}, test, n, 1000, th, 0, 	true, -1, 2, 64);
+
+		dists_write_tex_dist(t, "scaled_naive", "alg:scaled_naive", "prop:", "rank:");
+		dists_write_tex_dist(t, "scaled_reexp", "alg:scaled_reexp", "prop:", "rank:");
 	}
 
 
@@ -1238,7 +1369,7 @@ namespace {
 			for (int r = 0; r < repeats; r++) {
 				class_problem test(2, invars);
 				for (int j = 1; j <= maxtrainsamples ; j*=2) {
-					eval_genpredwith(t, {sup()<<"vars:"<<i, sup()<<"n:"<<j}, test, j, testsamples, 10000, true, -1, 2.);
+					eval_genpredwith(t, {sup()<<"vars:"<<i, sup()<<"n:"<<j}, test, j, testsamples, 10000, 0, true, -1, 2.);
 				}
 			}
 		}
@@ -1279,7 +1410,7 @@ namespace {
 										 {sup()<<"vars:"<<v,
 										  thtag,
 										  sup()<<"n:"<<j},
-										  test, j, testsamples, i, true, exps);
+										  test, j, testsamples, i, 0, true, exps);
 					}
 				}
 			}
@@ -1325,7 +1456,7 @@ namespace {
 			for (int j = 1; j <= 8*1024; j*=2) {
 				srand(0);
 				for (int i = 0; i < 20; ++i) {
-					eval_genpredwith(t, {sup()<<"th:"<<th, sup()<<"n:"<<j}, pr, j, 100, th, true);
+					eval_genpredwith(t, {sup()<<"th:"<<th, sup()<<"n:"<<j}, pr, j, 100, th, 0,  true);
 				}
 			}
 		}
@@ -1403,6 +1534,9 @@ void addvarstest(TestRunner& runner) {
 	runner.add("vars/dists_8var_ldeps_exps",	{"func"},  &dists_8var_ldeps_exps_test);
 	runner.add("vars/dists_8var_ldeps_exps_scaled",	{"func"},  &dists_8var_ldeps_exps_scaled_test);
 	runner.add("vars/dists_64var_fast_ldeps_exps",	{"func"},  &dists_64var_fast_ldeps_exps_test);
+
+	runner.add("vars/dists_print_dist",	{"func"},  &dists_print_dist_test);
+	runner.add("vars/dists_512var_print_dist", {"func"}, &dists_512var_print_dist_test);
 
 	runner.add("vars/classes_setup",	{"func"},  &classes_setup_test);
 	runner.add("vars/classes_simple",	{"func"},  &classes_simple_test);

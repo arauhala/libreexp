@@ -44,7 +44,7 @@ namespace optdigits {
 				  const reexp::stats<P>& stats,
 				  const std::set<std::string>& tags,
 				  int sample_cvarid) {
-		reexp::pred<P> pred(stats);
+		reexp::pred<P> pred(stats, 2, true);
 		std::vector<double> ps[10];
 
 		time_sentry timer;

@@ -1,2 +1,5 @@
-popcount: 4194303
+popcount: 16777216
 
+took 824us
+took 40721Kb / ms
+took 5090KB / ms

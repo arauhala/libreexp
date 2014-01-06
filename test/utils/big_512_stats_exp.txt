@@ -1,0 +1,8 @@
+two big bit vectors and-operated:
+
+check number: 1.02633
+comparison count 130816
+
+stats took 4481us
+stats took 29.1935 comparisons/us
+stats took 34.2542 ns/comparison

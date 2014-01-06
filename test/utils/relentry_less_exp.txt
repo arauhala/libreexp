@@ -1,0 +1,6 @@
+let's examine relation v(r + y), v(r + x)
+lets test if px(t+y) < px(t+x) in entry comparison (should not be)
+false, this is good
+how about px(t+x) < px(t+y) in entry comparison (should not be)
+true, ok
+after sorting: v(r + x), v(r + y)

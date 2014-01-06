@@ -12,10 +12,8 @@
 
 namespace {
 
-	struct simple_problem {
-		static const int DIM = 2; // two context variables
-		static const int MAX_REL_VARS = 2; // two max relation variables
-	};
+	typedef reexp::traits2d simple_problem;
+
 
 	const char* image[] = {
 		"XX...",

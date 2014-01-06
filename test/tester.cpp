@@ -144,7 +144,7 @@ test_tool& test_tool::operator<<(linemod_t mod) {
 		switch (mod) {
 			case reportl:  cout<<"R "; break;
 			case faill: cout<<"F "; break;
-			default: cout<<"  ";
+			default: cout<<"  "; break;
 		}
 		cout<<l<<endl;
 		if (mod == checkl && fail) {
@@ -220,13 +220,15 @@ int TestRunner::exec(int argc, char** argv) {
 	}
 	if (list) {
 		map(keys, [](const TestEntry& t) {
-			cout.width(30);
+			cout.width(50);
 			cout.setf(_S_left, _S_left);
 			cout<<t.name_<<"{";
 			bool first = true;
 			for (const string& k : t.tags_) {
-				if (!first) cout<<", ";
-				cout<<k; first = false;
+				if (t.name_.substr(0, k.size()) != k) {
+					if (!first) cout<<", ";
+					cout<<k; first = false;
+				}
 			}
 			cout<<"}\n";
 		});
@@ -400,8 +402,6 @@ std::string table::to_latex_pgf_plot(const std::string& quatity_label) const {
 	std::ostringstream buf;
 	buf<<"\\begin{tikzpicture}\n";
 	buf<<"\\begin{axis}[\n";
-	buf<<"height=10cm,\n";
-	buf<<"width=10cm,\n";
 	buf<<"grid=major,\n";
 	buf<<"xlabel="<<yprefix_<<",\n";
 	buf<<"ylabel="<<quatity_label<<"]\n";
@@ -412,7 +412,11 @@ std::string table::to_latex_pgf_plot(const std::string& quatity_label) const {
 			buf<<"("<<ylabels_[y]<<","<<at(x, y)<<")";
 		}
 		buf<<"};\n";
-		buf<<"\\addlegendentry{"<<xlabels_[x]<<"}\n";
+		std::string xl(xlabels_[x]);
+		for (size_t i = 0; i < xl.size(); ++i) {
+			if (xl[i] == '_') xl[i] = ' ';
+		}
+		buf<<"\\addlegendentry{"<<xl<<"}\n";
 	}
 	buf<<"\\end{axis}\n";
 	buf<<"\\end{tikzpicture}\n";

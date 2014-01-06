@@ -267,17 +267,22 @@ namespace reexp {
 						buf<<".";
 					}
 				} else {
-					buf<<"?";
+					if (*b) buf<<"x";
+					else buf<<" ";
 				}
 			}
 			buf<<"\n";
 		}
 		return buf.str();
 	}
-
 	template <typename P>
 	std::string stats_info<P>::drawn_data_tostring(cvec<P> at, int xcvar, int ycvar) const {
 		const reexp::data<P>& d = stats_.data();
+		return drawn_data_tostring(at, xcvar, ycvar, d);
+	}
+
+	template <typename P>
+	std::string stats_info<P>::drawn_data_tostring(cvec<P> at, int xcvar, int ycvar, const reexp::data<P>& d) const {
 		int w = d.dim()[xcvar];
 		int h = d.dim()[ycvar];
 		std::string chars;

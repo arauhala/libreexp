@@ -1,6 +1,6 @@
 prop:       1048576     
-setup ms    383.000     
-stats ms    4.000       
+setup ms    402.000     
+stats ms    7.000       
 exps        0.000       
 populate ms 0.000       
 apply ms    0.000       

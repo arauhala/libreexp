@@ -1,0 +1,13 @@
+writing 100 pseudorandom numbers
+took    41 bits
+ideal   40.5597 bits
+entropy 46.8996 bits
+
+data:
+
+01000110000001011000101011001111
+100000101
+
+trying to recover the states:
+
+all states successfully recovered.

@@ -319,6 +319,7 @@ bool cuttail(const std::set<std::string>& paths,
 
 template <typename T>
 class to_table {
+	public:
 		typedef table return_type;
 	private:
 		std::set<std::string> filter_;

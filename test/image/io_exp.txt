@@ -1,0 +1,75 @@
+variablesl
+px(r)  0/57 [0]
+
+<px(r), px(r + y)>  8/64 [34.7881]
+
+
+re-expressed image was serialized in 38 bits
+38 bits read from encoded blob
+
+restored image, variable by variable:
+px(r)  0/57 [0]
+
+
+original:
+
+.?.?.?.?.
+.?.?.?.?.
+.?.?.?.?.
+.........
+.........
+.?.?.?.?.
+.?.?.?.?.
+.?.?.?.?.
+.........
+
+restored:
+
+.?.?.?.?.
+.?.?.?.?.
+.?.?.?.?.
+.........
+.........
+.?.?.?.?.
+.?.?.?.?.
+.?.?.?.?.
+.........
+
+ok.
+0 errors in defined.
+0 errors in states.
+
+
+<px(r), px(r + y)>  8/64 [34.7881]
+
+
+original:
+
+.?.?.?.?.
+.X.X.X.X.
+.........
+.........
+.........
+.?.?.?.?.
+.X.X.X.X.
+.........
+
+restored:
+
+.?.?.?.?.
+.X.X.X.X.
+.........
+.........
+.........
+.?.?.?.?.
+.X.X.X.X.
+.........
+
+ok.
+0 errors in defined.
+0 errors in states.
+
+
+ok.
+0 errors in defined.
+0 errors in states.

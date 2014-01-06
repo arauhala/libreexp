@@ -42,20 +42,6 @@ namespace explib {
 				}
 				std::sort(influence_.begin(), influence_.end());
 			}
-/*
-			std::vector<std::pair<double, int>> find(const data<P>& d, const cvec<P>& at) {
-				std::vector<double> distances;
-				distances.resize(selection_.volume());
-				// start from the end
-				for (int i = influence_.size()-1; i >= 0; --i) {
-				}
-			}
-
-			std::vector<double> p(const data<P>& d, const cvec<P>& at) {
-
-			}
-			*/
-
 			double calc_influence(int from, const explib::bits& to) {
 				const explib::stats<P>& s = stats_;
 				const explib::lang<P>& l = s.data().lang();

@@ -173,6 +173,9 @@ namespace reexp {
 		operator bool () const {
 			return i_ != end_;
 		}
+		size_t pos() const {
+			return i_;
+		}
 		inline bit_istream& operator>>(bool& b) {
 			size_t chunk = i_ / bchunk_bsize;
 			size_t bit = i_++ % bchunk_bsize;
@@ -308,6 +311,12 @@ namespace reexp {
 			inline bits& orNeg(const bits& b) {
 				for (size_t i = 0; i < chunks_.size(); ++i) {
 					chunks_[i] |= ~b.chunks_[i];
+				}
+				return *this;
+			}
+			inline bits& operator^=(const bits& b) {
+				for (size_t i = 0; i < chunks_.size(); ++i) {
+					chunks_[i] ^= b.chunks_[i];
 				}
 				return *this;
 			}

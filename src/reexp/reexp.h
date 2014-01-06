@@ -93,6 +93,31 @@ namespace reexp {
 		static const int MAX_REL_VARS = 2;
 	};
 
+	extern template struct bitmatrix<traits1d>;
+	extern template struct bitmatrix<traits2d>;
+	extern template struct bitmatrix<traits3d>;
+	extern template struct bitmatrix<traits4d>;
+
+	extern template class var<traits1d>;
+	extern template class var<traits2d>;
+	extern template class var<traits3d>;
+	extern template class var<traits4d>;
+
+	extern template class orig<traits1d>;
+	extern template class orig<traits2d>;
+	extern template class orig<traits3d>;
+	extern template class orig<traits4d>;
+
+	extern template class rel<traits1d>;
+	extern template class rel<traits2d>;
+	extern template class rel<traits3d>;
+	extern template class rel<traits4d>;
+
+	extern template class exp<traits1d>;
+	extern template class exp<traits2d>;
+	extern template class exp<traits3d>;
+	extern template class exp<traits4d>;
+
 	extern template class lang<traits1d>;
 	extern template class lang<traits2d>;
 	extern template class lang<traits3d>;

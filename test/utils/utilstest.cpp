@@ -6,6 +6,8 @@
  */
 
 #include "reexp/all.h"
+#include "reexp/arithmetic.h"
+#include "reexp/printer.h"
 
 #include "tester.h"
 
@@ -439,8 +441,9 @@ void run_popcount_test(test_tool& t) {
 }
 
 void run_big_popcount_test(test_tool& t) {
+	int count = 32*1024*1024;
 	reexp::bits b1;
-	b1.resize(8*1024*1024);
+	b1.resize(count);
 
 	int ln = 13;
 	for (int i = 0; i < b1.size(); i++) {
@@ -448,7 +451,97 @@ void run_big_popcount_test(test_tool& t) {
 		b1[i] = ln%2;
 	}
 
-	t<<"popcount: "<<b1.popcount()<<"\n\n";
+	long us;
+	{
+		time_sentry time;
+		long c = b1.popcount();
+		us = time.us();
+		t<<"popcount: "<<c<<"\n\n";
+	}
+
+	t<<"took "<<us<<"us"<<ignorel;
+	t<<"took "<<(count/us)<<"Kb / ms"<<ignorel;
+	t<<"took "<<((count/8)/us)<<"KB / ms"<<ignorel;
+}
+
+void run_big_and_test(test_tool& t) {
+	int count = 32*1024*1024;
+	reexp::bits b1;
+	b1.resize(count);
+
+	int ln = 13;
+	for (int i = 0; i < b1.size(); i++) {
+		ln = (ln * 1953) % 179;
+		b1[i] = ln%2;
+	}
+
+	reexp::bits b2;
+	b2.resize(count);
+	for (int i = 0; i < b1.size(); i++) {
+		ln = (ln * 1953) % 179;
+		b2[i] = ln%2;
+	}
+
+	long us;
+	{
+		time_sentry time;
+		b1 &= b2;
+		us = time.us();
+	}
+	t<<"two big bit vectors and operated:\n\n";
+	t<<"check number: "<<b1.popcount()<<"\n\n";
+
+	t<<"and took "<<us<<"us"<<ignorel;
+	t<<"and took "<<(count/us)<<"Kb / ms"<<ignorel;
+	t<<"and took "<<((count/8)/us)<<"KB / ms"<<ignorel;
+}
+
+void run_generic_big_stats_test(test_tool& t, int vsize, int vectors) {
+	int ln = 13;
+	std::vector<reexp::bits> b(vectors);
+	for (int i = 0; i < vectors; ++i) {
+		b[i].resize(vsize);
+		for (int j = 0; j < vsize; j++) {
+			ln = (ln * 1953) % 179;
+			b[i][j] = ln%2;
+		}
+	}
+
+	long us;
+	double d = 0;
+	int n = 0;
+	reexp::bits c;
+	{
+		time_sentry time;
+		for (int i = 0; i < vectors; ++i) {
+			reexp::bits& bi = b[i];
+			int ip = bi.popcount();
+			for (int j = i+1; j < vectors; ++j) {
+				reexp::bits& bj = b[j];
+				c = bi;
+				c &= bj;
+				int cp = c.popcount();
+				float dep = ((cp+1)*vsize) / float((bj.popcount()+1)*(ip+1));
+				d += dep;
+				++n;
+			}
+		}
+		us = time.us();
+	}
+	t<<"two big bit vectors and-operated:\n\n";
+	t<<"check number: "<<(d / n)<<"\n";
+	t<<"comparison count "<<n<<"\n\n";
+
+	t<<"stats took "<<us<<"us"<<ignorel;
+	t<<"stats took "<<(n/float(us))<<" comparisons/us"<<ignorel;
+	t<<"stats took "<<((1000*us)/float(n))<<" ns/comparison"<<ignorel;
+}
+
+void run_big_stats_test(test_tool& t) {
+	run_generic_big_stats_test(t, 256, 256);
+}
+void run_big_512_stats_test(test_tool& t) {
+	run_generic_big_stats_test(t, 512, 512);
 }
 
 void run_big_16b_popcount_test(test_tool& t) {
@@ -471,17 +564,6 @@ void run_big_16b_popcount_test(test_tool& t) {
 
 	t<<"popcount: "<<pop<<"\n\n";
 }
-
-struct problem2d {
-	static const int DIM = 2; // two context variables
-	static const int MAX_REL_VARS = 2; // two max relation variables
-};
-
-struct problem3d {
-	static const int DIM = 3; // two context variables
-	static const int MAX_REL_VARS = 2; // two max relation variables
-};
-
 template <typename P>
 std::string bitmatrix_tostring(const reexp::bitmatrix<P>& m) {
 	std::ostringstream buf;
@@ -502,7 +584,7 @@ std::string bitmatrix_tostring(const reexp::bitmatrix<P>& m) {
 }
 
 void run_ndim_test(test_tool& t) {
-	typedef problem2d p;
+	typedef reexp::traits2d p;
 
 	reexp::ndim<p> v;
 
@@ -606,7 +688,7 @@ void run_bchunk_iteration_test(test_tool& t) {
 
 void run_dim_bchunk_iteration_test(test_tool& t) {
 	srand(0);
-	typedef problem2d p;
+	typedef reexp::traits2d p;
 	run_dim_bchunk_iteration_test_round<p>(t, 1);
 	run_dim_bchunk_iteration_test_round<p>(t, 4);
 	run_dim_bchunk_iteration_test_round<p>(t, 16);
@@ -622,7 +704,7 @@ void run_dim_bchunk_iteration_test(test_tool& t) {
 
 void run_3dim_bchunk_iteration_test(test_tool& t) {
 	srand(0);
-	typedef problem3d p;
+	typedef reexp::traits3d p;
 	run_dim_bchunk_iteration_test_round<p>(t, 1);
 	run_dim_bchunk_iteration_test_round<p>(t, 4);
 	run_dim_bchunk_iteration_test_round<p>(t, 16);
@@ -637,7 +719,7 @@ void run_3dim_bchunk_iteration_test(test_tool& t) {
 }
 
 void run_bitmatrix_test(test_tool& t) {
-	typedef problem2d p;
+	typedef reexp::traits2d p;
 	reexp::bitmatrix<p> m;
 	m.unite(reexp::cvec<p>(), reexp::cvec<p>(3, 3));
 	m[reexp::cvec<p>(1, 1)] = true;
@@ -657,7 +739,7 @@ void run_bitmatrix_test(test_tool& t) {
 }
 
 void run_bitmatrix_rzblit_test(test_tool& t) {
-	typedef problem2d p;
+	typedef reexp::traits2d p;
 	reexp::bitmatrix<p> m;
 	m.unite(reexp::cvec<p>(), reexp::cvec<p>(3, 3));
 	m[reexp::cvec<p>(1, 1)] = true;
@@ -685,7 +767,7 @@ void run_bitmatrix_rzblit_test(test_tool& t) {
 }
 
 void run_bitmatrix_rzsetblit_test(test_tool& t) {
-	typedef problem2d p;
+	typedef reexp::traits2d p;
 	reexp::bitmatrix<p> m;
 	m.unite(reexp::cvec<p>(), reexp::cvec<p>(3, 3));
 	m[reexp::cvec<p>(1, 1)] = true;
@@ -737,7 +819,86 @@ void run_bitmatrix_rzsetblit_test(test_tool& t) {
 	t<<"\nmatrix m5:\n"<<bitmatrix_tostring(m5);
 	m5.resizing_blit({-1, -1}, m);
 	t<<"\nmatrix m5:\n"<<bitmatrix_tostring(m5);
+}
 
+void run_arithmetic_test(test_tool& t) {
+	using namespace reexp;
+	bits bits(1024); // big buffer
+	bit_ostream bout = bits.ostream();
+	arithmetic_bit_ostream out( bout);
+
+	int n = 100;
+	int pern = 10;
+	double p = 1 / double(pern);
+
+	t<<"writing "<<n<<" pseudorandom numbers\n";
+	srand(0);
+	double ideal = 0;
+	for (int i = 0; i < n; ++i) {
+		bool state = (rand()%pern) == 0;
+		out.write(p, state);
+		ideal += -log2(state?p:1-p);
+	}
+	out.finish();
+	size_t bsize = bout.pos();
+	bits.resize(bsize);
+	t<<"took    "<<bsize<<" bits\n";
+	t<<"ideal   "<<ideal <<" bits\n";
+	t<<"entropy "<<n*entropy(p)<<" bits\n";
+
+	t<<"\ndata:\n\n";
+
+	t<<vector_tolines(bits, 32)<<"\n";
+
+	t<<"\ntrying to recover the states:\n\n";
+
+	bit_istream bin = bits.istream();
+	arithmetic_bit_istream in(bin);
+
+	srand(0);
+	int errors = 0;
+	for (int i = 0; i < n; ++i) {
+		bool read = in.read(p);
+		bool expected = ((rand()%pern) == 0);
+	 	if ( read != expected ) {
+	 		t<<"expected bit "<<i<<" to be "<<expected<<", but it was "<<read<<faill;
+	 		errors++;
+		}
+	}
+	if (errors) {
+		t<<"failed."<<faill;
+	} else {
+		t<<"all states successfully recovered.\n";
+	}
+}
+
+void run_relentry_less_test(test_tool& t) {
+	typedef reexp::traits2d p;
+	reexp::lang<p> l;
+	reexp::pinfo pi;
+	pi.vnames_.push_back("v");
+	pi.cvnames_.push_back("x");
+	pi.cvnames_.push_back("y");
+	reexp::lang_info<p> li(pi,l);
+	l.add_orig(reexp::orig<p>(reexp::cvec<p>())); // add a single variable
+	reexp::rel<p>& r = l.alloc_rel(reexp::cvec<p>(0, 0));
+	r.add_var(reexp::cvec<p>(0, 1), l.var(0));
+	r.add_var(reexp::cvec<p>(1, 0), l.var(0));
+	t<<"let's examine relation "<<li.rel_tostring(r)<<"\n";
+
+	t<<"lets test if px(t+y) < px(t+x) in entry comparison (should not be)\n";
+
+	if (r.entries()[0] < r.entries()[1]) {
+		t<<"true, this is not good\n";
+	} else {
+		t<<"false, this is good\n";
+	}
+	t<<"how about px(t+x) < px(t+y) in entry comparison (should not be)\n";
+	if (r.entries()[1] < r.entries()[0]) {
+		t<<"true, ok\n";
+	} else {
+		t<<"false, this is not good\n";
+	}
 }
 
 void addutilstest(TestRunner& runner) {
@@ -751,8 +912,11 @@ void addutilstest(TestRunner& runner) {
 	runner.add("utils/bits_ref_perf",    	 {"perf"}, &run_bits_ref_perf_test);
 	runner.add("utils/bits_andneg", 	 	 {"func"}, &run_bits_andneg_test);
 	runner.add("utils/popcount", 			 {"func"}, &run_popcount_test);
-	runner.add("utils/big_popcount",		 {"func"}, &run_big_popcount_test);
-	runner.add("utils/big_16b_popcount",	 {"func"}, &run_big_16b_popcount_test);
+	runner.add("utils/big_popcount",		 {"func", "perf"}, &run_big_popcount_test);
+	runner.add("utils/big_16b_popcount",	 {"func", "perf"}, &run_big_16b_popcount_test);
+	runner.add("utils/big_and",		 		 {"func", "perf"}, &run_big_and_test);
+	runner.add("utils/big_stats",		 	 {"func", "perf"}, &run_big_stats_test);
+	runner.add("utils/big_512_stats",		 {"func", "perf"}, &run_big_512_stats_test);
 	runner.add("utils/ndim",			     {"func"}, &run_ndim_test);
 	runner.add("utils/bchunk_iteration", 	 {"func"}, &run_bchunk_iteration_test);
 	runner.add("utils/dim_bchunk_iteration", {"func"}, &run_dim_bchunk_iteration_test);
@@ -760,4 +924,6 @@ void addutilstest(TestRunner& runner) {
 	runner.add("utils/bitmatrix",			 {"func"}, &run_bitmatrix_test);
 	runner.add("utils/bitmatrix_rzblit",	 {"func"}, &run_bitmatrix_rzblit_test);
 	runner.add("utils/bitmatrix_rzsetblit",  {"func"}, &run_bitmatrix_rzsetblit_test);
+	runner.add("utils/arithmetic",  		 {"func"}, &run_arithmetic_test);
+	runner.add("utils/relentry_less",        {"func"}, &run_relentry_less_test);
 }

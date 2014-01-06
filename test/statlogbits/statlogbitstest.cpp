@@ -15,10 +15,8 @@ namespace {
 
 	using namespace evaluation;
 
-	struct statlogbits_problem {
-		static const int DIM = 1;
-		static const int MAX_REL_VARS = 2; // two max relation variables
-	};
+	typedef reexp::traits1d statlogbits_problem;
+
 
 	enum undef_t {
 		undef_nothing		= 0,
@@ -110,6 +108,52 @@ namespace {
 		}
 	}
 
+
+	void generic_dist_test(test_tool& t, pred_problem<statlogbits_problem>& pr,
+						    pred_args& args, int groups, const std::string& tag) {
+		args.dist_record_groups_ = groups;
+		args.tags_.insert(tag);
+		crossvalidate_run(t, pr, args, 10);
+
+		table dist(
+			t.report(to_table<average>({"run:out", tag}, "prop:", "rank:")));
+
+		t<<"distribution: "<<tag<<"\n"<<dist<<"\n";
+
+		std::ofstream f(t.file_path(tag + ".tex"));
+		f<<dist.to_latex_pgf_doc("probability estimate");
+
+	}
+
+	void generic_dists_test(test_tool& t, pred_problem<statlogbits_problem>& pr,
+						    pred_args& base_args, double th, size_t groups) {
+		{
+			pred_args args(th, 0.2*th, base_args.predrelfilter_, base_args.prioriweight_, base_args.verbose_, base_args.useLogDepB_, -1);
+			generic_dist_test(t, pr, args, groups, "dist:reexp");
+		}
+
+		{
+			pred_args args(th, 0.2*th, base_args.predrelfilter_, base_args.prioriweight_, base_args.verbose_, base_args.useLogDepB_, base_args.scaling_group_sz_);
+			generic_dist_test(t, pr, args, groups, "dist:scaled reexp");
+		}
+
+		{
+			pred_args args(10000, 10000, base_args.predrelfilter_, base_args.prioriweight_, base_args.verbose_, base_args.useLogDepB_, -1);
+			generic_dist_test(t, pr, args, groups, "dist:naive");
+		}
+
+		{
+			pred_args args(10000, 10000, base_args.predrelfilter_, base_args.prioriweight_, base_args.verbose_, base_args.useLogDepB_, base_args.scaling_group_sz_);
+			generic_dist_test(t, pr, args, groups, "dist:scaled naive");
+		}
+
+		table dist(
+			t.report(to_table<average>({"run:out", "prop:e_p"}, "dist:", "rank:")));
+		t<<"e_p: \n"<<dist<<"\n";
+		std::ofstream f(t.file_path("e_p.tex"));
+		f<<dist.to_latex_pgf_doc("probability estimate");
+	}
+
 	void setup_heart(pred_problem<statlogbits_problem>& pr, undef_t undefs = undef_excluded) {
 		setup_statlogbits(pr, "heart", undefs);
 		pr.predvars_.resize(pr.lang_.var_count());
@@ -170,6 +214,26 @@ namespace {
 		crossvalidate_run(t, pr, args, 10);
 	}
 
+	void run_heart_scan_test(test_tool& t) {
+		typedef statlogbits_problem p;
+		pred_problem<p> pr;
+		setup_heart(pr, undef_excluded);
+
+		reexp::var<p>& v = pr.lang_.var(pr.lang_.var_count()-1);
+
+		reexp::stats<statlogbits_problem> s(pr.data_);
+
+		reexp::learner<statlogbits_problem> l(pr.lang_, s, 9, 3);
+		l.exclude(pr.predvars_);
+		l.reexpress();
+
+
+		reexp::stats_info<statlogbits_problem> si(pr.names_, s);
+		t<<"deps:\n";
+		t<<si.var_deps_tostring(v, 30);
+	}
+
+
 	void print_data_by(test_tool& t, const char* tag, bool includeCost) {
 		table exptable(
 			t.report(to_table<average>({"run:out"}, "exp:", tag)));
@@ -190,12 +254,23 @@ namespace {
 
 		t<<table2.to_plot(2, 20, 0.7)<<"\n";
 
+		{
+			std::ofstream entropy(t.file_path("entropy.tex"));
+			entropy<<table2.to_latex_pgf_doc("crossentropy");
+		}
+
 		t<<"err%:\n";
 
 		table table3(
 			t.report(to_table<average>({"run:out", "prop:err"}, "data:", tag)));
 
 		t<<table3.to_plot(2, 20, 0.2)<<"\n";
+
+		{
+			std::ofstream entropy(t.file_path("error.tex"));
+			entropy<<table3.to_latex_pgf_doc("error%");
+		}
+
 
 		if (includeCost) {
 			t<<"cost:\n";
@@ -204,6 +279,10 @@ namespace {
 				t.report(to_table<average>({"run:out", "prop:cost"}, "data:", tag)));
 
 			t<<table4.to_plot(2, 20, 0.5)<<"\n";
+			{
+				std::ofstream entropy(t.file_path("cost.tex"));
+				entropy<<table4.to_latex_pgf_doc("cost");
+			}
 		}
 
 		table table5(
@@ -217,6 +296,7 @@ namespace {
 		t.ignored()<<
 			table(t.report(to_table<average>({"run:out", "perf:ns"}, "data:", tag)))
 				.to_plot(2, 20, 0)<<"\n";
+
 	}
 
 	void run_heart_filter_test(test_tool& t) {
@@ -236,27 +316,43 @@ namespace {
 		int filtersteps = 15;
 		for (int i = 0; i < filtersteps; ++i) {
 			pred_args args = {1000., 1000., 0, double(i), false};
-			crossvalidate_run(t, pr, args, 10);
+			crossvalidate_run(t, pr, args, 9);
 		}
 
 		print_data_by(t, "prioriw:", true);
 	}
 
-	void generic_run_heart_exps_test(test_tool& t, undef_t undefs, bool logDepB = false) {
+	void generic_run_heart_exps_test(test_tool& t, undef_t undefs, bool logDepB = false, int scale_group_sz = -1, int thstep = 5) {
 		pred_problem<statlogbits_problem> pr;
 		setup_heart(pr, undefs);
-		int steps = 24;
+		int steps = 26;
 		for (int i = 0; i < steps ; ++i) {
-			double th = 10 + i * 5;
-			pred_args args(th, 0.2*th, -1000., 2., 0, logDepB);
-			crossvalidate_run(t, pr, args, 10);
+			double th = 5 + i * thstep;
+			pred_args args(th, 0.2*th, 0, 3., 0, logDepB, scale_group_sz);
+			crossvalidate_run(t, pr, args, 9);
 		}
 
 		print_data_by(t, "threshold:", true);
 	}
 
 	void run_heart_exps_test_undef(test_tool& t) {
-		generic_run_heart_exps_test(t, undef_excluded);
+		generic_run_heart_exps_test(t, undef_excluded, false, -1, 2);
+	}
+
+	void run_heart_exps_b_test_undef(test_tool& t) {
+		generic_run_heart_exps_test(t, undef_excluded, true, -1,  2);
+	}
+
+	void run_heart_exps_b_scaled_test_undef(test_tool& t) {
+		generic_run_heart_exps_test(t, undef_excluded, true, 50,  2);
+	}
+
+	void run_heart_narrowexps_b_test_undef(test_tool& t) {
+		generic_run_heart_exps_test(t, undef_excluded, true, -1, 1);
+	}
+
+	void run_heart_narrowexps_b_scaled_test_undef(test_tool& t) {
+		generic_run_heart_exps_test(t, undef_excluded, true, 50, 1);
 	}
 
 	void run_heart_exps_test_noundefs(test_tool& t) {
@@ -267,17 +363,29 @@ namespace {
 		generic_run_heart_exps_test(t, undef_nothing, true);
 	}
 
+	void run_heart_exps_b_scaled_test_noundefs(test_tool& t) {
+		generic_run_heart_exps_test(t, undef_nothing, true, 50);
+	}
+
 	void run_heart_narrowexps_b_test_noundefs(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_heart(pr, undef_nothing);
 		int steps = 20;
 		for (int i = 0; i < steps ; ++i) {
-			double th = 6 + i;
-			pred_args args(th, 0.2*th, -1000., 2., 0, true);
-			crossvalidate_run(t, pr, args, 10);
+			double th = 5 + i;
+			pred_args args(th, 0.2*th, -1000., 3., 0, true);
+			crossvalidate_run(t, pr, args, 9);
 		}
 		print_data_by(t, "threshold:", true);
 	}
+
+	void run_heart_dist_test(test_tool& t) {
+		pred_problem<statlogbits_problem> pr;
+		setup_heart(pr, undef_nothing);
+		pred_args args(-1, -1, 0, 3., false, true, 50);
+		generic_dists_test(t, pr, args, 8, 12);
+	}
+
 
 	void setup_statlog_shuttle(pred_problem<statlogbits_problem>& pr, undef_t undefs = undef_excluded) {
 		setup_statlogbits(pr, "statlog_shuttle", undefs);
@@ -328,7 +436,9 @@ namespace {
 			separate_train_test_datas_run(t, pr, args, 43500);
 		}
 
-		table exptable(
+		print_data_by(t, "predfilter:", true);
+
+/*		table exptable(
 			t.report(to_table<average>({"run:out"}, "exp:", "predfilter:")));
 		t.ignored()<<"expression & relations:\n"<<exptable<<"\n";
 
@@ -364,7 +474,7 @@ namespace {
 
 		t.ignored()<<
 			table(t.report(to_table<average>({"run:out", "perf:ns"}, "data:", "predfilter:")))
-				.to_plot(2, 20, 0)<<"\n";
+				.to_plot(2, 20, 0)<<"\n";*/
 
 	}
 	void run_statlog_shuttle_filter_test(test_tool& t) {
@@ -375,18 +485,21 @@ namespace {
 	}
 
 
-	void run_generic_statlog_shuttle_exps_test(test_tool& t, undef_t undefs, bool logDepB = false) {
+	void run_generic_statlog_shuttle_exps_test(test_tool& t, undef_t undefs, bool logDepB = false, int scale_group_sz = -1) {
 		pred_problem<statlogbits_problem> pr;
 		setup_statlog_shuttle(pr, undefs);
 
 		int steps = 9;
 		double th = 100;
 		for (int i = 0; i < steps ; ++i) {
-			pred_args args(th, 0.4*th, 0, 1., 0, logDepB);
+			pred_args args(th, 0.4*th, 0, 1., 0, logDepB, scale_group_sz);
 			separate_train_test_datas_run(t, pr, args, 43500);
 			th*=2;
 		}
-		table exptable(
+
+		print_data_by(t, "threshold:", true);
+
+/*		table exptable(
 			t.report(to_table<average>({"run:out"}, "exp:", "threshold:")));
 		t.ignored()<<"expression & relations:\n"<<exptable<<"\n";
 
@@ -422,7 +535,7 @@ namespace {
 
 		t.ignored()<<
 			table(t.report(to_table<average>({"run:out", "perf:ns"}, "data:", "threshold:")))
-				.to_plot(3, 30, 0)<<"\n";
+				.to_plot(3, 30, 0)<<"\n";*/
 	}
 
 	void run_statlog_shuttle_exps_test(test_tool& t) {
@@ -435,6 +548,10 @@ namespace {
 
 	void run_statlog_shuttle_exps_noundef_b_test(test_tool& t) {
 		run_generic_statlog_shuttle_exps_test(t, undef_nothing, true);
+	}
+
+	void run_statlog_shuttle_exps_noundef_b_scaled_test(test_tool& t) {
+		run_generic_statlog_shuttle_exps_test(t, undef_nothing, true, 128);
 	}
 
 	void setup_australian(pred_problem<statlogbits_problem>& pr, undef_t undefs = undef_excluded) {
@@ -493,6 +610,18 @@ namespace {
 		print_data_by(t, "threshold:", false);
 	}
 
+	void run_australian_exps_b_scaled_test(test_tool& t) {
+		pred_problem<statlogbits_problem> pr;
+		setup_australian(pr, undef_nothing);
+		int steps = 22;
+		for (int i = 0; i < steps ; ++i) {
+			double th = 30 + i * 15;
+			pred_args args(th, 0.2*th, 0, 2., false, true, 115);
+			crossvalidate_run(t, pr, args, 10);
+		}
+		print_data_by(t, "threshold:", false);
+	}
+
 	void run_australian_prioriw_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_australian(pr);
@@ -504,6 +633,14 @@ namespace {
 		}
 		print_data_by(t, "prioriw:", false);
 	}
+
+	void run_australian_dist_test(test_tool& t) {
+		pred_problem<statlogbits_problem> pr;
+		setup_australian(pr, undef_nothing);
+		pred_args args(-1, -1, 0, 2., false, true, 115);
+		generic_dists_test(t, pr, args, 240, 12);
+	}
+
 
 	void run_heart_exps_segfault_test(test_tool& t) {
 		typedef statlogbits_problem p;
@@ -545,13 +682,13 @@ namespace {
 		t<<si.var_deps_tostring(pr.lang_.var_count()-1, 10);
 	}
 
-	void run_generic_germancredit_exps_test(test_tool& t, undef_t undefs, bool predLogDepB = false) {
+	void run_generic_germancredit_exps_test(test_tool& t, undef_t undefs, bool predLogDepB = false, size_t scaling_group_sz = -1) {
 		pred_problem<statlogbits_problem> pr;
 		setup_germancredit(pr, undefs);
-		int steps = 20;
+		int steps = 33;
 		for (int i = 0; i < steps ; ++i) {
 			double th = 40 + i * 15;
-			pred_args args(th, 0.2*th, 0, 2., false, predLogDepB);
+			pred_args args(th, 0.2*th, 0, 2., false, predLogDepB, scaling_group_sz);
 			crossvalidate_run(t, pr, args, 10);
 		}
 		print_data_by(t, "threshold:", true);
@@ -569,6 +706,17 @@ namespace {
 		run_generic_germancredit_exps_test(t, undef_nothing, true);
 	}
 
+	void run_germancredit_dist_test(test_tool& t) {
+		pred_problem<statlogbits_problem> pr;
+		setup_germancredit(pr, undef_nothing);
+		pred_args args(-1, -1, 0, 2., false, true, 128);
+		generic_dists_test(t, pr, args, 85, 12);
+	}
+
+
+	void run_germancredit_exps_noundef_b_scaled_test(test_tool& t) {
+		run_generic_germancredit_exps_test(t, undef_nothing, true, 128);
+	}
 
 }
 
@@ -577,13 +725,20 @@ void addstatlogbitstest(TestRunner& runner) {
 	runner.add("statlogbits/setup_heart", 			{"func"}, &setup_heart_test);
 	runner.add("statlogbits/heart_exp_priories",    {"func"}, &heart_exp_priories_test);
 	runner.add("statlogbits/heart", 				{"func"}, &run_heart_test);
+	runner.add("statlogbits/heart_scan", 			{"func"}, &run_heart_scan_test);
 	runner.add("statlogbits/heart_filter", 			{"func"}, &run_heart_filter_test);
 	runner.add("statlogbits/heart_prioriw", 		{"func"}, &run_heart_prioriw_test);
 	runner.add("statlogbits/heart_exps", 			{"func"}, &run_heart_exps_test_undef);
+	runner.add("statlogbits/heart_exps_b", 			{"func"}, &run_heart_exps_b_test_undef);
+	runner.add("statlogbits/heart_exps_b_scaled", 			{"func"}, &run_heart_exps_b_scaled_test_undef);
+	runner.add("statlogbits/heart_narrowexps_b", 	{"func"}, &run_heart_narrowexps_b_test_undef);
+	runner.add("statlogbits/heart_narrowexps_b_scaled", 	{"func"}, &run_heart_narrowexps_b_scaled_test_undef);
  	runner.add("statlogbits/heart_exps_noundefs", 	{"func"}, &run_heart_exps_test_noundefs);
  	runner.add("statlogbits/heart_exps_noundefs_b", 	{"func"}, &run_heart_exps_b_test_noundefs);
+ 	runner.add("statlogbits/heart_exps_noundefs_b_scaled", 	{"func"}, &run_heart_exps_b_scaled_test_noundefs);
  	runner.add("statlogbits/heart_narrowexps_noundefs_b", 	{"func"}, &run_heart_narrowexps_b_test_noundefs);
 	runner.add("statlogbits/heart_exps_segfault", 	{"func"}, &run_heart_exps_segfault_test);
+	runner.add("statlogbits/heart_dist", 			{"func"}, &run_heart_dist_test);
 	runner.add("statlogbits/setup_statlog_shuttle", {"func"}, &run_setup_statlog_shuttle_test);
 	runner.add("statlogbits/statlog_shuttle_singlerun",{"func"}, &run_statlog_shuttle_singlerun_test);
 	runner.add("statlogbits/statlog_shuttle_filter",{"func"}, &run_statlog_shuttle_filter_test);
@@ -591,13 +746,18 @@ void addstatlogbitstest(TestRunner& runner) {
 	runner.add("statlogbits/statlog_shuttle_exps",  {"func"}, &run_statlog_shuttle_exps_test);
 	runner.add("statlogbits/statlog_shuttle_exps_noundef",  {"func"}, &run_statlog_shuttle_exps_noundef_test);
 	runner.add("statlogbits/statlog_shuttle_exps_noundef_b",  {"func"}, &run_statlog_shuttle_exps_noundef_b_test);
+	runner.add("statlogbits/statlog_shuttle_exps_noundef_b_scaled",  {"func"}, &run_statlog_shuttle_exps_noundef_b_scaled_test);
 	runner.add("statlogbits/australian", 			{"func"}, &run_australian_test);
 	runner.add("statlogbits/australian_filter", 	{"func"}, &run_australian_filter_test);
 	runner.add("statlogbits/australian_exps", 	    {"func"}, &run_australian_exps_test);
 	runner.add("statlogbits/australian_exps_b", 	    {"func"}, &run_australian_exps_b_test);
+	runner.add("statlogbits/australian_exps_b_scaled",{"func"}, &run_australian_exps_b_scaled_test);
 	runner.add("statlogbits/australian_prioriw", 	{"func"}, &run_australian_prioriw_test);
+	runner.add("statlogbits/australian_dist", 		{"func"}, &run_australian_dist_test);
 	runner.add("statlogbits/setup_germancredit", 	{"func"}, &run_setup_germancredit_test);
 	runner.add("statlogbits/germancredit_exps", 	{"func"}, &run_germancredit_exps_test);
 	runner.add("statlogbits/germancredit_exps_noundef", 	{"func"}, &run_germancredit_exps_noundef_test);
 	runner.add("statlogbits/germancredit_exps_noundef_b", 	{"func"}, &run_germancredit_exps_noundef_b_test);
+	runner.add("statlogbits/germancredit_exps_noundef_b_scaled", 	{"func"}, &run_germancredit_exps_noundef_b_scaled_test);
+	runner.add("statlogbits/germancredit_dist", 	{"func"}, &run_germancredit_dist_test);
 }

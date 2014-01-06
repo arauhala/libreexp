@@ -103,6 +103,7 @@ namespace reexp {
 										  	    int yvarid,
 										  	    const reexp::data_var<P>& pixels,
 										  	   	const reexp::cvec<P>& at = reexp::cvec<P>()) const;
+			std::string drawn_data_tostring(cvec<P> at, int xcvar, int ycvar, const data<P>& d) const;
 			std::string drawn_data_tostring(cvec<P> at, int xcvar, int ycvar) const;
 			std::string drawn_data_tostring(cvec<P> at, int xcvar, int ycvar, int itercvar, int n) const;
 			std::string var_tostring(const var_stats<P>& vs, const cvec<P>& shift = cvec<P>()) const;

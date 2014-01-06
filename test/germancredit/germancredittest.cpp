@@ -18,10 +18,7 @@ namespace {
 
 	static const size_t SampleCount = 1000;
 
-	struct germancredit_problem {
-		static const int DIM = 1;
-		static const int MAX_REL_VARS = 2; // two max relation variables
-	};
+	typedef reexp::traits1d germancredit_problem;
 
 	enum undef_t {
 		undef_nothing 					= 0,
@@ -379,7 +376,7 @@ namespace {
 						*data.var(k)[at] = true;
 						if (undefs & undef_excluded_discrete_vars) {
 							int group = groups[k];
-							for (size_t l = k-1; l >= 0 && groups[l] == group; --l) {
+							for (int l = k-1; l >= 0 && groups[l] == group; --l) {
 								data.var(l)[at] = false; // mark undefined
 							}
 						}

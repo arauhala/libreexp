@@ -74,10 +74,7 @@ namespace {
 		"n" // sample
 	};
 
-	struct recognition_problem {
-		static const int DIM = 3;
-		static const int MAX_REL_VARS = 2;
-	};
+	typedef reexp::traits3d recognition_problem;
 
 	reexp::cvec<recognition_problem> sample_dim() {
 		reexp::cvec<recognition_problem> dim;
@@ -187,9 +184,9 @@ namespace {
 		{9, sample9}
 	};
 
-	int xyoffset(int x, int y) {
+/*	int xyoffset(int x, int y) {
 		return y*3 + x;
-	}
+	}*/
 
 	template <typename P>
 	void populate(reexp::data<P>& data) {
@@ -416,6 +413,31 @@ namespace {
 	}
 
 	template <typename P>
+	void print_rel(test_tool& t, const reexp::rel<P>& rel, int state = -1) {
+		int varn = rel.entries().size();
+		t<<"[";
+		for (int j = 0; j < varn; j++) {
+			const reexp::rel_entry<P>& e = rel.entries()[j];
+			const reexp::var<P>& var( *e.var_ );
+			const reexp::cvec<P>& cv( e.shift_ );
+			if (state != -1 && !rel.varState(j, state)) t<<"!";
+			print_var_name(t, var);
+			t<<"(r";
+			for (int k = 0; k < P::DIM; k++) {
+				if (cv[k] == 1) {
+					t<<" + "<<cvarnames[k];
+				} else if (cv[k] != 0) {
+					t<<" + "<<cv[k]<<cvarnames[k];
+				}
+			}
+			t<<")";
+			if (j + 1 < varn) t<<(", ");
+		}
+		t<<"] ";
+		t<<checkl;
+	}
+
+	template <typename P>
 	void print_var(test_tool& t, const reexp::var<P>& var) {
 		switch (var.id()) {
 			case 0: t<<"px"<<checkl; break;
@@ -454,31 +476,6 @@ namespace {
 	}
 
 	template <typename P>
-	void print_rel(test_tool& t, const reexp::rel<P>& rel, int state = -1) {
-		int varn = rel.entries().size();
-		t<<"[";
-		for (int j = 0; j < varn; j++) {
-			const reexp::rel_entry<P>& e = rel.entries()[j];
-			const reexp::var<P>& var( *e.var_ );
-			const reexp::cvec<P>& cv( e.shift_ );
-			if (state != -1 && !rel.varState(j, state)) t<<"!";
-			print_var_name(t, var);
-			t<<"(r";
-			for (int k = 0; k < P::DIM; k++) {
-				if (cv[k] == 1) {
-					t<<" + "<<cvarnames[k];
-				} else if (cv[k] != 0) {
-					t<<" + "<<cv[k]<<cvarnames[k];
-				}
-			}
-			t<<")";
-			if (j + 1 < varn) t<<(", ");
-		}
-		t<<"] ";
-		t<<checkl;
-	}
-
-	template <typename P>
 	void print_rels(test_tool& t, reexp::stats<P>& st) {
 		const reexp::lang<P>& lang = st.data().lang();
 		for (int i = 0; i < lang.rel_count(); i++) {
@@ -507,7 +504,7 @@ namespace {
 		}
 	}
 
-	void print_multiline(test_tool& t, int pad, const char* txt) {
+/*	void print_multiline(test_tool& t, int pad, const char* txt) {
 		std::string p;
 		for (int i = 0; i < pad; i++) p += " ";
 
@@ -520,7 +517,7 @@ namespace {
 			}
 		}
 		t<<checkl;
-	}
+	}*/
 
 
 	void run_exp_stats_test(bool& ok) {
@@ -790,7 +787,7 @@ namespace {
 
 	}
 
-	void run_bitset_test(bool& ok) {
+/*	void run_bitset_test(bool& ok) {
 		test_tool t("test/digits/bitset", ok);
 
 		typedef recognition_problem p;
@@ -798,7 +795,7 @@ namespace {
 		reexp::lang<p> lang;
 		reexp::data<p> data(lang, sample_dim());
 		setup_reg<p>(lang, data);
-	}
+	}*/
 }
 
 template <typename P>

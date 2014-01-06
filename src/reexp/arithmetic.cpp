@@ -16,8 +16,8 @@ namespace reexp {
 	bool arithmetic_bit_istream::_read(int prob) {
 		// Loose select
 		while (true) {
-			if (offset >= 0 && size + offset < HALF) { // right border is under cut
-			} else if (offset >= HALF && size + offset < ONE) { // left border is above cut
+			if (offset >= 0 && size + offset <= HALF) { // right border is under cut
+			} else if (offset >= HALF && size + offset <= ONE) { // left border is above cut
 				offset -= HALF;
 			} else {
 				break;
@@ -57,6 +57,9 @@ namespace reexp {
 	void arithmetic_bit_ostream::_write(int prob, bool bit) {
 		// Cut
 		int cut = (int)((size * (long)prob)>>ONE_BITS);
+		if (cut == size || !cut) {
+			throw std::runtime_error("this shouldn't happen");
+		}
 
 		// Side select
 		if (bit) {
@@ -65,12 +68,19 @@ namespace reexp {
 		} else {
 			size = cut;
 		}
+		if (!size) {
+			throw std::runtime_error("this shouldn't happen");
+		}
 
 		// Loose select
 		while (true) {
-			if (offset >= 0 && size + offset < HALF) { // right border is under cut
+			if (!size) {
+				throw std::runtime_error("this shouldn't happen");
+			}
+
+			if (offset >= 0 && size + offset <= HALF) { // right border is under cut
 				out_<<false;
-			} else if (offset >= HALF && size + offset < ONE) { // left border is above cut
+			} else if (offset >= HALF && size + offset <= ONE) { // left border is above cut
 				offset -= HALF;
 				out_<<true;
 			} else {

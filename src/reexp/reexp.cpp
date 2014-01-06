@@ -13,6 +13,31 @@
 
 namespace reexp {
 
+	template struct bitmatrix<traits1d>;
+	template struct bitmatrix<traits2d>;
+	template struct bitmatrix<traits3d>;
+	template struct bitmatrix<traits4d>;
+
+	template class var<traits1d>;
+	template class var<traits2d>;
+	template class var<traits3d>;
+	template class var<traits4d>;
+
+	template class orig<traits1d>;
+	template class orig<traits2d>;
+	template class orig<traits3d>;
+	template class orig<traits4d>;
+
+	template class rel<traits1d>;
+	template class rel<traits2d>;
+	template class rel<traits3d>;
+	template class rel<traits4d>;
+
+	template class exp<traits1d>;
+	template class exp<traits2d>;
+	template class exp<traits3d>;
+	template class exp<traits4d>;
+
 	template class lang<traits1d>;
 	template class lang<traits2d>;
 	template class lang<traits3d>;
@@ -78,6 +103,5 @@ namespace reexp {
 	template class stats_info<traits2d>;
 	template class stats_info<traits3d>;
 	template class stats_info<traits4d>;
-
 
 }
