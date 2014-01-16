@@ -121,9 +121,9 @@ namespace {
 		t<<"vars:\n\n";
 		t<<si.vars_tostring();
 
-		t<<"naive info: "<<s.naiveInfo()<<" bits\n";
-		t<<"            "<<(s.naiveInfo()/d.dim()[0])<<" bits/sample\n";
-		t<<"            "<<(s.naiveInfo()/d.dim().volume())<<" bits/dna\n";
+		t<<"naive info: "<<s.ndl()<<" bits\n";
+		t<<"            "<<(s.ndl()/d.dim()[0])<<" bits/sample\n";
+		t<<"            "<<(s.ndl()/d.dim().volume())<<" bits/dna\n";
 	}
 
 	void reexp_test(test_tool& t) {
@@ -135,9 +135,9 @@ namespace {
 
 		stats<p> s(d);
 
-		t<<"naive info: "<<s.naiveInfo()<<" bits\n";
-		t<<"            "<<(s.naiveInfo()/d.dim()[0])<<" bits/sample\n";
-		t<<"            "<<(s.naiveInfo()/d.dim().volume())<<" bits/dna\n\n";
+		t<<"naive info: "<<s.ndl()<<" bits\n";
+		t<<"            "<<(s.ndl()/d.dim()[0])<<" bits/sample\n";
+		t<<"            "<<(s.ndl()/d.dim().volume())<<" bits/dna\n\n";
 
 		t<<"reexpressing:\n";
 
@@ -146,10 +146,10 @@ namespace {
 		int add = 5;
 		int exps = 0;
 		while (true) {
-			double preinfo = (s.naiveInfo()/d.dim().volume());
+			double preinfo = (s.ndl()/d.dim().volume());
 			int added = ln.reexpress(true, add);
 			exps += added;
-			t<<"delta: "<<preinfo<<"->"<<(s.naiveInfo()/d.dim().volume())<<" bits/dna\n\n";
+			t<<"delta: "<<preinfo<<"->"<<(s.ndl()/d.dim().volume())<<" bits/dna\n\n";
 			if (added < add) break;
 		}
 
@@ -165,9 +165,9 @@ namespace {
 
 		s.update();
 
-		t<<"naive info: "<<s.naiveInfo()<<" bits\n";
-		t<<"            "<<(s.naiveInfo()/d.dim()[0])<<" bits/sample\n";
-		t<<"            "<<(s.naiveInfo()/d.dim().volume())<<" bits/dna\n";
+		t<<"naive info: "<<s.ndl()<<" bits\n";
+		t<<"            "<<(s.ndl()/d.dim()[0])<<" bits/sample\n";
+		t<<"            "<<(s.ndl()/d.dim().volume())<<" bits/dna\n";
 	}
 
 }

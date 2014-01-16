@@ -578,13 +578,13 @@ namespace {
 
 		t<<"scan:\n"<<si.scan_tostring()<<"\n";
 
-		double naiveInfo = s.naiveInfo();
+		double ndl = s.ndl();
 		int exps = l.reexpress(true);
-		double naiveInfo2 = s.naiveInfo();
+		double ndl2 = s.ndl();
 
 		t<<exps<<" exps added.\n\n";
 
-		t<<"naive information dropped "<<(naiveInfo/8)<<"B -> "<<(naiveInfo2/8)<<"B for "<<len<<"B of text.\n\n";
+		t<<"naive information dropped "<<(ndl/8)<<"B -> "<<(ndl2/8)<<"B for "<<len<<"B of text.\n\n";
 
 		//print_text(t, data, names, si.lang_info(), 2);
 

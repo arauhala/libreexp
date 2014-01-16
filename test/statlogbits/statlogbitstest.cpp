@@ -234,7 +234,7 @@ namespace {
 	}
 
 
-	void print_data_by(test_tool& t, const char* tag, bool includeCost) {
+	void print_data_by(test_tool& t, const char* tag, bool includeCost, bool crossCompressed=false) {
 		table exptable(
 			t.report(to_table<average>({"run:out"}, "exp:", tag)));
 		t.ignored()<<"expression & relations:\n"<<exptable<<"\n";
@@ -285,17 +285,41 @@ namespace {
 			}
 		}
 
-		table table5(
-			t.report(to_table<average>({"run:out", "perf:ns"}, "data:", tag)));
 
-		t<<"\nperformance (ns / entry)\n";
-		t.ignored()<<table5;
+		if (crossCompressed) {
+			t<<"cross compression byte sizes:\n";
+
+			table table4(
+				t.report(to_table<average>({"run:out", "prop:encodedB"}, "data:", tag)));
+
+			t<<table4.to_plot(2, 20, 0.5)<<"\n";
+			{
+				std::ofstream entropy(t.file_path("cost.tex"));
+				entropy<<table4.to_latex_pgf_doc("cost");
+			}
+
+			table traintable(
+				t.report(to_table<average>({"run:out", "data:train"}, "perf:", tag)));
+			t.ignored()<<"train performance:\n"<<traintable<<"\n";
+
+			table testtable(
+				t.report(to_table<average>({"run:out", "data:test"}, "perf:", tag)));
+			t.ignored()<<"test performance:\n"<<testtable<<"\n";
+
+		} else {
+			table table5(
+				t.report(to_table<average>({"run:out", "perf:ns"}, "data:", tag)));
+
+			t<<"\nperformance (ns / entry)\n";
+			t.ignored()<<table5;
+		}
 
 		t<<"\nns\n";
 
 		t.ignored()<<
 			table(t.report(to_table<average>({"run:out", "perf:ns"}, "data:", tag)))
 				.to_plot(2, 20, 0)<<"\n";
+
 
 	}
 
@@ -309,6 +333,33 @@ namespace {
 		}
 		print_data_by(t, "predfilter:", true);
 	}
+
+	void run_heart_crosscompress_test(test_tool& t) {
+		pred_problem<statlogbits_problem> pr;
+		setup_heart(pr, undef_nothing);
+		int steps = 26;
+		for (int i = 0; i < steps; ++i) {
+			double th = 5 + i*5;
+			pred_args args(th, .4*th, 0, 2., 0, true);
+			args.crosscompress_ = true;
+			crossvalidate_run(t, pr, args, 10);
+		}
+		print_data_by(t, "threshold:", true, true);
+	}
+
+	void run_heart_narrowexps_crosscompress_test(test_tool& t) {
+		pred_problem<statlogbits_problem> pr;
+		setup_heart(pr, undef_nothing);
+		int steps = 20;
+		for (int i = 0; i < steps; ++i) {
+			double th = 5 + i;
+			pred_args args(th, .4*th, 0, 2., 0, true);
+			args.crosscompress_ = true;
+			crossvalidate_run(t, pr, args, 10);
+		}
+		print_data_by(t, "threshold:", true, true);
+	}
+
 
 	void run_heart_prioriw_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
@@ -329,6 +380,7 @@ namespace {
 		for (int i = 0; i < steps ; ++i) {
 			double th = 5 + i * thstep;
 			pred_args args(th, 0.2*th, 0, 3., 0, logDepB, scale_group_sz);
+//			args.crosscompress_ = true;
 			crossvalidate_run(t, pr, args, 9);
 		}
 
@@ -728,6 +780,8 @@ void addstatlogbitstest(TestRunner& runner) {
 	runner.add("statlogbits/heart_scan", 			{"func"}, &run_heart_scan_test);
 	runner.add("statlogbits/heart_filter", 			{"func"}, &run_heart_filter_test);
 	runner.add("statlogbits/heart_prioriw", 		{"func"}, &run_heart_prioriw_test);
+	runner.add("statlogbits/heart_crosscompress", 	{"func"}, &run_heart_crosscompress_test);
+	runner.add("statlogbits/heart_narrowexps_crosscompress", 	{"func"}, &run_heart_narrowexps_crosscompress_test);
 	runner.add("statlogbits/heart_exps", 			{"func"}, &run_heart_exps_test_undef);
 	runner.add("statlogbits/heart_exps_b", 			{"func"}, &run_heart_exps_b_test_undef);
 	runner.add("statlogbits/heart_exps_b_scaled", 			{"func"}, &run_heart_exps_b_scaled_test_undef);

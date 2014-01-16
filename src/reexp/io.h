@@ -15,6 +15,39 @@
 namespace reexp {
 
 	template <typename P>
+	class index_over_var_bits {
+	private:
+		int size_;
+		std::vector<int> offsets_;
+
+	public:
+		index_over_var_bits(const data<P>& d) : size_(), offsets_(){
+			offsets_.resize(d.var_count()+1);
+			for (size_t i = 0; i < d.var_count(); i++) {
+				offsets_[i] = size_;
+				size_ += d.var(i).bits().size();
+			}
+			offsets_[d.var_count()] = size_;
+		}
+		int from_var_bit(int varid, int bitindex) const {
+			return offset(varid) + bitindex;
+		}
+		bool to_var_bit(int index, int& varid, int& bitindex) const {
+			if (index >= size_) return false;
+			varid = 0;
+			while (index >= offsets_[varid+1]) varid++;
+			bitindex = index - offsets_[varid];
+			return true;
+		}
+		int offset(int varid) const {
+			return offsets_[varid];
+		}
+		int size() const {
+			return size_;
+		}
+	};
+
+	template <typename P>
 	class io {
 	private:
 		const reexp::stats<P>& s_;
@@ -56,22 +89,28 @@ namespace reexp {
 			}
 		};*/
 
+
+		// knownAt should mark the moment, when certain bit was marked undefined/determined
+		// for the first time (smallest index) when re-expressing. note that reading
+		// is done in reverse order compared to re-expressing and writing.
+		//
+
 		void read_states(arithmetic_bit_istream& in, reexp::data<P>& d) {
-			int totalbitcount = 0;
-			std::vector<int> knownOffsets(d.var_count());
+			index_over_var_bits<P> indexspace(d);
+			std::vector<int> knownAt;
+			read_states(in, d, indexspace, knownAt);
+		}
 
+		void read_states(arithmetic_bit_istream& in, reexp::data<P>& d, const index_over_var_bits<P>& indexspace, std::vector<int>& knownAt) {
+			knownAt.resize(indexspace.size());
+			for (int& k : knownAt) k = INT_MAX;
 			for (size_t i = 0; i < d.var_count(); i++) {
-				knownOffsets[i] = totalbitcount;
-				totalbitcount += d.var(i).bits().size();
-
 				d.var(i).defined().fill(true);
 				d.var(i).states().fill(false);
 			}
-			std::vector<int> knownAt(totalbitcount);
-			for (int& k : knownAt) k = INT_MAX;
 			for (int i = d.var_count()-1; i >= 0; --i) {
 				reexp::data_var<P>& dv = d.var(i);
-				int vknownoffset = knownOffsets[i];
+				int vknownoffset = indexspace.offset(i);
 				int int_p = as_int_p(s_.var(i).eP());
 				const reexp::var<P>& v = d.lang().var(i);
 				const reexp::exp<P>* vexp = dynamic_cast<const reexp::exp<P>*>(&v);
@@ -95,13 +134,13 @@ namespace reexp {
 						cvec<P> edim = edv.dim();
 						if (edim.contains(eat) && !*edv[eat]) {
 							bool exclude = true;
-							int ekat = knownOffsets[e->id()] + edv.index(eat);
+							int ekat = indexspace.from_var_bit(e->id(), edv.index(eat));
 							for (int k = 1; k < erel.entries().size(); ++k) {
 								const rel_entry<P>& re = erel.entries()[1];
 								cvec<P> evat = eat + re.shift_;
 								const data_var<P>& evdv = d.var(re.var_->id());
 								exclude &= (*evdv[evat] == erel.varState(k, e->state()));
-								int evkat = knownOffsets[re.var_->id()] + evdv.index(evat);
+								int evkat = indexspace.from_var_bit(re.var_->id(), evdv.index(evat));
 								exclude &= knownAt[evkat] > ekat;
 							}
 							if (exclude) {
@@ -109,8 +148,9 @@ namespace reexp {
 								if (bit) {
 									bit = false; // implicitly known
 									*bit = !erel.varState(0, e->state());
-									knownAt[kat] = ekat;
 								}
+								// this bit was marked determined at the moment of ekat
+								knownAt[kat] = std::min(ekat, knownAt[kat]);
 							}
 						}
 					}
@@ -120,7 +160,7 @@ namespace reexp {
 						for (const implmask<P>& m : v.expmasks()) {
 							int mid = m.var_->id();
 							reexp::data_var<P>& mdv = d.var(mid);
-							int mvknownoffset = knownOffsets[mid];
+							int mvknownoffset = indexspace.offset(mid);
 							const bitmatrix<P>& mask = m.mask_;
 							for (dim_iterator<P> di(mask.ndim_.dim_); di; ++di) {
 								cvec<P> mat = *di + mask.ndim_.shift_ + at;

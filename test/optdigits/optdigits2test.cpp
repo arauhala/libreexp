@@ -297,10 +297,10 @@ namespace {
 		{
 			time_sentry time;
 			while (true) {
-				float before = stats.naiveInfo();
+				float before = stats.ndl();
 				if (!learner.add_exp()) break;
 		//		t<<"expression added.\n";
-				float after = stats.naiveInfo();
+				float after = stats.ndl();
 				t<<"info "<<before<<" -> "<<after<<"\n\n";
 
 				t<<"scan:\n\n"<<si.scan_tostring(3, 2)<<"\n";

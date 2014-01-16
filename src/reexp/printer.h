@@ -9,6 +9,7 @@
 #define REEXP_PRINTER_H_
 
 #include "reexp/reexp.h"
+#include "reexp/io.h"
 
 #include <iostream>
 #include <sstream>
@@ -48,6 +49,7 @@ namespace reexp {
 
 	/**
 	 * information on the problem setting
+	 * TODO: should be renamed to names or labels
 	 */
 	class pinfo {
 		public:
@@ -83,6 +85,11 @@ namespace reexp {
 			std::string drawn_rel_tostring(int xcvar, int ycvar, const reexp::rel<P>& r) const;
 			std::string drawn_vars_tostring(int xcvar, int ycvar) const;
 			std::string drawn_rels_tostring(int xcvar, int ycvar) const;
+			std::string invorder_diff_tostring(const reexp::data<P>& d1,
+											   const reexp::data<P>& d2,
+											   int maxprints = 100,
+											   const index_over_var_bits<P>* d2KnownOffsets = 0,
+											   const std::vector<int>* d2KnownAt = 0) const;
 			const reexp::lang<P>& lang() const;
 		private:
 			const pinfo& info_;

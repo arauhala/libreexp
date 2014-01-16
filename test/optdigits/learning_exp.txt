@@ -1,80 +1,80 @@
 scan:
 
-43992.68   px(r), px(r + y)                                      [n(s)=34331,naiveInfo(s)=3.09,info(s)=1.81,eNaiveInfo(s)=3.09,eInfo(s)=1.81]
-37192.53   px(r), px(r + x)                                      [n(s)=33475,naiveInfo(s)=2.95,info(s)=1.84,eNaiveInfo(s)=2.95,eInfo(s)=1.84]
-34219.11   !px(r), !px(r + y)                                    [n(s)=71995,naiveInfo(s)=1.21,info(s)=0.74,eNaiveInfo(s)=1.21,eInfo(s)=0.74]
+43992.68   px(r), px(r + y)                                      [n(s)=34331,ndl(s)=3.09,info(s)=1.81,endl(s)=3.09,eInfo(s)=1.81]
+37192.53   px(r), px(r + x)                                      [n(s)=33475,ndl(s)=2.95,info(s)=1.84,endl(s)=2.95,eInfo(s)=1.84]
+34219.11   !px(r), !px(r + y)                                    [n(s)=71995,ndl(s)=1.21,info(s)=0.74,endl(s)=1.21,eInfo(s)=0.74]
 
 expression added.
 info 120342 -> 100274
 
 scan:
 
-18916.32   <px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>          [n(s)=10827,naiveInfo(s)=4.68,info(s)=2.93,eNaiveInfo(s)=4.68,eInfo(s)=2.93]
-16154.80   <px(r), px(r + y)>, <px(r + x), px(r + x + y)>        [n(s)=8183,naiveInfo(s)=5.35,info(s)=3.37,eNaiveInfo(s)=5.35,eInfo(s)=3.37]
-14051.42   <px(r), px(r + y)>, px(r + 2y)                        [n(s)=4369,naiveInfo(s)=7.28,info(s)=4.07,eNaiveInfo(s)=7.28,eInfo(s)=4.07]
+18916.32   <px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>          [n(s)=10827,ndl(s)=4.68,info(s)=2.93,endl(s)=4.68,eInfo(s)=2.93]
+16154.80   <px(r), px(r + y)>, <px(r + x), px(r + x + y)>        [n(s)=8183,ndl(s)=5.35,info(s)=3.37,endl(s)=5.35,eInfo(s)=3.37]
+14051.42   <px(r), px(r + y)>, px(r + 2y)                        [n(s)=4369,ndl(s)=7.28,info(s)=4.07,endl(s)=7.28,eInfo(s)=4.07]
 
 expression added.
 info 100274 -> 92176
 
 scan:
 
-12210.30   <px(r), px(r + y)>, px(r + 2y)                        [n(s)=3320,naiveInfo(s)=8.06,info(s)=4.38,eNaiveInfo(s)=8.05,eInfo(s)=4.38]
-5979.98   <px(r), px(r + y)>, <px(r + x), px(r + x + y)>        [n(s)=1712,naiveInfo(s)=8.70,info(s)=5.20,eNaiveInfo(s)=8.70,eInfo(s)=5.20]
-5422.84   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>    [n(s)=2220,naiveInfo(s)=7.04,info(s)=4.60,eNaiveInfo(s)=7.04,eInfo(s)=4.60]
+12210.30   <px(r), px(r + y)>, px(r + 2y)                        [n(s)=3320,ndl(s)=8.06,info(s)=4.38,endl(s)=8.05,eInfo(s)=4.38]
+5979.98   <px(r), px(r + y)>, <px(r + x), px(r + x + y)>        [n(s)=1712,ndl(s)=8.70,info(s)=5.20,endl(s)=8.70,eInfo(s)=5.20]
+5422.84   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>    [n(s)=2220,ndl(s)=7.04,info(s)=4.60,endl(s)=7.04,eInfo(s)=4.60]
 
 expression added.
 info 92176 -> 80874.2
 
 scan:
 
-5741.15   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + x), px(r + x + y)>, <px(r + x + 2y), px(r + x + 3y)>>    [n(s)=1862,naiveInfo(s)=8.01,info(s)=4.92,eNaiveInfo(s)=8.01,eInfo(s)=4.92]
-5590.82   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>    [n(s)=2220,naiveInfo(s)=6.80,info(s)=4.28,eNaiveInfo(s)=6.80,eInfo(s)=4.28]
-4343.08   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, px(r + 4y)    [n(s)=1049,naiveInfo(s)=9.87,info(s)=5.73,eNaiveInfo(s)=9.87,eInfo(s)=5.73]
+5741.15   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + x), px(r + x + y)>, <px(r + x + 2y), px(r + x + 3y)>>    [n(s)=1862,ndl(s)=8.01,info(s)=4.92,endl(s)=8.01,eInfo(s)=4.92]
+5590.82   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>    [n(s)=2220,ndl(s)=6.80,info(s)=4.28,endl(s)=6.80,eInfo(s)=4.28]
+4343.08   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, px(r + 4y)    [n(s)=1049,ndl(s)=9.87,info(s)=5.73,endl(s)=9.87,eInfo(s)=5.73]
 
 expression added.
 info 80874.2 -> 79773.8
 
 scan:
 
-3894.28   <<px(r), px(r + y)>, px(r + 2y)>, <<px(r + x), px(r + x + y)>, px(r + x + 2y)>    [n(s)=1127,naiveInfo(s)=9.61,info(s)=6.16,eNaiveInfo(s)=9.61,eInfo(s)=6.16]
-3284.36   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, px(r + 4y)    [n(s)=720,naiveInfo(s)=10.74,info(s)=6.18,eNaiveInfo(s)=10.74,eInfo(s)=6.18]
-3175.03   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>    [n(s)=1045,naiveInfo(s)=8.24,info(s)=5.20,eNaiveInfo(s)=8.24,eInfo(s)=5.20]
+3894.28   <<px(r), px(r + y)>, px(r + 2y)>, <<px(r + x), px(r + x + y)>, px(r + x + 2y)>    [n(s)=1127,ndl(s)=9.61,info(s)=6.16,endl(s)=9.61,eInfo(s)=6.16]
+3284.36   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, px(r + 4y)    [n(s)=720,ndl(s)=10.74,info(s)=6.18,endl(s)=10.74,eInfo(s)=6.18]
+3175.03   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>    [n(s)=1045,ndl(s)=8.24,info(s)=5.20,endl(s)=8.24,eInfo(s)=5.20]
 
 expression added.
 info 79773.8 -> 77964.5
 
 scan:
 
-3284.36   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, px(r + 4y)    [n(s)=720,naiveInfo(s)=10.74,info(s)=6.18,eNaiveInfo(s)=10.74,eInfo(s)=6.18]
-3175.03   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>    [n(s)=1045,naiveInfo(s)=8.24,info(s)=5.20,eNaiveInfo(s)=8.24,eInfo(s)=5.20]
-2993.87   <<px(r + y), px(r + 2y)>, <px(r + 3y), px(r + 4y)>>, <<px(r + x), px(r + x + y)>, <px(r + x + 2y), px(r + x + 3y)>>    [n(s)=801,naiveInfo(s)=9.58,info(s)=5.84,eNaiveInfo(s)=9.58,eInfo(s)=5.84]
+3284.36   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, px(r + 4y)    [n(s)=720,ndl(s)=10.74,info(s)=6.18,endl(s)=10.74,eInfo(s)=6.18]
+3175.03   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>    [n(s)=1045,ndl(s)=8.24,info(s)=5.20,endl(s)=8.24,eInfo(s)=5.20]
+2993.87   <<px(r + y), px(r + 2y)>, <px(r + 3y), px(r + 4y)>>, <<px(r + x), px(r + x + y)>, <px(r + x + 2y), px(r + x + 3y)>>    [n(s)=801,ndl(s)=9.58,info(s)=5.84,endl(s)=9.58,eInfo(s)=5.84]
 
 expression added.
 info 77964.5 -> 76049.2
 
 scan:
 
-2880.62   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>    [n(s)=847,naiveInfo(s)=8.84,info(s)=5.43,eNaiveInfo(s)=8.83,eInfo(s)=5.43]
-2472.04   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <px(r + 4y), px(r + 5y)>    [n(s)=590,naiveInfo(s)=10.44,info(s)=6.25,eNaiveInfo(s)=10.44,eInfo(s)=6.25]
-2107.23   <<px(r + y), px(r + 2y)>, <px(r + 3y), px(r + 4y)>>, <<px(r + x), px(r + x + y)>, <px(r + x + 2y), px(r + x + 3y)>>    [n(s)=511,naiveInfo(s)=10.52,info(s)=6.39,eNaiveInfo(s)=10.52,eInfo(s)=6.39]
+2880.62   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>    [n(s)=847,ndl(s)=8.84,info(s)=5.43,endl(s)=8.83,eInfo(s)=5.43]
+2472.04   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <px(r + 4y), px(r + 5y)>    [n(s)=590,ndl(s)=10.44,info(s)=6.25,endl(s)=10.44,eInfo(s)=6.25]
+2107.23   <<px(r + y), px(r + 2y)>, <px(r + 3y), px(r + 4y)>>, <<px(r + x), px(r + x + y)>, <px(r + x + 2y), px(r + x + 3y)>>    [n(s)=511,ndl(s)=10.52,info(s)=6.39,endl(s)=10.52,eInfo(s)=6.39]
 
 expression added.
 info 76049.2 -> 74756.3
 
 scan:
 
-1994.96   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <px(r + 4y), px(r + 5y)>    [n(s)=465,naiveInfo(s)=10.86,info(s)=6.57,eNaiveInfo(s)=10.86,eInfo(s)=6.57]
-1543.02   <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + x), px(r + x + y)>, <px(r + x + 2y), px(r + x + 3y)>>>, <<<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>, <<px(r + x + 4y), px(r + x + 5y)>, <px(r + x + 6y), px(r + x + 7y)>>>    [n(s)=343,naiveInfo(s)=11.28,info(s)=6.78,eNaiveInfo(s)=11.27,eInfo(s)=6.78]
-1338.72   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, px(r + 6y)>    [n(s)=353,naiveInfo(s)=10.70,info(s)=6.90,eNaiveInfo(s)=10.70,eInfo(s)=6.90]
+1994.96   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <px(r + 4y), px(r + 5y)>    [n(s)=465,ndl(s)=10.86,info(s)=6.57,endl(s)=10.86,eInfo(s)=6.57]
+1543.02   <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + x), px(r + x + y)>, <px(r + x + 2y), px(r + x + 3y)>>>, <<<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>, <<px(r + x + 4y), px(r + x + 5y)>, <px(r + x + 6y), px(r + x + 7y)>>>    [n(s)=343,ndl(s)=11.28,info(s)=6.78,endl(s)=11.27,eInfo(s)=6.78]
+1338.72   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, px(r + 6y)>    [n(s)=353,ndl(s)=10.70,info(s)=6.90,endl(s)=10.70,eInfo(s)=6.90]
 
 
 learning done.
 
 scan:
 
-1994.96   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <px(r + 4y), px(r + 5y)>    [n(s)=465,naiveInfo(s)=10.86,info(s)=6.57,eNaiveInfo(s)=10.86,eInfo(s)=6.57]
-1543.02   <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + x), px(r + x + y)>, <px(r + x + 2y), px(r + x + 3y)>>>, <<<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>, <<px(r + x + 4y), px(r + x + 5y)>, <px(r + x + 6y), px(r + x + 7y)>>>    [n(s)=343,naiveInfo(s)=11.28,info(s)=6.78,eNaiveInfo(s)=11.27,eInfo(s)=6.78]
-1338.72   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, px(r + 6y)>    [n(s)=353,naiveInfo(s)=10.70,info(s)=6.90,eNaiveInfo(s)=10.70,eInfo(s)=6.90]
+1994.96   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <px(r + 4y), px(r + 5y)>    [n(s)=465,ndl(s)=10.86,info(s)=6.57,endl(s)=10.86,eInfo(s)=6.57]
+1543.02   <<<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + x), px(r + x + y)>, <px(r + x + 2y), px(r + x + 3y)>>>, <<<px(r + 4y), px(r + 5y)>, <px(r + 6y), px(r + 7y)>>, <<px(r + x + 4y), px(r + x + 5y)>, <px(r + x + 6y), px(r + x + 7y)>>>    [n(s)=343,ndl(s)=11.28,info(s)=6.78,endl(s)=11.27,eInfo(s)=6.78]
+1338.72   <<px(r), px(r + y)>, <px(r + 2y), px(r + 3y)>>, <<px(r + 4y), px(r + 5y)>, px(r + 6y)>    [n(s)=353,ndl(s)=10.70,info(s)=6.90,endl(s)=10.70,eInfo(s)=6.90]
 
 vars:
 

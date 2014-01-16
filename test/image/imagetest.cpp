@@ -171,7 +171,7 @@ namespace {
 		}
 		reexp::learner<p> learner(lang, stats, threshold, 0.35*threshold);
 
-		double infoBefore = stats.naiveInfo();
+		double infoBefore = stats.ndl();
 		time_sentry ms;
 		int exps = learner.reexpress(true);
 		t.ignored()<<"rexpression took "<<ms.ms()<<" ms.\n\n";
@@ -189,7 +189,7 @@ namespace {
 			if (exps > 100) break;
 		}*/
 		t<<exps<<" exps formed\n\n";
-		double infoAfter = stats.naiveInfo();
+		double infoAfter = stats.ndl();
 
 		reexp::pinfo names;
 		setup_names<p>(names);
@@ -379,7 +379,7 @@ namespace {
 
 		t<<si.rels_tostring()<<"\n";
 
-		double infoBefore = stats.naiveInfo();
+		double infoBefore = stats.ndl();
 
 		learner.reexpress(true, exps);
 
@@ -396,7 +396,7 @@ namespace {
 
 		t<<si.rels_tostring()<<"\n";
 
-		double infoAfter = stats.naiveInfo();
+		double infoAfter = stats.ndl();
 		t<<"entropy "<<infoBefore<<" -> "<<infoAfter<<"\n";
 	}
 
@@ -459,22 +459,41 @@ namespace {
 			reexp::arithmetic_bit_ostream out(bout);
 
 			reexp::io<p> io(stats);
-			io.write_states(out, data);
-			out.finish();
+			long wms;
+			{
+				time_sentry t;
+				io.write_states(out, data);
+				out.finish();
+				wms = t.ms();
+			}
 
-			t<<"re-expressed image was serialized in "<<bout.pos()<<" bits, \n";
-			t<<"while naive description length was "<<stats.naiveInfo()<<".\n";
+			t<<"re-expressed image was serialized in "<<bout.pos()<<" bits\n";
+			t<<"writing took  "<<wms<<" ms"<<ignorel;
+			t<<"while naive description length was "<<stats.ndl()<<".\n";
 
 
 			reexp::bit_istream bin = buffer.istream(0);
 			reexp::arithmetic_bit_istream in(bin);
 			reexp::data<p> data2(lang, dim);
 			data2.prepare_exp_vars();
-			io.read_states(in, data2);
+			reexp::index_over_var_bits<p> indexspace(data2);
+			std::vector<int> knownAt;
+			long rms;
+			{
+				time_sentry t;
+				io.read_states(in, data2, indexspace, knownAt);
+				rms = t.ms();
+			}
 
 			t<<bin.pos()<<" bits read from encoded blob\n";
+			t<<"reading took "<<rms<<" ms"<<ignorel;
 
 			t<<"\n";
+
+/*			t<<"diff:\n";
+
+			t<<si.lang_info().invorder_diff_tostring(data, data2, 1, &indexspace, &knownAt);
+			t<<"\n";*/
 
 			if (verbose) t<<"restored image, variable by variable:\n";
 
@@ -497,7 +516,7 @@ namespace {
 				sdiff += b.popcount();
 
 				if (verbose || sd || dd) {
-					t<<"variable "<<si.var_tostring(i);
+					t<<"variable "<<i<<" "<<si.var_tostring(i);
 
 					if (sd || dd) {
 						t<<" failed."<<faill;

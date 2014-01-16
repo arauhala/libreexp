@@ -133,7 +133,7 @@ namespace optdigits {
 					 int sample_cvarid) {
 		tdata.apply_exps();
 		std::set<std::string> tags = {sup()<<"exps: "<<lang.exp_count()};
-		t.record(tags+"gen:info", stats.naiveInfo());
+		t.record(tags+"gen:info", stats.ndl());
 		evaluate(t, data, stats, tags+"data:train", sample_cvarid);
 		evaluate(t, tdata, stats, tags+"data:test", sample_cvarid);
 	}

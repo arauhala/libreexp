@@ -18,6 +18,11 @@ namespace reexp {
 	template struct bitmatrix<traits3d>;
 	template struct bitmatrix<traits4d>;
 
+	template struct ndim<traits1d>;
+	template struct ndim<traits2d>;
+	template struct ndim<traits3d>;
+	template struct ndim<traits4d>;
+
 	template class var<traits1d>;
 	template class var<traits2d>;
 	template class var<traits3d>;
@@ -37,6 +42,15 @@ namespace reexp {
 	template class exp<traits2d>;
 	template class exp<traits3d>;
 	template class exp<traits4d>;
+
+	template bool operator < <traits1d>(const reexp::rel_entry<traits1d>& e1,
+			 	 	 	 	 	 	 	const reexp::rel_entry<traits1d>& e2);
+	template bool operator < <traits2d>(const reexp::rel_entry<traits2d>& e1,
+			 	 	 	 	 	 	 	const reexp::rel_entry<traits2d>& e2);
+	template bool operator < <traits3d>(const reexp::rel_entry<traits3d>& e1,
+			 	 	 	 	 	 	 	const reexp::rel_entry<traits3d>& e2);
+	template bool operator < <traits4d>(const reexp::rel_entry<traits4d>& e1,
+			 	 	 	 	 	 	 	const reexp::rel_entry<traits4d>& e2);
 
 	template class lang<traits1d>;
 	template class lang<traits2d>;
@@ -103,5 +117,7 @@ namespace reexp {
 	template class stats_info<traits2d>;
 	template class stats_info<traits3d>;
 	template class stats_info<traits4d>;
+
+
 
 }

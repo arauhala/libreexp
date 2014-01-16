@@ -1,6 +1,6 @@
 
-#GPP          = /usr/lib/gcc-snapshot/bin/g++
-GPP          = ccache clang++ -Qunused-arguments
+GPP          = ccache g++
+#GPP          = ccache clang++ -Qunused-arguments
 
 CXX 		 =  $(GPP)
 CXXLINKER    = $(GPP)

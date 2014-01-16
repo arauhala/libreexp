@@ -223,9 +223,11 @@ px(r)  49/47131 [556.23]
 
 <<<px(r + 4x + 2y), px(r + 5x + 2y)>, <<px(r + 2y), px(r + x + 2y)>, <px(r + 2x + 2y), px(r + 3x + 2y)>>>, <<<px(r + x), px(r + 2x)>, <px(r + 3x), px(r + 4x)>>, <<px(r + 4x + y), px(r + 5x + y)>, <<px(r + y), px(r + x + y)>, <px(r + 2x + y), px(r + 3x + y)>>>>>  2/52102 [32.2234]
 
-re-expressed image was serialized in 4068 bits, 
+re-expressed image was serialized in 4068 bits
+writing took  332 ms
 while naive description length was 3968.04.
 4068 bits read from encoded blob
+reading took 5932 ms
 
 ok.
 0 errors in defined.

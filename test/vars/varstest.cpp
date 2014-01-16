@@ -542,7 +542,7 @@ namespace {
 				learner.exclude(i);
 			}
 		}
-		t.record(tags+"prop:entropy orig", stats.naiveInfo()/n);
+		t.record(tags+"prop:entropy orig", stats.ndl()/n);
 		int exps = 0;
 		if (threshold >= 0){
 			time_sentry time;
@@ -551,7 +551,7 @@ namespace {
 			t.record(tags+"prop:reexp ms", ms);
 		}
 		learner.disable_rels();
-		t.record(tags+"prop:entropy reexp", stats.naiveInfo()/n);
+		t.record(tags+"prop:entropy reexp", stats.ndl()/n);
 
 		t.record(tags+"prop:exps", double(exps));
 

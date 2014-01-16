@@ -82,8 +82,48 @@ namespace reexp {
 			double entropy() const {
 				return reexp::entropy(p());
 			}
-			double information() const {
-				return entropy() * n_;
+			/* description length */
+			double dl() const {
+				double rv = 0;
+				rv += (n_-freq_) * reexp::dl(1-p());
+				rv += (freq_) * reexp::dl(p());
+				return rv;
+			}
+			/* estimated description length */
+			double edl() const {
+				double rv = 0;
+				rv += (n_-freq_) * reexp::dl(1-eP());
+				rv += (freq_) * reexp::dl(eP());
+				return rv;
+			}
+			/* estimated cross description length */
+			double exdl(const data_var<P>& dv) const {
+				double rv = 0;
+				{ // first false state
+					bits b = dv.defined();
+					b.andNeg(dv.states());
+					rv += b.popcount() * reexp::dl(1-eP());
+				}
+				{ // then true state
+					bits b = dv.defined();
+					b &= dv.states();
+					rv += b.popcount() * reexp::dl(eP());
+				}
+				return rv;
+			}
+			double xdl(const data_var<P>& dv) const {
+				double rv = 0;
+				{ // first false state
+					bits b = dv.defined();
+					b.andNeg(dv.states());
+					rv += b.popcount() * reexp::dl(1-p());
+				}
+				{ // then true state
+					bits b = dv.defined();
+					b &= dv.states();
+					rv += b.popcount() * reexp::dl(p());
+				}
+				return rv;
 			}
 			const data_var<P>& data() const {
 				return var_;
@@ -230,21 +270,21 @@ namespace reexp {
 				for (int i = 0; i < stateCount(); ++i) rv += eStateEntropy(i);
 				return rv;
 			}
-			double stateNaiveInfo(int state) const {
+			double stateDl(int state) const {
 				double rv = stateNaiveP(state);
 				if (rv > 0) rv = log(rv) / log(2);
 				return -rv;
 			}
-			double eStateNaiveInfo(int state) const {
+			double eStateDl(int state) const {
 				double rv = eStateNaiveP(state);
 				if (rv > 0) rv = log(rv) / log(2);
 				return -rv;
 			}
 			double stateNaiveEntropy(int state) const {
-				return stateNaiveP(state) * stateNaiveInfo(state);
+				return stateNaiveP(state) * stateDl(state);
 			}
 			double eStateNaiveEntropy(int state) const {
-				return eStateNaiveP(state) * eStateNaiveInfo(state);
+				return eStateNaiveP(state) * eStateDl(state);
 			}
 			double naiveEntropy() const {
 				double rv = 0;
@@ -257,10 +297,10 @@ namespace reexp {
 				return rv;
 			}
 			double stateBias(int state) const {
-				return stateFreqs_[state] * (stateNaiveInfo(state) - stateInfo(state));
+				return stateFreqs_[state] * (stateDl(state) - stateInfo(state));
 			}
 			double eStateBias(int state) const {
-				return stateFreqs_[state] * (eStateNaiveInfo(state) - eStateInfo(state));
+				return stateFreqs_[state] * (eStateDl(state) - eStateInfo(state));
 			}
 
 			void row_update();
@@ -376,10 +416,41 @@ namespace reexp {
 					rels_[i].update(*this);
 				}
 			}
-			double naiveInfo() const {
+			/** cross naive description length */
+			double xndl(const data<P>& d) const {
+				double rv = 0;
+				for (int i = 0; i < vars_.size(); ++i) {
+					rv += vars_[i].xdl(d.var(i));
+				}
+				return rv;
+			}
+			/**
+			 * expectation value based cross naive description length
+			 */
+			double exndl(const data<P>& d) const {
+				double rv = 0;
+				for (int i = 0; i < vars_.size(); ++i) {
+					rv += vars_[i].exdl(d.var(i));
+				}
+				return rv;
+			}
+			/**
+			 * naive description lenght. ideal description length under independence assumption
+			 */
+			double ndl() const {
 				double rv = 0;
 				for (int i = 0; i < vars_.size(); i++) {
-					rv += vars_[i].information();
+					rv += vars_[i].dl();
+				}
+				return rv;
+			}
+			/**
+			 * expectation value based naive description lenght. ideal description length under independence assumption
+			 */
+			double endl() const {
+				double rv = 0;
+				for (int i = 0; i < vars_.size(); i++) {
+					rv += vars_[i].edl();
 				}
 				return rv;
 			}

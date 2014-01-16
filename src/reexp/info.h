@@ -12,24 +12,28 @@
 
 namespace reexp {
 
-	inline double information(double pS) {
+	inline double dl(double pS) {
+		return (pS == 1. || pS == 0 || isnan(pS)) ? 0 : -log2(pS);
+	}
+
+	inline double meandl(double pS) {
 		return (pS == 1. || pS == 0 || isnan(pS)) ? 0 : -pS * log2(pS);
 	}
 
 	inline double information(double s1, double s2) {
-		return information(s1) + information(s2);
+		return meandl(s1) + meandl(s2);
 	}
 
 	inline double information(double s1, double s2, double s3, double s4) {
-		return information(s1)
-			 + information(s2)
-		     + information(s3)
-		     + information(s4);
+		return meandl(s1)
+			 + meandl(s2)
+		     + meandl(s3)
+		     + meandl(s4);
 
 	}
 
 	inline double entropy(double p) {
-		return information(p) + information(1-p);
+		return meandl(p) + meandl(1-p);
 	}
 
 	inline double estimateInfo(double realP, double estimateP) {

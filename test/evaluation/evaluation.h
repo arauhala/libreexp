@@ -8,6 +8,7 @@
 #ifndef EVALUATION_H_
 #define EVALUATION_H_
 #include "tester.h"
+#include "reexp/io.h"
 
 namespace evaluation {
 
@@ -40,6 +41,7 @@ namespace evaluation {
 		bool useLogDepB_;
 		int scaling_group_sz_;
 		int dist_record_groups_;
+		bool crosscompress_;
 		std::set<std::string> tags_;
 		pred_args(double expthreshold,
 				  double exprelfilter,
@@ -47,7 +49,8 @@ namespace evaluation {
 				  double prioriweight = 2.,
 				  int verbose = 0,
 				  bool useLogDepB = false,
-				  int scaling_group_sz = -1)
+				  int scaling_group_sz = -1,
+				  bool crosscompress = false)
 		:   expthreshold_(expthreshold),
 		    exprelfilter_(exprelfilter),
 		    predrelfilter_(predrelfilter),
@@ -56,6 +59,7 @@ namespace evaluation {
 		    useLogDepB_(useLogDepB),
 		    scaling_group_sz_(scaling_group_sz),
 		    dist_record_groups_(0),
+		    crosscompress_(crosscompress),
 		    tags_() {
 			tags_.insert(sup()<<"threshold:"<<expthreshold_);
 			tags_.insert(sup()<<"relfilter:"<<exprelfilter_);
@@ -85,9 +89,17 @@ namespace evaluation {
 		int costs_;
 		int naiveCosts_;
 		int n_;
+		double ndl_;
+		double xndl_; // maybe infinite
+		double endl_;
+		double exndl_;
+		int encodedN_;
+		double encodedB_;
+		long encodeus_;
+		long decodeus_;
 		inline pred_data_stats()
 		: e_(), naiveE_(), us_(), errors_(), naiveErrors_(),
-		  costs_(), naiveCosts_(), n_() {}
+		  costs_(), naiveCosts_(), n_(), ndl_(), xndl_(), endl_(), exndl_(), encodedN_(), encodedB_(), encodeus_(), decodeus_() {}
 		inline double unitEntropy() const {
 			return e_ / n_;
 		}
@@ -106,6 +118,28 @@ namespace evaluation {
 		inline double unitNaiveCost() const {
 			return naiveCosts_ / double(n_);
 		}
+		inline double unitNdl() const {
+			return ndl_ / double(encodedN_);
+		}
+		// maybe infinite, because the underlying estimate is plain average
+		inline double unitXndl() const {
+			return xndl_ / double(encodedN_);
+		}
+		inline double unitEndl() const {
+			return endl_ / double(encodedN_);
+		}
+		inline double unitExndl() const {
+			return exndl_ / double(encodedN_);
+		}
+		inline double unitEncodedSizeB() const {
+			return encodedB_ / double(encodedN_);
+		}
+		inline double unitEncodeUs() const {
+			return encodeus_/ double(encodedN_);
+		}
+		inline double unitDecodeUs() const {
+			return decodeus_/ double(encodedN_);
+		}
 
 		inline void record(test_tool& t, const std::set<std::string>& tags) {
 			t.record(tags+"prop:entropy",    unitEntropy());
@@ -115,6 +149,16 @@ namespace evaluation {
 			t.record(tags+"prop:cost", 		 unitCost());
 			t.record(tags+"prop:naiveCost",  unitNaiveCost());
 			t.record(tags+"perf:ns",	     (1000*us_)/(n_));
+
+			if (encodedN_) {
+				t.record(tags+"prop:ndl",  		unitNdl());
+				t.record(tags+"prop:xndl",  	unitXndl());
+				t.record(tags+"prop:endl",  	unitEndl());
+				t.record(tags+"prop:exndl",  	unitExndl());
+				t.record(tags+"prop:encodedB",  unitEncodedSizeB());
+				t.record(tags+"perf:encodeUs",  unitEncodeUs());
+				t.record(tags+"perf:decodeUs",  unitDecodeUs());
+			}
 	//			t.record({"perf:round us", thstr, filstr}, 	 (stats.us_)/(stats.rounds_));
 
 		}
@@ -125,14 +169,14 @@ namespace evaluation {
 		int activerels_;
 		int allrels_;
 		int exps_;
-		double naiveInfo_;
+		double ndl_;
 		long reexpus_;
 		long applyus_;
 		int rounds_;
 		pred_data_stats train_;
 		pred_data_stats test_;
 		inline pred_stats()
-		: activerels_(), allrels_(), exps_(), naiveInfo_(), reexpus_(), applyus_(), rounds_(), train_(), test_() {}
+		: activerels_(), allrels_(), exps_(), ndl_(), reexpus_(), applyus_(), rounds_(), train_(), test_() {}
 		inline double averReexpUs() const {
 			return reexpus_ / double(rounds_);
 		}
@@ -142,8 +186,8 @@ namespace evaluation {
 		inline double averExps() const {
 			return exps_ / double(rounds_);
 		}
-		inline double averNaiveInfo() const {
-			return naiveInfo_ / double(rounds_);
+		inline double averndl() const {
+			return ndl_ / double(rounds_);
 		}
 		inline double averActiveRels() const {
 			return activerels_ / double(rounds_);
@@ -340,6 +384,61 @@ namespace evaluation {
 
 
 	template <typename P>
+	void crosscompress_and_measure(test_tool& t,
+								   pred_problem<P>& pr,
+								   pred_args& args,
+								   pred_data_stats& s,
+								   const reexp::stats<P>& trainstats,
+								   reexp::data<P>& compressed) {
+		reexp::stats<P> compressed_stats(compressed);
+
+		reexp::bits buffer(64*1024*1024); // big enough buffer
+		reexp::bit_ostream bout = buffer.ostream(0);
+		reexp::arithmetic_bit_ostream out(bout);
+
+		reexp::io<P> io(trainstats);
+		long wus;
+		{
+			time_sentry t;
+			io.write_states(out, compressed);
+			out.finish();
+			wus = t.us();
+		}
+		s.encodedB_ += bout.pos();
+		s.encodeus_ += wus;
+
+		reexp::bit_istream bin = buffer.istream(0);
+		reexp::arithmetic_bit_istream in(bin);
+		reexp::data<P> data2(compressed.lang(), compressed.dim());
+		data2.prepare_exp_vars();
+		long rus;
+		reexp::index_over_var_bits<P> indexspace(data2);
+		std::vector<int> knownAt;
+		{
+			time_sentry t;
+			io.read_states(in, data2, indexspace, knownAt);
+			rus = t.us();
+		}
+		if (bin.pos() != bout.pos()) {
+			reexp::lang_info<P> li(pr.names_, compressed.lang());
+
+			t<<li.vars_tostring()<<"\n";
+			t<<li.invorder_diff_tostring(compressed, data2, 1, &indexspace, &knownAt);
+
+			throw std::runtime_error(sup()<<"read and wrote different number of bits, "<<bin.pos()<<" != "<<bout.pos());
+		}
+
+		s.decodeus_ += rus;
+		s.encodedN_ += compressed.dim().volume();
+		s.ndl_ 		+= compressed_stats.ndl();
+		s.xndl_ 	+= trainstats.xndl(compressed);
+		s.endl_ 	+= compressed_stats.endl();
+		s.exndl_ 	+= trainstats.exndl(compressed);
+
+//		t<<bin.pos()<<" bits read from encoded blob in "<<rms<<" ms\n";
+	}
+
+	template <typename P>
 	void predict_and_measure(test_tool& t,
 							 pred_problem<P>& pr,
 							 pred_args& args,
@@ -447,7 +546,7 @@ namespace evaluation {
 			if (!lang.rel(i).disabled()) relsactive++;
 		}
 
-		s.naiveInfo_ += trainstats.naiveInfo();
+		s.ndl_ += trainstats.ndl();
 		s.exps_ += exps;
 		s.activerels_ += relsactive;
 		s.allrels_ += lang.rel_count();
@@ -455,6 +554,13 @@ namespace evaluation {
 
 		if (args.verbose_) {
 			t<<"test run, "<<relsactive<<"/"<<lang.rel_count()<<" rels active, "<<exps<<" exps\n";
+		}
+
+		// do crosscompression before predicted values are undefined. compression method cannot know,
+		// which values were undefined by hand, which breaks the encoding
+		if (args.crosscompress_) {
+			crosscompress_and_measure(t, pr, args, s.train_, trainstats, train);
+			crosscompress_and_measure(t, pr, args, s.test_, trainstats, test);
 		}
 
 		// prevent predictor from using predicted variables
@@ -467,6 +573,7 @@ namespace evaluation {
 		}
 		predict_and_measure(t, pr, args, s.train_, trainstats, train);
 		predict_and_measure(t, pr, args, s.test_,  trainstats, test, true);
+
 	}
 
 	inline void report_measurements(test_tool& t, pred_args& args, pred_stats& stats) {
@@ -479,7 +586,7 @@ namespace evaluation {
 		t.record(tags+"exp:reexp us",   stats.averReexpUs());
 		t.record(tags+"exp:apply us",   stats.averApplyUs());
 		t.record(tags+"exp:exps", 		stats.averExps());
-		t.record(tags+"exp:naive info", stats.averNaiveInfo());
+		t.record(tags+"exp:naive info", stats.averndl());
 		t.record(tags+"exp:act rels", 	stats.averActiveRels());
 		t.record(tags+"exp:all rels",   stats.averAllRels());
 		if (args.verbose_) {

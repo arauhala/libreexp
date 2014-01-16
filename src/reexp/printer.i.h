@@ -234,6 +234,96 @@ namespace reexp {
 	}
 
 	template <typename P>
+	std::string lang_info<P>::invorder_diff_tostring(const reexp::data<P>& d1,
+													 const reexp::data<P>& d2,
+													 int maxprints,
+													 const reexp::index_over_var_bits<P>* indexspace,
+													 const std::vector<int>* d2KnownAt) const {
+		std::ostringstream buf;
+		int errors = 0;
+		int ddiff = 0;
+		int sdiff = 0;
+		for (int i = d1.var_count() - 1; i >= 0; --i) {
+			const reexp::data_var<P>& dv1 = d1.var(i);
+			const reexp::data_var<P>& dv2 = d2.var(i);
+			reexp::bits b;
+			b = dv1.defined();
+			b ^= dv2.defined();
+			int dd = b.popcount();
+			b = dv1.states();
+			b ^= dv2.states();
+			int sd = b.popcount();
+			ddiff += dd;
+			sdiff += sd;
+
+			if (dd || sd) {
+				buf<<"variable "<<i<<" "<<var_tostring(i);
+				if (sd || dd) {
+					buf<<" differs.\n";
+				} else {
+					buf<<" ok.\n";
+				}
+				buf<<dd<<" diffs in defined.\n";
+				buf<<sd<<" diffs in states.\n";
+				cvec<P> dim = dv1.dim();
+				for (int i = dv1.defined().size()-1; i >= 0 && errors < maxprints; --i) {
+					if (dv1.defined()[i] != dv2.defined()[i]) {
+						buf<<"defined "<<dv1.defined()[i]<<" != "<<dv2.defined()[i]<<" at "<<dim.at(i)<<"\n";
+						errors++;
+						if (d2KnownAt && !dv2.defined()[i]) {
+							int index = (*d2KnownAt)[indexspace->from_var_bit(dv2.var_.id(), i)];
+							int detvarid = 0, detvarstate = 0;
+							if (indexspace->to_var_bit(index, detvarid, detvarstate)) {
+								const data_var<P>& detvar = d2.var(detvarid);
+								cvec<P> detvarat = detvar.dim().at(detvarstate);
+								buf<<"d2 determined by "<<detvarid<<" "<<var_tostring(detvarid)<<" state "<<detvar.states()[detvarstate]<<" at "<<detvarat<<"\n";
+								const reexp::exp<P>* detexp = dynamic_cast<const reexp::exp<P>*>(&detvar.var());
+								if (detexp) {
+									for (const rel_entry<P>& e : detexp->rel().entries()) {
+										if (e.var_ != &dv2.var()) {
+											// print the other variable known at
+											cvec<P> rvarat = detvarat + e.shift_;
+											const data_var<P>& rvar = d2.var(e.var_->id());
+											int rvidx = rvar.index(rvarat);
+											int index = indexspace->from_var_bit(e.var_->id(), rvidx);
+											buf<<"   " <<e.var_->id()<<" "<<var_tostring(*e.var_)<<":\n";
+											buf<<"   defined " << rvar.defined()[rvidx]<<"\n";
+											buf<<"   state "<< rvar.states()[rvidx] << " at " <<rvarat<<"\n";
+
+											int kat = (*d2KnownAt)[index];
+											int detvarid = 0, detvarstate = 0;
+											if (indexspace->to_var_bit(kat, detvarid, detvarstate)) {
+												const data_var<P>& detvar = d2.var(detvarid);
+												cvec<P> detvarat = detvar.dim().at(detvarstate);
+												buf<<"   determined by "<<detvarid<<" " <<var_tostring(detvarid)<<" state "<<*detvar[detvarat]<<" at "<<detvarat<<"\n";
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					if (dv1.states()[i] != dv2.states()[i]) {
+						buf<<"state "<<dv1.states()[i]<<" != "<<dv2.states()[i]<<" at "<<dim.at(i)<<"\n";
+						errors++;
+					}
+				}
+				buf<<"\n";
+			}
+		}
+		if (errors >= maxprints) {
+			buf<<"no more differences printed as maximum ("<<maxprints<<") reached.\n";
+		}
+		if (ddiff || sdiff) {
+			buf<<ddiff<<" diffs in defined.\n";
+			buf<<sdiff<<" diffs in states.\n";
+		} else {
+			buf<<"parts are identical\n";
+		}
+		return buf.str();
+	}
+
+	template <typename P>
 	const reexp::lang<P>& lang_info<P>::lang() const {
 		return lang_;
 	}
@@ -336,7 +426,7 @@ namespace reexp {
 	template <typename P>
 	std::string stats_info<P>::var_tostring(const var_stats<P>& vs, const cvec<P>& shift) const {
 		std::ostringstream buf;
-		buf<<lang_.var_tostring(vs.data().var(), shift)<<"  "<<vs.freq()<<"/"<<vs.n()<<" ["<<vs.information()<<"]\n";
+		buf<<lang_.var_tostring(vs.data().var(), shift)<<"  "<<vs.freq()<<"/"<<vs.n()<<" ["<<vs.dl()<<"]\n";
 		return buf.str();
 	}
 
@@ -383,7 +473,7 @@ namespace reexp {
 			buf<<"/ "<<rs.entropy()<<"\n    ";
 			double sum = 0;
 			for (int i = 0; i < rs.stateCount(); ++i) {
-				double ne = rs.eStateP(i) * rs.eStateNaiveInfo(i);
+				double ne = rs.eStateP(i) * rs.eStateDl(i);
 				buf<<ne<<" ";
 				sum += ne;
 			}
@@ -447,9 +537,9 @@ namespace reexp {
 			if (details & 2) {
 				const rel_stats<P>& rs = *c.rel_;
 				buf<<"    [n(s)="<<rs.stateFreqs()[c.state_];
-				buf<<",naiveInfo(s)="<<rs.stateNaiveInfo(c.state_);
+				buf<<",ndl(s)="<<rs.stateDl(c.state_);
 				buf<<",info(s)="<<rs.stateInfo(c.state_);
-				buf<<",eNaiveInfo(s)="<<rs.eStateNaiveInfo(c.state_);
+				buf<<",endl(s)="<<rs.eStateDl(c.state_);
 				buf<<",eInfo(s)="<<rs.eStateInfo(c.state_);
 				buf<<"]";
 			}

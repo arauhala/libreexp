@@ -252,13 +252,13 @@ namespace {
 		reexp::stats_info<p> si(i, stats);
 
 		reexp::learner<p> learner(lang, stats);
-		double e = stats.naiveInfo();
+		double e = stats.ndl();
 		t<<"scan:\n\n"<<si.scan_tostring(3)<<"\n";
 		for (int i = 0; i < n; ++i) {
 			if (!learner.add_exp()) break;
 			t<<"exp added\n\n";
-			t<<"information "<<e<<" -> "<<stats.naiveInfo()<<"\n\n";
-			e = stats.naiveInfo();
+			t<<"information "<<e<<" -> "<<stats.ndl()<<"\n\n";
+			e = stats.ndl();
 			t<<"scan:\n\n"<<si.scan_tostring(3)<<"\n";
 		}
 		print_overview<p>(t, si, data);
@@ -290,16 +290,16 @@ namespace {
 				setup_names<p>(i);
 				reexp::stats_info<p> si(i, stats);
 
-				double e = stats.naiveInfo();
+				double e = stats.ndl();
 				lang.add_exp(lang.rel(r), s);
 				t<<"exp added\n\n";
 
 				t<<"vars:\n\n";
 				t<<si.vars_tostring();
 
-				t<<"information "<<e<<" -> "<<stats.naiveInfo()<<"\n\n";
+				t<<"information "<<e<<" -> "<<stats.ndl()<<"\n\n";
 
-				if (stats.naiveInfo() > e) {
+				if (stats.ndl() > e) {
 					t<<"entropy increased!\n\n";
 				}
 			}
@@ -328,16 +328,16 @@ namespace {
 		t<<"vars:\n\n";
 		t<<si.vars_tostring();
 
-		double e = stats.naiveInfo();
+		double e = stats.ndl();
 		lang.add_exp(lang.rel(relid::left_right), 0);
 		t<<"exp added\n\n";
 
 		t<<"vars:\n\n";
 		t<<si.vars_tostring();
 
-		t<<"information "<<e<<" -> "<<stats.naiveInfo()<<"\n\n";
+		t<<"information "<<e<<" -> "<<stats.ndl()<<"\n\n";
 
-		if (stats.naiveInfo() > e) {
+		if (stats.ndl() > e) {
 			t<<"entropy increased!\n\n";
 		}
 
@@ -387,16 +387,16 @@ namespace {
 		t<<"vars:\n\n";
 		t<<si.vars_tostring();
 
-		double e = stats.naiveInfo();
+		double e = stats.ndl();
 		lang.add_exp(lang.rel(relid::left_right), 0);
 		t<<"exp added\n\n";
 
 		t<<"vars:\n\n";
 		t<<si.vars_tostring();
 
-		t<<"information "<<e<<" -> "<<stats.naiveInfo()<<"\n\n";
+		t<<"information "<<e<<" -> "<<stats.ndl()<<"\n\n";
 
-		if (stats.naiveInfo() > e) {
+		if (stats.ndl() > e) {
 			t<<"entropy increased!\n\n";
 		}
 
@@ -444,7 +444,7 @@ namespace {
 		t<<"vars:\n\n";
 		t<<si.vars_tostring();
 
-		double e = stats.naiveInfo();
+		double e = stats.ndl();
 		lang.add_exp(lang.rel(relid::left_right), 2);
 		lang.add_exp(lang.rel(relid::left_right), 0);
 		lang.add_exp(lang.rel(relid::left_right), 1);
@@ -454,9 +454,9 @@ namespace {
 		t<<"vars:\n\n";
 		t<<si.vars_tostring();
 
-		t<<"information "<<e<<" -> "<<stats.naiveInfo()<<"\n\n";
+		t<<"information "<<e<<" -> "<<stats.ndl()<<"\n\n";
 
-		if (stats.naiveInfo() > e) {
+		if (stats.ndl() > e) {
 			t<<"entropy increased!\n\n";
 		}
 

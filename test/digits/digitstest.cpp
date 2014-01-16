@@ -469,8 +469,8 @@ namespace {
 		for (int i = 0; i < lang.var_count(); i++) {
 			const reexp::var_stats<P>& s( stats.var( i ) );
 			print_var(t, lang.var(i));
-			info += s.information();
-			t<<s.freq()<<"/"<<s.n()<<" "<<s.information()<<checkl<<checkl;
+			info += s.dl();
+			t<<s.freq()<<"/"<<s.n()<<" "<<s.dl()<<checkl<<checkl;
 		}
 		t<<"total info: "<<info<<checkl<<checkl;
 	}
@@ -537,7 +537,7 @@ namespace {
 		print_vars(t, stats);
 		print_rels(t, stats);
 
-		t<<"naive information "<<stats.naiveInfo()<<checkl;
+		t<<"naive information "<<stats.ndl()<<checkl;
 		t<<"bit size: "<<data.size()<<checkl;
 		lang.add_exp(lang.rel(relid::left_right), 3);
 
@@ -552,7 +552,7 @@ namespace {
 		print_vars(t, stats);
 		print_rels(t, stats);
 
-		t<<"naive information "<<stats.naiveInfo()<<checkl;
+		t<<"naive information "<<stats.ndl()<<checkl;
 		t<<"bit size: "<<data.size()<<checkl;
 	}
 
@@ -628,7 +628,7 @@ namespace {
 		print_vars(t, stats);
 		print_rels(t, stats);
 
-		t<<"naive information "<<stats.naiveInfo()<<checkl;
+		t<<"naive information "<<stats.ndl()<<checkl;
 		t<<"bit size: "<<data.size()<<checkl;
 	}
 
@@ -741,10 +741,10 @@ namespace {
 		int rounds = 7;
 
 		for (int i = 0; i < rounds; i++) {
-			float before = stats.naiveInfo();
+			float before = stats.ndl();
 			if (!learner.add_exp()) break;
 			t<<"expression added."<<checkl;
-			float after = stats.naiveInfo();
+			float after = stats.ndl();
 			t<<"info "<<before<<" -> "<<after<<checkl<<checkl;
 		}
 
@@ -845,13 +845,13 @@ void run_learn_picked_predict_test(bool& ok) {
 	reexp::stats<p> stats(data);
 
 
-	float before = stats.naiveInfo();
+	float before = stats.ndl();
 	lang.add_exp(lang.rel(relid::up_down), 3);
-	float after = stats.naiveInfo();
+	float after = stats.ndl();
 	t<<"info "<<before<<" -> "<<after<<checkl<<checkl;
 	before = after;
 	lang.add_exp(lang.rel(relid::left_right), 3);
-	after = stats.naiveInfo();
+	after = stats.ndl();
 	t<<"info "<<before<<" -> "<<after<<checkl<<checkl;
 
 	t<<checkl<<"learning done."<<checkl<<checkl;
@@ -892,10 +892,10 @@ void run_learn_predict_test(bool& ok) {
 	int rounds = 3;
 
 	for (int i = 0; i < rounds; i++) {
-		float before = stats.naiveInfo();
+		float before = stats.ndl();
 		if (!learner.add_exp()) break;
 		t<<"expression added."<<checkl;
-		float after = stats.naiveInfo();
+		float after = stats.ndl();
 		t<<"info "<<before<<" -> "<<after<<checkl<<checkl;
 	}
 

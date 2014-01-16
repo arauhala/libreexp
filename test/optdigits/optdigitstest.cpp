@@ -277,10 +277,10 @@ namespace {
 		{
 			time_sentry time;
 			while (true) {
-				float before = stats.naiveInfo();
+				float before = stats.ndl();
 				if (!learner.add_exp()) break;
 				t<<"expression added."<<checkl;
-				float after = stats.naiveInfo();
+				float after = stats.ndl();
 				t<<"info "<<before<<" -> "<<after<<checkl<<checkl;
 
 				t<<"scan:\n\n"<<si.scan_tostring(3, 2)<<"\n";
@@ -501,11 +501,11 @@ namespace {
 		reexp::learner<p> learner(lang, stats, 50);
 		setup_learner<p>(learner);
 
-		double before = stats.naiveInfo();
+		double before = stats.ndl();
 		int exps = learner.reexpress();
 		t<<exps<<" expressions added.\n\n";
 
-		t<<"information "<<before<<" -> "<<stats.naiveInfo()<<"\n\n";
+		t<<"information "<<before<<" -> "<<stats.ndl()<<"\n\n";
 
 		t<<"scan:\n\n"<<si.scan_tostring(3)<<"\n";
 		t<<"vars:\n\n"<<si.vars_tostring()<<"\n";
@@ -538,11 +538,11 @@ namespace {
 		reexp::learner<p> learner(lang, stats, 50);
 		setup_learner<p>(learner);
 
-		double before = stats.naiveInfo();
+		double before = stats.ndl();
 		int exps = learner.reexpress(true, 1);
 		t<<exps<<" expressions added.\n\n";
 
-		t<<"information "<<before<<" -> "<<stats.naiveInfo()<<"\n\n";
+		t<<"information "<<before<<" -> "<<stats.ndl()<<"\n\n";
 
 		t<<"scan:\n\n"<<si.scan_tostring(3)<<"\n";
 		t<<"vars:\n\n"<<si.vars_tostring()<<"\n";
@@ -628,7 +628,7 @@ namespace {
 		reexp::data<P> tdata(lang, optdigits_dim(tsamples));
 		populate<P>(tdata, tsamples, true);
 		tdata.apply_exps();
-		t.record(tags+"gen:info", stats.naiveInfo());
+		t.record(tags+"gen:info", stats.ndl());
 		evaluate(t, data, stats, tags+"data:train");
 		evaluate(t, tdata, stats, tags+"data:test");
 		lang.set_obs(data); // return observer
@@ -749,10 +749,10 @@ namespace {
 		reexp::learner<p> learner(lang, stats, 100);
 		setup_learner<p>(learner);
 
-		double before = stats.naiveInfo();
+		double before = stats.ndl();
 		int exps = learner.reexpress(true);
 		t<<exps<<" expressions added.\n\n";
-		t<<"information "<<before<<" -> "<<stats.naiveInfo()<<"\n\n";
+		t<<"information "<<before<<" -> "<<stats.ndl()<<"\n\n";
 
 		reexp::stats_info<p> si(i, stats);
 		const reexp::lang_info<p>& li = si.lang_info();
@@ -824,14 +824,14 @@ namespace {
 
 		t<<predictions_tostring(data, stats, false);
 
-		double before = stats.naiveInfo();
+		double before = stats.ndl();
 		for (int i = 0; i < 5; i++) {
 			int exps = learner.reexpress(true, 5);
 			t<<exps<<" expressions added.\n\n";
 			t<<predictions_tostring(data, stats, false);
 		}
 
-		t<<"information "<<before<<" -> "<<stats.naiveInfo()<<"\n\n";
+		t<<"information "<<before<<" -> "<<stats.ndl()<<"\n\n";
 
 		t<<"exps:\n\n";
 		for (int i = varid::digit9+1; i < lang.var_count(); ++i) {

@@ -655,7 +655,7 @@ namespace {
 			const reexp::var<germancredit_problem>& v( pr.lang_.var(i) );
 			t<<"prioriP="<<v.prioriP()<<"  "<<"group:"<<groups[i]<<"  "<<pr.si_.var_tostring(i)<<"\n";
 		}
-		t<<"naive entropy: "<<pr.stats_.naiveInfo()<<"\n";
+		t<<"naive entropy: "<<pr.stats_.ndl()<<"\n";
 	}
 
 	void exppriories_test(test_tool& t) {
@@ -670,7 +670,7 @@ namespace {
 			if (size_t(i) < groups.size()) group = groups[i];
 			t<<"prioriP="<<v.prioriP()<<"  "<<"group:"<<group<<"  "<<pr.si_.var_tostring(i)<<"\n";
 		}
-		t<<"naive entropy: "<<pr.stats_.naiveInfo()<<"\n";
+		t<<"naive entropy: "<<pr.stats_.ndl()<<"\n";
 	}
 
 	void logdeps_test(test_tool& t) {
