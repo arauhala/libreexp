@@ -443,15 +443,24 @@ namespace {
 
 		reexp::stats<p> stats(data);
 		reexp::learner<p> learner(lang, stats, threshold, 0.35*threshold);
-		learner.reexpress(true, exps);
+		double ndlBefore = stats.ndl();
+		double endlBefore = stats.endl();
+		int e = learner.reexpress(true, exps);
+		double ndlAfter = stats.ndl();
+		double endlAfter = stats.endl();
+
+		t<<e<<" exps formed. ndl changed "<<ndlBefore<<" -> "<<ndlAfter<<"\n";
+		t<<" endl changed "<<endlBefore<<" -> "<<endlAfter<<"\n";
 
 
 		reexp::pinfo names;
 		setup_names<p>(names);
 		reexp::stats_info<p> si(names, stats);
 
-		t<<"variablesl\n";
-		t<<si.vars_tostring();
+		if (verbose) {
+			t<<"variablesl\n";
+			t<<si.vars_tostring();
+		}
 
 		{
 			reexp::bits buffer(64*1024*1024); // big enough buffer

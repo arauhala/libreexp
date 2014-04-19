@@ -9,6 +9,7 @@
 #include "reexp/printer.h"
 #include "reexp/pred.i.h"
 #include "reexp/learner.i.h"
+#include "reexp/io.i.h"
 #include "reexp/printer.i.h"
 
 namespace reexp {
@@ -52,6 +53,24 @@ namespace reexp {
 	template bool operator < <traits4d>(const reexp::rel_entry<traits4d>& e1,
 			 	 	 	 	 	 	 	const reexp::rel_entry<traits4d>& e2);
 
+
+	template int count_diff_in_datas<traits1d>(const reexp::data<traits1d>& d1,
+											   const reexp::data<traits1d>& d2,
+											   int& ddiff,
+											   int& sdiff);
+	template int count_diff_in_datas<traits2d>(const reexp::data<traits2d>& d1,
+											   const reexp::data<traits2d>& d2,
+											   int& ddiff,
+											   int& sdiff);
+	template int count_diff_in_datas<traits3d>(const reexp::data<traits3d>& d1,
+											   const reexp::data<traits3d>& d2,
+											   int& ddiff,
+											   int& sdiff);
+	template int count_diff_in_datas<traits4d>(const reexp::data<traits4d>& d1,
+											   const reexp::data<traits4d>& d2,
+											   int& ddiff,
+											   int& sdiff);
+
 	template class lang<traits1d>;
 	template class lang<traits2d>;
 	template class lang<traits3d>;
@@ -71,6 +90,11 @@ namespace reexp {
 	template struct rel_stats<traits2d>;
 	template struct rel_stats<traits3d>;
 	template struct rel_stats<traits4d>;
+
+	template struct exp_rel_stats<traits1d>;
+	template struct exp_rel_stats<traits2d>;
+	template struct exp_rel_stats<traits3d>;
+	template struct exp_rel_stats<traits4d>;
 
 	template class stats<traits1d>;
 	template class stats<traits2d>;
@@ -118,6 +142,14 @@ namespace reexp {
 	template class stats_info<traits3d>;
 	template class stats_info<traits4d>;
 
+	template class index_over_var_bits<traits1d>;
+	template class index_over_var_bits<traits2d>;
+	template class index_over_var_bits<traits3d>;
+	template class index_over_var_bits<traits4d>;
 
+	template class io<traits1d>;
+	template class io<traits2d>;
+	template class io<traits3d>;
+	template class io<traits4d>;
 
 }

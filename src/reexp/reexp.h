@@ -8,8 +8,9 @@
 #ifndef REEXP_EXP_H_
 #define REEXP_EXP_H_
 
-#include "learner.h"
-#include "pred.h"
+#include "reexp/learner.h"
+#include "reexp/pred.h"
+#include "reexp/io.h"
 
 namespace reexp {
 
@@ -138,6 +139,11 @@ namespace reexp {
 	extern template struct rel_stats<traits3d>;
 	extern template struct rel_stats<traits4d>;
 
+	extern template struct exp_rel_stats<traits1d>;
+	extern template struct exp_rel_stats<traits2d>;
+	extern template struct exp_rel_stats<traits3d>;
+	extern template struct exp_rel_stats<traits4d>;
+
 	extern template class stats<traits1d>;
 	extern template class stats<traits2d>;
 	extern template class stats<traits3d>;
@@ -174,6 +180,16 @@ namespace reexp {
 	extern template class learner<traits2d>;
 	extern template class learner<traits3d>;
 	extern template class learner<traits4d>;
+
+	extern template class index_over_var_bits<traits1d>;
+	extern template class index_over_var_bits<traits2d>;
+	extern template class index_over_var_bits<traits3d>;
+	extern template class index_over_var_bits<traits4d>;
+
+	extern template class io<traits1d>;
+	extern template class io<traits2d>;
+	extern template class io<traits3d>;
+	extern template class io<traits4d>;
 
 }
 

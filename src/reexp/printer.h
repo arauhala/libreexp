@@ -59,6 +59,11 @@ namespace reexp {
 			int vnameindex(const std::string& name) const;
 	};
 
+	template <typename P>
+	int count_diff_in_datas(const reexp::data<P>& d1,
+			   	   	   	   	const reexp::data<P>& d2,
+			   	   	   	   	int& ddiff,
+			   	   	   	   	int& sdiff);
 	/**
 	 * lang info can be used to print information about a lang<P> class
 	 * and draw amazing ASCII visualizations of its data (e.g. various bit masks)
@@ -85,6 +90,7 @@ namespace reexp {
 			std::string drawn_rel_tostring(int xcvar, int ycvar, const reexp::rel<P>& r) const;
 			std::string drawn_vars_tostring(int xcvar, int ycvar) const;
 			std::string drawn_rels_tostring(int xcvar, int ycvar) const;
+
 			std::string invorder_diff_tostring(const reexp::data<P>& d1,
 											   const reexp::data<P>& d2,
 											   int maxprints = 100,

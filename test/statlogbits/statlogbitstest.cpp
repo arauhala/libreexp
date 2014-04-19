@@ -232,8 +232,6 @@ namespace {
 		t<<"deps:\n";
 		t<<si.var_deps_tostring(v, 30);
 	}
-
-
 	void print_data_by(test_tool& t, const char* tag, bool includeCost, bool crossCompressed=false) {
 		table exptable(
 			t.report(to_table<average>({"run:out"}, "exp:", tag)));
@@ -274,10 +272,8 @@ namespace {
 
 		if (includeCost) {
 			t<<"cost:\n";
-
 			table table4(
 				t.report(to_table<average>({"run:out", "prop:cost"}, "data:", tag)));
-
 			t<<table4.to_plot(2, 20, 0.5)<<"\n";
 			{
 				std::ofstream entropy(t.file_path("cost.tex"));
@@ -288,24 +284,64 @@ namespace {
 
 		if (crossCompressed) {
 			t<<"cross compression byte sizes:\n";
-
-			table table4(
-				t.report(to_table<average>({"run:out", "prop:encodedB"}, "data:", tag)));
-
-			t<<table4.to_plot(2, 20, 0.5)<<"\n";
 			{
-				std::ofstream entropy(t.file_path("cost.tex"));
-				entropy<<table4.to_latex_pgf_doc("cost");
+				table table4(
+					t.report(to_table<average>({"run:out", "prop:encodedB"}, "data:", tag)));
+				t<<table4.to_plot(2, 20, 0.5)<<"\n";
+				std::ofstream entropy(t.file_path("encodedB.tex"));
+				entropy<<table4.to_latex_pgf_doc("bytes");
+			}
+			{
+				table table4(
+					t.report(to_table<average>({"run:out", "prop:exndl"}, "data:", tag)));
+				t<<table4.to_plot(2, 20, 0.5)<<"\n";
+				std::ofstream entropy(t.file_path("exndl.tex"));
+				entropy<<table4.to_latex_pgf_doc("bytes");
+			}
+			{
+				table table4(
+					t.report(to_table<average>({"run:out", "prop:xndl"}, "data:", tag)));
+				t<<table4.to_plot(2, 20, 0.5)<<"\n";
+				std::ofstream entropy(t.file_path("xndl.tex"));
+				entropy<<table4.to_latex_pgf_doc("bytes");
+			}
+			{
+				table table4(
+					t.report(to_table<average>({"run:out", "prop:ndl"}, "data:", tag)));
+				t<<table4.to_plot(2, 20, 0.5)<<"\n";
+				std::ofstream entropy(t.file_path("ndl.tex"));
+				entropy<<table4.to_latex_pgf_doc("bytesB");
 			}
 
+/*			table testtable(
+				t.report(to_table<average>({"run:out", "data:test"}, "prop:", tag)));
+			t<<"test:\n"<<testtable<<"\n";*/
+
+/*			table table5(
+				t.report(to_table<average>({"run:out", "data:test"}, "prop:entropy", "prop:encodedB")));
+			t<<"mxe by encodedB:\n"<<table5<<"\n";*/
+			{
+				std::ofstream entropy(t.file_path("test_enc_vs_mxe.tex"));
+				entropy<<testtable.to_scatter_latex_pgf_doc("encodedB", {"entropy"}, "mean cross entropy");
+			}
+			{
+				std::ofstream entropy(t.file_path("train_enc_vs_mxe.tex"));
+				entropy<<traintable.to_scatter_latex_pgf_doc("encodedB", {"entropy"}, "mean cross entropy");
+			}
 			table traintable(
 				t.report(to_table<average>({"run:out", "data:train"}, "perf:", tag)));
 			t.ignored()<<"train performance:\n"<<traintable<<"\n";
-
+			{
+				std::ofstream entropy(t.file_path("train_perf.tex"));
+				entropy<<traintable.to_latex_pgf_doc("perf");
+			}
 			table testtable(
 				t.report(to_table<average>({"run:out", "data:test"}, "perf:", tag)));
 			t.ignored()<<"test performance:\n"<<testtable<<"\n";
-
+			{
+				std::ofstream entropy(t.file_path("test_perf.tex"));
+				entropy<<testtable.to_latex_pgf_doc("perf");
+			}
 		} else {
 			table table5(
 				t.report(to_table<average>({"run:out", "perf:ns"}, "data:", tag)));
@@ -350,9 +386,9 @@ namespace {
 	void run_heart_narrowexps_crosscompress_test(test_tool& t) {
 		pred_problem<statlogbits_problem> pr;
 		setup_heart(pr, undef_nothing);
-		int steps = 20;
+		int steps = 21;
 		for (int i = 0; i < steps; ++i) {
-			double th = 5 + i;
+			double th = 4 + i;
 			pred_args args(th, .4*th, 0, 2., 0, true);
 			args.crosscompress_ = true;
 			crossvalidate_run(t, pr, args, 10);
@@ -379,6 +415,7 @@ namespace {
 		int steps = 26;
 		for (int i = 0; i < steps ; ++i) {
 			double th = 5 + i * thstep;
+//			double th = 4 + i * thstep;
 			pred_args args(th, 0.2*th, 0, 3., 0, logDepB, scale_group_sz);
 //			args.crosscompress_ = true;
 			crossvalidate_run(t, pr, args, 9);
@@ -424,7 +461,8 @@ namespace {
 		setup_heart(pr, undef_nothing);
 		int steps = 20;
 		for (int i = 0; i < steps ; ++i) {
-			double th = 5 + i;
+//			double th = 5 + i;
+			double th = 4 + i;
 			pred_args args(th, 0.2*th, -1000., 3., 0, true);
 			crossvalidate_run(t, pr, args, 9);
 		}

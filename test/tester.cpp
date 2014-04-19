@@ -398,13 +398,13 @@ std::string table::to_plot(int xscale, int height, double minbase) const {
 	return buf.str();
 }
 
-std::string table::to_latex_pgf_plot(const std::string& quatity_label) const {
+std::string table::to_latex_pgf_plot(const std::string& quantity_label) const {
 	std::ostringstream buf;
 	buf<<"\\begin{tikzpicture}\n";
 	buf<<"\\begin{axis}[\n";
 	buf<<"grid=major,\n";
 	buf<<"xlabel="<<yprefix_<<",\n";
-	buf<<"ylabel="<<quatity_label<<"]\n";
+	buf<<"ylabel="<<quantity_label<<"]\n";
 
 	for (size_t x = 0; x < xlabels_.size(); ++x) {
 		buf<<"\\addplot coordinates {\n";
@@ -423,13 +423,54 @@ std::string table::to_latex_pgf_plot(const std::string& quatity_label) const {
 	return buf.str();
 }
 
-std::string table::to_latex_pgf_doc(const std::string& quatity_label) const {
+std::string table::to_latex_pgf_doc(const std::string& quantity_label) const {
 	std::ostringstream buf;
 	buf<<"\\documentclass[a4paper]{article}\n"
 	   <<"\\usepackage{pgfplots}\n"
 	   <<"\\pgfplotsset{compat=1.5}\n"
 	   <<"\\begin{document}\n";
-	buf<<to_latex_pgf_plot(quatity_label);
+	buf<<to_latex_pgf_plot(quantity_label);
+	buf<<"\\end{document}\n";
+	return buf.str();
+}
+
+std::string table::to_scatter_latex_pgf_plot(const std::string& xaxis, const std::vector<std::string>& ys, const std::string& quantity_label) const {
+	std::ostringstream buf;
+	buf<<"\\begin{tikzpicture}\n";
+	buf<<"\\begin{axis}[\n";
+	buf<<"grid=major,\n";
+	buf<<"xlabel="<<xaxis<<",\n";
+	buf<<"ylabel="<<quantity_label<<"]\n";
+
+	auto xaxisit = std::find(xlabels_.begin(), xlabels_.end(), xaxis);
+	if (xaxisit == xlabels_.end()) throw std::runtime_error("xaxis variable not found");
+	int xaxisidx = xaxisit - xlabels_.begin();
+	for (size_t x = 0; x < xlabels_.size(); ++x) {
+		if (std::find(ys.begin(), ys.end(), xlabels_[x]) != ys.end()) {
+			buf<<"\\addplot coordinates {\n";
+			for (size_t y = 0; y < ylabels_.size(); ++y) {
+				buf<<"("<<at(xaxisidx, y)<<","<<at(x, y)<<")";
+			}
+			buf<<"};\n";
+			std::string xl(xlabels_[x]);
+			for (size_t i = 0; i < xl.size(); ++i) {
+				if (xl[i] == '_') xl[i] = ' ';
+			}
+			buf<<"\\addlegendentry{"<<xl<<"}\n";
+		}
+	}
+	buf<<"\\end{axis}\n";
+	buf<<"\\end{tikzpicture}\n";
+	return buf.str();
+}
+
+std::string table::to_scatter_latex_pgf_doc(const std::string& x, const std::vector<std::string>& ys, const std::string& quantity_label) const {
+	std::ostringstream buf;
+	buf<<"\\documentclass[a4paper]{article}\n"
+	   <<"\\usepackage{pgfplots}\n"
+	   <<"\\pgfplotsset{compat=1.5}\n"
+	   <<"\\begin{document}\n";
+	buf<<to_scatter_latex_pgf_plot(x, ys, quantity_label);
 	buf<<"\\end{document}\n";
 	return buf.str();
 }

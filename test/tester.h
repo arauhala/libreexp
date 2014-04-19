@@ -300,6 +300,8 @@ class table {
 		std::string to_plot(int xscale, int height, double minbase = 0) const;
 		std::string to_latex_pgf_plot(const std::string& quatity_label) const;
 		std::string to_latex_pgf_doc(const std::string& quatity_label) const;
+		std::string to_scatter_latex_pgf_plot(const std::string& x, const std::vector<std::string>& ys, const std::string& quantity_label) const;
+		std::string to_scatter_latex_pgf_doc(const std::string& x, const std::vector<std::string>& ys, const std::string& quatity_label) const;
 };
 
 std::ostream& operator<<(std::ostream& o, const table& t);

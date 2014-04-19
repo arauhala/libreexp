@@ -16,6 +16,29 @@ namespace reexp {
 	char char_symbol_for(int i);
 
 	template <typename P>
+	int count_diff_in_datas(const reexp::data<P>& d1,
+			   	   	   	   	const reexp::data<P>& d2,
+			   	   	   	   	int& ddiff,
+			   	   	   	   	int& sdiff) {
+		ddiff = 0;
+		sdiff = 0;
+		for (int i = d1.var_count() - 1; i >= 0; --i) {
+			const reexp::data_var<P>& dv1 = d1.var(i);
+			const reexp::data_var<P>& dv2 = d2.var(i);
+			reexp::bits b;
+			b = dv1.defined();
+			b ^= dv2.defined();
+			int dd = b.popcount();
+			b = dv1.states();
+			b ^= dv2.states();
+			int sd = b.popcount();
+			ddiff += dd;
+			sdiff += sd;
+		}
+		return ddiff + sdiff;
+	}
+
+	template <typename P>
 	lang_info<P>::lang_info(const pinfo& i, const reexp::lang<P>& l)
 	: info_(i), lang_(l) {}
 
@@ -232,6 +255,7 @@ namespace reexp {
 		}
 		return buf.str();
 	}
+
 
 	template <typename P>
 	std::string lang_info<P>::invorder_diff_tostring(const reexp::data<P>& d1,

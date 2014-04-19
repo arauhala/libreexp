@@ -97,9 +97,11 @@ namespace evaluation {
 		double encodedB_;
 		long encodeus_;
 		long decodeus_;
+		int ddiff_; // failures to recoved defined bits
+		int sdiff_; // failures to recoved state bits
 		inline pred_data_stats()
 		: e_(), naiveE_(), us_(), errors_(), naiveErrors_(),
-		  costs_(), naiveCosts_(), n_(), ndl_(), xndl_(), endl_(), exndl_(), encodedN_(), encodedB_(), encodeus_(), decodeus_() {}
+		  costs_(), naiveCosts_(), n_(), ndl_(), xndl_(), endl_(), exndl_(), encodedN_(), encodedB_(), encodeus_(), decodeus_(), ddiff_(), sdiff_() {}
 		inline double unitEntropy() const {
 			return e_ / n_;
 		}
@@ -140,6 +142,9 @@ namespace evaluation {
 		inline double unitDecodeUs() const {
 			return decodeus_/ double(encodedN_);
 		}
+		inline int encErrors() const {
+			return sdiff_ + ddiff_;
+		}
 
 		inline void record(test_tool& t, const std::set<std::string>& tags) {
 			t.record(tags+"prop:entropy",    unitEntropy());
@@ -151,13 +156,15 @@ namespace evaluation {
 			t.record(tags+"perf:ns",	     (1000*us_)/(n_));
 
 			if (encodedN_) {
-				t.record(tags+"prop:ndl",  		unitNdl());
-				t.record(tags+"prop:xndl",  	unitXndl());
-				t.record(tags+"prop:endl",  	unitEndl());
-				t.record(tags+"prop:exndl",  	unitExndl());
-				t.record(tags+"prop:encodedB",  unitEncodedSizeB());
-				t.record(tags+"perf:encodeUs",  unitEncodeUs());
-				t.record(tags+"perf:decodeUs",  unitDecodeUs());
+				t.record(tags+"prop:ndl",  			unitNdl());
+				t.record(tags+"prop:xndl",  		unitXndl());
+				t.record(tags+"prop:endl",  		unitEndl());
+				t.record(tags+"prop:exndl",  		unitExndl());
+				t.record(tags+"prop:encodedB",  	unitEncodedSizeB());
+				t.record(tags+"prop:all_enc_errs",  encErrors());
+				t.record(tags+"perf:encodeUs",  	unitEncodeUs());
+				t.record(tags+"perf:decodeUs",  	unitDecodeUs());
+				t.record(tags+"perf:us",  unitDecodeUs());
 			}
 	//			t.record({"perf:round us", thstr, filstr}, 	 (stats.us_)/(stats.rounds_));
 
@@ -419,7 +426,9 @@ namespace evaluation {
 			io.read_states(in, data2, indexspace, knownAt);
 			rus = t.us();
 		}
-		if (bin.pos() != bout.pos()) {
+
+		int ddiff, sdiff;
+		if (count_diff_in_datas(compressed, data2, ddiff, sdiff)) {
 			reexp::lang_info<P> li(pr.names_, compressed.lang());
 
 			t<<li.vars_tostring()<<"\n";
@@ -434,6 +443,8 @@ namespace evaluation {
 		s.xndl_ 	+= trainstats.xndl(compressed);
 		s.endl_ 	+= compressed_stats.endl();
 		s.exndl_ 	+= trainstats.exndl(compressed);
+		s.ddiff_ 	+= ddiff;
+		s.sdiff_ 	+= sdiff;
 
 //		t<<bin.pos()<<" bits read from encoded blob in "<<rms<<" ms\n";
 	}
